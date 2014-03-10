@@ -1,0 +1,47 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=GameMakerStudio用户手册.chm
+Contents file=5pice.hhc
+Default topic=dadiospice\
+Display compile progress=No
+Index file=5pice.hhk
+Language=0x804 中文(简体，中国)
+
+
+[FILES]
+dadiospice\index.html
+dadiospice\000_Using GameMaker\000_Introduction.html
+dadiospice\000_Using GameMaker\001_Installation.html
+dadiospice\000_Using GameMaker\002_Activation.html
+dadiospice\000_Using GameMaker\003_GameMaker Studio Overview.html
+dadiospice\000_Using GameMaker\004_The Graphical User Interface.html
+dadiospice\000_Using GameMaker\005_Loading Sprites.html
+dadiospice\000_Using GameMaker\006_Sounds and music.html
+dadiospice\000_Using GameMaker\007_Backgrounds.html
+dadiospice\000_Using GameMaker\008_Defining objects.html
+dadiospice\000_Using GameMaker\009_Distributing your game.html
+dadiospice\000_Using GameMaker\Game Information.html
+dadiospice\000_Using GameMaker\index.html
+dadiospice\000_Using GameMaker\Steam Player.html
+dadiospice\000_Using GameMaker\Steam Workshop.html
+dadiospice\000_Using GameMaker\Versions.html
+dadiospice\000_Using GameMaker\Actions\000_Move actions.html
+dadiospice\000_Using GameMaker\Actions\001_Main actions set 1.html
+dadiospice\000_Using GameMaker\Actions\002_Main actions set 2.html
+dadiospice\000_Using GameMaker\Actions\003_Control actions.html
+dadiospice\000_Using GameMaker\Actions\004_Score actions.html
+dadiospice\000_Using GameMaker\Actions\005_Extra actions.html
+dadiospice\000_Using GameMaker\Actions\006_Draw actions.html
+dadiospice\000_Using GameMaker\Actions\007_Using expressions and variables.html
+dadiospice\000_Using GameMaker\Actions\index.html
+dadiospice\000_Using GameMaker\Drop Down Menus\index.html
+dadiospice\000_Using GameMaker\Drop Down Menus\The Edit Menu.html
+dadiospice\000_Using GameMaker\Drop Down Menus\The File Menu.html
+dadiospice\000_Using GameMaker\Drop Down Menus\The Help Menu.html
+dadiospice\000_Using GameMaker\Drop Down Menus\The Resources Menu.html
+dadiospice\000_Using GameMaker\Drop Down Menus\The Run Menu.html
+dadiospice\000_Using GameMaker\Drop Down Menus\The Scripts Menu.html
+dadiospice\000_Using GameMaker\Drop Down Menus\The Windows Menu.html
+
+[INFOTYPES]
+
