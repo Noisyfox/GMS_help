@@ -13,14 +13,14 @@
 <h2>This section deals with tiles and how to use them in the room editor.</h2>
 
 <p>
-In many games you will want to have nice looking backgrounds, made up of many details and that are eyecatching and intersting to the player. For example, in a maze game, the walls of the maze should nicely match up, and
-in platform games you like to see beautifully drawn platforms, trees, etc. However, to create hundreds of static backgrounds would take aforever, and also not be very efficient as they would need a lot more device memory, nor 
+In many games you will want to have nice looking backgrounds, made up of many details and that are eye-catching and interesting to the player. For example, in a maze game, the walls of the maze should nicely match up, and
+in platform games you like to see beautifully drawn platforms, trees, etc. However, to create hundreds of static backgrounds would take forever, and also not be very efficient as they would need a lot more device memory, nor 
 would creating hundreds of individual objects with different sprites be a very good idea. So, instead, <i>GameMaker:Studio</i> allows you to use <i>tiles</i>.
 
-<img class="center" src="../../Images/form_room_tiles.png"></img>
+<img class="center" src="../../images/form_room_tiles.png"></img>
 
 Tiles are a purely graphical resource that have very few properties and none of the overheads that accompany an object, and so they are processed and dealt with much faster by <i>GameMaker:Studio</i> when the game 
-is run on the target device. A simple tile would be one for a wall in a maze, where your game has just one wall object with a square sprite assigjned to it for collisions. This object is then flagged as invisible so that when playing 
+is run on the target device. A simple tile would be one for a wall in a maze, where your game has just one wall object with a square sprite assigned to it for collisions. This object is then flagged as invisible so that when playing 
 the game you can't see it, and you would then create some nice tiles that cover the places where the wall objects are and make your levels look great.
 <br>
 <br>
@@ -57,7 +57,7 @@ When placing tiles in the room, you place with the left mouse button and delete 
 <ul>
 	<li>hold the &lt;Shift&gt; key to add multiple tiles one after another.
 	<li>hold the &lt;Ctrl&gt; key and click on a tile to move it to a new position.
-	<li>hold the &lt;Alt&gt; key to tempoararily switch off snapping to the gird.
+	<li>hold the &lt;Alt&gt; key to temporarily switch off snapping to the gird.
 </ul>
 </blockquote>
 
@@ -94,7 +94,7 @@ to select an area that is multiple of the room grid size, hold the &lt;Ctrl&gt; 
 <h3>Tile Depth</h3>
 <p>
 Tiles can be placed in layers at different <i>depths</i>, and if you look at the bottom of the tiles tab in the room editor you see the current depth you are placing them at. Default for this is 1000000 which is normally behind all
-instances (the higher the number, the further "behind", and the lower the number the further "in fromt"). You can use the <b>Add</b> button to add new tile layers, each with a different depth which you define, and in this 
+instances (the higher the number, the further "behind", and the lower the number the further "in front"). You can use the <b>Add</b> button to add new tile layers, each with a different depth which you define, and in this 
 way you can create different layers of tiles, and even objects if you also give the objects different depths so they are between the different tile layers. If you press <b>Delete</b> you can delete a tile layer together with all its 
 tiles, but you must always have at least one layer, so even if you delete the last one, <i>GameMaker:Studio</i> will recreate a new, empty one for you again. If you press <b>Change</b> you can change the depth of a tile 
 layer, which if you have given it the same depth as another layer, will merge the two sets of tiles together on the one layer.

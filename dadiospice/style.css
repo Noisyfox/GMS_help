@@ -1,9 +1,11 @@
 /* Body */
 body{
-  background:#151515;
-  color:#EEE;
-  font-size:12px;
-  font-family:Verdana, Helvetica, Arial, sans-serif;
+	background:#151515;
+	color:#EEE;
+	font-size:14px;
+	font-family:Verdana, Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-weight: normal;
 }
 
 

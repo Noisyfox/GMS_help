@@ -34,7 +34,7 @@ The <b>General Preferences</b> tab deals with the visual aspect of <i>GameMaker:
 	<li><b>Show commands in compile window</b> : When you create a new final app or are testing the current one (normally or in debug mode) the compile window will show the currently running 
 	commands. Un checking this flag will switch off most of them and prevent the compile form from showing what is being done. The default (and recommended) value is to have this switched on.</li><br>
 
-	<li><b>Show commands with verbose flag</b> : Thid check-box is used to switch on (or off) verbose messages in the compile window. When switched on, the default command messages that are shown 
+	<li><b>Show commands with verbose flag</b> : This check-box is used to switch on (or off) verbose messages in the compile window. When switched on, the default command messages that are shown 
 	in the compile window (when the above "<b>Show commands in compile window</b>" is checked too) will contain far more information about the current status of the app being compiled. This may slow 
 	down the app as it runs and is flagged as off by default.</li><br>
 	
@@ -42,18 +42,18 @@ The <b>General Preferences</b> tab deals with the visual aspect of <i>GameMaker:
 	you first test your game or when you create the final executable.</li><br>
 	
 	<li><b>Enable backup on save</b> : This option can be used to switch on the automatic backups that GameMaker:Studio can make of your project. When this is enabled, you can select a <b>Backup 
-	Directory</b> to save a full backup copy of the current project too, as well as the <b>Number of backups</b> that you wish to keep. Once this is enabled, everytime you save the current project 
-	you will also have a backup copy saved to the choosen directory. These backups are numbered concurrently, starting at 0. Please note that the current (newest) backup is always the first! Each time you 
-	save, previous backups are re-numbered with an increment of one (removing those that are numered larger than the specified number of backups) and the latest save is numbered as 0.</i></li><br>
-	
-	<li><b>Enable asset compiler caching</b> : This option will turn on or off <i>caching</i> for the asset compiler. For new projects this is <b>on</b> by default, but older projects may have it disabled. 
-	Switching it on will mean that after an initial test build of your game, all the assets will be cached so that future compiles will be faster, with only those assets that have changed between tests being 
-	re-compiled for use. Note that should any asset become corrupted, you can clear the chache using the "brush" icon at the top of the <i>Gamemaker:Studio</i> IDE.</li><br>
+	Directory</b> to save a full backup copy of the current project too, as well as the <b>Number of backups</b> that you wish to keep. Once this is enabled, every time you save the current project 
+	you will also have a backup copy saved to the chosen directory. These backups are numbered concurrently, starting at 0. Please note that the current (newest) backup is always the first! Each time you 
+	save, previous backups are re-numbered with an increment of one (removing those that are numbered larger than the specified number of backups) and the latest save is numbered as 0.</i></li><br>
+
+	<li><b>Trace GML Calls in Debug</b> : This will enable the compile window to show GML calls. Note that this will greatly slow down the game execution!</li><br>
 	
 	<li><b>Use OGG Sounds</b> : Switching this option on will force <i>GameMaker:Studio</i> to use built in OGG Vorbis support for all sounds. While this may be beneficial in many cases, it is worth noting 
 	that OGG has a CPU overhead as each sound file has to be decoded before it can be played.</i></li><br>
 	
-	<li><b>Show news in default browser</b> : Sets whether to show the <i>GameMaker:Studio</i> news in your default Internet browser, rather than in the program itself.</li><br>
+	<li><b>Show news on startup</b> : Sets whether to show the <i>GameMaker:Studio</i> news when you start the program.</li><br>
+	
+	<li><b>Show news in default browser</b> : Sets whether to display the <i>GameMaker:Studio</i> news in your default Internet browser, rather than in the program itself.</li><br>
 
 	<li><b>Always reload changed files</b> : This option is to permit <i>GamreMaker:Studio</i> to reload files that are changed on the disc automatically. If this is flagged, then any images, sounds or scripts 
 	that are changed from the project <tt>*.gmx</tt> file itself will be silently re-loaded into your game. if it is not flagged, you will get a message prompt asking you if you wish to change the files.</li><br>

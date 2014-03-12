@@ -22,7 +22,7 @@ explained in the following sections.
 <img class="center" src="Android_General_Tab.png"></img>
 
 The first thing to do is fill in the details about your game, including its <b>Display Name</b>, its <b>Package Name</b> and the <b>Version</b> info. The package name can only be made up of letters 
-from A-Z and numbers 0-9, with no symbols or other characters at all and should follow the format <i>“com.domain.myapp”</i>.
+from A-Z and numbers 0-9, with no symbols or other special characters at all, nor should it have uppercase characters. It should follow the format <i>“com.domain.myapp”</i>.
 <br>
 <br>
 
@@ -46,8 +46,14 @@ Once you have configured the game details and presentation graphics, there are t
 </blockquote>
 
 <p>
-You can also see that there is an option marked <i>iCade Support</i>. You can select this to enable the Android version of the iCade to work with your game. See the functions for 
+You can also see that there is an option marked <i>iCade Support</i>. You can select this to enable the Android version of the iCade to work with your game, or to enable bluetooth gamepads. See the functions for 
 <a href="../../002_Reference/Mouse, Keyboard and Other Controls/GamePad Input/index.html">GamePad Input</a>.
+<br>
+<br>
+
+Beneath the <i>iCade Support</i> check-box, you can find the <i>haptic Effects</i> check-box. Enabling this will permit the use of haptic effects (vibration) in your game, but it is dependant of you accepting 
+the Immersion EULA that pops up. If you decline to accept the agreement, then haptic effects will not be enabled, and if you have code for them in your game, the game will fail to compile. For more 
+information on the <i>GameMaker:Studio</i> haptic effects, see the section <a href="../../002_Reference/Mouse, Keyboard and Other Controls/Immersion Haptics/index.html">Immersion Haptics</a>.
 <br>
 <br>
 
@@ -66,7 +72,7 @@ Between Pixels</b> flag. This turns on interpolation, which basically "smooths" 
 <br>
 <br>
 
-Next, you can set the <b>Screen color Depth</b> to either <b>16bit</b> or <b>24bit</b>. This will affect the compatability with some older devices if it is set to 24bit, and will also increase the <i>ashmem</i> 
+Next, you can set the <b>Screen color Depth</b> to either <b>16bit</b> or <b>24bit</b>. This will affect the compatibility with some older devices if it is set to 24bit, and will also increase the <i>ashmem</i> 
 that is needed (this is the shared memory on Android devices).
 <br>
 <br>
@@ -90,7 +96,7 @@ very useful if you wish to see how the texture pages are structured and to preve
 <h3>Social</h3>
 <p>
 
-<img class="center" src="Android_Amazon_Tab.png"></img>
+<img class="center" src="Android_Social_Tab.png"></img>
 
 This tab permits you to enable social functions for your Android game with either <b>Amazon GameCircle</b> or <b>Google Play</b>. Both markets permits you to add achievements and leaderboards 
 for your games in a simple way, allowing worldwide highscores as well as local ones. Once you have ticked the appropriate checkboxes, you will need to code the functionality into your game using the 
@@ -162,5 +168,7 @@ Amazon
 Game Circle
 permissions
 WhisperSync
-Google Play
+Google Game Services
+Enable Haptics
+bluetooth gamepads
 -->

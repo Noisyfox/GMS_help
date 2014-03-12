@@ -67,15 +67,20 @@ a room is first entered and the order of events for that is:
 
 <blockquote>
 <ul>
-	<li><b><a href="Create%20Event.html">Create Event</b></a> of all instances
-	<li><b><a href="../../001_Advanced%20Use/More%20about%20rooms/index.html">Instance Creation Code</b></a> of all instances
-	<li><b><a href="other%20Event.html">Game Start Event</b><a> (this will only be run in the very first room of the game)
+	<li><b><a href="Create%20Event.html">Create Event</b></a> of each instance, followed by the 
+	<li><b><a href="../../001_Advanced%20Use/More%20about%20rooms/index.html">Instance Creation Code</b></a> of each instance
+	<li><b><a href="Other%20Event.html">Game Start Event</b><a> (this will only be run in the very first room of the game)
 	<li><b><a href="../Rooms/Settings%20Tab.html">Room Creation Code</b></a>
-	<li><b><a href="other%20Event.html">Room Start Event</b></a> of all instances
+	<li><b><a href="Other%20Event.html">Room Start Event</b></a> of all instances
 </ul>
 </blockquote>
 
 <p>
+It is also worth noting that you can also set the order in which specific instances are created within the room editor itself. See the section on <b>Instance Order</b> in the 
+<a href="../Rooms/Settings%20Tab.html">Rooms - The Settings Tab</a> for further details.
+<br>
+<br>
+
 Other than those specific events, the only known order that will always occur in the same way no matter what belongs to the three step events and the two draw events. These will always remain consistent, so 
 if you have code that relies on specific timing during each step of your game, you should use:
 <br>
@@ -114,8 +119,8 @@ The sections below deal with each available event :
 	<img src="../../images/Event_Keypress.png" align="middle" align="left">
 	<img src="../../images/Event_Keyrelease.png" align="middle" align="left"><a href="Keyboard%20Event.html">Keyboard Events</a><br>
 	<img src="../../images/Event_Mouse.png" align="middle" align="left"><a href="Mouse%20Event.html">Mouse Event</a><br>
-	<img src="../../images/Event_Other.png" align="middle" align="left"><a href="other%20Event.html">Other Events</a><br>
-	<img src="../../Images/Event_Draw.png" align="middle" align="left"><a href="Draw%20Event.html">Draw Events</a><br>
+	<img src="../../images/Event_Other.png" align="middle" align="left"><a href="Other%20Event.html">Other Events</a><br>
+	<img src="../../images/Event_Draw.png" align="middle" align="left"><a href="Draw%20Event.html">Draw Events</a><br>
 	<img src="../../images/Event_Web.png" align="middle" align="left"><a href="Async%20Event.html">Asynchronous Events</a><br>
 </p>
 

@@ -53,7 +53,7 @@ This section is where you should set up the details of your app like it's name a
 			On devices that can be rotated, such as tablets, the game won't be redrawn for orientations that aren't specified with this property - for example, the game won't rotate if the device is rotated to a 
 			Portrait orientation but the property specifies only Landscape and Landscape-flipped orientations. On devices that <i>can't</i> be rotated, a game might be shown in that device's default orientation, and the 
 			game's preferred orientation will be ignored, however, your game's preferred rotation <i>will</i> be honored on devices on which a rotation lock has been activated. These orientation preference choices 
-			apply to both the splash screen and the game itself everytime a new instance is launched.</li><br>
+			apply to both the splash screen and the game itself every time a new instance is launched.</li><br>
 		
 		<li><b>Splash Screen</b>: This is the screen that will be shown when you start your game, and it cannot be larger than 620 x 300 pixels. Click on the <b>Update</b> button to change it, then select set the <b>Background Color</b> for it.</li><br>
 		
@@ -71,7 +71,7 @@ This section is where you should set up the details of your app like it's name a
 				
 				<dd>- The next image is the store icon, which is a 50x50 pixel image.<br><br>
 				
-				<dd>- The final small icon is the logo image that appears next to the "badge" to identify the app. This image must be monochromatic, of type <tt>*.png</tt>, and measure 24 x 24 pixels.<br><br>
+				<dd>- The final small icon is the logo image that appears next to the App name in the seatch bar and other areas of the UI.<br><br>
 			</dl>
 		
 		<li><b>Foreground Text</b>: Sets the value of the text color relative to the background color on the app’s tile in Windows. The value is either “Light” or “Dark”.</li><br>
@@ -94,7 +94,8 @@ structured and to prevent having texture pages larger (or smaller) than necessar
 <br>
 <br>
 
-You can also set the way that your game should react to being scaled in any way (either by dragging the window borders or by fullscreening it). This can either be <b>keep Aspect Ratio</b> or <b>Stretch</b>.
+You can also set the way that your game should react to being scaled in any way (either by dragging the window borders or by fullscreening it). This can either be <b>keep Aspect Ratio</b> or <b>Stretch</b>. 
+There are also extra options for <b>Native</b> Windows 8 apps, which permit you switch on or off interpolation and v-sync for the game.
 <br>
 <br>
 
@@ -134,7 +135,7 @@ can associate a blank project with the Windows Store app and simply copy the gen
 		Back : <a href="index.html">Global Game Settings</a>
 	</div>
 	<div style="float:right">
-		Next : <a href="Tizen	Tab.html">The Tizen Tab</a>
+		Next : <a href="Tizen%20Tab.html">The Tizen Tab</a>
 	</div>
 </div>
 </p>

@@ -1,10 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-<head>
-	<title>Editing Sprites</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=9" />
-	<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
-</head>
+	<head>
+		<title>Editing Sprites</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
 <body>
 
 <h1>Editing Sprites</h1>
@@ -41,7 +41,7 @@ This bar at the bottom gives you some very basic information about the current s
 <ul>
 	<li><b>Frames : </b>The number of sub-images that the sprite has.<br></li>
 	<li><b>Size : </b>The width and height of the sprite.<br></li>
-	<li><b>Memory : </b>This is the approximate vram that the finished sprite will take up on any device, and is calculated as : <code>image_number * width * height * 4</code>.<br></li>
+	<li><b>Memory : </b>This is the approximate vRam that the finished sprite will take up on any device, and is calculated as : <code>image_number * width * height * 4</code>.<br></li>
 </ul>
 </blockquote>
 
@@ -80,7 +80,7 @@ The toolbar contains a number buttons that allow you to change and manipulate th
 	<br>
 	<br>
 	This will open the standard window for loading a sprite (see <a href="../../000_Using%20GameMaker/005_Loading%20Sprites.html">Defining Sprites</a>) , which is then <i>added</i> to the current sprite. If the dimensions of the 
-	new sprite do not match up with the the current sprite you will be shown these options : 
+	new sprite do not match up with the current sprite you will be shown these options : 
 	
 	<img class="center" src="Insert_Image_Options.png">
 	
@@ -175,6 +175,15 @@ The toolbar contains a number buttons that allow you to change and manipulate th
 	This button will open the <i>GameMaker:Studio</i> <b>Image Editor</b> where you can edit on a per-pixel basis the selected sub-image. More on this in the section <a href="Editing%20Subimages.html">Editing Sub-images</a>.
 	<br>
 	<br>
+<div style="float:left">
+<img src="PreMultiply.png"></div><br>
+	<b>Pre-Multiply Alpha</b>
+	<br>
+	<br>
+	This button will pre-multiply the alpha of all sub-images of the chosen sprite. This is normally only necessary when dealing with surfaces and drawing sprites to them, or for some specific special effects and for 
+	normal sprite use you should not see any noticeable difference between the normal sprite and the pre-multiplied one. Note that this <b>cannot be undone</b>.</a>.
+	<br>
+	<br>
 </blockquote>
 
 <h3>Menus</h3>
@@ -184,7 +193,7 @@ For information relating to the different menu options, please refer to the foll
 <br>
 <a href="Edit%20Menus/File%20Menu.html">File Menu</a><br>
 <a href="Edit%20Menus/Edit%20Menu.html">Edit Menu</a><br>
-<a href="Edit%20Menus/Transform%20Menu.html">Trasform Menu</a><br>
+<a href="Edit%20Menus/Transform%20Menu.html">Transform Menu</a><br>
 <a href="Edit%20Menus/Images%20Menu.html">Images Menu</a><br>
 <a href="Edit%20Menus/Animation%20Menu.html">Animation Menu</a><br>
 
@@ -208,4 +217,6 @@ For information relating to the different menu options, please refer to the foll
 
 <!-- KEYWORDS
 sprite editor
+pre-multiply
+pre-multiplied alpha
 -->

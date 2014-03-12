@@ -40,8 +40,8 @@ This function will send off to the cloud for data, which will then trigger the a
 
 <blockquote>
 <ol>
-	<li><b>"status": </b>This holds the status code, where a negative value denotes an error, a description of which will be contained in the “errorString”. A value of 0 (or a positive value) indicates 
-	a success(see below for exact values), and the “resultString” will contain the returned data or a success message.</li><br>
+	<li><b>"status": </b>This holds the status code, where a negative value denotes an error, a description of which will be contained in the ï¿½errorStringï¿½. A value of 0 (or a positive value) indicates 
+	a success(see below for exact values), and the ï¿½resultStringï¿½ will contain the returned data or a success message.</li><br>
 	
 	<li><b>"id": </b>The ID which was returned from the called function. If you fire off a series of <tt>cloud_</tt> requests then you need to know which one you are getting the reply to, and so you would 
 	use this value to compare to the value you stored when you originally sent the request to find the right one.</li><br>
@@ -87,7 +87,7 @@ The exact meaning of the returned "status" map entry is exmplained in the follow
 
 <h3>Extended Example :</h3>
 <p>
-This function would be called in an event like the <a href="../../000_Using%20GameMaker/Events/other%20Event.html">Game Start Event</a> or in an object that is placed in the first room of your game, 
+This function would be called in an event like the <a href="../../000_Using%20GameMaker/Events/Other%20Event.html">Game Start Event</a> or in an object that is placed in the first room of your game, 
 with the idea being that you check the current data blob from the cloud server to see if it is up to date or not.
 <p class="code">
 cloud_check = cloud_synchronise();

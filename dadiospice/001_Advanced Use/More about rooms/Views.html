@@ -39,7 +39,7 @@ should be <b>Visible when the room starts</b> by checking the appropriate box, a
 
 <h3>The View and The View Port</h3>
 <p>
-A view is defined by two different sets of values, the view itself and the port on the screen. This can sometimes cause confusion so lets explain this a bit before explaining how we define each of them :
+A view is defined by two different sets of values, the view itself and the port on the screen. This can sometimes cause confusion so let's explain this a bit before explaining how we define each of them :
 <ul>
 	<li>The view is considered as an area of the <i>room</i> that we are going to display on the screen.
 	<li>The port is considered as the area of the <i>display</i> where we are going to draw the view.
@@ -52,8 +52,8 @@ the view and display more or less of the room in the same area of the screen.
 <br>
 The view is always defined as a rectangular area in the room, where you specify the position of the top-left corner, the width and the height of this area. Then you must specify where this area is shown in the window on the screen 
 by defining the view port, where again you specify the position of the top-left corner and the size (note that anything other than 0,0 for the top left corner can give strange results). You can have more than one port and they 
-can overlap, in which case they are drawn in the indicated order one on top of the other. Please realise that the over all screen area is always defined as a a rectangular area, so your ports, even when offset, will form a rectangle, with 
-any empty spaces being filled in by the window color, meaning that in these circumstances you should always have <b>Clear Background with Window Color</b> checked or else you will get odd atrefacts drawn in the spaces between 
+can overlap, in which case they are drawn in the indicated order one on top of the other. Please realise that the over all screen area is always defined as a rectangular area, so your ports, even when offset, will form a rectangle, with 
+any empty spaces being filled in by the window color, meaning that in these circumstances you should always have <b>Clear Background with Window Color</b> checked or else you will get odd artefacts drawn in the spaces between 
 ports.
 <br>
 <br>
@@ -74,7 +74,7 @@ example, 64, will mean that the view will not start to move and follow the chara
 
 Finally you can indicate the speed at which the view moves when the character has reached the buffer zone, and this has a default value of -1. This default value is basically "instantaneous" and means that the moment the 
 follow object is outside the Hbor or Vbor buffer zone, the view will skip to its current position. Now, this is not always what you want and so you can set the vertical and horizontal scrolling speed for the view by setting the 
-values for <b>Hsp</b> and <b>Vsp</b> to smething other than -1. Note that a value of 0 will cause the view to not move at all, and any other positive value is how many pixels it will move in any step, so setting the <b>Hsp</b> 
+values for <b>Hsp</b> and <b>Vsp</b> to something other than -1. Note that a value of 0 will cause the view to not move at all, and any other positive value is how many pixels it will move in any step, so setting the <b>Hsp</b> 
 to 5 will have the view follow the object at 5 pixels per step horizontally.
 <br>
 <br>

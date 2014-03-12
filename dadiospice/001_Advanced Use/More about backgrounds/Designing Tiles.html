@@ -14,7 +14,7 @@
 
 <p>
 Tiles are a graphic resource which can add color, detail and interest to your games with very little processing overhead due to the fact that they have very few "built in" properties and do not generally interact with any instances 
-once placed in a room. However, they do need to be prepared carefully before use, especially if your target device is something other then the PC or Mac, or if you are planning on scaling them up or down. Lets start by looking at 
+once placed in a room. However, they do need to be prepared carefully before use, especially if your target device is something other then the PC or Mac, or if you are planning on scaling them up or down. Let's start by looking at 
 an image of a typical problem that can occur when using tiles in your game and then having the view scaled :
 
 <img class="center" src="TileError_Image.png"></img>
@@ -22,7 +22,7 @@ an image of a typical problem that can occur when using tiles in your game and t
 The image above shows the kind of visuals you can expect to get if you zoom in on a typical tileset that has been created with a space between tiles. Now, most tiles are like this, with spaces around the edges, or they are placed all 
 together in one solid image where the tiles actually touch each other, but unfortunately when zooming out and (in particular) in, this can cause some really nasty issues to solve if your not sure why its happening in the first place. It's 
 also one of these bugs that you'll be convinced is <i>GameMaker:Studio's</i> fault, after all... if it allows you to scale the tiles, it should work! Well, it does work, but only if you know how the graphics are drawn and prepare your 
-resources accordingly. Lets take a look at a couple of normal tile sets that you might create :
+resources accordingly. Let's take a look at a couple of normal tile sets that you might create :
 
 <img class="center" src="TileSet_Image.png"></img>
 
@@ -40,7 +40,7 @@ centers. So, if we are "just" moving into a new screen pixel then, because the g
 <img class="center" src="UV_Map_Small_Image.png"></img>
 
 Shown above is a tile being draw scaled down into 6 screen pixels, and this shows that when you overlap a little into the next screen pixel, the graphics driver has to make a choice to either drop that texel, or it try and fill it with 
-what it thinks is a valid texel. Lets just say that in this case it decides to draw the overlapped texel into the screen pixel, and, since it's now clearly outside our tile it gets this pixel from either the next tile, or the little bits of space 
+what it thinks is a valid texel. Let's just say that in this case it decides to draw the overlapped texel into the screen pixel, and, since it's now clearly outside our tile it gets this pixel from either the next tile, or the little bits of space 
 you provided around the tiles, which means that when it shrinks you'll get cracks between tiles "glitches" in how they are drawn and this is where a lot of confusion arises...  Each graphics driver and device actually does this in 
 its own way, meaning that the results can be unpredictable and look terrible... but if you're careful and  plan ahead you can work around it. 
 <br>

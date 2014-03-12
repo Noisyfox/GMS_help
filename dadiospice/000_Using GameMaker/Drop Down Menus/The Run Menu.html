@@ -24,9 +24,16 @@ This menu has options that relate to testing your games and to setting up config
 	<ul>
 		<li><b>Run Normally : </b>This will cause the game to run as if it was finished and installed on the target platform for play testing.</li>
 		<br>
+		
 		<li><b>Run in Debug Mode: </b>This option runs the game in debug mode. For a windows game, this opens another window (apart from the game window) with various debug options which you can see below:
 		<img class="center" src="Run_Menu_Debug_Image.png"></li>
-		For more information on debugging in <i>GameMaker:Studio</i>, please see the section <a href="../../001_Advanced%20Use/011_Debugging.html">Advanced Use - Debugging</a>.
+		For more information on debugging in <i>GameMaker:Studio</i>, please see the section <a href="../../001_Advanced%20Use/011_Debugging.html">Advanced Use - Debugging</a>.</li>
+		<br>
+		<br>
+		
+		<li><b>Clean Build: </b>This is the same as clicking the green "broom" icon in the main IDE toolbar, and will clear the asset compiler cache. This is important as it prevents any "stale" assets from 
+		corrupting your game. It is not necessary to clear the cache every build, but should you be getting any odd errors or corrupted sprites, it should be done, and it should </i>always</i> be done 
+		before building any final packages for deployment.</a>.
 		<br>
 	</ul>
 </blockquote>
@@ -38,7 +45,7 @@ The following two options are limited to the <a href="../../000_Using%20GameMake
 		<li><b>Configuration Manager : </b>Selecting this will open the Configurations Manager.</li>
 		<br>
 		<li><b>Configurations: </b>Placing the mouse over this option will open up a sub-menu with a list of all the currently available configurations from which you can select one to use (this shows the same 
-		options as the configurations tab in the <a href="../004_the%20Graphical%20User%20Interface.html">main GUI</a>.</li>
+		options as the configurations tab in the <a href="../004_The%20Graphical%20User%20Interface.html">main GUI</a>.</li>
 		<br>
 	</ul>
 </blockquote>
@@ -77,4 +84,6 @@ run
 play
 test
 debug test
+clean build
+asset compiler cache
 --> 

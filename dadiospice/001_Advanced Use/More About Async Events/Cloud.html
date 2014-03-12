@@ -22,7 +22,7 @@ and is stored in the special variable <b>async_load</b> (please see the individu
 	<li><b>"status": </b>This holds the status code, where a negative value denotes an error, a description of which will be contained in the “errorString”. A value of 0 (or a positive value) indicates 
 	a success(see below for exact values), and the “resultString” will contain the returned data or a success message.</li><br>
 	
-	<li><b>"id": </b>The ID which was returned from the called function. If you fire off a series of <tt>cloud_</tt> requests then you need to know which one you are getting the reply to, and so you would 
+	<li><b>"id": </b>The id which was returned from the called function. If you fire off a series of <tt>cloud_</tt> requests then you need to know which one you are getting the reply to, and so you would 
 	use this value to compare to the value you stored when you originally sent the request to find the right one.</li><br>
 	
 	<li><b>"description": </b>The description of the last uploaded file.</li><br>

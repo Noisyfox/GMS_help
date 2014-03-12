@@ -27,7 +27,7 @@ errors within your game. This name is what you will use in all code and actions 
 
 <h3>Width and Height</h3>
 <p>
-As you can imagine, a room has to have a size and this is defined by the values that you input for its width and height, in pixels. Be careful here, as it's very easy to say "I'm making a space game, lets have a room 100,000 x 100,000 
+As you can imagine, a room has to have a size and this is defined by the values that you input for its width and height, in pixels. Be careful here, as it's very easy to say "I'm making a space game, let's have a room 100,000 x 100,000 
 pixels!" That is a recipe for disaster! <i>GameMaker:Studio</i> is powerful, but there are limits, and so when dealing with rooms it's much better to keep them as small as possible and then optimise your game around them, 
 especially if you are making a game for mobile devices or the web.
 <br>
@@ -59,6 +59,16 @@ If you click on this button you will open a code editor. This editor allows you 
 start event.
 <p>
 
+<h3>Instance Order</h3>
+<p>
+<img class="center" src="../../images/form_Instance_Order.png">
+
+On very rare occaisions you may require your game to create one object before any of the others, but not wish to use an alarm due to dependencies between instances. In that event, you can use this button to open up 
+the Instance Order window. Here you can select individual instances and move them up (or down) the creation order list, meaning that those at the top are those which are created first, while those at the bottom will be 
+created last. Note that if the create event of the instance actually creates further instances, <i>those instances will be next in the order for running their code</i>, before going to the next instance set in this list.
+<br>
+<br>
+
 <br>
 </p>
 <p>
@@ -86,4 +96,7 @@ room persistence
 room creation code
 frames per second
 SurfaceRT canvas limit
+instance creation order
+ordering instances
+Instance Order
 -->

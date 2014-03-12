@@ -31,12 +31,20 @@ At the top of the window you can set the <i>File options</i> for your HTML5 game
 		override the standard loading bar when selected.</li><br>
 		
 		<li>selecting a new name for the folder where your HTML5 game files will be stored (default is "html5game").</li>
+		
+		<li>selecting a new name other than the default "index.html".</li>
+		
 	</ul>
 </blockquote>
 <p>
 Once that is done you will need to give your game a <b>favicon</b> and a <b>Splash Screen</b>. The icons should be authored as an *.ico file and can be 16x16, 32x32, 48x48, or 64x64 pixels 
 in size, and 8-bit, 24-bit, or 32-bit in color depth. The splash screen should be the size of the canvas that is going to hold your game and will override any loading bars if you tick the <b>Use Splash 
 Screen</b> option (ie: you can have a loading bar, OR a splash screen, but not both). Smaller or larger images are permitted but will be scaled to fit.
+<br>
+<br>
+
+You also have the further option to prepend the <tt>*.js</tt> output with any extra javascript necessary for your game. For example, a Chrome Store app may require that you add 
+<tt>window.localStorage = undefined;</tt> to the output JS, for which you would use this option.
 <br>
 <br>
 
@@ -49,7 +57,7 @@ Here you can change the following details related to how your game will be displ
 to make sure that they have the desired effect).
 <blockquote>
 	<ul>
-		<li><b>Allow Switching To Fullscreen</b> - Checking this will allow the user to toggle the game from windowed to fullscreen mode using <i>&lt;CNTRL&gt; + &lt;CMD&gt; + &lt;F&gt;</i> on Mac and 
+		<li><b>Allow Switching To Fullscreen</b> - Checking this will allow the user to toggle the game from windowed to fullscreen mode using <i>&lt;CTRL&gt; + &lt;CMD&gt; + &lt;F&gt;</i> on Mac and 
 		<i>F10</i> on Windows.</li><br>	
 
 		<li><b>Interpolate Colors Between Pixels</b> - Turns on interpolation, which basically "smooths" pixels. for crisp pixel graphics, it should be off, but if you have nice alpha blends and smoothed 
