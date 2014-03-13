@@ -1,10 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 	<head>
 		<title>keyboard_clear</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=9" />
 		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
-	</head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
 <body>
 
 <h1>keyboard_clear</h1>
@@ -42,10 +42,11 @@
 <h3>Description</h3>
 <p>
 With this function you can clear the current keyboard state, which essentially means that if the key is being held down, it will no longer be recognised until it is released again (which won't generate a 
-<a href="keyboard_key_released.html"><tt>keyboard_key_released</tt></a> event either on this occasion) and pressed again.
+<a href="keyboard_key_release.html"><tt>keyboard_key_released</tt></a> event either on this occasion) and pressed again.
 <br>
 <br>
 
+注：官方文档这处应该写错了，正确的应该是keyboard_key_release。
 <p>
 <br>
 </p>
@@ -68,8 +69,7 @@ The above code clears the state of the spacebar.
 		Back : <a href="index.html">Keyboard Input</a>
 	</div>
 	<div style="float:right">
-		Next : <a href="keyboard_key_pressed.html">keyboard_key_pressed</a>
-	</div>
+		Next : <a href="keyboard_key_press.html">keyboard_key_press</a>	</div>
 </div>
 </p>
 
