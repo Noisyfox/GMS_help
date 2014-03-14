@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>gm_BaseTexture</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>gm_BaseTexture</h1>
+
+<h2>Returns the 2D sampler texture of the current object.</h2>
+
+<h3>Syntax :</h3>
+<p class="code">gm_BaseTexture;</p>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>Matrix index
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3>Description</h3>
+<p>
+This is a 2D sampler constant that returns the texture of the current object, as set by <i>GameMaker:Studio</i>. So it would be the current sprite, surface or texture that would normally be used when drawing without 
+the shader being called.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<h3>Example :</h3>
+<p class="code">
+vec4 texelColour = texture2D(gm_BaseTexture, v_vTexcoord);
+</p>
+<p>
+The above example is a snippet of GLSL code using the <tt>gm_BaseTexture</tt> constant.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back : <a href="index.html">Shader Constants</a>
+	</div>
+	<div style="float:right">
+		Next : <a href="gm_Matrices.html">gm_Matrices</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+gm_BaseTexture
+-->

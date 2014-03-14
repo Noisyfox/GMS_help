@@ -1,0 +1,135 @@
+﻿<div  style="padding:10px;background-color:rgb(36,36,36);">
+<menu>
+<ul>
+<li><a class="hide" href="../index.html">首页</a>
+<!--[if lte IE 6]>
+<a href="../menu/index.html">DEMOS
+<table><tr><td>
+<![endif]-->   
+</li>
+<li><a class="hide" href="../dadiospice/000_Using%20GameMaker/index.html">GMS基础知识</a>
+<!--[if lte IE 6]>
+<a href="index.html">MENUS
+<table><tr><td>
+<![endif]-->
+    <ul>
+    <li><a href="../dadiospice/000_Using%20GameMaker/000_Introduction.html" title="Introduction">介绍</a></li>
+    <li><a href="..//dadiospice/000_Using%20GameMaker/001_Installation.html" title="Installation and System Requirements">安装</a></li>
+    <li><a href="../dadiospice/000_Using%20GameMaker/002_Activation.html" title="Activating GameMaker:Studio">激活</a></li>
+    <li><a href="../dadiospice/000_Using%20GameMaker/003_GameMaker%20Studio%20Overview.html" title="GameMaker:Studio Overview">概述</a></li>
+    <li><a href="../dadiospice/000_Using%20GameMaker/004_The%20Graphical%20User%20Interface.html" title="The Graphical User Interface">绘制用户界面</a></li>
+    <li><a href="../dadiospice/000_Using%20GameMaker/005_Loading%20Sprites.html" title="Loading Sprites">载入精灵</a></li>
+    <li><a href="../dadiospice/000_Using%20GameMaker/006_Sounds%20and%20music.html" title="Sounds And Music">声音与音乐</a></li>
+	<li><a href="../dadiospice/000_Using%20GameMaker/006_Sounds%20and%20music.html" title="Sounds And Music">声音与音乐</a></li>
+	<li><a href="../dadiospice/000_Using%20GameMaker/006_Sounds%20and%20music.html" title="Sounds And Music">声音与音乐</a></li>
+	<li><a href="../dadiospice/000_Using%20GameMaker/006_Sounds%20and%20music.html" title="Sounds And Music">声音与音乐</a></li>
+    </ul>
+<!--[if lte IE 6]>
+</td></tr></table>
+</a>
+<![endif]-->
+</li>
+<li><a class="hide" href="../dadiospice/001_Advanced%20Use/index.html">GMS高级应用</a>
+<!--[if lte IE 6]>
+<a href="../layouts/index.html">LAYOUTS
+<table><tr><td>
+<![endif]-->
+    <ul>
+    <li><a href="../layouts/bodyfix.html" title="Cross browser fixed layout">Fixed 1</a></li>
+    <li><a href="../layouts/body2.html" title="Cross browser fixed layout">Fixed 2</a></li>
+    <li><a href="../layouts/body4.html" title="Cross browser fixed layout">Fixed 3</a></li>
+    <li><a href="../layouts/body5.html" title="Cross browser fixed layout">Fixed 4</a></li>
+    <li><a href="../layouts/minimum.html" title="A simple minimum width layout">minimum width</a></li>
+    </ul>
+<!--[if lte IE 6]>
+</td></tr></table>
+</a>
+<![endif]-->
+</li>
+<li><a class="hide" href="../dadiospice/002_Reference/index.html">GMS参考</a>
+<!--[if lte IE 6]>
+<a href="../boxes/index.html">BOXES
+<table><tr><td>
+<![endif]-->
+    <ul>
+    <li><a href="spies.html" title="a coded list of spies">spies menu</a></li>
+    <li><a href="vertical.html" title="a horizontal vertical menu">vertical menu</a></li>
+    <li><a href="expand.html" title="an enlarging unordered list">enlarging list</a></li>
+    <li><a href="enlarge.html" title="an unordered list with link images">link images</a></li>
+    <li><a href="cross.html" title="non-rectangular links">non-rectangular</a></li>
+    <li><a href="jigsaw.html" title="jigsaw links">jigsaw links</a></li>
+    <li><a href="circles.html" title="circular links">circular links</a></li>
+    </ul>
+<!--[if lte IE 6]>
+</td></tr></table>
+</a>
+<![endif]-->
+</li>
+<li><a class="hide" href="../index.html">贡献者</a>
+<!--[if lte IE 6]>
+<a href="../mozilla/index.html">MOZILLA
+<table><tr><td>
+<![endif]-->
+    <ul>
+    <li><a href="../mozilla/dropdown.html" title="A drop down menu">drop down menu</a></li>
+    <li><a href="../mozilla/cascade.html" title="A cascading menu">cascading menu</a></li>
+    <li><a href="../mozilla/content.html" title="Using content:">content:</a></li>
+    <li><a href="../mozilla/moxbox.html" title=":hover applied to a div">mozzie box</a></li>
+    <li><a href="../mozilla/rainbow.html" title="I can build a rainbow">rainbow box</a></li>
+    <li><a href="../mozilla/snooker.html" title="Snooker cue">snooker cue</a></li>
+    <li><a href="../mozilla/target.html" title="Target Practise">target practise</a></li>
+    </ul>
+<!--[if lte IE 6]>
+</td></tr></table>
+</a>
+<![endif]-->
+</li>
+<li><a class="hide" href="../index.html">教程</a>
+<!--[if lte IE 6]>
+<a href="../ie/index.html">EXPLORER
+<table><tr><td>
+<![endif]-->
+    <ul class="right_side">
+    <li><a href="../ie/exampleone.html" title="Example one">example one</a></li>
+    <li><a href="../ie/weft.html" title="Weft fonts">weft fonts</a></li>
+    <li><a href="../ie/exampletwo.html" title="Vertical align">vertical align</a></li>
+    </ul>
+<!--[if lte IE 6]>
+</td></tr></table>
+</a>
+<![endif]-->
+</li>
+<li><a class="hide" href="../index.html">备注</a>
+<!--[if lte IE 6]>
+<a href="../opacity/index.html">OPACITY
+<table><tr><td>
+<![endif]-->
+    <ul class="right_side">
+    <li><a href="../opacity/colours.html" title="colour wheel">opaque colours</a></li>
+    <li><a href="../opacity/picturemenu.html" title="a menu using opacity">opaque menu</a></li>
+    <li><a href="../opacity/png.html" title="partial opacity">partial opacity</a></li>
+    <li><a href="../opacity/png2.html" title="partial opacity II">partial opacity II</a></li>
+    <li><a class="hide" href="../menu/hover_click.html" title="Hover/click with no active/focus borders">HOVER/CLICK</a>
+  <!--[if lte IE 6]>
+  <a class="sub" href="../menu/hover_click.html" title="Hover/click with no active/focus borders">HOVER/CLICK
+  <table><tr><td>
+  <![endif]-->
+        <ul class="left_side">
+            <li><a href="http://www.2ky.cn" title="Styling forms">styled form</a></li>
+            <li><a href="../menu/nodots.html" title="Removing active/focus borders">active focus</a></li>
+            <li><a href="../menu/hover_click.html" title="Hover/click with no active/focus borders">hover/click</a></li>
+        </ul>
+    <!--[if lte IE 6]>
+    </td></tr></table>
+  </a>
+  <![endif]-->
+    </li>
+    </ul>
+<!--[if lte IE 6]>
+</td></tr></table>
+</a>
+<![endif]-->
+</li>
+</ul>
+</menu>
+</div>

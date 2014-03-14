@@ -9,7 +9,6 @@ body{
 }
 
 
-
 /* Paragraphs padding:0em 0.85em 0; */
 h1 { margin:0; font-size: 1.5em; padding:0 0.8em; line-height:2em; background: #33531C; border-radius:0.5em 0.5em 0 0; }
 h2 { margin:0; font-size: 1.0em; padding:0.5em; line-height:2em; background:#1C1C1C; font-weight:bold; font-style:italic;}
@@ -41,7 +40,7 @@ table{
   cellmargin:0px;
   border-collapse:separate;
   border-spacing:2px;
-  background:#4b722f;
+  background:#353535;
   width:100%;
   border-bottom: #141414 4px solid;
   border-right: #141414 4px solid;
@@ -50,7 +49,7 @@ table{
 table.compat{
 	table-layout: fixed;
 	text-align:center;
-	background:#4b722f;
+	background:#353535;
 
 }
 
@@ -145,3 +144,26 @@ border-bottom:1em solid #1C1C1C;
 a{ text-decoration:none;}
 a:link, a:visited{ color:#75B73D; }
 a:hover, a:active{ color:#D0E27F; }
+
+menu {font-family: arial, sans-serif; width:750px; height:30px;padding:0px; position:relative; margin:2px auto; font-size:11px; background:#242424; position:relative;}
+menu ul {padding:0px; margin:0; list-style-type: none;}
+menu ul li {float:left; border-left:1px solid #eee; width:106px;list-style-type: none;}
+menu ul li a:link {color:#0B7A0C;font-weight:bold;}
+menu ul li a:visited{ color:#0B7A0C; }
+menu ul li a, .menu ul li a:visited {display:block; float:left; width:101px; text-decoration:none; padding:0 0 0 5px; height:30px; line-height:30px; color:#000; background:#c9c9a7 url(../../graphics/drop.gif) bottom right no-repeat;}
+menu ul li ul {display: none;}
+/* specific to non IE browsers */
+menu ul li:hover a {color:#fff; background:#888888;}
+menu ul li:hover ul {display:block; position:absolute; width:749px; top:30px; left:0; background:#B8C9A6; color:#fff;}
+menu ul li:hover ul.right_side li {float:right; border:0; border-left:1px solid #eee;list-style-type: none;}
+menu ul li:hover ul.left_side li {float:left; border:0; border-left:1px solid #eee;list-style-type: none;}
+menu ul li:hover ul li a.hide {background:#0B7B0D url(../../graphics/drop2.gif) bottom right no-repeat; color:#fff;}
+menu ul li:hover ul li:hover a.hide {background:#B8C9A6; color:#fff;}
+menu ul li:hover ul li ul {display: none;}
+menu ul li:hover ul li a {display:block; background:##B8C9A6; color:#fff;}
+menu ul li:hover ul li a:hover {background:#75B73D; color:#000;}
+menu ul li:hover ul li:hover ul {display:block; position:absolute; left:0; top:30px; color:#000; background:#B8C9A6;}
+menu ul li:hover ul.right li {float:right;list-style-type: none;}
+menu ul li:hover ul li:hover a.hide {background:#75B73D; color:#000;}
+menu ul li:hover ul li:hover ul li a {background:#75B73D; color:#000;}
+menu ul li:hover ul li:hover ul li a:hover {background:#75B73D; color:#fff;}
