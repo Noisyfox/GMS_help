@@ -1,13 +1,13 @@
 ﻿<div  style="padding:10px;background-color:rgb(36,36,36);">
 <menu>
 <ul>
-<li><a class="hide" href="../index.html">首页</a>
+<li><a class="hide" href="#">首页</a>
 <!--[if lte IE 6]>
 <a href="../menu/index.html">DEMOS
 <table><tr><td>
 <![endif]-->   
 </li>
-<li><a class="hide" href="../dadiospice/000_Using%20GameMaker/index.html">GMS基础知识</a>
+<li><a class="hide" href="#">GMS基础知识</a>
 <!--[if lte IE 6]>
 <a href="index.html">MENUS
 <table><tr><td>
@@ -29,7 +29,7 @@
 </a>
 <![endif]-->
 </li>
-<li><a class="hide" href="../dadiospice/001_Advanced%20Use/index.html">GMS高级应用</a>
+<li><a class="hide" href="#">GMS高级应用</a>
 <!--[if lte IE 6]>
 <a href="../layouts/index.html">LAYOUTS
 <table><tr><td>
@@ -46,7 +46,7 @@
 </a>
 <![endif]-->
 </li>
-<li><a class="hide" href="../dadiospice/002_Reference/index.html">GMS参考</a>
+<li><a class="hide" href="#">GMS参考</a>
 <!--[if lte IE 6]>
 <a href="../boxes/index.html">BOXES
 <table><tr><td>
@@ -65,7 +65,7 @@
 </a>
 <![endif]-->
 </li>
-<li><a class="hide" href="../index.html">贡献者</a>
+<li><a class="hide" href="#">贡献者</a>
 <!--[if lte IE 6]>
 <a href="../mozilla/index.html">MOZILLA
 <table><tr><td>
@@ -84,7 +84,7 @@
 </a>
 <![endif]-->
 </li>
-<li><a class="hide" href="../index.html">教程</a>
+<li><a class="hide" href="#">教程</a>
 <!--[if lte IE 6]>
 <a href="../ie/index.html">EXPLORER
 <table><tr><td>
@@ -99,7 +99,7 @@
 </a>
 <![endif]-->
 </li>
-<li><a class="hide" href="../index.html">备注</a>
+<li><a class="hide" href="#">备注</a>
 <!--[if lte IE 6]>
 <a href="../opacity/index.html">OPACITY
 <table><tr><td>
