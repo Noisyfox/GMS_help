@@ -1,4 +1,5 @@
 
+/* Body 解决两个滚动条的问题 */
 html, body
 {
 	padding: 0;
@@ -170,6 +171,9 @@ pre
 	display: none;	
 }
 
+
+/* 内容控制 */
+
 #content,
 .content
 {
@@ -189,6 +193,9 @@ pre
 	height: 40px;
 	padding: 0 50px;
 }
+
+/* 头部按钮 */
+
 #header a,
 .header a
 {

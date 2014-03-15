@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>gm_Matrices</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>gm_Matrices</h1>
+
+<h2>Returns the index to one of the available transform matrices.</h2>
+
+<h3>Syntax :</h3>
+<p class="code">gm_Matrices[matrix constant];</p>
+
+<p>
+<br>
+</p>
+  
+<p>
+<b>Returns: </b>Matrix index
+</p>
+
+ <p>
+<br>
+</p>
+
+<h3>Description</h3>
+<p>
+This array constant returns a transform matrix and is one of the available pre-defined uniforms that <i>GameMaker:studio</i> creates for you to use within the shader code editor. The array index is chosen from 
+one of the following index constants:
+<blockquote>
+	<ol><tt>
+		<li><a href="MATRIX_VIEW.html">MATRIX_VIEW</a><br>
+		<li><a href="MATRIX_PROJECTION.html">MATRIX_PROJECTION</a><br>
+		<li><a href="MATRIX_WORLD.html">MATRIX_WORLD</a><br>
+		<li><a href="MATRIX_WORLD_VIEW.html">MATRIX_WORLD_VIEW</a><br>
+		<li><a href="MATRIX_WORLD_VIEW_PROJECTION.html">MATRIX_WORLD_VIEW_PROJECTION</a><br>
+	</tt></ol>
+</blockquote>
+<p>
+
+<p>
+<br>
+</p>
+
+<h3>Example :</h3>
+<p class="code">
+vec4 pos = gm_Matrices[MATRIX_VIEW] * objectspacepos;
+</p>
+<p>
+The above example is a snippet of GLSL code using the <tt>gm_Matrices</tt> array constant.
+</p>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back : <a href="index.html">Shader Constants</a>
+	</div>
+	<div style="float:right">
+		Next : <a href="MATRIX_VIEW.html">MATRIX_VIEW</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5></body>
+</html>
+
+<!-- KEYWORDS
+gm_Matrices
+-->
