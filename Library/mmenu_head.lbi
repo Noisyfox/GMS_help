@@ -1,4 +1,4 @@
-<link type="text/css" rel="stylesheet" href="../src/css/jquery.mmenu.css" />
+﻿<link type="text/css" rel="stylesheet" href="../src/css/jquery.mmenu.css" />
 <link type="text/css" rel="stylesheet" href="../src/css/extensions/jquery.mmenu.themes.css" />
 
 <style type="text/css">
@@ -30,10 +30,10 @@ classes: 'mm-light'
 <div id="page">
 			<div id="header">
 				<a href="#menu"></a>
-				�����߰����򿪵����˵�
+				点击左边按键打开导航菜单
 			</div>
 			<div id="content">
 			
-<!-- ע�⣺ʹ�ô˿��ļ���ҳ�桰/body��ǰ���������mmenu_body_down.lbi 2 -->
+<!-- 注意：使用此库文件的页面“/body”前面必须配置mmenu_body_down.lbi 2 -->
 
 
