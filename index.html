@@ -5,8 +5,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9">
 <link rel="stylesheet" href="dadiospice/style.css" type="text/css" media="screen" title="style" charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width; initial-scale=1.0; minimum-scale=1.0; maximum-scale=2.0"/>
-<meta name="MobileOptimized" content="240"/>
 <style type="text/css">
 <!--
 h2 {
@@ -14,150 +12,49 @@ h2 {
 }
 -->
 </style>
-
-
-
 </head>
 
-<body bgcolor="#FFFFFF">
-<div style="height: 99px; background-color: rgb(40, 40, 40);"> <img class="center" src="dadiospice/GM_Banner.png"> </div>
+<body bgcolor="#FFFFFF"><!-- #BeginLibraryItem "/Library/mmenu_head.lbi" -->
+<link type="text/css" rel="stylesheet" href="src/css/jquery.mmenu.css" />
+<link type="text/css" rel="stylesheet" href="src/css/extensions/jquery.mmenu.themes.css" />
+
+<style type="text/css">
+@media all and (min-width: 900px) {
+html, body {
+height: 100%;
+
+}
+#menu {
+background: #eee;
+}
+#page {
+border-left: 1px solid #ccc;
+min-height: 100%;
+}
+}
+</style>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="src/js/jquery.mmenu.js"></script>
+<script type="text/javascript">
+$(function() {
+$('nav#menu').mmenu({
+classes: 'mm-light'
+});
+});
+</script>
 
 
-<!-- #BeginLibraryItem "/Library/menu.lbi" --><div  style="padding:10px;background-color:rgb(36,36,36);">
-<menu>
-<ul>
-<li><a class="hide" href="#">首页</a>
-<!--[if lte IE 6]>
-<a href="../menu/index.html">DEMOS
-<table><tr><td>
-<![endif]-->   
-</li>
-<li><a class="hide" href="#">GMS基础知识</a>
-<!--[if lte IE 6]>
-<a href="index.html">MENUS
-<table><tr><td>
-<![endif]-->
-    <ul>
-    <li><a href="dadiospice/000_Using GameMaker/000_Introduction.html" title="Introduction">介绍</a></li>
-    <li><a href="dadiospice/000_Using GameMaker/001_Installation.html" title="Installation and System Requirements">安装</a></li>
-    <li><a href="dadiospice/000_Using GameMaker/002_Activation.html" title="Activating GameMaker:Studio">激活</a></li>
-    <li><a href="dadiospice/000_Using GameMaker/003_GameMaker Studio Overview.html" title="GameMaker:Studio Overview">概述</a></li>
-    <li><a href="dadiospice/000_Using GameMaker/004_The Graphical User Interface.html" title="The Graphical User Interface">绘制用户界面</a></li>
-    <li><a href="dadiospice/000_Using GameMaker/005_Loading Sprites.html" title="Loading Sprites">载入精灵</a></li>
-    <li><a href="dadiospice/000_Using GameMaker/006_Sounds and music.html" title="Sounds And Music">声音与音乐</a></li>
-	<li><a href="dadiospice/000_Using GameMaker/006_Sounds and music.html" title="Sounds And Music">声音与音乐</a></li>
-	<li><a href="dadiospice/000_Using GameMaker/006_Sounds and music.html" title="Sounds And Music">声音与音乐</a></li>
-	<li><a href="dadiospice/000_Using GameMaker/006_Sounds and music.html" title="Sounds And Music">声音与音乐</a></li>
-    </ul>
-<!--[if lte IE 6]>
-</td></tr></table>
-</a>
-<![endif]-->
-</li>
-<li><a class="hide" href="#">GMS高级应用</a>
-<!--[if lte IE 6]>
-<a href="../layouts/index.html">LAYOUTS
-<table><tr><td>
-<![endif]-->
-    <ul>
-    <li><a href="layouts/bodyfix.html" title="Cross browser fixed layout">Fixed 1</a></li>
-    <li><a href="layouts/body2.html" title="Cross browser fixed layout">Fixed 2</a></li>
-    <li><a href="layouts/body4.html" title="Cross browser fixed layout">Fixed 3</a></li>
-    <li><a href="layouts/body5.html" title="Cross browser fixed layout">Fixed 4</a></li>
-    <li><a href="layouts/minimum.html" title="A simple minimum width layout">minimum width</a></li>
-    </ul>
-<!--[if lte IE 6]>
-</td></tr></table>
-</a>
-<![endif]-->
-</li>
-<li><a class="hide" href="#">GMS参考</a>
-<!--[if lte IE 6]>
-<a href="../boxes/index.html">BOXES
-<table><tr><td>
-<![endif]-->
-    <ul>
-    <li><a href="Library/spies.html" title="a coded list of spies">spies menu</a></li>
-    <li><a href="Library/vertical.html" title="a horizontal vertical menu">vertical menu</a></li>
-    <li><a href="Library/expand.html" title="an enlarging unordered list">enlarging list</a></li>
-    <li><a href="Library/enlarge.html" title="an unordered list with link images">link images</a></li>
-    <li><a href="Library/cross.html" title="non-rectangular links">non-rectangular</a></li>
-    <li><a href="Library/jigsaw.html" title="jigsaw links">jigsaw links</a></li>
-    <li><a href="Library/circles.html" title="circular links">circular links</a></li>
-    </ul>
-<!--[if lte IE 6]>
-</td></tr></table>
-</a>
-<![endif]-->
-</li>
-<li><a class="hide" href="index.html">贡献者</a>
-<!--[if lte IE 6]>
-<a href="../mozilla/index.html">MOZILLA
-<table><tr><td>
-<![endif]-->
-    <ul>
-    <li><a href="mozilla/dropdown.html" title="A drop down menu">drop down menu</a></li>
-    <li><a href="mozilla/cascade.html" title="A cascading menu">cascading menu</a></li>
-    <li><a href="mozilla/content.html" title="Using content:">content:</a></li>
-    <li><a href="mozilla/moxbox.html" title=":hover applied to a div">mozzie box</a></li>
-    <li><a href="mozilla/rainbow.html" title="I can build a rainbow">rainbow box</a></li>
-    <li><a href="mozilla/snooker.html" title="Snooker cue">snooker cue</a></li>
-    <li><a href="mozilla/target.html" title="Target Practise">target practise</a></li>
-    </ul>
-<!--[if lte IE 6]>
-</td></tr></table>
-</a>
-<![endif]-->
-</li>
-<li><a class="hide" href="index.html">教程</a>
-<!--[if lte IE 6]>
-<a href="../ie/index.html">EXPLORER
-<table><tr><td>
-<![endif]-->
-    <ul class="right_side">
-    <li><a href="ie/exampleone.html" title="Example one">example one</a></li>
-    <li><a href="ie/weft.html" title="Weft fonts">weft fonts</a></li>
-    <li><a href="ie/exampletwo.html" title="Vertical align">vertical align</a></li>
-    </ul>
-<!--[if lte IE 6]>
-</td></tr></table>
-</a>
-<![endif]-->
-</li>
-<li><a class="hide" href="index.html">备注</a>
-<!--[if lte IE 6]>
-<a href="../opacity/index.html">OPACITY
-<table><tr><td>
-<![endif]-->
-    <ul class="right_side">
-    <li><a href="opacity/colours.html" title="colour wheel">opaque colours</a></li>
-    <li><a href="opacity/picturemenu.html" title="a menu using opacity">opaque menu</a></li>
-    <li><a href="opacity/png.html" title="partial opacity">partial opacity</a></li>
-    <li><a href="opacity/png2.html" title="partial opacity II">partial opacity II</a></li>
-    <li><a class="hide" href="menu/hover_click.html" title="Hover/click with no active/focus borders">HOVER/CLICK</a>
-  <!--[if lte IE 6]>
-  <a class="sub" href="../menu/hover_click.html" title="Hover/click with no active/focus borders">HOVER/CLICK
-  <table><tr><td>
-  <![endif]-->
-        <ul class="left_side">
-            <li><a href="http://www.2ky.cn" title="Styling forms">styled form</a></li>
-            <li><a href="menu/nodots.html" title="Removing active/focus borders">active focus</a></li>
-            <li><a href="menu/hover_click.html" title="Hover/click with no active/focus borders">hover/click</a></li>
-        </ul>
-    <!--[if lte IE 6]>
-    </td></tr></table>
-  </a>
-  <![endif]-->
-    </li>
-    </ul>
-<!--[if lte IE 6]>
-</td></tr></table>
-</a>
-<![endif]-->
-</li>
-</ul>
-</menu>
-</div><!-- #EndLibraryItem --><p>&nbsp;</p>
+
+<!-- #EndLibraryItem --><!-- #BeginLibraryItem "/Library/mmenu_body_up.lbi" --><div id="page">
+			<div id="header">
+				<a href="#menu"></a>
+				点击左边按键打开导航菜单
+			</div>
+			<div id="content">
+
+			<!-- #EndLibraryItem --><div style="height: 99px; background-color: rgb(40, 40, 40);"> <img class="center" src="dadiospice/GM_Banner.png"> </div>
+<p>&nbsp;</p>
 <p>&#27426;&#36814;&#27983;&#35272; <i>GameMaker:Studio</i> &#29992;&#25143;&#25163;&#20876;! &#36825;&#20010;&#25991;&#26723;&#20998;&#20026;&#19977;&#20010;&#37096;&#20998;&#65292;&#20027;&#35201;&#35762;&#35299; <i>GameMaker:Studio</i> &#30028;&#38754;&#21644;&#22522;&#30784;&#20351;&#29992;&#65292;&#26356;&#39640;&#32423;&#30340;&#29992;&#27861;&#21644;&#21151;&#33021;&#38656;&#35201;&#20351;&#29992; <b>GML</b> (the <i>GameMaker Language</i>). &#26032;&#29992;&#25143;&#24517;&#39035;&#20174; <b>Using GameMaker:Studio</b> &#37096;&#20998;&#24320;&#22987;&#65292;&#36825;&#37096;&#20998;&#21253;&#25324;&#25152;&#26377;&#24555;&#36895;&#20837;&#38376;&#30693;&#35782;, &#26366;&#32463;&#20351;&#29992;&#36807; <i>GameMaker</i> &#30340;&#29992;&#25143;&#21487;&#20197;&#36339;&#36807;&#36825;&#37096;&#20998;&#65292;&#35831;&#26597;&#30475; <b>Advanced Use</b> &#37096;&#20998;&#20851;&#20110;&#26032;&#29256;&#26412;&#26356;&#26032;&#20869;&#23481;&#12290;&#19981;&#35770;&#24744;&#30340;&#25216;&#26415;&#27700;&#24179;&#22914;&#20309;&#65292;&#25105;&#20204;&#37117;&#24076;&#26395;&#36825;&#26412;&#35828;&#26126;&#33021;&#22815;&#24110;&#21161;&#24744;&#26377;&#25928;&#30340;&#20351;&#29992; <i>GameMaker:Studio</i> &#24182;&#19988;&#23454;&#29616;&#24744;&#30340;&#26790;&#65281;</p>
 <!--en up-->
 <div class="block" id="smallContent" style="display:block ; background-color: rgb(36, 36, 36);">
@@ -367,8 +264,6 @@ new in this version. Whatever your skill level, we hope that this manual helps y
   </blockquote>
 </blockquote>
 
-
-
 <h3>-贡献者 Versions by-</h3>
 <p>&#30887;&#32511;&#30340;&#28246;<br>
   <font size="3"><a href="http://tieba.baidu.com/f?kw=gmstudio">&#30334;&#24230;&#36148;&#21543; gmstudio</a></font><br>
@@ -376,7 +271,21 @@ new in this version. Whatever your skill level, we hope that this manual helps y
 <h5>Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
 <!-- KEYWORDS
 contents
--->
-</body>
+--><!-- #BeginLibraryItem "/Library/mmenu_body_down.lbi" -->
+</div>
+			<nav id="menu">
+				<ul>
+					<li class="Selected" ><a href="demo/index.html">Introduction</a></li>
+					<li ><a href="demo/horizontal-submenus.html">Horizontal submenus example</a></li>
+					<li><a href="demo/vertical-submenus.html">Vertical submenus example</a></li>
+					<li><a href="demo/photos.html">Photos in sliding panels</a></li>
+					<li><a href="demo/positions.html">Positioning the menu</a></li>
+					<li><a href="demo/colors.html">Coloring the menu</a></li>
+					<li><a href="demo/advanced.html">Advanced example</a></li>
+					<li><a href="demo/onepage.html">One page scrolling example</a></li>
+					<li><a href="demo/jqmobile/index.html">jQuery Mobile example</a></li>
+				</ul>
+			</nav>
+</div><!-- #EndLibraryItem --></body>
 </html>
 

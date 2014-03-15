@@ -1,0 +1,32 @@
+<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+<link type="text/css" rel="stylesheet" href="../src/css/jquery.mmenu.css" />
+<link type="text/css" rel="stylesheet" href="../src/css/extensions/jquery.mmenu.themes.css" />
+
+<style type="text/css">
+@media all and (min-width: 900px) {
+html, body {
+height: 100%;
+
+}
+#menu {
+background: #eee;
+}
+#page {
+border-left: 1px solid #ccc;
+min-height: 100%;
+}
+}
+</style>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="../src/js/jquery.mmenu.js"></script>
+<script type="text/javascript">
+$(function() {
+$('nav#menu').mmenu({
+classes: 'mm-light'
+});
+});
+</script>
+
+
+
