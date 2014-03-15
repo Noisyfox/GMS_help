@@ -2,8 +2,8 @@
 </div>
 			<nav id="menu">
 				<ul>
-					<li class="Selected" ><a href="../demo/index.html">Introduction</a></li>
-					<li ><a href="../demo/horizontal-submenus.html">Horizontal submenus example</a></li>
+					<li ><a href="../dadiospice/000_Using%20GameMaker/index.html">GameMaker:Studio 使用</a></li>
+					<li ><a href="../dadiospice/001_Advanced%20Use/Extensions/index.html">Advanced Use高级使用</a></li>
 					<li><a href="../demo/vertical-submenus.html">Vertical submenus example</a></li>
 					<li><a href="../demo/photos.html">Photos in sliding panels</a></li>
 					<li><a href="../demo/positions.html">Positioning the menu</a></li>
@@ -14,3 +14,4 @@
 				</ul>
 			</nav>
 </div>
+<!-- 注意2 -->

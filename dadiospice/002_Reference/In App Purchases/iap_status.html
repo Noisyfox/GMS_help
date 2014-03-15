@@ -4,10 +4,47 @@
 		<title>iap_status</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=9" />
 		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
-	</head>
-<body>
+	<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" /></head>
+<body><!-- #BeginLibraryItem "/Library/mmenu_head.lbi" --><link type="text/css" rel="stylesheet" href="../../../src/css/jquery.mmenu.css" />
+<link type="text/css" rel="stylesheet" href="../../../src/css/extensions/jquery.mmenu.themes.css" />
 
-<h1>iap_status</h1>
+<style type="text/css">
+@media all and (min-width: 900px) {
+html, body {
+height: 100%;
+
+}
+#menu {
+background: #eee;
+}
+#page {
+border-left: 1px solid #ccc;
+min-height: 100%;
+}
+}
+</style>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="../../../src/js/jquery.mmenu.js"></script>
+<script type="text/javascript">
+$(function() {
+$('nav#menu').mmenu({
+classes: 'mm-light'
+});
+});
+</script>
+
+<div id="page">
+			<div id="header">
+				<a href="#menu"></a>
+				µã»÷×ó±ß°´¼ü´ò¿ªµ¼º½²Ëµ¥
+			</div>
+			<div id="content">
+			
+<!-- ×¢Òâ£ºÊ¹ÓÃ´Ë¿âÎÄ¼þµÄÒ³Ãæ¡°/body¡±Ç°Ãæ±ØÐëÅäÖÃmmenu_body_down.lbi 2 -->
+
+
+<!-- #EndLibraryItem --><h1>iap_status</h1>
   
 <h2>Allows you to track the status of the in app purchasing system.</h2>
 
@@ -30,7 +67,7 @@ This function allows you you to track the status of the <i>GameMaker:Studio</i> 
 
 <blockquote>
 	<ul>
-		<li>“<b>status</b>” - This key indicates the overall status of the in app purchase system and can return the following values:
+		<li>?b>status</b>?- This key indicates the overall status of the in app purchase system and can return the following values:
 			<blockquote>
 				<ol>
 					<li>"Not Enabled"
@@ -42,8 +79,8 @@ This function allows you you to track the status of the <i>GameMaker:Studio</i> 
 					<li>"Failed" (This means that the attempt to retrieve the content_url went wrong.)
 				</ol>
 			</blockquote>
-		<li>“<b>purchases</b>” - If the set of available purchases has been retrieved correctly, the value of this key is a ds_list with each entry being a ds_map containing all the information for each available 
-		purchase (see <a href="iap_activate.html"><tt>iap_activate</tt></a> for more information on these maps) as well as an additional key entry marked "status". This extra  “status” key hold a value that 
+		<li>?b>purchases</b>?- If the set of available purchases has been retrieved correctly, the value of this key is a ds_list with each entry being a ds_map containing all the information for each available 
+		purchase (see <a href="iap_activate.html"><tt>iap_activate</tt></a> for more information on these maps) as well as an additional key entry marked "status". This extra  “status?key hold a value that 
 		indicates the purchase status of the item, and can be one of the following:
 			<blockquote>
 				<ol>
@@ -88,7 +125,23 @@ The above code requests the purchase status for the current game.
 </div>
 </p>
 
-<h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5></body>
+<h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5><!-- #BeginLibraryItem "/Library/mmenu_body_down.lbi" -->
+</div>
+			<nav id="menu">
+				<ul>
+					<li ><a href="../../000_Using GameMaker/index.html">GameMaker:Studio Ê¹ÓÃ</a></li>
+					<li ><a href="../../001_Advanced Use/Extensions/index.html">Advanced Use¸ß¼¶Ê¹ÓÃ</a></li>
+					<li><a href="../../../demo/vertical-submenus.html">Vertical submenus example</a></li>
+					<li><a href="../../../demo/photos.html">Photos in sliding panels</a></li>
+					<li><a href="../../../demo/positions.html">Positioning the menu</a></li>
+					<li><a href="../../../demo/colors.html">Coloring the menu</a></li>
+					<li><a href="../../../demo/advanced.html">Advanced example</a></li>
+					<li><a href="../../../demo/onepage.html">One page scrolling example</a></li>
+					<li><a href="../../../demo/jqmobile/index.html">jQuery Mobile example</a></li>
+				</ul>
+			</nav>
+</div>
+<!-- ×¢Òâ2 --><!-- #EndLibraryItem --></body>
 </html>
 
 <!--KEYWORDS

@@ -27,5 +27,13 @@ classes: 'mm-light'
 });
 </script>
 
+<div id="page">
+			<div id="header">
+				<a href="#menu"></a>
+				点击左边按键打开导航菜单
+			</div>
+			<div id="content">
+			
+<!-- 注意：使用此库文件的页面“/body”前面必须配置mmenu_body_down.lbi 2 -->
 
 
