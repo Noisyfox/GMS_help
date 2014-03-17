@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="dadiospice/style.css" type="text/css" media="screen" title="style" charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+
 <style type="text/css">
 <!--
 h2 {
@@ -15,9 +16,11 @@ h2 {
 </style>
 </head>
 
-<body bgcolor="#FFFFFF"><!-- #BeginLibraryItem "/Library/mmenu_head.lbi" --><link type="text/css" rel="stylesheet" href="src/css/jquery.mmenu.css" />
-<link type="text/css" rel="stylesheet" href="src/css/extensions/jquery.mmenu.themes.css" />
+<body bgcolor="#FFFFFF"><!-- #BeginLibraryItem "/Library/mmenu_head.lbi" -->
 <link type="text/css" rel="stylesheet" href="src/css/jquery.mmenu.all.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script type="text/javascript" src="src/js/jquery.mmenu.min.all_old.js"></script>
+
 <style type="text/css">
 @media all and (min-width: 900px) {
 html, body {
@@ -36,9 +39,7 @@ min-height: 100%
 
 <!-- scripts links  -->
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-<script type="text/javascript" src="src/js/jquery.mmenu.js"></script>
-<script type="text/javascript" src="src/js/jquery.mmenu.min.all.js"></script>
+
 
 <!-- main  -->
 
@@ -115,6 +116,25 @@ min-height: 100%
 </script>
 
 <!-- the page header part  -->
+
+<script type="text/javascript">
+   $(function() {
+      $("my-menu").mmenu({
+         labels: {
+            fixed: true
+         }
+      });
+   });
+</script>
+
+
+<script type="text/javascript">
+   $(function() {
+      $("my-menu").mmenu({
+         searchfield: true
+      });
+   });
+</script>
 
 <div id="page">
 			<div id="header" >
@@ -343,92 +363,104 @@ new in this version. Whatever your skill level, we hope that this manual helps y
   <font size="3"><i>YoYo Games Ltd.(GMS1.1)</i></font></p>
 <h5>Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
 
-<!-- for tips up -->
-<!-- #BeginLibraryItem "/Library/tipsForMain.lbi" -->
+<!-- for tips up --><!-- #BeginLibraryItem "/Library/tipsForMain.lbi" -->
+
 <div>
-  <h1>Tooltips</h1>
-  <p><em>&quot;Wait, what? Tooltips?<br />
-    I thought the <a href="#tooltip-1">jQuery.mmenu plugin</a> was about creating menus?&quot;</em></p>
-  <p>You're right, it is. But check out what wikipedia has to say about <a href="#tooltip-2">tooltips on mobile devices</a>. That can't be good... Right?<br />
-    That's why the jQuery.mmenu plugin offers a really good alternative to using tooltips (check it out by clicking the links on this page).</p>
-  <br />
-  <h2>Popups</h2>
-  <p>As a bonus, it also works really well as a replacement for <a href="#popup-1">popups</a>.<br />
-    And if you're up for it, you can even create your own <a href="#popup-2">notification center</a>!</p>
+	<h1>Tooltips</h1>
+	<p><em>&quot;Wait, what? Tooltips?<br />
+		I thought the <a href="#tooltip-1">jQuery.mmenu plugin</a> was about creating menus?&quot;</em></p>
+	<p>You're right, it is. But check out what wikipedia has to say about <a href="#tooltip-2">tooltips on mobile devices</a>. That can't be good... Right?<br />
+		That's why the jQuery.mmenu plugin offers a really good alternative to using tooltips (check it out by clicking the links on this page).</p>
+
+	<br />
+
+	<h2>Popups</h2>
+	<p>As a bonus, it also works really well as a replacement for <a href="#popup-1">popups</a>.<br />
+		And if you're up for it, you can even create your own <a href="#popup-2">notification center</a>!</p>
 </div>
+
 <div id="tooltips">
-  <div id="tooltip-1" class="tip">
-    <div>
-      <div> <a href="#page">x</a>
-          <h4>jQuery.mmenu plugin</h4>
-        <p><em>The jQuery.mmenu (Mobile Menu) plugin makes it really easy to create slick, app look-alike sliding menus for you mobile or responsive website.</em></p>
-        <p>Website:<br />
-            <a href="http://mmenu.frebsite.nl" target="_blank">http://mmenu.frebsite.nl</a></p>
-      </div>
-    </div>
-  </div>
-  <div id="tooltip-2" class="tip">
-    <div>
-      <div > <a href="#page">x</a>
-          <h4>Tooltips on mobile devices</h4>
-        <p><em>The tooltip is a common graphical user interface element used in conjunction with a cursor. The user hovers the cursor over an item, without clicking it, and a tooltip may appear.<br />
-                <strong>Tooltips do not appear on mobile operating systems, since there is no cursor.</strong></em></p>
-        <p>Wikipedia<br />
-          http://en.wikipedia.org/wiki/Tooltip</p>
-      </div>
-    </div>
-  </div>
-  <div id="popup-1" class="tip">
-    <div>
-      <div> <a href="#page">x</a>
-          <h4>Popups and modal windows</h4>
-        <p><em>In user interface design, a modal window is a child window that requires users to interact with it before they can return to operating the parent application, thus preventing the workflow on the application main window.</em></p>
-        <p>Wikipedia<br />
-          http://en.wikipedia.org/wiki/Modal_window</p>
-      </div>
-    </div>
-  </div>
-  <div id="popup-2" class="tip">
-    <div>
-      <div > <a href="#page">x</a>
-          <h4 >Notification center</h4>
-        <p ><em>Notification Center is a feature in iOS and OS X that provides an overview of alerts from applications. It displays notifications until the user completes an associated action, rather than requiring instant resolution.</em></p>
-        <p>Wikipedia<br />
-          http://en.wikipedia.org/wiki/Notification_Center</p>
-      </div>
-    </div>
-  </div>
+	<div id="tooltip-1" class="tip">
+		<div>
+			<div>
+				<a href="#page">x</a>
+				<h4>jQuery.mmenu plugin</h4>
+				<p><em>The jQuery.mmenu (Mobile Menu) plugin makes it really easy to create slick, app look-alike sliding menus for you mobile or responsive website.</em></p>
+				<p>Website:<br />
+					<a href="http://mmenu.frebsite.nl" target="_blank">http://mmenu.frebsite.nl</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div id="tooltip-2" class="tip">
+		<div>
+			<div>
+				<a href="#page">x</a>
+				<h4>Tooltips on mobile devices</h4>
+				<p><em>The tooltip is a common graphical user interface element used in conjunction with a cursor. The user hovers the cursor over an item, without clicking it, and a tooltip may appear.<br />
+					<strong>Tooltips do not appear on mobile operating systems, since there is no cursor.</strong></em></p>
+				<p>Wikipedia<br />
+					http://en.wikipedia.org/wiki/Tooltip</p>
+			</div>
+		</div>
+	</div>
+
+	<div id="popup-1" class="tip">
+		<div>
+			<div>
+				<a href="#page">x</a>
+				<h4>Popups and modal windows</h4>
+				<p><em>In user interface design, a modal window is a child window that requires users to interact with it before they can return to operating the parent application, thus preventing the workflow on the application main window.</em></p>
+				<p>Wikipedia<br />
+					http://en.wikipedia.org/wiki/Modal_window</p>
+			</div>
+		</div>
+	</div>
+
+	<div id="popup-2" class="tip">
+		<div>
+			<div>
+				<a href="#page">x</a>
+				<h4>Notification center</h4>
+				<p><em>Notification Center is a feature in iOS and OS X that provides an overview of alerts from applications. It displays notifications until the user completes an associated action, rather than requiring instant resolution.</em></p>
+				<p>Wikipedia<br />
+					http://en.wikipedia.org/wiki/Notification_Center</p>
+			</div>
+		</div>
+	</div>
 </div>
-<!-- #EndLibraryItem -->
-<!-- for tips down-->
-<!-- one page section up -->
-<!-- #BeginLibraryItem "/Library/onepageForMain.lbi" -->
+			
+<!-- #EndLibraryItem --><!-- for tips down-->
+<!-- one page section up --><!-- #BeginLibraryItem "/Library/onepageForMain.lbi" -->
+
+
 <div id="intro">
-  <p>This is the <strong>one page scrolling example</strong> demo page.<br />
-    Click the menu-button in the header to open the menu.</p>
-  <p>This page has a fixed header and a fixed footer.</p>
-  <p>The links in the menu link to a section on the same page, some small javascript makes the page scroll smoothly.</p>
+          <p>This is the <strong>one page scrolling example</strong> demo page.<br />
+            Click the menu-button in the header to open the menu.</p>
+  
+          <p>This page has a fixed header and a fixed footer.</p>
+          <p>The links in the menu link to a section on the same page, some small javascript makes the page scroll smoothly.</p>
 </div>
 <div id="first">
-  <p><strong>This is the first section.</strong><br />
-    <a href="#menu">Open the menu</a></p>
+          <p><strong>This is the first section.</strong><br />
+            <a href="#menu">Open the menu</a></p>
 </div>
 <div id="second">
-  <p><strong>This is the second section.</strong><br />
-    <a href="#menu">Open the menu</a></p>
+          <p><strong>This is the second section.</strong><br />
+            <a href="#menu">Open the menu</a></p>
 </div>
 <div id="third">
-  <p><strong>This is the third section.</strong><br />
-    <a href="#menu">Open the menu</a></p>
+          <p><strong>This is the third section.</strong><br />
+            <a href="#menu">Open the menu</a></p>
 </div>
-<!-- #EndLibraryItem -->
-<!-- one page section down -->
+<!-- #EndLibraryItem --><!-- one page section down -->
 <!-- KEYWORDS
 contents
 --><!-- #BeginLibraryItem "/Library/mmenu_body_down.lbi" -->
 </div>
 <div id="footer">
-				Fixed footer :-)</div>
+				Fixed footer :-)
+</div>
 
 			<nav id="menu">
 				<ul>
@@ -463,8 +495,6 @@ contents
 				</ul>
 			</nav>
 </div>
-<!-- 注意1 --><!-- #EndLibraryItem -->
-
-</body>
+<!-- 注意1 --><!-- #EndLibraryItem --></body>
 </html>
 

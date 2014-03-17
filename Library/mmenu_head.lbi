@@ -1,6 +1,7 @@
 ﻿
 <link type="text/css" rel="stylesheet" href="../src/css/jquery.mmenu.all.css" />
-<link type="text/css" rel="stylesheet" href="../src/css/extensions/jquery.mmenu.themes.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script type="text/javascript" src="../src/js/jquery.mmenu.min.all_old.js"></script>
 
 <style type="text/css">
 @media all and (min-width: 900px) {
@@ -20,8 +21,7 @@ min-height: 100%
 
 <!-- scripts links  -->
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-<script type="text/javascript" src="../src/js/jquery.mmenu.min.all.js"></script>
+
 
 <!-- main  -->
 
@@ -98,6 +98,25 @@ min-height: 100%
 </script>
 
 <!-- the page header part  -->
+
+<script type="text/javascript">
+   $(function() {
+      $("my-menu").mmenu({
+         labels: {
+            fixed: true
+         }
+      });
+   });
+</script>
+
+
+<script type="text/javascript">
+   $(function() {
+      $("my-menu").mmenu({
+         searchfield: true
+      });
+   });
+</script>
 
 <div id="page">
 			<div id="header" >

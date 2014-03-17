@@ -6,9 +6,11 @@
 	
 		
 		<meta http-equiv="X-UA-Compatible" content="IE=9">
-		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"><meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" /></head><body><!-- #BeginLibraryItem "/Library/mmenu_head.lbi" --><link type="text/css" rel="stylesheet" href="../../../src/css/jquery.mmenu.css" />
-<link type="text/css" rel="stylesheet" href="../../../src/css/extensions/jquery.mmenu.themes.css" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"><meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" /></head><body><!-- #BeginLibraryItem "/Library/mmenu_head.lbi" -->
 <link type="text/css" rel="stylesheet" href="../../../src/css/jquery.mmenu.all.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script type="text/javascript" src="../../../src/js/jquery.mmenu.min.all_old.js"></script>
+
 <style type="text/css">
 @media all and (min-width: 900px) {
 html, body {
@@ -27,9 +29,7 @@ min-height: 100%
 
 <!-- scripts links  -->
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-<script type="text/javascript" src="../../../src/js/jquery.mmenu.js"></script>
-<script type="text/javascript" src="../../../src/js/jquery.mmenu.min.all.js"></script>
+
 
 <!-- main  -->
 
@@ -106,6 +106,25 @@ min-height: 100%
 </script>
 
 <!-- the page header part  -->
+
+<script type="text/javascript">
+   $(function() {
+      $("my-menu").mmenu({
+         labels: {
+            fixed: true
+         }
+      });
+   });
+</script>
+
+
+<script type="text/javascript">
+   $(function() {
+      $("my-menu").mmenu({
+         searchfield: true
+      });
+   });
+</script>
 
 <div id="page">
 			<div id="header" >
