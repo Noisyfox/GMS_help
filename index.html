@@ -17,7 +17,7 @@ h2 {
 
 <body bgcolor="#FFFFFF"><!-- #BeginLibraryItem "/Library/mmenu_head.lbi" --><link type="text/css" rel="stylesheet" href="src/css/jquery.mmenu.css" />
 <link type="text/css" rel="stylesheet" href="src/css/extensions/jquery.mmenu.themes.css" />
-
+<link type="text/css" rel="stylesheet" href="src/css/jquery.mmenu.all.css" />
 <style type="text/css">
 @media all and (min-width: 900px) {
 html, body {
@@ -34,24 +34,96 @@ min-height: 100%
 }
 </style>
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<!-- scripts links  -->
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 <script type="text/javascript" src="src/js/jquery.mmenu.js"></script>
+<script type="text/javascript" src="src/js/jquery.mmenu.min.all.js"></script>
+
+<!-- main  -->
+
 <script type="text/javascript">
-$(function() {
-$('nav#menu').mmenu({
-classes: 'mm-light'
-})
-})
+	$(function() {
+		$('nav#menu').mmenu({
+			classes: 'mm-light'
+				});
+			});
 </script>
 
+<!-- for one page  -->
+
+<script type="text/javascript">
+	$(function() {
+		var $menu = $('nav#menu'),
+			$html = $('html, body');
+
+		$menu.mmenu();
+		$menu.find( 'li > a' ).on(
+			'click',
+			function()
+			{
+				var href = $(this).attr( 'href' );
+
+				//	if the clicked link is linked to an anchor, scroll the page to that anchor 
+				if ( href.slice( 0, 1 ) == '#' )
+				{
+					$menu.one(
+						'closed.mm',
+						function()
+						{
+							setTimeout(
+								function()
+								{
+									$html.animate({
+										scrollTop: $( href ).offset().top
+									});	
+								}, 10
+							);	
+						}
+					);						
+				}
+			}
+		);
+	});
+</script>
+	
+<!-- for the tips  -->
+	
+<script type="text/javascript">
+			$(function() {
+				var options = {
+					classes			: 'mm-light',
+					modal			: true
+				};
+				
+				options.position = 'left';
+				options.zposition = 'next';
+				$('#tooltip-1').mmenu( options );
+				
+				options.position = 'right';
+				options.zposition = 'next';
+				$('#tooltip-2').mmenu( options );
+				
+				options.position = 'bottom';
+				options.zposition = 'front';
+				$('#popup-1').mmenu( options );
+
+				options.position = 'top';
+				options.zposition = 'front';
+				$('#popup-2').mmenu( options );
+			});
+</script>
+
+<!-- the page header part  -->
+
 <div id="page">
-			<div id="header">
+			<div id="header" >
 				<a href="#menu"></a>
 				&#x70B9;&#x51FB;&#x5DE6;&#x8FB9;&#x6309;&#x952E;&#x6253;&#x5F00;&#x5BFC;&#x822A;&#x83DC;&#x5355;
 			</div>
-			<div id="content">
+			<div id="content" >
 			
-<!-- 注意：使用此库文件的页面“/body”前面必须配置mmenu_body_down.lbi 2 -->
+<!-- for update files -->
 
 
 <!-- #EndLibraryItem --><div style="height: 99px; background-color: rgb(40, 40, 40);"> <img class="center" src="dadiospice/GM_Banner.png"> </div>
@@ -271,22 +343,128 @@ new in this version. Whatever your skill level, we hope that this manual helps y
   <font size="3"><i>YoYo Games Ltd.(GMS1.1)</i></font></p>
 <h5>Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
 
+<!-- for tips up -->
+<!-- #BeginLibraryItem "/Library/tipsForMain.lbi" -->
+<div>
+  <h1>Tooltips</h1>
+  <p><em>&quot;Wait, what? Tooltips?<br />
+    I thought the <a href="#tooltip-1">jQuery.mmenu plugin</a> was about creating menus?&quot;</em></p>
+  <p>You're right, it is. But check out what wikipedia has to say about <a href="#tooltip-2">tooltips on mobile devices</a>. That can't be good... Right?<br />
+    That's why the jQuery.mmenu plugin offers a really good alternative to using tooltips (check it out by clicking the links on this page).</p>
+  <br />
+  <h2>Popups</h2>
+  <p>As a bonus, it also works really well as a replacement for <a href="#popup-1">popups</a>.<br />
+    And if you're up for it, you can even create your own <a href="#popup-2">notification center</a>!</p>
+</div>
+<div id="tooltips">
+  <div id="tooltip-1" class="tip">
+    <div>
+      <div> <a href="#page">x</a>
+          <h4>jQuery.mmenu plugin</h4>
+        <p><em>The jQuery.mmenu (Mobile Menu) plugin makes it really easy to create slick, app look-alike sliding menus for you mobile or responsive website.</em></p>
+        <p>Website:<br />
+            <a href="http://mmenu.frebsite.nl" target="_blank">http://mmenu.frebsite.nl</a></p>
+      </div>
+    </div>
+  </div>
+  <div id="tooltip-2" class="tip">
+    <div>
+      <div > <a href="#page">x</a>
+          <h4>Tooltips on mobile devices</h4>
+        <p><em>The tooltip is a common graphical user interface element used in conjunction with a cursor. The user hovers the cursor over an item, without clicking it, and a tooltip may appear.<br />
+                <strong>Tooltips do not appear on mobile operating systems, since there is no cursor.</strong></em></p>
+        <p>Wikipedia<br />
+          http://en.wikipedia.org/wiki/Tooltip</p>
+      </div>
+    </div>
+  </div>
+  <div id="popup-1" class="tip">
+    <div>
+      <div> <a href="#page">x</a>
+          <h4>Popups and modal windows</h4>
+        <p><em>In user interface design, a modal window is a child window that requires users to interact with it before they can return to operating the parent application, thus preventing the workflow on the application main window.</em></p>
+        <p>Wikipedia<br />
+          http://en.wikipedia.org/wiki/Modal_window</p>
+      </div>
+    </div>
+  </div>
+  <div id="popup-2" class="tip">
+    <div>
+      <div > <a href="#page">x</a>
+          <h4 >Notification center</h4>
+        <p ><em>Notification Center is a feature in iOS and OS X that provides an overview of alerts from applications. It displays notifications until the user completes an associated action, rather than requiring instant resolution.</em></p>
+        <p>Wikipedia<br />
+          http://en.wikipedia.org/wiki/Notification_Center</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- #EndLibraryItem -->
+<!-- for tips down-->
+<!-- one page section up -->
+<!-- #BeginLibraryItem "/Library/onepageForMain.lbi" -->
+<div id="intro">
+  <p>This is the <strong>one page scrolling example</strong> demo page.<br />
+    Click the menu-button in the header to open the menu.</p>
+  <p>This page has a fixed header and a fixed footer.</p>
+  <p>The links in the menu link to a section on the same page, some small javascript makes the page scroll smoothly.</p>
+</div>
+<div id="first">
+  <p><strong>This is the first section.</strong><br />
+    <a href="#menu">Open the menu</a></p>
+</div>
+<div id="second">
+  <p><strong>This is the second section.</strong><br />
+    <a href="#menu">Open the menu</a></p>
+</div>
+<div id="third">
+  <p><strong>This is the third section.</strong><br />
+    <a href="#menu">Open the menu</a></p>
+</div>
+<!-- #EndLibraryItem -->
+<!-- one page section down -->
 <!-- KEYWORDS
 contents
 --><!-- #BeginLibraryItem "/Library/mmenu_body_down.lbi" -->
 </div>
+<div id="footer">
+				Fixed footer :-)</div>
+
 			<nav id="menu">
 				<ul>
-					<li ><a href="index.html">GameMaker:Studio &#x624B;&#x518C;&#x9996;&#x9875;</a></li>
-					<li ><a href="dadiospice/000_Using GameMaker/index.html">GameMaker:Studio &#x4F7F;&#x7528;</a></li>
-					<li ><a href="dadiospice/001_Advanced Use/index.html">Advanced Use &#x9AD8;&#x7EA7;&#x4F7F;&#x7528;</a></li>
-					<li ><a href="dadiospice/002_Reference/index.html">Reference GML&#x53C2;&#x8003;&#x624B;&#x518C;</a></li>
-					<li ><a href="#">Tutorial examples and experience &#x5B9E;&#x4F8B;&#x6559;&#x7A0B;&#x53CA;&#x5FC3;&#x5F97;</a></li>
-					<li ><a href="#">Experimental project &#x5B9E;&#x9A8C;&#x9879;&#x76EE;</a></li>
-					<li ><a href="#">Setting &#x5E94;&#x7528;&#x8BBE;&#x7F6E;</a></li>					
+					<li ><a href="index.html">GameMaker:Studio 手册首页</a>
+						<ul>
+							<li><a href="#content">Introduction</a></li>
+							<li><a href="#first">First section</a></li>
+							<li><a href="#second">Second section</a></li>
+							<li><a href="#third">Third section</a></li>
+						</ul>
+					</li>
+					<li >
+						<a href="dadiospice/000_Using GameMaker/index.html">GameMaker:Studio 使用</a>
+						<ul>
+							<li><a href="#">First sub-item</a></li>
+							<li>
+								<a href="#">Second sub-item</a>
+								<ul>
+									<li><a href="#">First sub-sub-item</a></li>
+									<li><a href="#">Second sub-sub-item</a></li>
+									<li><a href="#">Third sub-sub-item</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Third sub-item</a></li>
+						</ul>
+					</li>
+					<li ><a href="dadiospice/001_Advanced Use/index.html">Advanced Use 高级使用</a></li>
+					<li ><a href="dadiospice/002_Reference/index.html">Reference GML参考手册</a></li>
+					<li ><a href="#">Examples and Experience 实例教程及心得</a></li>
+					<li ><a href="#">Experimental project 实验项目</a></li>
+					<li ><a href="#">Setting 应用设置</a></li>					
 				</ul>
 			</nav>
 </div>
-<!-- 注意2 --><!-- #EndLibraryItem --></body>
+<!-- 注意1 --><!-- #EndLibraryItem -->
+
+</body>
 </html>
 

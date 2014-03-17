@@ -1,5 +1,5 @@
 
-/* Body 解决两个滚动条的问题 */
+/* Body,To solve the problem of the two scroll bars */
 html, body
 {
 	padding: 0;
@@ -106,17 +106,6 @@ div.compat{
 	background:#242424;
 }
 
-
-
-/* Center Images */
-img.center{
-	display: block;
-	margin-left: auto;
-	margin-right: auto;	
-}
-img {max-width:100%;} 
-
-
 /* Justify page links*/
 div.clear{
 	clear:both;
@@ -125,6 +114,13 @@ div.clear{
 	padding:10px;
 }
 
+/* Center Images */
+img.center{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;	
+}
+img {max-width:100%;} 
 
 /* Lists*/
 ul{
@@ -172,7 +168,7 @@ pre
 }
 
 
-/* 内容控制 */
+/* for  the contents */
 
 #content,
 .content
@@ -192,9 +188,31 @@ pre
 	line-height: 40px;
 	height: 40px;
 	padding: 0 50px;
+	width: 100%;
+
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+		-o-box-sizing: border-box;
+		box-sizing: border-box;
 }
 
-/* 头部按钮 */
+/* for the fixed header 		
+
+#header,
+#footer
+	{
+		position: fixed;
+		width: 100%;
+
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+		-o-box-sizing: border-box;
+		box-sizing: border-box;
+	} 
+*/
+/* header */
 
 #header a,
 .header a
@@ -219,4 +237,89 @@ pre
 {
 	left: auto;
 	right: 10px;
+}
+
+/* for the one page */
+
+#intro,
+#first,
+#second,
+#third
+	{
+		height: 400px;
+	}
+#intro
+	{
+		padding-top: 40px;
+	}
+#first,
+#second,
+#third
+	{
+		border-top: 1px solid #ccc;
+		padding-top: 60px;
+	}			
+
+/* for the tips */
+
+.mm-menu
+{
+	background: #FFF;
+}
+.mm-menu, .mm-menu a
+{
+	color: #333;
+}
+
+.mm-page
+{
+	box-shadow: none !important;
+}
+
+.mm-menu h4
+{
+	font-size: 20px;
+}
+
+#tooltips
+{
+	display: none;
+}
+
+
+.mm-panel > div
+{
+	width: 85%;
+	max-width: 100%;
+	padding: 50px 20px;
+	margin: 0 auto;
+	
+}
+.mm-panel > div
+{
+	padding: 30px 0;
+}
+.tip a[href="#page"]
+{
+	border-radius: 10px;
+	background: #ccc;
+	color: #FFF;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	line-height: 20px;
+	display: block;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+
+/* make the tip page white */
+
+.tip * {
+background:#FFF
+
 }

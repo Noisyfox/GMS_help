@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" /></head>
 <body><!-- #BeginLibraryItem "/Library/mmenu_head.lbi" --><link type="text/css" rel="stylesheet" href="../../../../src/css/jquery.mmenu.css" />
 <link type="text/css" rel="stylesheet" href="../../../../src/css/extensions/jquery.mmenu.themes.css" />
-
+<link type="text/css" rel="stylesheet" href="../../../../src/css/jquery.mmenu.all.css" />
 <style type="text/css">
 @media all and (min-width: 900px) {
 html, body {
@@ -24,24 +24,96 @@ min-height: 100%
 }
 </style>
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<!-- scripts links  -->
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 <script type="text/javascript" src="../../../../src/js/jquery.mmenu.js"></script>
+<script type="text/javascript" src="../../../../src/js/jquery.mmenu.min.all.js"></script>
+
+<!-- main  -->
+
 <script type="text/javascript">
-$(function() {
-$('nav#menu').mmenu({
-classes: 'mm-light'
-})
-})
+	$(function() {
+		$('nav#menu').mmenu({
+			classes: 'mm-light'
+				});
+			});
 </script>
 
+<!-- for one page  -->
+
+<script type="text/javascript">
+	$(function() {
+		var $menu = $('nav#menu'),
+			$html = $('html, body');
+
+		$menu.mmenu();
+		$menu.find( 'li > a' ).on(
+			'click',
+			function()
+			{
+				var href = $(this).attr( 'href' );
+
+				//	if the clicked link is linked to an anchor, scroll the page to that anchor 
+				if ( href.slice( 0, 1 ) == '#' )
+				{
+					$menu.one(
+						'closed.mm',
+						function()
+						{
+							setTimeout(
+								function()
+								{
+									$html.animate({
+										scrollTop: $( href ).offset().top
+									});	
+								}, 10
+							);	
+						}
+					);						
+				}
+			}
+		);
+	});
+</script>
+	
+<!-- for the tips  -->
+	
+<script type="text/javascript">
+			$(function() {
+				var options = {
+					classes			: 'mm-light',
+					modal			: true
+				};
+				
+				options.position = 'left';
+				options.zposition = 'next';
+				$('#tooltip-1').mmenu( options );
+				
+				options.position = 'right';
+				options.zposition = 'next';
+				$('#tooltip-2').mmenu( options );
+				
+				options.position = 'bottom';
+				options.zposition = 'front';
+				$('#popup-1').mmenu( options );
+
+				options.position = 'top';
+				options.zposition = 'front';
+				$('#popup-2').mmenu( options );
+			});
+</script>
+
+<!-- the page header part  -->
+
 <div id="page">
-			<div id="header">
+			<div id="header" >
 				<a href="#menu"></a>
 				&#x70B9;&#x51FB;&#x5DE6;&#x8FB9;&#x6309;&#x952E;&#x6253;&#x5F00;&#x5BFC;&#x822A;&#x83DC;&#x5355;
 			</div>
-			<div id="content">
+			<div id="content" >
 			
-<!-- 注意：使用此库文件的页面“/body”前面必须配置mmenu_body_down.lbi 2 -->
+<!-- for update files -->
 
 
 <!-- #EndLibraryItem --><h1>collision_circle</h1>
