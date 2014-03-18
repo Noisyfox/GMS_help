@@ -241,23 +241,17 @@ pre
 
 /* for the one page */
 
-#intro,
-#first,
-#second,
-#third
-	{
-		height: 400px;
-	}
 #intro
 	{
-		padding-top: 40px;
+		padding-top: 0em;
 	}
 #first,
 #second,
-#third
+#third,
+#fourth
 	{
 		border-top: 1px solid #ccc;
-		padding-top: 60px;
+		padding-top: 0em;
 	}			
 
 /* for the tips */

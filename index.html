@@ -14,55 +14,15 @@ h2 {
 }
 -->
 </style>
-</head>
 
-<body bgcolor="#FFFFFF">
-
-<!-- #BeginLibraryItem "/Library/mmenu_head.lbi" -->		
+<!-- mmenu_head up -->
 
 		<link type="text/css" rel="stylesheet" href="dadiospice/style.css" />
 		<link type="text/css" rel="stylesheet" href="src/css/jquery.mmenu.all.css" />
 		<script type="text/javascript" src="src/js/jquery.min.js"></script>
 		<script type="text/javascript" src="src/js/hammer.min.js"></script>
 		<script type="text/javascript" src="src/js/jquery.mmenu.min.all_old.js"></script>		
-		
-	<!-- scripts links 
-		
-		<style type="text/css">
-			.mm-menu li.img a
-			{
-				font-size: 16px;
-			}
-			.mm-menu li.img a img
-			{
-				float: left;
-				margin: -5px 10px -5px 0;
-			}
-			.mm-menu li.img a small
-			{
-				font-size: 12px;
-			}
-		</style>
-
-   	
-   
-		<style type="text/css">
-		@media all and (min-width: 900px) {
-		html, body {
-		height: 100%
-		
-		}
-		#menu {
-		background: #eee
-		}
-		#page {
-		border-left: 1px solid #ccc
-		min-height: 100%
-		}
-		}
-		</style>
-   -->
- 
+	
 		<script type="text/javascript">
 
 			//	The menu on the right
@@ -93,7 +53,7 @@ h2 {
 					{
 						e.preventDefault();
 						$confirm.show().text( 'You clicked "' + $.trim( $(this).text() ) + '"' );
-						$('#menu-right').trigger( 'close' );
+						$('#menu-left').trigger( 'close' );
 					}
 				);
 			});
@@ -111,8 +71,13 @@ h2 {
 					searchfield	: true,
 					labels		: {
 						fixed		: !$.mmenu.support.touch
+					},
+					header		: {
+						add			: true,
+						update		: true
 					}
-				});
+				});		
+				
 			});			
 
 			// for one page
@@ -169,43 +134,65 @@ h2 {
 				options.position = 'bottom';
 				options.zposition = 'front';
 				$('#popup-1').mmenu( options );
-
+				
 				options.position = 'top';
 				options.zposition = 'front';
-				$('#popup-2').mmenu( options );
+				$('#tips-1').mmenu( options );
+				
+				options.position = 'top';
+				options.zposition = 'front';
+				$('#tips-2').mmenu( options );
+				
+				options.position = 'top';
+				options.zposition = 'front';
+				$('#tips-3').mmenu( options );
+				
+				options.position = 'top';
+				options.zposition = 'front';
+				$('#tips-4').mmenu( options );
+
+
 			});
 	
 		</script>
 		
 <!-- mmenu_head for update files 1,2:2 -->
+<!-- mmenu_head down -->
+</head>
 
-<!-- #EndLibraryItem -->
-
+<body bgcolor="#FFFFFF">
 <!-- the page header part  -->
-
 <div id="page">
 			<div id="header" >
 				<a href="#menu-left"></a>
 				&#x70B9;&#x51FB;&#x5DE6;&#x8FB9;&#x6309;&#x952E;&#x6253;&#x5F00;&#x5BFC;&#x822A;&#x83DC;&#x5355;
 				<a href="#menu-right" class="friends right"></a>
 			</div>
-
-			<div id="content" >
-			
+  <div id="content" >			
 <div style="height: 99px; background-color: rgb(40, 40, 40);"> <img class="center" src="dadiospice/GM_Banner.png"> </div>
+
+<!-- one page section up -->
+<div id="intro">
 <p>&nbsp;</p>
 <p>&#27426;&#36814;&#27983;&#35272; <i>GameMaker:Studio</i> &#29992;&#25143;&#25163;&#20876;! &#36825;&#20010;&#25991;&#26723;&#20998;&#20026;&#19977;&#20010;&#37096;&#20998;&#65292;&#20027;&#35201;&#35762;&#35299; <i>GameMaker:Studio</i> &#30028;&#38754;&#21644;&#22522;&#30784;&#20351;&#29992;&#65292;&#26356;&#39640;&#32423;&#30340;&#29992;&#27861;&#21644;&#21151;&#33021;&#38656;&#35201;&#20351;&#29992; <b>GML</b> (the <i>GameMaker Language</i>). &#26032;&#29992;&#25143;&#24517;&#39035;&#20174; <b>Using GameMaker:Studio</b> &#37096;&#20998;&#24320;&#22987;&#65292;&#36825;&#37096;&#20998;&#21253;&#25324;&#25152;&#26377;&#24555;&#36895;&#20837;&#38376;&#30693;&#35782;, &#26366;&#32463;&#20351;&#29992;&#36807; <i>GameMaker</i> &#30340;&#29992;&#25143;&#21487;&#20197;&#36339;&#36807;&#36825;&#37096;&#20998;&#65292;&#35831;&#26597;&#30475; <b>Advanced Use</b> &#37096;&#20998;&#20851;&#20110;&#26032;&#29256;&#26412;&#26356;&#26032;&#20869;&#23481;&#12290;&#19981;&#35770;&#24744;&#30340;&#25216;&#26415;&#27700;&#24179;&#22914;&#20309;&#65292;&#25105;&#20204;&#37117;&#24076;&#26395;&#36825;&#26412;&#35828;&#26126;&#33021;&#22815;&#24110;&#21161;&#24744;&#26377;&#25928;&#30340;&#20351;&#29992; <i>GameMaker:Studio</i> &#24182;&#19988;&#23454;&#29616;&#24744;&#30340;&#26790;&#65281;</p>
 <!--en up-->
 <div class="block" id="smallContent" style="display:block ; background-color: rgb(36, 36, 36);">
-<p style="font-size: 9pt"> ...[<a href="javascript:" onClick="document.all.fullContent.style.display=(document.all.fullContent.style.display=='none')?'':'none';document.all.smallContent.style.display=(document.all.smallContent.style.display=='none')?'':'none'" >Read English Version</a>]</p></div>
+<p style="font-size: 9pt"> .[<a href="javascript:" onClick="document.all.fullContent.style.display=(document.all.fullContent.style.display=='none')?'':'none';document.all.smallContent.style.display=(document.all.smallContent.style.display=='none')?'':'none'" >Read English Version</a>]</p></div>
 <div class="block" id="fullContent" style="display:none;; background-color: rgb(36, 36, 36);">
 <p style="font-size: 9pt"> Welcome to the <i>GameMaker:Studio</i> user manual! This document is divided into three parts with the aim of getting you introduced to the interface and basic workings of <i>GameMaker:Studio</i> before 
 going on to more advanced usage and the functions available through <b>GML</b> (the <i>GameMaker Language</i>). New users should definitely start at the beginning with the <b>Using GameMaker:Studio</b> 
 section as it has all the information you need to get started as quickly as possible, however users of previous <i>GameMaker</i> versions can probably skip to the <b>Advanced Use</b> section to see what's 
 new in this version. Whatever your skill level, we hope that this manual helps you to realise the true power within <i>GameMaker:Studio</i> and make your gaming dreams become reality![<a href="javascript:" onClick="document.all.fullContent.style.display=(document.all.fullContent.style.display=='none')?'':'none';document.all.smallContent.style.display=(document.all.smallContent.style.display=='none')?'':'none'" >收起英文说明</a>]</p></div>
 <!--en down-->
-  <br>
-  <i><b>NOTE : </b>&#30001;&#20110; GameMaker:Studio &#27169;&#22359;&#21270;&#24615;&#36136;&#65292;&#19968;&#20123;&#25216;&#24039;&#26159;&#19981;&#21253;&#25324;&#22312;&#25163;&#20876;&#20013;&#65292;&#29305;&#21035;&#26159;&#29305;&#27530;&#35774;&#23450;&#21644;&#36830;&#25509;&#19981;&#21516;&#30340;&#35774;&#22791;&#26041;&#38754;&#12290;&#23545;&#20110;&#26368;&#26032;&#30340;&#20449;&#24687;&#21644;&#25925;&#38556;&#25490;&#38500;&#25552;&#31034;&#21644;&#25216;&#24039;&#65292;&#35831;&#21442;&#38405;</i><i> <a href="http://wiki.yoyogames.com/index.php/GameMaker:Studio#Getting_Started" target="_blank">YoYo Games Wiki</a></i>. <br>
+
+<!-- notes tip up-->
+<p><i><b><a href="#tips-1">NOTE</a> : </b>&#30001;&#20110; GameMaker:Studio &#27169;&#22359;&#21270;&#24615;&#36136;&#65292;&#19968;&#20123;&#25216;&#24039;&#26159;&#19981;&#21253;&#25324;&#22312;&#25163;&#20876;&#20013;&#65292;&#29305;&#21035;&#26159;&#29305;&#27530;&#35774;&#23450;&#21644;&#36830;&#25509;&#19981;&#21516;&#30340;&#35774;&#22791;&#26041;&#38754;&#12290;&#23545;&#20110;&#26368;&#26032;&#30340;&#20449;&#24687;&#21644;&#25925;&#38556;&#25490;&#38500;&#25552;&#31034;&#21644;&#25216;&#24039;&#65292;&#35831;&#21442;&#38405;</i><i> <a href="http://wiki.yoyogames.com/index.php/GameMaker:Studio#Getting_Started" target="_blank">YoYo Games Wiki</a></i>. </p>
+<!-- notes tip down-->
+
+<p><a href="#menu-left">Open the menu</a></p>
+</div>
+
+<div id="first">
   <h3><a href="dadiospice/000_Using%20GameMaker/index.html">GameMaker:Studio &#20351;&#29992;</a></h3>
 <p>&#26412;&#31456;&#33410;&#20171;&#32461; <i>GameMaker:Studio </i>&#22522;&#30784;&#65292;&#20171;&#32461;&#39033;&#30446;&#30340;&#24320;&#22987;&#21644;&#38416;&#36848;&#22914;&#20309;&#28155;&#21152; sprites, backgrounds &#21644; sounds&#12290; 
   &#20063;&#21253;&#25324;&#22914;&#20309;&#23450;&#20041; objects &#30340; events &#21644; actions, 以及&#24590;&#26679;&#25226;&#20320;&#35774;&#35745;&#30340;&#36825;&#20123;&#25918;&#20837; rooms 
@@ -243,6 +230,10 @@ new in this version. Whatever your skill level, we hope that this manual helps y
     </ol>
   </blockquote>
 </blockquote>
+<p><a href="#menu-left">Open the menu</a></p>
+</div>
+
+<div id="second">
 <h3><a href="dadiospice/001_Advanced%20Use/index.html">Advanced Use&#39640;&#32423;&#20351;&#29992;</a></h3>
 <p><i>GameMaker:Studio</i> IDE (&#38598;&#25104;&#24320;&#21457;&#29615;&#22659;) 
   &#26377;&#19968;&#20123;&#39640;&#32423;&#35774;&#32622;&#21313;&#20998;&#37325;&#35201;&#65292;&#33021;&#20351;&#24744;&#30340;&#20316;&#21697;&#26356;&#21152;&#39640;&#25928;&#12290;&#36825;&#20123;&#36873;&#39033;&#21253;&#25324;&#28304;&#20195;&#30721;&#31649;&#29702;&#65292;&#39033;&#30446;&#37197;&#32622;&#65292;&#39640;&#32423;&#35843;&#35797;&#21644;&#19968;&#20123;&#39069;&#22806;&#30340;&#25913;&#21464;&#12289;&#25805;&#20316;&#28216;&#25103;&#36164;&#28304;&#24037;&#20855;(&#35831;&#27880;&#24847;&#19968;&#20123;&#39640;&#32423;&#24037;&#20855;&#30340;&#26377;&#25928;&#24615;&#24517;&#39035;&#36866;&#21512;&#24744;&#24403;&#21069;&#20351;&#29992;&#30340; <a href="dadiospice/000_Using%20GameMaker/Versions.html">version of <i>GameMaker:Studio</i></a> ).&nbsp; &#26412;&#31456;&#33410;&#20998;&#20026;&#19977;&#20010;&#37096;&#20998;&#12290;&#27599;&#20010;&#37096;&#20998;&#37117;&#26377;&#33258;&#24049;&#29420;&#29305;&#30340; IDE: </p>
@@ -298,7 +289,11 @@ new in this version. Whatever your skill level, we hope that this manual helps y
       </li>
     </ol>
   </blockquote>
-</blockquote>
+</blockquote> 
+<p><a href="#menu-left">Open the menu</a></p>
+</div>
+
+<div id="third">
 <h3><a href="dadiospice/002_Reference/index.html">Reference &#21442;&#32771;<br>
   </a></h3>
 <p>&#22312;&#36825;&#24744;&#21487;&#20197;&#25214;&#21040;&#26356;&#22810;&#20851;&#20110; <i>GameMaker:Studio</i> &#29305;&#24449;&#30340;&#21442;&#32771;&#65292;&#22914;&#21516;&#26597;&#30475;&#20840;&#37096;&#30340;&#21151;&#33021;&#20989;&#25968;&#65292;&#21464;&#37327;&#65292;&#24120;&#37327;&#36825;&#20123;&#20869;&#32622;&#30340;&#31243;&#24207;&#35821;&#35328;&#12290; 
@@ -402,45 +397,36 @@ new in this version. Whatever your skill level, we hope that this manual helps y
     </ol>
   </blockquote>
 </blockquote>
-
-<h3>-贡献者 Versions by-</h3>
-<p>&#30887;&#32511;&#30340;&#28246;<br>
-  <font size="3"><a href="http://tieba.baidu.com/f?kw=gmstudio">&#30334;&#24230;&#36148;&#21543; gmstudio</a></font><br>
-  <font size="3"><i>YoYo Games Ltd.(GMS1.1)</i></font></p>
-<h5>Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
-
-<!-- for tips up -->
-
-<!-- #BeginLibraryItem "/Library/tipsForMain.lbi" -->
-
-<div>
-	<h1>Tooltips</h1>
-	<p><em>&quot;Wait, what? Tooltips?<br />
-		I thought the <a href="#tooltip-1">jQuery.mmenu plugin</a> was about creating menus?&quot;</em></p>
-	<p>You're right, it is. But check out what wikipedia has to say about <a href="#tooltip-2">tooltips on mobile devices</a>. That can't be good... Right?<br />
-		That's why the jQuery.mmenu plugin offers a really good alternative to using tooltips (check it out by clicking the links on this page).</p>
-
-	<br />
-
-	<h2>Popups</h2>
-	<p>As a bonus, it also works really well as a replacement for <a href="#popup-1">popups</a>.<br />
-		And if you're up for it, you can even create your own <a href="#popup-2">notification center</a>!</p>
+<p><a href="#menu-left">Open the menu</a></p>
 </div>
 
+<div id="fourth">
+<h3>-贡献者 Versions by-</h3>
+<p>译者：&#30887;&#32511;&#30340;&#28246;、断水</p>
+<p>网站维护：断水</p>
+<p>  <font size="3"><a href="http://tieba.baidu.com/f?kw=gmstudio"><i>&#30334;&#24230;&#36148;&#21543; gmstudio</i></a></font><br>
+  <font size="3"><i>YoYo Games Ltd.(GMS1.1)</i></font></p>
+<p><a href="#menu-right">Open the menu</a></p>  
+<h5>Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
+
+</div>
+
+<!-- onepage update 7,8:8 -->
+<!-- one page section down -->
+<!-- for tips up-->
+
 <div id="tooltips">
-	<div id="tooltip-1" class="tip">
+	<div id="tips-1" class="tip">
 		<div>
 			<div>
 				<a href="#page">x</a>
-				<h4>jQuery.mmenu plugin</h4>
-				<p><em>The jQuery.mmenu (Mobile Menu) plugin makes it really easy to create slick, app look-alike sliding menus for you mobile or responsive website.</em></p>
-				<p>Website:<br />
-					<a href="http://mmenu.frebsite.nl" target="_blank">http://mmenu.frebsite.nl</a></p>
+				<h4>NOTES</h4>
+				<p><i>&#30001;&#20110; GameMaker:Studio &#27169;&#22359;&#21270;&#24615;&#36136;&#65292;&#19968;&#20123;&#25216;&#24039;&#26159;&#19981;&#21253;&#25324;&#22312;&#25163;&#20876;&#20013;&#65292;&#29305;&#21035;&#26159;&#29305;&#27530;&#35774;&#23450;&#21644;&#36830;&#25509;&#19981;&#21516;&#30340;&#35774;&#22791;&#26041;&#38754;&#12290;&#23545;&#20110;&#26368;&#26032;&#30340;&#20449;&#24687;&#21644;&#25925;&#38556;&#25490;&#38500;&#25552;&#31034;&#21644;&#25216;&#24039;&#65292;&#35831;&#21442;&#38405;</i><i> <a href="http://wiki.yoyogames.com/index.php/GameMaker:Studio#Getting_Started" target="_blank">YoYo Games Wiki</a></i>. </p>
 			</div>
 		</div>
 	</div>
 
-	<div id="tooltip-2" class="tip">
+	<div id="tips-2" class="tip">
 		<div>
 			<div>
 				<a href="#page">x</a>
@@ -453,7 +439,7 @@ new in this version. Whatever your skill level, we hope that this manual helps y
 		</div>
 	</div>
 
-	<div id="popup-1" class="tip">
+	<div id="tips-3" class="tip">
 		<div>
 			<div>
 				<a href="#page">x</a>
@@ -465,7 +451,7 @@ new in this version. Whatever your skill level, we hope that this manual helps y
 		</div>
 	</div>
 
-	<div id="popup-2" class="tip">
+	<div id="tips-4" class="tip">
 		<div>
 			<div>
 				<a href="#page">x</a>
@@ -478,65 +464,127 @@ new in this version. Whatever your skill level, we hope that this manual helps y
 	</div>
 </div>
 			
-<!-- contributors update 9,10:10 -->
-
-<!-- #EndLibraryItem -->
-
+<!-- tips update 9,10:10 -->
 <!-- for tips down-->
-<!-- one page section up -->
 
-<!-- #BeginLibraryItem "/Library/onepageForMain.lbi" -->
-
-
-<div id="intro">
-          <p>This is the <strong>one page scrolling example</strong> demo page.<br />
-            Click the menu-button in the header to open the menu.</p>
-  
-          <p>This page has a fixed header and a fixed footer.</p>
-          <p>The links in the menu link to a section on the same page, some small javascript makes the page scroll smoothly.</p>
-</div>
-<div id="first">
-          <p><strong>This is the first section.</strong><br />
-            <a href="#menu">Open the menu</a></p>
-</div>
-<div id="second">
-          <p><strong>This is the second section.</strong><br />
-            <a href="#menu">Open the menu</a></p>
-</div>
-<div id="third">
-          <p><strong>This is the third section.</strong><br />
-            <a href="#menu">Open the menu</a></p>
-</div>
-
-
-<!-- onepage update 7,8:8 --><!-- #EndLibraryItem -->
-
-<!-- one page section down -->
 <!-- KEYWORDS
 contents
 -->
-
 </div>
 
-<!-- #BeginLibraryItem "/Library/mmenu_leftlist.lbi" -->
+<!-- the footer  -->
 
 <div id="footer">
 				Fixed footer :-)
 </div>
 
+<!-- the  leftlist up --><!-- #BeginLibraryItem "/Library/mmenu_leftlist.lbi" -->
 			<nav id="menu-left">
 				<ul>
 					<li ><a href="index.html">GameMaker:Studio 手册首页</a>
 						<ul>
+							<li><a href="#intro">GMS文档简介</a></li>
+							<li><a href="#first">GameMaker:Studio 使用</a></li>
+							<li><a href="#second">Advanced Use高级使用</a></li>
+							<li><a href="#third">Reference 参考</a></li>
+							<li><a href="#fourth">贡献者 Versions by</a></li>						
+						</ul>
+					
+					</li>					
+					<li >
+						<a href="dadiospice/000_Using GameMaker/index.html">GameMaker:Studio 使用</a>
+						<ul>
+							<li><a href="dadiospice/000_Using GameMaker/000_Introduction.html">Introduction 介绍</a></li>
+							<li><a href="dadiospice/000_Using GameMaker/001_Installation.html">Installation 安装</a></li>
+							<li><a href="dadiospice/000_Using GameMaker/002_Activation.html">Activation 激活</a></li>
+							<li><a href="dadiospice/000_Using GameMaker/003_GameMaker Studio Overview.html">GameMaker:Studio Overview 概述</a></li>
+							<li>
+								<a href="dadiospice/000_Using GameMaker/004_The Graphical User Interface.html">The Graphical User Interface 绘制用户界面</a>
+								<ul>
+									<li><a href="#">The File Menu</a></li>
+									<li><a href="#">The Edit Menu</a></li>
+									<li><a href="#">The Resources Menu</a></li>
+									<li><a href="#">The Scripts Menu</a></li>
+									<li><a href="#">The Run Menu</a></li>
+									<li><a href="#">The Window Menu</a></li>
+									<li><a href="#">The Help Menu</a></li>									
+								</ul>
+							</li>
+							<li><a href="dadiospice/000_Using GameMaker/005_Loading Sprites.html">Loading Sprites 载入精灵</a></li>
+							<li><a href="dadiospice/000_Using GameMaker/006_Sounds and music.html">Sounds And Music 声音与音乐</a></li>
+							<li><a href="dadiospice/000_Using GameMaker/007_Backgrounds.html">Backgrounds 背景</a></li>
+							<li><a href="dadiospice/000_Using GameMaker/008_Defining objects.html">Defining Objects 定义对象</a></li>
+							<li>
+								<a href="dadiospice/000_Using GameMaker/Events/index.html">Events 事件</a>
+								<ul>
+									<li><a href="#">Create Event</a></li>
+									<li><a href="#">Destroy Event</a></li>
+									<li><a href="#">Alarm Events</a></li>
+									<li><a href="#">Step Events</a></li>
+									<li><a href="#">Collision Event</a></li>
+									<li><a href="#">Keyboard Events</a></li>
+									<li><a href="#">Other Events</a></li>
+									<li><a href="#">Draw Event</a></li>
+									<li><a href="#">Asynchronous Events</a></li>									
+								</ul>
+							</li>
+							<li>
+								<a href="dadiospice/000_Using GameMaker/Actions/index.html">Actions 动作</a>
+								<ul>
+									<li><a href="#">Move Actions</a></li>
+									<li><a href="#">Main Actions, Set 1</a></li>
+									<li><a href="#">Main Actions, Set 2</a></li>
+									<li><a href="#">Control Actions</a></li>
+									<li><a href="#">Score Actions</a></li>
+									<li><a href="#">Extra Actions</a></li>
+									<li><a href="#">Draw Actions</a></li>
+									<li><a href="#">Using Variables and Expressions in Actions</a></li>																	
+								</ul>
+							</li>
+							<li>
+								<a href="dadiospice/000_Using GameMaker/Rooms/index.html">Creating Rooms 创造房间</a>
+								<ul>
+									<li><a href="#">Settings</a></li>
+									<li><a href="#">Backgrounds</a></li>
+									<li><a href="#">Objects</a></li>																
+								</ul>								
+							</li>
+							<li><a href="dadiospice/000_Using GameMaker/Game Information.html">Game Information</a></li>							
+							<li><a href="dadiospice/000_Using GameMaker/009_Distributing your game.html">Distributing Your Game 发布您的游戏</a></li>						
+
+						</ul>
+					</li>
+					<li >
+						<a href="dadiospice/001_Advanced Use/index.html">Advanced Use 高级使用</a>
+						<ul>
+							<li class="Label">Game Assets游戏资产</li>
+							<li><a href="#">More About Sprites 更多关于精灵</a></li>
+							<li><a href="#">More About Backgrounds 更多关于背景</a></li>
+							<li><a href="#">More About Objects 更多关于对象</a></li>
+							<li><a href="#">More About Rooms 更多关于房间</a></li>
+							<li><a href="#">More About Async Events 更多关于异步事件</a></li>
+							<li class="Label">Resource Editors资源编辑器</li>
+							<li><a href="#">Fonts 字体</a></li>
+							<li><a href="#">Paths 路径</a></li>
+							<li><a href="#">Time Lines 时间线</a></li>
+							<li><a href="#">Scripts 脚本</a></li>
+							<li><a href="#">Constants 常量</a></li>
+							<li><a href="#">Including Files 包含文件</a></li>
+							<li><a href="#">Importing Resources 导入资源</a></li>
+							<li class="Label">Game Settings游戏设置</li>
+							<li><a href="#">Extension Packages 扩展包</a></li>
+							<li><a href="#">Configurations 配置</a></li>
+							<li><a href="#">Source Control 源代码控制</a></li>
+							<li><a href="#">Global Game Settings 全局游戏设定</a></li>
+							<li><a href="#">GameMaker:Studio Preferences 首选项</a></li>
+							<li><a href="#">Debugging 调试</a></li>
+							
 							<li><a href="#content">Introduction</a></li>
 							<li><a href="#first">First section</a></li>
 							<li><a href="#second">Second section</a></li>
 							<li><a href="#third">Third section</a></li>
-						</ul>
-					</li>
-					<li >
-						<a href="dadiospice/000_Using GameMaker/index.html">GameMaker:Studio 使用</a>
-						<ul>
+							
+							
 							<li><a href="#">First sub-item</a></li>
 							<li>
 								<a href="#">Second sub-item</a>
@@ -548,20 +596,77 @@ contents
 							</li>
 							<li><a href="#">Third sub-item</a></li>
 						</ul>
+
+
 					</li>
-					<li ><a href="dadiospice/001_Advanced Use/index.html">Advanced Use 高级使用</a></li>
-					<li ><a href="dadiospice/002_Reference/index.html">Reference GML参考手册</a></li>
+					<li >
+						<a href="dadiospice/002_Reference/index.html">Reference GML参考手册</a>
+						<ul>
+							<li><a href="#">GML Overview 概述</a></li>
+							<li class="Label">Real Numbers And Strings 实数与字符串</li>
+							<li><a href="#">Maths 数学</a></li>
+							<li><a href="#">Date and Time 日期与时间</a></li>
+							<li><a href="#">Strings 字符串</a></li>
+							<li class="Label">Game Play 游戏运行</li>							
+							<li><a href="#">Game Assets 游戏资产</a></li>
+							<li><a href="#">Objects and Instances 对象与实例</a></li>
+							<li><a href="#">Movement and Collisions 移动与碰撞</a></li>
+							<li><a href="#">Mouse, Keyboard and Other Controls 鼠标、键盘和其他控制设备</a></li>							
+							<li class="Label">Drawing And Display 绘制与显示</li>
+							<li><a href="#">Drawing 绘制</a></li>
+							<li><a href="#">Surfaces 表面</a></li>
+							<li><a href="#">Windows And Views 窗口与视野</a></li>
+							<li class="Label">Advanced Functions 高级函数</li>
+							<li><a href="#">Data Structures 数据结构</a></li>
+							<li><a href="#">Particles 粒子</a></li>
+							<li><a href="#">Physics 物理</a></li>
+							<li><a href="#">File Handling 文件处理</a></li>
+							<li><a href="#">Operating System 操作系统</a></li>
+							<li><a href="#">Buffers 缓存区</a></li>
+							<li><a href="#">Networking 联网</a></li>
+							<li class="Label">Platform Specific 平台特性</li>
+							<li><a href="#">HTML5</a></li>
+							<li><a href="#">Advertising and Analytics 广告与分析</a></li>
+							<li><a href="#">Social Gaming 社交游戏</a></li>
+							<li><a href="#">In App Purchases 应用程序内购买</a></li>
+							<li><a href="#">Asynchronous 异步</a></li>
+							<li><a href="#">Cloud Services 云服务</a></li>
+							<li><a href="#">Steam API 应用程序接口</a></li>
+							<li class="Label">Extras 附加</li>
+							<li><a href="#">Debugging 调试</a></li>
+							<li><a href="#">Miscellaneous 杂项</a></li>
+							<li><a href="#">Obsolete Functions 淘汰函数</a></li>
+
+							
+							<li><a href="#content">Introduction</a></li>
+							<li><a href="#first">First section</a></li>
+							<li><a href="#second">Second section</a></li>
+							<li><a href="#third">Third section</a></li>
+							
+							
+							<li><a href="#">First sub-item</a></li>
+							<li>
+								<a href="#">Second sub-item</a>
+								<ul>
+									<li><a href="#">First sub-sub-item</a></li>
+									<li><a href="#">Second sub-sub-item</a></li>
+									<li><a href="#">Third sub-sub-item</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Third sub-item</a></li>
+						</ul>
+
+
+
+					</li>
 					<li ><a href="#">Examples and Experience 实例教程及心得</a></li>
 					<li ><a href="#">Experimental project 实验项目</a></li>
 					<li ><a href="#">Setting 应用设置</a></li>					
 				</ul>
 			</nav>
 
-<!-- mmenu_leftlist for update files 3,4:4 -->
-
-<!-- #EndLibraryItem -->
-
-<!-- #BeginLibraryItem "/Library/mmenu_rightlist.lbi" -->
+<!-- mmenu_leftlist for update files 3,4:7 --><!-- #EndLibraryItem --><!-- the leftlist down -->
+<!-- the rightlist up -->
 
 		<nav id="menu-right">
 				<ul>
@@ -829,7 +934,8 @@ contents
 			</nav>
 
 <!-- mmenu_right update 5,6:6 -->
-
-<!-- #EndLibraryItem --></div></body>
+<!-- the rightlist down -->
+</div>
+</body>
 </html>
 
