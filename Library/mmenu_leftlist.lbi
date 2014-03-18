@@ -1,10 +1,10 @@
 ﻿<meta http-equiv="Content-Type" content="text/html charset=utf-8">
-</div>
+
 <div id="footer">
 				Fixed footer :-)
 </div>
 
-			<nav id="menu">
+			<nav id="menu-left">
 				<ul>
 					<li ><a href="../index.html">GameMaker:Studio 手册首页</a>
 						<ul>
@@ -36,5 +36,5 @@
 					<li ><a href="#">Setting 应用设置</a></li>					
 				</ul>
 			</nav>
-</div>
-<!-- 注意1 -->
+
+<!-- mmenu_leftlist for update files 3,4:4 -->

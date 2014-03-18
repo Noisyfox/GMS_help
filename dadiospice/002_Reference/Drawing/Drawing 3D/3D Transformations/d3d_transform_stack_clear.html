@@ -5,81 +5,138 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=9" />
 		<link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
 	<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" /></head>
-<body><!-- #BeginLibraryItem "/Library/mmenu_head.lbi" -->
-<link type="text/css" rel="stylesheet" href="../../../../../src/css/jquery.mmenu.all.css" />
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-<script type="text/javascript" src="../../../../../src/js/jquery.mmenu.min.all_old.js"></script>
-
-<style type="text/css">
-@media all and (min-width: 900px) {
-html, body {
-height: 100%
-
-}
-#menu {
-background: #eee
-}
-#page {
-border-left: 1px solid #ccc
-min-height: 100%
-}
-}
-</style>
-
-<!-- scripts links  -->
-
-
-
-<!-- main  -->
-
-<script type="text/javascript">
-	$(function() {
-		$('nav#menu').mmenu({
-			classes: 'mm-light'
-				});
-			});
-</script>
-
-<!-- for one page  -->
-
-<script type="text/javascript">
-	$(function() {
-		var $menu = $('nav#menu'),
-			$html = $('html, body');
-
-		$menu.mmenu();
-		$menu.find( 'li > a' ).on(
-			'click',
-			function()
+<body><!-- #BeginLibraryItem "/Library/mmenu_head.lbi" -->		<link type="text/css" rel="stylesheet" href="../../../../style.css" />
+		<link type="text/css" rel="stylesheet" href="../../../../../src/css/jquery.mmenu.all.css" />
+		<script type="text/javascript" src="../../../../../src/js/jquery.min.js"></script>
+		<script type="text/javascript" src="../../../../../src/js/hammer.min.js"></script>
+		<script type="text/javascript" src="../../../../../src/js/jquery.mmenu.min.all_old.js"></script>		
+		
+	<!-- scripts links 
+		
+		<style type="text/css">
+			.mm-menu li.img a
 			{
-				var href = $(this).attr( 'href' );
+				font-size: 16px;
+			}
+			.mm-menu li.img a img
+			{
+				float: left;
+				margin: -5px 10px -5px 0;
+			}
+			.mm-menu li.img a small
+			{
+				font-size: 12px;
+			}
+		</style>
 
-				//	if the clicked link is linked to an anchor, scroll the page to that anchor 
-				if ( href.slice( 0, 1 ) == '#' )
-				{
-					$menu.one(
-						'closed.mm',
-						function()
+   	
+   
+		<style type="text/css">
+		@media all and (min-width: 900px) {
+		html, body {
+		height: 100%
+		
+		}
+		#menu {
+		background: #eee
+		}
+		#page {
+		border-left: 1px solid #ccc
+		min-height: 100%
+		}
+		}
+		</style>
+   -->
+ 
+		<script type="text/javascript">
+
+			//	The menu on the right
+			$(function() {
+
+				var $menu = $('nav#menu-right');
+				$menu.mmenu({
+					position	: 'right',
+					classes		: 'mm-light',
+					dragOpen	: true,
+					counters	: true,
+					searchfield	: true,
+					labels		: {
+						fixed		: !$.mmenu.support.touch
+					},
+					header		: {
+						add			: true,
+						update		: true,
+						title		: 'Contributors'
+					}
+				});
+
+				//	Click a menu-item
+				var $confirm = $('#confirmation');
+				$menu.find( 'li a' ).not( '.mm-subopen' ).not( '.mm-subclose' ).bind(
+					'click.example',
+					function( e )
+					{
+						e.preventDefault();
+						$confirm.show().text( 'You clicked "' + $.trim( $(this).text() ) + '"' );
+						$('#menu-right').trigger( 'close' );
+					}
+				);
+			});
+			
+			//	The menu on the left
+			$(function() {
+
+				var $menu0 = $('nav#menu-left');
+
+				$menu0.mmenu({
+					position	: 'left',
+					classes		: 'mm-light',
+					dragOpen	: true,
+					counters	: true,
+					searchfield	: true,
+					labels		: {
+						fixed		: !$.mmenu.support.touch
+					}
+				});
+			});			
+
+			// for one page
+
+			$(function() {
+				var $menu = $('nav#menu-left'),
+					$html = $('html, body');
+		
+				$menu.mmenu();
+				$menu.find( 'li > a' ).on(
+					'click',
+					function()
+					{
+						var href = $(this).attr( 'href' );
+		
+						//	if the clicked link is linked to an anchor, scroll the page to that anchor 
+						if ( href.slice( 0, 1 ) == '#' )
 						{
-							setTimeout(
+							$menu.one(
+								'closed.mm',
 								function()
 								{
-									$html.animate({
-										scrollTop: $( href ).offset().top
-									});	
-								}, 10
-							);	
+									setTimeout(
+										function()
+										{
+											$html.animate({
+												scrollTop: $( href ).offset().top
+											});	
+										}, 10
+									);	
+								}
+							);						
 						}
-					);						
-				}
-			}
-		);
-	});
-</script>
-	
-<!-- for the tips  -->
-	
-<script type="text/javascript">
+					}
+				);
+			});
+
+			// for the tips
+			
 			$(function() {
 				var options = {
 					classes			: 'mm-light',
@@ -102,40 +159,23 @@ min-height: 100%
 				options.zposition = 'front';
 				$('#popup-2').mmenu( options );
 			});
-</script>
-
-<!-- the page header part  -->
-
-<script type="text/javascript">
-   $(function() {
-      $("my-menu").mmenu({
-         labels: {
-            fixed: true
-         }
-      });
-   });
-</script>
+	
+		</script>
+		
+<!-- mmenu_head for update files 1,2:2 -->
 
 
-<script type="text/javascript">
-   $(function() {
-      $("my-menu").mmenu({
-         searchfield: true
-      });
-   });
-</script>
-
+<!-- #EndLibraryItem --><!-- the page header part  -->
 <div id="page">
 			<div id="header" >
-				<a href="#menu"></a>
+				<a href="#menu-left"></a>
 				&#x70B9;&#x51FB;&#x5DE6;&#x8FB9;&#x6309;&#x952E;&#x6253;&#x5F00;&#x5BFC;&#x822A;&#x83DC;&#x5355;
+				<a href="#menu-right" class="friends right"></a>
 			</div>
+
 			<div id="content" >
 			
-<!-- for update files -->
-
-
-<!-- #EndLibraryItem --><h1>d3d_transform_stack_clear</h1>
+<h1>d3d_transform_stack_clear</h1>
   
 <h2>Clears the stack of transformations.</h2>
 
@@ -189,13 +229,13 @@ The above code will clear the transformation stack.
 </p>
 
 <h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
-<!-- #BeginLibraryItem "/Library/mmenu_body_down.lbi" -->
+<!-- #BeginLibraryItem "/Library/mmenu_leftlist.lbi" -->
 </div>
 <div id="footer">
 				Fixed footer :-)
 </div>
 
-			<nav id="menu">
+			<nav id="menu-left">
 				<ul>
 					<li ><a href="../../../../../index.html">GameMaker:Studio 手册首页</a>
 						<ul>
@@ -227,8 +267,538 @@ The above code will clear the transformation stack.
 					<li ><a href="#">Setting 应用设置</a></li>					
 				</ul>
 			</nav>
-</div>
-<!-- 注意1 --><!-- #EndLibraryItem --></body>
+			<nav id="menu-right">
+				<ul>
+					<li>
+						<span>Friends</span>
+						<ul>
+							<li class="Label">A</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/1/" />
+									Alexa<br />
+									<small>Johnson</small>
+								</a>
+							</li>
+							<li class="img Collapsed">
+								<a href="#">
+									<img src="#people/2/" />
+									Alexander<br />
+									<small>Brown</small>
+								</a>
+							</li>
+
+							<li class="Label">F</li>
+							<li class="img Collapsed">
+								<a href="#">
+									<img src="#people/3/" />
+									Fred<br />
+									<small>Smith</small>
+								</a>
+							</li>
+
+							<li class="Label">J</li>
+							<li class="img Collapsed">
+								<a href="#">
+									<img src="#people/4/" />
+									James<br />
+									<small>Miller</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/5/" />
+									Jefferson<br />
+									<small>Jackson</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/6/" />
+									Jordan<br />
+									<small>Lee</small>
+								</a>
+							</li>
+
+							<li class="Label">K</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/7/" />
+									Kim<br />
+									<small>Adams</small>
+								</a>
+							</li>
+
+							<li class="Label">M</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/8/" />
+									Meagan<br />
+									<small>Miller</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/9/" />
+									Melissa<br />
+									<small>Johnson</small>
+								</a>
+							</li>
+							
+							<li class="Label">N</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/10/" />
+									Nicole<br />
+									<small>Smith</small>
+								</a>
+							</li>
+
+							<li class="Label">S</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/1/" />
+									Samantha<br />
+									<small>Harris</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/2/" />
+									Scott<br />
+									<small>Thompson</small>
+								</a>
+							</li>
+						</ul>
+					</li>
+					
+					<li>
+						<span>Family</span>
+						<ul>
+							<li class="Label">A</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/3/" />
+									Adam<br />
+									<small>White</small>
+								</a>
+							</li>
+
+							<li class="Label">B</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/4/" />
+									Ben<br />
+									<small>Robinson</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/5/" />
+									Bruce<br />
+									<small>Lee</small>
+								</a>
+							</li>
+
+							<li class="Label">E</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/6/" />
+									Eddie<br />
+									<small>Williams</small>
+								</a>
+							</li>
+
+							<li class="Label">J</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/7/" />
+									Jack<br />
+									<small>Johnson</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/8/" />
+									John<br />
+									<small>Jackman</small>
+								</a>
+							</li>
+
+							<li class="Label">M</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/9/" />
+									Martina<br />
+									<small>Thompson</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/10/" />
+									Matthew<br />
+									<small>Watson</small>
+								</a>
+							</li>
+
+							<li class="Label">O</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/1/" />
+									Olivia<br />
+									<small>Taylor</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/2/" />
+									Owen<br />
+									<small>Wilson</small>
+								</a>
+							</li>
+						</ul>
+					</li>
+
+					<li>
+						<span>Work colleagues</span>
+						<ul>
+							<li class="Label">D</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/3/" />
+									David<br />
+									<small>Harris</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/4/" />
+									Dennis<br />
+									<small>King</small>
+								</a>
+							</li>
+							
+							<li class="Label">E</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/5/" />
+									Eliza<br />
+									<small>Walker</small>
+								</a>
+							</li>
+							
+							<li class="Label">L</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/6/" />
+									Larry<br />
+									<small>Turner</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/7/" />
+									Lisa<br />
+									<small>Wilson</small>
+								</a>
+							</li>
+							
+							<li class="Label">M</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/8/" />
+									Michael<br />
+									<small>Jordan</small>
+								</a>
+							</li>
+							
+							<li class="Label">R</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/9/" />
+									Rachelle<br />
+									<small>Cooper</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/10/" />
+									Rick<br />
+									<small>James</small>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+<!-- contributors update 3 --><!-- #EndLibraryItem --><!-- #BeginLibraryItem "/Library/mmenu_rightlist.lbi" -->			<nav id="menu-right">
+				<ul>
+					<li>
+						<span>Friends</span>
+						<ul>
+							<li class="Label">A</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/1/" />
+									Alexa<br />
+									<small>Johnson</small>
+								</a>
+							</li>
+							<li class="img Collapsed">
+								<a href="#">
+									<img src="#people/2/" />
+									Alexander<br />
+									<small>Brown</small>
+								</a>
+							</li>
+
+							<li class="Label">F</li>
+							<li class="img Collapsed">
+								<a href="#">
+									<img src="#people/3/" />
+									Fred<br />
+									<small>Smith</small>
+								</a>
+							</li>
+
+							<li class="Label">J</li>
+							<li class="img Collapsed">
+								<a href="#">
+									<img src="#people/4/" />
+									James<br />
+									<small>Miller</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/5/" />
+									Jefferson<br />
+									<small>Jackson</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/6/" />
+									Jordan<br />
+									<small>Lee</small>
+								</a>
+							</li>
+
+							<li class="Label">K</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/7/" />
+									Kim<br />
+									<small>Adams</small>
+								</a>
+							</li>
+
+							<li class="Label">M</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/8/" />
+									Meagan<br />
+									<small>Miller</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/9/" />
+									Melissa<br />
+									<small>Johnson</small>
+								</a>
+							</li>
+							
+							<li class="Label">N</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/10/" />
+									Nicole<br />
+									<small>Smith</small>
+								</a>
+							</li>
+
+							<li class="Label">S</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/1/" />
+									Samantha<br />
+									<small>Harris</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/2/" />
+									Scott<br />
+									<small>Thompson</small>
+								</a>
+							</li>
+						</ul>
+					</li>
+					
+					<li>
+						<span>Family</span>
+						<ul>
+							<li class="Label">A</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/3/" />
+									Adam<br />
+									<small>White</small>
+								</a>
+							</li>
+
+							<li class="Label">B</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/4/" />
+									Ben<br />
+									<small>Robinson</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/5/" />
+									Bruce<br />
+									<small>Lee</small>
+								</a>
+							</li>
+
+							<li class="Label">E</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/6/" />
+									Eddie<br />
+									<small>Williams</small>
+								</a>
+							</li>
+
+							<li class="Label">J</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/7/" />
+									Jack<br />
+									<small>Johnson</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/8/" />
+									John<br />
+									<small>Jackman</small>
+								</a>
+							</li>
+
+							<li class="Label">M</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/9/" />
+									Martina<br />
+									<small>Thompson</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/10/" />
+									Matthew<br />
+									<small>Watson</small>
+								</a>
+							</li>
+
+							<li class="Label">O</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/1/" />
+									Olivia<br />
+									<small>Taylor</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/2/" />
+									Owen<br />
+									<small>Wilson</small>
+								</a>
+							</li>
+						</ul>
+					</li>
+
+					<li>
+						<span>Work colleagues</span>
+						<ul>
+							<li class="Label">D</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/3/" />
+									David<br />
+									<small>Harris</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/4/" />
+									Dennis<br />
+									<small>King</small>
+								</a>
+							</li>
+							
+							<li class="Label">E</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/5/" />
+									Eliza<br />
+									<small>Walker</small>
+								</a>
+							</li>
+							
+							<li class="Label">L</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/6/" />
+									Larry<br />
+									<small>Turner</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/7/" />
+									Lisa<br />
+									<small>Wilson</small>
+								</a>
+							</li>
+							
+							<li class="Label">M</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/8/" />
+									Michael<br />
+									<small>Jordan</small>
+								</a>
+							</li>
+							
+							<li class="Label">R</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/9/" />
+									Rachelle<br />
+									<small>Cooper</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/10/" />
+									Rick<br />
+									<small>James</small>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+<!-- mmenu_right update 5,6:6 -->
+
+<!-- #EndLibraryItem --></div></body>
 </html>
 
 <!-- KEYWORDS
