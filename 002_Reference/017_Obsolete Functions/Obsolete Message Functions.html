@@ -1,0 +1,725 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><title>Obsolete Message Functions</title>
+
+	
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=9">
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"><meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" /></head><body><!-- #BeginLibraryItem "/Library/mmenu_head.lbi" --><!-- mmenu_head up 1 -->
+
+		<link type="text/css" rel="stylesheet" href="../../style.css" />
+		<link type="text/css" rel="stylesheet" href="../../src/css/jquery.mmenu.all.css" />
+		<script type="text/javascript" src="../../src/js/jquery.min.js"></script>
+		<script type="text/javascript" src="../../src/js/hammer.min.js"></script>
+		<script type="text/javascript" src="../../src/js/jquery.mmenu.min.all_old.js"></script>		
+		
+	<!-- scripts links    	
+   
+		<style type="text/css">
+		@media all and (min-width: 900px) {
+		html, body {
+		height: 100%
+		
+		}
+		#menu {
+		background: #eee
+		}
+		#page {
+		border-left: 1px solid #ccc
+		min-height: 100%
+		}
+		}
+		</style>
+   -->
+ 
+		<script type="text/javascript">
+
+			//	The menu on the right
+			$(function() {
+
+				var $menu = $('nav#menu-right');
+				$menu.mmenu({
+					position	: 'right',
+					classes		: 'mm-light',
+					dragOpen	: true,
+					counters	: true,
+					searchfield	: true,
+					labels		: {
+						fixed		: !$.mmenu.support.touch
+					}
+				});
+
+				//	Click a menu-item
+				var $confirm = $('#confirmation');
+				$menu.find( 'li a' ).not( '.mm-subopen' ).not( '.mm-subclose' ).bind(
+					'click.example',
+					function( e )
+					{
+						e.preventDefault();
+						$confirm.show().text( 'You clicked "' + $.trim( $(this).text() ) + '"' );
+						$('#menu-right').trigger( 'close' );
+					}
+				);
+			});
+			
+			//	The menu on the left
+			$(function() {
+
+				var $menu0 = $('nav#menu-left');
+
+				$menu0.mmenu({
+					position	: 'left',
+					classes		: 'mm-light',
+					dragOpen	: true,
+					counters	: true,
+					searchfield	: true,
+					labels		: {
+						fixed		: !$.mmenu.support.touch
+					}
+				});
+			});			
+
+			// for one page
+
+			$(function() {
+				var $menu = $('nav#menu-left'),
+					$html = $('html, body');
+		
+				$menu.mmenu();
+				$menu.find( 'li > a' ).on(
+					'click',
+					function()
+					{
+						var href = $(this).attr( 'href' );
+		
+						//	if the clicked link is linked to an anchor, scroll the page to that anchor 
+						if ( href.slice( 0, 1 ) == '#' )
+						{
+							$menu.one(
+								'closed.mm',
+								function()
+								{
+									setTimeout(
+										function()
+										{
+											$html.animate({
+												scrollTop: $( href ).offset().top
+											});	
+										}, 10
+									);	
+								}
+							);						
+						}
+					}
+				);
+			});
+
+			// for the tips
+			
+			$(function() {
+				var options = {
+					classes			: 'mm-light',
+					modal			: true
+				};
+				
+				options.position = 'left';
+				options.zposition = 'next';
+				$('#tooltip-1').mmenu( options );
+				
+				options.position = 'right';
+				options.zposition = 'next';
+				$('#tooltip-2').mmenu( options );
+				
+				options.position = 'bottom';
+				options.zposition = 'front';
+				$('#popup-1').mmenu( options );
+
+				options.position = 'top';
+				options.zposition = 'front';
+				$('#popup-2').mmenu( options );
+			});
+	
+		</script>
+		
+<!-- mmenu_head down 4 -->
+
+
+<!-- #EndLibraryItem --><!-- the page header part  -->
+<div id="page">
+			<div id="header" >
+				<a href="#menu-left"></a>
+				&#x70B9;&#x51FB;&#x5DE6;&#x8FB9;&#x6309;&#x952E;&#x6253;&#x5F00;&#x5BFC;&#x822A;&#x83DC;&#x5355;
+				<a href="#menu-right" class="friends right"></a>
+			</div>
+
+			<div id="content" >
+			
+<h1>Obsolete Message Functions &#28120;&#27760;&#28040;&#24687;&#20989;&#25968;<br>
+</h1>
+  
+<h2>
+&#36825;&#20123;&#20989;&#25968;&#26159;&#22788;&#29702;&#24377;&#20986;&#28040;&#24687;&#21644;&#31383;&#21475;&#26631;&#39064;&#30340;&#12290;
+</h2>
+<p>
+  
+</p><h3> <b>Function List :</b> </h3>
+<div class="param">
+<table>
+	<tbody><tr><th>Function</th><th>Description</th></tr>
+
+	<tr><td>show_message_ext</td><td>&#26174;&#31034;&#19968;&#20010;&#23545;&#35805;&#26694;&#65292;&#37324;&#38754;&#30340;&#20449;&#24687;&#20026;&#23383;&#31526;&#20018;&#65292;&#19978;&#38754;&#36824;&#26377;&#19977;&#20010;&#25353;&#38062;&#12290;&#21442;&#25968; but1, but2 &#20197;&#21450; but3 &#21253;&#21547;&#20102;&#25353;&#38062;&#30340;&#25991;&#26412;&#12290;&#31354;&#30340;&#23383;&#31526;&#20018;&#34920;&#31034;&#25353;&#38062;&#19981;&#26174;&#31034;&#12290;&#25991;&#26412;&#20013;&#20320;&#21487;&#20197;&#20351;&#29992; 
+&amp; &#31526;&#21495;&#26469;&#35774;&#23450;&#19979;&#19968;&#20010;&#29992;&#20316;&#24555;&#25463;&#38190;&#30340;&#25353;&#38062;&#12290;&#20989;&#25968;&#36820;&#22238;&#20540;&#20026;&#25353;&#19979;&#25353;&#38062;&#30340;&#32534;&#21495;&#65288; 0 &#20026; Esc &#38190;&#65289;&#12290; <br>
+</td></tr>
+	
+	<tr class="alt"><td>message_background</td><td>&#35774;&#32622;&#19978;&#21015;&#25152;&#26377;&#20989;&#25968;&#30340;&#24377;&#20986;&#26694;&#30340;&#32972;&#26223;&#22270;&#12290;&#21442;&#25968; back &#24517;&#39035;&#26159;&#26576;&#28216;&#25103;&#20013;&#23450;&#20041;&#30340;&#32972;&#26223;&#12290;&#22914;&#26524; back &#26377;&#36879;&#26126;&#24230;&#65292;&#20449;&#24687;&#22270;&#20687;&#21516;&#26679;&#20063;&#26377;&#36879;&#26126;&#24230;&#65288; windows2000 
+&#25110;&#38543;&#21518;&#30340;&#29256;&#26412;&#25165;&#21487;&#20197;&#65289;&#12290;</td></tr>
+	
+	<tr><td>message_alpha</td><td>&#35774;&#32622;&#19978;&#21015;&#25152;&#26377;&#20989;&#25968;&#30340;&#24377;&#20986;&#26694;&#20026; alpha &#21322;&#36879;&#26126;&#12290;&#21442;&#25968; alpha &#24517;&#39035;&#22312; 0 &#65288;&#23436;&#20840;&#36879;&#26126;&#65289;&#21040; 1 &#65288;&#19981;&#36879;&#26126;&#65289;&#20043;&#38388;&#65288; windows2000 
+&#25110;&#38543;&#21518;&#30340;&#29256;&#26412;&#25165;&#21487;&#20197;&#65289;&#12290; <br>
+</td></tr>
+	
+	<tr class="alt"><td>message_button</td><td>&#35774;&#32622;&#29992;&#20110;&#24377;&#20986;&#26694;&#25353;&#38062;&#30340;&#31934;&#28789;&#12290;&#21442;&#25968; spr &#24517;&#39035;&#26159;&#19968;&#20010;&#21253;&#21547;&#19977;&#20010;&#22270;&#20687;&#30340;&#31934;&#28789;&#65292;&#31532;&#19968;&#20010;&#35774;&#23450;&#26410;&#25353;&#19979;&#21450;&#40736;&#26631;&#31163;&#24320;&#26102;&#30340;&#25353;&#38062;&#65292;&#31532;&#20108;&#20010;&#20026;&#40736;&#26631;&#36827;&#20837;&#20294;&#27809;&#26377;&#25353;&#19979;&#65292;&#31532;&#19977;&#20010;&#20026;&#25353;&#19979;&#25353;&#38062;&#30340;&#22270;&#20687;&#12290;</td></tr>
+
+	<tr><td>message_text_font</td><td>&#35774;&#32622;&#24377;&#20986;&#26694;&#37324;&#25991;&#23383;&#30340;&#23383;&#20307;&#12290;</td></tr>
+	
+	<tr class="alt"><td>message_button_font</td><td>&#35774;&#32622;&#24377;&#20986;&#26694;&#37324;&#25353;&#38062;&#30340;&#23383;&#20307;&#12290;</td></tr>
+
+	<tr><td>message_input_font</td><td>&#35774;&#32622;&#24377;&#20986;&#26694;&#37324;&#36755;&#20837;&#26694;&#30340;&#23383;&#20307;&#12290;</td></tr>
+	
+	<tr class="alt"><td>message_text_charset</td><td>&#36825;&#20010;&#20989;&#25968;&#20801;&#35768;&#24744;&#20351;&#29992;&#25351;&#23450;&#23383;&#31526;&#38598;&#35774;&#32622;&#23545;&#35805;&#26694;</td></tr>
+	
+	<tr><td>message_mouse_color</td><td>&#35774;&#32622;&#24377;&#20986;&#26694;&#37324;&#40736;&#26631;&#36827;&#20837;&#25353;&#38062;&#26102;&#25353;&#38062;&#23383;&#20307;&#30340;&#39068;&#33394;&#12290;</td></tr>
+	
+	<tr class="alt"><td>message_input_color</td><td>&#35774;&#32622;&#24377;&#20986;&#26694;&#37324;&#36755;&#20837;&#26694;&#30340;&#32972;&#26223;&#33394;&#12290;</td></tr>
+	
+	<tr><td>message_caption</td><td>&#35774;&#32622;&#24377;&#20986;&#26694;&#30340;&#26631;&#39064;&#12290;&#21442;&#25968; show &#20026;&#26159;&#21542;&#26174;&#31034;&#36793;&#26694;&#65292;&#36793;&#26694;&#26174;&#31034;&#26102;&#29992;&#21442;&#25968; str &#35774;&#23450;&#26631;&#39064;&#12290;</td></tr>
+	
+	<tr class="alt"><td>message_position</td><td>&#35774;&#32622;&#24377;&#20986;&#26694;&#22312;&#23631;&#24149;&#19978;&#30340;&#20301;&#32622;&#12290;-1&#65292;-1&#20026;&#27491;&#20013;</td></tr>
+	
+	<tr><td>message_size</td><td>&#22266;&#23450;&#24377;&#20986;&#26694;&#22312;&#23631;&#24149;&#19978;&#30340;&#23610;&#23544;&#12290;&#22914;&#26524;&#20320;&#36873;&#25321;1&#30340;&#23485;&#24230;&#22270;&#29255;&#30340;&#23485;&#24230;&#21487;&#29992;&#12290;&#22914;&#26524;&#20320;&#36873;&#25321;1&#23545;&#39640;&#24230;&#30340;&#35745;&#31639;&#22522;&#20110;&#28040;&#24687;&#30340;&#34892;&#25968;&#12290;</td></tr>
+	
+	<tr class="alt"><td>show_menu</td><td>&#26174;&#31034;&#19968;&#20010;&#24377;&#20986;&#33756;&#21333;&#12290;&#21442;&#25968; str &#35774;&#23450;&#33756;&#21333;&#25991;&#23383;&#12290;&#33756;&#21333;&#30001;&#19981;&#21516;&#30340;&#33756;&#21333;&#39033;&#30446;&#65288;&#24102;&#26377;&#22402;&#30452;&#26465;&#65289;&#32452;&#25104;&#12290;&#20363;&#22914;&#65292; str = 'menu0|menu1|menu2' 
+&#12290;&#31532;&#19968;&#20010;&#39033;&#30446;&#36873;&#23450;&#26102;&#65292;&#36820;&#22238; 0 &#65292;&#20197;&#27492;&#31867;&#25512;&#12290;&#29609;&#23478;&#27809;&#26377;&#36873;&#25321;&#39033;&#30446;&#26102;&#65292;&#36820;&#22238;&#40664;&#35748;&#20540;&#12290;</td></tr>
+	
+	<tr><td>show_menu_pos</td><td>&#21516;&#19978;&#20010;&#20989;&#25968;&#19968;&#26679;&#26174;&#31034;&#24377;&#20986;&#33756;&#21333;&#65292;&#19981;&#36807;&#36825;&#20010;&#20989;&#25968;&#36824;&#25351;&#23450;&#33756;&#21333;&#22312;&#23631;&#24149;&#19978;&#30340;&#20301;&#32622;&#12290;</td></tr>
+	
+	<tr class="alt"><td>get_color</td><td>&#33719;&#21462;&#29609;&#23478;&#36873;&#21738;&#20010;&#39068;&#33394;&#12290;&#21442;&#25968; defcol &#20026;&#40664;&#35748;&#39068;&#33394;&#12290;&#22914;&#26524;&#29609;&#23478;&#25353;&#19979; Cancel &#38190;&#65292;&#36820;&#22238;&#20540;&#20026; -1 &#12290;</td></tr>
+	
+	<tr><td>get_directory</td><td>&#33719;&#21462;&#30446;&#24405;&#12290;&#21442;&#25968; dname &#20026;&#40664;&#35748;&#21517;&#12290;&#22914;&#26524;&#29609;&#23478;&#25353;&#19979; Cancel &#38190;&#65292;&#36820;&#22238;&#20540;&#20026;&#31354;&#23383;&#31526;&#20018;&#12290;</td></tr>
+	
+	<tr class="alt"><td>get_directory_alt</td><td>&#21487;&#36873;&#25321;&#30340;&#26041;&#27861;&#33719;&#24471;&#30446;&#24405;&#12290;&#21442;&#25968; capt &#20026;&#26174;&#31034;&#30340;&#26631;&#39064;&#12290;&#21442;&#25968; root &#20026;&#26174;&#31034;&#26681;&#30446;&#24405;&#12290;&#20351;&#29992;&#31354;&#23383;&#31526;&#20018;&#26469;&#26174;&#31034;&#25972;&#20010;&#30446;&#24405;&#12290;&#22914;&#26524;&#29609;&#23478;&#25353;&#19979; Cancel &#38190;&#65292;&#36820;&#22238;&#20540;&#20026;&#31354;&#23383;&#31526;&#20018;&#12290;</td></tr>
+	
+	<tr><td>show_score</td><td>&#26159;&#21542;&#22312;&#31383;&#21475;&#26631;&#39064;&#20013;&#26174;&#31034;&#24471;&#20998;&#12290;</td></tr>
+	
+	<tr class="alt"><td>show_lives</td><td>&#26159;&#21542;&#22312;&#31383;&#21475;&#26631;&#39064;&#20013;&#26174;&#31034;&#29983;&#21629;&#25968;&#37327;&#12290;</td></tr>
+	
+	<tr><td>show_health</td><td>&#26159;&#21542;&#22312;&#31383;&#21475;&#26631;&#39064;&#20013;&#26174;&#31034;&#20581;&#24247;&#20540;&#12290;</td></tr>
+
+	<tr class="alt"><td>caption_score</td><td>&#29992;&#20110;&#24471;&#20998;&#30340;&#26631;&#39064;&#12290;</td></tr>
+	
+	<tr><td>caption_lives</td><td>&#29992;&#20110;&#29983;&#21629;&#25968;&#37327;&#30340;&#26631;&#39064;&#12290;</td></tr>
+	
+	<tr class="alt"><td>caption_health</td><td>&#29992;&#20110;&#20581;&#24247;&#20540;&#24471;&#26631;&#39064; &#12290;</td></tr>
+	
+	<tr><td>highscore_show</td><td>&#26174;&#31034;&#26368;&#39640;&#20998;&#34920;&#26684;&#12290;&#21442;&#25968; numb &#20026;&#26032;&#20998;&#25968;&#12290;&#22914;&#26524;&#20998;&#25968;&#21487;&#20197;&#28155;&#21152;&#21040;&#21015;&#34920;&#65292;&#29609;&#23478;&#21487;&#20197;&#36755;&#20837;&#21517;&#23383;</td></tr>
+
+	<tr class="alt"><td>highscore_set_background</td><td>&#35774;&#23450;&#20351;&#29992;&#30340;&#32972;&#26223;&#22270;&#12290;&#21442;&#25968; back &#24517;&#39035;&#20026;&#32972;&#26223;&#36164;&#28304;&#37324;&#30340;&#32034;&#24341;&#21517;&#12290;</td></tr>
+	
+	<tr><td>highscore_set_border</td><td>&#35774;&#32622;&#26368;&#39640;&#20998;&#34920;&#26159;&#21542;&#26377;&#36793;&#26694;&#12290;</td></tr>
+	
+	<tr class="alt"><td>highscore_set_font</td><td>&#35774;&#32622;&#34920;&#26684;&#20013;&#20351;&#29992;&#30340;&#23383;&#20307;&#12290;</td></tr>
+	
+	<tr><td>highscore_set_colors</td><td>&#35774;&#32622;&#32972;&#26223;&#20351;&#29992;&#30340;&#39068;&#33394;&#65292;&#34920;&#26684;&#30340;&#26032;&#26465;&#30446;&#30340;&#39068;&#33394;&#65292;&#20197;&#21450;&#20854;&#20182;&#26465;&#30446;&#30340;&#39068;&#33394;&#12290;</td></tr>
+	
+	<tr class="alt"><td>highscore_set_strings</td><td>&#26174;&#31034;&#26368;&#39640;&#20998;&#34920;&#26684;&#26102;&#25913;&#21464;&#19981;&#21516;&#30340;&#40664;&#35748;&#23383;&#31526;&#20018;&#12290;</td></tr>
+	
+	<tr><td>highscore_show_ext</td><td>&#26174;&#31034;&#24102;&#22823;&#37327;&#36873;&#39033;&#30340;&#26368;&#39640;&#20998;&#34920;&#26684;&#65288;&#20063;&#21487;&#20197;&#29992;&#20808;&#21069;&#22823;&#37327;&#30340;&#20989;&#25968;&#20570;&#65289;&#12290;</td></tr>
+
+	<tr class="alt"><td>highscore_add_current</td><td>&#28155;&#21152;&#24403;&#21069;&#20998;&#25968;&#21040;&#26368;&#39640;&#20998;&#21015;&#34920;&#12290;&#29609;&#23478;&#21487;&#20197;&#36755;&#20837;&#19968;&#20010;&#21517;&#23383;&#12290;</td></tr>
+
+</tbody></table>
+</div>
+
+<p>
+&#20197;&#19979;&#24120;&#37327;&#20063;&#34987;&#21024;&#38500;&#65306;
+</p><blockquote>
+<ul>
+	<li><b>text_type</b></li>
+	<li><b>button_type</b></li>
+	<li><b>input_type</b></li>
+</ul>
+</blockquote>
+
+<h3> <b>&#20026;&#20160;&#20040;&#28120;&#27760;&#36825;&#20123;</b> </h3>
+<p>&nbsp;&#36825;&#20123;&#37117;&#26159;&#21482;&#33021;&#22312;window&#20013;&#20351;&#29992;&#21151;&#33021;&#65292;&#19981;&#20877;&#36866;&#29992;&#20110;&#20219;&#20309;&#20854;&#20182;&#35774;&#22791;&#12290;&#29305;&#21035;&#26159;&#26174;&#31034;&#28040;&#24687;&#26694;&#30340;&#20989;&#25968;&#12290;<br>
+<br>
+<i><b>Note : </b></i>&#32780;&#39640;&#20998;&#27036;&#20989;&#25968;&#29616;&#22312;&#24050;&#32463;&#36807;&#26102;&#20102;,&#20869;&#32622;&#39640;&#20998;&#27036;&#20173;&#28982;&#23384;&#22312;,&#21487;&#20197;&#29992;&#8230;&#20320;&#23558;&#24517;&#39035;&#36890;&#36807;&#33258;&#24049;&#30340;&#20195;&#30721;&#26174;&#31034;&#23427;&#20204;&#12290;<br>
+<br>
+
+</p><p>
+- &#30887;&#32511;&#30340;&#28246; -<br>
+</p>
+<p>
+
+</p><div class="clear">
+	<div style="float: left;">
+		Back : <a href="index.html">Obsolete Functions</a>
+	</div>
+	<div style="float: right;">
+		Next : <a href="Obsolete%20Dynamic%20Functions.html">Dynamic Functions</a>
+	</div>
+</div>
+
+
+<!-- KEYWORDS
+show_message_ext (obsolete)
+message_background (obsolete)
+message_alpha (obsolete)
+message_button (obsolete)
+message_text_font (obsolete)
+message_button_font (obsolete)
+message_input_font (obsolete)
+message_text_charset (obsolete)
+text_type (obsolete)
+button_type (obsolete)
+input_type (obsolete)
+message_mouse_color (obsolete)
+message_input_color (obsolete)
+message_caption (obsolete)
+message_position (obsolete)
+message_size (obsolete)
+show_menu (obsolete)
+show_menu_pos (obsolete)
+get_color (obsolete)
+get_directory (obsolete)
+get_directory_alt (obsolete)
+
+show_score (obsolete)
+show_lives (obsolete)
+show_health (obsolete)
+caption_score (obsolete)
+caption_lives (obsolete)
+caption_health (obsolete)
+
+highscore_show (obsolete)
+highscore_set_background (obsolete)
+highscore_set_border (obsolete)
+highscore_set_font (obsolete)
+highscore_set_colors (obsolete)
+highscore_set_strings (obsolete)
+highscore_show_ext (obsolete)
+highscore_add_current (obsolete)
+-->  </div>   <!-- #BeginLibraryItem "/Library/mmenu_leftlist.lbi" --><!-- mmenu_leftlist up -->
+			<nav id="menu-left">
+				<ul>
+					<li ><a href="../../index.html">GameMaker:Studio 手册首页</a>
+						<ul>
+							<li><a href="#intro">GMS文档简介</a></li>
+							<li><a href="#first">GameMaker:Studio 使用</a></li>
+							<li><a href="#second">Advanced Use高级使用</a></li>
+							<li><a href="#third">Reference 参考</a></li>
+							<li><a href="#fourth">贡献者 Versions by</a></li>						
+						</ul>
+					
+					</li>					
+					<li >
+						<a href="../../000_Using GameMaker/index.html">GameMaker:Studio 使用</a>
+						<ul>
+							<li><a href="../../000_Using GameMaker/000_Introduction.html">Introduction 介绍</a></li>
+							<li><a href="../../000_Using GameMaker/001_Installation.html">Installation 安装</a></li>
+							<li><a href="../../000_Using GameMaker/002_Activation.html">Activation 激活</a></li>
+							<li><a href="../../000_Using GameMaker/003_GameMaker Studio Overview.html">GameMaker:Studio Overview 概述</a></li>
+							<li>
+								<a href="../../000_Using GameMaker/004_The Graphical User Interface.html">The Graphical User Interface 绘制用户界面</a>
+								<ul>
+									<li><a href="#">The File Menu</a></li>
+									<li><a href="#">The Edit Menu</a></li>
+									<li><a href="#">The Resources Menu</a></li>
+									<li><a href="#">The Scripts Menu</a></li>
+									<li><a href="#">The Run Menu</a></li>
+									<li><a href="#">The Window Menu</a></li>
+									<li><a href="#">The Help Menu</a></li>									
+								</ul>
+							</li>
+							<li><a href="../../000_Using GameMaker/005_Loading Sprites.html">Loading Sprites 载入精灵</a></li>
+							<li><a href="../../000_Using GameMaker/006_Sounds and music.html">Sounds And Music 声音与音乐</a></li>
+							<li><a href="../../000_Using GameMaker/007_Backgrounds.html">Backgrounds 背景</a></li>
+							<li><a href="../../000_Using GameMaker/008_Defining objects.html">Defining Objects 定义对象</a></li>
+							<li>
+								<a href="../../000_Using GameMaker/Events/index.html">Events 事件</a>
+								<ul>
+									<li><a href="#">Create Event</a></li>
+									<li><a href="#">Destroy Event</a></li>
+									<li><a href="#">Alarm Events</a></li>
+									<li><a href="#">Step Events</a></li>
+									<li><a href="#">Collision Event</a></li>
+									<li><a href="#">Keyboard Events</a></li>
+									<li><a href="#">Other Events</a></li>
+									<li><a href="#">Draw Event</a></li>
+									<li><a href="#">Asynchronous Events</a></li>									
+								</ul>
+							</li>
+							<li>
+								<a href="../../000_Using GameMaker/Actions/index.html">Actions 动作</a>
+								<ul>
+									<li><a href="#">Move Actions</a></li>
+									<li><a href="#">Main Actions, Set 1</a></li>
+									<li><a href="#">Main Actions, Set 2</a></li>
+									<li><a href="#">Control Actions</a></li>
+									<li><a href="#">Score Actions</a></li>
+									<li><a href="#">Extra Actions</a></li>
+									<li><a href="#">Draw Actions</a></li>
+									<li><a href="#">Using Variables and Expressions in Actions</a></li>																	
+								</ul>
+							</li>
+							<li>
+								<a href="../../000_Using GameMaker/Rooms/index.html">Creating Rooms 创造房间</a>
+								<ul>
+									<li><a href="#">Settings</a></li>
+									<li><a href="#">Backgrounds</a></li>
+									<li><a href="#">Objects</a></li>																
+								</ul>								
+							</li>
+							<li><a href="../../000_Using GameMaker/Game Information.html">Game Information</a></li>							
+							<li><a href="../../000_Using GameMaker/009_Distributing your game.html">Distributing Your Game 发布您的游戏</a></li>						
+
+						</ul>
+					</li>
+					<li >
+						<a href="../../001_Advanced Use/index.html">Advanced Use 高级使用</a>
+						<ul>
+							<li class="Label">Game Assets游戏资产</li>
+							<li>
+								<a href="#">More About Sprites 更多关于精灵</a>
+								<ul>
+									<li><a href="#">Editing Sprites</a></li>
+									<li><a href="#">Editing Subimages</a></li>
+									<li><a href="#">Editing Collision Masks</a></li>																
+								</ul>										
+							</li>
+							<li>
+								<a href="#">More About Backgrounds 更多关于背景</a>
+								<ul>
+									<li><a href="#">Designing Tiles</a></li>
+									<li><a href="#">Texture Pages</a></li>															
+								</ul>
+							</li>
+							<li>
+								<a href="#">More About Objects 更多关于对象</a>
+								<ul>
+									<li><a href="#">Parents</a></li>
+									<li><a href="#">Object Physics Properties</a></li>															
+								</ul>	
+							</li>
+							<li>
+								<a href="#">More About Rooms 更多关于房间</a>
+								<ul>
+									<li><a href="#">Tiles</a></li>
+									<li><a href="#">Viewss</a></li>
+									<li><a href="#">Physics</a></li>															
+								</ul>
+							</li>
+							
+							<li>
+								<a href="#">More About Async Events 更多关于异步事件</a>
+								<ul>
+									<li><a href="#">Image Loaded and Sound Loaded Events</a></li>
+									<li><a href="#">HTTP Event</a></li>
+									<li><a href="#">Dialogs Event</a></li>
+									<li><a href="#">IAP (In App Purchases) Event</a></li>
+									<li><a href="#">Cloud Event</a></li>
+									<li><a href="#">Networking Event</a></li>
+									<li><a href="#">Steam Event</a></li>
+									<li><a href="#">Social Event</a></li>															
+								</ul>
+							</li>
+							<li class="Label">Resource Editors资源编辑器</li>
+							<li><a href="#">Fonts 字体</a></li>
+							<li><a href="#">Paths 路径</a></li>
+							<li><a href="#">Time Lines 时间线</a></li>
+							<li><a href="#">Scripts 脚本</a></li>
+							<li><a href="#">Shaders 着色器</a></li>
+							<li><a href="#">Constants 常量</a></li>
+							<li><a href="#">Including Files 包含文件</a></li>
+							<li><a href="#">Importing Resources 导入资源</a></li>
+							<li class="Label">Game Settings游戏设置</li>
+							<li>
+								<a href="#">Extension Packages 扩展包</a>
+								<ul>
+									<li><a href="#">Using an Extension</a></li>
+									<li><a href="#">Creating an Extension</a></li>														
+								</ul>
+							</li>							
+							<li><a href="#">Configurations 配置</a></li>
+							<li>
+								<a href="#">Source Control 源代码控制</a>
+								<ul>
+									<li><a href="#">Getting Started With Source Control</a></li>
+									<li><a href="#">Setting Up GameMaker:Studio For Source Control</a></li>
+									<li><a href="#">Using Source Control with GameMaker:Studio</a></li>														
+								</ul>
+							</li>							
+							<li>
+								<a href="#">Global Game Settings 全局游戏设定</a>
+								<ul>
+									<li><a href="#">General</a></li>
+									<li><a href="#">Texture Groups</a></li>
+									<li><a href="#">Project Info</a></li>
+									<li><a href="#">Facebook</a></li>
+									<li><a href="#">Source Control</a></li>
+									<li><a href="#">Advertising</a></li>
+									<li><a href="#">Analytics</a></li>
+									<li><a href="#">In App Purchases</a></li>
+									<li><a href="#">Licensing</a></li>
+									<li><a href="#">Windows</a></li>
+									<li><a href="#">Mac OS</a></li>
+									<li><a href="#">HTML5</a></li>
+									<li><a href="#">iOS</a></li>
+									<li><a href="#">Android</a></li>
+									<li><a href="#">Windows 8</a></li>
+									<li><a href="#">Windows Phone</a></li>
+									<li><a href="#">Tizen</a></li>
+									<li><a href="#">Ubuntu (Linux)</a></li>
+									<li><a href="#">Steam</a></li>														
+								</ul>
+							</li>
+							<li>
+								<a href="#">GameMaker:Studio Preferences 首选项</a>
+								<ul>
+									<li><a href="#">General</a></li>
+									<li><a href="#">Forms</a></li>
+									<li><a href="#">Scripts</a></li>
+									<li><a href="#">Editors</a></li>
+									<li><a href="#">Web Server</a></li>
+									<li><a href="#">Android</a></li>
+									<li><a href="#">Windows 8</a></li>
+									<li><a href="#">Windows Phone</a></li>
+									<li><a href="#">Tizen</a></li>
+									<li><a href="#">Mac OS</a></li>
+									<li><a href="#">Ubuntu (Linux)</a></li>
+									<li><a href="#">Steam</a></li>														
+								</ul>
+							</li>
+							<li><a href="#">Debugging 调试</a></li>
+						</ul>
+					</li>
+					<li >
+						<a href="../index.html">Reference GML参考手册</a>
+						<ul>
+							<li>
+								<a href="#">GML Overview 概述</a>
+								<ul>
+									<li><a href="#">A Program</a></li>
+									<li><a href="#">Variables and Variable Scope</a></li>
+									<li><a href="#">Addressing Variables in Other Instances</a></li>
+									<li><a href="#">Arrays</a></li>
+									<li><a href="#">Functions</a></li>
+									<li><a href="#">Assignments</a></li>
+									<li><a href="#">Expressions</a></li>
+									<li><a href="#">The "If" Statement</a></li>
+									<li><a href="#">The "Repeat" Statement</a></li>
+									<li><a href="#">The "While" Statement</a></li>
+									<li><a href="#">The "Do" Statement</a></li>
+									<li><a href="#">The "For" Statement</a></li>
+									<li><a href="#">The "Switch" Statement</a></li>
+									<li><a href="#">The "Break" Statement</a></li>
+									<li><a href="#">The "Continue" Statement</a></li>
+									<li><a href="#">The "Exit" Statement</a></li>
+									<li><a href="#">The "With" Construction</a></li>
+									<li><a href="#">Scripts</a></li>
+									<li><a href="#">Comments in Code</a></li>
+									<li><a href="#">Evaluation Order</a></li>														
+								</ul>
+							</li>
+							<li class="Label">Real Numbers And Strings 实数与字符串</li>							
+							<li><a href="#">Date and Time 日期与时间</a></li>
+							<li>
+								<a href="#">Maths 数学</a>
+								<ul>
+									<li><a href="#">Real Number Functions</a></li>
+									<li><a href="#">Vector Functions</a></li>														
+								</ul>
+							</li>
+							<li><a href="#">Strings 字符串</a></li>
+							<li class="Label">Game Play 游戏运行</li>							
+							<li>
+								<a href="#">Game Assets 游戏资产</a>
+								<ul>
+									<li><a href="#">Sprites</a></li>
+									<li><a href="#">Backgrounds</a></li>
+									<li><a href="#">Sounds</a></li>
+									<li><a href="#">Fonts</a></li>
+									<li><a href="#">Paths</a></li>
+									<li><a href="#">Timelines</a></li>
+									<li><a href="#">Rooms</a></li>															
+								</ul>
+							</li>
+							<li>
+								<a href="#">Mouse, Keyboard and Other Controls 鼠标、键盘和其他控制设备</a>
+								<ul>
+									<li><a href="#">Virtual Keys</a></li>
+									<li><a href="#">Keyboard Input</a></li>
+									<li><a href="#">Mouse Input</a></li>
+									<li><a href="#">Device Input</a></li>
+									<li><a href="#">GamePad Input</a></li>
+									<li><a href="#">Immersion Haptics</a></li>																							
+								</ul>
+							</li>
+							<li>
+								<a href="#">Movement and Collisions 移动与碰撞</a>
+								<ul>
+									<li><a href="#">Movement</a></li>
+									<li><a href="#">Motion Planning</a></li>
+									<li><a href="#">Collisions</a></li>														
+								</ul>
+							</li>
+							<li>
+								<a href="#">Objects and Instances 对象与实例</a>
+								<ul>
+									<li><a href="#">Objects</a></li>
+									<li><a href="#">Instances</a></li>														
+								</ul>
+							</li>
+							<li class="Label">Drawing And Display 绘制与显示</li>
+							<li>
+								<a href="#">Drawing 绘制</a>
+								<ul>
+									<li><a href="#">Color And Blending</a></li>
+									<li><a href="#">Drawing Basic Forms</a></li>
+									<li><a href="#">Drawing Sprites And Backgrounds</a></li>
+									<li><a href="#">Drawing Text</a></li>
+									<li><a href="#">Drawing Primitives</a></li>
+									<li><a href="#">Drawing 3D</a></li>
+									<li><a href="#">Drawing Surfaces</a></li>															
+								</ul>
+							</li>
+							<li>
+								<a href="#">Shaders 着色器</a>
+								<ul>
+									<li><a href="#">Vertex Formats</a></li>
+									<li><a href="#">Primitive Building</a></li>
+									<li><a href="#">Shader Constants</a></li>														
+								</ul>
+							</li>
+							<li><a href="#">Surfaces 表面</a></li>
+							<li>
+								<a href="#">Windows And Views 窗口与视野</a>
+								<ul>
+									<li><a href="#">The Game Window</a></li>
+									<li><a href="#">Views</a></li>														
+								</ul>
+							</li>
+							<li class="Label">Advanced Functions 高级函数</li>
+							<li>
+								<a href="#">Data Structures 数据结构</a>
+								<ul>
+									<li><a href="#">Stacks</a></li>
+									<li><a href="#">Queues</a></li>
+									<li><a href="#">Lists</a></li>
+									<li><a href="#">Maps</a></li>
+									<li><a href="#">Priority Queues</a></li>
+									<li><a href="#">Grids</a></li>																								
+								</ul>
+							</li>
+							<li>
+								<a href="#">Particles 粒子</a>
+								<ul>
+									<li><a href="#">Simple Effects</a></li>
+									<li><a href="#">Particle Systems</a></li>
+									<li><a href="#">Particle Types</a></li>
+									<li><a href="#">Particle Emitters</a></li>																																	
+								</ul>
+							</li>
+							<li>
+								<a href="#">Physics 物理</a>
+								<ul>
+									<li><a href="#">The Physics World</a></li>
+									<li><a href="#">Forces</a></li>
+									<li><a href="#">Fixtures</a></li>
+									<li><a href="#">Joints</a></li>
+									<li><a href="#">Physics Variables</a></li>																																
+								</ul>
+							</li>
+							<li>
+								<a href="#">File Handling 文件处理</a>
+								<ul>
+									<li><a href="#">File System Limits</a></li>																																							
+								</ul>
+							</li>
+							<li><a href="#">Operating System 操作系统</a></li>
+							<li><a href="#">Buffers 缓存区</a></li>
+							<li><a href="#">Networking 联网</a></li>
+							<li class="Label">Platform Specific 平台特性</li>
+							<li><a href="#">HTML5</a></li>
+							<li>
+								<a href="#">Windows 8</a>
+								<ul>
+									<li><a href="#">Windows 8 Phone</a></li>																																							
+								</ul>
+							</li>
+							<li><a href="#">Advertising and Analytics 广告与分析</a></li>
+							<li>
+								<a href="#">Social Gaming 社交游戏</a>
+								<ul>
+									<li><a href="#">Facebook</a></li>
+									<li><a href="#">Achievements and Leaderboards</a></li>
+									<li><a href="#">Local High Scores</a></li>																																									
+								</ul>
+							</li>
+							<li>
+								<a href="#">In App Purchases 应用程序内购买</a>
+								<ul>
+									<li><a href="#">IAP Example</a></li>
+									<li><a href="#">IAP Testing</a></li>
+									<li><a href="#">IAP Server Setup</a></li>																																									
+								</ul>
+							</li>
+							<li><a href="#">Asynchronous 异步</a></li>
+							<li><a href="#">Cloud Services 云服务</a></li>
+							<li><a href="#">Steam API 应用程序接口</a></li>
+							<li class="Label">Extras 附加</li>
+							<li><a href="#">Debugging 调试</a></li>
+							<li><a href="#">Miscellaneous 杂项</a></li>
+							<li><a href="#">Obsolete Functions 淘汰函数</a></li>
+						</ul>
+					</li>
+					<li ><a href="#">Examples and Experience 实例教程及心得</a></li>
+					<li ><a href="#">Experimental project 实验项目</a></li>
+					<li ><a href="#">Setting 应用设置</a></li>					
+				</ul>
+			</nav>
+<!-- mmenu_leftlist down 4 --><!-- #EndLibraryItem -->..<!-- #BeginLibraryItem "/Library/mmenu_rightlist.lbi" --><!-- mmenu_right up 1 -->
+			<nav id="menu-right">
+				<ul>
+					<li>
+						<span>GMS使用问题可以联系我</span>
+						<ul>
+							<li class="Label">A</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/1/" />
+									Alexa<br />
+									<small>Johnson</small>
+								</a>
+							</li>
+						</ul>
+					</li>
+					
+					<li>
+						<span>网站问题可以联系我</span>
+						<ul>
+							<li class="Label">D</li>
+							<li class="img">
+								<a href="mailto:deciia@qq.com">
+									<img src="../../Library/deciia@qq.com" />
+									Adam<br />
+									<small>Deciia</small>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+<!-- mmenu_right down 4 -->
+
+<!-- #EndLibraryItem --></div></body></html>

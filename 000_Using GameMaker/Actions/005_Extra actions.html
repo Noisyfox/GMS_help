@@ -1,0 +1,757 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>Extra Actions</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" /></head>
+<body><!-- #BeginLibraryItem "/Library/mmenu_head.lbi" --><!-- mmenu_head up 1 -->
+
+		<link type="text/css" rel="stylesheet" href="../../style.css" />
+		<link type="text/css" rel="stylesheet" href="../../src/css/jquery.mmenu.all.css" />
+		<script type="text/javascript" src="../../src/js/jquery.min.js"></script>
+		<script type="text/javascript" src="../../src/js/hammer.min.js"></script>
+		<script type="text/javascript" src="../../src/js/jquery.mmenu.min.all_old.js"></script>		
+		
+	<!-- scripts links    	
+   
+		<style type="text/css">
+		@media all and (min-width: 900px) {
+		html, body {
+		height: 100%
+		
+		}
+		#menu {
+		background: #eee
+		}
+		#page {
+		border-left: 1px solid #ccc
+		min-height: 100%
+		}
+		}
+		</style>
+   -->
+ 
+		<script type="text/javascript">
+
+			//	The menu on the right
+			$(function() {
+
+				var $menu = $('nav#menu-right');
+				$menu.mmenu({
+					position	: 'right',
+					classes		: 'mm-light',
+					dragOpen	: true,
+					counters	: true,
+					searchfield	: true,
+					labels		: {
+						fixed		: !$.mmenu.support.touch
+					}
+				});
+
+				//	Click a menu-item
+				var $confirm = $('#confirmation');
+				$menu.find( 'li a' ).not( '.mm-subopen' ).not( '.mm-subclose' ).bind(
+					'click.example',
+					function( e )
+					{
+						e.preventDefault();
+						$confirm.show().text( 'You clicked "' + $.trim( $(this).text() ) + '"' );
+						$('#menu-right').trigger( 'close' );
+					}
+				);
+			});
+			
+			//	The menu on the left
+			$(function() {
+
+				var $menu0 = $('nav#menu-left');
+
+				$menu0.mmenu({
+					position	: 'left',
+					classes		: 'mm-light',
+					dragOpen	: true,
+					counters	: true,
+					searchfield	: true,
+					labels		: {
+						fixed		: !$.mmenu.support.touch
+					}
+				});
+			});			
+
+			// for one page
+
+			$(function() {
+				var $menu = $('nav#menu-left'),
+					$html = $('html, body');
+		
+				$menu.mmenu();
+				$menu.find( 'li > a' ).on(
+					'click',
+					function()
+					{
+						var href = $(this).attr( 'href' );
+		
+						//	if the clicked link is linked to an anchor, scroll the page to that anchor 
+						if ( href.slice( 0, 1 ) == '#' )
+						{
+							$menu.one(
+								'closed.mm',
+								function()
+								{
+									setTimeout(
+										function()
+										{
+											$html.animate({
+												scrollTop: $( href ).offset().top
+											});	
+										}, 10
+									);	
+								}
+							);						
+						}
+					}
+				);
+			});
+
+			// for the tips
+			
+			$(function() {
+				var options = {
+					classes			: 'mm-light',
+					modal			: true
+				};
+				
+				options.position = 'left';
+				options.zposition = 'next';
+				$('#tooltip-1').mmenu( options );
+				
+				options.position = 'right';
+				options.zposition = 'next';
+				$('#tooltip-2').mmenu( options );
+				
+				options.position = 'bottom';
+				options.zposition = 'front';
+				$('#popup-1').mmenu( options );
+
+				options.position = 'top';
+				options.zposition = 'front';
+				$('#popup-2').mmenu( options );
+			});
+	
+		</script>
+		
+<!-- mmenu_head down 6 -->
+
+
+<!-- #EndLibraryItem --><!-- the page header part  -->
+<div id="page">
+			<div id="header" >
+				<a href="#menu-left"></a>
+				&#x70B9;&#x51FB;&#x5DE6;&#x8FB9;&#x6309;&#x952E;&#x6253;&#x5F00;&#x5BFC;&#x822A;&#x83DC;&#x5355;
+				<a href="#menu-right" class="friends right"></a>
+			</div>
+
+			<div id="content" >
+			
+<h1>Extra Actions</h1>
+
+<h2>This tab contains a few extra actions to help create effects for your game.</h2>
+
+<p>
+The extras tab is dedicated mainly to the creation and use of <i>Particles</i> in your game, but there is one other action at the bottom which we will describe first before going into a bit more depth about particles.
+<br>
+<br>
+
+<h3>Other Actions</h3>
+<p>
+<img src="../../images/setmouse.png" align="middle" align="left"><b>Set Mouse Cursor</b>
+<br>
+This function allows you to set the cursor for the game to a sprite that you can choose from the resource tree. You are also given the option to hide the standard mouse cursor as well. This functionality is only valid 
+for Windows, Linux (Ubuntu), MacOS and HTML5 targets.
+<br>
+<br>
+
+<h3>Particles</h3>
+<p>
+Now, above that one we have a whole host of actions related to creating particle systems, types and emitters... but, what is a particle? Basically, a particle is a graphics resource which is created with a base set of 
+properties set by you beforehand. Unlike objects, backgrounds and tiles, once a particle has been created you no longer have any control over it and it will continue to exists until it reaches the end of its "life", 
+which is defined by you using these actions. You can also define its color, speed, direction and if it will be affected by gravity or not, as well as how many of them you want to be created and how often. As particles 
+are purely graphical, they are also very fast to process and you can have lots of them on screen at any one time with no noticable lag, making them ideal for many special effects, like smoke trails, blood splatters 
+and debris. Below you can finda list of all the actions available to create a particle system and define types and emitters.
+<br>
+<br>
+<br>
+
+<img src="../../images/partsystcreate.png" align="middle" align="left"><b>Particle System Create</b><br>
+Before you can create any particles, you have to create the "system" that they are created in. This action will create that system and ask you for the depth that any particles you create will be drawn at. As with 
+objects and tiles, this depth can be a positive or a negative integer, with a high negative value placing it "above" other things and a high positive value placing it "below".
+<br>
+<br>
+
+<p>
+<img src="../../images/partsystdestroy.png" align="middle" align="left"><b>Particle System Destroy</b>
+<br>
+Particle systems take up memory space and if they are not managed properly, they can slow down and even crash your game. To prevent this you must destroy them when not in use with this action. Normally it 
+would go in the destroy event of the object that has the Particle System Create action, or in the <b>room end event</b> if there is nothing going to destroy it sooner (or even both events).
+<br>
+<br>
+
+<p>
+<img src="../../images/partsystclear.png" align="middle" align="left"><b>Particle System Clear</b>
+<br>
+This action will clear a system of all particles in it making all those that are visible on the screen disappear. This does <i>not</i> destroy the particle system, nor the particles and emitters, it only clears the screen 
+until moreparticles are emitted.
+<br>
+<br>
+
+<p>
+<img src="../../images/parttypecreate.png" align="middle" align="left"><b>Particle Type Create</b>
+<br>
+Before you can see any particles in a system, they have to be created and defined, first with this action, and then (if necessary) with the other actions listed below. In this action you are able to specify the name of 
+the particle (type0 - type15), and choose whether to use your own custom sprite or one of the included particles which are shown in the image below :
+
+<img class="center" src="../../images/Particle_Sprites.png"></img>
+
+You then have the options "min size" and "max size" which enable you to set a minimum and a maximum initial size for your particle. All this means is that your particles will be created a random size within these 
+limits that you set and if you want them all to be the same size then set both parameters to the same value. Finally there is the "size increment" option which enables you to specify whether you wish a particle to 
+grow (positive number) or shrink (negative number) after it has been created on the screen. Normally this value is kept pretty low, 0.1 or -0.05 for example.
+<br>
+<br>
+
+<p>
+<img src="../../images/parttypecolor.png" align="middle" align="left"><b>Particle Color</b>
+<br>
+With this action you can set the colors of the particles as well as the alpha (transparency, with 1 being fully opaque and 0 being fully transparent) and how the colors are to be used, either fading over the life of 
+the particle from color1 to color2 (changing) or having each particle choose a permanent color from those specified (mixed). Note that "alpha" has a start and end value so you can make particles fade out or in over 
+their lifetime on the screen.
+<br>
+<br>
+
+<p>
+<img src="../../images/parttypelife.png" align="middle" align="left"><b>Particle Life</b>
+<br>
+The lifetime of a particle is the time it takes, in steps, from the moment it is created to the moment it disappears from the screen. With this action you specify the particle and a minimum and maximum lifetime 
+or your particles, with each individual particle having a life somewhere within that range. If you wish them all to have the same lifetime then set both values to be the same.
+<br>
+<br>
+
+<p>
+<img src="../../images/parttypespeed.png" align="middle" align="left"><b>Particle Speed</b>
+<br>
+This action not only sets the speed of the particle but also its direction and whether or not it is affected by friction (causing it to slowdown over time). As with all other particle actions, you must first select a particle 
+type for the action to work on and then set the maximum and minimum speeds for the particles to be created with. Finally you set a directional range too, based on the standard <i>GameMaker:Studio</i> angles 
+system, with 0 being right, 90 up, 180 left and 270 down and you can also set the friction for your particle (normally a small value like 0.05).
+<br>
+<br>
+
+<p>
+<img src="../../images/parttypegravity.png" align="middle" align="left"><b>Particle Gravity</b>
+<br>
+Particles can be affected by gravity too, so with this action you can select the particle type it has to affect and also the amount and the direction that it should "pull". The direction is based on the standard 
+<i>GameMaker:Studio</i> angles sytem, with 0 being right, 90 up, 180 left and 270 down.
+<br>
+<br>
+
+<p>
+<img src="../../images/parttypesecondary.png" align="middle" align="left"><b>Particle Secondary</b>
+<br>
+This action allows you to tell a particle to emit other particles at different times. The options are outlined below :
+<ul>
+	<li><b>type id : </b>The type name of the initial particle that will have this action.
+	<li><b>step type : </b>This is the type name of the particle you wish to emit each step if the option below is greater than 0. Normally this is a different particle to that specified in the "type id" above.
+	<li><b>step count : </b>This is the number of particles to emit <i>every step</i> of the lifetime of the initial particle.
+	<li><b>death type : </b>This is the type name of the particle you wish to emit when the initial particle defined in the "type id" parameter reaches the end of its lifetime. This is only effective if the option below 
+	is greater than 0, and normally this is a different particle to that specified in the "type id".
+	<li><b>death count : </b>This is the number of particles (whose type is defined by the above parameter) that are to be emitted when the initial particle reaches the end of its lifetime.
+</ul>
+<p>
+
+<p>
+<img src="../../images/partemitcreate.png" align="middle" align="left"><b>Create Emitter</b>
+<br>
+Once you have created your particle you will want to see it in the room, and when using actions the only way to do that is to use an emitter. An emitter is just another part of the particle system whose sole purpose 
+is to emit particles based on the parameters that you have defined for it. These parameters are the name (id) of the emitter, the shape of the emitter (an ellipse or a rectangle) and the coordinates <i>within the 
+room</i> of the emitter. The coordinates are defined by four parameters, and xmin and an xmax, and a ymin and a ymax, so for example, if you want to emit particles over your whole room you would have the xmin 
+equal 0, the xmax equal the room width and the ymin equal 0 and the ymax equal the room height.
+<br>
+<br>
+
+<p>
+<img src="../../images/partemitdestroy.png" align="middle" align="left"><b>Destroy Emitter</b>
+<br>
+Like other things in a particle system, emitters take up memory and when one is no longer needed it should be destroyed using this action.
+<br>
+<br>
+
+<p>
+<img src="../../images/partemitburst.png" align="middle" align="left"><b>Burst From Emitter</b>
+<br>
+Particles can be either burst or streamed from an emitter, which means that they are all created at once (burst) or they are created over a set number of steps (streamed). This action controls the bursting of particles 
+and should be placed in any event where you need to create a group of particles at once (like in a mouse button event, for example). You choose the emitter to use, the particle type to burst and the number of those 
+particles that should be emitted. Note too that you can use a negative number for the amount of particles to burst, which means that, for example, if you have a value of -10 then there is a one in ten chance that a 
+particle will be emitted.
+<br>
+<br>
+
+<p>
+<img src="../../images/partemitstream.png" align="middle" align="left"><b>Stream From Emitter</b>
+<br>
+Particles can be either burst or streamed from an emitter, which means that they are all created at once (burst) or they are created over a set number of steps (streamed). This action controls the streaming of particles 
+and should only normally be used once in any instance. You choose the emitter to use, the particle type to stream and the number of those particles that should be emitted <i>every step</i> of the game while the 
+emitter exists. Note too that you can use a negative number for the amount of particles to stream, which means that, for example, if you have a value of -10 then there is a one in ten chance that a particle will be 
+emitted each step.
+<br>
+<br>
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back : <a href="index.html">Actions</a>
+	</div>
+	<div style="float:right">
+		Next : <a href="006_Draw%20actions.html">Draw Actions</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>  </div>   <!-- #BeginLibraryItem "/Library/mmenu_leftlist.lbi" -->
+			<nav id="menu-left">
+			<!-- mmenu_leftlist up -->
+				<ul>
+					<li ><a href="../../index.html">GameMaker:Studio 手册首页</a>
+						<ul>
+							<li><a href="#intro">GMS文档简介</a></li>
+							<li><a href="#first">GameMaker:Studio 使用</a></li>
+							<li><a href="#second">Advanced Use高级使用</a></li>
+							<li><a href="#third">Reference 参考</a></li>
+							<li><a href="#fourth">贡献者 Versions by</a></li>						
+						</ul>
+					
+					</li>					
+					<li >
+						<a href="../index.html">GameMaker:Studio 使用</a>
+						<ul>
+							<li><a href="../000_Introduction.html">Introduction 介绍</a></li>
+							<li><a href="../001_Installation.html">Installation 安装</a></li>
+							<li><a href="../002_Activation.html">Activation 激活</a></li>
+							<li><a href="../003_GameMaker Studio Overview.html">GameMaker:Studio Overview 概述</a></li>
+							<li>
+								<a href="../004_The Graphical User Interface.html">The Graphical User Interface 绘制用户界面</a>
+								<ul>
+									<li><a href="#">The File Menu</a></li>
+									<li><a href="#">The Edit Menu</a></li>
+									<li><a href="#">The Resources Menu</a></li>
+									<li><a href="#">The Scripts Menu</a></li>
+									<li><a href="#">The Run Menu</a></li>
+									<li><a href="#">The Window Menu</a></li>
+									<li><a href="#">The Help Menu</a></li>									
+								</ul>
+							</li>
+							<li><a href="../005_Loading Sprites.html">Loading Sprites 载入精灵</a></li>
+							<li><a href="../006_Sounds and music.html">Sounds And Music 声音与音乐</a></li>
+							<li><a href="../007_Backgrounds.html">Backgrounds 背景</a></li>
+							<li><a href="../008_Defining objects.html">Defining Objects 定义对象</a></li>
+							<li>
+								<a href="../Events/index.html">Events 事件</a>
+								<ul>
+									<li><a href="#">Create Event</a></li>
+									<li><a href="#">Destroy Event</a></li>
+									<li><a href="#">Alarm Events</a></li>
+									<li><a href="#">Step Events</a></li>
+									<li><a href="#">Collision Event</a></li>
+									<li><a href="#">Keyboard Events</a></li>
+									<li><a href="#">Other Events</a></li>
+									<li><a href="#">Draw Event</a></li>
+									<li><a href="#">Asynchronous Events</a></li>									
+								</ul>
+							</li>
+							<li>
+								<a href="index.html">Actions 动作</a>
+								<ul>
+									<li><a href="#">Move Actions</a></li>
+									<li><a href="#">Main Actions, Set 1</a></li>
+									<li><a href="#">Main Actions, Set 2</a></li>
+									<li><a href="#">Control Actions</a></li>
+									<li><a href="#">Score Actions</a></li>
+									<li><a href="#">Extra Actions</a></li>
+									<li><a href="#">Draw Actions</a></li>
+									<li><a href="#">Using Variables and Expressions in Actions</a></li>																	
+								</ul>
+							</li>
+							<li>
+								<a href="../Rooms/index.html">Creating Rooms 创造房间</a>
+								<ul>
+									<li><a href="#">Settings</a></li>
+									<li><a href="#">Backgrounds</a></li>
+									<li><a href="#">Objects</a></li>																
+								</ul>								
+							</li>
+							<li><a href="../Game Information.html">Game Information</a></li>							
+							<li><a href="../009_Distributing your game.html">Distributing Your Game 发布您的游戏</a></li>						
+
+						</ul>
+					</li>
+					<li >
+						<a href="../../001_Advanced Use/index.html">Advanced Use 高级使用</a>
+						<ul>
+							<li class="Label">Game Assets游戏资产</li>
+							<li>
+								<a href="#">More About Sprites 更多关于精灵</a>
+								<ul>
+									<li><a href="#">Editing Sprites</a></li>
+									<li><a href="#">Editing Subimages</a></li>
+									<li><a href="#">Editing Collision Masks</a></li>																
+								</ul>										
+							</li>
+							<li>
+								<a href="#">More About Backgrounds 更多关于背景</a>
+								<ul>
+									<li><a href="#">Designing Tiles</a></li>
+									<li><a href="#">Texture Pages</a></li>															
+								</ul>
+							</li>
+							<li>
+								<a href="#">More About Objects 更多关于对象</a>
+								<ul>
+									<li><a href="#">Parents</a></li>
+									<li><a href="#">Object Physics Properties</a></li>															
+								</ul>	
+							</li>
+							<li>
+								<a href="#">More About Rooms 更多关于房间</a>
+								<ul>
+									<li><a href="#">Tiles</a></li>
+									<li><a href="#">Viewss</a></li>
+									<li><a href="#">Physics</a></li>															
+								</ul>
+							</li>
+							
+							<li>
+								<a href="#">More About Async Events 更多关于异步事件</a>
+								<ul>
+									<li><a href="#">Image Loaded and Sound Loaded Events</a></li>
+									<li><a href="#">HTTP Event</a></li>
+									<li><a href="#">Dialogs Event</a></li>
+									<li><a href="#">IAP (In App Purchases) Event</a></li>
+									<li><a href="#">Cloud Event</a></li>
+									<li><a href="#">Networking Event</a></li>
+									<li><a href="#">Steam Event</a></li>
+									<li><a href="#">Social Event</a></li>															
+								</ul>
+							</li>
+							<li class="Label">Resource Editors资源编辑器</li>
+							<li><a href="#">Fonts 字体</a></li>
+							<li><a href="#">Paths 路径</a></li>
+							<li><a href="#">Time Lines 时间线</a></li>
+							<li><a href="#">Scripts 脚本</a></li>
+							<li><a href="#">Shaders 着色器</a></li>
+							<li><a href="#">Constants 常量</a></li>
+							<li><a href="#">Including Files 包含文件</a></li>
+							<li><a href="#">Importing Resources 导入资源</a></li>
+							<li class="Label">Game Settings游戏设置</li>
+							<li>
+								<a href="#">Extension Packages 扩展包</a>
+								<ul>
+									<li><a href="#">Using an Extension</a></li>
+									<li><a href="#">Creating an Extension</a></li>														
+								</ul>
+							</li>							
+							<li><a href="#">Configurations 配置</a></li>
+							<li>
+								<a href="#">Source Control 源代码控制</a>
+								<ul>
+									<li><a href="#">Getting Started With Source Control</a></li>
+									<li><a href="#">Setting Up GameMaker:Studio For Source Control</a></li>
+									<li><a href="#">Using Source Control with GameMaker:Studio</a></li>														
+								</ul>
+							</li>							
+							<li>
+								<a href="#">Global Game Settings 全局游戏设定</a>
+								<ul>
+									<li><a href="#">General</a></li>
+									<li><a href="#">Texture Groups</a></li>
+									<li><a href="#">Project Info</a></li>
+									<li><a href="#">Facebook</a></li>
+									<li><a href="#">Source Control</a></li>
+									<li><a href="#">Advertising</a></li>
+									<li><a href="#">Analytics</a></li>
+									<li><a href="#">In App Purchases</a></li>
+									<li><a href="#">Licensing</a></li>
+									<li><a href="#">Windows</a></li>
+									<li><a href="#">Mac OS</a></li>
+									<li><a href="#">HTML5</a></li>
+									<li><a href="#">iOS</a></li>
+									<li><a href="#">Android</a></li>
+									<li><a href="#">Windows 8</a></li>
+									<li><a href="#">Windows Phone</a></li>
+									<li><a href="#">Tizen</a></li>
+									<li><a href="#">Ubuntu (Linux)</a></li>
+									<li><a href="#">Steam</a></li>														
+								</ul>
+							</li>
+							<li>
+								<a href="#">GameMaker:Studio Preferences 首选项</a>
+								<ul>
+									<li><a href="#">General</a></li>
+									<li><a href="#">Forms</a></li>
+									<li><a href="#">Scripts</a></li>
+									<li><a href="#">Editors</a></li>
+									<li><a href="#">Web Server</a></li>
+									<li><a href="#">Android</a></li>
+									<li><a href="#">Windows 8</a></li>
+									<li><a href="#">Windows Phone</a></li>
+									<li><a href="#">Tizen</a></li>
+									<li><a href="#">Mac OS</a></li>
+									<li><a href="#">Ubuntu (Linux)</a></li>
+									<li><a href="#">Steam</a></li>														
+								</ul>
+							</li>
+							<li><a href="#">Debugging 调试</a></li>
+						</ul>
+					</li>
+					<li >
+						<a href="../../002_Reference/index.html">Reference GML参考手册</a>
+						<ul>
+							<li>
+								<a href="#">GML Overview 概述</a>
+								<ul>
+									<li><a href="#">A Program</a></li>
+									<li><a href="#">Variables and Variable Scope</a></li>
+									<li><a href="#">Addressing Variables in Other Instances</a></li>
+									<li><a href="#">Arrays</a></li>
+									<li><a href="#">Functions</a></li>
+									<li><a href="#">Assignments</a></li>
+									<li><a href="#">Expressions</a></li>
+									<li><a href="#">The "If" Statement</a></li>
+									<li><a href="#">The "Repeat" Statement</a></li>
+									<li><a href="#">The "While" Statement</a></li>
+									<li><a href="#">The "Do" Statement</a></li>
+									<li><a href="#">The "For" Statement</a></li>
+									<li><a href="#">The "Switch" Statement</a></li>
+									<li><a href="#">The "Break" Statement</a></li>
+									<li><a href="#">The "Continue" Statement</a></li>
+									<li><a href="#">The "Exit" Statement</a></li>
+									<li><a href="#">The "With" Construction</a></li>
+									<li><a href="#">Scripts</a></li>
+									<li><a href="#">Comments in Code</a></li>
+									<li><a href="#">Evaluation Order</a></li>														
+								</ul>
+							</li>
+							<li class="Label">Real Numbers And Strings 实数与字符串</li>							
+							<li><a href="#">Date and Time 日期与时间</a></li>
+							<li>
+								<a href="#">Maths 数学</a>
+								<ul>
+									<li><a href="#">Real Number Functions</a></li>
+									<li><a href="#">Vector Functions</a></li>														
+								</ul>
+							</li>
+							<li><a href="#">Strings 字符串</a></li>
+							<li class="Label">Game Play 游戏运行</li>							
+							<li>
+								<a href="#">Game Assets 游戏资产</a>
+								<ul>
+									<li><a href="#">Sprites</a></li>
+									<li><a href="#">Backgrounds</a></li>
+									<li><a href="#">Sounds</a></li>
+									<li><a href="#">Fonts</a></li>
+									<li><a href="#">Paths</a></li>
+									<li><a href="#">Timelines</a></li>
+									<li><a href="#">Rooms</a></li>															
+								</ul>
+							</li>
+							<li>
+								<a href="#">Mouse, Keyboard and Other Controls 鼠标、键盘和其他控制设备</a>
+								<ul>
+									<li><a href="#">Virtual Keys</a></li>
+									<li><a href="#">Keyboard Input</a></li>
+									<li><a href="#">Mouse Input</a></li>
+									<li><a href="#">Device Input</a></li>
+									<li><a href="#">GamePad Input</a></li>
+									<li><a href="#">Immersion Haptics</a></li>																							
+								</ul>
+							</li>
+							<li>
+								<a href="#">Movement and Collisions 移动与碰撞</a>
+								<ul>
+									<li><a href="#">Movement</a></li>
+									<li><a href="#">Motion Planning</a></li>
+									<li><a href="#">Collisions</a></li>														
+								</ul>
+							</li>
+							<li>
+								<a href="#">Objects and Instances 对象与实例</a>
+								<ul>
+									<li><a href="#">Objects</a></li>
+									<li><a href="#">Instances</a></li>														
+								</ul>
+							</li>
+							<li class="Label">Drawing And Display 绘制与显示</li>
+							<li>
+								<a href="#">Drawing 绘制</a>
+								<ul>
+									<li><a href="#">Color And Blending</a></li>
+									<li><a href="#">Drawing Basic Forms</a></li>
+									<li><a href="#">Drawing Sprites And Backgrounds</a></li>
+									<li><a href="#">Drawing Text</a></li>
+									<li><a href="#">Drawing Primitives</a></li>
+									<li><a href="#">Drawing 3D</a></li>
+									<li><a href="#">Drawing Surfaces</a></li>															
+								</ul>
+							</li>
+							<li>
+								<a href="#">Shaders 着色器</a>
+								<ul>
+									<li><a href="#">Vertex Formats</a></li>
+									<li><a href="#">Primitive Building</a></li>
+									<li><a href="#">Shader Constants</a></li>														
+								</ul>
+							</li>
+							<li><a href="#">Surfaces 表面</a></li>
+							<li>
+								<a href="#">Windows And Views 窗口与视野</a>
+								<ul>
+									<li><a href="#">The Game Window</a></li>
+									<li><a href="#">Views</a></li>														
+								</ul>
+							</li>
+							<li class="Label">Advanced Functions 高级函数</li>
+							<li>
+								<a href="#">Data Structures 数据结构</a>
+								<ul>
+									<li><a href="#">Stacks</a></li>
+									<li><a href="#">Queues</a></li>
+									<li><a href="#">Lists</a></li>
+									<li><a href="#">Maps</a></li>
+									<li><a href="#">Priority Queues</a></li>
+									<li><a href="#">Grids</a></li>																								
+								</ul>
+							</li>
+							<li>
+								<a href="#">Particles 粒子</a>
+								<ul>
+									<li><a href="#">Simple Effects</a></li>
+									<li><a href="#">Particle Systems</a></li>
+									<li><a href="#">Particle Types</a></li>
+									<li><a href="#">Particle Emitters</a></li>																																	
+								</ul>
+							</li>
+							<li>
+								<a href="#">Physics 物理</a>
+								<ul>
+									<li><a href="#">The Physics World</a></li>
+									<li><a href="#">Forces</a></li>
+									<li><a href="#">Fixtures</a></li>
+									<li><a href="#">Joints</a></li>
+									<li><a href="#">Physics Variables</a></li>																																
+								</ul>
+							</li>
+							<li>
+								<a href="#">File Handling 文件处理</a>
+								<ul>
+									<li><a href="#">File System Limits</a></li>																																							
+								</ul>
+							</li>
+							<li><a href="#">Operating System 操作系统</a></li>
+							<li><a href="#">Buffers 缓存区</a></li>
+							<li><a href="#">Networking 联网</a></li>
+							<li class="Label">Platform Specific 平台特性</li>
+							<li><a href="#">HTML5</a></li>
+							<li>
+								<a href="#">Windows 8</a>
+								<ul>
+									<li><a href="#">Windows 8 Phone</a></li>																																							
+								</ul>
+							</li>
+							<li><a href="#">Advertising and Analytics 广告与分析</a></li>
+							<li>
+								<a href="#">Social Gaming 社交游戏</a>
+								<ul>
+									<li><a href="#">Facebook</a></li>
+									<li><a href="#">Achievements and Leaderboards</a></li>
+									<li><a href="#">Local High Scores</a></li>																																									
+								</ul>
+							</li>
+							<li>
+								<a href="#">In App Purchases 应用程序内购买</a>
+								<ul>
+									<li><a href="#">IAP Example</a></li>
+									<li><a href="#">IAP Testing</a></li>
+									<li><a href="#">IAP Server Setup</a></li>																																									
+								</ul>
+							</li>
+							<li><a href="#">Asynchronous 异步</a></li>
+							<li><a href="#">Cloud Services 云服务</a></li>
+							<li><a href="#">Steam API 应用程序接口</a></li>
+							<li class="Label">Extras 附加</li>
+							<li><a href="#">Debugging 调试</a></li>
+							<li><a href="#">Miscellaneous 杂项</a></li>
+							<li><a href="#">Obsolete Functions 淘汰函数</a></li>
+						</ul>
+					</li>
+					<li ><a href="#">Examples and Experience 实例教程及心得</a></li>
+					<li ><a href="#">Experimental project 实验项目</a></li>
+					<li ><a href="#">Setting 应用设置</a></li>					
+				</ul>
+			<!-- mmenu_leftlist down 7 -->
+			</nav>
+<!-- #EndLibraryItem -->..<!-- #BeginLibraryItem "/Library/mmenu_rightlist.lbi" --><!-- mmenu_right up 1 -->
+			<nav id="menu-right">
+				<ul>
+					<li>
+						<span>GMS使用问题可以联系我</span>
+						<ul>
+							<li class="Label">A</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/1/" />
+									Alexa<br />
+									<small>Johnson</small>
+								</a>
+							</li>
+						</ul>
+					</li>
+					
+					<li>
+						<span>网站问题可以联系我</span>
+						<ul>
+							<li class="Label">D</li>
+							<li class="img">
+								<a href="mailto:deciia@qq.com">
+									<img src="../../Library/deciia@qq.com" />
+									Adam<br />
+									<small>Deciia</small>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+<!-- mmenu_right down 6 -->
+
+<!-- #EndLibraryItem --></div></body>
+</html>
+
+<!-- KEYWORDS
+extra tab
+particle actions
+action set cursor
+action particle system create
+action particle system destroy
+action particle system clear
+action particle type create
+action particle color
+action particle life
+action particle speed
+action particle gravity
+action particle secondary
+action create emitter
+action destroy emitter
+action burst from emitter
+action stream from emitter
+-->

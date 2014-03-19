@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="index.html" local="130396364254972850" remote="130396362450000000" testing="0" />
+<file name="sprite_add.html" local="130396364255563222" remote="130396362450000000" testing="0" />
+<file name="sprite_add_from_screen.html" local="130396364256163636" remote="130396362450000000" testing="0" />
+<file name="sprite_add_from_surface.html" local="130396364256764043" remote="130396362450000000" testing="0" />
+<file name="sprite_assign.html" local="130396364257374444" remote="130396362450000000" testing="0" />
+<file name="sprite_collision_mask.html" local="130396364257984842" remote="130396362450000000" testing="0" />
+<file name="sprite_create_from_screen.html" local="130396364258585252" remote="130396362450000000" testing="0" />
+<file name="sprite_create_from_surface.html" local="130396364259185643" remote="130396362450000000" testing="0" />
+<file name="sprite_delete.html" local="130396364262357753" remote="130396362450000000" testing="0" />
+<file name="sprite_duplicate.html" local="130396364262948145" remote="130396362450000000" testing="0" />
+<file name="sprite_exists.html" local="130396364263548539" remote="130396362450000000" testing="0" />
+<file name="sprite_get_bbox_bottom.html" local="130396364264138935" remote="130396362450000000" testing="0" />
+<file name="sprite_get_bbox_left.html" local="130396364264739338" remote="130396362450000000" testing="0" />
+<file name="sprite_get_bbox_right.html" local="130396364265319715" remote="130396362450000000" testing="0" />
+<file name="sprite_get_bbox_top.html" local="130396364265920106" remote="130396362450000000" testing="0" />
+<file name="sprite_get_height.html" local="130396364266510514" remote="130396362450000000" testing="0" />
+<file name="sprite_get_name.html" local="130396364267100917" remote="130396362450000000" testing="0" />
+<file name="sprite_get_number.html" local="130396364267691278" remote="130396362450000000" testing="0" />
+<file name="sprite_get_texture.html" local="130396364268301703" remote="130396362450000000" testing="0" />
+<file name="sprite_get_tpe.html" local="130396364268902101" remote="130396362450000000" testing="0" />
+<file name="sprite_get_uvs.html" local="130396364269522497" remote="130396362450000000" testing="0" />
+<file name="sprite_get_width.html" local="130396364270122892" remote="130396362450000000" testing="0" />
+<file name="sprite_get_xoffset.html" local="130396364270723311" remote="130396362450000000" testing="0" />
+<file name="sprite_get_yoffset.html" local="130396364271333692" remote="130396362450000000" testing="0" />
+<file name="sprite_merge.html" local="130396364271934122" remote="130396362450000000" testing="0" />
+<file name="sprite_replace.html" local="130396364272534513" remote="130396362450000000" testing="0" />
+<file name="sprite_save.html" local="130396364273134892" remote="130396362450000000" testing="0" />
+<file name="sprite_save_strip.html" local="130396364273735306" remote="130396362450000000" testing="0" />
+<file name="sprite_set_alpha_from_sprite.html" local="130396364274335709" remote="130396362450000000" testing="0" />
+<file name="sprite_set_cache_size.html" local="130396364277577861" remote="130396362450000000" testing="0" />
+<file name="sprite_set_cache_size_ext.html" local="130396364278198273" remote="130396362450000000" testing="0" />
+<file name="sprite_set_offset.html" local="130396364278788645" remote="130396362450000000" testing="0" />
+<file name="spr_Alpha.png" local="130389768294125888" remote="130389765380000000" testing="0" />
+<file name="spr_bbox.png" local="130389768295741681" remote="130389765380000000" testing="0" />
+<file name="spr_Merge.png" local="130389768294406710" remote="130389765380000000" testing="0" />
+<file name="spr_Strip.png" local="130389768294771019" remote="130389765380000000" testing="0" />
+<file name="spr_xyoffset.png" local="130389768295911766" remote="130389765380000000" testing="0" />
+</dwsync>

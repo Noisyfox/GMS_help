@@ -1,0 +1,764 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Reference</title>
+
+	
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=9">
+		<link rel="stylesheet" href="../style.css" type="text/css" media="screen" title="style" charset="utf-8"><meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head><body><!-- #BeginLibraryItem "/Library/mmenu_head.lbi" --><!-- mmenu_head up 1 -->
+
+		<link type="text/css" rel="stylesheet" href="../style.css" />
+		<link type="text/css" rel="stylesheet" href="../src/css/jquery.mmenu.all.css" />
+		<script type="text/javascript" src="../src/js/jquery.min.js"></script>
+		<script type="text/javascript" src="../src/js/hammer.min.js"></script>
+		<script type="text/javascript" src="../src/js/jquery.mmenu.min.all_old.js"></script>		
+		
+	<!-- scripts links    	
+   
+		<style type="text/css">
+		@media all and (min-width: 900px) {
+		html, body {
+		height: 100%
+		
+		}
+		#menu {
+		background: #eee
+		}
+		#page {
+		border-left: 1px solid #ccc
+		min-height: 100%
+		}
+		}
+		</style>
+   -->
+ 
+		<script type="text/javascript">
+
+			//	The menu on the right
+			$(function() {
+
+				var $menu = $('nav#menu-right');
+				$menu.mmenu({
+					position	: 'right',
+					classes		: 'mm-light',
+					dragOpen	: true,
+					counters	: true,
+					searchfield	: true,
+					labels		: {
+						fixed		: !$.mmenu.support.touch
+					}
+				});
+
+				//	Click a menu-item
+				var $confirm = $('#confirmation');
+				$menu.find( 'li a' ).not( '.mm-subopen' ).not( '.mm-subclose' ).bind(
+					'click.example',
+					function( e )
+					{
+						e.preventDefault();
+						$confirm.show().text( 'You clicked "' + $.trim( $(this).text() ) + '"' );
+						$('#menu-right').trigger( 'close' );
+					}
+				);
+			});
+			
+			//	The menu on the left
+			$(function() {
+
+				var $menu0 = $('nav#menu-left');
+
+				$menu0.mmenu({
+					position	: 'left',
+					classes		: 'mm-light',
+					dragOpen	: true,
+					counters	: true,
+					searchfield	: true,
+					labels		: {
+						fixed		: !$.mmenu.support.touch
+					}
+				});
+			});			
+
+			// for one page
+
+			$(function() {
+				var $menu = $('nav#menu-left'),
+					$html = $('html, body');
+		
+				$menu.mmenu();
+				$menu.find( 'li > a' ).on(
+					'click',
+					function()
+					{
+						var href = $(this).attr( 'href' );
+		
+						//	if the clicked link is linked to an anchor, scroll the page to that anchor 
+						if ( href.slice( 0, 1 ) == '#' )
+						{
+							$menu.one(
+								'closed.mm',
+								function()
+								{
+									setTimeout(
+										function()
+										{
+											$html.animate({
+												scrollTop: $( href ).offset().top
+											});	
+										}, 10
+									);	
+								}
+							);						
+						}
+					}
+				);
+			});
+
+			// for the tips
+			
+			$(function() {
+				var options = {
+					classes			: 'mm-light',
+					modal			: true
+				};
+				
+				options.position = 'left';
+				options.zposition = 'next';
+				$('#tooltip-1').mmenu( options );
+				
+				options.position = 'right';
+				options.zposition = 'next';
+				$('#tooltip-2').mmenu( options );
+				
+				options.position = 'bottom';
+				options.zposition = 'front';
+				$('#popup-1').mmenu( options );
+
+				options.position = 'top';
+				options.zposition = 'front';
+				$('#popup-2').mmenu( options );
+			});
+	
+		</script>
+		
+<!-- mmenu_head down 4 -->
+
+
+<!-- #EndLibraryItem --><!-- the page header part  -->
+<div id="page">
+			<div id="header" >
+				<a href="#menu-left"></a>
+				&#x70B9;&#x51FB;&#x5DE6;&#x8FB9;&#x6309;&#x952E;&#x6253;&#x5F00;&#x5BFC;&#x822A;&#x83DC;&#x5355;
+				<a href="#menu-right" class="friends right"></a>
+			</div>
+
+			<div id="content" >
+			
+<h1>Reference &#21442;&#32771;<br>
+</h1>
+
+<h2>&#26412;&#31456;&#33410;&#21253;&#25324; Game Maker &#35821;&#35328;&#30340;&#20840;&#37096;&#20449;&#24687;</h2>
+
+
+<p>
+<i>GameMaker:Studio</i> 
+&#21253;&#21547;&#20869;&#32622;&#31243;&#24207;&#35821;&#35328;&#65292;&#19968;&#33324;&#31216;&#20026;GML&#65292;&#23427;&#23558;&#27604;&#20351;&#29992;&#25302;&#25918;&#30340;&#21160;&#20316;&#32473;&#19982;&#24744;&#26356;&#22810;&#28789;&#27963;&#24615;&#21644;&#21487;&#25805;&#20316;&#24615;&#12290;&#22312;&#36825;&#20010;&#31456;&#33410;&#20013;&#25105;&#20204;&#23558;&#35762;&#36848;GML&#30340;&#20351;&#29992;&#12289;&#27010;&#36848;&#20840;&#37096;&#20989;&#25968;&#21644;&#25511;&#21046;&#28216;&#25103;&#30340;&#21508;&#31181;&#21464;&#37327;&#12290;<br>
+<br>
+
+</p><h3>Getting Started &#20837;&#38376;<br>
+</h3>
+<p>&#26412;&#31456;&#33410;&#27010;&#36848;GML&#65292;&#21253;&#25324;&#32467;&#26500;&#35268;&#21017;&#19982;&#35821;&#27861;&#35268;&#21017;&#65292;&#22914;&#20309;&#20351;&#29992;&#30340;&#20844;&#24335;&#33539;&#20363;&#21644;&#19981;&#21516;&#34920;&#36798;&#65306;
+</p><blockquote>
+	<ol>
+		<li><a href="001_GML%20Language%20Overview/index.html">GML Overview</a>
+	</li></ol>
+</blockquote>	
+
+<h3>Function List &#20989;&#25968;&#21015;&#34920;<br>
+</h3>
+<p>&#19979;&#38754;&#36825;&#20010;&#31456;&#33410;&#26159;&#25152;&#26377;&#21487;&#20351;&#29992;GML&#30340;&#19981;&#21516;&#20989;&#25968;&#30340;&#25551;&#36848;&#65292;&#26681;&#25454;&#20851;&#32852;&#24615;&#21010;&#20998;&#25104;&#19981;&#21516;&#32452;&#65292;&#25353;&#29031;&#38656;&#35201;&#26597;&#25214;&#20989;&#25968;&#21644;&#31456;&#33410;&#12290;
+</p><blockquote>
+	<h4>Real Numbers And Strings &#23454;&#25968;&#19982;&#23383;&#31526;&#20018;<br>
+</h4>
+		<blockquote>
+			<ol>
+				<li><a href="Maths/index.html"><b>Maths &#25968;&#23398;</b></a><br>
+					<ol class="ext">
+						<li> - <a href="Maths/Real%20valued%20functions/index.html">Real Number Functions &#23454;&#25968;&#20989;&#25968;</a><br>
+						</li><li> - <a href="Maths/Vector%20Functions/index.html">Vector Functions &#30690;&#37327;&#20989;&#25968;</a><br>
+					</li></ol>
+				</li><li><a href="Date%20and%20Time/index.html"><b>Date and Time &#26085;&#26399;&#19982;&#26102;&#38388;</b></a><br>
+				</li><li><a href="Strings/index.html"><b>Strings &#23383;&#31526;&#20018;</b></a><br>
+			</li></ol>
+		</blockquote>
+
+	<h4>Game Play &#28216;&#25103;&#36816;&#34892;<br>
+</h4>		
+		<blockquote>
+			<ol>
+				<li><a href="Game%20Assets/index.html"><b>Game Assets &#28216;&#25103;&#36164;&#20135;</b></a><br>	
+					<ol class="ext">
+						<li> - <a href="Game%20Assets/Sprites/index.html">Sprites &#31934;&#28789;</a><br>
+						</li><li> - <a href="Game%20Assets/Backgrounds/index.html">Backgrounds &#32972;&#26223;</a><br>
+						</li><li> - <a href="Game%20Assets/Sounds/index.html">Sounds &#22768;&#38899;</a><br>
+						</li><li> - <a href="Game%20Assets/Fonts/index.html">Fonts &#23383;&#20307;</a><br>
+						</li><li> - <a href="Paths/index.html">Paths &#36335;&#24452;</a><br>
+						</li><li> - <a href="Timelines/index.html">Timelines &#26102;&#38388;&#32447;</a><br>
+						</li><li> - <a href="Rooms/index.html">Rooms &#25151;&#38388;</a><br>
+					</li></ol>
+				</li><li><a href="Objects%20and%20Instances/index.html"><b>Objects and Instances &#23545;&#35937;&#19982;&#23454;&#20363;</b></a><br>
+					<ol class="ext">
+						<li> - <a href="Objects%20and%20Instances/Objects/index.html">Objects &#23454;&#20363;</a><br>
+						</li><li> - <a href="Objects%20and%20Instances/Instances/index.html">Instances &#23545;&#35937;</a><br>      
+					</li></ol>
+				</li><li><a href="Movement%20and%20Collisions/index.html"><b>Movement and Collisions &#31227;&#21160;&#19982;&#30896;&#25758;</b></a><br>
+					<ol class="ext">
+						<li> - <a href="Movement%20and%20Collisions/Movement/index.html">Movement &#31227;&#21160;</a><br>
+						</li><li> - <a href="Movement%20and%20Collisions/Motion%20Planning/index.html">Motion Planning &#36816;&#21160;&#35268;&#21010;</a><br>
+						</li><li> - <a href="Movement%20and%20Collisions/Collisions/index.html">Collisions &#30896;&#25758;</a><br>
+					</li></ol>
+				</li><li><a href="Mouse,%20Keyboard%20and%20Other%20Controls/index.html"><b>Mouse, Keyboard and Other Controls &#40736;&#26631;&#12289;&#38190;&#30424;&#21644;&#20854;&#20182;&#25511;&#21046;&#35774;&#22791;</b></a><br>
+					<ol class="ext">
+						<li> - <a href="Mouse,%20Keyboard%20and%20Other%20Controls/Virtual%20Keys/index.html">Virtual Keys &#34394;&#25311;&#25353;&#38190;</a><br>
+						</li><li> - <a href="Mouse,%20Keyboard%20and%20Other%20Controls/Keyboard%20Input/index.html">Keyboard Input &#38190;&#30424;&#36755;&#20837;</a><br>    
+						</li><li> - <a href="Mouse,%20Keyboard%20and%20Other%20Controls/Mouse%20Input/index.html">Mouse Input &#40736;&#26631;&#36755;&#20837;</a><br>
+						</li><li> - <a href="Mouse,%20Keyboard%20and%20Other%20Controls/Device%20Input/index.html">Device Input &#35774;&#22791;&#36755;&#20837;</a><br>
+						</li><li> - <a href="Mouse,%20Keyboard%20and%20Other%20Controls/GamePad%20Input/index.html">GamePad Input &#25163;&#26564;&#36755;&#20837;</a><br>
+					</li></ol>
+			</li></ol>
+		</blockquote>
+
+	<h4>Drawing And Display &#32472;&#21046;&#19982;&#26174;&#31034;<br>
+</h4>
+  <blockquote>
+			<ol>	
+				<li><a href="Drawing/index.html"><b>Drawing &#32472;&#21046;</b></a><br>
+					<ol class="ext">
+						<li> - <a href="Drawing/Color%20And%20Blending/index.html">Color And Blending &#39068;&#33394;&#19982;&#28151;&#21512;</a><br>
+						</li><li> - <a href="Drawing/Drawing%20Basic%20Forms/index.html">Drawing Basic Forms &#32472;&#21046;&#22522;&#26412;&#26684;&#24335;</a><br>
+						</li><li> - <a href="Drawing/Drawing%20Sprites%20And%20Backgrounds/index.html">Drawing Sprites And Backgrounds &#32472;&#21046;&#31934;&#28789;&#19982;&#32972;&#26223;</a><br>
+						</li><li> - <a href="Drawing/Drawing%20Text/index.html">Drawing Text &#32472;&#21046;&#25991;&#26412;</a><br>
+						</li><li> - <a href="Drawing/Drawing%20Primitives/index.html">Drawing Primitives &#32472;&#21046;&#22270;&#20803;</a><br>
+						</li><li> - <a href="Drawing/Drawing%203D/index.html">Drawing 3D &#32472;&#21046;3D</a><br>
+						</li><li> - <a href="Drawing/Drawing%20Surfaces/index.html">Drawing Surfaces &#32472;&#21046;&#34920;&#38754;</a><br>
+					</li></ol>
+				</li><li><a href="Surfaces/index.html"><b>Surfaces &#34920;&#38754;</b></a><br>
+				</li><li><a href="Windows%20And%20Views/index.html"><b>Windows And Views &#31383;&#21475;&#19982;&#35270;&#37326;</b></a><br>
+					<ol class="ext">
+						<li> - <a href="Windows%20And%20Views/The%20Game%20Window/index.html">The Game Window &#28216;&#25103;&#31383;&#21475;</a>						</li><li> - <a href="Windows%20And%20Views/Views/index.html">Views &#35270;&#37326;</a>
+					</li></ol>
+			</li>
+				<li><a href="Shaders/index.html"><b>Shaders</b></a><br></li>
+                <ol class="ext">
+                  <li> - <a href="Shaders/Vertex%20Formats/index.html">Vertex Formats</a>
+                  <li> - <a href="Shaders/Primitive%20Building/index.html">Primitive Building</a>
+                  <li> - <a href="Shaders/Shader%20Constants/index.html">Shader Constants</a>
+              </ol>
+			</ol>
+  </blockquote>		
+		
+	<h4>Advanced Functions &#39640;&#32423;&#20989;&#25968;<br>
+</h4>
+		<blockquote>
+			<ol>
+				<li><a href="Data%20Structures/index.html"><b>Data Structures &#25968;&#25454;&#32467;&#26500;</b></a><br>
+					<ol class="ext">
+						<li> - <a href="Data%20Structures/DS%20Stacks/index.html">Stacks &#22534;&#26632;</a><br>
+						</li><li> - <a href="Data%20Structures/DS%20Queues/index.html">Queues &#38431;&#21015;</a><br>
+						</li><li> - <a href="Data%20Structures/DS%20Lists/index.html">Lists &#21015;&#34920;</a><br>
+						</li><li> - <a href="Data%20Structures/DS%20Maps/index.html">Maps &#22320;&#22270;</a><br>
+						</li><li> - <a href="Data%20Structures/DS%20Priority%20Queues/index.html">Priority Queues &#20248;&#20808;&#38431;&#21015;</a><br>
+						</li><li> - <a href="Data%20Structures/DS%20Grids/index.html">Grids &#32593;&#26684;</a><br>
+					</li></ol>
+				</li><li><a href="Particles/index.html"><b>Particles &#31890;&#23376;</b></a><br>
+					<ol class="ext">
+						<li> - <a href="Particles/Simple%20Effects/index.html">Simple Effects &#31616;&#21333;&#31890;&#23376;</a><br>
+						</li><li> - <a href="Particles/Particle%20Systems/index.html">Particle Systems &#31890;&#23376;&#31995;&#32479;</a><br>
+						</li><li> - <a href="Particles/Particle%20Types/index.html">Particle Types &#31890;&#23376;&#31867;&#22411;</a><br>
+						</li><li> - <a href="Particles/Particle%20Emitters/index.html">Particle Emitters &#31890;&#23376;&#21457;&#23556;&#22120;</a><br>
+					</li></ol>
+				</li><li><a href="Physics/index.html"><b>Physics &#29289;&#29702;</b></a><br>
+					<ol class="ext">
+						<li> - <a href="Physics/The%20Physics%20World/index.html">The Physics World &#29289;&#29702;&#19990;&#30028;</a><br>
+						</li><li> - <a href="Physics/Forces/index.html">Forces &#21147;</a><br>
+						</li><li> - <a href="Physics/Fixtures/index.html">Fixtures &#22266;&#23450;&#35013;&#32622;</a><br>
+						</li><li> - <a href="Physics/Joints/index.html">Joints &#32852;&#25509;</a><br>
+						</li><li> - <a href="Physics/Physics%20Variables/index.html">Physics Variables &#29289;&#29702;&#21464;&#37327;</a><br>
+					</li></ol>
+				</li><li><a href="File%20Handling/index.html"><b>File Handling &#25991;&#20214;&#22788;&#29702;</b></a><br>
+					<ol class="ext">
+						<li> - <a href="File%20Handling/File%20System%20Limits.html">File System Limits &#25991;&#20214;&#31995;&#32479;&#38480;&#21046;</a><br>
+					</li></ol>
+				</li><li><a href="Operating%20System/index.html"><b>Operating System &#25805;&#20316;&#31995;&#32479;</b></a><br>
+				</li><li><a href="Buffers/index.html"><b>Buffers &#32531;&#20914;&#21306;</b></a><br>
+				</li><li><a href="Networking/index.html"><b>Networking &#32852;&#32593;</b></a><br>
+			</li></ol>
+		</blockquote>
+
+	<h4>Platform Specific &#24179;&#21488;&#29305;&#24615;<br>
+</h4>
+		<blockquote>
+			<ol>		
+				<li><a href="HTML5/index.html"><b>HTML5</b></a><br>
+				</li><li><a href="Windows8/index.html"><b>Windows8</b></a><br>
+					<ol class="ext">
+						<li> - <a href="Windows8/Windows%208%20Phone/index.html">Windows 8 Phone</a><br> 
+					</li></ol>				
+				</li><li><a href="Advertising%20and%20Analytics/index.html"><b>Advertising and Analytics &#24191;&#21578;&#19982;&#20998;&#26512;</b></a><br>
+				</li><li><a href="Social%20Gaming/index.html"><b>Social Gaming &#31038;&#20132;&#28216;&#25103;</b></a><br>
+					<ol class="ext">
+						<li> - <a href="Social%20Gaming/Facebook/index.html">Facebook</a><br> 
+						</li><li> - <a href="Social%20Gaming/Achievements%20and%20Leaderboards/index.html">Achievements and Leaderboards &#25104;&#23601;&#19982;&#25490;&#34892;&#27036;</a><br> 
+						</li><li> - <a href="Social%20Gaming/Achievements%20and%20Leaderboards/Local%20High%20Scores/index.html">Local High Scores &#26412;&#22320;&#39640;&#20998;&#27036;</a>
+					</li></ol>
+				</li><li><a href="In%20App%20Purchases/index.html"><b>In App Purchases &#24212;&#29992;&#31243;&#24207;&#20869;&#36141;&#20080;</b></a><br>
+					<ol class="ext">
+						<li> - <a href="In%20App%20Purchases/IAP%20Example.html">IAP Example &#20363;&#23376;</a><br> 
+						</li><li> - <a href="In%20App%20Purchases/IAP%20Testing.html">IAP Testing &#27979;&#35797;</a><br> 
+						</li><li> - <a href="In%20App%20Purchases/IAP%20Server%20Setup.html">IAP Server Setup &#26381;&#21153;&#22120;&#23433;&#35013;</a><br> 
+					</li></ol>
+				</li><li><a href="Asynchronous%20Functions/index.html"><b>Asynchronous &#24322;&#27493;</b></a><br>
+				</li><li><a href="Cloud%20Services/index.html"><b>Cloud Services &#20113;&#26381;&#21153;</b></a><br>	
+				</li><li><a href="Steam%20API/index.html"><b>Steam API &#24212;&#29992;&#31243;&#24207;&#25509;&#21475;</b></a><br>
+			</li></ol>
+		</blockquote>
+			
+	<h4>Extras &#38468;&#21152;<br>
+</h4>
+		<blockquote>
+			<ol>	
+				<li><a href="Debugging/index.html"><b>Debugging &#35843;&#35797;</b></a><br>
+				</li><li><a href="Miscellaneous/index.html"><b>Miscellaneous &#26434;&#39033;</b></a><br>
+				</li><li><a href="017_Obsolete%20Functions/index.html"><b>Obsolete Functions &#28120;&#27760;&#20989;&#25968;</b></a><br>
+			</li></ol>
+		</blockquote>
+</blockquote>
+
+<p>
+- &#30887;&#32511;&#30340;&#28246; -<br>
+</p>
+<p>
+
+</p><div class="clear">
+	<div style="float: left;">
+		Back : <a href="../index.html">Contents</a>
+	</div>
+</div>
+<p></p>
+
+<h5>� Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5><!-- KEYWORDS
+Reference
+-->  </div>   <!-- #BeginLibraryItem "/Library/mmenu_leftlist.lbi" --><!-- mmenu_leftlist up -->
+			<nav id="menu-left">
+				<ul>
+					<li ><a href="../index.html">GameMaker:Studio 手册首页</a>
+						<ul>
+							<li><a href="#intro">GMS文档简介</a></li>
+							<li><a href="#first">GameMaker:Studio 使用</a></li>
+							<li><a href="#second">Advanced Use高级使用</a></li>
+							<li><a href="#third">Reference 参考</a></li>
+							<li><a href="#fourth">贡献者 Versions by</a></li>						
+						</ul>
+					
+					</li>					
+					<li >
+						<a href="../000_Using GameMaker/index.html">GameMaker:Studio 使用</a>
+						<ul>
+							<li><a href="../000_Using%20GameMaker/000_Introduction.html">Introduction 介绍</a></li>
+							<li><a href="../000_Using%20GameMaker/001_Installation.html">Installation 安装</a></li>
+							<li><a href="../000_Using%20GameMaker/002_Activation.html">Activation 激活</a></li>
+							<li><a href="../000_Using%20GameMaker/003_GameMaker%20Studio%20Overview.html">GameMaker:Studio Overview 概述</a></li>
+							<li>
+								<a href="../000_Using%20GameMaker/004_The%20Graphical%20User%20Interface.html">The Graphical User Interface 绘制用户界面</a>
+								<ul>
+									<li><a href="#">The File Menu</a></li>
+									<li><a href="#">The Edit Menu</a></li>
+									<li><a href="#">The Resources Menu</a></li>
+									<li><a href="#">The Scripts Menu</a></li>
+									<li><a href="#">The Run Menu</a></li>
+									<li><a href="#">The Window Menu</a></li>
+									<li><a href="#">The Help Menu</a></li>									
+								</ul>
+							</li>
+							<li><a href="../000_Using%20GameMaker/005_Loading%20Sprites.html">Loading Sprites 载入精灵</a></li>
+							<li><a href="../000_Using%20GameMaker/006_Sounds%20and%20music.html">Sounds And Music 声音与音乐</a></li>
+							<li><a href="../000_Using%20GameMaker/007_Backgrounds.html">Backgrounds 背景</a></li>
+							<li><a href="../000_Using%20GameMaker/008_Defining%20objects.html">Defining Objects 定义对象</a></li>
+							<li>
+								<a href="../000_Using%20GameMaker/Events/index.html">Events 事件</a>
+								<ul>
+									<li><a href="#">Create Event</a></li>
+									<li><a href="#">Destroy Event</a></li>
+									<li><a href="#">Alarm Events</a></li>
+									<li><a href="#">Step Events</a></li>
+									<li><a href="#">Collision Event</a></li>
+									<li><a href="#">Keyboard Events</a></li>
+									<li><a href="#">Other Events</a></li>
+									<li><a href="#">Draw Event</a></li>
+									<li><a href="#">Asynchronous Events</a></li>									
+								</ul>
+							</li>
+							<li>
+								<a href="../000_Using%20GameMaker/Actions/index.html">Actions 动作</a>
+								<ul>
+									<li><a href="#">Move Actions</a></li>
+									<li><a href="#">Main Actions, Set 1</a></li>
+									<li><a href="#">Main Actions, Set 2</a></li>
+									<li><a href="#">Control Actions</a></li>
+									<li><a href="#">Score Actions</a></li>
+									<li><a href="#">Extra Actions</a></li>
+									<li><a href="#">Draw Actions</a></li>
+									<li><a href="#">Using Variables and Expressions in Actions</a></li>																	
+								</ul>
+							</li>
+							<li>
+								<a href="../000_Using%20GameMaker/Rooms/index.html">Creating Rooms 创造房间</a>
+								<ul>
+									<li><a href="#">Settings</a></li>
+									<li><a href="#">Backgrounds</a></li>
+									<li><a href="#">Objects</a></li>																
+								</ul>								
+							</li>
+							<li><a href="../000_Using%20GameMaker/Game%20Information.html">Game Information</a></li>							
+							<li><a href="../000_Using%20GameMaker/009_Distributing%20your%20game.html">Distributing Your Game 发布您的游戏</a></li>						
+
+						</ul>
+					</li>
+					<li >
+						<a href="../001_Advanced Use/index.html">Advanced Use 高级使用</a>
+						<ul>
+							<li class="Label">Game Assets游戏资产</li>
+							<li>
+								<a href="#">More About Sprites 更多关于精灵</a>
+								<ul>
+									<li><a href="#">Editing Sprites</a></li>
+									<li><a href="#">Editing Subimages</a></li>
+									<li><a href="#">Editing Collision Masks</a></li>																
+								</ul>										
+							</li>
+							<li>
+								<a href="#">More About Backgrounds 更多关于背景</a>
+								<ul>
+									<li><a href="#">Designing Tiles</a></li>
+									<li><a href="#">Texture Pages</a></li>															
+								</ul>
+							</li>
+							<li>
+								<a href="#">More About Objects 更多关于对象</a>
+								<ul>
+									<li><a href="#">Parents</a></li>
+									<li><a href="#">Object Physics Properties</a></li>															
+								</ul>	
+							</li>
+							<li>
+								<a href="#">More About Rooms 更多关于房间</a>
+								<ul>
+									<li><a href="#">Tiles</a></li>
+									<li><a href="#">Viewss</a></li>
+									<li><a href="#">Physics</a></li>															
+								</ul>
+							</li>
+							
+							<li>
+								<a href="#">More About Async Events 更多关于异步事件</a>
+								<ul>
+									<li><a href="#">Image Loaded and Sound Loaded Events</a></li>
+									<li><a href="#">HTTP Event</a></li>
+									<li><a href="#">Dialogs Event</a></li>
+									<li><a href="#">IAP (In App Purchases) Event</a></li>
+									<li><a href="#">Cloud Event</a></li>
+									<li><a href="#">Networking Event</a></li>
+									<li><a href="#">Steam Event</a></li>
+									<li><a href="#">Social Event</a></li>															
+								</ul>
+							</li>
+							<li class="Label">Resource Editors资源编辑器</li>
+							<li><a href="#">Fonts 字体</a></li>
+							<li><a href="#">Paths 路径</a></li>
+							<li><a href="#">Time Lines 时间线</a></li>
+							<li><a href="#">Scripts 脚本</a></li>
+							<li><a href="#">Shaders 着色器</a></li>
+							<li><a href="#">Constants 常量</a></li>
+							<li><a href="#">Including Files 包含文件</a></li>
+							<li><a href="#">Importing Resources 导入资源</a></li>
+							<li class="Label">Game Settings游戏设置</li>
+							<li>
+								<a href="#">Extension Packages 扩展包</a>
+								<ul>
+									<li><a href="#">Using an Extension</a></li>
+									<li><a href="#">Creating an Extension</a></li>														
+								</ul>
+							</li>							
+							<li><a href="#">Configurations 配置</a></li>
+							<li>
+								<a href="#">Source Control 源代码控制</a>
+								<ul>
+									<li><a href="#">Getting Started With Source Control</a></li>
+									<li><a href="#">Setting Up GameMaker:Studio For Source Control</a></li>
+									<li><a href="#">Using Source Control with GameMaker:Studio</a></li>														
+								</ul>
+							</li>							
+							<li>
+								<a href="#">Global Game Settings 全局游戏设定</a>
+								<ul>
+									<li><a href="#">General</a></li>
+									<li><a href="#">Texture Groups</a></li>
+									<li><a href="#">Project Info</a></li>
+									<li><a href="#">Facebook</a></li>
+									<li><a href="#">Source Control</a></li>
+									<li><a href="#">Advertising</a></li>
+									<li><a href="#">Analytics</a></li>
+									<li><a href="#">In App Purchases</a></li>
+									<li><a href="#">Licensing</a></li>
+									<li><a href="#">Windows</a></li>
+									<li><a href="#">Mac OS</a></li>
+									<li><a href="#">HTML5</a></li>
+									<li><a href="#">iOS</a></li>
+									<li><a href="#">Android</a></li>
+									<li><a href="#">Windows 8</a></li>
+									<li><a href="#">Windows Phone</a></li>
+									<li><a href="#">Tizen</a></li>
+									<li><a href="#">Ubuntu (Linux)</a></li>
+									<li><a href="#">Steam</a></li>														
+								</ul>
+							</li>
+							<li>
+								<a href="#">GameMaker:Studio Preferences 首选项</a>
+								<ul>
+									<li><a href="#">General</a></li>
+									<li><a href="#">Forms</a></li>
+									<li><a href="#">Scripts</a></li>
+									<li><a href="#">Editors</a></li>
+									<li><a href="#">Web Server</a></li>
+									<li><a href="#">Android</a></li>
+									<li><a href="#">Windows 8</a></li>
+									<li><a href="#">Windows Phone</a></li>
+									<li><a href="#">Tizen</a></li>
+									<li><a href="#">Mac OS</a></li>
+									<li><a href="#">Ubuntu (Linux)</a></li>
+									<li><a href="#">Steam</a></li>														
+								</ul>
+							</li>
+							<li><a href="#">Debugging 调试</a></li>
+						</ul>
+					</li>
+					<li >
+						<a href="index.html">Reference GML参考手册</a>
+						<ul>
+							<li>
+								<a href="#">GML Overview 概述</a>
+								<ul>
+									<li><a href="#">A Program</a></li>
+									<li><a href="#">Variables and Variable Scope</a></li>
+									<li><a href="#">Addressing Variables in Other Instances</a></li>
+									<li><a href="#">Arrays</a></li>
+									<li><a href="#">Functions</a></li>
+									<li><a href="#">Assignments</a></li>
+									<li><a href="#">Expressions</a></li>
+									<li><a href="#">The "If" Statement</a></li>
+									<li><a href="#">The "Repeat" Statement</a></li>
+									<li><a href="#">The "While" Statement</a></li>
+									<li><a href="#">The "Do" Statement</a></li>
+									<li><a href="#">The "For" Statement</a></li>
+									<li><a href="#">The "Switch" Statement</a></li>
+									<li><a href="#">The "Break" Statement</a></li>
+									<li><a href="#">The "Continue" Statement</a></li>
+									<li><a href="#">The "Exit" Statement</a></li>
+									<li><a href="#">The "With" Construction</a></li>
+									<li><a href="#">Scripts</a></li>
+									<li><a href="#">Comments in Code</a></li>
+									<li><a href="#">Evaluation Order</a></li>														
+								</ul>
+							</li>
+							<li class="Label">Real Numbers And Strings 实数与字符串</li>							
+							<li><a href="#">Date and Time 日期与时间</a></li>
+							<li>
+								<a href="#">Maths 数学</a>
+								<ul>
+									<li><a href="#">Real Number Functions</a></li>
+									<li><a href="#">Vector Functions</a></li>														
+								</ul>
+							</li>
+							<li><a href="#">Strings 字符串</a></li>
+							<li class="Label">Game Play 游戏运行</li>							
+							<li>
+								<a href="#">Game Assets 游戏资产</a>
+								<ul>
+									<li><a href="#">Sprites</a></li>
+									<li><a href="#">Backgrounds</a></li>
+									<li><a href="#">Sounds</a></li>
+									<li><a href="#">Fonts</a></li>
+									<li><a href="#">Paths</a></li>
+									<li><a href="#">Timelines</a></li>
+									<li><a href="#">Rooms</a></li>															
+								</ul>
+							</li>
+							<li>
+								<a href="#">Mouse, Keyboard and Other Controls 鼠标、键盘和其他控制设备</a>
+								<ul>
+									<li><a href="#">Virtual Keys</a></li>
+									<li><a href="#">Keyboard Input</a></li>
+									<li><a href="#">Mouse Input</a></li>
+									<li><a href="#">Device Input</a></li>
+									<li><a href="#">GamePad Input</a></li>
+									<li><a href="#">Immersion Haptics</a></li>																							
+								</ul>
+							</li>
+							<li>
+								<a href="#">Movement and Collisions 移动与碰撞</a>
+								<ul>
+									<li><a href="#">Movement</a></li>
+									<li><a href="#">Motion Planning</a></li>
+									<li><a href="#">Collisions</a></li>														
+								</ul>
+							</li>
+							<li>
+								<a href="#">Objects and Instances 对象与实例</a>
+								<ul>
+									<li><a href="#">Objects</a></li>
+									<li><a href="#">Instances</a></li>														
+								</ul>
+							</li>
+							<li class="Label">Drawing And Display 绘制与显示</li>
+							<li>
+								<a href="#">Drawing 绘制</a>
+								<ul>
+									<li><a href="#">Color And Blending</a></li>
+									<li><a href="#">Drawing Basic Forms</a></li>
+									<li><a href="#">Drawing Sprites And Backgrounds</a></li>
+									<li><a href="#">Drawing Text</a></li>
+									<li><a href="#">Drawing Primitives</a></li>
+									<li><a href="#">Drawing 3D</a></li>
+									<li><a href="#">Drawing Surfaces</a></li>															
+								</ul>
+							</li>
+							<li>
+								<a href="#">Shaders 着色器</a>
+								<ul>
+									<li><a href="#">Vertex Formats</a></li>
+									<li><a href="#">Primitive Building</a></li>
+									<li><a href="#">Shader Constants</a></li>														
+								</ul>
+							</li>
+							<li><a href="#">Surfaces 表面</a></li>
+							<li>
+								<a href="#">Windows And Views 窗口与视野</a>
+								<ul>
+									<li><a href="#">The Game Window</a></li>
+									<li><a href="#">Views</a></li>														
+								</ul>
+							</li>
+							<li class="Label">Advanced Functions 高级函数</li>
+							<li>
+								<a href="#">Data Structures 数据结构</a>
+								<ul>
+									<li><a href="#">Stacks</a></li>
+									<li><a href="#">Queues</a></li>
+									<li><a href="#">Lists</a></li>
+									<li><a href="#">Maps</a></li>
+									<li><a href="#">Priority Queues</a></li>
+									<li><a href="#">Grids</a></li>																								
+								</ul>
+							</li>
+							<li>
+								<a href="#">Particles 粒子</a>
+								<ul>
+									<li><a href="#">Simple Effects</a></li>
+									<li><a href="#">Particle Systems</a></li>
+									<li><a href="#">Particle Types</a></li>
+									<li><a href="#">Particle Emitters</a></li>																																	
+								</ul>
+							</li>
+							<li>
+								<a href="#">Physics 物理</a>
+								<ul>
+									<li><a href="#">The Physics World</a></li>
+									<li><a href="#">Forces</a></li>
+									<li><a href="#">Fixtures</a></li>
+									<li><a href="#">Joints</a></li>
+									<li><a href="#">Physics Variables</a></li>																																
+								</ul>
+							</li>
+							<li>
+								<a href="#">File Handling 文件处理</a>
+								<ul>
+									<li><a href="#">File System Limits</a></li>																																							
+								</ul>
+							</li>
+							<li><a href="#">Operating System 操作系统</a></li>
+							<li><a href="#">Buffers 缓存区</a></li>
+							<li><a href="#">Networking 联网</a></li>
+							<li class="Label">Platform Specific 平台特性</li>
+							<li><a href="#">HTML5</a></li>
+							<li>
+								<a href="#">Windows 8</a>
+								<ul>
+									<li><a href="#">Windows 8 Phone</a></li>																																							
+								</ul>
+							</li>
+							<li><a href="#">Advertising and Analytics 广告与分析</a></li>
+							<li>
+								<a href="#">Social Gaming 社交游戏</a>
+								<ul>
+									<li><a href="#">Facebook</a></li>
+									<li><a href="#">Achievements and Leaderboards</a></li>
+									<li><a href="#">Local High Scores</a></li>																																									
+								</ul>
+							</li>
+							<li>
+								<a href="#">In App Purchases 应用程序内购买</a>
+								<ul>
+									<li><a href="#">IAP Example</a></li>
+									<li><a href="#">IAP Testing</a></li>
+									<li><a href="#">IAP Server Setup</a></li>																																									
+								</ul>
+							</li>
+							<li><a href="#">Asynchronous 异步</a></li>
+							<li><a href="#">Cloud Services 云服务</a></li>
+							<li><a href="#">Steam API 应用程序接口</a></li>
+							<li class="Label">Extras 附加</li>
+							<li><a href="#">Debugging 调试</a></li>
+							<li><a href="#">Miscellaneous 杂项</a></li>
+							<li><a href="#">Obsolete Functions 淘汰函数</a></li>
+						</ul>
+					</li>
+					<li ><a href="#">Examples and Experience 实例教程及心得</a></li>
+					<li ><a href="#">Experimental project 实验项目</a></li>
+					<li ><a href="#">Setting 应用设置</a></li>					
+				</ul>
+			</nav>
+<!-- mmenu_leftlist down 4 --><!-- #EndLibraryItem -->..<!-- #BeginLibraryItem "/Library/mmenu_rightlist.lbi" --><!-- mmenu_right up 1 -->
+			<nav id="menu-right">
+				<ul>
+					<li>
+						<span>GMS使用问题可以联系我</span>
+						<ul>
+							<li class="Label">A</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/1/" />
+									Alexa<br />
+									<small>Johnson</small>
+								</a>
+							</li>
+						</ul>
+					</li>
+					
+					<li>
+						<span>网站问题可以联系我</span>
+						<ul>
+							<li class="Label">D</li>
+							<li class="img">
+								<a href="mailto:deciia@qq.com">
+									<img src="../Library/deciia@qq.com" />
+									Adam<br />
+									<small>Deciia</small>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+<!-- mmenu_right down 4 -->
+
+<!-- #EndLibraryItem --></div></body></html>

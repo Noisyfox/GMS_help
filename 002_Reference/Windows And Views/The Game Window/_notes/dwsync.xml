@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="cr_AppStart.png" local="130389768418755843" remote="130389765380000000" testing="0" />
+<file name="cr_Arrow.png" local="130389768418775857" remote="130389765380000000" testing="0" />
+<file name="cr_Beam.png" local="130389768418795878" remote="130389765380000000" testing="0" />
+<file name="cr_Cross.png" local="130389768418815883" remote="130389765380000000" testing="0" />
+<file name="cr_Default.png" local="130389768418815883" remote="130389765380000000" testing="0" />
+<file name="cr_Drag.png" local="130389768418845935" remote="130389765380000000" testing="0" />
+<file name="cr_Hand.png" local="130389768418855910" remote="130389765380000000" testing="0" />
+<file name="cr_Hourglass.png" local="130389768418875923" remote="130389765380000000" testing="0" />
+<file name="cr_SizeAll.png" local="130389768418895936" remote="130389765380000000" testing="0" />
+<file name="cr_SizeNeSw.png" local="130389768419027424" remote="130389765380000000" testing="0" />
+<file name="cr_SizeNS.png" local="130389768418915962" remote="130389765380000000" testing="0" />
+<file name="cr_SizeNwSe.png" local="130389768419047453" remote="130389765380000000" testing="0" />
+<file name="cr_SizeWE.png" local="130389768419067581" remote="130389765380000000" testing="0" />
+<file name="cr_Up.png" local="130389768419087626" remote="130389765380000000" testing="0" />
+<file name="index.html" local="130396362929344427" remote="130396362450000000" testing="0" />
+<file name="window_center.html" local="130396365671445912" remote="130396362450000000" testing="0" />
+<file name="window_get_caption.html" local="130396365672076327" remote="130396362450000000" testing="0" />
+<file name="window_get_color.html" local="130396365672716752" remote="130396362450000000" testing="0" />
+<file name="window_get_cursor.html" local="130396365673357177" remote="130396362450000000" testing="0" />
+<file name="window_get_fullscreen.html" local="130396365674007617" remote="130396362450000000" testing="0" />
+<file name="window_get_height.html" local="130396365674638012" remote="130396362450000000" testing="0" />
+<file name="window_get_width.html" local="130396365675278437" remote="130396362450000000" testing="0" />
+<file name="window_get_x.html" local="130396365675928893" remote="130396362450000000" testing="0" />
+<file name="window_get_y.html" local="130396365676559307" remote="130396362450000000" testing="0" />
+<file name="window_handle.html" local="130396365677189730" remote="130396362450000000" testing="0" />
+<file name="window_has_focus.html" local="130396274105568633" remote="130396272250000000" testing="0" />
+<file name="window_mouse_get_x.html" local="130396365677850164" remote="130396362450000000" testing="0" />
+<file name="window_mouse_get_y.html" local="130396365678490574" remote="130396362450000000" testing="0" />
+<file name="window_mouse_set.html" local="130396365679131019" remote="130396362450000000" testing="0" />
+<file name="window_set_caption.html" local="130396365679761433" remote="130396362450000000" testing="0" />
+<file name="window_set_color.html" local="130396365680401862" remote="130396362450000000" testing="0" />
+<file name="Window_Set_Color.png" local="130389768418735830" remote="130389765380000000" testing="0" />
+<file name="window_set_cursor.html" local="130396365681042288" remote="130396362450000000" testing="0" />
+<file name="window_set_fullscreen.html" local="130396365683864153" remote="130396362450000000" testing="0" />
+<file name="window_set_position.html" local="130396365684504578" remote="130396362450000000" testing="0" />
+<file name="window_set_rectangle.html" local="130396365685144988" remote="130396362450000000" testing="0" />
+<file name="window_set_size.html" local="130396365685795439" remote="130396362450000000" testing="0" />
+</dwsync>

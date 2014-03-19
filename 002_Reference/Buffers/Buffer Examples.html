@@ -1,0 +1,681 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><title>Buffer Examples</title>
+
+	
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=9">
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"><meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" /></head><body><!-- #BeginLibraryItem "/Library/mmenu_head.lbi" --><!-- mmenu_head up 1 -->
+
+		<link type="text/css" rel="stylesheet" href="../../style.css" />
+		<link type="text/css" rel="stylesheet" href="../../src/css/jquery.mmenu.all.css" />
+		<script type="text/javascript" src="../../src/js/jquery.min.js"></script>
+		<script type="text/javascript" src="../../src/js/hammer.min.js"></script>
+		<script type="text/javascript" src="../../src/js/jquery.mmenu.min.all_old.js"></script>		
+		
+	<!-- scripts links    	
+   
+		<style type="text/css">
+		@media all and (min-width: 900px) {
+		html, body {
+		height: 100%
+		
+		}
+		#menu {
+		background: #eee
+		}
+		#page {
+		border-left: 1px solid #ccc
+		min-height: 100%
+		}
+		}
+		</style>
+   -->
+ 
+		<script type="text/javascript">
+
+			//	The menu on the right
+			$(function() {
+
+				var $menu = $('nav#menu-right');
+				$menu.mmenu({
+					position	: 'right',
+					classes		: 'mm-light',
+					dragOpen	: true,
+					counters	: true,
+					searchfield	: true,
+					labels		: {
+						fixed		: !$.mmenu.support.touch
+					}
+				});
+
+				//	Click a menu-item
+				var $confirm = $('#confirmation');
+				$menu.find( 'li a' ).not( '.mm-subopen' ).not( '.mm-subclose' ).bind(
+					'click.example',
+					function( e )
+					{
+						e.preventDefault();
+						$confirm.show().text( 'You clicked "' + $.trim( $(this).text() ) + '"' );
+						$('#menu-right').trigger( 'close' );
+					}
+				);
+			});
+			
+			//	The menu on the left
+			$(function() {
+
+				var $menu0 = $('nav#menu-left');
+
+				$menu0.mmenu({
+					position	: 'left',
+					classes		: 'mm-light',
+					dragOpen	: true,
+					counters	: true,
+					searchfield	: true,
+					labels		: {
+						fixed		: !$.mmenu.support.touch
+					}
+				});
+			});			
+
+			// for one page
+
+			$(function() {
+				var $menu = $('nav#menu-left'),
+					$html = $('html, body');
+		
+				$menu.mmenu();
+				$menu.find( 'li > a' ).on(
+					'click',
+					function()
+					{
+						var href = $(this).attr( 'href' );
+		
+						//	if the clicked link is linked to an anchor, scroll the page to that anchor 
+						if ( href.slice( 0, 1 ) == '#' )
+						{
+							$menu.one(
+								'closed.mm',
+								function()
+								{
+									setTimeout(
+										function()
+										{
+											$html.animate({
+												scrollTop: $( href ).offset().top
+											});	
+										}, 10
+									);	
+								}
+							);						
+						}
+					}
+				);
+			});
+
+			// for the tips
+			
+			$(function() {
+				var options = {
+					classes			: 'mm-light',
+					modal			: true
+				};
+				
+				options.position = 'left';
+				options.zposition = 'next';
+				$('#tooltip-1').mmenu( options );
+				
+				options.position = 'right';
+				options.zposition = 'next';
+				$('#tooltip-2').mmenu( options );
+				
+				options.position = 'bottom';
+				options.zposition = 'front';
+				$('#popup-1').mmenu( options );
+
+				options.position = 'top';
+				options.zposition = 'front';
+				$('#popup-2').mmenu( options );
+			});
+	
+		</script>
+		
+<!-- mmenu_head down 4 -->
+
+
+<!-- #EndLibraryItem --><!-- the page header part  -->
+<div id="page">
+			<div id="header" >
+				<a href="#menu-left"></a>
+				&#x70B9;&#x51FB;&#x5DE6;&#x8FB9;&#x6309;&#x952E;&#x6253;&#x5F00;&#x5BFC;&#x822A;&#x83DC;&#x5355;
+				<a href="#menu-right" class="friends right"></a>
+			</div>
+
+			<div id="content" >
+			
+<h1>Buffer Examples &#32531;&#20914;&#21306;&#31034;&#20363;<br>
+</h1>
+  
+<h2>&#27492;&#39029;&#38754;&#26377;&#20004;&#20010;&#20363;&#23376;&#65292;&#20351;&#29992;&#32531;&#20914;&#21306;&#65292;&#20197;&#24110;&#21161;&#20102;&#35299;&#22914;&#20309;&#20351;&#29992;&#23427;&#20204;&#12290;</h2>
+
+<h3>&#20351;&#29992;&#32531;&#20914;&#21306;&#21046;&#20316;&#26816;&#26597;&#28857;</h3>
+<p>&#19968;&#20010;&#31616;&#21333;&#30340;&#20363;&#23376;&#26159;&#22914;&#20309;&#20351;&#29992;&#32531;&#20914;&#21306;&#29992;&#20110; &#30340;&#20219;&#20309;&#24179;&#21488;&#65292;&#20851;&#20110;&#20989;&#25968; <a href="../Miscellaneous/game_save_buffer.html"><tt>game_save_buffer</tt></a>&#12290;&#27492;&#20989;&#25968;&#26159;&#23558;&#24403;&#21069;&#30340;&#28216;&#25103;&#29366;&#24577;&#30340;&#8220;snapshot&#8221;&#65292;&#24182;&#25226;&#23427;&#20445;&#23384;&#21040;&#19968;&#20010;&#39044;&#20808;&#23450;&#20041;&#30340;&#32531;&#20914;&#21306;&#65292;&#36825;&#26679;&#23601;&#21487;&#20197;&#35835;&#21462;&#20174;&#22312;&#36825;&#19968;&#28857;&#19978;&#20877;&#27425;&#36733;&#20837;&#28216;&#25103;&#12290;<br>
+<br>
+
+<i><b>NOTE:</b> </i>&#27492;&#20989;&#25968;&#26159;&#38750;&#24120;&#26377;&#38480;&#30340;&#65292;&#23427;&#26159;&#19987;&#20026;&#21021;&#23398;&#32773;&#24471;&#21040;&#19968;&#20010;&#26816;&#26597;&#28857;&#31995;&#32479;&#30340;&#24555;&#36895;&#36816;&#34892;&#65292;&#20294;&#26356;&#20808;&#36827;&#30340;&#29992;&#25143;&#21487;&#33021;&#26356;&#21916;&#27426;&#33258;&#24049;&#30340;&#31995;&#32479;&#20351;&#29992;&#30340;<i> 
+<a href="../File%20Handling/index.html">File functions</a></i>&#65292;&#30001;&#20110;&#36825;&#26679;&#30340;&#20107;&#23454;&#65292;&#35813;&#28216;&#25103;&#23558;&#19981;&#20445;&#23384;&#20219;&#20309;&#30340;&#21160;&#24577;&#36164;&#28304;&#65292;&#24744;&#21487;&#20197;&#21019;&#24314;&#22312;&#36816;&#34892;&#26102;&#65292;&#22914;&#25968;&#25454;&#32467;&#26500;&#65292;&#34920;&#38754;&#65292;&#28155;&#21152;&#32972;&#26223;&#21644;&#31934;&#28789;&#31561;..<br>
+<br>
+
+&#25105;&#20204;&#38656;&#35201;&#20570;&#30340;&#31532;&#19968;&#20214;&#20107;&#26159;&#21019;&#24314;&#19968;&#20010;&#26032;&#30340;&#23545;&#35937;&#26469;&#25511;&#21046;&#20445;&#23384;&#21644;&#21152;&#36733;&#30340;&#65292;&#25152;&#20197;&#20320;&#20250;&#20570;&#19968;&#20010;&#24182;&#32473;&#23427;&#19968;&#20010;&#21019;&#24314;&#20107;&#20214;&#12290;&#22312;&#36825;&#31181;&#24773;&#20917;&#19979;&#65292;&#20320;&#21487;&#20197;&#23558;&#19979;&#38754;&#30340;&#20195;&#30721;&#65306;
+</p><p class="code">
+SaveBuffer = buffer_create(1024, buffer_grow, 1); <br>
+StateSaved = false;<br>
+</p>
+<p>&#31532;&#19968;&#34892;&#21019;&#24314;&#20102;&#19968;&#20010;<b>grow</b>&#32531;&#20914;&#65288;&#22240;&#20026;&#25105;&#20204;&#19981;&#30693;&#36947;&#25152;&#20445;&#23384;&#30340;&#25968;&#25454;&#65289;&#30340;&#26368;&#32456;&#22823;&#23567;&#20026;1024&#23383;&#33410;&#65292;1&#23383;&#33410;&#23545;&#40784;&#12290;&#28982;&#21518;&#21019;&#24314;&#19968;&#20010;&#21464;&#37327;&#26680;&#23545;&#65292;&#22914;&#26524;&#28216;&#25103;&#24050;&#32463;&#20445;&#23384;&#65288;&#36825;&#23558;&#26159;&#29992;&#20110;&#21152;&#36733;&#65289;&#12290;<br>
+<br>
+
+&#19979;&#19968;&#27493;&#65292;&#25105;&#20204;&#23558;&#22686;&#21152;&#19968;&#20010;&#25353;&#38190;&#20107;&#20214;&#65288;&#20363;&#22914;&#65289;&#65292;&#25105;&#20204;&#23558;&#20445;&#23384;&#24403;&#21069;&#30340;&#28216;&#25103;&#29366;&#24577;&#65292;&#21019;&#24314;&#30340;&#32531;&#20914;&#21306;&#65306;
+</p><p class="code">
+StateSaved = true;<br>
+buffer_seek(SaveBuffer, buffer_seek_start, 0);<br>
+game_save_buffer(SaveBuffer);<br>
+</p>
+<p>&#19978;&#38754;&#20250;&#20808;&#35774;&#23450;&#25511;&#21046;&#21464;&#37327;&#35774;&#32622;&#20026;true&#65288;&#36825;&#20445;&#23384;&#28216;&#25103;&#65292;&#24403;&#25105;&#20204;&#20445;&#23384;&#21040;&#32531;&#20914;&#21306;&#20013;&#65289;&#65292;&#28982;&#21518;&#23547;&#27714;&#30340;&#32531;&#20914;&#21306;&#24320;&#22987;&#20043;&#21069;&#25226;&#23427;&#20889;&#30340;&#24403;&#21069;&#29366;&#24577;&#20445;&#23384;&#12290;&#20026;&#20160;&#20040;&#25105;&#20204;&#35201;&#29992; <a href="buffer_seek.html"><tt>buffer_seek</tt></a>&#65311;&#21999;&#65292;&#22914; <a href="Using Buffers.html">Using Buffers</a> &#39029;&#65292;&#20320;&#35835;&#21462;&#21644;&#20889;&#20837;&#21040;&#19968;&#20010;&#32531;&#20914;&#21306;&#65292;&#25968;&#25454;&#34987;&#28155;&#21152;&#21040;&#26368;&#21518;&#19968;&#20010;&#20301;&#32622;&#12290;&#36825;&#24847;&#21619;&#30528;&#65292;&#22914;&#26524;&#20320;&#19981;&#35774;&#32622;&#32531;&#20914;&#21306;&#30340;&#24320;&#22987;&#65292;&#28982;&#21518;&#22238;&#26469;&#21578;&#35785;&#25105;&#65292;&#24403;&#20320;&#20445;&#23384;&#20320;&#23558;&#21152;&#20837;&#22312;&#24403;&#21069;&#32531;&#20914;&#21306;&#21040;&#32531;&#20914;&#21306;&#20013;&#30340;&#25968;&#25454;&#35835;/&#20889;&#20301;&#32622;&#65292;&#25152;&#20197;&#25105;&#20204;&#20351;&#29992;&#30340;&#20989;&#25968;buffer_seek&#31227;&#21160;&#21578;&#35785;&#32531;&#20914;&#21551;&#21160;&#12290;<br>
+</p>
+<p>&#29616;&#22312;&#25105;&#20204;&#24050;&#32463;&#20445;&#23384;&#20102;&#24403;&#21069;&#30340;&#28216;&#25103;&#29366;&#24577;&#30340;&#32531;&#20914;&#21306;&#12290;&#19979;&#19968;&#27493;&#23558;&#26159;&#20195;&#30721;&#22914;&#20309;&#21152;&#36733;&#65292;&#21487;&#22312;&#21478;&#19968;&#20010;&#25353;&#38190;&#20107;&#20214;&#65306;
+</p>
+<p class="code">
+if StateSaved<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;buffer_seek(SaveBuffer, buffer_seek_start, 0);<br>
+&nbsp;&nbsp;&nbsp;game_load_buffer(SaveBuffer);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+&#26412;&#28216;&#25103;&#23558;&#34987;&#21152;&#36733;&#65292;&#22312;&#20320;&#19978;&#38754;&#30340;&#20195;&#30721;&#30340;&#26411;&#23614;&#20107;&#20214;&#20013;&#12290;<br>
+<br>
+
+<i><b>NOTE:</b> </i>&#36825;&#26159;&#20165;&#29992;&#20110;&#22312;&#21516;&#19968;&#20010;&#25151;&#38388;&#65292;&#32780;&#19981;&#26159;&#29983;&#25104;&#23436;&#25972;&#20445;&#23384;&#30340;&#28216;&#25103;&#24050;&#32463;&#20851;&#38381;&#25110;&#37325;&#26032;&#21551;&#21160;&#24744;&#30340;&#28216;&#25103;&#21518;&#65281;<br>
+<br>
+<br>
+
+&#28155;&#21152;&#21040;&#25511;&#21046;&#22120;&#23545;&#35937;&#30340;&#26368;&#21518;&#19968;&#20214;&#20107;&#26159;&#19968;&#20010;&#8220;clean up&#8221;&#30340;&#20195;&#30721;&#12290;&#32531;&#20914;&#22120;&#23384;&#20648;&#22312;&#20869;&#23384;&#20013;&#65292;&#22240;&#27492;&#65292;&#22914;&#26524;&#20320;&#19981;&#28165;&#29702;&#65292;&#24403;&#20320;&#19982;&#20182;&#20204;&#23436;&#25104;&#65292;&#20320;&#21487;&#20197;&#24471;&#21040;&#20869;&#23384;&#27844;&#28431;&#65292;&#26368;&#32456;&#23558;&#23548;&#33268;&#20320;&#30340;&#28216;&#25103;&#23849;&#28291;&#12290;&#25152;&#20197;&#65292;&#20320;&#21487;&#33021;&#20250;&#28155;&#21152;&#19968;&#20010;&#25151;&#38388;&#32467;&#26463;&#20107;&#20214;&#65288;&#20174;&#20854;&#20182;&#20107;&#20214;&#31867;&#21035;&#65289;&#65306;
+</p><p class="code">
+buffer_delete(SaveBuffer);
+</p>
+<p>&#29616;&#22312;&#65292;&#36825;&#20010;&#23545;&#35937;&#21487;&#20197;&#34987;&#25918;&#32622;&#21040;&#19968;&#20010;&#25151;&#38388;&#37324;&#65292;&#24182;&#19988;&#25353;&#38190;&#20174;&#32531;&#20914;&#21306;&#20445;&#23384;&#21644;&#21152;&#36733;&#25151;&#24577;&#12290;<br>
+<br>
+
+</p><h3>&#32852;&#32593;&#32531;&#20914;&#21306;</h3>
+<p>
+&#24403;&#20351;&#29992;&#8220;GameMaker:Studio&#8221;&#30340;&#32593;&#32476;&#20989;&#25968;&#65292;&#20320;&#24517;&#39035;&#20351;&#29992;&#35201;&#21019;&#24314;&#30340;&#32531;&#20914;&#21306;&#25968;&#25454;&#8220;&#21253;&#8221;&#65292;&#20063;&#23601;&#26159;&#36890;&#36807;&#32593;&#32476;&#36830;&#25509;&#21457;&#36865;&#12290;&#36825;&#20010;&#20363;&#23376;&#26174;&#31034;&#22914;&#20309;&#20570;&#21040;&#36825;&#19968;&#28857;&#65292;&#20294;&#30001;&#20110;&#32593;&#32476;&#30340;&#21487;&#33021;&#24615;&#30340;&#33539;&#22260;&#65292;&#23427;&#26159;&#21807;&#19968;&#30340;&#35774;&#35745;&#23637;&#31034;&#20102;&#22914;&#20309;&#20351;&#29992;&#32531;&#20914;&#21306;&#26412;&#36523;&#65292;&#32780;&#19981;&#26159;&#23436;&#25972;&#30340;&#32593;&#32476;&#31995;&#32479;&#65288;&#28436;&#31034;&#25991;&#20214;&#21253;&#21547;<i>GameMaker:Studio</i>&#26174;&#31034;&#36825;&#20010;&#65289;&#12290;<br>
+<br>&#25105;&#20204;&#23558;&#23637;&#31034;&#30340;&#31532;&#19968;&#20214;&#20107;&#24773;&#26159;&#21019;&#36896;&#21644;&#20351;&#29992;&#30340;&#32593;&#32476;&#36830;&#25509;&#30340;&#23458;&#25143;&#31471;&#30340;&#32531;&#20914;&#21306;&#12290;&#27492;&#32531;&#20914;&#21306;&#23558;&#34987;&#29992;&#20110;&#21019;&#24314;&#23567;&#30340;&#25968;&#25454;&#21253;&#65292;&#28982;&#21518;&#23558;&#20854;&#21457;&#36865;&#21040;&#26381;&#21153;&#22120;&#65292;&#20197;&#20415;&#22312;&#21019;&#24314;&#20107;&#20214;&#30340;&#19968;&#20010;&#23454;&#20363;&#65292;&#25105;&#20204;&#23558;&#20998;&#37197;&#19968;&#20010;&#32531;&#20914;&#21306;&#31867;&#20284;&#36825;&#26679;&#30340;&#65306;
+</p><p class="code">
+send_buff = buffer_create(256, buffer_grow, 1);
+</p>
+<p>&#25105;&#20204;&#20351;&#32531;&#20914;&#21306;&#23567;&#65288;256&#23383;&#33410;&#65289;&#65292;&#23427;&#24182;&#19981;&#36866;&#29992;&#20110;&#25345;&#26377;&#22823;&#37327;&#30340;&#25968;&#25454;&#65292;&#25105;&#20204;&#20351;&#23427;&#25104;&#20026;&#19968;&#20010;glow&#32531;&#20914;&#65292;&#20197;&#30830;&#20445;&#27809;&#26377;&#38169;&#35823;&#30340;&#65292;&#25105;&#20204;&#38656;&#35201;&#28155;&#21152;&#26356;&#22810;&#30340;&#25968;&#25454;&#21487;&#20197;&#22312;&#20219;&#20309;&#26102;&#38388;&#21457;&#36865;&#65292;&#23545;&#40784;&#26041;&#24335;&#35774;&#32622;&#20026;&#20102;&#26041;&#20415;&#12290;<br>
+<br>&#29616;&#22312;&#65292;&#35753;&#25105;&#20204;&#35828;&#65292;&#25105;&#20204;&#24076;&#26395;&#25105;&#20204;&#30340;&#23458;&#25143;&#23558;&#25968;&#25454;&#21457;&#36865;&#21040;&#26381;&#21153;&#22120;&#12290;&#23545;&#20110;&#25105;&#20204;&#38656;&#35201;&#21019;&#24314;&#19968;&#20010;&#32531;&#20914;&#21306;&#8220;&#21253;&#8221;&#65292;&#22312;&#36825;&#20010;&#20363;&#23376;&#20013;&#65292;&#25105;&#20204;&#35201;&#21457;&#36865;&#19968;&#20010;&#25353;&#38190;&#20107;&#20214;&#65292;&#21916;&#27426;&#24403;&#29609;&#23478;&#25353;&#19979;&#24038;&#26041;&#21521;&#38190;&#31227;&#21160;&#21608;&#22260;&#30340;&#28216;&#25103;&#12290;&#35201;&#20570;&#21040;&#36825;&#19968;&#28857;&#65292;&#25105;&#20204;&#32534;&#20889;&#24517;&#35201;&#30340;&#25968;&#25454;&#21040;&#32531;&#20914;&#21306;&#65292;&#28982;&#21518;&#25226;&#23427;&#20851;&#38381;&#65306;
+</p><p class="code">
+buffer_seek(buff, buffer_seek_start, 0);<br>
+buffer_write(buff, buffer_u8, 1);<br>
+buffer_write(buff, buffer_s16, vk_space);<br>
+buffer_write(buff, buffer_bool, true);<br>
+network_send_packet(client, buff, buffer_tell(buff));<br>
+</p>
+<p>&#35760;&#24405;&#21040;&#32531;&#20914;&#21306;&#20043;&#21069;&#65292;&#25105;&#20204;&#24050;&#32463;&#35774;&#32622;&#20102;&#8220;&#21578;&#35785;&#8221;&#24320;&#22987;&#30340;&#32531;&#20914;&#32593;&#32476;&#22987;&#32456;&#38656;&#35201;&#23558;&#25968;&#25454;&#20174;&#19968;&#20010;&#32531;&#20914;&#21306;&#30340;&#36215;&#22987;&#12290;&#28982;&#21518;&#65292;&#25105;&#20204;&#20889;&#30340;&#26816;&#26597;&#20540;&#65288;&#36825;&#23558;&#22312;&#25152;&#20351;&#29992;&#30340;&#26381;&#21153;&#22120;&#65292;&#20197;&#30830;&#23450;&#35201;&#22788;&#29702;
+&#30340;&#20107;&#20214;&#30340;&#31867;&#22411;&#65289;&#65292;&#21017;&#35813;&#38190;&#34987;&#20351;&#29992;&#65292;&#21017;&#26159;&#35813;&#38190;&#30340;&#29366;&#24577;&#65288;&#22312;&#36825;&#31181;&#24773;&#20917;&#19979;&#65292;&#30495;&#27491;&#30340;&#25353;&#19979;&#65289;&#12290;&#28982;&#21518;&#27492;&#32531;&#20914;&#21306;&#30001;&#32593;&#32476;&#21151;&#33021;&#20316;&#20026;&#19968;&#20010;&#25968;&#25454;&#21253;&#21457;&#36865;&#12290;&#35831;&#27880;&#24847;&#65292;&#25105;&#20204;&#19981;&#21457;&#36865;&#25972;&#20010;&#32531;&#20914;
+&#21306;&#65281;&#25105;&#20204;&#21482;&#21457;&#36865;&#25968;&#25454;&#20889;&#20837;&#65292;&#20351;&#29992;&#30340; <a href="buffer_tell.html"><tt>buffer_tell</tt></a> &#20989;&#25968;&#36820;&#22238;&#24403;&#21069;&#30340;&#35835;/&#20889;&#32531;&#20914;&#21306;&#30340;&#20301;&#32622;&#65288;&#35831;&#35760;&#20303;&#65292;&#20889;&#20837;&#21040;&#32531;&#20914;&#21306;&#31227;&#21160;&#8220;&#21578;&#35785;&#8221;&#21040;&#24213;&#24050;&#32463;&#20889;&#20160;&#20040;&#65289;&#12290;<br>
+<br>&#25509;&#25910;&#26381;&#21153;&#22120;&#19978;&#30340;&#25968;&#25454;&#26159;&#20160;&#20040;&#65311;&#25509;&#25910;&#21040;&#30340;&#25968;&#25454;&#30340;&#25968;&#25454;&#21253;&#24517;&#39035;&#34987;&#20889;&#20837;&#21040;&#32531;&#20914;&#21306;&#20013;&#30340;&#26381;&#21153;&#22120;&#19978;&#65292;&#28982;&#21518;&#29992;&#20110;&#26356;&#26032;&#30340;&#28216;&#25103;&#12290;&#20026;&#27492;&#65292;&#25105;&#20204;&#23558;&#20351;&#29992; <a href="../../001_Advanced%20Use/More%20About%20Async%20Events/Networking.html">Networking Asynchronous Event</a> &#22312;&#32593;&#32476;&#25511;&#21046;&#22120;&#30340;&#26381;&#21153;&#22120;&#23545;&#35937;&#65292;&#36825;&#20010;&#31616;&#21270;&#30340;&#20195;&#30721;&#22914;&#19979;&#25152;&#31034;&#65306;
+</p><p class="code">
+var buff = ds_map_find_value(async_load, "buffer");<br>
+if cmd == buffer_read(buff, buffer_u8);<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;key = buffer_read(buff, buffer_s16 );<br>
+&nbsp;&nbsp;&nbsp;key_state = buffer_read(buff, buffer_bool);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>&#24322;&#27493;&#20107;&#20214;&#23558;&#21253;&#21547;&#19968;&#20010;&#29305;&#27530;&#30340;&#30340;&#20020;&#26102;ds_map&#65288;&#23427;&#30340;&#20107;&#20214;&#32467;&#26463;&#26102;&#33258;&#21160;&#34987;&#21024;&#38500;&#65289;&#65292;&#20854;&#20013;&#21253;&#21547;&#19981;&#21516;&#30340;&#20449;&#24687;&#65292;&#26681;&#25454;&#20174;&#32593;&#32476;&#36755;&#20837;&#30340;&#25968;&#25454;&#19981;&#21516;&#30340;&#12290;&#22312;&#36825;&#31181;&#24773;&#20917;&#19979;&#65292;&#25105;&#20204;
+&#20551;&#35774;&#20102;&#22320;&#22270;&#36827;&#34892;&#20102;&#26816;&#26597;&#65292;&#21457;&#29616;&#26159;&#19968;&#20010;&#32531;&#20914;&#21306;&#20013;&#30340;&#25968;&#25454;&#20174;&#23458;&#25143;&#26426;&#21457;&#36865;&#30340;&#25968;&#25454;&#21253;&#12290;&#25105;&#20204;&#29616;&#22312;&#30340;&#31532;&#19968;&#22359;&#32531;&#20914;&#21306;&#20013;&#30340;&#25968;&#25454;&#65292;&#30475;&#30475;&#26377;&#20160;&#20040;&#26679;&#30340;&#20107;&#20214;&#24050;&#34987;&#36865;&#24448;&#26816;&#26597; -
+&#22312;&#36825;&#31181;&#24773;&#20917;&#19979;&#65292;&#20540;&#8220;1&#8221;&#26159;&#19968;&#20010;&#20851;&#38190;&#30340;&#20107;&#20214;&#65292;&#20294;&#26159;&#32534;&#30721;&#36825;&#20123;&#19996;&#35199;&#26102;&#65292;&#20320;&#24212;&#35813;&#23450;&#20041;&#24120;&#37327;&#25345;&#26377;&#36825;&#20123;&#20540;&#31616;&#21270;&#30340;&#19996;&#35199; -
+&#28982;&#21518;&#23558;&#20854;&#23384;&#20648;&#34987;&#25353;&#19979;&#30340;&#38190;&#65292;&#20854;&#29366;&#24577;&#65288;&#30495;=&#25353;&#19979;&#65292;&#20551;=&#37322;&#25918;&#65289;&#12290;&#28982;&#21518;&#65292;&#21487;&#20197;&#20351;&#29992;&#27492;&#20449;&#24687;&#26469;&#26356;&#26032;&#25152;&#26377;&#30340;&#23458;&#25143;&#31471;&#21457;&#36865;&#23458;&#25143;&#31471;&#25773;&#25918;&#22120;&#30340;&#26032;&#29366;&#24577;&#12290;<br>
+<br>
+
+<i><b>NOTE:</b> </i>&#22312;&#32593;&#32476;&#24322;&#27493;&#20107;&#20214;&#30340;&#32467;&#26463;&#21518;&#20174;ds_map&#21019;&#24314;&#30340;&#32531;&#20914;&#21306;&#33258;&#21160;&#34987;&#21024;&#38500;&#65292;&#22240;&#27492;&#22312;&#36825;&#37324;&#19981;&#20877;&#38656;&#35201;&#20351;&#29992;<i> 
+<a href="buffer_delete.html"><tt>buffer_delete</tt></a> </i>&#12290;<br>
+<br>
+
+</p><p>
+- &#30887;&#32511;&#30340;&#28246; -<br>
+</p>
+<p>
+
+</p><div class="clear">
+	<div style="float: left;">
+		Back : <a href="index.html">Buffers</a>
+	</div>
+	<div style="float: right;">
+		Next : <a href="Using%20Buffers.html">Using Buffers</a>
+	</div>
+</div>
+
+
+<h5>� Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
+<!-- KEYWORDS
+buffer examples
+game_save_buffer example
+checkpoints
+-->  </div>   <!-- #BeginLibraryItem "/Library/mmenu_leftlist.lbi" --><!-- mmenu_leftlist up -->
+			<nav id="menu-left">
+				<ul>
+					<li ><a href="../../index.html">GameMaker:Studio 手册首页</a>
+						<ul>
+							<li><a href="#intro">GMS文档简介</a></li>
+							<li><a href="#first">GameMaker:Studio 使用</a></li>
+							<li><a href="#second">Advanced Use高级使用</a></li>
+							<li><a href="#third">Reference 参考</a></li>
+							<li><a href="#fourth">贡献者 Versions by</a></li>						
+						</ul>
+					
+					</li>					
+					<li >
+						<a href="../../000_Using GameMaker/index.html">GameMaker:Studio 使用</a>
+						<ul>
+							<li><a href="../../000_Using GameMaker/000_Introduction.html">Introduction 介绍</a></li>
+							<li><a href="../../000_Using GameMaker/001_Installation.html">Installation 安装</a></li>
+							<li><a href="../../000_Using GameMaker/002_Activation.html">Activation 激活</a></li>
+							<li><a href="../../000_Using GameMaker/003_GameMaker Studio Overview.html">GameMaker:Studio Overview 概述</a></li>
+							<li>
+								<a href="../../000_Using GameMaker/004_The Graphical User Interface.html">The Graphical User Interface 绘制用户界面</a>
+								<ul>
+									<li><a href="#">The File Menu</a></li>
+									<li><a href="#">The Edit Menu</a></li>
+									<li><a href="#">The Resources Menu</a></li>
+									<li><a href="#">The Scripts Menu</a></li>
+									<li><a href="#">The Run Menu</a></li>
+									<li><a href="#">The Window Menu</a></li>
+									<li><a href="#">The Help Menu</a></li>									
+								</ul>
+							</li>
+							<li><a href="../../000_Using GameMaker/005_Loading Sprites.html">Loading Sprites 载入精灵</a></li>
+							<li><a href="../../000_Using GameMaker/006_Sounds and music.html">Sounds And Music 声音与音乐</a></li>
+							<li><a href="../../000_Using GameMaker/007_Backgrounds.html">Backgrounds 背景</a></li>
+							<li><a href="../../000_Using GameMaker/008_Defining objects.html">Defining Objects 定义对象</a></li>
+							<li>
+								<a href="../../000_Using GameMaker/Events/index.html">Events 事件</a>
+								<ul>
+									<li><a href="#">Create Event</a></li>
+									<li><a href="#">Destroy Event</a></li>
+									<li><a href="#">Alarm Events</a></li>
+									<li><a href="#">Step Events</a></li>
+									<li><a href="#">Collision Event</a></li>
+									<li><a href="#">Keyboard Events</a></li>
+									<li><a href="#">Other Events</a></li>
+									<li><a href="#">Draw Event</a></li>
+									<li><a href="#">Asynchronous Events</a></li>									
+								</ul>
+							</li>
+							<li>
+								<a href="../../000_Using GameMaker/Actions/index.html">Actions 动作</a>
+								<ul>
+									<li><a href="#">Move Actions</a></li>
+									<li><a href="#">Main Actions, Set 1</a></li>
+									<li><a href="#">Main Actions, Set 2</a></li>
+									<li><a href="#">Control Actions</a></li>
+									<li><a href="#">Score Actions</a></li>
+									<li><a href="#">Extra Actions</a></li>
+									<li><a href="#">Draw Actions</a></li>
+									<li><a href="#">Using Variables and Expressions in Actions</a></li>																	
+								</ul>
+							</li>
+							<li>
+								<a href="../../000_Using GameMaker/Rooms/index.html">Creating Rooms 创造房间</a>
+								<ul>
+									<li><a href="#">Settings</a></li>
+									<li><a href="#">Backgrounds</a></li>
+									<li><a href="#">Objects</a></li>																
+								</ul>								
+							</li>
+							<li><a href="../../000_Using GameMaker/Game Information.html">Game Information</a></li>							
+							<li><a href="../../000_Using GameMaker/009_Distributing your game.html">Distributing Your Game 发布您的游戏</a></li>						
+
+						</ul>
+					</li>
+					<li >
+						<a href="../../001_Advanced Use/index.html">Advanced Use 高级使用</a>
+						<ul>
+							<li class="Label">Game Assets游戏资产</li>
+							<li>
+								<a href="#">More About Sprites 更多关于精灵</a>
+								<ul>
+									<li><a href="#">Editing Sprites</a></li>
+									<li><a href="#">Editing Subimages</a></li>
+									<li><a href="#">Editing Collision Masks</a></li>																
+								</ul>										
+							</li>
+							<li>
+								<a href="#">More About Backgrounds 更多关于背景</a>
+								<ul>
+									<li><a href="#">Designing Tiles</a></li>
+									<li><a href="#">Texture Pages</a></li>															
+								</ul>
+							</li>
+							<li>
+								<a href="#">More About Objects 更多关于对象</a>
+								<ul>
+									<li><a href="#">Parents</a></li>
+									<li><a href="#">Object Physics Properties</a></li>															
+								</ul>	
+							</li>
+							<li>
+								<a href="#">More About Rooms 更多关于房间</a>
+								<ul>
+									<li><a href="#">Tiles</a></li>
+									<li><a href="#">Viewss</a></li>
+									<li><a href="#">Physics</a></li>															
+								</ul>
+							</li>
+							
+							<li>
+								<a href="#">More About Async Events 更多关于异步事件</a>
+								<ul>
+									<li><a href="#">Image Loaded and Sound Loaded Events</a></li>
+									<li><a href="#">HTTP Event</a></li>
+									<li><a href="#">Dialogs Event</a></li>
+									<li><a href="#">IAP (In App Purchases) Event</a></li>
+									<li><a href="#">Cloud Event</a></li>
+									<li><a href="#">Networking Event</a></li>
+									<li><a href="#">Steam Event</a></li>
+									<li><a href="#">Social Event</a></li>															
+								</ul>
+							</li>
+							<li class="Label">Resource Editors资源编辑器</li>
+							<li><a href="#">Fonts 字体</a></li>
+							<li><a href="#">Paths 路径</a></li>
+							<li><a href="#">Time Lines 时间线</a></li>
+							<li><a href="#">Scripts 脚本</a></li>
+							<li><a href="#">Shaders 着色器</a></li>
+							<li><a href="#">Constants 常量</a></li>
+							<li><a href="#">Including Files 包含文件</a></li>
+							<li><a href="#">Importing Resources 导入资源</a></li>
+							<li class="Label">Game Settings游戏设置</li>
+							<li>
+								<a href="#">Extension Packages 扩展包</a>
+								<ul>
+									<li><a href="#">Using an Extension</a></li>
+									<li><a href="#">Creating an Extension</a></li>														
+								</ul>
+							</li>							
+							<li><a href="#">Configurations 配置</a></li>
+							<li>
+								<a href="#">Source Control 源代码控制</a>
+								<ul>
+									<li><a href="#">Getting Started With Source Control</a></li>
+									<li><a href="#">Setting Up GameMaker:Studio For Source Control</a></li>
+									<li><a href="#">Using Source Control with GameMaker:Studio</a></li>														
+								</ul>
+							</li>							
+							<li>
+								<a href="#">Global Game Settings 全局游戏设定</a>
+								<ul>
+									<li><a href="#">General</a></li>
+									<li><a href="#">Texture Groups</a></li>
+									<li><a href="#">Project Info</a></li>
+									<li><a href="#">Facebook</a></li>
+									<li><a href="#">Source Control</a></li>
+									<li><a href="#">Advertising</a></li>
+									<li><a href="#">Analytics</a></li>
+									<li><a href="#">In App Purchases</a></li>
+									<li><a href="#">Licensing</a></li>
+									<li><a href="#">Windows</a></li>
+									<li><a href="#">Mac OS</a></li>
+									<li><a href="#">HTML5</a></li>
+									<li><a href="#">iOS</a></li>
+									<li><a href="#">Android</a></li>
+									<li><a href="#">Windows 8</a></li>
+									<li><a href="#">Windows Phone</a></li>
+									<li><a href="#">Tizen</a></li>
+									<li><a href="#">Ubuntu (Linux)</a></li>
+									<li><a href="#">Steam</a></li>														
+								</ul>
+							</li>
+							<li>
+								<a href="#">GameMaker:Studio Preferences 首选项</a>
+								<ul>
+									<li><a href="#">General</a></li>
+									<li><a href="#">Forms</a></li>
+									<li><a href="#">Scripts</a></li>
+									<li><a href="#">Editors</a></li>
+									<li><a href="#">Web Server</a></li>
+									<li><a href="#">Android</a></li>
+									<li><a href="#">Windows 8</a></li>
+									<li><a href="#">Windows Phone</a></li>
+									<li><a href="#">Tizen</a></li>
+									<li><a href="#">Mac OS</a></li>
+									<li><a href="#">Ubuntu (Linux)</a></li>
+									<li><a href="#">Steam</a></li>														
+								</ul>
+							</li>
+							<li><a href="#">Debugging 调试</a></li>
+						</ul>
+					</li>
+					<li >
+						<a href="../index.html">Reference GML参考手册</a>
+						<ul>
+							<li>
+								<a href="#">GML Overview 概述</a>
+								<ul>
+									<li><a href="#">A Program</a></li>
+									<li><a href="#">Variables and Variable Scope</a></li>
+									<li><a href="#">Addressing Variables in Other Instances</a></li>
+									<li><a href="#">Arrays</a></li>
+									<li><a href="#">Functions</a></li>
+									<li><a href="#">Assignments</a></li>
+									<li><a href="#">Expressions</a></li>
+									<li><a href="#">The "If" Statement</a></li>
+									<li><a href="#">The "Repeat" Statement</a></li>
+									<li><a href="#">The "While" Statement</a></li>
+									<li><a href="#">The "Do" Statement</a></li>
+									<li><a href="#">The "For" Statement</a></li>
+									<li><a href="#">The "Switch" Statement</a></li>
+									<li><a href="#">The "Break" Statement</a></li>
+									<li><a href="#">The "Continue" Statement</a></li>
+									<li><a href="#">The "Exit" Statement</a></li>
+									<li><a href="#">The "With" Construction</a></li>
+									<li><a href="#">Scripts</a></li>
+									<li><a href="#">Comments in Code</a></li>
+									<li><a href="#">Evaluation Order</a></li>														
+								</ul>
+							</li>
+							<li class="Label">Real Numbers And Strings 实数与字符串</li>							
+							<li><a href="#">Date and Time 日期与时间</a></li>
+							<li>
+								<a href="#">Maths 数学</a>
+								<ul>
+									<li><a href="#">Real Number Functions</a></li>
+									<li><a href="#">Vector Functions</a></li>														
+								</ul>
+							</li>
+							<li><a href="#">Strings 字符串</a></li>
+							<li class="Label">Game Play 游戏运行</li>							
+							<li>
+								<a href="#">Game Assets 游戏资产</a>
+								<ul>
+									<li><a href="#">Sprites</a></li>
+									<li><a href="#">Backgrounds</a></li>
+									<li><a href="#">Sounds</a></li>
+									<li><a href="#">Fonts</a></li>
+									<li><a href="#">Paths</a></li>
+									<li><a href="#">Timelines</a></li>
+									<li><a href="#">Rooms</a></li>															
+								</ul>
+							</li>
+							<li>
+								<a href="#">Mouse, Keyboard and Other Controls 鼠标、键盘和其他控制设备</a>
+								<ul>
+									<li><a href="#">Virtual Keys</a></li>
+									<li><a href="#">Keyboard Input</a></li>
+									<li><a href="#">Mouse Input</a></li>
+									<li><a href="#">Device Input</a></li>
+									<li><a href="#">GamePad Input</a></li>
+									<li><a href="#">Immersion Haptics</a></li>																							
+								</ul>
+							</li>
+							<li>
+								<a href="#">Movement and Collisions 移动与碰撞</a>
+								<ul>
+									<li><a href="#">Movement</a></li>
+									<li><a href="#">Motion Planning</a></li>
+									<li><a href="#">Collisions</a></li>														
+								</ul>
+							</li>
+							<li>
+								<a href="#">Objects and Instances 对象与实例</a>
+								<ul>
+									<li><a href="#">Objects</a></li>
+									<li><a href="#">Instances</a></li>														
+								</ul>
+							</li>
+							<li class="Label">Drawing And Display 绘制与显示</li>
+							<li>
+								<a href="#">Drawing 绘制</a>
+								<ul>
+									<li><a href="#">Color And Blending</a></li>
+									<li><a href="#">Drawing Basic Forms</a></li>
+									<li><a href="#">Drawing Sprites And Backgrounds</a></li>
+									<li><a href="#">Drawing Text</a></li>
+									<li><a href="#">Drawing Primitives</a></li>
+									<li><a href="#">Drawing 3D</a></li>
+									<li><a href="#">Drawing Surfaces</a></li>															
+								</ul>
+							</li>
+							<li>
+								<a href="#">Shaders 着色器</a>
+								<ul>
+									<li><a href="#">Vertex Formats</a></li>
+									<li><a href="#">Primitive Building</a></li>
+									<li><a href="#">Shader Constants</a></li>														
+								</ul>
+							</li>
+							<li><a href="#">Surfaces 表面</a></li>
+							<li>
+								<a href="#">Windows And Views 窗口与视野</a>
+								<ul>
+									<li><a href="#">The Game Window</a></li>
+									<li><a href="#">Views</a></li>														
+								</ul>
+							</li>
+							<li class="Label">Advanced Functions 高级函数</li>
+							<li>
+								<a href="#">Data Structures 数据结构</a>
+								<ul>
+									<li><a href="#">Stacks</a></li>
+									<li><a href="#">Queues</a></li>
+									<li><a href="#">Lists</a></li>
+									<li><a href="#">Maps</a></li>
+									<li><a href="#">Priority Queues</a></li>
+									<li><a href="#">Grids</a></li>																								
+								</ul>
+							</li>
+							<li>
+								<a href="#">Particles 粒子</a>
+								<ul>
+									<li><a href="#">Simple Effects</a></li>
+									<li><a href="#">Particle Systems</a></li>
+									<li><a href="#">Particle Types</a></li>
+									<li><a href="#">Particle Emitters</a></li>																																	
+								</ul>
+							</li>
+							<li>
+								<a href="#">Physics 物理</a>
+								<ul>
+									<li><a href="#">The Physics World</a></li>
+									<li><a href="#">Forces</a></li>
+									<li><a href="#">Fixtures</a></li>
+									<li><a href="#">Joints</a></li>
+									<li><a href="#">Physics Variables</a></li>																																
+								</ul>
+							</li>
+							<li>
+								<a href="#">File Handling 文件处理</a>
+								<ul>
+									<li><a href="#">File System Limits</a></li>																																							
+								</ul>
+							</li>
+							<li><a href="#">Operating System 操作系统</a></li>
+							<li><a href="#">Buffers 缓存区</a></li>
+							<li><a href="#">Networking 联网</a></li>
+							<li class="Label">Platform Specific 平台特性</li>
+							<li><a href="#">HTML5</a></li>
+							<li>
+								<a href="#">Windows 8</a>
+								<ul>
+									<li><a href="#">Windows 8 Phone</a></li>																																							
+								</ul>
+							</li>
+							<li><a href="#">Advertising and Analytics 广告与分析</a></li>
+							<li>
+								<a href="#">Social Gaming 社交游戏</a>
+								<ul>
+									<li><a href="#">Facebook</a></li>
+									<li><a href="#">Achievements and Leaderboards</a></li>
+									<li><a href="#">Local High Scores</a></li>																																									
+								</ul>
+							</li>
+							<li>
+								<a href="#">In App Purchases 应用程序内购买</a>
+								<ul>
+									<li><a href="#">IAP Example</a></li>
+									<li><a href="#">IAP Testing</a></li>
+									<li><a href="#">IAP Server Setup</a></li>																																									
+								</ul>
+							</li>
+							<li><a href="#">Asynchronous 异步</a></li>
+							<li><a href="#">Cloud Services 云服务</a></li>
+							<li><a href="#">Steam API 应用程序接口</a></li>
+							<li class="Label">Extras 附加</li>
+							<li><a href="#">Debugging 调试</a></li>
+							<li><a href="#">Miscellaneous 杂项</a></li>
+							<li><a href="#">Obsolete Functions 淘汰函数</a></li>
+						</ul>
+					</li>
+					<li ><a href="#">Examples and Experience 实例教程及心得</a></li>
+					<li ><a href="#">Experimental project 实验项目</a></li>
+					<li ><a href="#">Setting 应用设置</a></li>					
+				</ul>
+			</nav>
+<!-- mmenu_leftlist down 4 --><!-- #EndLibraryItem -->..<!-- #BeginLibraryItem "/Library/mmenu_rightlist.lbi" --><!-- mmenu_right up 1 -->
+			<nav id="menu-right">
+				<ul>
+					<li>
+						<span>GMS使用问题可以联系我</span>
+						<ul>
+							<li class="Label">A</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/1/" />
+									Alexa<br />
+									<small>Johnson</small>
+								</a>
+							</li>
+						</ul>
+					</li>
+					
+					<li>
+						<span>网站问题可以联系我</span>
+						<ul>
+							<li class="Label">D</li>
+							<li class="img">
+								<a href="mailto:deciia@qq.com">
+									<img src="../../Library/deciia@qq.com" />
+									Adam<br />
+									<small>Deciia</small>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+<!-- mmenu_right down 4 -->
+
+<!-- #EndLibraryItem --></div></body></html>

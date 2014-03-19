@@ -1,0 +1,790 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>Using Source Control With GameMaker:Studio</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" /></head>
+<body><!-- #BeginLibraryItem "/Library/mmenu_head.lbi" --><!-- mmenu_head up 1 -->
+
+		<link type="text/css" rel="stylesheet" href="../../style.css" />
+		<link type="text/css" rel="stylesheet" href="../../src/css/jquery.mmenu.all.css" />
+		<script type="text/javascript" src="../../src/js/jquery.min.js"></script>
+		<script type="text/javascript" src="../../src/js/hammer.min.js"></script>
+		<script type="text/javascript" src="../../src/js/jquery.mmenu.min.all_old.js"></script>		
+		
+	<!-- scripts links    	
+   
+		<style type="text/css">
+		@media all and (min-width: 900px) {
+		html, body {
+		height: 100%
+		
+		}
+		#menu {
+		background: #eee
+		}
+		#page {
+		border-left: 1px solid #ccc
+		min-height: 100%
+		}
+		}
+		</style>
+   -->
+ 
+		<script type="text/javascript">
+
+			//	The menu on the right
+			$(function() {
+
+				var $menu = $('nav#menu-right');
+				$menu.mmenu({
+					position	: 'right',
+					classes		: 'mm-light',
+					dragOpen	: true,
+					counters	: true,
+					searchfield	: true,
+					labels		: {
+						fixed		: !$.mmenu.support.touch
+					}
+				});
+
+				//	Click a menu-item
+				var $confirm = $('#confirmation');
+				$menu.find( 'li a' ).not( '.mm-subopen' ).not( '.mm-subclose' ).bind(
+					'click.example',
+					function( e )
+					{
+						e.preventDefault();
+						$confirm.show().text( 'You clicked "' + $.trim( $(this).text() ) + '"' );
+						$('#menu-right').trigger( 'close' );
+					}
+				);
+			});
+			
+			//	The menu on the left
+			$(function() {
+
+				var $menu0 = $('nav#menu-left');
+
+				$menu0.mmenu({
+					position	: 'left',
+					classes		: 'mm-light',
+					dragOpen	: true,
+					counters	: true,
+					searchfield	: true,
+					labels		: {
+						fixed		: !$.mmenu.support.touch
+					}
+				});
+			});			
+
+			// for one page
+
+			$(function() {
+				var $menu = $('nav#menu-left'),
+					$html = $('html, body');
+		
+				$menu.mmenu();
+				$menu.find( 'li > a' ).on(
+					'click',
+					function()
+					{
+						var href = $(this).attr( 'href' );
+		
+						//	if the clicked link is linked to an anchor, scroll the page to that anchor 
+						if ( href.slice( 0, 1 ) == '#' )
+						{
+							$menu.one(
+								'closed.mm',
+								function()
+								{
+									setTimeout(
+										function()
+										{
+											$html.animate({
+												scrollTop: $( href ).offset().top
+											});	
+										}, 10
+									);	
+								}
+							);						
+						}
+					}
+				);
+			});
+
+			// for the tips
+			
+			$(function() {
+				var options = {
+					classes			: 'mm-light',
+					modal			: true
+				};
+				
+				options.position = 'left';
+				options.zposition = 'next';
+				$('#tooltip-1').mmenu( options );
+				
+				options.position = 'right';
+				options.zposition = 'next';
+				$('#tooltip-2').mmenu( options );
+				
+				options.position = 'bottom';
+				options.zposition = 'front';
+				$('#popup-1').mmenu( options );
+
+				options.position = 'top';
+				options.zposition = 'front';
+				$('#popup-2').mmenu( options );
+			});
+	
+		</script>
+		
+<!-- mmenu_head down 6 -->
+
+
+<!-- #EndLibraryItem --><!-- the page header part  -->
+<div id="page">
+			<div id="header" >
+				<a href="#menu-left"></a>
+				&#x70B9;&#x51FB;&#x5DE6;&#x8FB9;&#x6309;&#x952E;&#x6253;&#x5F00;&#x5BFC;&#x822A;&#x83DC;&#x5355;
+				<a href="#menu-right" class="friends right"></a>
+			</div>
+
+			<div id="content" >
+			
+<h1>Using Source Control with <i>GameMaker:Studio</i></h1>
+
+<h2>Once you have everything setup correctly, <i>GameMaker:Studio</i> has its own set of tools for working with Source Control.</h2>
+
+<p>
+When working with your game in a source controlled setup, it is important that you follow the same steps all the time when creating, committing or reverting files in your game. To make things easier, 
+below you can find a brief overview for the three main procedures that you will need to work with.
+<br>
+<br>
+
+<h3>Adding New Files</h3>
+<p>
+When creating a new resource for your game (whether it be a room, a sprite or a time line), there are a couple of steps that you should always take to ensure that it is correctly versioned in your source 
+control repository:
+<blockquote>
+	<ul>
+		
+		<li>Create the resource and add the codes, objects, sprites etc...</li><br>
+		
+		<li>Save the project as the resources do not exist outside of the IDE (<i>this is very important!</i>).</li><br>
+		
+		<li>After saving the project, if you have not previously added any resources of this type to your repository for this project, right click on the resources root folder (so, for example, for a room it 
+		would be the "Rooms "group in the resource tree), and select <i>Source Control -> add</i>. <b>This only needs to be done <i>once</i> for each resource type.</b></li><br>		
+		
+		<li>Right click on the new resource and also select <i>Source Control -> add</i>.</li><br>
+	
+	</ul>
+</blockquote>
+<p>
+Now that you have added your resources to the repository, you can continue working on them as before, only now when you change something in them, you will have to use the "Commit" function to save 
+them to the repository, which is covered in the next section.
+<br>
+<br>
+<blockquote>
+	<i><b>Important!</b> Don't forget to save the game project before adding to the repository! And you only need to add each resource group once to the repository, and each subsequent resource 
+	created in the group also only needs to be added only once after it has been created.</i>
+</blockquote>
+<p>
+
+<h3>Committing Files</h3>
+<p>
+Adding files (as explained above) only marks the files as "to be added" to your source control repository but doesn't actually save them there. So we must now <i>commit</i> the files in order for the repository 
+to hold these files. This step is very important as without it, your repository will not be up to date and you cannot use any of the source control features.
+<br>
+<br>
+
+To commit files to the repository, follow these simple steps:
+<blockquote>
+	<ul>
+		
+		<li>Right click on the resource in the resource tree and select <i>Source Control -> Commit All</i> (you can also select <i>Commit</i> directly from the menu but that is for individual files and also we 
+		have a lot more than just your new files to commit, as you will see).</li><br>
+		
+		<li>You will now get a commit dialog.
+		
+		<img class="center" src="SC_CommitDialogue.png"></img>
+		
+		At the top you can add a message which will be logged along with your commit so that others can get a general idea of what you committed, and below this you will see all files that you are going to 
+		commit.</li><br>
+		
+		<li>You will see that there are a lot of files in there, with most of them being the config files and images. You can choose just what to commit here by deselecting items in this dialog. The left panel shows 
+		file names and the check-boxes for deselecting and selecting them, while the right panel shows you the status of the file (<b>A</b>=added, <b>M</b>=modified, <b>D</b>=deleted, 
+		<b>?</b>=un-versioned).</li><br>
+		
+		<li>For this first commit, it is recommended that you do <i>not</i> deselect anything and commit everything, adding in as a message log something like "initial commit". Now press "<b>Ok</b>".</li><br>
+
+		<li>You will now see in the compile messages it is adding and committing to the repository. This can take a while depending on your connection and the amount of files. The first commit can be quite lengthy 
+		but you are looking for the message "<b>Refreshing SVN Status...finished</b>" which tells you that everything has been done and you can continue to work on the game.
+	
+	</ul>
+</blockquote>
+<p>
+Now that you have done your initial commit, the process should be more or less the same from now onwards, with you editing something, saving the project and then committing the change(s) to the repository, either 
+using the <i>commit all</i> or simple <i>commit</i> commands from the right click menu of the resource tree.
+<br>
+<br>
+
+<font size="3"><i><b>IMPORTANT!</b> The project.gmx has to be committed manually by the user! Since the actual project.gmx does not appear in the resource tree, you should either commit it to source control 
+<b>after</b> committing any changed files from your game, <b>or</b> use the "commit all" command to commit it along with the rest of the changed files.</i></font>
+<p>
+
+<h3>Reverting Changes</h3>
+<p>
+One of the principal uses for source control is the ability to "roll back" your game to a previous state and undo any changes that have been made. This can be of particular importance when you have added something 
+that breaks the game or have made some design changes that you want to go back and add in. in situations like this you will need to use the <b>Revert</b> option.
+<br>
+<br>
+
+The following steps outline how to revert to the last committed version of a file stored in the repository:
+<blockquote>
+	<ul>
+		
+		<li>Right click on a resource you wish to revert and click "<i>Source Control -> Revert</i>".</li><br>
+		
+		<li>You will see a message appear in the compiler form at the bottom of the IDE saying "Reverted 'xxxxx.gmx'".</li><br>
+		
+		<li>Your resource is now back to the previously committed version.
+
+	</ul>
+</blockquote>
+<p>
+Please note that this is not reversible, unless you are reverting from an already committed change. If you make some changes without doing a commit and then revert, once you have reverted there is no going back 
+to your non-committed version.
+<p>
+
+<h3>The GameMaker:Studio Interface</h3>
+<p>
+Once your game file has been added to your source control repository you will see that a new set of icons have been added to each resource on your resource tree. These are the <i>GameMaker:Studio</i> source 
+control indicators and are used to give you a graphic representation of the versions of each of your resources and while working on your project will look a bit like this :
+<br>
+<br>
+
+<img class="center" src="SC_Icons_ResourceTree.png"></img>
+
+Obviously the exact icons you see will depend on your project and what you have been working on, but you still need to know what they all mean! The list below shows each one and explains their significance:
+<br>
+<br>
+
+&nbsp;&nbsp;&nbsp;<img src="SC_Icon_1.png">&nbsp;&nbsp;&nbsp; <b>Updated</b> : This shows that the resource is updated to the current version as stored in the repository.<br><br></img>
+
+&nbsp;&nbsp;&nbsp;<img src="SC_Icon_2.png">&nbsp;&nbsp;&nbsp; <b>Added</b> : This icon means that you have created a new resource and it has to be added into the repository. This will happen 
+automatically when you save your progress.<br><br></img>
+
+&nbsp;&nbsp;&nbsp;<img src="SC_Icon_3.png">&nbsp;&nbsp;&nbsp; <b>Modified</b> : When you change a resource in any way this icon will appear beside it to let you know that it is now different to 
+the last version in the repository.<br><br></img>
+
+&nbsp;&nbsp;&nbsp;<img src="SC_Icon_4.png">&nbsp;&nbsp;&nbsp; <b>Not Versioned</b> : if you see this icon it means that the resource is not recognised by the SVN Client and should therefore 
+be added to the repository. There is an "add" command provided for this in the right-click menu from the resource tree.<br><br></img>
+
+&nbsp;&nbsp;&nbsp;<img src="SC_Icon_5.png">&nbsp;&nbsp;&nbsp; <b>Conflict</b> : if you get this icon it means there is a conflict between two resources. this can only usually happen when two or 
+more people work on the same source and cannot be resolved through <i>GameMaker:Studio</i>. For that you will have to use your windows SVN Client to merge the two files or manually edit the *.gmx files.<br></img>
+<br>
+
+<p>
+You can work on your game as normal, creating, changing and adding resources as necessary knowing that these changes are only being done to your <i>local</i> copy of the game, not the versioned copy stored in 
+the repository. As mentioned in the sections above, a game with source control active also has an extra set of commands available from the right click menu of the resource tree. These new options deal with source 
+control and look like this:
+<br>
+<br>
+
+<img class="center" src="ResourceTree_Options.png"></img>
+
+As you can see there are two most common actions that need to be performed:
+<br>
+<br>
+
+<blockquote>
+	<ul>
+		<li><b>Commit</b> : This will commit the selected resource to the source control repository. If you have a folder selected then everything in that folder will be committed, otherwise it will only commit 
+		the selected resource. 	When you commit something you will also be prompted to add a comment where you can briefly explain what you have added or changed, and this will then be stored along with 
+		the updated version of your project.</li><br>
+		
+		<li><b>Update</b> : This will update the selected resource (or resources if you have a folder selected) in your local copy of the project from the repository. Any changes, additions or conflicts will now 
+		show up in <i>GameMaker:Studio</i></li>
+	</ul>
+</blockquote>
+
+<p>
+Below those two actions, you also have a further sub-menu titled "Source Control". There are further actions that you can perform listed here:
+<br>
+<br>
+
+<blockquote>
+	<ul>
+		<li><b>Add</b> : Normally you will have no need to use this action as <i>GameMaker:Studio</i> takes care of adding any new resources you create into the repository, but in some special cases it may 
+		be necessary to manually add a resource into the repository. When this happens you will get the <img src="SC_Icon_4.png"> "Not Versioned"</img> icon showing that you need to use this action.</li><br>
+
+		<li><b>Refresh Status</b> : This simply refreshes the source control icons beside the resource (or resources if you have a folder selected) to reflect the current versioned status.</li><br>
+
+		<li><b>Revert</b> : With this action you revert the selected resource, or resources if you have a folder selected, to the <i>last version you have updated to</i> from the repository.</li><br>
+		
+		<li><b>Commit All</b> : Commits <i>everything</i> into the repository. You will be prompted to save your work to the local copy before committing.</li><br>
+		
+		<li><b>Refresh All</b> : This simply refreshes the status icons beside all the resources.</li><br>
+
+		<li><b>Revert All</b> : Use this to revert all changes that you have done back to the <i>last version you have updated to</i> from the repository.</li><br>
+
+		<li><b>Update All</b> : This will update all resources in your local copy of the project from the repository. Any changes, additions or conflicts will now show up in <i>GameMaker:Studio</i>.</li><br>
+	</ul>
+</blockquote>
+
+<p>
+It should be noted that there is no option to rename any resource as this is handled internally. So, when you have source control enabled and you rename (for example) a sprite, <i>GameMaker:Studio</i> will 
+automatically change and update your local copy of the project without any need for your intervention. these changes will then be added to the repository on the next commit.
+<br>
+<br>
+<br>
+<br>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back : <a href="index.html">Source Control Index</a>
+	</div>
+	<div style="float:right">
+		Next : <a href="Getting%20Started%20With%20Source%20Control.html">Getting Started With Source Control</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>  </div>   <!-- #BeginLibraryItem "/Library/mmenu_leftlist.lbi" -->
+			<nav id="menu-left">
+			<!-- mmenu_leftlist up -->
+				<ul>
+					<li ><a href="../../index.html">GameMaker:Studio 手册首页</a>
+						<ul>
+							<li><a href="#intro">GMS文档简介</a></li>
+							<li><a href="#first">GameMaker:Studio 使用</a></li>
+							<li><a href="#second">Advanced Use高级使用</a></li>
+							<li><a href="#third">Reference 参考</a></li>
+							<li><a href="#fourth">贡献者 Versions by</a></li>						
+						</ul>
+					
+					</li>					
+					<li >
+						<a href="../../000_Using GameMaker/index.html">GameMaker:Studio 使用</a>
+						<ul>
+							<li><a href="../../000_Using GameMaker/000_Introduction.html">Introduction 介绍</a></li>
+							<li><a href="../../000_Using GameMaker/001_Installation.html">Installation 安装</a></li>
+							<li><a href="../../000_Using GameMaker/002_Activation.html">Activation 激活</a></li>
+							<li><a href="../../000_Using GameMaker/003_GameMaker Studio Overview.html">GameMaker:Studio Overview 概述</a></li>
+							<li>
+								<a href="../../000_Using GameMaker/004_The Graphical User Interface.html">The Graphical User Interface 绘制用户界面</a>
+								<ul>
+									<li><a href="#">The File Menu</a></li>
+									<li><a href="#">The Edit Menu</a></li>
+									<li><a href="#">The Resources Menu</a></li>
+									<li><a href="#">The Scripts Menu</a></li>
+									<li><a href="#">The Run Menu</a></li>
+									<li><a href="#">The Window Menu</a></li>
+									<li><a href="#">The Help Menu</a></li>									
+								</ul>
+							</li>
+							<li><a href="../../000_Using GameMaker/005_Loading Sprites.html">Loading Sprites 载入精灵</a></li>
+							<li><a href="../../000_Using GameMaker/006_Sounds and music.html">Sounds And Music 声音与音乐</a></li>
+							<li><a href="../../000_Using GameMaker/007_Backgrounds.html">Backgrounds 背景</a></li>
+							<li><a href="../../000_Using GameMaker/008_Defining objects.html">Defining Objects 定义对象</a></li>
+							<li>
+								<a href="../../000_Using GameMaker/Events/index.html">Events 事件</a>
+								<ul>
+									<li><a href="#">Create Event</a></li>
+									<li><a href="#">Destroy Event</a></li>
+									<li><a href="#">Alarm Events</a></li>
+									<li><a href="#">Step Events</a></li>
+									<li><a href="#">Collision Event</a></li>
+									<li><a href="#">Keyboard Events</a></li>
+									<li><a href="#">Other Events</a></li>
+									<li><a href="#">Draw Event</a></li>
+									<li><a href="#">Asynchronous Events</a></li>									
+								</ul>
+							</li>
+							<li>
+								<a href="../../000_Using GameMaker/Actions/index.html">Actions 动作</a>
+								<ul>
+									<li><a href="#">Move Actions</a></li>
+									<li><a href="#">Main Actions, Set 1</a></li>
+									<li><a href="#">Main Actions, Set 2</a></li>
+									<li><a href="#">Control Actions</a></li>
+									<li><a href="#">Score Actions</a></li>
+									<li><a href="#">Extra Actions</a></li>
+									<li><a href="#">Draw Actions</a></li>
+									<li><a href="#">Using Variables and Expressions in Actions</a></li>																	
+								</ul>
+							</li>
+							<li>
+								<a href="../../000_Using GameMaker/Rooms/index.html">Creating Rooms 创造房间</a>
+								<ul>
+									<li><a href="#">Settings</a></li>
+									<li><a href="#">Backgrounds</a></li>
+									<li><a href="#">Objects</a></li>																
+								</ul>								
+							</li>
+							<li><a href="../../000_Using GameMaker/Game Information.html">Game Information</a></li>							
+							<li><a href="../../000_Using GameMaker/009_Distributing your game.html">Distributing Your Game 发布您的游戏</a></li>						
+
+						</ul>
+					</li>
+					<li >
+						<a href="../index.html">Advanced Use 高级使用</a>
+						<ul>
+							<li class="Label">Game Assets游戏资产</li>
+							<li>
+								<a href="#">More About Sprites 更多关于精灵</a>
+								<ul>
+									<li><a href="#">Editing Sprites</a></li>
+									<li><a href="#">Editing Subimages</a></li>
+									<li><a href="#">Editing Collision Masks</a></li>																
+								</ul>										
+							</li>
+							<li>
+								<a href="#">More About Backgrounds 更多关于背景</a>
+								<ul>
+									<li><a href="#">Designing Tiles</a></li>
+									<li><a href="#">Texture Pages</a></li>															
+								</ul>
+							</li>
+							<li>
+								<a href="#">More About Objects 更多关于对象</a>
+								<ul>
+									<li><a href="#">Parents</a></li>
+									<li><a href="#">Object Physics Properties</a></li>															
+								</ul>	
+							</li>
+							<li>
+								<a href="#">More About Rooms 更多关于房间</a>
+								<ul>
+									<li><a href="#">Tiles</a></li>
+									<li><a href="#">Viewss</a></li>
+									<li><a href="#">Physics</a></li>															
+								</ul>
+							</li>
+							
+							<li>
+								<a href="#">More About Async Events 更多关于异步事件</a>
+								<ul>
+									<li><a href="#">Image Loaded and Sound Loaded Events</a></li>
+									<li><a href="#">HTTP Event</a></li>
+									<li><a href="#">Dialogs Event</a></li>
+									<li><a href="#">IAP (In App Purchases) Event</a></li>
+									<li><a href="#">Cloud Event</a></li>
+									<li><a href="#">Networking Event</a></li>
+									<li><a href="#">Steam Event</a></li>
+									<li><a href="#">Social Event</a></li>															
+								</ul>
+							</li>
+							<li class="Label">Resource Editors资源编辑器</li>
+							<li><a href="#">Fonts 字体</a></li>
+							<li><a href="#">Paths 路径</a></li>
+							<li><a href="#">Time Lines 时间线</a></li>
+							<li><a href="#">Scripts 脚本</a></li>
+							<li><a href="#">Shaders 着色器</a></li>
+							<li><a href="#">Constants 常量</a></li>
+							<li><a href="#">Including Files 包含文件</a></li>
+							<li><a href="#">Importing Resources 导入资源</a></li>
+							<li class="Label">Game Settings游戏设置</li>
+							<li>
+								<a href="#">Extension Packages 扩展包</a>
+								<ul>
+									<li><a href="#">Using an Extension</a></li>
+									<li><a href="#">Creating an Extension</a></li>														
+								</ul>
+							</li>							
+							<li><a href="#">Configurations 配置</a></li>
+							<li>
+								<a href="#">Source Control 源代码控制</a>
+								<ul>
+									<li><a href="#">Getting Started With Source Control</a></li>
+									<li><a href="#">Setting Up GameMaker:Studio For Source Control</a></li>
+									<li><a href="#">Using Source Control with GameMaker:Studio</a></li>														
+								</ul>
+							</li>							
+							<li>
+								<a href="#">Global Game Settings 全局游戏设定</a>
+								<ul>
+									<li><a href="#">General</a></li>
+									<li><a href="#">Texture Groups</a></li>
+									<li><a href="#">Project Info</a></li>
+									<li><a href="#">Facebook</a></li>
+									<li><a href="#">Source Control</a></li>
+									<li><a href="#">Advertising</a></li>
+									<li><a href="#">Analytics</a></li>
+									<li><a href="#">In App Purchases</a></li>
+									<li><a href="#">Licensing</a></li>
+									<li><a href="#">Windows</a></li>
+									<li><a href="#">Mac OS</a></li>
+									<li><a href="#">HTML5</a></li>
+									<li><a href="#">iOS</a></li>
+									<li><a href="#">Android</a></li>
+									<li><a href="#">Windows 8</a></li>
+									<li><a href="#">Windows Phone</a></li>
+									<li><a href="#">Tizen</a></li>
+									<li><a href="#">Ubuntu (Linux)</a></li>
+									<li><a href="#">Steam</a></li>														
+								</ul>
+							</li>
+							<li>
+								<a href="#">GameMaker:Studio Preferences 首选项</a>
+								<ul>
+									<li><a href="#">General</a></li>
+									<li><a href="#">Forms</a></li>
+									<li><a href="#">Scripts</a></li>
+									<li><a href="#">Editors</a></li>
+									<li><a href="#">Web Server</a></li>
+									<li><a href="#">Android</a></li>
+									<li><a href="#">Windows 8</a></li>
+									<li><a href="#">Windows Phone</a></li>
+									<li><a href="#">Tizen</a></li>
+									<li><a href="#">Mac OS</a></li>
+									<li><a href="#">Ubuntu (Linux)</a></li>
+									<li><a href="#">Steam</a></li>														
+								</ul>
+							</li>
+							<li><a href="#">Debugging 调试</a></li>
+						</ul>
+					</li>
+					<li >
+						<a href="../../002_Reference/index.html">Reference GML参考手册</a>
+						<ul>
+							<li>
+								<a href="#">GML Overview 概述</a>
+								<ul>
+									<li><a href="#">A Program</a></li>
+									<li><a href="#">Variables and Variable Scope</a></li>
+									<li><a href="#">Addressing Variables in Other Instances</a></li>
+									<li><a href="#">Arrays</a></li>
+									<li><a href="#">Functions</a></li>
+									<li><a href="#">Assignments</a></li>
+									<li><a href="#">Expressions</a></li>
+									<li><a href="#">The "If" Statement</a></li>
+									<li><a href="#">The "Repeat" Statement</a></li>
+									<li><a href="#">The "While" Statement</a></li>
+									<li><a href="#">The "Do" Statement</a></li>
+									<li><a href="#">The "For" Statement</a></li>
+									<li><a href="#">The "Switch" Statement</a></li>
+									<li><a href="#">The "Break" Statement</a></li>
+									<li><a href="#">The "Continue" Statement</a></li>
+									<li><a href="#">The "Exit" Statement</a></li>
+									<li><a href="#">The "With" Construction</a></li>
+									<li><a href="#">Scripts</a></li>
+									<li><a href="#">Comments in Code</a></li>
+									<li><a href="#">Evaluation Order</a></li>														
+								</ul>
+							</li>
+							<li class="Label">Real Numbers And Strings 实数与字符串</li>							
+							<li><a href="#">Date and Time 日期与时间</a></li>
+							<li>
+								<a href="#">Maths 数学</a>
+								<ul>
+									<li><a href="#">Real Number Functions</a></li>
+									<li><a href="#">Vector Functions</a></li>														
+								</ul>
+							</li>
+							<li><a href="#">Strings 字符串</a></li>
+							<li class="Label">Game Play 游戏运行</li>							
+							<li>
+								<a href="#">Game Assets 游戏资产</a>
+								<ul>
+									<li><a href="#">Sprites</a></li>
+									<li><a href="#">Backgrounds</a></li>
+									<li><a href="#">Sounds</a></li>
+									<li><a href="#">Fonts</a></li>
+									<li><a href="#">Paths</a></li>
+									<li><a href="#">Timelines</a></li>
+									<li><a href="#">Rooms</a></li>															
+								</ul>
+							</li>
+							<li>
+								<a href="#">Mouse, Keyboard and Other Controls 鼠标、键盘和其他控制设备</a>
+								<ul>
+									<li><a href="#">Virtual Keys</a></li>
+									<li><a href="#">Keyboard Input</a></li>
+									<li><a href="#">Mouse Input</a></li>
+									<li><a href="#">Device Input</a></li>
+									<li><a href="#">GamePad Input</a></li>
+									<li><a href="#">Immersion Haptics</a></li>																							
+								</ul>
+							</li>
+							<li>
+								<a href="#">Movement and Collisions 移动与碰撞</a>
+								<ul>
+									<li><a href="#">Movement</a></li>
+									<li><a href="#">Motion Planning</a></li>
+									<li><a href="#">Collisions</a></li>														
+								</ul>
+							</li>
+							<li>
+								<a href="#">Objects and Instances 对象与实例</a>
+								<ul>
+									<li><a href="#">Objects</a></li>
+									<li><a href="#">Instances</a></li>														
+								</ul>
+							</li>
+							<li class="Label">Drawing And Display 绘制与显示</li>
+							<li>
+								<a href="#">Drawing 绘制</a>
+								<ul>
+									<li><a href="#">Color And Blending</a></li>
+									<li><a href="#">Drawing Basic Forms</a></li>
+									<li><a href="#">Drawing Sprites And Backgrounds</a></li>
+									<li><a href="#">Drawing Text</a></li>
+									<li><a href="#">Drawing Primitives</a></li>
+									<li><a href="#">Drawing 3D</a></li>
+									<li><a href="#">Drawing Surfaces</a></li>															
+								</ul>
+							</li>
+							<li>
+								<a href="#">Shaders 着色器</a>
+								<ul>
+									<li><a href="#">Vertex Formats</a></li>
+									<li><a href="#">Primitive Building</a></li>
+									<li><a href="#">Shader Constants</a></li>														
+								</ul>
+							</li>
+							<li><a href="#">Surfaces 表面</a></li>
+							<li>
+								<a href="#">Windows And Views 窗口与视野</a>
+								<ul>
+									<li><a href="#">The Game Window</a></li>
+									<li><a href="#">Views</a></li>														
+								</ul>
+							</li>
+							<li class="Label">Advanced Functions 高级函数</li>
+							<li>
+								<a href="#">Data Structures 数据结构</a>
+								<ul>
+									<li><a href="#">Stacks</a></li>
+									<li><a href="#">Queues</a></li>
+									<li><a href="#">Lists</a></li>
+									<li><a href="#">Maps</a></li>
+									<li><a href="#">Priority Queues</a></li>
+									<li><a href="#">Grids</a></li>																								
+								</ul>
+							</li>
+							<li>
+								<a href="#">Particles 粒子</a>
+								<ul>
+									<li><a href="#">Simple Effects</a></li>
+									<li><a href="#">Particle Systems</a></li>
+									<li><a href="#">Particle Types</a></li>
+									<li><a href="#">Particle Emitters</a></li>																																	
+								</ul>
+							</li>
+							<li>
+								<a href="#">Physics 物理</a>
+								<ul>
+									<li><a href="#">The Physics World</a></li>
+									<li><a href="#">Forces</a></li>
+									<li><a href="#">Fixtures</a></li>
+									<li><a href="#">Joints</a></li>
+									<li><a href="#">Physics Variables</a></li>																																
+								</ul>
+							</li>
+							<li>
+								<a href="#">File Handling 文件处理</a>
+								<ul>
+									<li><a href="#">File System Limits</a></li>																																							
+								</ul>
+							</li>
+							<li><a href="#">Operating System 操作系统</a></li>
+							<li><a href="#">Buffers 缓存区</a></li>
+							<li><a href="#">Networking 联网</a></li>
+							<li class="Label">Platform Specific 平台特性</li>
+							<li><a href="#">HTML5</a></li>
+							<li>
+								<a href="#">Windows 8</a>
+								<ul>
+									<li><a href="#">Windows 8 Phone</a></li>																																							
+								</ul>
+							</li>
+							<li><a href="#">Advertising and Analytics 广告与分析</a></li>
+							<li>
+								<a href="#">Social Gaming 社交游戏</a>
+								<ul>
+									<li><a href="#">Facebook</a></li>
+									<li><a href="#">Achievements and Leaderboards</a></li>
+									<li><a href="#">Local High Scores</a></li>																																									
+								</ul>
+							</li>
+							<li>
+								<a href="#">In App Purchases 应用程序内购买</a>
+								<ul>
+									<li><a href="#">IAP Example</a></li>
+									<li><a href="#">IAP Testing</a></li>
+									<li><a href="#">IAP Server Setup</a></li>																																									
+								</ul>
+							</li>
+							<li><a href="#">Asynchronous 异步</a></li>
+							<li><a href="#">Cloud Services 云服务</a></li>
+							<li><a href="#">Steam API 应用程序接口</a></li>
+							<li class="Label">Extras 附加</li>
+							<li><a href="#">Debugging 调试</a></li>
+							<li><a href="#">Miscellaneous 杂项</a></li>
+							<li><a href="#">Obsolete Functions 淘汰函数</a></li>
+						</ul>
+					</li>
+					<li ><a href="#">Examples and Experience 实例教程及心得</a></li>
+					<li ><a href="#">Experimental project 实验项目</a></li>
+					<li ><a href="#">Setting 应用设置</a></li>					
+				</ul>
+			<!-- mmenu_leftlist down 7 -->
+			</nav>
+<!-- #EndLibraryItem -->..<!-- #BeginLibraryItem "/Library/mmenu_rightlist.lbi" --><!-- mmenu_right up 1 -->
+			<nav id="menu-right">
+				<ul>
+					<li>
+						<span>GMS使用问题可以联系我</span>
+						<ul>
+							<li class="Label">A</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/1/" />
+									Alexa<br />
+									<small>Johnson</small>
+								</a>
+							</li>
+						</ul>
+					</li>
+					
+					<li>
+						<span>网站问题可以联系我</span>
+						<ul>
+							<li class="Label">D</li>
+							<li class="img">
+								<a href="mailto:deciia@qq.com">
+									<img src="../../Library/deciia@qq.com" />
+									Adam<br />
+									<small>Deciia</small>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+<!-- mmenu_right down 6 -->
+
+<!-- #EndLibraryItem --></div></body>
+</html>
+
+<!-- KEYWORDS
+add
+revert
+commit
+conflict
+update
+refresh
+not versioned
+modified
+Using Source Control With GameMaker:Studio
+-->

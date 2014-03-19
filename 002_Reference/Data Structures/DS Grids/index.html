@@ -1,0 +1,577 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><title>DS Grids</title>
+
+
+	
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=9">
+		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"><meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" /></head><body><!-- #BeginLibraryItem "/Library/mmenu_head.lbi" --><!-- mmenu_head up 1 -->
+
+		<link type="text/css" rel="stylesheet" href="../../../style.css" />
+		<link type="text/css" rel="stylesheet" href="../../../src/css/jquery.mmenu.all.css" />
+		<script type="text/javascript" src="../../../src/js/jquery.min.js"></script>
+		<script type="text/javascript" src="../../../src/js/hammer.min.js"></script>
+		<script type="text/javascript" src="../../../src/js/jquery.mmenu.min.all_old.js"></script>		
+		
+	<!-- scripts links    	
+   
+		<style type="text/css">
+		@media all and (min-width: 900px) {
+		html, body {
+		height: 100%
+		
+		}
+		#menu {
+		background: #eee
+		}
+		#page {
+		border-left: 1px solid #ccc
+		min-height: 100%
+		}
+		}
+		</style>
+   -->
+ 
+		<script type="text/javascript">
+
+			//	The menu on the right
+			$(function() {
+
+				var $menu = $('nav#menu-right');
+				$menu.mmenu({
+					position	: 'right',
+					classes		: 'mm-light',
+					dragOpen	: true,
+					counters	: true,
+					searchfield	: true,
+					labels		: {
+						fixed		: !$.mmenu.support.touch
+					}
+				});
+
+				//	Click a menu-item
+				var $confirm = $('#confirmation');
+				$menu.find( 'li a' ).not( '.mm-subopen' ).not( '.mm-subclose' ).bind(
+					'click.example',
+					function( e )
+					{
+						e.preventDefault();
+						$confirm.show().text( 'You clicked "' + $.trim( $(this).text() ) + '"' );
+						$('#menu-right').trigger( 'close' );
+					}
+				);
+			});
+			
+			//	The menu on the left
+			$(function() {
+
+				var $menu0 = $('nav#menu-left');
+
+				$menu0.mmenu({
+					position	: 'left',
+					classes		: 'mm-light',
+					dragOpen	: true,
+					counters	: true,
+					searchfield	: true,
+					labels		: {
+						fixed		: !$.mmenu.support.touch
+					}
+				});
+			});			
+
+			// for one page
+
+			$(function() {
+				var $menu = $('nav#menu-left'),
+					$html = $('html, body');
+		
+				$menu.mmenu();
+				$menu.find( 'li > a' ).on(
+					'click',
+					function()
+					{
+						var href = $(this).attr( 'href' );
+		
+						//	if the clicked link is linked to an anchor, scroll the page to that anchor 
+						if ( href.slice( 0, 1 ) == '#' )
+						{
+							$menu.one(
+								'closed.mm',
+								function()
+								{
+									setTimeout(
+										function()
+										{
+											$html.animate({
+												scrollTop: $( href ).offset().top
+											});	
+										}, 10
+									);	
+								}
+							);						
+						}
+					}
+				);
+			});
+
+			// for the tips
+			
+			$(function() {
+				var options = {
+					classes			: 'mm-light',
+					modal			: true
+				};
+				
+				options.position = 'left';
+				options.zposition = 'next';
+				$('#tooltip-1').mmenu( options );
+				
+				options.position = 'right';
+				options.zposition = 'next';
+				$('#tooltip-2').mmenu( options );
+				
+				options.position = 'bottom';
+				options.zposition = 'front';
+				$('#popup-1').mmenu( options );
+
+				options.position = 'top';
+				options.zposition = 'front';
+				$('#popup-2').mmenu( options );
+			});
+	
+		</script>
+		
+<!-- mmenu_head down 4 -->
+
+
+<!-- #EndLibraryItem --><!-- the page header part  -->
+<div id="page">
+			<div id="header" >
+				<a href="#menu-left"></a>
+				&#x70B9;&#x51FB;&#x5DE6;&#x8FB9;&#x6309;&#x952E;&#x6253;&#x5F00;&#x5BFC;&#x822A;&#x83DC;&#x5355;
+				<a href="#menu-right" class="friends right"></a>
+			</div>
+
+			<div id="content" >
+			
+<h1>DS Grids &#32593;&#26684;<br>
+</h1>
+
+<h2>&#26412;&#31456;&#33410;&#35299;&#37322;&#21508;&#31867;&#20851;&#20110;&#20351;&#29992;&#21644;&#25805;&#20316; ds_grids &#30340;&#20989;&#25968;&#12290;<br>
+</h2>
+
+<p>ds_grid &#26159;&#20108;&#32500;&#25968;&#32452; <a href="../../001_GML%20Language%20Overview/401_06_arrays.html">two-dimensional array</a>&#30340;&#19968;&#20010;&#22522;&#26412;&#31867;&#22411;&#65292;&#24744;&#21487;&#20197;&#36890;&#36807;&#35774;&#32622;&#20182;&#30340;&#35777;&#20070;&#23485;&#24230;&#21644;&#39640;&#24230;&#23450;&#20041;&#32593;&#26684;&#65292;&#28982;&#21518;&#23601;&#35774;&#23450;&#32593;&#26684;&#30340;&#8220;&#32454;&#32990;&#8221;&#24635;&#25968;&#65288;&#20056;&#20197;&#30340;&#23485;&#24230;&#21644;&#39640;&#24230;&#65289;&#65292;&#36825;&#20123;&#32454;&#32990;&#34987;&#29992;&#26469;&#23384;&#20648;&#19981;&#21516;&#30340;&#25968;&#25454;&#20540;&#65288;&#23454;&#25968;&#25110;&#23383;&#31526;&#20018;&#65289;&#12290;<br>
+
+<img class="center" src="ds_grid_basic.png">&#36825;&#31181;&#31867;&#22411;&#30340;&#32467;&#26500;&#20801;&#35768;&#35774;&#32622;&#21644;&#26816;&#32034;&#22312;&#32593;&#26684;&#20013;&#30340;&#32454;&#32990;&#30340;&#20540;&#65292;&#36890;&#36807;&#32473;&#20104;
+&#30340;x&#21644;y&#30340;&#32034;&#24341;&#65288;&#20197;0&#24320;&#22987;&#30340;x&#21644;y&#36724;&#21644;&#19978;&#21319;-
+1&#30340;&#23485;&#24230;&#21644;&#39640;&#24230;&#30340;&#20540;-1&#65289;&#12290;&#20294;&#20320;&#20063;&#21487;&#20197;&#35774;&#32622;&#29305;&#23450;&#30340;&#32593;&#26684;&#21306;&#22495;&#20013;&#30340;&#20540;&#65292;&#28155;&#21152;&#21333;&#20010;&#20540;&#65292;&#21644;&#26816;&#32034;&#30340;&#24635;&#21644;&#65292;&#26368;&#22823;&#20540;&#65292;&#26368;&#23567;&#20540;&#65292;&#24179;&#22343;&#20540;&#22312;&#19968;&#20010;&#32473;&#23450;&#30340;&#21306;&#22495;&#65292;&#20351;&#24471;&#36825;&#20010;&#25968;&#25454;&#32467;&#26500;
+&#25552;&#20379;&#32473;&#24744;&#26356;&#22810;&#26679;&#21270;&#12290;<br>
+<br>
+
+<i><b>NOTE : </b>&#30001;&#20110;&#22522;&#20110;&#21160;&#24577;&#30340;&#36164;&#28304;&#65292;&#25968;&#25454;&#32467;&#26500;&#21344;&#29992;&#20869;&#23384;&#65292;&#19981;&#20877;&#38656;&#35201;&#30340;&#26102;&#20505;&#24212;&#35813;&#24635;&#26159;&#34987;&#38144;&#27585;&#65292;&#20197;&#38450;&#27490;&#20869;&#23384;&#27844;&#28431;&#65292;&#32780;&#23548;&#33268;&#20943;&#24930;&#25110;&#26368;&#32456;&#20351;&#24744;&#30340;&#28216;&#25103;&#23849;&#28291;&#12290;</i>
+<br>
+<br>
+
+<br>&nbsp;
+&#23384;&#22312;&#20197;&#19979;&#20989;&#25968;&#22788;&#29702;DS &#32593;&#26684;&#12290;<br>
+<br>
+
+</p><blockquote>
+	<ol>
+		<li><a href="ds_grid_create.html">ds_grid_create</a><br>
+		</li><li><a href="ds_grid_destroy.html">ds_grid_destroy</a><br>
+		</li><li><a href="ds_grid_width.html">ds_grid_width</a><br>
+		</li><li><a href="ds_grid_height.html">ds_grid_height</a><br>
+		</li><li><a href="ds_grid_resize.html">ds_grid_resize</a><br>
+		</li><li><a href="ds_grid_clear.html">ds_grid_clear</a><br>
+		</li><li><a href="ds_grid_set.html">ds_grid_set</a><br>
+		</li><li><a href="ds_grid_set_disk.html">ds_grid_set_disk</a><br>
+		</li><li><a href="ds_grid_set_grid_region.html">ds_grid_set_grid_region</a><br>
+		</li><li><a href="ds_grid_set_region.html">ds_grid_set_region</a><br>	
+		</li><li><a href="ds_grid_shuffle.html">ds_grid_shuffle</a><br>
+		</li><li><a href="ds_grid_get.html">ds_grid_get</a><br>
+		</li><li><a href="ds_grid_get_max.html">ds_grid_get_max</a><br>
+		</li><li><a href="ds_grid_get_mean.html">ds_grid_get_mean</a><br>
+		</li><li><a href="ds_grid_get_min.html">ds_grid_get_min</a><br>
+		</li><li><a href="ds_grid_get_sum.html">ds_grid_get_sum</a><br>
+		</li><li><a href="ds_grid_get_disk_max.html">ds_grid_get_disk_max</a><br>
+		</li><li><a href="ds_grid_get_disk_mean.html">ds_grid_get_disk_mean</a><br>
+		</li><li><a href="ds_grid_get_disk_min.html">ds_grid_get_disk_min</a><br>
+		</li><li><a href="ds_grid_get_disk_sum.html">ds_grid_get_disk_sum</a><br>
+		</li><li><a href="ds_grid_add.html">ds_grid_add</a><br>
+		</li><li><a href="ds_grid_add_region.html">ds_grid_add_region</a><br>
+		</li><li><a href="ds_grid_add_disk.html">ds_grid_add_disk</a><br>
+		</li><li><a href="ds_grid_add_grid_region.html">ds_grid_add_grid_region</a><br>
+		</li><li><a href="ds_grid_multiply.html">ds_grid_multiply</a><br>
+		</li><li><a href="ds_grid_multiply_disk.html">ds_grid_multiply_disk</a><br>
+		</li><li><a href="ds_grid_multiply_region.html">ds_grid_multiply_region</a><br>
+		</li><li><a href="ds_grid_multiply_grid_region.html">ds_grid_multiply_grid_region</a><br>
+		</li><li><a href="ds_grid_value_exists.html">ds_grid_value_exists</a><br>
+		</li><li><a href="ds_grid_value_disk_exists.html">ds_grid_value_disk_exists</a><br>
+		</li><li><a href="ds_grid_value_x.html">ds_grid_value_x</a><br>
+		</li><li><a href="ds_grid_value_y.html">ds_grid_value_y</a><br>
+		</li><li><a href="ds_grid_value_disk_x.html">ds_grid_value_disk_x</a><br>
+		</li><li><a href="ds_grid_value_disk_y.html">ds_grid_value_disk_y</a><br>
+		</li><li><a href="ds_grid_copy.html">ds_grid_copy</a><br>
+		</li><li><a href="ds_grid_read.html">ds_grid_read</a><br>
+		</li><li><a href="ds_grid_write.html">ds_grid_write</a><br>
+	</li></ol>
+</blockquote>
+
+<p>
+- &#30887;&#32511;&#30340;&#28246; -<br>
+</p>
+<p>
+
+</p><div class="clear">
+	<div style="float: left;">
+		Back : <a href="../index.html">Data Structures</a>
+	</div>
+	<!--<div style="float:right">
+		Next : <a href="../DS Priority Queues/index.html">DS Priority Queues</a>
+	</div>-->
+</div>
+
+
+<!--KEYWORDS
+grids
+ds_grid
+-->
+.<!-- #BeginLibraryItem "/Library/mmenu_leftlist.lbi" -->
+</div>
+<div id="footer">
+				Fixed footer :-)
+</div>
+
+			<nav id="menu-left">
+				<ul>
+					<li ><a href="../../../../index.html">GameMaker:Studio 手册首页</a>
+						<ul>
+							<li><a href="#content">Introduction</a></li>
+							<li><a href="#first">First section</a></li>
+							<li><a href="#second">Second section</a></li>
+							<li><a href="#third">Third section</a></li>
+						</ul>
+					</li>
+					<li >
+						<a href="../../../000_Using GameMaker/index.html">GameMaker:Studio 使用</a>
+						<ul>
+							<li><a href="#">First sub-item</a></li>
+							<li>
+								<a href="#">Second sub-item</a>
+								<ul>
+									<li><a href="#">First sub-sub-item</a></li>
+									<li><a href="#">Second sub-sub-item</a></li>
+									<li><a href="#">Third sub-sub-item</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Third sub-item</a></li>
+						</ul>
+					</li>
+					<li ><a href="../../../001_Advanced Use/index.html">Advanced Use 高级使用</a></li>
+					<li ><a href="../../index.html">Reference GML参考手册</a></li>
+					<li ><a href="#">Examples and Experience 实例教程及心得</a></li>
+					<li ><a href="#">Experimental project 实验项目</a></li>
+					<li ><a href="#">Setting 应用设置</a></li>					
+				</ul>
+			</nav>
+			<nav id="menu-right">
+				<ul>
+					<li>
+						<span>Friends</span>
+						<ul>
+							<li class="Label">A</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/1/" />
+									Alexa<br />
+									<small>Johnson</small>
+								</a>
+							</li>
+							<li class="img Collapsed">
+								<a href="#">
+									<img src="#people/2/" />
+									Alexander<br />
+									<small>Brown</small>
+								</a>
+							</li>
+
+							<li class="Label">F</li>
+							<li class="img Collapsed">
+								<a href="#">
+									<img src="#people/3/" />
+									Fred<br />
+									<small>Smith</small>
+								</a>
+							</li>
+
+							<li class="Label">J</li>
+							<li class="img Collapsed">
+								<a href="#">
+									<img src="#people/4/" />
+									James<br />
+									<small>Miller</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/5/" />
+									Jefferson<br />
+									<small>Jackson</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/6/" />
+									Jordan<br />
+									<small>Lee</small>
+								</a>
+							</li>
+
+							<li class="Label">K</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/7/" />
+									Kim<br />
+									<small>Adams</small>
+								</a>
+							</li>
+
+							<li class="Label">M</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/8/" />
+									Meagan<br />
+									<small>Miller</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/9/" />
+									Melissa<br />
+									<small>Johnson</small>
+								</a>
+							</li>
+							
+							<li class="Label">N</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/10/" />
+									Nicole<br />
+									<small>Smith</small>
+								</a>
+							</li>
+
+							<li class="Label">S</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/1/" />
+									Samantha<br />
+									<small>Harris</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/2/" />
+									Scott<br />
+									<small>Thompson</small>
+								</a>
+							</li>
+						</ul>
+					</li>
+					
+					<li>
+						<span>Family</span>
+						<ul>
+							<li class="Label">A</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/3/" />
+									Adam<br />
+									<small>White</small>
+								</a>
+							</li>
+
+							<li class="Label">B</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/4/" />
+									Ben<br />
+									<small>Robinson</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/5/" />
+									Bruce<br />
+									<small>Lee</small>
+								</a>
+							</li>
+
+							<li class="Label">E</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/6/" />
+									Eddie<br />
+									<small>Williams</small>
+								</a>
+							</li>
+
+							<li class="Label">J</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/7/" />
+									Jack<br />
+									<small>Johnson</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/8/" />
+									John<br />
+									<small>Jackman</small>
+								</a>
+							</li>
+
+							<li class="Label">M</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/9/" />
+									Martina<br />
+									<small>Thompson</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/10/" />
+									Matthew<br />
+									<small>Watson</small>
+								</a>
+							</li>
+
+							<li class="Label">O</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/1/" />
+									Olivia<br />
+									<small>Taylor</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/2/" />
+									Owen<br />
+									<small>Wilson</small>
+								</a>
+							</li>
+						</ul>
+					</li>
+
+					<li>
+						<span>Work colleagues</span>
+						<ul>
+							<li class="Label">D</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/3/" />
+									David<br />
+									<small>Harris</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/4/" />
+									Dennis<br />
+									<small>King</small>
+								</a>
+							</li>
+							
+							<li class="Label">E</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/5/" />
+									Eliza<br />
+									<small>Walker</small>
+								</a>
+							</li>
+							
+							<li class="Label">L</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/6/" />
+									Larry<br />
+									<small>Turner</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/7/" />
+									Lisa<br />
+									<small>Wilson</small>
+								</a>
+							</li>
+							
+							<li class="Label">M</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/8/" />
+									Michael<br />
+									<small>Jordan</small>
+								</a>
+							</li>
+							
+							<li class="Label">R</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/9/" />
+									Rachelle<br />
+									<small>Cooper</small>
+								</a>
+							</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/10/" />
+									Rick<br />
+									<small>James</small>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+<!-- contributors update 3 --><!-- #EndLibraryItem -->..<!-- #BeginLibraryItem "/Library/mmenu_rightlist.lbi" --><!-- mmenu_right up 1 -->
+			<nav id="menu-right">
+				<ul>
+					<li>
+						<span>GMS使用问题可以联系我</span>
+						<ul>
+							<li class="Label">A</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/1/" />
+									Alexa<br />
+									<small>Johnson</small>
+								</a>
+							</li>
+						</ul>
+					</li>
+					
+					<li>
+						<span>网站问题可以联系我</span>
+						<ul>
+							<li class="Label">D</li>
+							<li class="img">
+								<a href="mailto:deciia@qq.com">
+									<img src="../../../Library/deciia@qq.com" />
+									Adam<br />
+									<small>Deciia</small>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+<!-- mmenu_right down 4 -->
+
+<!-- #EndLibraryItem --></div></body></html>

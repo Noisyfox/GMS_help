@@ -1,0 +1,725 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>Defining Objects</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" href="../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" /></head>
+<body><!-- #BeginLibraryItem "/Library/mmenu_head.lbi" --><!-- mmenu_head up 1 -->
+
+		<link type="text/css" rel="stylesheet" href="../style.css" />
+		<link type="text/css" rel="stylesheet" href="../src/css/jquery.mmenu.all.css" />
+		<script type="text/javascript" src="../src/js/jquery.min.js"></script>
+		<script type="text/javascript" src="../src/js/hammer.min.js"></script>
+		<script type="text/javascript" src="../src/js/jquery.mmenu.min.all_old.js"></script>		
+		
+	<!-- scripts links    	
+   
+		<style type="text/css">
+		@media all and (min-width: 900px) {
+		html, body {
+		height: 100%
+		
+		}
+		#menu {
+		background: #eee
+		}
+		#page {
+		border-left: 1px solid #ccc
+		min-height: 100%
+		}
+		}
+		</style>
+   -->
+ 
+		<script type="text/javascript">
+
+			//	The menu on the right
+			$(function() {
+
+				var $menu = $('nav#menu-right');
+				$menu.mmenu({
+					position	: 'right',
+					classes		: 'mm-light',
+					dragOpen	: true,
+					counters	: true,
+					searchfield	: true,
+					labels		: {
+						fixed		: !$.mmenu.support.touch
+					}
+				});
+
+				//	Click a menu-item
+				var $confirm = $('#confirmation');
+				$menu.find( 'li a' ).not( '.mm-subopen' ).not( '.mm-subclose' ).bind(
+					'click.example',
+					function( e )
+					{
+						e.preventDefault();
+						$confirm.show().text( 'You clicked "' + $.trim( $(this).text() ) + '"' );
+						$('#menu-right').trigger( 'close' );
+					}
+				);
+			});
+			
+			//	The menu on the left
+			$(function() {
+
+				var $menu0 = $('nav#menu-left');
+
+				$menu0.mmenu({
+					position	: 'left',
+					classes		: 'mm-light',
+					dragOpen	: true,
+					counters	: true,
+					searchfield	: true,
+					labels		: {
+						fixed		: !$.mmenu.support.touch
+					}
+				});
+			});			
+
+			// for one page
+
+			$(function() {
+				var $menu = $('nav#menu-left'),
+					$html = $('html, body');
+		
+				$menu.mmenu();
+				$menu.find( 'li > a' ).on(
+					'click',
+					function()
+					{
+						var href = $(this).attr( 'href' );
+		
+						//	if the clicked link is linked to an anchor, scroll the page to that anchor 
+						if ( href.slice( 0, 1 ) == '#' )
+						{
+							$menu.one(
+								'closed.mm',
+								function()
+								{
+									setTimeout(
+										function()
+										{
+											$html.animate({
+												scrollTop: $( href ).offset().top
+											});	
+										}, 10
+									);	
+								}
+							);						
+						}
+					}
+				);
+			});
+
+			// for the tips
+			
+			$(function() {
+				var options = {
+					classes			: 'mm-light',
+					modal			: true
+				};
+				
+				options.position = 'left';
+				options.zposition = 'next';
+				$('#tooltip-1').mmenu( options );
+				
+				options.position = 'right';
+				options.zposition = 'next';
+				$('#tooltip-2').mmenu( options );
+				
+				options.position = 'bottom';
+				options.zposition = 'front';
+				$('#popup-1').mmenu( options );
+
+				options.position = 'top';
+				options.zposition = 'front';
+				$('#popup-2').mmenu( options );
+			});
+	
+		</script>
+		
+<!-- mmenu_head down 6 -->
+
+
+<!-- #EndLibraryItem --><!-- the page header part  -->
+<div id="page">
+			<div id="header" >
+				<a href="#menu-left"></a>
+				&#x70B9;&#x51FB;&#x5DE6;&#x8FB9;&#x6309;&#x952E;&#x6253;&#x5F00;&#x5BFC;&#x822A;&#x83DC;&#x5355;
+				<a href="#menu-right" class="friends right"></a>
+			</div>
+
+			<div id="content" >
+			
+<h1>Defining Objects</h1>
+
+<h2>Objects are the fundamental "building blocks" within <i>GameMaker:Studio</i>.</h2>
+
+<p>
+With the resources you have seen so far you can add some nice images and sounds to the game resource tree, but they don't do anything in the game itself yet! For that we need the most 
+important resource of <i>GameMaker:Studio</i>, the <b>objects</b>. Objects are a special resource that we use to control aspects of a game and to do specific things. Most of the time 
+they have a sprite associated with them so that you see them in the game rooms, but sometimes they are used as a "behind the scenes" controller to do things related to the user or for timing etc... 
+They can be given behaviors and they can react to certain events as well as to each other, and most of the things you see in a game are based on objects and their interactions. Now, I say 
+"based on" because you don't actually place objects directly into the game rooms, but rather you place <b>instances</b> of these objects which are basically copies (or clones if you prefer)
+of the object resource. This is a very important thing to remember as instances and objects are <i>not</i> the same thing and each have their own set of functions that can affect them.
+<br>
+<br>
+
+<i><b>NOTE : </b>If you are using the <b>Free</b> version of <i>GameMaker:Studio</i> you are limited to a maximum of 10 objects per game. For more details see 
+<a href="../000_Using%20GameMaker/Versions.html">here</a>.</i>
+<br>
+<br>
+<br>
+<br>
+
+<h3>Objects and Instances</h3>
+<p>
+In a game made with <i>GameMaker:Studio</i>, the characters, monsters, balls, walls, etc... are all instances copied from a basic object template that is found in the GameMaker resource tree 
+and then placed in a room. So when we talk about something affecting or changing an instance, we mean that one particular copy of an object in a room is being affected while all the rest are not, but 
+when we talk about affecting or changing an object we mean that anything we do to it will be reflected in all the instances created from that point on too. So, the object is the template for the instance, 
+and the instance is what we place in a room to make our game.
+<br>
+<br>
+
+<h3>Creating an Object</h3>
+<p>
+To create an object in your game, choose <b>Create Object</b> from the <b>Resources</b> menu (or click the equivalent button on the toolbar) and the following window will open :
+
+<p>
+<img class="center" src="../images/form_object.png">
+
+<p>
+At first glance this may seem rather confusing, but the window is split into sections and we shall cover each one individually so you can get an overview of what they are for. Starting on the left, 
+there is some general information about the object, then in the middle there is the list of events (moments in time) for the object and the window to place the actions that are to be performed in 
+those events, and finally on the right there are the actions themselves which you can select for the object to perform, grouped under different tabs for ease of use. Events and actions will be discussed 
+in more detail in following sections of the manual. If you have "Uses Physics" selected then there will be another part visible in this window related to the physics options, but more on that later!
+<br>
+<br>
+
+As you would expect, you can (and should always) give your object a name. This should never contain spaces nor unauthorised characters and should be short but memorable so that you can easily 
+identify resources later when you may have many of them, for example may people use a prefix or a suffix to identify the differences between resources, like "obj_Ship" or "shop_obj". Next you can 
+choose the sprite for the object should you wish it to have one. To this end, click with the left mouse button on the sprite box or the menu button next to it and a pop-up dialogue will appear with a list of 
+all the available sprites from the resource tree, then just select the one you want to use for the object. If you do not have an appropriate sprite yet, you can click the button <B>New</B> to create a new 
+sprite resource and edit it as you wish, just as if you had created the resource through the standard creation options, only now when you click okay, it will automatically be assigned to the object that you 
+had open when you started to create it. Once you select a resource there will be an additional <B>Edit</B> button here that you can use to change the sprite too. This can be faster than first finding the 
+resource in the list of resources and then indicating you want to edit it.
+<br>
+<br>
+
+Below this there are many other options which are all outlined below :
+<br>
+<br>
+
+<h3>Visible</h3>
+<p>
+Visible indicates whether instances of this object are visible when the room starts. Normally most instances are visible but sometimes it is useful to have invisible ones - for example, you can use them for 
+way-points to control a moving monster, or to keep track values and perform certain timed actions. Invisible objects will still react to events and if they have a sprite or a mask assigned to them, they will 
+also react should other instances collide with them... they just can't be seen and do not perform their draw event.
+<br>
+<br>
+	
+<h3>Solid</h3>
+<p>	
+By checking solid you are indicating to <i>GameMaker:Studio</i> that it should consider instances of this object to be a solid object (like a wall). Collisions with instances of solid objects are treated differently 
+from collisions with non-solid objects and as such you are strongly advised to use <b>Solid</b> only for objects that are not moving.
+<br>
+<br>
+
+<h3>Depth</h3>
+<p>
+You can set the <b>Depth</b> of the instances of an object, which basically controls whether they go below or above other objects at other depths. When instances are drawn on the screen they are drawn in 
+order of depth, with instances that have the highest depth being drawn first and instances with the lowest depth being drawn last. The following image illustrates this behaviour :#
+
+<img class="center" src="../images/Depth_Order.png">
+
+It should be noted here that instances of the same depth that over-lap each other in the room editor (or in game) have <b>no</b> guaranteed priority over which one will be "on top" of the other and. If you want 
+to guarantee that an object lies on top of the others then you must give it a negative (or low) depth. Conversely If you want to make sure it lies below other instances then you have to give it a positive (high) depth. 
+Depth can also be changed in-game as it has its own variable that can be changed and manipulated by actions or in code.
+<br>
+<br>
+
+<h3>Persistent objects</h3>
+<p>
+Below depth there is the option to make an object persistent. A persistent object is one that does not go away when the room is changed, but rather it "persists" and is carried over into the new room. It will only 
+disappear when you explicitly destroy it, either with a destroy action or in code. This means that if you place a persistent object in one room, it will still be available in all subsequent rooms and will continue to perform 
+any actions assigned to the events in its object properties. This is handy for when you have, for example, a main character that moves from room to room and you want to maintain the variables within that object the same, 
+but unless you take great care to create and destroy persistent objects correctly, you can easily get errors creeping into your project.
+<br>
+<br>
+
+<h3>Parents</h3>
+<p>
+One of the most powerful options within the object properties is the ability to assign a parent. Every object in the game can have a parent object, but what does this mean? Well, when an object has a parent, it can share code, 
+actions and events with that parent. This is called "inheritance" and an object that has a parent is called a "child". But that's not all! You can also do checks and run code on parent objects which automatically include the child 
+objects too which saves a lot of time and energy. Another way to look at a parent object is as a way to "group" objects together under the same umbrella and have them share certain things without loosing their own identity. 
+For more information on parents (and other advanced object properties) see <a href="../001_Advanced%20Use/More%20about%20Objects/index.html">More About objects</a>. Please note that you can click the <b>Parent</b> button 
+to automatically open the assigned parent object.
+<br>
+<br>
+
+<h3>Masks</h3>
+<p>
+When an object has a sprite, it also has a mask. This is usually defined by the sprite itself (and can be changed in the sprite editor) but sometimes you may want an object to have a different shaped mask to its sprite, or even have <i>no</i>
+sprite but still a mask. Why? Well, masks are what govern collisions in GameMaker. When two instances come together, GameMaker has to decide whether a collision has occurred and to do this it relies on the mask of the object, 
+either the one defined here or the one that is defined in the sprite properties. If you have no mask then you have no collision! It should also be noted that if you have assigned a sprite to the object and then assign a mask, GameMaker will 
+always base collisions off of the assigned mask and NOT the sprite. For example, if you make an isometric game, objects typically have a height (to give them a 3D view), but for collisions you only want to use the "feet" part of the sprite.
+This can be achieved by creating a separate sprite and then assigning that to be used as the collision mask for the object. Please note that you can click the <b>Mask</b> button to automatically open the assigned mask 
+sprite.
+<br>
+<br>
+
+<h3>Information</h3>
+<p>
+The button <b>Show Information</b> gives an overview of all information for the object that can also be printed out or saved as an html file. This is particularly useful when you want a loose overview of all your actions, code and events or if you 
+to debug something within the object.
+<br>
+<br>
+
+<h3>Uses Physics</h3>
+<p>
+When you check this box you are telling <i>GameMaker:Studio</i> that this object should be part of a physics world. This will also open another part of the object window where you can define the physical properties of all 
+instances of this object. More information on this can be found in the Advanced Use section of the manual under <a href="../001_Advanced%20Use/More%20about%20Objects/index.html">More About objects</a>.
+<br>
+<br>
+
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back : <a href="index.html">Using GameMaker:Studio</a>
+	</div>
+	<div style="float:right">
+		Next : <a href="Events/index.html">Events</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>  </div>   <!-- #BeginLibraryItem "/Library/mmenu_leftlist.lbi" -->
+			<nav id="menu-left">
+			<!-- mmenu_leftlist up -->
+				<ul>
+					<li ><a href="../index.html">GameMaker:Studio 手册首页</a>
+						<ul>
+							<li><a href="#intro">GMS文档简介</a></li>
+							<li><a href="#first">GameMaker:Studio 使用</a></li>
+							<li><a href="#second">Advanced Use高级使用</a></li>
+							<li><a href="#third">Reference 参考</a></li>
+							<li><a href="#fourth">贡献者 Versions by</a></li>						
+						</ul>
+					
+					</li>					
+					<li >
+						<a href="index.html">GameMaker:Studio 使用</a>
+						<ul>
+							<li><a href="000_Introduction.html">Introduction 介绍</a></li>
+							<li><a href="001_Installation.html">Installation 安装</a></li>
+							<li><a href="002_Activation.html">Activation 激活</a></li>
+							<li><a href="003_GameMaker Studio Overview.html">GameMaker:Studio Overview 概述</a></li>
+							<li>
+								<a href="004_The Graphical User Interface.html">The Graphical User Interface 绘制用户界面</a>
+								<ul>
+									<li><a href="#">The File Menu</a></li>
+									<li><a href="#">The Edit Menu</a></li>
+									<li><a href="#">The Resources Menu</a></li>
+									<li><a href="#">The Scripts Menu</a></li>
+									<li><a href="#">The Run Menu</a></li>
+									<li><a href="#">The Window Menu</a></li>
+									<li><a href="#">The Help Menu</a></li>									
+								</ul>
+							</li>
+							<li><a href="005_Loading Sprites.html">Loading Sprites 载入精灵</a></li>
+							<li><a href="006_Sounds and music.html">Sounds And Music 声音与音乐</a></li>
+							<li><a href="007_Backgrounds.html">Backgrounds 背景</a></li>
+							<li><a href="008_Defining objects.html">Defining Objects 定义对象</a></li>
+							<li>
+								<a href="Events/index.html">Events 事件</a>
+								<ul>
+									<li><a href="#">Create Event</a></li>
+									<li><a href="#">Destroy Event</a></li>
+									<li><a href="#">Alarm Events</a></li>
+									<li><a href="#">Step Events</a></li>
+									<li><a href="#">Collision Event</a></li>
+									<li><a href="#">Keyboard Events</a></li>
+									<li><a href="#">Other Events</a></li>
+									<li><a href="#">Draw Event</a></li>
+									<li><a href="#">Asynchronous Events</a></li>									
+								</ul>
+							</li>
+							<li>
+								<a href="Actions/index.html">Actions 动作</a>
+								<ul>
+									<li><a href="#">Move Actions</a></li>
+									<li><a href="#">Main Actions, Set 1</a></li>
+									<li><a href="#">Main Actions, Set 2</a></li>
+									<li><a href="#">Control Actions</a></li>
+									<li><a href="#">Score Actions</a></li>
+									<li><a href="#">Extra Actions</a></li>
+									<li><a href="#">Draw Actions</a></li>
+									<li><a href="#">Using Variables and Expressions in Actions</a></li>																	
+								</ul>
+							</li>
+							<li>
+								<a href="Rooms/index.html">Creating Rooms 创造房间</a>
+								<ul>
+									<li><a href="#">Settings</a></li>
+									<li><a href="#">Backgrounds</a></li>
+									<li><a href="#">Objects</a></li>																
+								</ul>								
+							</li>
+							<li><a href="Game Information.html">Game Information</a></li>							
+							<li><a href="009_Distributing your game.html">Distributing Your Game 发布您的游戏</a></li>						
+
+						</ul>
+					</li>
+					<li >
+						<a href="../001_Advanced Use/index.html">Advanced Use 高级使用</a>
+						<ul>
+							<li class="Label">Game Assets游戏资产</li>
+							<li>
+								<a href="#">More About Sprites 更多关于精灵</a>
+								<ul>
+									<li><a href="#">Editing Sprites</a></li>
+									<li><a href="#">Editing Subimages</a></li>
+									<li><a href="#">Editing Collision Masks</a></li>																
+								</ul>										
+							</li>
+							<li>
+								<a href="#">More About Backgrounds 更多关于背景</a>
+								<ul>
+									<li><a href="#">Designing Tiles</a></li>
+									<li><a href="#">Texture Pages</a></li>															
+								</ul>
+							</li>
+							<li>
+								<a href="#">More About Objects 更多关于对象</a>
+								<ul>
+									<li><a href="#">Parents</a></li>
+									<li><a href="#">Object Physics Properties</a></li>															
+								</ul>	
+							</li>
+							<li>
+								<a href="#">More About Rooms 更多关于房间</a>
+								<ul>
+									<li><a href="#">Tiles</a></li>
+									<li><a href="#">Viewss</a></li>
+									<li><a href="#">Physics</a></li>															
+								</ul>
+							</li>
+							
+							<li>
+								<a href="#">More About Async Events 更多关于异步事件</a>
+								<ul>
+									<li><a href="#">Image Loaded and Sound Loaded Events</a></li>
+									<li><a href="#">HTTP Event</a></li>
+									<li><a href="#">Dialogs Event</a></li>
+									<li><a href="#">IAP (In App Purchases) Event</a></li>
+									<li><a href="#">Cloud Event</a></li>
+									<li><a href="#">Networking Event</a></li>
+									<li><a href="#">Steam Event</a></li>
+									<li><a href="#">Social Event</a></li>															
+								</ul>
+							</li>
+							<li class="Label">Resource Editors资源编辑器</li>
+							<li><a href="#">Fonts 字体</a></li>
+							<li><a href="#">Paths 路径</a></li>
+							<li><a href="#">Time Lines 时间线</a></li>
+							<li><a href="#">Scripts 脚本</a></li>
+							<li><a href="#">Shaders 着色器</a></li>
+							<li><a href="#">Constants 常量</a></li>
+							<li><a href="#">Including Files 包含文件</a></li>
+							<li><a href="#">Importing Resources 导入资源</a></li>
+							<li class="Label">Game Settings游戏设置</li>
+							<li>
+								<a href="#">Extension Packages 扩展包</a>
+								<ul>
+									<li><a href="#">Using an Extension</a></li>
+									<li><a href="#">Creating an Extension</a></li>														
+								</ul>
+							</li>							
+							<li><a href="#">Configurations 配置</a></li>
+							<li>
+								<a href="#">Source Control 源代码控制</a>
+								<ul>
+									<li><a href="#">Getting Started With Source Control</a></li>
+									<li><a href="#">Setting Up GameMaker:Studio For Source Control</a></li>
+									<li><a href="#">Using Source Control with GameMaker:Studio</a></li>														
+								</ul>
+							</li>							
+							<li>
+								<a href="#">Global Game Settings 全局游戏设定</a>
+								<ul>
+									<li><a href="#">General</a></li>
+									<li><a href="#">Texture Groups</a></li>
+									<li><a href="#">Project Info</a></li>
+									<li><a href="#">Facebook</a></li>
+									<li><a href="#">Source Control</a></li>
+									<li><a href="#">Advertising</a></li>
+									<li><a href="#">Analytics</a></li>
+									<li><a href="#">In App Purchases</a></li>
+									<li><a href="#">Licensing</a></li>
+									<li><a href="#">Windows</a></li>
+									<li><a href="#">Mac OS</a></li>
+									<li><a href="#">HTML5</a></li>
+									<li><a href="#">iOS</a></li>
+									<li><a href="#">Android</a></li>
+									<li><a href="#">Windows 8</a></li>
+									<li><a href="#">Windows Phone</a></li>
+									<li><a href="#">Tizen</a></li>
+									<li><a href="#">Ubuntu (Linux)</a></li>
+									<li><a href="#">Steam</a></li>														
+								</ul>
+							</li>
+							<li>
+								<a href="#">GameMaker:Studio Preferences 首选项</a>
+								<ul>
+									<li><a href="#">General</a></li>
+									<li><a href="#">Forms</a></li>
+									<li><a href="#">Scripts</a></li>
+									<li><a href="#">Editors</a></li>
+									<li><a href="#">Web Server</a></li>
+									<li><a href="#">Android</a></li>
+									<li><a href="#">Windows 8</a></li>
+									<li><a href="#">Windows Phone</a></li>
+									<li><a href="#">Tizen</a></li>
+									<li><a href="#">Mac OS</a></li>
+									<li><a href="#">Ubuntu (Linux)</a></li>
+									<li><a href="#">Steam</a></li>														
+								</ul>
+							</li>
+							<li><a href="#">Debugging 调试</a></li>
+						</ul>
+					</li>
+					<li >
+						<a href="../002_Reference/index.html">Reference GML参考手册</a>
+						<ul>
+							<li>
+								<a href="#">GML Overview 概述</a>
+								<ul>
+									<li><a href="#">A Program</a></li>
+									<li><a href="#">Variables and Variable Scope</a></li>
+									<li><a href="#">Addressing Variables in Other Instances</a></li>
+									<li><a href="#">Arrays</a></li>
+									<li><a href="#">Functions</a></li>
+									<li><a href="#">Assignments</a></li>
+									<li><a href="#">Expressions</a></li>
+									<li><a href="#">The "If" Statement</a></li>
+									<li><a href="#">The "Repeat" Statement</a></li>
+									<li><a href="#">The "While" Statement</a></li>
+									<li><a href="#">The "Do" Statement</a></li>
+									<li><a href="#">The "For" Statement</a></li>
+									<li><a href="#">The "Switch" Statement</a></li>
+									<li><a href="#">The "Break" Statement</a></li>
+									<li><a href="#">The "Continue" Statement</a></li>
+									<li><a href="#">The "Exit" Statement</a></li>
+									<li><a href="#">The "With" Construction</a></li>
+									<li><a href="#">Scripts</a></li>
+									<li><a href="#">Comments in Code</a></li>
+									<li><a href="#">Evaluation Order</a></li>														
+								</ul>
+							</li>
+							<li class="Label">Real Numbers And Strings 实数与字符串</li>							
+							<li><a href="#">Date and Time 日期与时间</a></li>
+							<li>
+								<a href="#">Maths 数学</a>
+								<ul>
+									<li><a href="#">Real Number Functions</a></li>
+									<li><a href="#">Vector Functions</a></li>														
+								</ul>
+							</li>
+							<li><a href="#">Strings 字符串</a></li>
+							<li class="Label">Game Play 游戏运行</li>							
+							<li>
+								<a href="#">Game Assets 游戏资产</a>
+								<ul>
+									<li><a href="#">Sprites</a></li>
+									<li><a href="#">Backgrounds</a></li>
+									<li><a href="#">Sounds</a></li>
+									<li><a href="#">Fonts</a></li>
+									<li><a href="#">Paths</a></li>
+									<li><a href="#">Timelines</a></li>
+									<li><a href="#">Rooms</a></li>															
+								</ul>
+							</li>
+							<li>
+								<a href="#">Mouse, Keyboard and Other Controls 鼠标、键盘和其他控制设备</a>
+								<ul>
+									<li><a href="#">Virtual Keys</a></li>
+									<li><a href="#">Keyboard Input</a></li>
+									<li><a href="#">Mouse Input</a></li>
+									<li><a href="#">Device Input</a></li>
+									<li><a href="#">GamePad Input</a></li>
+									<li><a href="#">Immersion Haptics</a></li>																							
+								</ul>
+							</li>
+							<li>
+								<a href="#">Movement and Collisions 移动与碰撞</a>
+								<ul>
+									<li><a href="#">Movement</a></li>
+									<li><a href="#">Motion Planning</a></li>
+									<li><a href="#">Collisions</a></li>														
+								</ul>
+							</li>
+							<li>
+								<a href="#">Objects and Instances 对象与实例</a>
+								<ul>
+									<li><a href="#">Objects</a></li>
+									<li><a href="#">Instances</a></li>														
+								</ul>
+							</li>
+							<li class="Label">Drawing And Display 绘制与显示</li>
+							<li>
+								<a href="#">Drawing 绘制</a>
+								<ul>
+									<li><a href="#">Color And Blending</a></li>
+									<li><a href="#">Drawing Basic Forms</a></li>
+									<li><a href="#">Drawing Sprites And Backgrounds</a></li>
+									<li><a href="#">Drawing Text</a></li>
+									<li><a href="#">Drawing Primitives</a></li>
+									<li><a href="#">Drawing 3D</a></li>
+									<li><a href="#">Drawing Surfaces</a></li>															
+								</ul>
+							</li>
+							<li>
+								<a href="#">Shaders 着色器</a>
+								<ul>
+									<li><a href="#">Vertex Formats</a></li>
+									<li><a href="#">Primitive Building</a></li>
+									<li><a href="#">Shader Constants</a></li>														
+								</ul>
+							</li>
+							<li><a href="#">Surfaces 表面</a></li>
+							<li>
+								<a href="#">Windows And Views 窗口与视野</a>
+								<ul>
+									<li><a href="#">The Game Window</a></li>
+									<li><a href="#">Views</a></li>														
+								</ul>
+							</li>
+							<li class="Label">Advanced Functions 高级函数</li>
+							<li>
+								<a href="#">Data Structures 数据结构</a>
+								<ul>
+									<li><a href="#">Stacks</a></li>
+									<li><a href="#">Queues</a></li>
+									<li><a href="#">Lists</a></li>
+									<li><a href="#">Maps</a></li>
+									<li><a href="#">Priority Queues</a></li>
+									<li><a href="#">Grids</a></li>																								
+								</ul>
+							</li>
+							<li>
+								<a href="#">Particles 粒子</a>
+								<ul>
+									<li><a href="#">Simple Effects</a></li>
+									<li><a href="#">Particle Systems</a></li>
+									<li><a href="#">Particle Types</a></li>
+									<li><a href="#">Particle Emitters</a></li>																																	
+								</ul>
+							</li>
+							<li>
+								<a href="#">Physics 物理</a>
+								<ul>
+									<li><a href="#">The Physics World</a></li>
+									<li><a href="#">Forces</a></li>
+									<li><a href="#">Fixtures</a></li>
+									<li><a href="#">Joints</a></li>
+									<li><a href="#">Physics Variables</a></li>																																
+								</ul>
+							</li>
+							<li>
+								<a href="#">File Handling 文件处理</a>
+								<ul>
+									<li><a href="#">File System Limits</a></li>																																							
+								</ul>
+							</li>
+							<li><a href="#">Operating System 操作系统</a></li>
+							<li><a href="#">Buffers 缓存区</a></li>
+							<li><a href="#">Networking 联网</a></li>
+							<li class="Label">Platform Specific 平台特性</li>
+							<li><a href="#">HTML5</a></li>
+							<li>
+								<a href="#">Windows 8</a>
+								<ul>
+									<li><a href="#">Windows 8 Phone</a></li>																																							
+								</ul>
+							</li>
+							<li><a href="#">Advertising and Analytics 广告与分析</a></li>
+							<li>
+								<a href="#">Social Gaming 社交游戏</a>
+								<ul>
+									<li><a href="#">Facebook</a></li>
+									<li><a href="#">Achievements and Leaderboards</a></li>
+									<li><a href="#">Local High Scores</a></li>																																									
+								</ul>
+							</li>
+							<li>
+								<a href="#">In App Purchases 应用程序内购买</a>
+								<ul>
+									<li><a href="#">IAP Example</a></li>
+									<li><a href="#">IAP Testing</a></li>
+									<li><a href="#">IAP Server Setup</a></li>																																									
+								</ul>
+							</li>
+							<li><a href="#">Asynchronous 异步</a></li>
+							<li><a href="#">Cloud Services 云服务</a></li>
+							<li><a href="#">Steam API 应用程序接口</a></li>
+							<li class="Label">Extras 附加</li>
+							<li><a href="#">Debugging 调试</a></li>
+							<li><a href="#">Miscellaneous 杂项</a></li>
+							<li><a href="#">Obsolete Functions 淘汰函数</a></li>
+						</ul>
+					</li>
+					<li ><a href="#">Examples and Experience 实例教程及心得</a></li>
+					<li ><a href="#">Experimental project 实验项目</a></li>
+					<li ><a href="#">Setting 应用设置</a></li>					
+				</ul>
+			<!-- mmenu_leftlist down 7 -->
+			</nav>
+<!-- #EndLibraryItem -->..<!-- #BeginLibraryItem "/Library/mmenu_rightlist.lbi" --><!-- mmenu_right up 1 -->
+			<nav id="menu-right">
+				<ul>
+					<li>
+						<span>GMS使用问题可以联系我</span>
+						<ul>
+							<li class="Label">A</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/1/" />
+									Alexa<br />
+									<small>Johnson</small>
+								</a>
+							</li>
+						</ul>
+					</li>
+					
+					<li>
+						<span>网站问题可以联系我</span>
+						<ul>
+							<li class="Label">D</li>
+							<li class="img">
+								<a href="mailto:deciia@qq.com">
+									<img src="../Library/deciia@qq.com" />
+									Adam<br />
+									<small>Deciia</small>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+<!-- mmenu_right down 6 -->
+
+<!-- #EndLibraryItem --></div></body>
+</html>
+
+<!-- KEYWORDS
+adding objects
+creating objects
+object properties
+object sprite
+-->
