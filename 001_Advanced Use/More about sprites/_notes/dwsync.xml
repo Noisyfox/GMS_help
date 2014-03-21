@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="Add_Empty.png" local="130390965386064434" remote="130390963670000000" testing="0" />
-<file name="Add_From_File.png" local="130390965386074441" remote="130390963670000000" testing="0" />
-<file name="Airbrush.png" local="130390965386084448" remote="130390963670000000" testing="0" />
-<file name="Animation.gif" local="130390965386094438" remote="130390963670000000" testing="0" />
-<file name="Animation_Strip.png" local="130390965386104457" remote="130390963670000000" testing="0" />
-<file name="Basic_Collisions_Image.png" local="130390965386124470" remote="130390963670000000" testing="0" />
-<file name="Bbox_image.png" local="130390965386134473" remote="130390963670000000" testing="0" />
-<file name="ChangeColor.png" local="130390965386144472" remote="130390963670000000" testing="0" />
-<file name="ColorDropper.png" local="130390965386144472" remote="130390963670000000" testing="0" />
-<file name="Confirm.png" local="130390965386164493" remote="130390963670000000" testing="0" />
-<file name="Copy.png" local="130390965386164493" remote="130390963670000000" testing="0" />
-<file name="Cut.png" local="130390965386174500" remote="130390963670000000" testing="0" />
-<file name="Edit.png" local="130390965387025069" remote="130390963670000000" testing="0" />
-<file name="Editing Collision Masks.html" local="130396363794864920" remote="130396362450000000" testing="0" />
-<file name="Editing Sprites.html" local="130396363795485344" remote="130396362450000000" testing="0" />
-<file name="Editing Subimages.html" local="130396363796125769" remote="130396362450000000" testing="0" />
-<file name="Ellipse.png" local="130390965387095116" remote="130390963670000000" testing="0" />
-<file name="Eraser.png" local="130390965387105122" remote="130390963670000000" testing="0" />
-<file name="Fill.png" local="130390965387105122" remote="130390963670000000" testing="0" />
-<file name="Grid.png" local="130390965387115121" remote="130390963670000000" testing="0" />
-<file name="index.html" local="130396363796736155" remote="130396362450000000" testing="0" />
-<file name="Insert_Empty.png" local="130390965387145145" remote="130390963670000000" testing="0" />
-<file name="Insert_Image_Options.png" local="130390965387155160" remote="130390963670000000" testing="0" />
-<file name="Line.png" local="130390965387165162" remote="130390963670000000" testing="0" />
-<file name="New_Sprite.png" local="130390965387175173" remote="130390963670000000" testing="0" />
-<file name="Paste.png" local="130390965387185180" remote="130390963670000000" testing="0" />
-<file name="Pencil.png" local="130390965387195171" remote="130390963670000000" testing="0" />
-<file name="Poligon.png" local="130390965387255210" remote="130390963670000000" testing="0" />
-<file name="PreMultiply.png" local="130390965387265229" remote="130390963670000000" testing="0" />
-<file name="Preview.png" local="130390965387275263" remote="130390963670000000" testing="0" />
-<file name="Rectangle.png" local="130390965387275263" remote="130390963670000000" testing="0" />
-<file name="Redo.png" local="130390965387285242" remote="130390963670000000" testing="0" />
-<file name="Save.png" local="130390965387295241" remote="130390963670000000" testing="0" />
-<file name="Select.png" local="130390965387305256" remote="130390963670000000" testing="0" />
-<file name="Shift_Left.png" local="130390965389056412" remote="130390963670000000" testing="0" />
-<file name="Shift_Right.png" local="130390965389076430" remote="130390963670000000" testing="0" />
-<file name="SpraySelect.png" local="130390965389156499" remote="130390963670000000" testing="0" />
-<file name="Sprite_From_File.png" local="130390965389186503" remote="130390963670000000" testing="0" />
-<file name="Type.png" local="130390965389206524" remote="130390963670000000" testing="0" />
-<file name="Undo.png" local="130390965389246586" remote="130390963670000000" testing="0" />
-<file name="Wand.png" local="130390965389266580" remote="130390963670000000" testing="0" />
-<file name="Zoom_Actual.png" local="130390965389286581" remote="130390963670000000" testing="0" />
-<file name="Zoom_In.png" local="130390965389306583" remote="130390963670000000" testing="0" />
-<file name="Zoom_Out.png" local="130390965389336638" remote="130390963670000000" testing="0" />
+<file name="Add_Empty.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Add_From_File.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Airbrush.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Animation.gif" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Animation_Strip.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Basic_Collisions_Image.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Bbox_image.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="ChangeColor.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="ColorDropper.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Confirm.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Copy.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Cut.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Edit.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Editing Collision Masks.html" local="130397534970000000" remote="130397534970000000" testing="0" />
+<file name="Editing Sprites.html" local="130397534970000000" remote="130397534970000000" testing="0" />
+<file name="Editing Subimages.html" local="130397534970000000" remote="130397534970000000" testing="0" />
+<file name="Ellipse.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Eraser.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Fill.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Grid.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="index.html" local="130397534970000000" remote="130397534970000000" testing="0" />
+<file name="Insert_Empty.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Insert_Image_Options.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Line.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="New_Sprite.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Paste.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Pencil.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Poligon.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="PreMultiply.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Preview.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Rectangle.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Redo.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Save.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Select.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Shift_Left.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Shift_Right.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="SpraySelect.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Sprite_From_File.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Type.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Undo.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Wand.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Zoom_Actual.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Zoom_In.png" local="130390963670000000" remote="130390963670000000" testing="0" />
+<file name="Zoom_Out.png" local="130390963670000000" remote="130390963670000000" testing="0" />
 </dwsync>

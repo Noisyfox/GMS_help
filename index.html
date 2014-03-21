@@ -7,13 +7,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" />
 
-<style type="text/css">
-<!--
-h2 {
-	font-size: 1em;
-}
--->
-</style>
 
 <!-- mmenu_head up -->
 
@@ -31,7 +24,7 @@ h2 {
 				var $menu = $('nav#menu-right');
 				$menu.mmenu({
 					position	: 'right',
-					classes		: 'mm-light',
+					classes		: 'mm-black',
 					dragOpen	: true,
 					counters	: true,
 					searchfield	: true,
@@ -60,7 +53,7 @@ h2 {
 
 				$menu0.mmenu({
 					position	: 'left',
-					classes		: 'mm-light',
+					classes		: 'mm-black',
 					dragOpen	: true,
 					counters	: true,
 					searchfield	: true,
@@ -110,7 +103,7 @@ h2 {
 			
 			$(function() {
 				var options = {
-					classes			: 'mm-light',
+					classes			: 'mm-black',
 					modal			: true
 				};
 				
@@ -122,27 +115,22 @@ h2 {
 				options.zposition = 'next';
 				$('#tooltip-2').mmenu( options );
 				
-				options.position = 'bottom';
+				options.position = 'top';
 				options.zposition = 'front';
 				$('#popup-1').mmenu( options );
 				
-				options.position = 'top';
+				options.position = 'bottom';
 				options.zposition = 'front';
-				$('#tips-1').mmenu( options );
+				$('#en-1').mmenu( options );
 				
-				options.position = 'top';
+				options.position = 'bottom';
 				options.zposition = 'front';
-				$('#tips-2').mmenu( options );
+				$('#en-2').mmenu( options );
 				
-				options.position = 'top';
+				options.position = 'bottom';
 				options.zposition = 'front';
-				$('#tips-3').mmenu( options );
-				
-				options.position = 'top';
-				options.zposition = 'front';
-				$('#tips-4').mmenu( options );
-
-
+				$('#tips-1').mmenu( options );		
+	
 			});
 	
 		</script>
@@ -165,16 +153,7 @@ h2 {
 <!-- one page section up -->
 <div id="intro">
 <p>&nbsp;</p>
-<p>&#27426;&#36814;&#27983;&#35272; <i>GameMaker:Studio</i> &#29992;&#25143;&#25163;&#20876;! &#36825;&#20010;&#25991;&#26723;&#20998;&#20026;&#19977;&#20010;&#37096;&#20998;&#65292;&#20027;&#35201;&#35762;&#35299; <i>GameMaker:Studio</i> &#30028;&#38754;&#21644;&#22522;&#30784;&#20351;&#29992;&#65292;&#26356;&#39640;&#32423;&#30340;&#29992;&#27861;&#21644;&#21151;&#33021;&#38656;&#35201;&#20351;&#29992; <b>GML</b> (the <i>GameMaker Language</i>). &#26032;&#29992;&#25143;&#24517;&#39035;&#20174; <b>Using GameMaker:Studio</b> &#37096;&#20998;&#24320;&#22987;&#65292;&#36825;&#37096;&#20998;&#21253;&#25324;&#25152;&#26377;&#24555;&#36895;&#20837;&#38376;&#30693;&#35782;, &#26366;&#32463;&#20351;&#29992;&#36807; <i>GameMaker</i> &#30340;&#29992;&#25143;&#21487;&#20197;&#36339;&#36807;&#36825;&#37096;&#20998;&#65292;&#35831;&#26597;&#30475; <b>Advanced Use</b> &#37096;&#20998;&#20851;&#20110;&#26032;&#29256;&#26412;&#26356;&#26032;&#20869;&#23481;&#12290;&#19981;&#35770;&#24744;&#30340;&#25216;&#26415;&#27700;&#24179;&#22914;&#20309;&#65292;&#25105;&#20204;&#37117;&#24076;&#26395;&#36825;&#26412;&#35828;&#26126;&#33021;&#22815;&#24110;&#21161;&#24744;&#26377;&#25928;&#30340;&#20351;&#29992; <i>GameMaker:Studio</i> &#24182;&#19988;&#23454;&#29616;&#24744;&#30340;&#26790;&#65281;</p>
-<!--en up-->
-<div class="block" id="smallContent" style="display:block ; background-color: rgb(36, 36, 36);">
-<p style="font-size: 9pt"> .[<a href="javascript:" onClick="document.all.fullContent.style.display=(document.all.fullContent.style.display=='none')?'':'none';document.all.smallContent.style.display=(document.all.smallContent.style.display=='none')?'':'none'" >Read English Version</a>]</p></div>
-<div class="block" id="fullContent" style="display:none;; background-color: rgb(36, 36, 36);">
-<p style="font-size: 9pt"> Welcome to the <i>GameMaker:Studio</i> user manual! This document is divided into three parts with the aim of getting you introduced to the interface and basic workings of <i>GameMaker:Studio</i> before 
-going on to more advanced usage and the functions available through <b>GML</b> (the <i>GameMaker Language</i>). New users should definitely start at the beginning with the <b>Using GameMaker:Studio</b> 
-section as it has all the information you need to get started as quickly as possible, however users of previous <i>GameMaker</i> versions can probably skip to the <b>Advanced Use</b> section to see what's 
-new in this version. Whatever your skill level, we hope that this manual helps you to realise the true power within <i>GameMaker:Studio</i> and make your gaming dreams become reality![<a href="javascript:" onClick="document.all.fullContent.style.display=(document.all.fullContent.style.display=='none')?'':'none';document.all.smallContent.style.display=(document.all.smallContent.style.display=='none')?'':'none'" >收起英文说明</a>]</p></div>
-<!--en down-->
+<p>&#27426;&#36814;&#27983;&#35272; <i>GameMaker:Studio</i> &#29992;&#25143;&#25163;&#20876;! &#36825;&#20010;&#25991;&#26723;&#20998;&#20026;&#19977;&#20010;&#37096;&#20998;&#65292;&#20027;&#35201;&#35762;&#35299; <i>GameMaker:Studio</i> &#30028;&#38754;&#21644;&#22522;&#30784;&#20351;&#29992;&#65292;&#26356;&#39640;&#32423;&#30340;&#29992;&#27861;&#21644;&#21151;&#33021;&#38656;&#35201;&#20351;&#29992; <b>GML</b> (the <i>GameMaker Language</i>). &#26032;&#29992;&#25143;&#24517;&#39035;&#20174; <b>Using GameMaker:Studio</b> &#37096;&#20998;&#24320;&#22987;&#65292;&#36825;&#37096;&#20998;&#21253;&#25324;&#25152;&#26377;&#24555;&#36895;&#20837;&#38376;&#30693;&#35782;, &#26366;&#32463;&#20351;&#29992;&#36807; <i>GameMaker</i> &#30340;&#29992;&#25143;&#21487;&#20197;&#36339;&#36807;&#36825;&#37096;&#20998;&#65292;&#35831;&#26597;&#30475; <b>Advanced Use</b> &#37096;&#20998;&#20851;&#20110;&#26032;&#29256;&#26412;&#26356;&#26032;&#20869;&#23481;&#12290;&#19981;&#35770;&#24744;&#30340;&#25216;&#26415;&#27700;&#24179;&#22914;&#20309;&#65292;&#25105;&#20204;&#37117;&#24076;&#26395;&#36825;&#26412;&#35828;&#26126;&#33021;&#22815;&#24110;&#21161;&#24744;&#26377;&#25928;&#30340;&#20351;&#29992; <i>GameMaker:Studio</i> &#24182;&#19988;&#23454;&#29616;&#24744;&#30340;&#26790;&#65281; <i><b><a href="#en-1">原文</a></b></i></p>
 
 <!-- notes tip up-->
 <p><i><b><a href="#tips-1">NOTE</a> : </b>&#30001;&#20110; GameMaker:Studio &#27169;&#22359;&#21270;&#24615;&#36136;&#65292;&#19968;&#20123;&#25216;&#24039;&#26159;&#19981;&#21253;&#25324;&#22312;&#25163;&#20876;&#20013;&#65292;&#29305;&#21035;&#26159;&#29305;&#27530;&#35774;&#23450;&#21644;&#36830;&#25509;&#19981;&#21516;&#30340;&#35774;&#22791;&#26041;&#38754;&#12290;&#23545;&#20110;&#26368;&#26032;&#30340;&#20449;&#24687;&#21644;&#25925;&#38556;&#25490;&#38500;&#25552;&#31034;&#21644;&#25216;&#24039;&#65292;&#35831;&#21442;&#38405;</i><i> <a href="http://wiki.yoyogames.com/index.php/GameMaker:Studio#Getting_Started" target="_blank">YoYo Games Wiki</a></i>. </p>
@@ -229,7 +208,7 @@ new in this version. Whatever your skill level, we hope that this manual helps y
 <p><i>GameMaker:Studio</i> IDE (&#38598;&#25104;&#24320;&#21457;&#29615;&#22659;) 
   &#26377;&#19968;&#20123;&#39640;&#32423;&#35774;&#32622;&#21313;&#20998;&#37325;&#35201;&#65292;&#33021;&#20351;&#24744;&#30340;&#20316;&#21697;&#26356;&#21152;&#39640;&#25928;&#12290;&#36825;&#20123;&#36873;&#39033;&#21253;&#25324;&#28304;&#20195;&#30721;&#31649;&#29702;&#65292;&#39033;&#30446;&#37197;&#32622;&#65292;&#39640;&#32423;&#35843;&#35797;&#21644;&#19968;&#20123;&#39069;&#22806;&#30340;&#25913;&#21464;&#12289;&#25805;&#20316;&#28216;&#25103;&#36164;&#28304;&#24037;&#20855;(&#35831;&#27880;&#24847;&#19968;&#20123;&#39640;&#32423;&#24037;&#20855;&#30340;&#26377;&#25928;&#24615;&#24517;&#39035;&#36866;&#21512;&#24744;&#24403;&#21069;&#20351;&#29992;&#30340; <a href="000_Using%20GameMaker/Versions.html">version of <i>GameMaker:Studio</i></a> ).&nbsp; &#26412;&#31456;&#33410;&#20998;&#20026;&#19977;&#20010;&#37096;&#20998;&#12290;&#27599;&#20010;&#37096;&#20998;&#37117;&#26377;&#33258;&#24049;&#29420;&#29305;&#30340; IDE: </p>
 <blockquote>
-  <h4>Game Assets&#28216;&#25103;&#36164;&#20135;</h4>
+  <h4>Game Assets&#28216;&#25103;原生资源</h4>
   <blockquote>
     <ol>
       <li><a href="001_Advanced%20Use/More%20about%20sprites/index.html">More About Sprites &#26356;&#22810;&#20851;&#20110;&#31934;&#28789;</a><br>
@@ -287,7 +266,7 @@ new in this version. Whatever your skill level, we hope that this manual helps y
 <div id="third">
 <h3><a href="002_Reference/index.html">Reference &#21442;&#32771;<br>
   </a></h3>
-<p>&#22312;&#36825;&#24744;&#21487;&#20197;&#25214;&#21040;&#26356;&#22810;&#20851;&#20110; <i>GameMaker:Studio</i> &#29305;&#24449;&#30340;&#21442;&#32771;&#65292;&#22914;&#21516;&#26597;&#30475;&#20840;&#37096;&#30340;&#21151;&#33021;&#20989;&#25968;&#65292;&#21464;&#37327;&#65292;&#24120;&#37327;&#36825;&#20123;&#20869;&#32622;&#30340;&#31243;&#24207;&#35821;&#35328;&#12290; 
+<p>&#22312;&#36825;&#24744;&#21487;&#20197;&#25214;&#21040;&#26356;&#22810;&#20851;&#20110; <i>GameMaker:Studio</i> &#29305;&#24449;&#30340;&#21442;&#32771;&#65292;比如&#26597;&#30475;&#20840;&#37096;&#30340;&#21151;&#33021;&#20989;&#25968;&#65292;&#21464;&#37327;&#65292;&#24120;&#37327;&#36825;&#20123;&#20869;&#32622;&#30340;&#31243;&#24207;&#35821;&#35328;&#12290; 
   &#36825;&#31181;&#35821;&#35328;&#27604;&#20351;&#29992;&#26631;&#20934;&#21270;&#21160;&#20316;&#23558;&#36171;&#20104;&#24744;&#26356;&#22810;&#35774;&#35745;&#24377;&#24615;&#21644;&#26356;&#26631;&#20934;&#21270;&#25511;&#21046;&#24744;&#30340;&#28216;&#25103;&#65292;&#25105;&#20204;&#23558;&#21442;&#32771; GML (<i>GameMaker</i> &#35821;&#35328;)&#12290;&#22312; GML 
   &#37324;&#24744;&#23558;&#25214;&#21040;&#20840;&#37096;&#21487;&#20351;&#29992;&#30340;&#20989;&#25968;&#65292;&#24182;&#19988;&#24744;&#21487;&#20197;&#22312;&#20195;&#30721;&#20013;&#20351;&#29992;&#23427;&#20204;&#12290;&#25105;&#20204;&#24050;&#32463;&#21253;&#25324;&#20102;&#24744;&#22312;&#35774;&#35745;&#28216;&#25103;&#36807;&#31243;&#20013;&#25152;&#38656;&#35201;&#30340;&#25152;&#26377;&#24120;&#37327;&#12290; </p>
 <p>&#36825;&#37096;&#20998;&#27010;&#36848; GameMaker &#35821;&#35328;&#65292; &#21253;&#25324;&#32467;&#26500;&#35268;&#21017;&#19982;&#35821;&#27861;&#35268;&#21017;&#65292;&#22914;&#20309;&#20351;&#29992;&#30340;&#20844;&#24335;&#33539;&#20363;&#21644;&#19981;&#21516;&#34920;&#36798;&#65306; </p>
@@ -328,8 +307,8 @@ new in this version. Whatever your skill level, we hope that this manual helps y
   </h4>
   <blockquote>
     <ol>
-      <li><a href="002_Reference/Drawing/index.html">Drawing &#32472;&#21046;</a><br>
-      </li>
+      <li><a href="002_Reference/Drawing/index.html">Drawing &#32472;&#21046;</a></li>
+      <li><a href="002_Reference/Shaders/index.html">Shaders 着色器 </a></li>
       <li><a href="002_Reference/Surfaces/index.html">Surfaces &#34920;&#38754;</a><br>
       </li>
       <li><a href="002_Reference/Windows%20And%20Views/index.html">Windows And Views &#31383;&#21475;&#19982;&#35270;&#37326;</a><br>
@@ -360,8 +339,8 @@ new in this version. Whatever your skill level, we hope that this manual helps y
   </h4>
   <blockquote>
     <ol>
-      <li><a href="002_Reference/HTML5/index.html">HTML5</a><br>
-      </li>
+      <li><a href="002_Reference/HTML5/index.html">HTML5</a></li>
+      <li><a href="002_Reference/Windows8/index.html">Windows 8</a></li>
       <li><a href="002_Reference/Advertising%20and%20Analytics/index.html">Advertising and Analytics &#24191;&#21578;&#19982;&#20998;&#26512;</a><br>
       </li>
       <li><a href="002_Reference/Social%20Gaming/index.html">Social Gaming &#31038;&#20132;&#28216;&#25103;</a><br>
@@ -395,6 +374,7 @@ new in this version. Whatever your skill level, we hope that this manual helps y
 <h3>-贡献者 Versions by-</h3>
 <p>译者：&#30887;&#32511;&#30340;&#28246;、断水</p>
 <p>网站维护：断水</p>
+<p><a href="update_log.html">查看更新日志</a></p>
 <p>  <font size="3"><a href="http://tieba.baidu.com/f?kw=gmstudio"><i>&#30334;&#24230;&#36148;&#21543; gmstudio</i></a></font><br>
   <font size="3"><i>YoYo Games Ltd.(GMS1.2)</i></font></p>
 <p><a href="#menu-right">Open the menu</a></p>  
@@ -417,39 +397,15 @@ new in this version. Whatever your skill level, we hope that this manual helps y
 		</div>
 	</div>
 
-	<div id="tips-2" class="tip">
+	<div id="en-1" class="tip">
 		<div>
 			<div>
 				<a href="#page">x</a>
-				<h4>Tooltips on mobile devices</h4>
-				<p><em>The tooltip is a common graphical user interface element used in conjunction with a cursor. The user hovers the cursor over an item, without clicking it, and a tooltip may appear.<br />
-					<strong>Tooltips do not appear on mobile operating systems, since there is no cursor.</strong></em></p>
-				<p>Wikipedia<br />
-					http://en.wikipedia.org/wiki/Tooltip</p>
-			</div>
-		</div>
-	</div>
-
-	<div id="tips-3" class="tip">
-		<div>
-			<div>
-				<a href="#page">x</a>
-				<h4>Popups and modal windows</h4>
-				<p><em>In user interface design, a modal window is a child window that requires users to interact with it before they can return to operating the parent application, thus preventing the workflow on the application main window.</em></p>
-				<p>Wikipedia<br />
-					http://en.wikipedia.org/wiki/Modal_window</p>
-			</div>
-		</div>
-	</div>
-
-	<div id="tips-4" class="tip">
-		<div>
-			<div>
-				<a href="#page">x</a>
-				<h4>Notification center</h4>
-				<p><em>Notification Center is a feature in iOS and OS X that provides an overview of alerts from applications. It displays notifications until the user completes an associated action, rather than requiring instant resolution.</em></p>
-				<p>Wikipedia<br />
-					http://en.wikipedia.org/wiki/Notification_Center</p>
+				<h4>Welcome to the <i>GameMaker:Studio</i> user manual!</h4>
+				<p>Welcome to the <i>GameMaker:Studio</i> user manual! This document is divided into three parts with the aim of getting you introduced to the interface and basic workings of <i>GameMaker:Studio</i> before 
+going on to more advanced usage and the functions available through <b>GML</b> (the <i>GameMaker Language</i>). New users should definitely start at the beginning with the <b>Using GameMaker:Studio</b> 
+section as it has all the information you need to get started as quickly as possible, however users of previous <i>GameMaker</i> versions can probably skip to the <b>Advanced Use</b> section to see what's 
+new in this version. Whatever your skill level, we hope that this manual helps you to realise the true power within <i>GameMaker:Studio</i> and make your gaming dreams become reality!<br><br></p>
 			</div>
 		</div>
 	</div>
@@ -469,17 +425,18 @@ contents
 				Fixed footer :-)
 </div>
 
-<!-- the  leftlist up -->..<!-- #BeginLibraryItem "/Library/mmenu_leftlist.lbi" -->
+<!-- for leftlist  -->
+
 			<nav id="menu-left">
-			<!-- mmenu_leftlist up -->
 				<ul>
-					<li ><a href="index.html">GMS&#x624B;&#x518C;&#x9996;&#x9875;</a>
+					<li class="Selected"><a href="index.html">GMS&#x624B;&#x518C;&#x9996;&#x9875;</a>
 						<ul>
 							<li><a href="#intro">GMS&#x6587;&#x6863;&#x7B80;&#x4ECB;</a></li>
 							<li><a href="#first">GameMaker:Studio &#x4F7F;&#x7528;</a></li>
 							<li><a href="#second">&#x9AD8;&#x7EA7;&#x5E94;&#x7528;</a></li>
 							<li><a href="#third">Reference &#x53C2;&#x8003;</a></li>
-							<li><a href="#fourth">&#x8D21;&#x732E;&#x8005; Versions by</a></li>						
+							<li><a href="#fourth">&#x8D21;&#x732E;&#x8005; Versions by</a></li>
+							<li ><a href="update_log.html">Update log</a></li>						
 						</ul>
 					
 					</li>					
@@ -858,11 +815,11 @@ contents
 					</li>
 					<li ><a href="#">&#x5B9E;&#x4F8B;&#x6559;&#x7A0B;&#x53CA;&#x5FC3;&#x5F97;</a></li>
 					<li ><a href="#">&#x5B9E;&#x9A8C;&#x6027;&#x9879;&#x76EE;</a></li>
-					<li ><a href="#">&#x5E94;&#x7528;&#x8BBE;&#x7F6E;</a></li>					
+					<li ><a href="#">&#x5E94;&#x7528;&#x8BBE;&#x7F6E;</a></li>										
 				</ul>
 			<!-- mmenu_leftlist down 1 -->
 			</nav>
-<!-- #EndLibraryItem -->..<!-- the leftlist down -->
+<!-- the leftlist down -->
 
 
 <!-- mmenu_right up 1 -->
@@ -897,7 +854,6 @@ contents
 					</li>
 				</ul>
 			</nav>
-
 <!-- mmenu_right down 1 -->
 </div>
 </body>

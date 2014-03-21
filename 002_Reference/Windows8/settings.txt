@@ -37,7 +37,7 @@
 				var $menu = $('nav#menu-right');
 				$menu.mmenu({
 					position	: 'right',
-					classes		: 'mm-light',
+					classes		: 'mm-black',
 					dragOpen	: true,
 					counters	: true,
 					searchfield	: true,
@@ -66,7 +66,7 @@
 
 				$menu0.mmenu({
 					position	: 'left',
-					classes		: 'mm-light',
+					classes		: 'mm-black',
 					dragOpen	: true,
 					counters	: true,
 					searchfield	: true,

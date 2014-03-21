@@ -255,7 +255,7 @@ pre
 		padding-top: 0em;
 	}			
 
-/* for the tips */
+/* for the mmenu */
 
 .mm-menu
 {
@@ -275,12 +275,6 @@ pre
 {
 	font-size: 20px;
 }
-
-#tooltips
-{
-	display: none;
-}
-
 
 .mm-panel > div
 {
@@ -309,6 +303,21 @@ pre
 	font-size: 12px;
 }
 
+
+/* tip page jquery.mmenu.all.css：.mm-ismenu.mm-black #616161 */
+
+#tooltips
+{
+	display: none;
+}
+
+.tip * {
+background:#242424;
+color:#EEE;
+}
+.tip a:link, a:visited{ color:#75B73D; }
+.tip a:hover, a:active{ color:#D0E27F; }
+
 .tip a[href="#page"]
 {
 	border-radius: 10px;
@@ -325,11 +334,4 @@ pre
 	position: absolute;
 	top: 20px;
 	right: 20px;
-}
-
-/* make the tip page white */
-
-.tip * {
-background:#FFF
-
 }
