@@ -119,7 +119,7 @@
 			});
 	
 </script>
-<!-- TemplateParam name="OptionalRegion_menuright" type="boolean" value="true" --><!-- TemplateParam name="OptionalRegion_menuleft" type="boolean" value="true" --><!-- TemplateParam name="OptionalRegion_onepage" type="boolean" value="false" --><!-- TemplateParam name="OptionalRegion_tips" type="boolean" value="false" --><!-- TemplateParam name="OptionalRegion_footer" type="boolean" value="true" -->
+<!-- TemplateParam name="OptionalRegion_menuright" type="boolean" value="true" --><!-- TemplateParam name="OptionalRegion_menuleft" type="boolean" value="true" --><!-- TemplateParam name="OptionalRegion_onepage" type="boolean" value="false" --><!-- TemplateParam name="OptionalRegion_tips" type="boolean" value="false" --><!-- TemplateParam name="OptionalRegion_footer" type="boolean" value="false" -->
 </head>
 <body bgcolor="#FFFFFF">
 <!-- the page header part  -->
