@@ -154,92 +154,116 @@
 
 			<div id="content" >
 			
-<h1>Fonts</h1>
+<h1>Fonts 字体</h1>
 
+<h2>这一章讲述了如何使用字体资源。</h2>
 <h2>This section deals with the font resource.</h2>
 
-<p>
-When you want to draw text in your game this text is drawn in a standard Arial 12 points font, but to make more interesting or unique looking texts you will probably want to use different fonts, however. 
-So, to use different fonts that you have on your computer you must create a font resource in <i>GameMaker:Studio</i>. For each font resource you specify a particular type of font from your computer 
-which can then be used in your game using the <a href="../000_Using%20GameMaker/Actions/006_Draw%20actions.html">action</a> or <a href="../002_Reference/Drawing/Drawing%20Text/draw_set_font.html">
-code</a> to set a font for drawing to the screen.
-<br>
-<br>
+<p>当你想要在游戏中绘制文字时，这些文字是使用标准的 Arial 12 号字体绘制的。但是为了让你的游戏看起来更独特更有趣，你可能想要使用不同的字体。为了使用不同的字体，你需要在电脑上使用 <i>GameMaker:Studio</i> 创建一个字体资源。每一个字体资源你需要指定你电脑里有的一款字体，然后你就可以在你的游戏中通过 <a href="../000_Using%20GameMaker/Actions/006_Draw%20actions.html">动作</a> 或者 <a href="../002_Reference/Drawing/Drawing%20Text/draw_set_font.html"> 代码</a> 来指定一个用来绘制的字体。
+<p><i><b>注意 : </b>如果你在使用 GameMaker:Studio <b>免费版 </b>你每个游戏只能包含最多5个字体。更多细节参见 <a href="../000_Using%20GameMaker/Versions.html">这里</a>。</i>
+<p>When you want to draw text in your game this text is drawn in a standard Arial 12 points font, but to make more interesting or unique looking texts you will probably want to use different fonts, however. 
+  So, to use different fonts that you have on your computer you must create a font resource in <i>GameMaker:Studio</i>. For each font resource you specify a particular type of font from your computer 
+  which can then be used in your game using the <a href="../000_Using%20GameMaker/Actions/006_Draw%20actions.html">action</a> or <a href="../002_Reference/Drawing/Drawing%20Text/draw_set_font.html">
+    code</a> to set a font for drawing to the screen.
+  <br>
+  <br>
+  
+  <i><b>NOTE : </b>If you are using the <b>Free</b> version of <i>GameMaker:Studio</i> you are limited to a maximum of 5 fonts per game. For more details see 
+  <a href="../000_Using%20GameMaker/Versions.html">here</a>.</i>
+  <br>
+  <br>
+  <br>
+  <br>
+  
+  要在你的游戏中创建一个字体资源，你可以点击 <b>Resources</b>
+菜单中的 <b>Create Font</b>
+，或者点击工具栏对应的按钮，之后会弹出以下窗口：
+<p>To create a font resource in your game, use the item <b>Create Font</b> in the <b>Resources</b> menu or use the corresponding button on the toolbar, which will cause the following window to pop up :
+    
+    <img class="center" src="../images/form_font.png">
+    
+    就和其它资源一样，每个字体资源你都需要指定一个独一无二的名称，这样你（以及<i>GameMaker:Studio</i>）才可以在编写游戏时区分不同的资源。接下来你可以通过左侧的“Font”下拉框来选择并预览不同的字体。在下方你可以看到其它不同的功能，比如字号以及是否 <b>加粗</b> 或者显示为 <i>斜体</i> ，以及是否启用抗锯齿。右边的预览窗口显示的是你选择的不同范围的文字在当前的字体设置中的显示效果，<i>除了</i>抗锯齿，它不会显示在预览中，但是在游戏中是确实有效的。
+请注意在字体缩放时（尤其是放大）会导致绘制时？？？？？？，所以尽可能避免字体的缩放。<p>As with all resources, you should give your font resource a unique name so that you (and <i>GameMaker:Studio</i>) can identify it while writing your game. Next you should start selecting the fonts to preview using 
+      the drop-down menu "Font" on the left. Beneath this section you can set other things like the size and whether the font should be drawn as <b>bold</b> or <i>italic</i> or have anti-aliasing (edge smoothing) applied. 
+      The preview window on the right will show you different text ranges you have selected as they will look with the size and transforms you have specified, <i>except</i> the anti-aliasing which is not visible in the preview 
+      but will be in your game. Please note that font scaling (especially from small to large) can give artifacts when drawn, so try to avoid this where possible.
+      <br>
+      <p>一个字体通常包含了256个字符，编号从0到255，不过通常情况下你只会用到其中的一小部分。这就是为什么 <i>GameMaker:Studio</i> 默认只在字体资源中包含了从32到127号字符。不过你可以通过改变这个字符的范围来优化你的游戏，比如如果你某种字体只用来显示数字，那么你只需要选择那些数字对应的范围。要这么做，你应该先点击 <b>Clear</b> 按钮来清除当前设置的范围，然后点击“+”按钮来增加一个新的范围。这会弹出以下窗口：<br><br>
+      
+      A font typically consist of 256 characters, numbered from 0 to 255, but in general you use only a small portion of these. This is why <i>GameMaker:Studio</i> defaults to using only the characters from 32 till 127 
+      are stored in the font. You can, however, change the character range used to help optimise your games ie: If you only need the numbers from a specific font, then <i>only</i> select the numbers. To do this, you should first 
+      click the <b>Clear</b> button to clear the current range and then click on the "+" button to add a new range. This will open the following window:
+      
+      <img class="center" src="../images/form_font_2.png">
+      
+      <p>
+      这个窗口中有一些按钮来帮助你建立一个标准的字体范围-
+      
+      <blockquote>
+<ul>
+	<li><b>Normal</b> 一般范围表示从 32 到 127</li>
+	<li><b>All</b> 全部范围表示从 0 到 255</li>
+	<li><b>Digits</b> 数字范围只包含了10个数字字符</li>
+	<li><b>Letters</b> 字母范围只包含了全部的大写和小写英文字母</li>
+</ul>
+</blockquote>
 
-<i><b>NOTE : </b>If you are using the <b>Free</b> version of <i>GameMaker:Studio</i> you are limited to a maximum of 5 fonts per game. For more details see 
-<a href="../000_Using%20GameMaker/Versions.html">here</a>.</i>
-<br>
-<br>
-<br>
-<br>
-
-To create a font resource in your game, use the item <b>Create Font</b> in the <b>Resources</b> menu or use the corresponding button on the toolbar, which will cause the following window to pop up :
-
-<img class="center" src="../images/form_font.png">
-
-As with all resources, you should give your font resource a unique name so that you (and <i>GameMaker:Studio</i>) can identify it while writing your game. Next you should start selecting the fonts to preview using 
-the drop-down menu "Font" on the left. Beneath this section you can set other things like the size and whether the font should be drawn as <b>bold</b> or <i>italic</i> or have anti-aliasing (edge smoothing) applied. 
-The preview window on the right will show you different text ranges you have selected as they will look with the size and transforms you have specified, <i>except</i> the anti-aliasing which is not visible in the preview 
-but will be in your game. Please note that font scaling (especially from small to large) can give artifacts when drawn, so try to avoid this where possible.
-<br>
-<br>
-
-A font typically consist of 256 characters, numbered from 0 to 255, but in general you use only a small portion of these. This is why <i>GameMaker:Studio</i> defaults to using only the characters from 32 till 127 
-are stored in the font. You can, however, change the character range used to help optimise your games ie: If you only need the numbers from a specific font, then <i>only</i> select the numbers. To do this, you should first 
-click the <b>Clear</b> button to clear the current range and then click on the "+" button to add a new range. This will open the following window:
-
-<img class="center" src="../images/form_font_2.png">
-
-This window has some buttons to help you establish a standard range for your font -
-
-<blockquote>
+      <p>This window has some buttons to help you establish a standard range for your font -
+      
+      <blockquote>
 <ul>
 	<li>The <b>Normal</b> range from 32 till 127</li>
 	<li>The <b>All</b> range from 0 till 255</li>
 	<li>The <b>Digits</b> range that only contains the 10 digits</li>
-	<li>The <b>Letters</b>range that contains all uppercase and lowercase letters only</li>
+	<li>The <b>Letters </b>range that contains all uppercase and lowercase letters only</li>
 </ul>
 </blockquote>
 
-<p>
-Other ranges can be used by typing in the first and last character index of the range you wish to set in the <b>Character Range</b> input boxes (If a character does not lie in the range it is replaced by a space). Apart 
-from these buttons and input boxes, you also have two further options there especially useful.
-<br>
-<br>
-
-The first is the button marked <b>From Code</b>. If you click on this button and then click OK, <i>GameMaker:Studio</i> will automatically parse your game code for strings and then create different character ranges to cover all the 
-text in your game. Note that it looks for <i>all</i> strings (either within "" or '') and so may also include file names in the character ranges. However you can remove any ranges from your font resource using the "-" button at the 
-bottom of the window and so remove those unwanted characters.
-<br>
-<br>
-
-The second button in this window is marked <b>From File</b> and it works similarly to that explained above. If you click on it, you will be asked to supply a file, and then once that is done you should click on OK. 
-<i>GameMaker:Studio</i> will then parse the file and create character ranges for the text found within.
-<br>
-<br>
-
-One final option that you have available to you is the ability to assign your font resource to a <b>texture group</b>. this can be very useful when it comes to optimising the way your game runs and the amount of texture 
-swaps that must be done while the game is being played. for more information on texture groups please see the section <a href="More%20about%20backgrounds/Texture%20Pages.html">Advanced Use - Texture Pages</a>.
-<br>
-<br>
-
-<i><b>Note : </b>Due to licencing issues, <i>GameMaker:Studio</i> does not store the fonts with the project file (when the game is finally finished the font is rendered to a texture page, so finished games 
-will draw the text as designed). This means that if you wish to share the <tt>*.gmx</tt> or a zipped <tt>*.gmz</tt> file, you <i>must</i> include the font resource that you have used yourself, as not 
-everyone will have the same fonts as you installed on their computer.</i>
-<br>
-<br>
-
-<p>
+<p>要设置其它范围只需要在<b>Character Range</b> 输入框中输入你要设置的范围的第一个和最后一个字符的编号即可（如果你使用了范围之外的字符，显示的时候会用空格代替）。除了这些按钮和输入框外，你还有两个特别有用的选项可供选择。
+<p>首先是标记为 <b>From Code</b> 的这个按钮。如果你点击这个按钮并确认，<i>GameMaker:Studio</i> 会自动解析你的游戏代码从中寻找字符串，然后创建相应的包含你游戏中全部文本的字符范围。当然你可以通过点你底部的“-”按钮来移除任何你不想要保留的字符范围。
+<p>其次是标记为 <b>From File</b> 的这个按钮。它的功能和上面这个很接近。如果你点击它，会要求你提供一个文件。
+接下来 <i>GameMaker:Studio</i> 会解析这个文件然后根据在文件中找到的字符创建相应的字符范围。
+<p>最后，你可以给你的字体指定一个<b>纹理分组</b>。这对于你优化你的游戏的运行方式和游戏运行时的纹理交换量十分有帮助。更多关于纹理分组的信息参见
+  <a href="More%20about%20backgrounds/Texture%20Pages.html">高级功能 - 纹理 页面</a>。
+<p>Other ranges can be used by typing in the first and last character index of the range you wish to set in the <b>Character Range</b> input boxes (If a character does not lie in the range it is replaced by a space). Apart 
+  from these buttons and input boxes, you also have two further options there especially useful.
+  <br>
+  <br>
+  
+  The first is the button marked <b>From Code</b>. If you click on this button and then click OK, <i>GameMaker:Studio</i> will automatically parse your game code for strings and then create different character ranges to cover all the 
+  text in your game. Note that it looks for <i>all</i> strings (either within "" or '') and so may also include file names in the character ranges. However you can remove any ranges from your font resource using the "-" button at the 
+  bottom of the window and so remove those unwanted characters.
+  <br>
+  <br>
+  
+  The second button in this window is marked <b>From File</b> and it works similarly to that explained above. If you click on it, you will be asked to supply a file, and then once that is done you should click on OK. 
+  <i>GameMaker:Studio</i> will then parse the file and create character ranges for the text found within.
+  <br>
+  <br>
+  
+  One final option that you have available to you is the ability to assign your font resource to a <b>texture group</b>. this can be very useful when it comes to optimising the way your game runs and the amount of texture 
+  swaps that must be done while the game is being played. for more information on texture groups please see the section <a href="More%20about%20backgrounds/Texture%20Pages.html">Advanced Use - Texture Pages</a>.
+  <br>
+  <p><i><b>注意 : </b>由于授权问题， GameMaker:Studio 并不会在工程文件夹中储存你的字体文件（当你游戏最终完成时字体会被渲染为一个纹理分页，因此最终游戏是以图片形式绘制这些文字）。这意味着如果你想要分享你的 *.gmz 文件夹或者一个打包的 *.gmz 文件，你必须手动的去打包你游戏会使用的字体，要知道不是所有人都和你一样拥有那些字体文件。</i>  
+  <p>
+    
+    <i><b>Note : </b>Due to licencing issues, <i>GameMaker:Studio</i> does not store the fonts with the project file (when the game is finally finished the font is rendered to a texture page, so finished games 
+      will draw the text as designed). This means that if you wish to share the <tt>*.gmx</tt> or a zipped <tt>*.gmz</tt> file, you <i>must</i> include the font resource that you have used yourself, as not 
+      everyone will have the same fonts as you installed on their computer.</i>
+    <br>
+    <br>
+    
+  <p>
 <br>
 </p>
 <p>
 
 <div class="clear">
 	<div style="float:left">
-		Back : <a href="index.html">Advanced Use Index</a>
+		Back 返回: <a href="index.html">Advanced Use Index 高级功能目录</a>
 	</div>
 	<div style="float:right">
-		Next : <a href="004_Paths.html">Paths</a>
+		Next 下一条: <a href="004_Paths.html">Paths 路径</a>
 	</div>
 </div>
 </p>
