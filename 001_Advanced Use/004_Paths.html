@@ -154,59 +154,79 @@
 
 			<div id="content" >
 			
-<h1>Paths</h1>
+<h1>Paths 路径</h1>
 
+<h2>这一章讲述了如何使用 <i>GameMaker:Studio</i> 的路径编辑器。</h2>
 <h2>This section deals with the <i>GameMaker:Studio</i> path editor.</h2>
 
-<p>
-At some point while creating your games you will need one of your objects to follow a path through a level. Now, this can be done by simply creating an array of positions within the room and then having an instance 
-move between them, but that can be a chore to set up and is difficult to change, test and adapt for different instance. For this reason <i>GameMaker:Studio</i> has <b>path</b> resources and a dedicated 
-<b>path editor</b>.
-<br>
-<br>
-
-The basic idea is rather simple - you define a path by drawing it in the path editor, then you can place an action (or code) in the creation event of an object to tell the object to follow that particular path. You can also set 
-the speed to follow the path and a number of other actions relating to the position and orientation of the path within the room. Let's start by looking at the path editor and how that works.
-<br>
-<br>
-
-<i><b>NOTE : </b>If you are using the <b>Free</b> version of <i>GameMaker:Studio</i> you are limited to a maximum of 10 paths per game. For more details see 
-<a href="../000_Using%20GameMaker/Versions.html">here</a>.</i>
-<br>
-<br>
-<br>
-<br>
-
-<h3>Defining paths</h3>
-<p>
-To create a new path resource in your game, choose <b>Create Path</b> from the <b>Resources</b> menu (or <tt>right click</tt> on the path resource and select <b>Create Path</b>), which will open the following 
-window where you can create a new path (the image shows a path already created) :
-
-<img class="center" src="../images/form_path.png">
-
-As you can see, most of the path editor is taken up with the a visual representation of the space your path is drawn in, but around the edges there are a number of buttons, tabs and information bars that are there to help 
-you in the task of creating and changing the paths you make.
-<br>
-<br>
-
-<h3>Path Information</h3>
-<p>
-As with all resources in <i>GameMaker:Studio</i> you should give your new path a unique name as this is what will be used to identify it throughout the game you are making, and a good system that a lot of  people 
-use is to prefix (or suffix) the resource for easy recognition in code or actions (eg: <i>path_Enemy_1</i> or <i>PowerUp_path</i>). Once you have named the path, you can start to define it by placing points in the 
-main window on the right. This is simply done by clicking the <tt>left mouse button</tt> on a point where you want the path to pass through, with a green square signifying the start of the path, a red dot being the 
-current path point, and a blue dot being a normal path point (the path itself is drawn as a yellow line). You can click any point of a path and then drag the mouse to move it around in the editor, although be aware that 
-the green <i>path start position</i> is not directly selectable as it changes position automatically depending on whether the path is smooth or not (more on this further down). These points are added automatically to the 
-<i>point list</i> beneath the path name and you can also click on a point in the list to select it in the main window.
-<br>
-<br>
-
-<h3>Path Toolbar</h3>
-<p>
-At the top of the path editor you can find the tool bar which has a number of buttons that refer to actions in the path editor :
-
-<img class="center" src="../images/path_toolbar.png">
-
+<p>有些时候你的游戏中需要让一些对象按照特定路径移动穿过整个关卡。一般说来只需要简单的创建一个包含了房间中一些位置坐标的数组然后让你的实例在这些位置之间运动即可。但是创建这个数组是一件繁琐的操作，并且难以进行修改、测试和应用在不同实例上。为此，
+  <i>GameMaker:Studio</i>
+提供了 <b>路径</b> 资源以及一个专门设计的<b>路径编辑器</b>。
+<p>路径的基本理念非常简单——通过在路径编辑器中绘制一条路径，你就可以在一个对象的创建事件中添加一个动作（或者用代码）来让这个对象沿着某个特定路劲运动。同时你也可以设置沿路径运动时的速度，以及在运动到不同位置及方向时执行不同的动作。让我们从认识路径编辑器开始了解路径。
+<p><i><b>注意 : </b>如果你在使用 GameMaker:Studio <b>免费版 </b>你</i><b><i>每个游戏只能最多创建10个路径。更多细节参见 <a href="../000_Using%20GameMaker/Versions.html">这里</a>。</i></b>
+<p>At some point while creating your games you will need one of your objects to follow a path through a level. Now, this can be done by simply creating an array of positions within the room and then having an instance 
+  move between them, but that can be a chore to set up and is difficult to change, test and adapt for different instance. For this reason <i>GameMaker:Studio</i> has <b>path</b> resources and a dedicated 
+  <b>path editor</b>.
+  <br>
+  <br>
+  
+  The basic idea is rather simple - you define a path by drawing it in the path editor, then you can place an action (or code) in the creation event of an object to tell the object to follow that particular path. You can also set 
+  the speed to follow the path and a number of other actions relating to the position and orientation of the path within the room. Let's start by looking at the path editor and how that works.
+  <br>
+  <br>
+  
+  <i><b>NOTE : </b>If you are using the <b>Free</b> version of <i>GameMaker:Studio</i> you are limited to a maximum of 10 paths per game. For more details see 
+  <a href="../000_Using%20GameMaker/Versions.html">here</a>.</i>
+  <br>
+  <br>
+  <br>
+  <br>
+  
+<h3>Defining paths 定义路径</h3>
+<p>要在游戏中创建新的路径，只需要点击
+  <b>Resources</b>
+菜单中的 <b>Create Path</b>
+选项（或者 <tt>右击</tt> 路径资源然后选择 <b>Create Path</b>），在接下来的窗口中你可以创建一个新路径（下图中已经创建了一条路径）：
+<p>To create a new path resource in your game, choose <b>Create Path</b> from the <b>Resources</b> menu (or <tt>right click</tt> on the path resource and select <b>Create Path</b>), which will open the following 
+  window where you can create a new path (the image shows a path already created) :
+  
+  <img class="center" src="../images/form_path.png">
+  
+  如你所见，占了路径编辑器绝大部分的是展示你绘制的路径的可视化界面，但是在编辑器边缘还有许多的按钮、选项卡和信息栏，这些工具帮你完成路径的创建和修改。
+  <p>As you can see, most of the path editor is taken up with the a visual representation of the space your path is drawn in, but around the edges there are a number of buttons, tabs and information bars that are there to help 
+  you in the task of creating and changing the paths you make.
+  <br>
+  <br>
+  
+<h3>Path Information 路径信息</h3>
+<p>就和其它资源一样，每个路径资源你都需要指定一个独一无二的名称 ，因为在接下来的过程中你需要用这个名称来识别这个资源，并且在一个好的系统中人们通常使用前缀（或者后缀）来在区别不同类型的资源（如 <i>path_Enemy_1</i> 或者 <i>PowerUp_path</i>），这样在代码或者动作中才好区分这些资源。
+当你给路径起好名字后，你就可以可以通过往右侧的窗口中放置点来定义这个路径了。这只需要简单的在你想让你的路径通过的位置上点击<tt>鼠标左键</tt>即可。
+同时，路径的起点会用绿色的方块标出，当前的路径点用红色的点表示，而蓝色的点代表的是一个普通的路径点（路径本身是一条黄色的线）。你可以点击任何一个路径点然后拖动鼠标来改变这个点的位置，不过要注意的是绿色的<i>路径起点</i>是不能直接在这里改变位置的，它会根据你的路径是否平滑而自动改变它的位置。这些路径点会被自动添加进位于路径名下方的<i>路径点列表</i>，并且你可以在这里点击以选择相应的点。
+<p>As with all resources in <i>GameMaker:Studio</i> you should give your new path a unique name as this is what will be used to identify it throughout the game you are making, and a good system that a lot of  people 
+  use is to prefix (or suffix) the resource for easy recognition in code or actions (eg: <i>path_Enemy_1</i> or <i>PowerUp_path</i>). Once you have named the path, you can start to define it by placing points in the 
+  main window on the right. This is simply done by clicking the <tt>left mouse button</tt> on a point where you want the path to pass through, with a green square signifying the start of the path, a red dot being the 
+  current path point, and a blue dot being a normal path point (the path itself is drawn as a yellow line). You can click any point of a path and then drag the mouse to move it around in the editor, although be aware that 
+  the green <i>path start position</i> is not directly selectable as it changes position automatically depending on whether the path is smooth or not (more on this further down). These points are added automatically to the 
+  <i>point list</i> beneath the path name and you can also click on a point in the list to select it in the main window.
+  <br>
+  <br>
+  
+<h3>Path Toolbar 路径工具栏</h3>
+<p>在窗口顶端的是路径工具栏，上面有数个不同功能的按钮：
+<p>At the top of the path editor you can find the tool bar which has a number of buttons that refer to actions in the path editor : <img class="center" src="../images/path_toolbar.png">
+  
 <blockquote>
+<ul>
+	<li><b>确认 : </b>点击这个按钮会保存当前路径设置并且关闭路径编辑器。注意点击这个按钮会导致路径直接被保存，并不会提示你任何关于路径是否被修改。而如果你点击关闭按钮，编辑器会提示你路径是否被修改过。</li><br>
+	
+	<li><b>撤销 : </b>这个按钮功能很简单，撤销一次操作。一次操作的含义是只有最后一次的改动会被撤销。</li><br>
+	
+	<li><b>路径点操作 : </b>这些按钮都会对路径点进行某种修改，让你可以彻底删除这个路径点，对路径点进行镜像操作或者移动路径点。</li><br>
+	
+	<li><b>路径视图操作 : </b>你可以用这些按钮来改变右侧的路径视图（有些时候路径可能比左侧的可视化区域还要大）。</li><br>
+	
+	<li><b>路径编辑器操作 : </b>这里你可以改变路径网格点的分辨率，也可以隐藏或者显示网格点。最后一个按钮可以让你选择一个房间的背景显示在可视化区域中，这个可以让你更好的把握路径在房间中的效果。</li>
+</ul>
 <ul>
 	<li><b>Confirm : </b>Clicking this button will close the path editor and save any changes you have made. Beware, as this will not warn you that the path has changed, as clicking the close button would do, 
 	but will just save directly any changes you have made.</li><br>
@@ -218,11 +238,11 @@ At the top of the path editor you can find the tool bar which has a number of bu
 	<li><b>Path View Actions : </b>You can use these to pan the view of the path around (as the path may be bigger than the visible area in the  editor). Note that you can also click and </li><br>
 	
 	<li><b>Path Editor Actions : </b>Here you can select the snap resolution for the path points, as well as toggle the grid visibility on or off. The last button permits you to select a room to be drawn as a background which 
-	can be very useful for giving you a "feel" for how the path will work in any given game room.<li>
+	can be very useful for giving you a "feel" for how the path will work in any given game room.</li>
 </ul>
 </blockquote>
 
-<h3>Path Point Control</h3>
+<h3>Path Point Control 路径点控制</h3>
 <p>
 You can add points to the path using the <b>Add</b> button, which will add a new point to the path, but at the <i>same position</i> as the previous path point created (or at the path start position if none have 
 been created yet). these points can then be moved by clicking and dragging on them (as can all points on the path), or by changing the values presented to you on the left for the <b>X</b> and <b>Y</b> position. 
@@ -417,7 +437,7 @@ When using scripts or pieces of code you have more control over the way the path
 							<li><a href="006_Scripts.html">Scripts &#x811A;&#x672C;</a></li>
 							<li><a href="009_Shaders.html">Shaders &#x7740;&#x8272;&#x5668;</a></li>
 							<li><a href="010_Constants.html">Constants &#x5E38;&#x91CF;</a></li>
-							<li><a href="002_Including files.html">Including Files &#x5305;&#x542B;&#x6587;&#x4EF6;</a></li>
+							<li><a href="002_Including Files.html">Including Files &#x5305;&#x542B;&#x6587;&#x4EF6;</a></li>
 							<li><a href="008_Exporting and importing resources.html">Importing Resources &#x5BFC;&#x5165;&#x8D44;&#x6E90;</a></li>
 							<li class="Label">Game Settings &#x6E38;&#x620F;&#x8BBE;&#x7F6E;</li>
 							<li>
