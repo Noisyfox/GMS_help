@@ -180,7 +180,7 @@
 
 <h3>Basic Requirements 系统基本要求 </h3>
 
-<p>最近五年的电脑运行 <i>GameMaker:Studio</i> 因为没有任何问题，但这是你使用该程序最低的配置，如果你想要额外的模块能够运行则需要必要的配置。<br>
+<p>最近五年的电脑运行 <i>GameMaker:Studio</i> 应该没有任何问题，但这是你使用该程序最低的配置，如果你想要额外的模块能够运行则需要必要的配置。<br>
 <br>
 <h4>Windows</h4>
 <blockquote>
@@ -199,11 +199,24 @@
 	你还需要确保安装了 Microsoft.Net Framework 3.5  （Windows8的标准是安装.Net 4，而且你可能需要安装以前的版本)，在 <a href="http://www.microsoft.com/en-us/download/details.aspx?id=21" target="_blank">here</a>可以找到可用的版本，虽然你在 Windows 8 上安装 GameMaker:Studio 的时候它应该自动完成这一步。
 <br>
 	<br>
-	<i><b>NOTE:</b>尽管主流的PC都已经搭载了DirectX10，这不意味着也装上了DirectX 9，你仍需要从上面的链接里安装它。</i><br>
+	另外需要安装的是 <b>Microsoft Visual Studio</b> 的副本，在<a href="http://www.microsoft.com/visualstudio/eng/downloads" target="_blank">here</a> 可以找到。 你必须只能使用 VS 2012 (<i>express</i>版就可以)，所以即使你有早期的版本，与这个模块也不会兼容。这个版本支持 Windows Store 的Javascript应用创建是基础的要求，因为你需要用到它创建 .pfx 文件，这个文件是你的开发者密钥，提交应用到 Windows Store 时会用到。 <br>
 	<br>
-	请注意，Steam用户制作游戏有一个额外的目的，那就是<b>Steam Workshop</b>（创意工坊）。创建和测试游戏的时候，这个目标模块会和标准的Windows模块同时工作，尽管如此，最后建立执行程序时你会看到直接提交到Steam的额外选项。更多的信息可以在<a href="Steam%20Workshop.html">here</a>找到。 
+	The <i>GameMaker:Studio</i> 的 Windows 8 模块可以为 Windows 8 系统导出应用， 它将与这个操作系统提供给用户的多数独特的功能兼容。 尽管如此，如果你想向 微软的Microsoft Store发布游戏， 你必须通过在 <a href="http://msdn.microsoft.com/en-us/windows/apps/br229512.aspx">here</a> 注册一个帐户获得一个微软开者者往证书。注册需要支付小额的费用，所以你需要提供一个能够向微软商店支付的可用的银行帐户和信用措施。<br>
+	<br>
+	Windows 8 模块更多的设置信息请浏览 <a href="http://help.yoyogames.com/entries/22182733" target="_blank">YoYo Games Helpdesk</a> 。 
+	
 </blockquote>
-<p>&nbsp;</p>
+
+<h4>Mac OSX</h4>
+<blockquote>	要使用面向苹果系统的模块，你需要一台搭载英特尔芯片的苹果电脑，并且运行 Lion(OSX 10.7)操作系统或更高的版本。你还需要为你的操作系统版本下载并安装开发环境。通常请使用最新的苹果系统和最新的开发环境（你可以在苹果电脑上点击左上方的"Apple"图标，从下拉菜单选择"About this Mac"，然后找到他们）。
+	<br>
+	<br>
+	MacOSX 模块更多的设置信息请浏览 <a href="http://help.yoyogames.com/entries/22177193" target="_blank">YoYo Games Helpdesk</a> 。 <br>
+	<br>
+<hr>
+</blockquote>
+
+
 <p>Any computer that is less than five years old should be able to run <i>GameMaker:Studio</i> without any problems, but here are the minimum specs for your PC to use the program, and then the necessary specs for 
   each of the additional modules that you may have.</p>
 <p>
@@ -239,9 +252,8 @@
 <blockquote>
 	All versions of <i>GameMaker:Studio</i> come with the Windows 8 Native and Javascript target platforms. These targets require a Windows 8 OS to run (and for testing), and this can be the main OS or a 
 	sub-os that you can dual boot with Windows 7 (or any other OS you choose to use), however you <i>cannot</i> create a final application for Windows 8 outside of that OS.
+
 	<br>
-	<br>
-	<i>GameMaker:Studio</i> 的所有版本都会支持 Windows8 本机和 Javascript 的目标环境平台，这些目标平台需要在一个 win8 系统上运行（和测试），可以是主操作系统或双启动的 Windows 7（或任何其他您选择要使用的操作系统）的分系统，但是不能在win8以外的系统创建最终的 win8 程序。<br>
 	<br>
 
 	You will also need to make sure that you have <b>Microsoft .Net Framework 3.5</b> installed (<b>.Net 4</b> is installed as standard with Windows 8, but you may need to install the previous version too) 
@@ -249,23 +261,21 @@
 	complete this part automatically.
 	<br>
 	<br>
-	你还需要确保安装了 Microsoft.Net Framework 3.5  （Windows8的标准是安装.Net 4，而且你可能需要安装以前的版本)，在 <a href="http://www.microsoft.com/en-us/download/details.aspx?id=21" target="_blank">here</a>可以找到可用的版本，虽然你在 Windows 8 上安装 GameMaker:Studio 的时候它应该自动完成这一步。<br>
-	<br>
 	
 	Another thing that is necessary is a copy of <b>Microsoft Visual Studio</b> which can be found <a href="http://www.microsoft.com/visualstudio/eng/downloads" target="_blank">here</a>. <i>You must only 
 	use VS 2012 (the express versions are fine), so even if you have a previous version of Virsual Studio, it will not work with this module.</i> A version of this product that supports Windows Store Javascript app 
 	creation is essential as you will need it to create the <tt>*.pfx</tt> file which is your <b>Developer Key</b> and needed to submit your apps and games to the Windows Store.
 	<br>
 	<br>
-	
+	<br>
 	The <i>GameMaker:Studio</i> Windows 8 export target will create an app specifically for the Windows 8 OS, and it will be compatible with many of the unique features that this OS offers the user. However, 
 	if you wish to publish this game through the Microsoft Store for Windows, you <i>must</i> have a <b>Microsoft Developers Licence</b> which is available by signing up for an account 
 	<a href="http://msdn.microsoft.com/en-us/windows/apps/br229512.aspx">here</a>. There is a small cost involved in registering for this account and you will need to have a valid bank account and credit 
 	facilities to be able to monetise any apps that you submit to the store.	
 	<br>
 	<br>
-	
 	Further information on setting up the Windows 8 modules can be found on the <a href="http://help.yoyogames.com/entries/22182733" target="_blank">YoYo Games Helpdesk</a>.
+
 	<br>
 	<br>
 <hr>	
@@ -278,20 +288,48 @@
 	from the drop down menu).
 	<br>
 	<br>
-	
 	Further information on setting up the MacOSX module can be found on the <a href="http://help.yoyogames.com/entries/22177193" target="_blank">YoYo Games Helpdesk</a>.
+
 	<br>
 	<br>
 <hr>
 </blockquote>
 
-<h3>Additional Modules</h3>
-<p>
-The above modules are included as standard for all versions of <i>GameMaker:Studio</i> but the following modules are available only to those who have upgraded from the <b>Free</b> or <b>Standard</b> 
-version of <i>GameMaker:Studio</i> to the <b>Professional</b> version (more information on the different versions of <i>GameMaker:Studio</i> can be found <a href="Versions.html">here</a>).
-<br>
-<br>
+<h3>Additional Modules 附加的模块 </h3>
+<p>所有<i>GameMaker:Studio </i>版本包含上面所有的模块，而下面的模块只有从免费版或标准版升级到专业版（更多GMS版本信息可以在 <a href="Versions.html">here</a> 找到）后才能使用 。
 
+<p>
+
+<h4>Ubuntu (Linux)</h4>
+<blockquote>  Linux 模块设计上与 Ubuntu（乌班图） 操作系统兼容，尽管它应该也可以在其它 Linux 系统上工作，不过仅保证支持最新的主流 Linux操作系统。 <br>
+<br>
+  Ubuntu 模块更多的设置信息请浏览 <a href="http://help.yoyogames.com/entries/22177193" target="_blank">YoYo Games Helpdesk</a> 。 <br>
+  <br>
+  <hr>
+</blockquote>
+<h4>iOS</h4>
+<blockquote><br>
+      <i>GameMaker:Studio</i> 的  iOS 模块需要一台苹果电脑（或者至少能访问一台），然后是满足面向 <b>MacOSX</b>的模块的最低要求（上面有介绍），你必须是一个注册的苹果开发者且拥有所有最新的证书和许可。关于成为注册的苹果开发者以及怎样获得必要的证书，请访问苹果开发者网站<a href="https://developer.apple.com/" target="_blank"> here</a>。
+      <br>
+      <br>
+  近期与 <i>GameMaker:Studio</i> 兼容的苹果设备包括： <br>
+  <blockquote>
+    <ul>
+      <li>iPhone 4G, 4Gs, 5G
+      <li>iPad 1, 2 &amp; 3
+      <li>iPod Touch 3rd Gen and above
+      </ul>
+  </blockquote>
+  对于用 GameMaker:Studio建立的所有iOS项目，不论是测试iPhone还是 iPad 都没有关系，因为它们是标准的、通用的应用。这意味着可以同时在iPhone和iPad上运行，没有任何问题。 <br>
+  <br>
+  iOS 模块更多的设置信息请浏览 <a href="http://help.yoyogames.com/entries/22177193" target="_blank">YoYo Games Helpdesk</a> 。 
+  <br>
+  <br>
+  <hr>
+</blockquote>
+<p>The above modules are included as standard for all versions of <i>GameMaker:Studio</i> but the following modules are available only to those who have upgraded from the <b>Free</b> or <b>Standard</b> version of <i>GameMaker:Studio</i> to the <b>Professional</b> version (more information on the different versions of <i>GameMaker:Studio</i> can be found <a href="Versions.html">here</a>).
+
+<p>
 <h4>Ubuntu (Linux)</h4>
 <blockquote>
 	The Linux module is designed to be compatible with the Ubuntu operating system, and although it should work with other Linux systems, it is only guaranteed to work with the latest versions of this 
@@ -310,6 +348,7 @@ version of <i>GameMaker:Studio</i> to the <b>Professional</b> version (more info
 	The <i>GameMaker:Studio</i> iOS module requires that you have a Mac computer (or at least access to one) and that it meets the minimum requirements for the <b>MacOSX</b> target module (see above)
 	and <b>you must be a registered Apple developer and have all certificates and licenses up to date</b>. For more information on becoming a registered Apple Developer and how to get the necessary certificates, 
 	please visit the Apple developer site <a href="https://developer.apple.com/" target="_blank">here</a>.
+
 	<br>
 	<br>
 
@@ -321,9 +360,10 @@ version of <i>GameMaker:Studio</i> to the <b>Professional</b> version (more info
 			<li>iPod Touch 3rd Gen and above
 		</ul>
 	</blockquote>
-	<p>
+	
 	It also doesn't matter if you are testing on an iPhone or an iPad as all iOS project builds created by GameMaker:Studio are, as standard, universal apps. This means that they will run on both iPhone 
 	and iPad devices without problems.
+
 	<br>
 	<br>
 
@@ -473,7 +513,7 @@ version of <i>GameMaker:Studio</i> to the <b>Professional</b> version (more info
 <p>
 For further information, advice and troubleshooting please consult the <a href="http://help.yoyogames.com" target="_blank"> YoYo Games Knowledge Base</a> where you will find detailed information of 
 how to setup all platforms for use with <i>GameMaker:Studio</i>.</p>
-<p>-断水-<br>
+<p>-断水 -<br>
     <br>
   
 </p>
