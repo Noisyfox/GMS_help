@@ -163,7 +163,7 @@
   <i>GameMaker:Studio</i>
 提供了 <b>路径</b> 资源以及一个专门设计的<b>路径编辑器</b>。
 <p>路径的基本理念非常简单——通过在路径编辑器中绘制一条路径，你就可以在一个对象的创建事件中添加一个动作（或者用代码）来让这个对象沿着某个特定路劲运动。同时你也可以设置沿路径运动时的速度，以及在运动到不同位置及方向时执行不同的动作。让我们从认识路径编辑器开始了解路径。
-<p><i><b>注意 : </b>如果你在使用 GameMaker:Studio <b>免费版 </b>你</i><b><i>每个游戏只能最多创建10个路径。更多细节参见 <a href="../000_Using%20GameMaker/Versions.html">这里</a>。</i></b>
+<p><i><b>注意 : </b>如果你在使用 GameMaker:Studio <b>免费版 </b>你</i><i>每个游戏只能最多创建10个路径。更多细节参见 <a href="../000_Using%20GameMaker/Versions.html">这里</a>。</i>
 <p>At some point while creating your games you will need one of your objects to follow a path through a level. Now, this can be done by simply creating an array of positions within the room and then having an instance 
   move between them, but that can be a chore to set up and is difficult to change, test and adapt for different instance. For this reason <i>GameMaker:Studio</i> has <b>path</b> resources and a dedicated 
   <b>path editor</b>.
@@ -243,46 +243,56 @@
 </blockquote>
 
 <h3>Path Point Control 路径点控制</h3>
-<p>
-You can add points to the path using the <b>Add</b> button, which will add a new point to the path, but at the <i>same position</i> as the previous path point created (or at the path start position if none have 
-been created yet). these points can then be moved by clicking and dragging on them (as can all points on the path), or by changing the values presented to you on the left for the <b>X</b> and <b>Y</b> position. 
-you can also set a <i>speed</i> for individual path points by changing the value in the <b>Sp</b> box (default value is 100). The speed value is actually a percentage of the speed at which you make the instance 
-move along the path, so if you start an instance at a speed of 2 (2 pixels per step) along a path and then one of the path points has a <b>Sp</b> value of 50, the instance will reduce speed as it approaches this point 
-to a speed of 1 (50% of the path speed). Equally, you can set the <b>Spd</b> to 150% and the instance will accelerate as it reaches the point. In this way you can create some nice dynamic-looking movement without 
-any code whatsoever!
-<br>
-<br>
-
-Beneath the <b>Add</b> button you have <b>Insert</b> and <b>Delete</b> buttons too. If you select a point on your path (either by clicking on it in the editor or by clicking the point list on the left of the editor) and then click on 
-<b>Insert</b>, a new point will be "inserted" into the path at the same position. You can then drag this point to get it to the position you wish. If you click on the <b>Delete</b> button, the point selected will be removed from the 
-path (there is an <i>undo</i> button at the top of the screen should you make a mistake).
-<br>
-<br>
-
-Finally, you can specify the <b>connection kind</b> and whether the path should be <b>closed</b> or not (a closed path will connect the last point on the path with the first). The connection kind can be either <i>straight line</i>, 
-or <i>smooth</i> where a straight line connect simply connects the points of a path in a linear basis, with angular changes at each point, while a smooth connection will create a much softer path that may not pass directly 
-through any of the points, but rather take an approximate line, creating nice curves. You can also specify the precision for the curves (default is 4) which can be from 1 to 8 with 8 being the smoothest. The image below shows 
-an example of how these options affect the path :
-
-<img class="center" src="../images/path_kinds.png">
-
-<h3>Info Bar</h3>
-<p>
-This bar at the bottom shows the x and y coordinates of the mouse in the path editor, as well as the area of the room visible in the path editor window. The path editor has a center point (0,0) and it's coordinate system works 
-the same as for the room editor, in that down is +y, up is -y, right is +x and left is -x, and in this way you can plot your path around these coordinates. This means that it can be useful to know what part of this area you are looking 
-at while designing your path and this is shown by the <b>Area</b> values, with the first set of coordinates being the upper left corner of the current view, and the second set of coordinates being the lower right corner.
-<br>
-<br>
-
-<h3>Assigning A Path To An Object</h3>
-<p>
-To assign a path to an instance of an object, you can use the path actions (covered in the section <a href="../000_Using%20GameMaker/Actions/000_Move%20actions.html">Actions - Move Actions</a>) or you can use code. 
-When using scripts or pieces of code you have more control over the way the path is executed, and there are a variety of functions that cover basic actions like starting the path (see 
-<a href="../002_Reference/Paths/index.html"> Reference - Paths</a>), and more complex actions like modifying and changing path points from within the game (see 
-<a href="../002_Reference/Paths/Changing%20Paths/index.html">Reference - Changing Paths</a>).
-<br>
-<br>
-
+<p>你可以用 <b>Add</b>
+按钮来向路径中添加路径点，这个新的路径点的位置会和你添加的最后一个路径点重合（或者如果当前路径中没有路径点，那么这个新的点就会成为起始路径点）。随后你可以通过点击这个点并且拖动它来移动这个路径点（你也可以对路径上的其它点这么做），或者你可以修改左侧标有 <b>X</b> 和 <b>Y</b>的
+输入框的值来改变点的位置。通过改变 <b>Sp</b>
+输入框里的值，你可以给这个点设置一个<i>速度</i>（默认值是100）。这个速度值实际上是个百分比，当实例经过这个点时速度会按照这个百分比改变。如果你的实例沿路径运动时的初始速度是2（2像素每步），然后其中一个路径点的 <b>Sp</b> 值为50，那么在实例运动经过这个路径点时，它的速度会减小为1（当前速度的50%）。同样的，你可以将 <b>Sp</b> 值设置为105，那么这会让实例的运动速度变快。用这种方法你可以创建不少看上去很棒的动态运动，并且不需要写一行代码！
+<p>在 <b>Add</b>
+按钮下方的是 <b>Insert</b> 和 <b>Delete</b>
+按钮。如果你选中路径上的一个路径点（不管你是直接点击这个点还是在路径点列表中选中的这个点），然后点击 <b>Insert</b>
+按钮，那么一个新的点将被插入到你选中的那个点的同一位置上。然后你可以拖动这个新插入的点到你想要的位置上去。如果你点击的是 <b>Delete</b>
+按钮，你选中的那个点将被从路径中删除（如果你不小心删错了，你可以使用之前提到的 <i>撤销</i>
+按钮）。
+<p>最后，你可以指定路径的<b>连接方式</b>以及路径是否需要闭合（一条闭合的路径会将路径的起始点和结束点连接起来）。连接方式可以是<i>线段</i>或者是<i>平滑</i>。如果设置为线段方式，那么路径只是简单的用直线依次连接每一个点，路径的方向只在每个连接点处才会改变；而如果使用平滑方式，那么系统会根据你的点创建一条更加平滑的曲线路径。同时你可以设置曲线的平滑程度（默认是4），范围是1至8，其中8最为平滑。如下的图片展示了一些不同设置的路径的样例：
+<p>You can add points to the path using the <b>Add</b> button, which will add a new point to the path, but at the <i>same position</i> as the previous path point created (or at the path start position if none have 
+  been created yet). these points can then be moved by clicking and dragging on them (as can all points on the path), or by changing the values presented to you on the left for the <b>X</b> and <b>Y</b> position. 
+  You can also set a <i>speed</i> for individual path points by changing the value in the <b>Sp</b> box (default value is 100). The speed value is actually a percentage of the speed at which you make the instance 
+  move along the path, so if you start an instance at a speed of 2 (2 pixels per step) along a path and then one of the path points has a <b>Sp</b> value of 50, the instance will reduce speed as it approaches this point 
+  to a speed of 1 (50% of the path speed). Equally, you can set the <b>Sp</b> to 150% and the instance will accelerate as it reaches the point. In this way you can create some nice dynamic-looking movement without 
+  any code whatsoever!
+  <br>
+  <br>
+  
+  Beneath the <b>Add</b> button you have <b>Insert</b> and <b>Delete</b> buttons too. If you select a point on your path (either by clicking on it in the editor or by clicking the point list on the left of the editor) and then click on 
+  <b>Insert</b>, a new point will be "inserted" into the path at the same position. You can then drag this point to get it to the position you wish. If you click on the <b>Delete</b> button, the point selected will be removed from the 
+  path (there is an <i>undo</i> button at the top of the screen should you make a mistake).
+  <br>
+  <br>Finally, you can specify the <b>connection kind</b> and whether the path should be <b>closed</b> or not (a closed path will connect the last point on the path with the first). The connection kind can be either <i>straight line</i>, 
+    or <i>smooth</i> where a straight line connect simply connects the points of a path in a linear basis, with angular changes at each point, while a smooth connection will create a much softer path that may not pass directly 
+    through any of the points, but rather take an approximate line, creating nice curves. You can also specify the precision for the curves (default is 4) which can be from 1 to 8 with 8 being the smoothest. The image below shows 
+    an example of how these options affect the path :
+    
+    <img class="center" src="../images/path_kinds.png">
+    
+  <h3>Info Bar 信息栏</h3>
+<p>底部的信息栏显示了鼠标在编辑器中的x y坐标，以及可视范围的坐标。路径编辑器有一个中心点（0，0），并且它的坐标系统是和房间编辑器相同的，也就是说向下y坐标递增，向上y坐标递减，向右x坐标递增，向左x坐标递减。这样你就可以根据这些坐标来绘制你的路径。这也意味着你在设计路径时搞清楚当前究竟位于什么位置很有必要，而这可以通过观察 <b>Area</b> 值来了解——第一对坐标表示了当前视角左上角的坐标，而第二对坐标表示右下角的坐标。
+<p>This bar at the bottom shows the x and y coordinates of the mouse in the path editor, as well as the area of the room visible in the path editor window. The path editor has a center point (0,0) and it's coordinate system works 
+  the same as for the room editor, in that down is +y, up is -y, right is +x and left is -x, and in this way you can plot your path around these coordinates. This means that it can be useful to know what part of this area you are looking 
+  at while designing your path and this is shown by the <b>Area</b> values, with the first set of coordinates being the upper left corner of the current view, and the second set of coordinates being the lower right corner.
+  <br>
+  <br>
+  
+<h3>Assigning A Path To An Object 在对象上绑定一个路径</h3>
+<p>要在一个对象的实例上绑定一个路径，你可以使用路径动作（
+  <a href="../000_Using%20GameMaker/Actions/000_Move%20actions.html">动作 - 运动</a> 章节有详细介绍），或者可以使用代码来完成。当你使用脚本或者一小段代码片段时，你对于路径是如何工作的可以有更多的选择，同时我们有不少现成的函数来完成一些基础的路径动作，比如沿路径运动（参见
+  <a href="../002_Reference/Paths/index.html">代码参考 - 路径</a>），以及更加复杂的函数，比如在游戏中修改一个路径上的路径点（参见
+  <a href="../002_Reference/Paths/Changing%20Paths/index.html">代码参考 - 改变路径</a>）。
+<p>To assign a path to an instance of an object, you can use the path actions (covered in the section <a href="../000_Using%20GameMaker/Actions/000_Move%20actions.html">Actions - Move Actions</a>) or you can use code. 
+  When using scripts or pieces of code you have more control over the way the path is executed, and there are a variety of functions that cover basic actions like starting the path (see 
+  <a href="../002_Reference/Paths/index.html"> Reference - Paths</a>), and more complex actions like modifying and changing path points from within the game (see 
+  <a href="../002_Reference/Paths/Changing%20Paths/index.html">Reference - Changing Paths</a>).
+  <br><br>
+  -noisyfox- 
 <p>
 <br>
 </p>
@@ -290,10 +300,10 @@ When using scripts or pieces of code you have more control over the way the path
 
 <div class="clear">
 	<div style="float:left">
-		Back : <a href="index.html">Advanced Use Index</a>
+		Back 返回: <a href="index.html">Advanced Use Index 高级功能目录</a>
 	</div>
 	<div style="float:right">
-		Next : <a href="005_Time%20lines.html">Time Lines</a>
+		Next 下一条 : <a href="005_Time%20lines.html">Time Lines 时间线</a>
 	</div>
 </div>
 </p>
