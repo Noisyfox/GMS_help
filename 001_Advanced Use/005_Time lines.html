@@ -154,45 +154,51 @@
 
 			<div id="content" >
 			
-<h1>Timelines</h1>
+<h1>Timelines 时间线</h1>
 
+<h2>时间线功能让你能够根据一组时间节点来创建和控制实例以及动作。</h2>
 <h2>Timelines offer you a way to create and control instances and actions over a set time period.</h2>
 
-<p>
-In most games you will want certain things to happen at certain moments in time. Now, you can try to achieve this by using the alarm events but when things get too complicated this won't work any more, 
-especially as you are limited to only twelve alarms. that's why we have the <b>time line</b> resource.
-<br>
-<br>
-
-In a time line you specify which actions must happen at certain moments in game time, and you can use all the actions that are also available for an object in its different events. Once you create a time line you 
-can then assign it to an object, and the instance of that object will then execute the actions at the indicated moments of time when placed or created within a room. Let us explain this with an example : 
-<br>
-<br>
-
-Assume you want to make a guard and that this guard should move 20 time steps to the left, then 10 upwards, then 20 to the right, then 10 downwards and then finally stop. To achieve this you can make a 
-time line where you start with setting a motion to the left. You would then create moment 20 (a "moment" is just another way of saying "step") and set a motion upward, then at moment 30 a motion to the right, 
-at moment 50 a motion downwards and finally at moment 60 you would stop the motion. Once that is done, you can assign this time line to the guard and the guard will do exactly what you planned. You could 
-even set an alarm in the time line so that it is repeated after a certain length of time and in this way your guard can patrol an area!
-<br>
-<br>
-
-You can also use a time line to control your game more globally. Create an invisible controller object, create a time line that at certain moments creates enemies, and then assign it to the controller object. Once 
-you start to work with it you will find out it is a very powerful tool indeed!
-<br>
-<br>
-
-<i><b>NOTE : </b>If you are using the <b>Free</b> version of <i>GameMaker:Studio</i> you are limited to a maximum of 5 timelines per game. For more details see 
-<a href="../000_Using%20GameMaker/Versions.html">here</a>.</i>
-<br>
-<br>
-<br>
-<br>
-
-<h3>Creating A Timeline</h3>
-<p>
-To create a time line, choose <b>Create Time Line</b> from the <b>Resources</b> menu, or right click on the time line resource in the resource tree and select <b>Create Time Line</b> or you can just click on 
-the create a time line icon found on the resource toolbar at the top of the main screen. Whatever method you choose will open the following window :
-
+<p>在大部分游戏中，你可能希望一些事情在特定的时间里发生。通常，你可以使用定时事件来完成这件事，但是当你的要完成的事情过于复杂的时候这根本行不通，特别是你只有12个定时器可以用。这正是为什么我们提供了<b>时间线</b>资源。
+<p>在一个时间线中你可以指定在某个游戏中的时间点执行某些特定的动作。你可以像在对象的事件中一样去调用各种动作。当你创建了一个时间线以后，你可以让一个对象绑定上它，然后这个对象的实例就会在你指定的特定时间点上执行这些动作。让我们举个例子来说明如何使用时间线：
+<p>假设你想做一个守卫，这个守卫需要向左走20时间步（step），然后向上走10步，然后再向右走20步，最后向下走10步回到原点结束。要做到这个，你可以通过创建一个时间线，在起始时间设置向左运动。然后在第20步处设置向上运动，接着在30步处设置向右运动，然后再第50步处设置向下运动，最后在第60步时停止运动。完成后，你就可以把这个时间线绑定在你的守卫上，然后这个守卫就会完全按照你计划中的那样行动了。你甚至可以在时间线中操作一个定时事件，这样这个事件就会每隔一定时间执行一次。这样你的守卫就可以在一个区域里巡逻了！
+<p>你也可以更加全局化的用时间线来控制你的游戏。创建一个看不到的控制器对象，绑定一个在特定时间点创建敌人的时间线。当你尝试过时间线以后，你一定会发现它是一个多么有力的工具！
+<p><i><b>注意 : </b>如果你在使用 GameMaker:Studio <b>免费版 </b>你</i><i>每个游戏只能最多创建5个时间线。更多细节参见 <a href="../000_Using%20GameMaker/Versions.html">这里</a>。</i>
+<p>In most games you will want certain things to happen at certain moments in time. Now, you can try to achieve this by using the alarm events but when things get too complicated this won't work any more, 
+  especially as you are limited to only twelve alarms. That's why we have the <b>time line</b> resource.
+  <br>
+  <br>
+  
+  In a time line you specify which actions must happen at certain moments in game time, and you can use all the actions that are also available for an object in its different events. Once you create a time line you 
+  can then assign it to an object, and the instance of that object will then execute the actions at the indicated moments of time when placed or created within a room. Let us explain this with an example : 
+  <br>
+  <br>
+    
+    Assume you want to make a guard and that this guard should move 20 time steps to the left, then 10 upwards, then 20 to the right, then 10 downwards and then finally stop. To achieve this you can make a 
+    time line where you start with setting a motion to the left. You would then create moment 20 (a "moment" is just another way of saying "step") and set a motion upward, then at moment 30 a motion to the right, 
+    at moment 50 a motion downwards and finally at moment 60 you would stop the motion. Once that is done, you can assign this time line to the guard and the guard will do exactly what you planned. You could 
+    even set an alarm in the time line so that it is repeated after a certain length of time and in this way your guard can patrol an area!
+    <br>
+    <br>
+    
+    You can also use a time line to control your game more globally. Create an invisible controller object, create a time line that at certain moments creates enemies, and then assign it to the controller object. Once 
+    you start to work with it you will find out it is a very powerful tool indeed!
+    <br>
+    <br>
+    
+    <i><b>NOTE : </b>If you are using the <b>Free</b> version of <i>GameMaker:Studio</i> you are limited to a maximum of 5 timelines per game. For more details see 
+      <a href="../000_Using%20GameMaker/Versions.html">here</a>.</i>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+  <h3>Creating A Timeline 创建一个时间线</h3>
+<p>要创建一个时间线，在 <b>Resources</b> 菜单中选择
+  <b>Create Time Line</b>，或者右击资源树里的时间线资源然后选择 <b>Create Time Line</b>，又或者直接点击窗口顶部的资源工具栏中的创建时间线按钮即可。无论你用那种方法，都会看到接下来的这个窗口：
+  <p>To create a time line, choose <b>Create Time Line</b> from the <b>Resources</b> menu, or right click on the time line resource in the resource tree and select <b>Create Time Line</b> or you can just click on 
+  the create a time line icon found on the resource toolbar at the top of the main screen. Whatever method you choose will open the following window :
+  
 <p>
 <img class="center" src="../images/form_timeline.png">
 
@@ -234,7 +240,8 @@ The following buttons are available in this window to enable you to add, remove 
 
 <p>
 Please note, that although it is possible to create <i>negative</i> time moments, it is pointless to do so as they will never be executed!
-
+  <br><br>
+  -noisyfox- 
 <p>
 <br>
 </p>
