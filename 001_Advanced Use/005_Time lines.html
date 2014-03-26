@@ -202,18 +202,44 @@
 <p>
 <img class="center" src="../images/form_timeline.png">
 
+<p>这个窗口和对象的属性窗口很类似，你可以在这里给时间线起一个名字（像其它资源一样，必须是个独一无二的名字），同时在右侧有一个动作列表以及一系列可用动作。甚至还有一个 <b>Show Information</b>
+按钮来显示时间线的动作信息。不过在左边不再是时间列表，取而代之的是一个被称作<b>时刻</b>的列表。在时间线中，一个时刻等同于一步，因此时间线里的10个时刻等同于游戏中的10步，并且你在任何一个时刻都可以执行任意多的动作，然后被绑定上这个时间线的对象就会在特定的时间点里执行这些动作。注意，时间线可以在游戏中的任意时刻被启动，因此时间线中的时刻0代表的是时间线启动的那个时刻，而不是游戏或者房间开始的时刻。
+<p>It's very similar to the object properties window as you can specify a name for your time line (like all resources, this should be specific and unique), and with an action list and actions on the right, and there is even 
+  a <b>Show Information</b> button that can be used to get an overview of all actions within the time line. However, on the left, instead of an event list we have a <b>moment</b> list. In a time line a moment is 
+  the same as a step, so ten moments on your time line are the same as ten steps in your game, and you can insert any number of actions and/or code into one moment and the object that has the time line assigned 
+  to it will carry out these actions at the required time. Note that the time line can be started at any time in-game, so moment 0 is just the moment in which the time line starts and <i>not</i> the moment the game 
+  or room starts.
+  <br>
+  <br>
+  
+  在窗口中还有几个按钮让你来添加、删除和更改时间线中的时刻：
+  <blockquote>
+<ul>
+  <li><b>Add 添加</b>. 这个按钮可以向时间线中添加一个时刻。你必须指定一个从时间线开始之后的游戏步数。然后你就可以向这个时刻中拖拽动作，就如同对象的事件一样。同样在这里你也可以使用命名化的<b>代码</b>动作，如果你不知道什么是命名化的代码，你可以参见<a href="006_Scripts.html">脚本 - 添加注释和命名块</a>。</li><br>
+	
+  <li><b>Change 修改</b>. 这个按钮可以修改当前选定的时刻的时间。</li><br>
+  
+  <li><b>Delete 删除</b>. 这个按钮可以删除一个或多个时刻范围。你必须设定要删除的时刻范围的起始与结束时刻。在这个范围之中的全部时刻都会被删除。</li><br>
+	
+  <li><b>Clear 清空</b>. 这个按钮可以删除整个时刻列表中的所有时刻。</li>
+  <br>
+  
+  <li><b>Shift 平移</b>. 这个按钮是用来平移一个时刻范围到一个新的时刻。你必须指定起始和结束的时刻范围，以及新的范围的起始时刻。如果不同的时刻出现重叠，那么它们的动作列表将会被合并。</li><br>
+	
+  <li><b>Duplicate 复制</b>. 这个按钮的作用和平移按钮很类似，只不过这个按钮会创建一份时刻的拷贝。</li>
+  <br>
+	
+  <li><b>Spread 伸缩</b>. 这个按钮可以让你延长或者缩短一个时刻范围。你指定要伸缩的范围的起始和结束时刻，再指定新的范围长度的百分比。100%意味着什么事也没有发生。一个小于100%的值意味着时刻之间的间隔变小了，而一个大于100%的值意味着时刻之间的间隔变长了。举例来说，在时刻5、8、12处分别有一些动作，然后你指定了起止时刻5至12以及200%的伸缩，那么这三个时刻会被分别移动至时刻5、11、19处（这些时刻之间的间隔翻了一倍）。同样，当时刻之间出现重叠，那么它们的动作会被合并。</li><br>
+	
+  <li><b>Merge 合并</b>. 这个按钮可以把多个时刻的动作合并到一个时刻上来。你需要指定要合并的时刻范围的起始和结束时刻，合并后的动作会位于这个范围的起始时刻上。</li>
+</ul>
+</blockquote>
 <p>
-It's very similar to the object properties window as you can specify a name for your time line (like all resources, this should be specific and unique), and with an action list and actions on the right, and there is even 
-a <b>Show Information</b> button that can be used to get an overview of all actions within the time line. However, on the left, instead of an event list we have a <b>moment</b> list. In a time line a moment is 
-the same as a step, so ten moments on your time line are the same as ten steps in your game, and you can insert any number of actions and/or code into one moment and the object that has the time line assigned 
-to it will carry out these actions at the required time. Note that the time line can be started at any time in-game, so moment 0 is just the moment in which the time line starts and <i>not</i> the moment the game 
-or room starts.
-<br>
-<br>
+请注意，虽然我们可以创建一个<i>负数</i>的时刻，不过这是完全没有意义的，因为它永远不会被执行！
 
-The following buttons are available in this window to enable you to add, remove and change moments within the time line resource that you have created :
-
-<blockquote>
+<p>The following buttons are available in this window to enable you to add, remove and change moments within the time line resource that you have created :
+    
+  <blockquote>
 <ul>
   <li><b>Add</b>. Use this to add a moment to the time line. You must indicate the moment, which is the number of steps since the time line was started. Now you can drag actions to the list as for object 
   events. if you are adding in <b>code</b> actions then these can also be named, as explained in the section on <a href="006_Scripts.html">Scripts - Adding Comments and Naming Code Blocks</a>.</li><br>
@@ -249,10 +275,10 @@ Please note, that although it is possible to create <i>negative</i> time moments
 
 <div class="clear">
 	<div style="float:left">
-		Back : <a href="index.html">Advanced Use Index</a>
+		Back 返回: <a href="index.html">Advanced Use Index 高级功能目录</a>
 	</div>
 	<div style="float:right">
-		Next : <a href="006_Scripts.html">Scripts</a>
+		Next 下一条: <a href="006_Scripts.html">Scripts 脚本</a>
 	</div>
 </div>
 </p>
