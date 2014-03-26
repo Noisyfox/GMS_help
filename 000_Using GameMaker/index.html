@@ -8,7 +8,7 @@
 		<meta http-equiv="Content-Type" content="text/html charset=utf-8">
 		<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" />		
 	</head>
-<body><!-- #BeginLibraryItem "/Library/mmenu_head.lbi" --><!-- mmenu_head up 1 -->
+<body><!-- #BeginLibraryItem "/mmenu_head.lbi" --><!-- mmenu_head up 1 -->
 
 		<link type="text/css" rel="stylesheet" href="../style.css" />
 		<link type="text/css" rel="stylesheet" href="../src/css/jquery.mmenu.all.css" />
@@ -40,7 +40,7 @@
 			//	The menu on the right
 			$(function() {
 
-				var $menu = $('nav#menu-right')
+				var $menu = $('nav#menu-right');
 				$menu.mmenu({
 					position	: 'right',
 					classes		: 'mm-black',
@@ -50,25 +50,25 @@
 					labels		: {
 						fixed		: !$.mmenu.support.touch
 					}
-				})
+				});
 
 				//	Click a menu-item
-				var $confirm = $('#confirmation')
+				var $confirm = $('#confirmation');
 				$menu.find( 'li a' ).not( '.mm-subopen' ).not( '.mm-subclose' ).bind(
 					'click.example',
 					function( e )
 					{
-						e.preventDefault()
-						$confirm.show().text( 'You clicked "' + $.trim( $(this).text() ) + '"' )
-						$('#menu-right').trigger( 'close' )
+						e.preventDefault();
+						$confirm.show().text( 'You clicked "' + $.trim( $(this).text() ) + '"' );
+						$('#menu-right').trigger( 'close' );
 					}
-				)
-			})
+				);
+			});
 			
 			//	The menu on the left
 			$(function() {
 
-				var $menu0 = $('nav#menu-left')
+				var $menu0 = $('nav#menu-left');
 
 				$menu0.mmenu({
 					position	: 'left',
@@ -79,21 +79,21 @@
 					labels		: {
 						fixed		: !$.mmenu.support.touch
 					}
-				})
-			})			
+				});
+			});			
 
 			// for one page
 
 			$(function() {
 				var $menu = $('nav#menu-left'),
-					$html = $('html, body')
+					$html = $('html, body');
 		
-				$menu.mmenu()
+				$menu.mmenu();
 				$menu.find( 'li > a' ).on(
 					'click',
 					function()
 					{
-						var href = $(this).attr( 'href' )
+						var href = $(this).attr( 'href' );
 		
 						//	if the clicked link is linked to an anchor, scroll the page to that anchor 
 						if ( href.slice( 0, 1 ) == '#' )
@@ -107,15 +107,15 @@
 										{
 											$html.animate({
 												scrollTop: $( href ).offset().top
-											})	
+											});	
 										}, 10
-									)	
+									);	
 								}
-							)						
+							);						
 						}
 					}
-				)
-			})
+				);
+			});
 
 			// for the tips
 			
@@ -123,24 +123,24 @@
 				var options = {
 					classes			: 'mm-light',
 					modal			: true
-				}
+				};
 				
-				options.position = 'left'
-				options.zposition = 'next'
-				$('#tooltip-1').mmenu( options )
+				options.position = 'left';
+				options.zposition = 'next';
+				$('#tooltip-1').mmenu( options );
 				
-				options.position = 'right'
-				options.zposition = 'next'
-				$('#tooltip-2').mmenu( options )
+				options.position = 'right';
+				options.zposition = 'next';
+				$('#tooltip-2').mmenu( options );
 				
-				options.position = 'bottom'
-				options.zposition = 'front'
-				$('#popup-1').mmenu( options )
+				options.position = 'bottom';
+				options.zposition = 'front';
+				$('#popup-1').mmenu( options );
 
-				options.position = 'top'
-				options.zposition = 'front'
-				$('#popup-2').mmenu( options )
-			})
+				options.position = 'top';
+				options.zposition = 'front';
+				$('#popup-2').mmenu( options );
+			});
 	
 		</script>
 		
@@ -235,7 +235,7 @@
 </div>
 </p>
 
-<h5>&copy Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>  </div>   <!-- #BeginLibraryItem "/Library/mmenu_leftlist.lbi" -->
+<h5>&copy Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>  </div>   <!-- #BeginLibraryItem "/mmenu_leftlist.lbi" -->
 			<nav id="menu-left">
 			<!-- mmenu_leftlist up -->
 				<ul>
@@ -624,11 +624,12 @@
 					</li>
 					<li ><a href="#">&#x5B9E;&#x4F8B;&#x6559;&#x7A0B;&#x53CA;&#x5FC3;&#x5F97;</a></li>
 					<li ><a href="#">&#x5B9E;&#x9A8C;&#x6027;&#x9879;&#x76EE;</a></li>
-					<li ><a href="#">&#x5E94;&#x7528;&#x8BBE;&#x7F6E;</a></li>					
-				</ul>
-			<!-- mmenu_leftlist down 1 -->
+					<li ><a href="#">&#x5E94;&#x7528;&#x8BBE;&#x7F6E;</a></li>
+					<li ><a href="../update_log.html">Update log</a></li>
+					<li ><a href="../index_searcher.html">&#x7D22;&#x5F15;&#x76EE;&#x5F55;</a></li>					
+				</ul>			
 			</nav>
-<!-- #EndLibraryItem -->..<!-- #BeginLibraryItem "/Library/mmenu_rightlist.lbi" --><!-- mmenu_right up 1 -->
+<!-- #EndLibraryItem -->..<!-- #BeginLibraryItem "/mmenu_rightlist.lbi" --><!-- mmenu_right up 1 -->
 			<nav id="menu-right">
 				<ul>
 					<li>
@@ -651,7 +652,7 @@
 							<li class="Label">D</li>
 							<li class="img">
 								<a href="mailto:deciia@qq.com">
-									<img src="../Library/deciia@qq.com" />
+									<img src="../deciia@qq.com" />
 									Adam<br />
 									<small>Deciia</small>
 								</a>
