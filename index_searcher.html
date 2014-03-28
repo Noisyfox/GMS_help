@@ -46,21 +46,31 @@
 				);
 			});
 			
+			
+			
+			
 			//	The menu on the left
 			$(function() {
 
 				var $menu0 = $('nav#menu-left');
-
+				
 				$menu0.mmenu({
 					position	: 'left',
 					classes		: 'mm-black',
 					dragOpen	: true,
 					counters	: true,
-					searchfield	: true,
+					searchfield	: {
+						add  :true,
+						search :false										
+					
+					},
 					labels		: {
 						fixed		: !$.mmenu.support.touch
 					}
-				});		
+				});					
+				
+				// search event							
+
 				
 			});			
 

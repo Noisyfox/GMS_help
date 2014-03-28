@@ -1,10 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 	<head>
 		<title>view_xview</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=9" />
 		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
-	<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" /></head>
+	<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
 <body><!-- #BeginLibraryItem "/mmenu_head.lbi" --><!-- mmenu_head up 1 -->
 
 		<link type="text/css" rel="stylesheet" href="../../../style.css" />
@@ -156,9 +156,9 @@
 			
 <h1>view_xview</h1>
 
-<h2>X position of the view in the room.</h2>
+<h2>X position of the view in the room. 在房间里，视野的X位置。 </h2>
 
-<h3>Syntax:</h3>
+<h3>Syntax（用法）</h3>
 <p class="code">view_xview[0...7]</p>
 <p>
 <br>
@@ -168,34 +168,34 @@
 <b>Returns : </b>Real
 </p>
 
- <p>
+ <p> 返回：真
 <br>
 </p>
 
-<h3>Description</h3>
+<h3>Description 描述 </h3>
 <p>
 This variable can be used to get or to set the x axis position for the view in the room. By changing this value you can set the view to a new position, with (0,0) being the upper left corner of the room, or you can reference this variable to ensure that 
 an instance is always drawn at a relative position to the view (see example code below). This value can also be negative and so show an area that is outside of the room, in which case the <b>window color</b> will be used (this color can be set 
 with <a href="../The%20Game%20Window/window_set_color.html"><tt>window_set_color</tt></a>).
-<br>
-<br>
-
-<img class="center" src="View_xy.png"></img>
-<br>
-<br>
-
+<p>这个变量可以用来获取或设置视野的x轴位置。改变这个值，你可以将视野设置到一个新的位置，（0,0）是在房间（room）的左上角，您也可以参考这个变量以确保实例总是绘制在视野内一个相对的位置（见下面的示例代码）。该值也可以是负的，显示的区域在房间（room）的外面，在此情况下，可以使用窗口颜色（这种颜色可以用window_set_color设定）。<br>
+    <br>
+  
+    <img class="center" src="View_xy.png"></img>
+    <br>
+    <br>
 <p>
 <br>
 </p>
 
-<h3>Example :</h3>
+<h3>Example 例子 </h3>
 <p class="code">
 draw_text(view_xview[0] + 32, view_yview[0] + 32, "Score : " + string(score));
 </p>
 <p>
-The above code will draw the score at a position relative to the x and y coordinates of view[0].
-</p>
-
+The above code will draw the score at a position relative to the x and y coordinates of view[0].</p>
+<p>上面的代码将在视野<span class="code">view[0]</span>的X坐标和Y坐标一个相对的位置绘制得分。</p>
+<p>&nbsp;</p>
+<p>-断水-</p>
 <p>
 <br>
 </p>
@@ -203,7 +203,7 @@ The above code will draw the score at a position relative to the x and y coordin
 
 <div class="clear">
 	<div style="float:left">
-		Back : <a href="index.html">Views</a>
+		Back : <a href="index.html">Views 视野 </a>
 	</div>
 	<div style="float:right">
 		Next : <a href="view_yview.html">view_yview</a>

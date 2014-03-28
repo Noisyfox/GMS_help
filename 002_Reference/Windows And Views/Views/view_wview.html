@@ -1,10 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 	<head>
 		<title>view_wview</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=9" />
 		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
-	<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" /></head>
+	<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
 <body><!-- #BeginLibraryItem "/mmenu_head.lbi" --><!-- mmenu_head up 1 -->
 
 		<link type="text/css" rel="stylesheet" href="../../../style.css" />
@@ -156,33 +156,31 @@
 			
 <h1>view_wview</h1>
 
-<h2>Width of the view in the room.</h2>
+<h2>Width of the view in the room. 房间视野的宽度。 </h2>
 
-<h3>Syntax:</h3>
+<h3>Syntax 用法 </h3>
 <p class="code">view_wview[0...7]</p>
 <p>
 <br>
 </p>
 
 <p>
-<b>Returns : </b>Boolean
-</p>
-
- <p>
+<b>Returns : </b>Boolean</p>
+<p>返回：布尔值</p>
+<p>
 <br>
 </p>
 
-<h3>Description</h3>
+<h3>Description 描述 </h3>
 <p>
 This variable can be used to get or to set the width of the view in the room. By changing this value you can change the amount of a room that you can see through the view, but bear in mind that this does <i>not</i> change the view <b>port</b> so 
 setting a view width larger than the view port width will result in the view being scaled down to fit the port, just as a view width smaller than the port width will scale the view up to fit. The following image illustrates this:
-<br>
-<br>
-
-<img class="center" src="View_wh.png"></img>
-<br>
-<br>
-
+<p>这个变量能用来获取或设置房间视野的宽度。改变这个值可以改变能看到的视野的范围，但记住它并没有改变视区，当设置的视野宽度大于视区宽度，将导致视野缩放以适合该视区，同时，视野小于视区将扩大以适应。下图说明了这一点：<br>
+    <br>
+  
+    <img class="center" src="View_wh.png"></img>
+    <br>
+    <br>
 <p>
 <br>
 </p>
@@ -195,9 +193,10 @@ view_wview[0] -= sc_amt;<br>
 view_hview[0] -= sc_amt * ratio;<br>
 </p>
 <p>
-The above code will scale the view width and height based on the ratio of the view port width and height.
-</p>
-
+The above code will scale the view width and height based on the ratio of the view port width and height.</p>
+<p>上面的代码将在视区宽度和高度的基础上缩放视野的宽和高。</p>
+<p>&nbsp;</p>
+<p>-断水-</p>
 <p>
 <br>
 </p>
@@ -205,7 +204,7 @@ The above code will scale the view width and height based on the ratio of the vi
 
 <div class="clear">
 	<div style="float:left">
-		Back : <a href="index.html">Views</a>
+		Back : <a href="index.html">Views 视野 </a>
 	</div>
 	<div style="float:right">
 		Next : <a href="view_hborder.html">view_hborder</a>
