@@ -119,7 +119,7 @@
 			});
 	
 </script>
-<!-- TemplateParam name="OptionalRegion_menuright" type="boolean" value="true" --><!-- TemplateParam name="OptionalRegion_menuleft" type="boolean" value="true" --><!-- TemplateParam name="OptionalRegion_onepage" type="boolean" value="false" --><!-- TemplateParam name="OptionalRegion_tips" type="boolean" value="false" --><!-- TemplateParam name="OptionalRegion_footer" type="boolean" value="false" -->
+<!-- TemplateParam name="OptionalRegion_menuright" type="boolean" value="true" --><!-- TemplateParam name="OptionalRegion_menuleft" type="boolean" value="true" --><!-- TemplateParam name="OptionalRegion_onepage" type="boolean" value="false" --><!-- TemplateParam name="OptionalRegion_tips" type="boolean" value="false" --><!-- TemplateParam name="OptionalRegion_footer" type="boolean" value="true" -->
 </head>
 <body bgcolor="#FFFFFF">
 <!-- the page header part  -->
@@ -227,7 +227,7 @@ contents
 
 <!-- the footer  -->
 <!-- TemplateBeginIf cond="OptionalRegion_footer" -->
-<div id="footer"> <!-- TemplateBeginEditable name="EditRegion_footer" -->EditRegion_footer<!-- TemplateEndEditable --></div>
+<div id="footer"> <!-- TemplateBeginEditable name="EditRegion_footer" -->网站BUG或翻译问题请邮件联系deciia@qq.com，项目地址在<a href="https://github.com/XuJing-project/GMS_help">这里</a>。<!-- TemplateEndEditable --></div>
 <!-- TemplateEndIf -->
 <!-- KEYWORDS
 menu_left
