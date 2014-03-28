@@ -1,7 +1,7 @@
 GMS_help
 ========
 
-目录文件放在gh-pages下面。
+目录文件放在[gh-pages](https://github.com/XuJing-project/GMS_help/tree/gh-pages)下面。
 
 git clone到本地后先用dw8-站点-新建站点将整个目录载入到dw8中，目录结构如下：
 - 站点-GMS_help
