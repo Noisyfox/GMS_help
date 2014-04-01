@@ -1,0 +1,1060 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>Installation and System Requirements</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9">
+		<link rel="stylesheet" href="../style.css" type="text/css" media="screen" title="style" charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" />
+	</head>
+<body><!-- #BeginLibraryItem "/mmenu_head.lbi" --><!-- mmenu_head up 1 -->
+
+		<link type="text/css" rel="stylesheet" href="../style.css" />
+		<link type="text/css" rel="stylesheet" href="../src/css/jquery.mmenu.all.css" />
+		<script type="text/javascript" src="../src/js/jquery.min.js"></script>
+		<script type="text/javascript" src="../src/js/hammer.min.js"></script>
+		<script type="text/javascript" src="../src/js/jquery.mmenu.min.all_old.js"></script>		
+		
+	<!-- scripts links    	
+   
+		<style type="text/css">
+		@media all and (min-width: 900px) {
+		html, body {
+		height: 100%
+		
+		}
+		#menu {
+		background: #eee
+		}
+		#page {
+		border-left: 1px solid #ccc
+		min-height: 100%
+		}
+		}
+		</style>
+   -->
+ 
+		<script type="text/javascript">
+
+			//	The menu on the right
+			$(function() {
+
+				var $menu = $('nav#menu-right');
+				$menu.mmenu({
+					position	: 'right',
+					classes		: 'mm-black',
+					dragOpen	: true,
+					counters	: true,
+					searchfield	: true,
+					labels		: {
+						fixed		: !$.mmenu.support.touch
+					}
+				});
+
+				//	Click a menu-item
+				var $confirm = $('#confirmation');
+				$menu.find( 'li a' ).not( '.mm-subopen' ).not( '.mm-subclose' ).bind(
+					'click.example',
+					function( e )
+					{
+						e.preventDefault();
+						$confirm.show().text( 'You clicked "' + $.trim( $(this).text() ) + '"' );
+						$('#menu-right').trigger( 'close' );
+					}
+				);
+			});
+			
+			//	The menu on the left
+			$(function() {
+
+				var $menu0 = $('nav#menu-left');
+
+				$menu0.mmenu({
+					position	: 'left',
+					classes		: 'mm-black',
+					dragOpen	: true,
+					counters	: true,
+					searchfield	: true,
+					labels		: {
+						fixed		: !$.mmenu.support.touch
+					}
+				});
+			});			
+
+			// for one page
+
+			$(function() {
+				var $menu = $('nav#menu-left'),
+					$html = $('html, body');
+		
+				$menu.mmenu();
+				$menu.find( 'li > a' ).on(
+					'click',
+					function()
+					{
+						var href = $(this).attr( 'href' );
+		
+						//	if the clicked link is linked to an anchor, scroll the page to that anchor 
+						if ( href.slice( 0, 1 ) == '#' )
+						{
+							$menu.one(
+								'closed.mm',
+								function()
+								{
+									setTimeout(
+										function()
+										{
+											$html.animate({
+												scrollTop: $( href ).offset().top
+											});	
+										}, 10
+									);	
+								}
+							);						
+						}
+					}
+				);
+			});
+
+			// for the tips
+			
+			$(function() {
+				var options = {
+					classes			: 'mm-light',
+					modal			: true
+				};
+				
+				options.position = 'left';
+				options.zposition = 'next';
+				$('#tooltip-1').mmenu( options );
+				
+				options.position = 'right';
+				options.zposition = 'next';
+				$('#tooltip-2').mmenu( options );
+				
+				options.position = 'bottom';
+				options.zposition = 'front';
+				$('#popup-1').mmenu( options );
+
+				options.position = 'top';
+				options.zposition = 'front';
+				$('#popup-2').mmenu( options );
+			});
+	
+		</script>
+		
+<!-- mmenu_head down 6 -->
+
+
+<!-- #EndLibraryItem --><!-- the page header part  -->
+<div id="page">
+			<div id="header" >
+				<a href="#menu-left"></a>
+				&#x70B9;&#x51FB;&#x5DE6;&#x8FB9;&#x6309;&#x952E;&#x6253;&#x5F00;&#x5BFC;&#x822A;&#x83DC;&#x5355;
+				<a href="#menu-right" class="friends right"></a>
+			</div>
+
+			<div id="content" >
+			
+<h1>Installation and System Requirements 安装和系统要求 </h1>
+
+<h2>Installing <i>GameMaker:Studio</i> for personal use. 安装个人使用的GMS。</h2>
+
+<p>如果你的<i>GameMaker:Studio</i> 版本不是从Steam购买的，你将需要执行GMStudio-installer.exe文件，照屏幕上的说明去安装。你可以安装到任何地方，推荐你使用默认设置。一旦安装完成，会在开始菜单发现新的程序目录，直接在那里启动<i>GameMaker:Studio</i> 也可以阅读包含的帮助文件。
+<p>安装<i>GameMaker:Studio</i> 的同时也会在电脑里安装一些图片、精灵和声效，它们在你开始制作游戏的时候被用作“占位符”（不直接用作房间使用的对象），当然也会有很多作为教程展示的游戏实例， 还包括一些复杂的demo。所有的这些都可以在安装<i>GameMaker:Studio</i>后的本地文件夹内找到 ， 也可以在<i>GameMaker:Studio</i> 启动页和工作环境的帮助菜单中访问。 
+<p>启动GMS后首先会看到主窗口右边的教程，这个教程将一步一步的用简单的方式帮助你快速创建你的第一个游戏，让你尽快的掌握GMS。这个教程是可以跳过的，但是如果你还没有使用过GMS（也没有用过以前任何的版本），在你独自摸索之前建议你还是通过它了解一下GMS是如何工作的，否则你只有反复回头尝试，得不偿失。
+<p><i><b>注意 : </b>如果你已经在Steam上购买GMS，程序安装时会自动进行，在桌面和开始菜单建立图标，点击图标可以运行程序，或者也可以在Steam客户端的游戏库页面运行。</i>
+
+<p>If your version of <i>GameMaker:Studio</i> has <i>not</i> been bought through <b>Steam</b>, you will need to run the program <tt>GMStudio-Installer.exe</tt> and follow the on-screen instructions to 
+  install. You are given the option to install the program anywhere you like but it is recommended that you follow the default suggestions given. Once installation is completed, in the Start menu you will find a 
+  new program group where you can start <i>GameMaker:Studio</i> as well as read the included help file. 
+<p>    Installing <i>GameMaker:Studio</i> will also install a number of images, sprites and sound effects on your computer, all of which can be used as "place holders" to get you started making your games (but these 
+  are <i>not</i> for use in a final product) and there are also a number of example games installed in the form of Tutorials, as well as some more complex demo examples. All these can be found in folders within 
+  the location where you installed <i>GameMaker:Studio</i> and can also be accessed through the <i>GameMaker:Studio</i> startup window and in the IDE itself (from the <a href="Drop%20Down%20Menus/The%20Help%20Menu.html">Help Menu</a>). 
+<p>  After starting <i>GameMaker:Studio</i> for the first time, you will be shown a tutorial at the right of the main window. This tutorial will teach you how to quickly create your first game in an easy to follow 
+  step-by-step manner, so you can learn to use <i>GameMaker:Studio</i> as fast as possible. This tutorial can be skipped, but if you have not used <i>GameMaker:Studio</i> (nor any previous versions of 
+  GameMaker) before then you are strongly advised to work your way through it as it will provide an invaluable insight into how the product works. If you do skip the tutorial, you can always go back and try it 
+  later through the <b>Help</b> menu at the top of the main screen. 
+<p><i><b>NOTE : </b>If you have bought <i>GameMaker:Studio</i> through <b>Steam</b>, the program should install automatically, giving you the option to create a start menu icon and a desktop icon. Either 
+    of these can then be used to run the program on your computer, or you can run it through the <b>Steam Client</b> window library page too.</i>
+
+<h3>Basic Requirements 系统基本要求 </h3>
+
+<p>最近五年的电脑运行 <i>GameMaker:Studio</i> 应该没有任何问题，但这是你使用该程序最低的配置，如果你想要额外的模块能够运行则需要必要的配置。<br>
+<br>
+<h4>Windows</h4>
+<blockquote>
+	<i>GameMaker:Studio</i> 需要主流的PC配置用来运行Windows XP, Vista, 7或者更后的系统。大多数游戏也需要 DirectX 9或更高的版本兼容的显卡，至少32M的显存。标准的屏幕至少需要1024x768和65000 (16位)色（最好是32位）。然后也需要一个DirectX 9兼容的声卡或者集成声卡芯片。最后建议再确认你的系统是否安装了最新的驱动。
+	<br>
+	<br>
+	<i>GameMaker:Studio</i> 需要电脑上安装 DirectX 9.0或更高的版本。（你可以在<a href="http://www.microsoft.com/en-gb/download/details.aspx?id=35" target="_blank">http://www.microsoft.com</a>下载这些版本。）设计和测试游戏需要的内存高一点会比较好（至少128MB，匹配你的操作系统）。运行游戏则不需要太多的内存，取决于游戏类型和游戏中用到的资源。<br>
+	<br>
+	<i><b>注意:</b>尽管主流的PC都已经搭载了DirectX10，这不意味着也装上了DirectX 9，你仍需要从上面的链接里安装它。</i><br>
+	<br>
+	请注意，Steam用户制作游戏有一个额外的目的，那就是<b>Steam Workshop</b>（创意工坊）。创建和测试游戏的时候，这个目标模块会和标准的Windows模块同时工作，尽管如此，最后建立执行程序时你会看到直接提交到Steam的额外选项。更多的信息可以在<a href="Steam%20Workshop.html">here</a>找到。 
+</blockquote>
+<h4>Windows 8</h4>
+<blockquote><i>GameMaker:Studio</i> 的所有版本都会支持 Windows8 本机和 Javascript 的目标环境平台，这些目标平台需要在一个 win8 系统上运行（和测试），可以是主操作系统或双启动的 Windows 7（或任何其他您选择要使用的操作系统）的分系统，但是不能在win8以外的系统创建最终的 win8 程序。<br>
+	<br>
+	你还需要确保安装了 Microsoft.Net Framework 3.5  （Windows8的标准是安装.Net 4，而且你可能需要安装以前的版本)，在 <a href="http://www.microsoft.com/en-us/download/details.aspx?id=21" target="_blank">here</a>可以找到可用的版本，虽然你在 Windows 8 上安装 GameMaker:Studio 的时候它应该自动完成这一步。
+<br>
+	<br>
+	另外需要安装的是 <b>Microsoft Visual Studio</b> 的副本，在<a href="http://www.microsoft.com/visualstudio/eng/downloads" target="_blank">here</a> 可以找到。 你必须只能使用 VS 2012 (<i>express</i>版就可以)，所以即使你有早期的版本，与这个模块也不会兼容。这个版本支持 Windows Store 的Javascript应用创建是基础的要求，因为你需要用到它创建 .pfx 文件，这个文件是你的开发者密钥，提交应用到 Windows Store 时会用到。 <br>
+	<br>
+	The <i>GameMaker:Studio</i> 的 Windows 8 模块可以为 Windows 8 系统导出应用， 它将与这个操作系统提供给用户的多数独特的功能兼容。 尽管如此，如果你想向 微软的Microsoft Store发布游戏， 你必须通过在 <a href="http://msdn.microsoft.com/en-us/windows/apps/br229512.aspx">here</a> 注册一个帐户获得一个微软开者者往证书。注册需要支付小额的费用，所以你需要提供一个能够向微软商店支付的可用的银行帐户和信用措施。<br>
+	<br>
+	Windows 8 模块更多的设置信息请浏览 <a href="http://help.yoyogames.com/entries/22182733" target="_blank">YoYo Games Helpdesk</a> 。</blockquote>
+
+<h4>Mac OSX</h4>
+<blockquote>	要使用面向苹果系统的模块，你需要一台搭载英特尔芯片的苹果电脑，并且运行 Lion(OSX 10.7)操作系统或更高的版本。你还需要为你的操作系统版本下载并安装开发环境。通常请使用最新的苹果系统和最新的开发环境（你可以在苹果电脑上点击左上方的"Apple"图标，从下拉菜单选择"About this Mac"，然后找到他们）。
+	<br>
+	<br>
+	MacOSX 模块更多的设置信息请浏览 <a href="http://help.yoyogames.com/entries/22177193" target="_blank">YoYo Games Helpdesk</a> 。 <br>
+	<br>
+<hr>
+</blockquote>
+
+
+<p>Any computer that is less than five years old should be able to run <i>GameMaker:Studio</i> without any problems, but here are the minimum specs for your PC to use the program, and then the necessary specs for 
+  each of the additional modules that you may have.</p>
+<p>
+<h4>Windows</h4>
+<blockquote>
+	<i>GameMaker:Studio</i> requires a reasonably modern PC running Windows XP, Vista, 7, or later. A DirectX 9 (or later) compatible graphics card with at <i>least</i> 32MB of memory 
+	is required for most created games. It requires a screen resolution of at least 1024x768 and 65000 (16-bit) colors (but preferably 32-bit true color). Also a DirectX 9 compatible sound card, or integrated 
+	sound chip, is required. It is always recommended that you make sure you have the most recent drivers installed for your system.
+	<br>
+	<br>
+	
+	<i>GameMaker:Studio</i> requires DirectX version 9.0 or later to be installed on your computer. (You can download this version of DirectX from the Microsoft website at: 
+	<a href="http://www.microsoft.com/en-gb/download/details.aspx?id=35" target="_blank">http://www.microsoft.com</a>.) When designing and testing games, the memory requirements can 
+	be pretty high (at least 128 MB and preferably more, but this depends on the operating system). When just running games, the memory requirements are less severe and depend a lot on the type of game 
+	as well as the resources being used.
+
+	<br>
+	<br>
+	
+	<i><b>NOTE:</b> Although most modern PCs ship with DirectX 10 and higher, this does not mean that DirectX 9 is present on your machine, and you should still install it from the link given above!</i><br>
+	<br>
+
+	Please note that Steam users also have an additional target for compiling games which is the <b>Steam Workshop</b>. While creating and testing your game, this target module will work exactly the same 
+	as the standard Windows module, however when creating your final executable you will be shown additional options to submit the game directly to Steam. More information can be found 
+	<a href="Steam%20Workshop.html">here</a>.
+
+	<br>
+	<br>
+<hr>
+</blockquote>
+
+<h4>Windows 8</h4>
+<blockquote>
+	All versions of <i>GameMaker:Studio</i> come with the Windows 8 Native and Javascript target platforms. These targets require a Windows 8 OS to run (and for testing), and this can be the main OS or a 
+	sub-os that you can dual boot with Windows 7 (or any other OS you choose to use), however you <i>cannot</i> create a final application for Windows 8 outside of that OS.
+
+	<br>
+	<br>
+
+	You will also need to make sure that you have <b>Microsoft .Net Framework 3.5</b> installed (<b>.Net 4</b> is installed as standard with Windows 8, but you may need to install the previous version too) 
+	which is available <a href="http://www.microsoft.com/en-us/download/details.aspx?id=21" target="_blank">here</a>, although when you install <i>GameMaker:Studio</i> on your Windows 8 OS it should 
+	complete this part automatically.
+	<br>
+	<br>
+	
+	Another thing that is necessary is a copy of <b>Microsoft Visual Studio</b> which can be found <a href="http://www.microsoft.com/visualstudio/eng/downloads" target="_blank">here</a>. <i>You must only 
+	use VS 2012 (the express versions are fine), so even if you have a previous version of Virsual Studio, it will not work with this module.</i> A version of this product that supports Windows Store Javascript app 
+	creation is essential as you will need it to create the <tt>*.pfx</tt> file which is your <b>Developer Key</b> and needed to submit your apps and games to the Windows Store.
+	<br>
+	<br>
+	<br>
+	The <i>GameMaker:Studio</i> Windows 8 export target will create an app specifically for the Windows 8 OS, and it will be compatible with many of the unique features that this OS offers the user. However, 
+	if you wish to publish this game through the Microsoft Store for Windows, you <i>must</i> have a <b>Microsoft Developers Licence</b> which is available by signing up for an account 
+	<a href="http://msdn.microsoft.com/en-us/windows/apps/br229512.aspx">here</a>. There is a small cost involved in registering for this account and you will need to have a valid bank account and credit 
+	facilities to be able to monetise any apps that you submit to the store.	
+	<br>
+	<br>
+	Further information on setting up the Windows 8 modules can be found on the <a href="http://help.yoyogames.com/entries/22182733" target="_blank">YoYo Games Helpdesk</a>.
+
+	<br>
+	<br>
+<hr>	
+</blockquote>
+
+<h4>Mac OSX</h4>
+<blockquote>
+	To use the MacOSX target module, you will need to have a Mac computer with an Intel chipset and running Lion (OSX 10.7) OS or above. You will also need to download and install Xcode for your version of the 
+	OS.It's generally recommended that you use the latest OSX and the latest Xcode (you can find the version your Mac has by clicking on the "Apple" logo in the top left and selecting the "About this Mac" option 
+	from the drop down menu).
+	<br>
+	<br>
+	Further information on setting up the MacOSX module can be found on the <a href="http://help.yoyogames.com/entries/22177193" target="_blank">YoYo Games Helpdesk</a>.
+
+	<br>
+	<br>
+<hr>
+</blockquote>
+
+<h3>Additional Modules 附加的模块 </h3>
+<p>所有<i>GameMaker:Studio </i>版本包含上面所有的模块，而下面的模块只有从免费版或标准版升级到专业版（更多GMS版本信息可以在 <a href="Versions.html">here</a> 找到）后才能使用 。
+
+<p>
+
+<h4>Ubuntu (Linux)</h4>
+<blockquote>  Linux 模块设计上与 Ubuntu（乌班图） 操作系统兼容，尽管它应该也可以在其它 Linux 系统上工作，不过仅保证支持最新的主流 Linux操作系统。 <br>
+<br>
+  Ubuntu 模块更多的设置信息请浏览 <a href="http://help.yoyogames.com/entries/23167703" target="_blank">YoYo Games Helpdesk</a><a href="http://help.yoyogames.com/entries/22177193" target="_blank"></a> 。 <br>
+  <br>
+  <hr>
+</blockquote>
+<h4>iOS</h4>
+<blockquote><br>
+      <i>GameMaker:Studio</i> 的  iOS 模块需要一台苹果电脑（或者至少能访问一台），然后是满足面向 <b>MacOSX</b>的模块的最低要求（上面有介绍），<b>你必须是一个注册的苹果开发者且拥有所有最新的证书和许可</b>。关于成为注册的苹果开发者以及怎样获得必要的证书，请访问苹果开发者网站<a href="https://developer.apple.com/" target="_blank"> here</a>。
+      <br>
+      <br>
+  近期与 <i>GameMaker:Studio</i> 兼容的苹果设备包括： <br>
+  <blockquote>
+    <ul>
+      <li>iPhone 4G, 4Gs, 5G
+      <li>iPad 1, 2 &amp; 3
+      <li>iPod Touch 3rd Gen and above
+      </ul>
+  </blockquote>
+  对于用 GameMaker:Studio建立的所有iOS项目，不论是测试iPhone还是 iPad 都没有关系，因为它们是标准的、通用的应用。这意味着可以同时在iPhone和iPad上运行，没有任何问题。 <br>
+  <br>
+  iOS 模块更多的设置信息请浏览 <a href="http://help.yoyogames.com/entries/22901986" target="_blank">YoYo Games Helpdesk</a><a href="http://help.yoyogames.com/entries/22177193" target="_blank"></a> 。 
+  <br>
+  <br>
+  
+  <hr>
+</blockquote>
+<h4>Android</h4>
+<blockquote>  在 <i>GameMaker:Studio</i> 和安卓真正开始工作之前，值得一提的是这些安卓设备在能力上差异极大。TameMaker:Studio 运行器（runner）， 只能在安卓2.2版本(Froyo) 或者更高的版本运行（2.1版本可能可以运行，但展示效果并不理想）， 这些版本覆盖了当今大多数设备，但不是所有的，因此请检查确认你的设备是哪一个版本。 设备最好有一个专用的Open GL 1.1版本的GPU或者更高的版本。没有的话也是可以运行你的GMS项目的，但你期望看到的性能将会严重下降。 <br>
+  <br>
+  你也将需要下载 <b>Android SDK</b> ，因为GMS需要不同安卓版本的一些组件以及它安装的平台工具，你可以在<a href="http://developer.android.com/sdk/index.html">这里</a>下载。 如果你正在用到 YoYo Compiler (YYC)，你还需要安装一份 <a>Android NDK</a>，可以在这里<a href="http://developer.android.com/tools/sdk/ndk/index.html">下载</a>。<br>
+  <br>
+  安卓模块更多的设置信息请浏览<a href="http://help.yoyogames.com/entries/23363366" target="_blank">YoYo Games Helpdesk</a>。 
+  <br>
+  <br>
+  <hr>
+</blockquote>
+<h4>HTML5</h4>
+<blockquote>  HTML5的输出模块只需要一个HTML5兼容的浏览器。需要注意的是，虽然大多数现代浏览器都能够运行HTML5游戏，不是所有的都流畅的支持WebGL的标准，所以我们建议用Chrome浏览器测试，因为它能展示这个模块支持所有特性。
+  <br>
+  <br>
+  HTML5模块更多的设置信息请浏览<a href="http://help.yoyogames.com/entries/22899003" target="_blank">YoYo Games Helpdesk</a>。 
+  <br>
+  <br>
+  <hr>
+</blockquote>
+<h4>Windows Phone</h4>
+<blockquote>使用 Windows Phone 创建游戏要求安装 <b>Windows Phone SDK 8.0</b>（<a href="http://dev.windowsphone.com/en-us/downloadsdk">这里</a>下载）。你也将需要一台以下配置的win8系统的电脑：<br>
+    <br>
+    <blockquote>
+      <ul>
+        <li>Windows 8,  运行 64位系统. 不支持32位系统。
+        <li>最小内存4Gb
+        <li>6.5Gb硬盘空间        
+      </ul>
+    </blockquote>
+    如果你没有一台Windows Phone 设备，可以使用 <b>Windows Phone模拟器</b> ， 但是请注意这些额外要求也将适用以下的情况：
+  <blockquote>
+    <ul>
+      <li>Windows 8 专业版或企业版
+      <li>硬件虚拟化
+      <li>二级地址转换 (SLAT)
+      <li>DHCP, 虚拟机因此可以从本地网络获得IP地址
+      </ul>
+  </blockquote>
+  <i><b>注意:</b> Windows Phone SDK 也将同时安装 Microsoft Visual Basic Express for Windows Phone ，所以没有必要再单独安装它。</i> <br>
+  <br>
+  Windows Phone 模块更多的设置信息请浏览<a href="http://help.yoyogames.com/entries/22446671" target="_blank">YoYo Games Helpdesk</a>。 
+  <br>
+  <br>
+  <hr>
+</blockquote>
+<h4>Tizen</h4>
+<blockquote>  面向Tizen的目标模块具有特定的先决条件，在使前就必须满足它，其中最重要的是你必须已经安装了Tizen SDK （<a href="https://developer.tizen.org/downloads/tizen-sdk">这里</a>获得SDK） 。 
+  <br>
+  <br>
+      <i><b>警告！</b>：当前的Tizen SDK <b>在Windows 8上无法运行</b>，所以在你用来开发的机器上需要一个更早的操作系统（你可以用双系统，启动 Windows XP, 
+        Vista, 或者 Wiondows 7）。还要注意的是64位的SDK可能无法正常工作，甚至包括操作系统是64位的情况，所以如果有任何疑问，你应该选择32位版本。</i><br>
+      <br>
+    除此以外还有以下要求：
+<blockquote>
+    <ul>
+      <li>双核 2 GHz CPU
+      <li>至少 2 GB 内存
+      <li>至少 3 GB 的硬盘空间
+      <li>安装了 <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">Oracle Java JDK</a> (v6 或更高，请不要使用OpenJDK)
+      </ul>
+  </blockquote>
+  如果你不能访问Tizen设备，你可能需要用到Tizen模拟器，尽管如此，也必须满足以下条件才能顺利运行：
+  <blockquote>
+    <ul>
+      <li>支持Intel VTx 的 CPU
+      <li>至少1280 x 1024 的屏幕分辨率
+      <li>用于 OpenGL ES 加速的最新显卡驱动
+      </ul>
+  </blockquote>
+  Tizen 模块更多的设置信息请浏览<a href="http://help.yoyogames.com/entries/25022406" target="_blank">YoYo Games Helpdesk</a>。 
+
+  <br>
+  <br>
+  <hr>
+</blockquote>
+<h4>The YoYo Compiler (YYC) YoYo编译器 </h4>
+<blockquote>  YYC 将让普通的 <i>GameMaker:Studio </i>输出并编译为目标平台的本地代码，剥离不需要的函数，进行一系列技术优化，然后创建一个更小的、性能更强的执行程序。这个过程可以增加至少两到三倍的游戏性能，尤其是一些复杂逻辑的游戏能获得一个能以置信的整体提升，非常适合那些较大、CPU密集型的游戏。<br>
+  <br>
+  <br>
+  虽然编译器被划分为单独的模块，但实际上是由一些分离的模块组成，每一个都将适用于一个可用的目标平台。所以，如果你有，例如iOS和Android的模块，然后又获得了YYC，你会看到新的模块已经添加到您的目标平台列表 - iOS（YYC）和Android（YYC）。以后其他模块更新了，YYC也将更新，并为目标平台显示一个额外的YYC的模块。
+  <br>
+  <br>
+  <blockquote><i><b>注意: </b>YYC 不适用于 HTML5目标平台, 以及任何基于JavaScript(JS)的平台。</i></blockquote>
+  对于YYC目标模块的要求，取决于你拥有和希望使用的原始目标模块，因为它们在YYC正常工作之前就需要被正确的设置。你可以在 <a href="http://help.yoyogames.com/entries/24468366">YoYo游戏知识库</a> 里找到更多的信息，同时也可以在本手册的个人目标模块的<a href="../001_Advanced Use/Global game settings/index.html">游戏全局设置</a>页面会作详细描述。      <br>
+  <blockquote><i><b>注意: </b> 目前，YYC 仅适用于Windows，iOS和Android的目标模块，但未来更新将添加更多的目标模块。</i></blockquote>
+</blockquote>
+<p>如需进一步信息、建议和故障排除，请咨询<a href="http://help.yoyogames.com" target="_blank">YoYo游戏知识库</a>，你会发现使用<i>GameMaker:Studio</i>时安装设置所有平台的详细信息。</p>
+<p>
+<p>The above modules are included as standard for all versions of <i>GameMaker:Studio</i> but the following modules are available only to those who have upgraded from the <b>Free</b> or <b>Standard</b> version of <i>GameMaker:Studio</i> to the <b>Professional</b> version (more information on the different versions of <i>GameMaker:Studio</i> can be found <a href="Versions.html">here</a>).
+<p>
+<h4>Ubuntu (Linux)</h4>
+<blockquote>
+	The Linux module is designed to be compatible with the Ubuntu operating system, and although it should work with other Linux systems, it is only guaranteed to work with the latest versions of this 
+	popular Linux OS.
+	<br>
+	<br>
+
+	Further information on setting up the Ubuntu module can be found on the <a href="http://help.yoyogames.com/entries/23167703" target="_blank">YoYo Games Helpdesk</a>.
+	<br>
+	<br>
+<hr>
+</blockquote>
+			
+<h4>iOS</h4>
+<blockquote>
+	The <i>GameMaker:Studio</i> iOS module requires that you have a Mac computer (or at least access to one) and that it meets the minimum requirements for the <b>MacOSX</b> target module (see above)
+	and <b>you must be a registered Apple developer and have all certificates and licenses up to date</b>. For more information on becoming a registered Apple Developer and how to get the necessary certificates, 
+	please visit the Apple developer site <a href="https://developer.apple.com/" target="_blank">here</a>.
+
+	<br>
+	<br>
+
+	Nearly all iOS devices are compatible with <i>GameMaker:Studio</i> including:
+	<blockquote>
+		<ul>
+			<li>iPhone 4G, 4Gs, 5G
+			<li>iPad 1, 2 &amp; 3
+			<li>iPod Touch 3rd Gen and above
+		</ul>
+	</blockquote>
+	
+	It also doesn't matter if you are testing on an iPhone or an iPad as all iOS project builds created by GameMaker:Studio are, as standard, universal apps. This means that they will run on both iPhone 
+	and iPad devices without problems.
+
+	<br>
+	<br>
+
+	Further information on setting up the iOS module can be found on the <a href="http://help.yoyogames.com/entries/22901986" target="_blank">YoYo Games Helpdesk</a>.
+	<br>
+	<br>
+<hr>
+</blockquote>
+
+<h4>Android</h4>
+<blockquote>
+	Before actually starting to work with <i>GameMaker:Studio</i> and Android, it is worth noting that Android devices vary immensely in capability. The GameMaker:Studio runner will only work with Android 
+	2.2(Froyo) and above (2.1 may work but it's performance will not be good), which covers the majority of devices around at the moment but not all of them, so please check and make sure which version of 
+	Android your device uses. It is also recommended that your device have a dedicated GPU with Open GL version 1.1 or above. Devices without a GPU will still run your GameMaker:Studio projects, but expect 
+	them to have 	severe drop in performance.
+	<br>
+	<br>
+	
+	You will also need to download the <b>Android SDK</b> as <i>GameMaker:Studio</i> requires some of the components of the different Android versions and the Platform Tools it installs. You can get a 
+	copy of the SDk <a href="http://developer.android.com/sdk/index.html">here</a>. if you are also using the YoYo Compiler (YYC) then you will also need to install a copy of the <a>Android NDK</a> which 
+	can be found <a href="http://developer.android.com/tools/sdk/ndk/index.html">here</a>.
+	<br>
+	<br>
+	
+	Further information on setting up the Android module can be found on the <a href="http://help.yoyogames.com/entries/23363366" target="_blank">YoYo Games Helpdesk</a>.
+	<br>
+	<br>
+<hr>
+</blockquote>
+
+			
+<h4>HTML5</h4>
+<blockquote>
+	The HTML5 export module requires only an HTML5 compliant browser. Note that although most modern browsers are capable of running HTML5 games, not all of them support the WebGL standard currently 
+	so we recommend Chrome for testing as that shows all the features supported by the module.
+	<br>
+	<br>
+	
+		
+	Further information on setting up the HTML5 module can be found on the <a href="http://help.yoyogames.com/entries/22899003" target="_blank">YoYo Games Helpdesk</a>.
+	<br>
+	<br>
+<hr>
+</blockquote>
+
+<h4>Windows Phone</h4>
+<blockquote>
+	Creating games for the Windows Phone module requires that you have installed the <b>Windows Phone SDK 8.0</b> (download from <a href="http://dev.windowsphone.com/en-us/downloadsdk" 
+	target="_blank">here</a>). You will also need a Windows 8 PC with the following specifications:
+	<blockquote>
+		<ul>
+			<li>Windows 8, running 64-bit. A 32-bit system is not supported.
+			<li>4Gb RAM minimum
+			<li>6.5Gb of disk space
+		</ul>
+	</blockquote>
+	
+if you do not have a Windows Phone device, you can make use of the <b>Windows Phone emulator</b>, however be aware that these additional requirements will also apply in that case:
+    <blockquote>
+		<ul>
+			<li>Windows 8 Professional or Enterprise Edition
+			<li>Hardware virtualization
+			<li>Second Level Address Translation (SLAT)
+			<li>DHCP, so the virtual machine can get a IP address on the local network
+		</ul>
+	</blockquote>
+	<i><b>NOTE:</b> The Windows Phone SDK will also install Microsoft Visual Basic Express for Windows Phone as well, so there is no need to install it separately.</i>
+	<br>
+	<br>
+
+	Further information on setting up the Windows Phone module can be found on the <a href="http://help.yoyogames.com/entries/22446671" target="_blank">YoYo Games Helpdesk</a>.
+	<br>
+	<br>
+<hr>
+</blockquote>
+
+<h4>Tizen</h4>
+<blockquote>
+	The Tizen target module has certain pre-requisites that must be met before being used, the most important of these is that you must have installed the Tizen SDK (available You can get the SDK 
+	<a href="https://developer.tizen.org/downloads/tizen-sdk" target="_blank">here</a>).
+	<br>
+	<br>
+	<i><b>WARNING!</b>:The current Tizen SDK <b>does not work on Windows 8</b>, so you will need to have an earlier OS installed on your development machine (you can dual boot to Windows XP, 
+	Vista, or 7). Also note that the 64bit SDK may not work, even if your OS is 64bit, so if in doubt you should choose the 32bit version.</i>
+	<br>
+	<br>
+	
+	Apart from that you will also need the following:
+	<blockquote>
+		<ul>
+			<li>dual-core 2 GHz CPU
+			<li>At least 2 GB of RAM memory
+			<li>At least 3 GB of free disk space
+			<li><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">Oracle Java JDK</a> (v6 or above) installed (do <i>not</i> use OpenJDK)
+		</ul>
+	</blockquote>
+	
+	
+	If you do not have access to a Tizen device, you may be able to use the <b>Tizen Emulator</b>, however you must also meet the following requirements for it to work correctly:
+	<blockquote>
+		<ul>
+			<li>A CPU that supports Intel VTx
+			<li>At least 1280 x 1024 screen resolution
+			<li>The most up to date graphics drivers for OpenGL ES acceleration
+		</ul>
+	</blockquote>
+	
+	Further information on setting up the Tizen module can be found on the <a href="http://help.yoyogames.com/entries/25022406" target="_blank">YoYo Games Helpdesk</a>.
+	<br>
+	<br>
+<hr>
+</blockquote>
+
+<h4>The YoYo Compiler (YYC) YoYo编译器 </h4>
+<blockquote>
+	The YYC takes the normal <i>GameMaker:Studio</i> output and then compiles that into native code for the target platform, "stripping out" unneeded functions and performing a host of other optimisation 
+	techniques to create a smaller and performance enhanced executable. This can increase your games performance by at least two or three times, especially on logic-heavy games, and gives an incredible overall 
+	boost to performance, ideal for those larger or CPU intensive games.
+	<br>
+	<br>
+	
+
+	Although the compiler is classed as a stand-alone module, it is in reality a number of separate modules, one for each available target. So if you have, for example, the iOS and Android modules and then get 
+	the YYC, you will see two new modules added to your target list - <b>iOS (YYC)</b> and <b>Android (YYC)</b>. Should you get other modules at a later date the, the YYC will update too and show an extra 
+	<b>(YYC)</b> module for that target platform.
+	
+	<br>
+	<br>
+	<blockquote>
+	<i><b>NOTE: </b>The YYC is not available for the HTML5 target, nor any of those that are JavaScript (JS) based.</i></blockquote>
+
+	<br>
+	
+	The requisites for the YYC target module will depend on the original target modules that you have and wish to use it with, as they will need to be set up correctly before the YYC will work correctly. You can find 
+	further information about this from the <a href="http://help.yoyogames.com/entries/24468366" target="_blank"> YoYo Games Knowledge Base</a> as well as on the individual target module 
+	<a href="../001_Advanced Use/Global game settings/index.html">Global Game Settings</a> pages detailed in this manual.
+
+	<blockquote>
+	<i><b>NOTE: </b> Currently, the YYC is only available for <b>Windows</b>, <b>iOS</b> and <b>Android</b> targets but future updates will add further target modules.</i></blockquote>
+	</blockquote>
+
+
+
+
+
+<p>For further information, advice and troubleshooting please consult the <a href="http://help.yoyogames.com" target="_blank"> YoYo Games Knowledge Base</a> where you will find detailed information of 
+  how to setup all platforms for use with <i>GameMaker:Studio</i>.</p>
+<p>-断水 -<br>
+    <br>
+  
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back : <a href="index.html">Using GameMaker:Studio 使用GMS </a>
+	</div>
+	<div style="float:right">
+		Next : <a href="002_Activation.html">Activation 激活 </a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
+
+<!-- #BeginLibraryItem "/mmenu_leftlist.lbi" -->
+			<nav id="menu-left">
+			<!-- mmenu_leftlist up -->
+				<ul>
+					<li ><a href="../index.html">GMS&#x624B;&#x518C;&#x9996;&#x9875;</a></li>					
+					<li >
+						<a href="index.html">GMS&#x4F7F;&#x7528;</a>
+						<ul>
+							<li><a href="000_Introduction.html">Introduction &#x4ECB;&#x7ECD;</a></li>
+							<li><a href="001_Installation.html">Installation &#x5B89;&#x88C5;</a></li>
+							<li><a href="002_Activation.html">Activation &#x6FC0;&#x6D3B;</a></li>
+							<li><a href="003_GameMaker Studio Overview.html">GMS &#x6982;&#x8FF0;</a></li>
+							<li>
+								<a href="004_The Graphical User Interface.html">GMS&#x7528;&#x6237;&#x754C;&#x9762;&#x4ECB;&#x7ECD;</a>
+								<ul>
+									<li><a href="Drop Down Menus/The File Menu.html">The File Menu &#x201C;&#x6587;&#x4EF6;&#x201D;&#x83DC;&#x5355;</a></li>
+									<li><a href="Drop Down Menus/The Edit Menu.html">The Edit Menu &#x201C;&#x7F16;&#x8F91;&#x201D;&#x83DC;&#x5355;</a></li>
+									<li><a href="Drop Down Menus/The Resources Menu.html">The Resources Menu &#x201C;&#x8D44;&#x6E90;&#x201D;&#x83DC;&#x5355;</a></li>
+									<li><a href="Drop Down Menus/The Scripts Menu.html">The Scripts Menu &#x201C;&#x811A;&#x672C;&#x201D;&#x83DC;&#x5355;</a></li>
+									<li><a href="Drop Down Menus/The Run Menu.html">The Run Menu &#x201C;&#x8FD0;&#x884C;&#x201D;&#x83DC;&#x5355;</a></li>
+									<li><a href="Drop Down Menus/The Windows Menu.html">The Window Menu &#x201C;&#x7A97;&#x53E3;&#x83DC;&#x5355;&#x201D;</a></li>
+									<li><a href="Drop Down Menus/The Help Menu.html">The Help Menu &#x201C;&#x5E2E;&#x52A9;&#x201D;&#x83DC;&#x5355;</a></li>									
+								</ul>
+							</li>
+							<li><a href="005_Loading Sprites.html">Loading Sprites &#x8F7D;&#x5165;&#x7CBE;&#x7075;</a></li>
+							<li><a href="006_Sounds and music.html">Sounds And Music &#x58F0;&#x97F3;&#x4E0E;&#x97F3;&#x4E50;</a></li>
+							<li><a href="007_Backgrounds.html">Backgrounds &#x80CC;&#x666F;</a></li>
+							<li><a href="008_Defining objects.html">Defining Objects &#x5B9A;&#x4E49;&#x5BF9;&#x8C61;</a></li>
+							<li>
+								<a href="Events/index.html">Events &#x4E8B;&#x4EF6;</a>
+								<ul>
+									<li><a href="Events/Create Event.html">Create Event &#x521B;&#x5EFA;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="Events/Destroy Event.html">Destroy Event &#x7834;&#x574F;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="Events/Alarm Event.html">Alarm Events &#x8BA1;&#x65F6;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="Events/Step Event.html">Step Events &#x6B65;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="Events/Collision Event.html">Collision Event &#x78B0;&#x649E;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="Events/Keyboard Event.html">Keyboard Events &#x952E;&#x76D8;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="Events/Mouse Event.html">Mouse Event &#x9F20;&#x6807;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="Events/Other Event.html">Other Events &#x5176;&#x5B83;&#x4E8B;&#x4EF6;</a></li>
+									<li>
+										<a href="Events/Draw Event.html">Draw Event &#x7ED8;&#x5236;&#x4E8B;&#x4EF6;</a>
+										<ul>
+											<li><a href="Events/Draw GUI Event.html">&#x7ED8;&#x5236;&#x56FE;&#x5F62;&#x754C;&#x9762;&#x4E8B;&#x4EF6;</a></li>
+											<li><a href="Events/Resize Event.html">&#x8C03;&#x6574;&#x5927;&#x5C0F;&#x4E8B;&#x4EF6;</a></li>
+										</ul>
+									</li>
+									<li><a href="Events/Async Event.html">Asynchronous Events &#x5F02;&#x6B65;&#x4E8B;&#x4EF6;</a></li>									
+								</ul>
+							</li>
+							<li>
+								<a href="Actions/index.html">Actions &#x52A8;&#x4F5C;</a>
+								<ul>
+									<li><a href="Actions/000_Move actions.html">Move Actions &#x79FB;&#x52A8;&#x7C7B;&#x52A8;&#x4F5C;</a></li>
+									<li><a href="Actions/001_Main actions set 1.html">Main Actions, Set 1 &#x4E3B;&#x52A8;&#x4F5C;&#x8BBE;&#x5B9A;1</a></li>
+									<li><a href="Actions/002_Main actions set 2.html">Main Actions, Set 2 &#x4E3B;&#x52A8;&#x4F5C;&#x8BBE;&#x5B9A;2</a></li>
+									<li><a href="Actions/003_Control actions.html">Control Actions &#x63A7;&#x5236;&#x7C7B;&#x52A8;&#x4F5C;</a></li>
+									<li><a href="Actions/004_Score actions.html">Score Actions &#x5206;&#x6570;&#x7C7B;&#x52A8;&#x4F5C;</a></li>
+									<li><a href="Actions/005_Extra actions.html">&#x8865;&#x5145;&#x7684;&#x76F8;&#x5173;&#x52A8;&#x4F5C; </a></li>
+									<li><a href="Actions/006_Draw actions.html">Draw Actions &#x7ED8;&#x5236;&#x7C7B;&#x52A8;&#x4F5C;</a></li>
+									<li><a href="Actions/007_Using expressions and variables.html">&#x4F7F;&#x7528;&#x8868;&#x8FBE;&#x5F0F;&#x548C;&#x53D8;&#x91CF;</a></li>																	
+								</ul>
+							</li>
+							<li>
+								<a href="Rooms/index.html">&#x521B;&#x5EFA;&#x623F;&#x95F4;(Rooms)</a>
+								<ul>
+									<li><a href="Rooms/Settings Tab.html">Settings &#x8BBE;&#x7F6E;</a></li>
+									<li><a href="Rooms/Backgrounds Tab.html">Backgrounds &#x80CC;&#x666F;</a></li>
+									<li><a href="Rooms/Objects Tab.html">Objects &#x5BF9;&#x8C61;</a></li>																
+								</ul>								
+							</li>
+							<li><a href="Game Information.html">&#x6E38;&#x620F;&#x4FE1;&#x606F;&#x8BBE;&#x7F6E; </a></li>							
+							<li><a href="009_Distributing your game.html">&#x53D1;&#x5E03;&#x4F60;&#x7684;&#x6E38;&#x620F;</a></li>						
+
+						</ul>
+					</li>
+					<li >
+						<a href="../001_Advanced Use/index.html">&#x9AD8;&#x7EA7;&#x5E94;&#x7528;</a>
+						<ul>
+							<li class="Label">&#x6E38;&#x620F;&#x539F;&#x751F;&#x8D44;&#x6E90;(Game Assets)</li>
+							<li>
+								<a href="../001_Advanced Use/More about sprites/index.html">&#x66F4;&#x591A;&#x7CBE;&#x7075;(Sprites)&#x7684;&#x5185;&#x5BB9;</a>
+								<ul>
+									<li><a href="../001_Advanced Use/More about sprites/Editing Sprites.html">&#x7F16;&#x8F91;&#x7CBE;&#x7075;&#xFF08;Sprites&#xFF09;</a></li>
+									<li><a href="../001_Advanced Use/More about sprites/Editing Subimages.html">&#x7F16;&#x8F91;&#x5B50;&#x56FE;&#xFF08;Subimages&#xFF09;</a></li>
+									<li><a href="../001_Advanced Use/More about sprites/Editing Collision Masks.html">&#x7F16;&#x8F91;&#x78B0;&#x649E;&#x906E;&#x7F69;&#xFF08;Collision Masks&#xFF09;</a></li>																
+								</ul>										
+							</li>
+							<li>
+								<a href="../001_Advanced Use/More about backgrounds/index.html">&#x66F4;&#x591A;&#x80CC;&#x666F;(background)&#x7684;&#x5185;&#x5BB9;</a>
+								<ul>
+									<li><a href="../001_Advanced Use/More about backgrounds/Designing Tiles.html">Designing Tiles &#x56FE;&#x5757;&#x8BBE;&#x8BA1;</a></li>
+									<li><a href="../001_Advanced Use/More about backgrounds/Texture Pages.html">Texture Pages &#x7EB9;&#x7406;&#x8D34;&#x56FE;&#x9875;</a></li>															
+								</ul>
+							</li>
+							<li>
+								<a href="../001_Advanced Use/More about Objects/index.html">&#x66F4;&#x591A;&#x5BF9;&#x8C61;(object)&#x7684;&#x5185;&#x5BB9;</a>
+								<ul>
+									<li><a href="../001_Advanced Use/More about Objects/Parents.html">Parents &#x7236;&#x5BF9;&#x8C61;</a></li>
+									<li><a href="../001_Advanced Use/More about Objects/Physics.html">Object Physics Properties &#x5BF9;&#x8C61;&#x7269;&#x7406;&#x5C5E;&#x6027;</a></li>															
+								</ul>	
+							</li>
+							<li>
+								<a href="../001_Advanced Use/More about rooms/index.html">&#x66F4;&#x591A;&#x623F;&#x95F4;(room)&#x7684;&#x5185;&#x5BB9;</a>
+								<ul>
+									<li><a href="../001_Advanced Use/More about rooms/Tiles.html">Tiles &#x56FE;&#x5757;</a></li>
+									<li><a href="../001_Advanced Use/More about rooms/Views.html">Viewss &#x89C6;&#x91CE;</a></li>
+									<li><a href="../001_Advanced Use/More about rooms/Physics.html">Physics &#x7269;&#x7406;&#x73AF;&#x5883;</a></li>															
+								</ul>
+							</li>
+							
+							<li>
+								<a href="../001_Advanced Use/More About Async Events/index.html">&#x66F4;&#x591A;&#x5F02;&#x6B65;&#x4E8B;&#x4EF6;(Async Events)&#x7684;&#x5185;&#x5BB9;</a>
+								<ul>
+									<li><a href="../001_Advanced Use/More About Async Events/Image Loaded and Sound Loaded Events.html">&#x56FE;&#x7247;&#x8F7D;&#x5165;&#x548C;&#x58F0;&#x97F3;&#x8F7D;&#x5165;&#x7684;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../001_Advanced Use/More About Async Events/HTTP.html">HTTP&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../001_Advanced Use/More About Async Events/Dialogs.html">Dialogs Event &#x5BF9;&#x8BDD;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../001_Advanced Use/More About Async Events/IAP.html">IAP(&#x5E94;&#x7528;&#x5185;&#x90E8;&#x4ED8;&#x8D39;&#x6A21;&#x5F0F;)&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../001_Advanced Use/More About Async Events/Cloud.html">Cloud Event &#x4E91;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../001_Advanced Use/More About Async Events/Networking.html">Networking Event &#x8054;&#x7F51;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../001_Advanced Use/More About Async Events/Steam.html">Steam&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../001_Advanced Use/More About Async Events/Social.html">Social Event &#x793E;&#x4F1A;&#x5316;&#x6A21;&#x5757;&#x4E8B;&#x4EF6;</a></li>															
+								</ul>
+							</li>
+							<li class="Label">Resource Editors &#x8D44;&#x6E90;&#x7F16;&#x8F91;&#x5668;</li>
+							<li><a href="../001_Advanced Use/003_Fonts.html">Fonts &#x5B57;&#x4F53;</a></li>
+							<li><a href="../001_Advanced Use/004_Paths.html">Paths &#x8DEF;&#x5F84;</a></li>
+							<li><a href="../001_Advanced Use/005_Time lines.html">Time Lines &#x65F6;&#x95F4;&#x8F74;</a></li>
+							<li><a href="../001_Advanced Use/006_Scripts.html">Scripts &#x811A;&#x672C;</a></li>
+							<li><a href="../001_Advanced Use/009_Shaders.html">Shaders &#x7740;&#x8272;&#x5668;</a></li>
+							<li><a href="../001_Advanced Use/010_Constants.html">Constants &#x5E38;&#x91CF;</a></li>
+							<li><a href="../001_Advanced Use/002_Including Files.html">Including Files &#x5305;&#x542B;&#x6587;&#x4EF6;</a></li>
+							<li><a href="../001_Advanced Use/008_Exporting and importing resources.html">Importing Resources &#x5BFC;&#x5165;&#x8D44;&#x6E90;</a></li>
+							<li class="Label">Game Settings &#x6E38;&#x620F;&#x8BBE;&#x7F6E;</li>
+							<li>
+								<a href="../001_Advanced Use/Extensions/index.html">&#x6269;&#x5C55;&#x5305;</a>
+								<ul>
+									<li><a href="../001_Advanced Use/Extensions/Using Extensions.html">&#x4F7F;&#x7528;&#x6269;&#x5C55;</a></li>
+									<li><a href="../001_Advanced Use/Extensions/Creating Extensions.html">&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6269;&#x5C55;</a></li>														
+								</ul>
+							</li>							
+							<li><a href="#">Configurations &#x914D;&#x7F6E;</a></li>
+							<li>
+								<a href="../001_Advanced Use/Source Control/index.html">&#x6E90;&#x4EE3;&#x7801;&#x63A7;&#x5236;</a>
+								<ul>
+									<li><a href="../001_Advanced Use/Source Control/Getting Started With Source Control.html">&#x6E90;&#x4EE3;&#x7801;&#x63A7;&#x5236;&#x5165;&#x95E8;&#x5F15;&#x5BFC;</a></li>
+									<li><a href="../001_Advanced Use/Source Control/Setting Up GM For Source Control.html">&#x8BBE;&#x7F6E;GMS&#x8FDB;&#x884C;&#x6E90;&#x4EE3;&#x7801;&#x63A7;&#x5236;</a></li>
+									<li><a href="../001_Advanced Use/Source Control/Using Source Control.html">GMS&#x6E90;&#x4EE3;&#x7801;&#x63A7;&#x5236;&#x7684;&#x4F7F;&#x7528;</a></li>														
+								</ul>
+							</li>							
+							<li>
+								<a href="../001_Advanced Use/Global game settings/index.html">&#x5168;&#x5C40;&#x6E38;&#x620F;&#x8BBE;&#x5B9A;</a>
+								<ul>
+									<li><a href="../001_Advanced Use/Global game settings/General Tab.html">General &#x5E38;&#x89C4;&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../001_Advanced Use/Global game settings/Texture Groups Tab.html">Texture Groups &#x7EB9;&#x7406;&#x7EC4;</a></li>
+									<li><a href="../001_Advanced Use/Global game settings/Project Info Tab.html">Project Info &#x9879;&#x76EE;&#x4FE1;&#x606F;</a></li>
+									<li><a href="../001_Advanced Use/Global game settings/Facebook Tab.html">Facebook &#x8138;&#x4E66;</a></li>
+									<li><a href="../001_Advanced Use/Global game settings/Source Control Tab.html">Source Control &#x4EE3;&#x7801;&#x63A7;&#x5236;</a></li>
+									<li><a href="../001_Advanced Use/Global game settings/Advertising Tab.html">Advertising &#x5E7F;&#x544A;</a></li>
+									<li><a href="../001_Advanced Use/Global game settings/Analytics Tab.html">Analytics &#x5E94;&#x7528;&#x6570;&#x636E;&#x5206;&#x6790;</a></li>
+									<li><a href="../001_Advanced Use/Global game settings/In App Purchases Tab.html">IAP&#x5E94;&#x7528;&#x5185;&#x90E8;&#x4ED8;&#x8D39;</a></li>
+									<li><a href="../001_Advanced Use/Global game settings/Licensing Tab.html">Licensing &#x8BB8;&#x53EF;&#x8BC1;</a></li>
+									<li><a href="../001_Advanced Use/Global game settings/Extras Tab.html">Extras Tab &#x989D;&#x5916;&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../001_Advanced Use/Global game settings/Windows Tab.html">Windows&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../001_Advanced Use/Global game settings/Mac OS Tab.html">Mac OS&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../001_Advanced Use/Global game settings/HTML5 Tab.html">HTML5&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../001_Advanced Use/Global game settings/iOS Tab.html">iOS&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../001_Advanced Use/Global game settings/Android Tab.html">Android&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../001_Advanced Use/Global game settings/Win8 Tab.html">Windows 8&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../001_Advanced Use/Global game settings/Win8 Phone Tab.html">Windows 8 Phone&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../001_Advanced Use/Global game settings/Tizen Tab.html">Tizen&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../001_Advanced Use/Global game settings/Linux Tab.html">Ubuntu(Linux)&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../001_Advanced Use/Global game settings/Steam Tab.html">Steam&#x9009;&#x9879;&#x5361;</a></li>														
+								</ul>
+							</li>
+
+							<li>
+								<a href="../001_Advanced Use/Preferences/index.html">Preferences &#x9996;&#x9009;&#x9879;</a>
+								<ul>
+									<li><a href="../001_Advanced Use/Preferences/General Preferences.html">General &#x5E38;&#x89C4;</a></li>
+									<li><a href="../001_Advanced Use/Preferences/Form Preferences.html">Forms &#x7A97;&#x53E3;</a></li>
+									<li><a href="../001_Advanced Use/Preferences/Scripts Preferences.html">Scripts &#x811A;&#x672C;</a></li>
+									<li><a href="../001_Advanced Use/Preferences/Editor Preferences.html">Editors &#x7F16;&#x8F91;&#x5668;</a></li>
+									<li><a href="../001_Advanced Use/Preferences/Server Preferences.html">Web Server &#x670D;&#x52A1;&#x5668;</a></li>
+									<li><a href="../001_Advanced Use/Preferences/Android Preferences.html">Android</a></li>
+									<li><a href="../001_Advanced Use/Preferences/Windows8 Preferences.html">Windows 8</a></li>
+									<li><a href="../001_Advanced Use/Preferences/Windows Phone Preferences.html">Windows Phone</a></li>
+									<li><a href="../001_Advanced Use/Preferences/Tizen Preferences.html">Tizen</a></li>
+									<li><a href="../001_Advanced Use/Preferences/Mac Preferences.html">Mac OS</a></li>
+									<li><a href="../001_Advanced Use/Preferences/Linux Preferences.html">Ubuntu (Linux)</a></li>
+									<li><a href="../001_Advanced Use/Preferences/Steam Preferences.html">Steam</a></li>	
+									<li><a href="../001_Advanced Use/Preferences/Source Control Preferences.html">Source Control &#x4EE3;&#x7801;&#x63A7;&#x5236;</a></li>														
+								</ul>
+							</li>
+							<li><a href="../001_Advanced Use/011_Debugging.html">Debugging &#x8C03;&#x8BD5;</a></li>
+						</ul>
+					</li>
+					<li >
+						<a href="../002_Reference/index.html">GML&#x53C2;&#x8003;&#x624B;&#x518C;</a>
+						<ul>
+							<li>
+								<a href="../002_Reference/001_GML Language Overview/index.html">GML&#x6982;&#x8FF0;</a>
+								<ul>
+									<li><a href="../002_Reference/001_GML Language Overview/401_01_program.html">A Program &#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;</a></li>
+									<li><a href="../002_Reference/001_GML Language Overview/Variables/index.html">&#x53D8;&#x91CF;&#x53CA;&#x53D8;&#x91CF;&#x57DF;</a></li>
+									<li><a href="../002_Reference/001_GML Language Overview/401_05_addressing.html">&#x5728;&#x5176;&#x4ED6;&#x5B9E;&#x4F8B;&#x4E2D;&#x7684;&#x5BFB;&#x5740;&#x53D8;&#x91CF;</a></li>
+									<li><a href="../002_Reference/001_GML Language Overview/401_06_arrays.html">Arrays &#x6570;&#x7EC4;</a></li>
+									<li><a href="../002_Reference/001_GML Language Overview/401_16_functions.html">Functions &#x51FD;&#x6570;</a></li>
+									<li><a href="../002_Reference/001_GML Language Overview/401_03_assignments.html">Assignments &#x8D4B;&#x503C;</a></li>
+									<li><a href="../002_Reference/001_GML Language Overview/401_04_expressions.html">Expressions &#x8868;&#x8FBE;&#x5F0F;</a></li>
+									<li><a href="../002_Reference/001_GML Language Overview/401_07_if.html">If&#x8BED;&#x53E5;</a></li>
+									<li><a href="../002_Reference/001_GML Language Overview/401_08_repeat.html">Repeat&#x8BED;&#x53E5;</a></li>
+									<li><a href="../002_Reference/001_GML Language Overview/401_09_while.html">While&#x8BED;&#x53E5;</a></li>
+									<li><a href="../002_Reference/001_GML Language Overview/401_10_do.html">Do&#x8BED;&#x53E5;</a></li>
+									<li><a href="../002_Reference/001_GML Language Overview/401_11_for.html">For&#x8BED;&#x53E5;</a></li>
+									<li><a href="../002_Reference/001_GML Language Overview/401_12_switch.html">Switch&#x8BED;&#x53E5;</a></li>
+									<li><a href="../002_Reference/001_GML Language Overview/401_13_break.html">Break&#x8BED;&#x53E5;</a></li>
+									<li><a href="../002_Reference/001_GML Language Overview/401_14_continue.html">Continue&#x8BED;&#x53E5;</a></li>
+									<li><a href="../002_Reference/001_GML Language Overview/401_15_exit.html">Exit&#x8BED;&#x53E5;</a></li>
+									<li><a href="../002_Reference/001_GML Language Overview/401_18_with.html">With&#x7ED3;&#x6784;</a></li>
+									<li><a href="../002_Reference/001_GML Language Overview/401_17_scripts.html">Scripts &#x811A;&#x672C;</a></li>
+									<li><a href="../002_Reference/001_GML Language Overview/401_19_comment.html">&#x4EE3;&#x7801;&#x6CE8;&#x91CA;</a></li>
+									<li><a href="../002_Reference/001_GML Language Overview/401_20_evaluation_order.html">Evaluation Order &#x8BA1;&#x7B97;&#x987A;&#x5E8F;</a></li>														
+								</ul>
+							</li>
+							<li class="Label">&#x5B9E;&#x6570;&#x4E0E;&#x5B57;&#x7B26;&#x4E32;</li>							
+							<li><a href="../002_Reference/Date and Time/index.html">Date and Time &#x65E5;&#x671F;&#x4E0E;&#x65F6;&#x95F4;</a></li>
+							<li>
+								<a href="../002_Reference/Maths/index.html">Maths &#x6570;&#x5B66;</a>
+								<ul>
+									<li><a href="../002_Reference/Maths/Real valued functions/index.html">Real Number Functions &#x5B9E;&#x6570;&#x51FD;&#x6570;</a></li>
+									<li><a href="../002_Reference/Maths/Vector Functions/index.html">Vector Functions &#x77E2;&#x91CF;&#x51FD;&#x6570;</a></li>														
+								</ul>
+							</li>
+							<li><a href="../002_Reference/Strings/index.html">Strings &#x5B57;&#x7B26;&#x4E32;</a></li>
+							<li class="Label">Game Play &#x6E38;&#x620F;&#x8FD0;&#x884C;</li>							
+							<li>
+								<a href="../002_Reference/Game Assets/index.html">Game Assets&#x6E38;&#x620F;&#x539F;&#x751F;&#x8D44;&#x6E90;</a>
+								<ul>
+									<li><a href="../002_Reference/Game Assets/Sprites/index.html">Sprites &#x7CBE;&#x7075;</a></li>
+									<li><a href="../002_Reference/Game Assets/Backgrounds/index.html">Backgrounds &#x80CC;&#x666F;</a></li>
+									<li><a href="../002_Reference/Game Assets/Sounds/index.html">Sounds &#x58F0;&#x97F3;</a></li>
+									<li><a href="../002_Reference/Game Assets/Fonts/index.html">Fonts &#x5B57;&#x4F53;</a></li>
+									<li><a href="../002_Reference/Paths/index.html">Paths &#x8DEF;&#x5F84;</a></li>
+									<li><a href="../002_Reference/Timelines/index.html">Timelines &#x65F6;&#x95F4;&#x8F74;</a></li>
+									<li><a href="../002_Reference/Rooms/index.html">Rooms &#x623F;&#x95F4;</a></li>															
+								</ul>
+							</li>
+							<li>
+								<a href="../002_Reference/Mouse, Keyboard and Other Controls/index.html">&#x9F20;&#x6807;&#x3001;&#x952E;&#x76D8;&#x548C;&#x5176;&#x4ED6;&#x63A7;&#x5236;&#x8BBE;&#x5907;</a>
+								<ul>
+									<li><a href="../002_Reference/Mouse, Keyboard and Other Controls/Virtual Keys/index.html">Virtual Keys &#x865A;&#x62DF;&#x952E;</a></li>
+									<li><a href="../002_Reference/Mouse, Keyboard and Other Controls/Keyboard Input/index.html">Keyboard Input &#x952E;&#x76D8;&#x8F93;&#x5165;</a></li>
+									<li><a href="../002_Reference/Mouse, Keyboard and Other Controls/Mouse Input/index.html">Mouse Input &#x9F20;&#x6807;&#x8F93;&#x5165;</a></li>
+									<li><a href="../002_Reference/Mouse, Keyboard and Other Controls/Device Input/index.html">Device Input &#x8BBE;&#x5907;&#x8F93;&#x5165;</a></li>
+									<li><a href="../002_Reference/Mouse, Keyboard and Other Controls/GamePad Input/index.html">GamePad Input &#x6E38;&#x620F;&#x624B;&#x67C4;&#x8F93;&#x5165;</a></li>
+									<li><a href="../002_Reference/Mouse, Keyboard and Other Controls/Joystick Input/index.html">Joystick Input &#x6447;&#x6746;&#x8F93;&#x5165;</a></li>
+									<li><a href="../002_Reference/Mouse, Keyboard and Other Controls/immersion Haptics/index.html">Immersion Haptics &#x89E6;&#x6478;&#x8F93;&#x5165;</a></li>																							
+								</ul>
+							</li>
+							<li>
+								<a href="../002_Reference/Movement and Collisions/index.html">&#x79FB;&#x52A8;&#x4E0E;&#x78B0;&#x649E;</a>
+								<ul>
+									<li><a href="../002_Reference/Movement and Collisions/Movement/index.html">Movement &#x79FB;&#x52A8;</a></li>
+									<li><a href="../002_Reference/Movement and Collisions/Motion Planning/index.html">Motion Planning &#x8FD0;&#x52A8;&#x8BBE;&#x8BA1;</a></li>
+									<li><a href="../002_Reference/Movement and Collisions/Collisions/index.html">Collisions &#x78B0;&#x649E;</a></li>														
+								</ul>
+							</li>
+							<li>
+								<a href="../002_Reference/Objects and Instances/index.html">&#x5BF9;&#x8C61;&#x4E0E;&#x5B9E;&#x4F8B;</a>
+								<ul>
+									<li><a href="../002_Reference/Objects and Instances/Objects/index.html">Objects &#x5BF9;&#x8C61;</a></li>
+									<li><a href="../002_Reference/Objects and Instances/Instances/index.html">Instances &#x5B9E;&#x4F8B;</a></li>														
+								</ul>
+							</li>
+							<li class="Label">Drawing And Display &#x7ED8;&#x5236;&#x4E0E;&#x663E;&#x793A;</li>
+							<li>
+								<a href="../002_Reference/Drawing/index.html">Drawing &#x7ED8;&#x5236;</a>
+								<ul>
+									<li><a href="../002_Reference/Drawing/Color And Blending/index.html">Color And Blending &#x989C;&#x8272;&#x4E0E;&#x6DF7;&#x5408;</a></li>
+									<li><a href="../002_Reference/Drawing/Drawing Basic Forms/index.html">Drawing Basic Forms &#x7ED8;&#x5236;&#x56FE;&#x5F62;</a></li>
+									<li><a href="../002_Reference/Drawing/Drawing Sprites And Backgrounds/index.html">Drawing Sprites And Backgrounds &#x7ED8;&#x5236;&#x7CBE;&#x7075;&#x548C;&#x80CC;&#x666F;</a></li>
+									<li><a href="../002_Reference/Drawing/Drawing Text/index.html">Drawing Text &#x7ED8;&#x5236;&#x6587;&#x672C;</a></li>
+									<li><a href="../002_Reference/Drawing/Drawing Primitives/index.html">Drawing Primitives &#x7ED8;&#x5236;&#x56FE;&#x5143;</a></li>
+									<li><a href="../002_Reference/Drawing/Drawing 3D/index.html">&#x7ED8;&#x5236;3D&#x56FE;&#x5F62;</a></li>
+									<li><a href="../002_Reference/Drawing/Drawing Surfaces/index.html">Drawing Surfaces &#x7ED8;&#x5236;&#x8868;&#x9762;</a></li>															
+								</ul>
+							</li>
+							<li>
+								<a href="../002_Reference/Shaders/index.html">Shaders &#x7740;&#x8272;&#x5668;</a>
+								<ul>
+									<li><a href="../002_Reference/Shaders/Vertex Formats/index.html">Vertex Formats &#x9876;&#x70B9;&#x683C;&#x5F0F;</a></li>
+									<li><a href="../002_Reference/Shaders/Primitive Building/index.html">Primitive Building &#x5EFA;&#x7ACB;&#x56FE;&#x5143;</a></li>
+									<li><a href="../002_Reference/Shaders/Shader Constants/index.html">Shader Constants &#x7740;&#x8272;&#x5668;&#x5E38;&#x91CF; </a></li>														
+								</ul>
+							</li>
+							<li><a href="../002_Reference/Surfaces/index.html">Surfaces &#x8868;&#x9762;</a></li>
+							<li>
+								<a href="../002_Reference/Windows And Views/index.html">&#x7A97;&#x53E3;&#x4E0E;&#x89C6;&#x91CE;</a>
+								<ul>
+									<li><a href="../002_Reference/Windows And Views/The Game Window/index.html">The Game Window &#x6E38;&#x620F;&#x7A97;&#x53E3;</a></li>
+									<li><a href="../002_Reference/Windows And Views/Views/index.html">Views &#x89C6;&#x91CE;</a></li>														
+								</ul>
+							</li>
+							<li class="Label">Advanced Functions &#x9AD8;&#x7EA7;&#x51FD;&#x6570;</li>
+							<li>
+
+								<a href="../002_Reference/Data Structures/index.html">&#x6570;&#x636E;&#x7ED3;&#x6784;</a>
+								<ul>
+									<li><a href="../002_Reference/Data Structures/DS Stacks/index.html">Stacks &#x5806;&#x6808;</a></li>
+									<li><a href="../002_Reference/Data Structures/DS Queues/index.html">Queues &#x961F;&#x5217;</a></li>
+									<li><a href="../002_Reference/Data Structures/DS Lists/index.html">Lists &#x5217;&#x8868;</a></li>
+									<li><a href="../002_Reference/Data Structures/DS Maps/index.html">Maps &#x5730;&#x56FE;</a></li>
+									<li><a href="../002_Reference/Data Structures/DS Priority Queues/index.html">Priority Queues &#x4F18;&#x5148;&#x961F;&#x5217;</a></li>
+									<li><a href="../002_Reference/Data Structures/DS Grids/index.html">Grids &#x7F51;&#x683C;</a></li>																								
+								</ul>
+							</li>
+							<li>
+								<a href="../002_Reference/Particles/index.html">Particles &#x7C92;&#x5B50;</a>
+								<ul>
+									<li><a href="../002_Reference/Particles/Simple Effects/index.html">Simple Effects &#x7B80;&#x5355;&#x7279;&#x6548;</a></li>
+									<li><a href="../002_Reference/Particles/Particle Systems/index.html">Particle Systems &#x7C92;&#x5B50;&#x7CFB;&#x7EDF;</a></li>
+									<li><a href="../002_Reference/Particles/Particle Types/index.html">Particle Types &#x7C92;&#x5B50;&#x7C7B;&#x578B;</a></li>
+									<li><a href="../002_Reference/Particles/Particle Emitters/index.html">Particle Emitters &#x7C92;&#x5B50;&#x53D1;&#x5C04;&#x5668;</a></li>																																	
+								</ul>
+							</li>
+							<li>
+								<a href="../002_Reference/Physics/index.html">Physics &#x7269;&#x7406;&#x51FD;&#x6570;</a>
+								<ul>
+									<li><a href="../002_Reference/Physics/The Physics World/index.html">The Physics World &#x7269;&#x7406;&#x73AF;&#x5883;</a></li>
+									<li><a href="../002_Reference/Physics/Forces/index.html">Forces &#x529B;</a></li>
+									<li><a href="../002_Reference/Physics/Fixtures/index.html">Fixtures &#x56FA;&#x5B9A;&#x88C5;&#x7F6E;</a></li>
+									<li><a href="../002_Reference/Physics/Joints/index.html">Joints &#x8054;&#x63A5;</a></li>
+									<li><a href="../002_Reference/Physics/Physics Variables/index.html">Physics Variables &#x7269;&#x7406;&#x53D8;&#x91CF;</a></li>																																
+								</ul>
+							</li>
+							<li>
+								<a href="../002_Reference/File Handling/index.html">&#x6587;&#x4EF6;&#x5904;&#x7406;(File Handling)</a>
+								<ul>
+									<li><a href="../002_Reference/File Handling/File System Limits.html">File System Limits &#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x9650;&#x5236;</a></li>																																							
+								</ul>
+							</li>
+							<li><a href="../002_Reference/Operating System/index.html">Operating System &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</a></li>
+							<li><a href="../002_Reference/Buffers/index.html">Buffers &#x7F13;&#x5B58;&#x533A;</a></li>
+							<li><a href="../002_Reference/Networking/index.html">Networking &#x8054;&#x7F51;</a></li>
+							<li class="Label">Platform Specific &#x5E73;&#x53F0;&#x7279;&#x6027;</li>
+							<li><a href="../002_Reference/HTML5/index.html">HTML5</a></li>
+							<li>
+								<a href="../002_Reference/Windows8/index.html">Windows 8</a>
+								<ul>
+									<li><a href="../002_Reference/Windows8/Windows 8 Phone/index.html">Windows 8 Phone</a></li>																																							
+								</ul>
+							</li>
+							<li><a href="../002_Reference/Advertising and Analytics/index.html">&#x5E7F;&#x544A;&#x4E0E;&#x6570;&#x636E;&#x5206;&#x6790;</a></li>
+							<li>
+								<a href="../002_Reference/Social Gaming/index.html">&#x6E38;&#x620F;&#x793E;&#x4EA4;&#x8BBE;&#x8BA1;</a>
+								<ul>
+									<li><a href="../002_Reference/Social Gaming/Facebook/index.html">Facebook</a></li>
+									<li><a href="../002_Reference/Social Gaming/Achievements and Leaderboards/index.html">Achievements and Leaderboards &#x6210;&#x5C31;&#x4E0E;&#x6392;&#x884C;&#x699C;</a></li>
+									<li><a href="../002_Reference/Social Gaming/Achievements and Leaderboards/Local High Scores/index.html">Local High Scores &#x672C;&#x5730;&#x9AD8;&#x5206;&#x699C;</a></li>																																									
+								</ul>
+							</li>
+							<li>
+								<a href="../002_Reference/In App Purchases/index.html">IAP&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5185;&#x8D2D;&#x4E70;</a>
+								<ul>
+									<li><a href="../002_Reference/In App Purchases/IAP Example.html">IAP&#x793A;&#x4F8B;</a></li>
+									<li><a href="../002_Reference/In App Purchases/IAP Testing.html">IAP&#x6D4B;&#x8BD5;</a></li>
+									<li><a href="../002_Reference/In App Purchases/IAP Server Setup.html">IAP&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x8BBE;&#x7F6E;</a></li>																																									
+								</ul>
+							</li>
+							<li><a href="../002_Reference/Asynchronous Functions/index.html">Asynchronous &#x5F02;&#x6B65;</a></li>
+							<li><a href="../002_Reference/Cloud Services/index.html">Cloud Services &#x4E91;&#x670D;&#x52A1;</a></li>
+							<li><a href="../002_Reference/Steam API/index.html">Steam API &#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x63A5;&#x53E3;</a></li>
+							<li class="Label">Extras &#x9644;&#x52A0;</li>
+							<li><a href="../002_Reference/Debugging/index.html">Debugging &#x8C03;&#x8BD5;</a></li>
+							<li><a href="../002_Reference/Miscellaneous/index.html">Miscellaneous &#x6742;&#x9879;</a></li>
+							<li><a href="../002_Reference/017_Obsolete Functions/index.html">Obsolete Functions &#x6DD8;&#x6C70;&#x51FD;&#x6570;</a></li>
+						</ul>
+					</li>
+					<li ><a href="#">&#x5B9E;&#x4F8B;&#x6559;&#x7A0B;&#x53CA;&#x5FC3;&#x5F97;</a></li>
+					<li ><a href="#">&#x5B9E;&#x9A8C;&#x6027;&#x9879;&#x76EE;</a></li>
+					<li ><a href="#">&#x5E94;&#x7528;&#x8BBE;&#x7F6E;</a></li>
+					<li ><a href="../update_log.html">Update log</a></li>
+					<li ><a href="../index_searcher.html">&#x7D22;&#x5F15;&#x76EE;&#x5F55;</a></li>					
+				</ul>			
+			</nav>
+<!-- #EndLibraryItem -->..<!-- #BeginLibraryItem "/mmenu_rightlist.lbi" --><!-- mmenu_right up 1 -->
+			<nav id="menu-right">
+				<ul>
+					<li>
+						<span>GMS&#x4F7F;&#x7528;&#x95EE;&#x9898;&#x53EF;&#x4EE5;&#x8054;&#x7CFB;&#x6211;</span>
+						<ul>
+							<li class="Label">A</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/1/" />
+									Alexa<br />
+									<small>Johnson</small>
+								</a>
+							</li>
+						</ul>
+					</li>
+					
+					<li>
+						<span>&#x7F51;&#x7AD9;&#x95EE;&#x9898;&#x53EF;&#x4EE5;&#x8054;&#x7CFB;&#x6211;</span>
+						<ul>
+							<li class="Label">D</li>
+							<li class="img">
+								<a href="mailto:deciia@qq.com">
+									<img src="../deciia@qq.com" />
+									Adam<br />
+									<small>Deciia</small>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+<!-- mmenu_right down 1 -->
+<!-- #EndLibraryItem --></div></body>
+</html>
+
+
+<!-- KEYWORDS
+installation
+system requirements
+Ubuntu
+MacOSX
+Tizen
+iOS
+Android
+HTML5
+Windows 8
+Windows Phone
+minimum specs
+DirectX
+target
+help
+module
+minimum requirements
+YYC
+YoYo Compiler
+-->

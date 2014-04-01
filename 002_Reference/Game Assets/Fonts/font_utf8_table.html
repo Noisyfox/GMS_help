@@ -1,0 +1,1115 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/GMS_helppage.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>UTF-8</title>
+<!-- InstanceEndEditable --><!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<link type="text/css" rel="stylesheet" href="../../../style.css" />
+<link type="text/css" rel="stylesheet" href="../../../src/css/jquery.mmenu.all.css" />
+<script type="text/javascript" src="../../../src/js/jquery.min.js"></script>
+<script type="text/javascript" src="../../../src/js/hammer.min.js"></script>
+<script type="text/javascript" src="../../../src/js/jquery.mmenu.min.all_old.js"></script>
+<script type="text/javascript">
+
+			//	The menu on the right
+			$(function() {
+
+				var $menu = $('nav#menu-right');
+				$menu.mmenu({
+					position	: 'right',
+					classes		: 'mm-black',
+					dragOpen	: true,
+					counters	: true,
+					searchfield	: true,
+					labels		: {
+						fixed		: !$.mmenu.support.touch
+					}
+				});
+
+				//	Click a menu-item
+				var $confirm = $('#confirmation');
+				$menu.find( 'li a' ).not( '.mm-subopen' ).not( '.mm-subclose' ).bind(
+					'click.example',
+					function( e )
+					{
+						e.preventDefault();
+						$confirm.show().text( 'You clicked "' + $.trim( $(this).text() ) + '"' );
+						$('#menu-left').trigger( 'close' );
+					}
+				);
+			});
+			
+			//	The menu on the left
+			$(function() {
+
+				var $menu0 = $('nav#menu-left');
+
+				$menu0.mmenu({
+					position	: 'left',
+					classes		: 'mm-black',
+					dragOpen	: true,
+					counters	: true,
+					searchfield	: true,
+					labels		: {
+						fixed		: !$.mmenu.support.touch
+					}
+				});		
+				
+			});			
+
+			// for one page
+
+			$(function() {
+				var $menu = $('nav#menu-left'),
+					$html = $('html, body');
+		
+				$menu.mmenu();
+				$menu.find( 'li > a' ).on(
+					'click',
+					function()
+					{
+						var href = $(this).attr( 'href' );
+		
+						//	if the clicked link is linked to an anchor, scroll the page to that anchor 
+						if ( href.slice( 0, 1 ) == '#' )
+						{
+							$menu.one(
+								'closed.mm',
+								function()
+								{
+									setTimeout(
+										function()
+										{
+											$html.animate({
+												scrollTop: $( href ).offset().top
+											});	
+										}, 10
+									);	
+								}
+							);						
+						}
+					}
+				);
+			});
+
+			// for the tips
+			
+			$(function() {
+				var options = {
+					classes			: 'mm-black',
+					modal			: true
+				};				
+			
+				options.position = 'bottom';
+				options.zposition = 'front';
+				$('#english-1').mmenu( options );
+				
+				options.position = 'bottom';
+				options.zposition = 'front';
+				$('#english-2').mmenu( options );
+				
+				options.position = 'bottom';
+				options.zposition = 'front';
+				$('#tips-1').mmenu( options );
+
+			});
+	
+</script>
+<!-- InstanceParam name="OptionalRegion_menuright" type="boolean" value="true" --><!-- InstanceParam name="OptionalRegion_menuleft" type="boolean" value="true" --><!-- InstanceParam name="OptionalRegion_onepage" type="boolean" value="false" --><!-- InstanceParam name="OptionalRegion_tips" type="boolean" value="false" --><!-- InstanceParam name="OptionalRegion_footer" type="boolean" value="false" -->
+<style type="text/css">
+<!--
+h2 {
+	font-size: 1em;
+}
+-->
+</style></head>
+<body bgcolor="#FFFFFF">
+<!-- the page header part  -->
+<div id="page">
+			<div id="header" >
+				<a href="#menu-left"></a>
+				<!-- InstanceBeginEditable name="EditRegion_pagetitle" -->UTF-8<!-- InstanceEndEditable --><a href="#menu-right" class="friends right"></a>			
+			</div>
+
+  <div id="content" >	
+					
+  <!-- InstanceBeginEditable name="EditRegion_content" -->
+<h1>UTF-8</h1>
+
+<h2>This section shows all the standard UTF 8 characters.</h2>
+
+<p>
+<div class="compat">
+
+	<table class="compat">
+	
+		<tr><th>Unicode<br/>code point</th><th>character</th><th>UTF-8<br/>(hex.)</th><th>name</th></tr>
+
+		<tr><td>U+0000</td><td>&nbsp;</td><td>00</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+0001</td><td>&nbsp;</td><td>01</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+0002</td><td>&nbsp;</td><td>02</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+0003</td><td>&nbsp;</td><td>03</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+0004</td><td>&nbsp;</td><td>04</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+0005</td><td>&nbsp;</td><td>05</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+0006</td><td>&nbsp;</td><td>06</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+0007</td><td>&nbsp;</td><td>07</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+0008</td><td>&nbsp;</td><td>08</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+0009</td><td>&nbsp;</td><td>09</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+000A</td><td>&nbsp;</td><td>0a</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+000B</td><td>&nbsp;</td><td>0b</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+000C</td><td>&nbsp;</td><td>0c</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+000D</td><td>&nbsp;</td><td>0d</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+000E</td><td>&nbsp;</td><td>0e</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+000F</td><td>&nbsp;</td><td>0f</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+0010</td><td>&nbsp;</td><td>10</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+0011</td><td>&nbsp;</td><td>11</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+0012</td><td>&nbsp;</td><td>12</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+0013</td><td>&nbsp;</td><td>13</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+0014</td><td>&nbsp;</td><td>14</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+0015</td><td>&nbsp;</td><td>15</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+0016</td><td>&nbsp;</td><td>16</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+0017</td><td>&nbsp;</td><td>17</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+0018</td><td>&nbsp;</td><td>18</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+0019</td><td>&nbsp;</td><td>19</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+001A</td><td>&nbsp;</td><td>1a</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+001B</td><td>&nbsp;</td><td>1b</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+001C</td><td>&nbsp;</td><td>1c</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+001D</td><td>&nbsp;</td><td>1d</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+001E</td><td>&nbsp;</td><td>1e</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+001F</td><td>&nbsp;</td><td>1f</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+0020</td><td> </td><td>20</td><td>SPACE</td></tr>
+
+		<tr class="alt"><td>U+0021</td><td>!</td><td>21</td><td>EXCLAMATION MARK</td></tr>
+
+		<tr><td>U+0022</td><td>"</td><td>22</td><td>QUOTATION MARK</td></tr>
+
+		<tr class="alt"><td>U+0023</td><td>#</td><td>23</td><td>NUMBER SIGN</td></tr>
+
+		<tr><td>U+0024</td><td>$</td><td>24</td><td>DOLLAR SIGN</td></tr>
+
+		<tr class="alt"><td>U+0025</td><td>%</td><td>25</td><td>PERCENT SIGN</td></tr>
+
+		<tr><td>U+0026</td><td>&amp;</td><td>26</td><td>AMPERSAND</td></tr>
+
+		<tr class="alt"><td>U+0027</td><td>'</td><td>27</td><td>APOSTROPHE</td></tr>
+
+		<tr><td>U+0028</td><td>(</td><td>28</td><td>LEFT PARENTHESIS</td></tr>
+
+		<tr class="alt"><td>U+0029</td><td>)</td><td>29</td><td>RIGHT PARENTHESIS</td></tr>
+
+		<tr><td>U+002A</td><td>*</td><td>2a</td><td>ASTERISK</td></tr>
+
+		<tr class="alt"><td>U+002B</td><td>+</td><td>2b</td><td>PLUS SIGN</td></tr>
+
+		<tr><td>U+002C</td><td>,</td><td>2c</td><td>COMMA</td></tr>
+
+		<tr class="alt"><td>U+002D</td><td>-</td><td>2d</td><td>HYPHEN-MINUS</td></tr>
+
+		<tr><td>U+002E</td><td>.</td><td>2e</td><td>FULL STOP</td></tr>
+
+		<tr class="alt"><td>U+002F</td><td>/</td><td>f</td><td>SOLIDUS</td></tr>
+
+		<tr><td>U+0030</td><td>0</td><td>30</td><td>DIGIT ZERO</td></tr>
+
+		<tr class="alt"><td>U+0031</td><td>1</td><td>31</td><td>DIGIT ONE</td></tr>
+
+		<tr><td>U+0032</td><td>2</td><td>32</td><td>DIGIT TWO</td></tr>
+
+		<tr class="alt"><td>U+0033</td><td>3</td><td>33</td><td>DIGIT THREE</td></tr>
+
+		<tr><td>U+0034</td><td>4</td><td>34</td><td>DIGIT FOUR</td></tr>
+
+		<tr class="alt"><td>U+0035</td><td>5</td><td>35</td><td>DIGIT FIVE</td></tr>
+
+		<tr><td>U+0036</td><td>6</td><td>36</td><td>DIGIT SIX</td></tr>
+
+		<tr class="alt"><td>U+0037</td><td>7</td><td>37</td><td>DIGIT SEVEN</td></tr>
+
+		<tr><td>U+0038</td><td>8</td><td>38</td><td>DIGIT EIGHT</td></tr>
+
+		<tr class="alt"><td>U+0039</td><td>9</td><td>39</td><td>DIGIT NINE</td></tr>
+
+		<tr><td>U+003A</td><td>:</td><td>3a</td><td>COLON</td></tr>
+
+		<tr class="alt"><td>U+003B</td><td>;</td><td>3b</td><td>SEMICOLON</td></tr>
+
+		<tr><td>U+003C</td><td>&lt;</td><td>3c</td><td>LESS-THAN SIGN</td></tr>
+
+		<tr class="alt"><td>U+003D</td><td>=</td><td>3d</td><td>EQUALS SIGN</td></tr>
+
+		<tr><td>U+003E</td><td>&gt;</td><td>3e</td><td>GREATER-THAN SIGN</td></tr>
+
+		<tr class="alt"><td>U+003F</td><td>?</td><td>3f</td><td>QUESTION MARK</td></tr>
+
+		<tr><td>U+0040</td><td>@</td><td>40</td><td>COMMERCIAL AT</td></tr>
+
+		<tr class="alt"><td>U+0041</td><td>A</td><td>41</td><td>LATIN CAPITAL LETTER A</td></tr>
+
+		<tr><td>U+0042</td><td>B</td><td>42</td><td>LATIN CAPITAL LETTER B</td></tr>
+
+		<tr class="alt"><td>U+0043</td><td>C</td><td>43</td><td>LATIN CAPITAL LETTER C</td></tr>
+
+		<tr><td>U+0044</td><td>D</td><td>44</td><td>LATIN CAPITAL LETTER D</td></tr>
+
+		<tr class="alt"><td>U+0045</td><td>E</td><td>45</td><td>LATIN CAPITAL LETTER E</td></tr>
+
+		<tr><td>U+0046</td><td>F</td><td>46</td><td>LATIN CAPITAL LETTER F</td></tr>
+
+		<tr class="alt"><td>U+0047</td><td>G</td><td>47</td><td>LATIN CAPITAL LETTER G</td></tr>
+
+		<tr><td>U+0048</td><td>H</td><td>48</td><td>LATIN CAPITAL LETTER H</td></tr>
+
+		<tr class="alt"><td>U+0049</td><td>I</td><td>49</td><td>LATIN CAPITAL LETTER I</td></tr>
+
+		<tr><td>U+004A</td><td>J</td><td>4a</td><td>LATIN CAPITAL LETTER J</td></tr>
+
+		<tr class="alt"><td>U+004B</td><td>K</td><td>4b</td><td>LATIN CAPITAL LETTER K</td></tr>
+
+		<tr><td>U+004C</td><td>L</td><td>4c</td><td>LATIN CAPITAL LETTER L</td></tr>
+
+		<tr class="alt"><td>U+004D</td><td>M</td><td>4d</td><td>LATIN CAPITAL LETTER M</td></tr>
+
+		<tr><td>U+004E</td><td>N</td><td>4e</td><td>LATIN CAPITAL LETTER N</td></tr>
+
+		<tr class="alt"><td>U+004F</td><td>O</td><td>4f</td><td>LATIN CAPITAL LETTER O</td></tr>
+
+		<tr><td>U+0050</td><td>P</td><td>50</td><td>LATIN CAPITAL LETTER P</td></tr>
+
+		<tr class="alt"><td>U+0051</td><td>Q</td><td>51</td><td>LATIN CAPITAL LETTER Q</td></tr>
+
+		<tr><td>U+0052</td><td>R</td><td>52</td><td>LATIN CAPITAL LETTER R</td></tr>
+
+		<tr class="alt"><td>U+0053</td><td>S</td><td>53</td><td>LATIN CAPITAL LETTER S</td></tr>
+
+		<tr><td>U+0054</td><td>T</td><td>54</td><td>LATIN CAPITAL LETTER T</td></tr>
+
+		<tr class="alt"><td>U+0055</td><td>U</td><td>55</td><td>LATIN CAPITAL LETTER U</td></tr>
+
+		<tr><td>U+0056</td><td>V</td><td>56</td><td>LATIN CAPITAL LETTER V</td></tr>
+
+		<tr class="alt"><td>U+0057</td><td>W</td><td>57</td><td>LATIN CAPITAL LETTER W</td></tr>
+
+		<tr><td>U+0058</td><td>X</td><td>58</td><td>LATIN CAPITAL LETTER X</td></tr>
+
+		<tr class="alt"><td>U+0059</td><td>Y</td><td>59</td><td>LATIN CAPITAL LETTER Y</td></tr>
+
+		<tr><td>U+005A</td><td>Z</td><td>5a</td><td>LATIN CAPITAL LETTER Z</td></tr>
+
+		<tr class="alt"><td>U+005B</td><td>[</td><td>5b</td><td>LEFT SQUARE BRACKET</td></tr>
+
+		<tr><td>U+005C</td><td>\</td><td>5c</td><td>REVERSE SOLIDUS</td></tr>
+
+		<tr class="alt"><td>U+005D</td><td>]</td><td>5d</td><td>RIGHT SQUARE BRACKET</td></tr>
+
+		<tr><td>U+005E</td><td>^</td><td>5e</td><td>CIRCUMFLEX ACCENT</td></tr>
+
+		<tr class="alt"><td>U+005F</td><td>_</td><td>5f</td><td>LOW LINE</td></tr>
+
+		<tr><td>U+0060</td><td>`</td><td>60</td><td>GRAVE ACCENT</td></tr>
+
+		<tr class="alt"><td>U+0061</td><td>a</td><td>61</td><td>LATIN SMALL LETTER A</td></tr>
+
+		<tr><td>U+0062</td><td>b</td><td>62</td><td>LATIN SMALL LETTER B</td></tr>
+
+		<tr class="alt"><td>U+0063</td><td>c</td><td>63</td><td>LATIN SMALL LETTER C</td></tr>
+
+		<tr><td>U+0064</td><td>d</td><td>64</td><td>LATIN SMALL LETTER D</td></tr>
+
+		<tr class="alt"><td>U+0065</td><td>e</td><td>65</td><td>LATIN SMALL LETTER E</td></tr>
+
+		<tr><td>U+0066</td><td>f</td><td>66</td><td>LATIN SMALL LETTER F</td></tr>
+
+		<tr class="alt"><td>U+0067</td><td>g</td><td>67</td><td>LATIN SMALL LETTER G</td></tr>
+
+		<tr><td>U+0068</td><td>h</td><td>68</td><td>LATIN SMALL LETTER H</td></tr>
+
+		<tr class="alt"><td>U+0069</td><td>i</td><td>69</td><td>LATIN SMALL LETTER I</td></tr>
+
+		<tr><td>U+006A</td><td>j</td><td>6a</td><td>LATIN SMALL LETTER J</td></tr>
+
+		<tr class="alt"><td>U+006B</td><td>k</td><td>6b</td><td>LATIN SMALL LETTER K</td></tr>
+
+		<tr><td>U+006C</td><td>l</td><td>6c</td><td>LATIN SMALL LETTER L</td></tr>
+
+		<tr class="alt"><td>U+006D</td><td>m</td><td>6d</td><td>LATIN SMALL LETTER M</td></tr>
+
+		<tr><td>U+006E</td><td>n</td><td>6e</td><td>LATIN SMALL LETTER N</td></tr>
+
+		<tr class="alt"><td>U+006F</td><td>o</td><td>6f</td><td>LATIN SMALL LETTER O</td></tr>
+
+		<tr><td>U+0070</td><td>p</td><td>70</td><td>LATIN SMALL LETTER P</td></tr>
+
+		<tr class="alt"><td>U+0071</td><td>q</td><td>71</td><td>LATIN SMALL LETTER Q</td></tr>
+
+		<tr><td>U+0072</td><td>r</td><td>72</td><td>LATIN SMALL LETTER R</td></tr>
+
+		<tr class="alt"><td>U+0073</td><td>s</td><td>73</td><td>LATIN SMALL LETTER S</td></tr>
+
+		<tr><td>U+0074</td><td>t</td><td>74</td><td>LATIN SMALL LETTER T</td></tr>
+
+		<tr class="alt"><td>U+0075</td><td>u</td><td>75</td><td>LATIN SMALL LETTER U</td></tr>
+
+		<tr><td>U+0076</td><td>v</td><td>76</td><td>LATIN SMALL LETTER V</td></tr>
+
+		<tr class="alt"><td>U+0077</td><td>w</td><td>77</td><td>LATIN SMALL LETTER W</td></tr>
+
+		<tr><td>U+0078</td><td>x</td><td>78</td><td>LATIN SMALL LETTER X</td></tr>
+
+		<tr class="alt"><td>U+0079</td><td>y</td><td>79</td><td>LATIN SMALL LETTER Y</td></tr>
+
+		<tr><td>U+007A</td><td>z</td><td>7a</td><td>LATIN SMALL LETTER Z</td></tr>
+
+		<tr class="alt"><td>U+007C</td><td>|</td><td>7c</td><td>VERTICAL LINE</td></tr>
+
+		<tr><td>U+007D</td><td>}</td><td>7d</td><td>RIGHT CURLY BRACKET</td></tr>
+
+		<tr class="alt"><td>U+007E</td><td>~</td><td>7e</td><td>TILDE</td></tr>
+
+		<tr><td>U+007F</td><td>&nbsp;</td><td>7f</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+0080</td><td>&nbsp;</td><td>c2 80</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+0081</td><td>&nbsp;</td><td>c2 81</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+0082</td><td>&nbsp;</td><td>c2 82</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+0083</td><td>&nbsp;</td><td>c2 83</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+0084</td><td>&nbsp;</td><td>c2 84</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+0085</td><td>&nbsp;</td><td>c2 85</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+0086</td><td>&nbsp;</td><td>c2 86</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+0087</td><td>&nbsp;</td><td>c2 87</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+0088</td><td>&nbsp;</td><td>c2 88</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+0089</td><td>&nbsp;</td><td>c2 89</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+008A</td><td>&nbsp;</td><td>c2 8a</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+008B</td><td>&nbsp;</td><td>c2 8b</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+008C</td><td>&nbsp;</td><td>c2 8c</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+008D</td><td>&nbsp;</td><td>c2 8d</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+008E</td><td>&nbsp;</td><td>c2 8e</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+008F</td><td>&nbsp;</td><td>c2 8f</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+0090</td><td>&nbsp;</td><td>c2 90</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+0091</td><td>&nbsp;</td><td>c2 91</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+0092</td><td>&nbsp;</td><td>c2 92</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+0093</td><td>&nbsp;</td><td>c2 93</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+0094</td><td>&nbsp;</td><td>c2 94</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+0095</td><td>&nbsp;</td><td>c2 95</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+0096</td><td>&nbsp;</td><td>c2 96</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+0097</td><td>&nbsp;</td><td>c2 97</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+0098</td><td>&nbsp;</td><td>c2 98</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+0099</td><td>&nbsp;</td><td>c2 99</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+009A</td><td>&nbsp;</td><td>c2 9a</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+009B</td><td>&nbsp;</td><td>c2 9b</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+009C</td><td>&nbsp;</td><td>c2 9c</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+009D</td><td>&nbsp;</td><td>c2 9d</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+009E</td><td>&nbsp;</td><td>c2 9e</td><td>&lt;control&gt;</td></tr>
+
+		<tr><td>U+009F</td><td>&nbsp;</td><td>c2 9f</td><td>&lt;control&gt;</td></tr>
+
+		<tr class="alt"><td>U+00A0</td><td> </td><td>c2 a0</td><td>NO-BREAK SPACE</td></tr>
+
+		<tr><td>U+00A1</td><td>?/td><td>c2 a1</td><td>INVERTED EXCLAMATION MARK</td></tr>
+
+		<tr class="alt"><td>U+00A2</td><td>?/td><td>c2 a2</td><td>CENT SIGN</td></tr>
+
+		<tr><td>U+00A3</td><td>?/td><td>c2 a3</td><td>POUND SIGN</td></tr>
+
+		<tr class="alt"><td>U+00A4</td><td>?/td><td>c2 a4</td><td>CURRENCY SIGN</td></tr>
+
+		<tr><td>U+00A5</td><td>?/td><td>c2 a5</td><td>YEN SIGN</td></tr>
+
+		<tr class="alt"><td>U+00A6</td><td>?/td><td>c2 a6</td><td>BROKEN BAR</td></tr>
+
+		<tr><td>U+00A7</td><td>?/td><td>c2 a7</td><td>SECTION SIGN</td></tr>
+
+		<tr class="alt"><td>U+00A8</td><td>?/td><td>c2 a8</td><td>DIAERESIS</td></tr>
+
+		<tr><td>U+00A9</td><td>?/td><td>c2 a9</td><td>COPYRIGHT SIGN</td></tr>
+
+		<tr class="alt"><td>U+00AA</td><td>?/td><td>c2 aa</td><td>FEMININE ORDINAL INDICATOR</td></tr>
+
+		<tr><td>U+00AB</td><td>?/td><td>c2 ab</td><td>LEFT-POINTING DOUBLE ANGLE QUOTATION MARK</td></tr>
+
+		<tr class="alt"><td>U+00AC</td><td>?/td><td>c2 ac</td><td>NOT SIGN</td></tr>
+
+		<tr><td>U+00AD</td><td>?/td><td>c2 ad</td><td>SOFT HYPHEN</td></tr>
+
+		<tr class="alt"><td>U+00AE</td><td>?/td><td>c2 ae</td><td>REGISTERED SIGN</td></tr>
+
+		<tr><td>U+00AF</td><td>?/td><td>c2 af</td><td>MACRON</td></tr>
+
+		<tr class="alt"><td>U+00B0</td><td>?/td><td>c2 b0</td><td>DEGREE SIGN</td></tr>
+
+		<tr><td>U+00B1</td><td>?/td><td>c2 b1</td><td>PLUS-MINUS SIGN</td></tr>
+
+		<tr class="alt"><td>U+00B2</td><td>?/td><td>c2 b2</td><td>SUPERSCRIPT TWO</td></tr>
+
+		<tr><td>U+00B3</td><td>?/td><td>c2 b3</td><td>SUPERSCRIPT THREE</td></tr>
+
+		<tr class="alt"><td>U+00B4</td><td>?/td><td>c2 b4</td><td>ACUTE ACCENT</td></tr>
+
+		<tr><td>U+00B5</td><td>?/td><td>c2 b5</td><td>MICRO SIGN</td></tr>
+
+		<tr class="alt"><td>U+00B6</td><td>?/td><td>c2 b6</td><td>PILCROW SIGN</td></tr>
+
+		<tr><td>U+00B7</td><td>?/td><td>c2 b7</td><td>MIDDLE DOT</td></tr>
+
+		<tr class="alt"><td>U+00B8</td><td>?/td><td>c2 b8</td><td>CEDILLA</td></tr>
+
+		<tr><td>U+00B9</td><td>?/td><td>c2 b9</td><td>SUPERSCRIPT ONE</td></tr>
+
+		<tr class="alt"><td>U+00BA</td><td>?/td><td>c2 ba</td><td>MASCULINE ORDINAL INDICATOR</td></tr>
+
+		<tr><td>U+00BB</td><td>?/td><td>c2 bb</td><td>RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK</td></tr>
+
+		<tr class="alt"><td>U+00BC</td><td>?/td><td>c2 bc</td><td>VULGAR FRACTION ONE QUARTER</td></tr>
+
+		<tr><td>U+00BD</td><td>?/td><td>c2 bd</td><td>VULGAR FRACTION ONE HALF</td></tr>
+
+		<tr class="alt"><td>U+00BE</td><td>?/td><td>c2 be</td><td>VULGAR FRACTION THREE QUARTERS</td></tr>
+
+		<tr><td>U+00BF</td><td>?/td><td>c2 bf</td><td>INVERTED QUESTION MARK</td></tr>
+
+		<tr class="alt"><td>U+00C0</td><td>?/td><td>c3 80</td><td>LATIN CAPITAL LETTER A WITH GRAVE</td></tr>
+
+		<tr><td>U+00C1</td><td>?/td><td>c3 81</td><td>LATIN CAPITAL LETTER A WITH ACUTE</td></tr>
+
+		<tr class="alt"><td>U+00C2</td><td>?/td><td>c3 82</td><td>LATIN CAPITAL LETTER A WITH CIRCUMFLEX</td></tr>
+
+		<tr><td>U+00C3</td><td>?/td><td>c3 83</td><td>LATIN CAPITAL LETTER A WITH TILDE</td></tr>
+
+		<tr class="alt"><td>U+00C4</td><td>?/td><td>c3 84</td><td>LATIN CAPITAL LETTER A WITH DIAERESIS</td></tr>
+
+		<tr><td>U+00C5</td><td>?/td><td>c3 85</td><td>LATIN CAPITAL LETTER A WITH RING ABOVE</td></tr>
+
+		<tr class="alt"><td>U+00C6</td><td>?/td><td>c3 86</td><td>LATIN CAPITAL LETTER AE</td></tr>
+
+		<tr><td>U+00C7</td><td>?/td><td>c3 87</td><td>LATIN CAPITAL LETTER C WITH CEDILLA</td></tr>
+
+		<tr class="alt"><td>U+00C8</td><td>?/td><td>c3 88</td><td>LATIN CAPITAL LETTER E WITH GRAVE</td></tr>
+
+		<tr><td>U+00C9</td><td>?/td><td>c3 89</td><td>LATIN CAPITAL LETTER E WITH ACUTE</td></tr>
+
+		<tr class="alt"><td>U+00CA</td><td>?/td><td>c3 8a</td><td>LATIN CAPITAL LETTER E WITH CIRCUMFLEX</td></tr>
+
+		<tr><td>U+00CB</td><td>?/td><td>c3 8b</td><td>LATIN CAPITAL LETTER E WITH DIAERESIS</td></tr>
+
+		<tr class="alt"><td>U+00CC</td><td>?/td><td>c3 8c</td><td>LATIN CAPITAL LETTER I WITH GRAVE</td></tr>
+
+		<tr><td>U+00CD</td><td>?/td><td>c3 8d</td><td>LATIN CAPITAL LETTER I WITH ACUTE</td></tr>
+
+		<tr class="alt"><td>U+00CE</td><td>?/td><td>c3 8e</td><td>LATIN CAPITAL LETTER I WITH CIRCUMFLEX</td></tr>
+
+		<tr><td>U+00CF</td><td>?/td><td>c3 8f</td><td>LATIN CAPITAL LETTER I WITH DIAERESIS</td></tr>
+
+		<tr class="alt"><td>U+00D0</td><td>?/td><td>c3 90</td><td>LATIN CAPITAL LETTER ETH</td></tr>
+
+		<tr><td>U+00D1</td><td>?/td><td>c3 91</td><td>LATIN CAPITAL LETTER N WITH TILDE</td></tr>
+
+		<tr class="alt"><td>U+00D2</td><td>?/td><td>c3 92</td><td>LATIN CAPITAL LETTER O WITH GRAVE</td></tr>
+
+		<tr><td>U+00D3</td><td>?/td><td>c3 93</td><td>LATIN CAPITAL LETTER O WITH ACUTE</td></tr>
+
+		<tr class="alt"><td>U+00D4</td><td>?/td><td>c3 94</td><td>LATIN CAPITAL LETTER O WITH CIRCUMFLEX</td></tr>
+
+		<tr><td>U+00D5</td><td>?/td><td>c3 95</td><td>LATIN CAPITAL LETTER O WITH TILDE</td></tr>
+
+		<tr class="alt"><td>U+00D6</td><td>?/td><td>c3 96</td><td>LATIN CAPITAL LETTER O WITH DIAERESIS</td></tr>
+
+		<tr><td>U+00D7</td><td>?/td><td>c3 97</td><td>MULTIPLICATION SIGN</td></tr>
+
+		<tr class="alt"><td>U+00D8</td><td>?/td><td>c3 98</td><td>LATIN CAPITAL LETTER O WITH STROKE</td></tr>
+
+		<tr><td>U+00D9</td><td>?/td><td>c3 99</td><td>LATIN CAPITAL LETTER U WITH GRAVE</td></tr>
+
+		<tr class="alt"><td>U+00DA</td><td>?/td><td>c3 9a</td><td>LATIN CAPITAL LETTER U WITH ACUTE</td></tr>
+
+		<tr><td>U+00DB</td><td>?/td><td>c3 9b</td><td>LATIN CAPITAL LETTER U WITH CIRCUMFLEX</td></tr>
+
+		<tr class="alt"><td>U+00DC</td><td>?/td><td>c3 9c</td><td>LATIN CAPITAL LETTER U WITH DIAERESIS</td></tr>
+
+		<tr><td>U+00DD</td><td>?/td><td>c3 9d</td><td>LATIN CAPITAL LETTER Y WITH ACUTE</td></tr>
+
+		<tr class="alt"><td>U+00DE</td><td>?/td><td>c3 9e</td><td>LATIN CAPITAL LETTER THORN</td></tr>
+
+		<tr><td>U+00DF</td><td>?/td><td>c3 9f</td><td>LATIN SMALL LETTER SHARP S</td></tr>
+
+		<tr class="alt"><td>U+00E0</td><td>?/td><td>c3 a0</td><td>LATIN SMALL LETTER A WITH GRAVE</td></tr>
+
+		<tr><td>U+00E1</td><td>?/td><td>c3 a1</td><td>LATIN SMALL LETTER A WITH ACUTE</td></tr>
+
+		<tr class="alt"><td>U+00E2</td><td>?/td><td>c3 a2</td><td>LATIN SMALL LETTER A WITH CIRCUMFLEX</td></tr>
+
+		<tr><td>U+00E3</td><td>?/td><td>c3 a3</td><td>LATIN SMALL LETTER A WITH TILDE</td></tr>
+
+		<tr class="alt"><td>U+00E4</td><td>?/td><td>c3 a4</td><td>LATIN SMALL LETTER A WITH DIAERESIS</td></tr>
+
+		<tr><td>U+00E5</td><td>?/td><td>c3 a5</td><td>LATIN SMALL LETTER A WITH RING ABOVE</td></tr>
+
+		<tr class="alt"><td>U+00E6</td><td>?/td><td>c3 a6</td><td>LATIN SMALL LETTER AE</td></tr>
+
+		<tr><td>U+00E7</td><td>?/td><td>c3 a7</td><td>LATIN SMALL LETTER C WITH CEDILLA</td></tr>
+
+		<tr class="alt"><td>U+00E8</td><td>?/td><td>c3 a8</td><td>LATIN SMALL LETTER E WITH GRAVE</td></tr>
+
+		<tr><td>U+00E9</td><td>?/td><td>c3 a9</td><td>LATIN SMALL LETTER E WITH ACUTE</td></tr>
+
+		<tr class="alt"><td>U+00EA</td><td>?/td><td>c3 aa</td><td>LATIN SMALL LETTER E WITH CIRCUMFLEX</td></tr>
+
+		<tr><td>U+00EB</td><td>?/td><td>c3 ab</td><td>LATIN SMALL LETTER E WITH DIAERESIS</td></tr>
+
+		<tr class="alt"><td>U+00EC</td><td>?/td><td>c3 ac</td><td>LATIN SMALL LETTER I WITH GRAVE</td></tr>
+
+		<tr><td>U+00ED</td><td>?/td><td>c3 ad</td><td>LATIN SMALL LETTER I WITH ACUTE</td></tr>
+
+		<tr class="alt"><td>U+00EE</td><td>?/td><td>c3 ae</td><td>LATIN SMALL LETTER I WITH CIRCUMFLEX</td></tr>
+
+		<tr><td>U+00EF</td><td>?/td><td>c3 af</td><td>LATIN SMALL LETTER I WITH DIAERESIS</td></tr>
+
+		<tr class="alt"><td>U+00F0</td><td>?/td><td>c3 b0</td><td>LATIN SMALL LETTER ETH</td></tr>
+
+		<tr><td>U+00F1</td><td>?/td><td>c3 b1</td><td>LATIN SMALL LETTER N WITH TILDE</td></tr>
+
+		<tr class="alt"><td>U+00F2</td><td>?/td><td>c3 b2</td><td>LATIN SMALL LETTER O WITH GRAVE</td></tr>
+
+		<tr><td>U+00F3</td><td>?/td><td>c3 b3</td><td>LATIN SMALL LETTER O WITH ACUTE</td></tr>
+
+		<tr class="alt"><td>U+00F4</td><td>?/td><td>c3 b4</td><td>LATIN SMALL LETTER O WITH CIRCUMFLEX</td></tr>
+
+		<tr><td>U+00F5</td><td>?/td><td>c3 b5</td><td>LATIN SMALL LETTER O WITH TILDE</td></tr>
+
+		<tr class="alt"><td>U+00F6</td><td>?/td><td>c3 b6</td><td>LATIN SMALL LETTER O WITH DIAERESIS</td></tr>
+
+		<tr><td>U+00F7</td><td>?/td><td>c3 b7</td><td>DIVISION SIGN</td></tr>
+
+		<tr class="alt"><td>U+00F8</td><td>?/td><td>c3 b8</td><td>LATIN SMALL LETTER O WITH STROKE</td></tr>
+
+		<tr><td>U+00F9</td><td>?/td><td>c3 b9</td><td>LATIN SMALL LETTER U WITH GRAVE</td></tr>
+
+		<tr class="alt"><td>U+00FA</td><td>?/td><td>c3 ba</td><td>LATIN SMALL LETTER U WITH ACUTE</td></tr>
+
+		<tr><td>U+00FB</td><td>?/td><td>c3 bb</td><td>LATIN SMALL LETTER U WITH CIRCUMFLEX</td></tr>
+
+		<tr class="alt"><td>U+00FC</td><td>?/td><td>c3 bc</td><td>LATIN SMALL LETTER U WITH DIAERESIS</td></tr>
+
+		<tr><td>U+00FD</td><td>?/td><td>c3 bd</td><td>LATIN SMALL LETTER Y WITH ACUTE</td></tr>
+
+		<tr class="alt"><td>U+00FE</td><td>?/td><td>c3 be</td><td>LATIN SMALL LETTER THORN</td></tr>
+
+		<tr><td>U+00FF</td><td></td><td>c3 bf</td><td>LATIN SMALL LETTER Y WITH DIAERESIS</td></tr>
+
+	</table>
+</div>
+
+<p>
+<br>
+</p>
+<p>
+
+<div class="clear">
+	<div style="float:left">
+		Back : <a href="index.html">Fonts</a>
+	</div>
+	<div style="float:right">
+		Next : <a href="font_get_name.html">font_get_name</a>
+	</div>
+</div>
+</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
+  <!-- InstanceEndEditable -->
+
+<!-- for onepage -->
+
+<!-- KEYWORDS
+onepage
+-->
+
+<!-- for tips -->
+
+<!-- KEYWORDS
+contents
+-->
+</div>
+
+<!-- the footer  -->
+
+<!-- KEYWORDS
+menu_left
+-->
+
+			<nav id="menu-left">
+			<!-- mmenu_leftlist up -->
+				<ul>
+					<li ><a href="../../../index.html">GMS&#x624B;&#x518C;&#x9996;&#x9875;</a> </li>					
+					<li >
+						<a href="../../../000_Using%20GameMaker/index.html">GMS&#x4F7F;&#x7528;</a>
+						<ul>
+							<li><a href="../../../000_Using%20GameMaker/000_Introduction.html">Introduction &#x4ECB;&#x7ECD;</a></li>
+							<li><a href="../../../000_Using%20GameMaker/001_Installation.html">Installation &#x5B89;&#x88C5;</a></li>
+							<li><a href="../../../000_Using%20GameMaker/002_Activation.html">Activation &#x6FC0;&#x6D3B;</a></li>
+							<li><a href="../../../000_Using%20GameMaker/003_GameMaker%20Studio%20Overview.html">GMS &#x6982;&#x8FF0;</a></li>
+							<li>
+								<a href="../../../000_Using%20GameMaker/004_The%20Graphical%20User%20Interface.html">GMS&#x7528;&#x6237;&#x754C;&#x9762;&#x4ECB;&#x7ECD;</a>
+								<ul>
+									<li><a href="../../../000_Using%20GameMaker/Drop%20Down%20Menus/The%20File%20Menu.html">The File Menu &#x201C;&#x6587;&#x4EF6;&#x201D;&#x83DC;&#x5355;</a></li>
+									<li><a href="../../../000_Using%20GameMaker/Drop%20Down%20Menus/The%20Edit%20Menu.html">The Edit Menu &#x201C;&#x7F16;&#x8F91;&#x201D;&#x83DC;&#x5355;</a></li>
+									<li><a href="../../../000_Using%20GameMaker/Drop%20Down%20Menus/The%20Resources%20Menu.html">The Resources Menu &#x201C;&#x8D44;&#x6E90;&#x201D;&#x83DC;&#x5355;</a></li>
+									<li><a href="../../../000_Using%20GameMaker/Drop%20Down%20Menus/The%20Scripts%20Menu.html">The Scripts Menu &#x201C;&#x811A;&#x672C;&#x201D;&#x83DC;&#x5355;</a></li>
+									<li><a href="../../../000_Using%20GameMaker/Drop%20Down%20Menus/The%20Run%20Menu.html">The Run Menu &#x201C;&#x8FD0;&#x884C;&#x201D;&#x83DC;&#x5355;</a></li>
+									<li><a href="../../../000_Using%20GameMaker/Drop%20Down%20Menus/The%20Windows%20Menu.html">The Window Menu &#x201C;&#x7A97;&#x53E3;&#x83DC;&#x5355;&#x201D;</a></li>
+									<li><a href="../../../000_Using%20GameMaker/Drop%20Down%20Menus/The%20Help%20Menu.html">The Help Menu &#x201C;&#x5E2E;&#x52A9;&#x201D;&#x83DC;&#x5355;</a></li>									
+								</ul>
+							</li>
+							<li><a href="../../../000_Using%20GameMaker/005_Loading%20Sprites.html">Loading Sprites &#x8F7D;&#x5165;&#x7CBE;&#x7075;</a></li>
+							<li><a href="../../../000_Using%20GameMaker/006_Sounds%20and%20music.html">Sounds And Music &#x58F0;&#x97F3;&#x4E0E;&#x97F3;&#x4E50;</a></li>
+							<li><a href="../../../000_Using%20GameMaker/007_Backgrounds.html">Backgrounds &#x80CC;&#x666F;</a></li>
+							<li><a href="../../../000_Using%20GameMaker/008_Defining%20objects.html">Defining Objects &#x5B9A;&#x4E49;&#x5BF9;&#x8C61;</a></li>
+							<li>
+								<a href="../../../000_Using%20GameMaker/Events/index.html">Events &#x4E8B;&#x4EF6;</a>
+								<ul>
+									<li><a href="../../../000_Using%20GameMaker/Events/Create%20Event.html">Create Event &#x521B;&#x5EFA;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../../../000_Using%20GameMaker/Events/Destroy%20Event.html">Destroy Event &#x7834;&#x574F;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../../../000_Using%20GameMaker/Events/Alarm%20Event.html">Alarm Events &#x8BA1;&#x65F6;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../../../000_Using%20GameMaker/Events/Step%20Event.html">Step Events &#x6B65;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../../../000_Using%20GameMaker/Events/Collision%20Event.html">Collision Event &#x78B0;&#x649E;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../../../000_Using%20GameMaker/Events/Keyboard%20Event.html">Keyboard Events &#x952E;&#x76D8;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../../../000_Using%20GameMaker/Events/Mouse%20Event.html">Mouse Event &#x9F20;&#x6807;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../../../000_Using%20GameMaker/Events/Other%20Event.html">Other Events &#x5176;&#x5B83;&#x4E8B;&#x4EF6;</a></li>
+									<li>
+										<a href="../../../000_Using%20GameMaker/Events/Draw%20Event.html">Draw Event &#x7ED8;&#x5236;&#x4E8B;&#x4EF6;</a>
+										<ul>
+											<li><a href="../../../000_Using%20GameMaker/Events/Draw%20GUI%20Event.html">&#x7ED8;&#x5236;&#x56FE;&#x5F62;&#x754C;&#x9762;&#x4E8B;&#x4EF6;</a></li>
+											<li><a href="../../../000_Using%20GameMaker/Events/Resize%20Event.html">&#x8C03;&#x6574;&#x5927;&#x5C0F;&#x4E8B;&#x4EF6;</a></li>
+										</ul>
+									</li>
+									<li><a href="../../../000_Using%20GameMaker/Events/Async%20Event.html">Asynchronous Events &#x5F02;&#x6B65;&#x4E8B;&#x4EF6;</a></li>									
+								</ul>
+							</li>
+							<li>
+								<a href="../../../000_Using%20GameMaker/Actions/index.html">Actions &#x52A8;&#x4F5C;</a>
+								<ul>
+									<li><a href="../../../000_Using%20GameMaker/Actions/000_Move%20actions.html">Move Actions &#x79FB;&#x52A8;&#x7C7B;&#x52A8;&#x4F5C;</a></li>
+									<li><a href="../../../000_Using%20GameMaker/Actions/001_Main%20actions%20set%201.html">Main Actions, Set 1 &#x4E3B;&#x52A8;&#x4F5C;&#x8BBE;&#x5B9A;1</a></li>
+									<li><a href="../../../000_Using%20GameMaker/Actions/002_Main%20actions%20set%202.html">Main Actions, Set 2 &#x4E3B;&#x52A8;&#x4F5C;&#x8BBE;&#x5B9A;2</a></li>
+									<li><a href="../../../000_Using%20GameMaker/Actions/003_Control%20actions.html">Control Actions &#x63A7;&#x5236;&#x7C7B;&#x52A8;&#x4F5C;</a></li>
+									<li><a href="../../../000_Using%20GameMaker/Actions/004_Score%20actions.html">Score Actions &#x5206;&#x6570;&#x7C7B;&#x52A8;&#x4F5C;</a></li>
+									<li><a href="../../../000_Using%20GameMaker/Actions/005_Extra%20actions.html">&#x8865;&#x5145;&#x7684;&#x76F8;&#x5173;&#x52A8;&#x4F5C; </a></li>
+									<li><a href="../../../000_Using%20GameMaker/Actions/006_Draw%20actions.html">Draw Actions &#x7ED8;&#x5236;&#x7C7B;&#x52A8;&#x4F5C;</a></li>
+									<li><a href="../../../000_Using%20GameMaker/Actions/007_Using%20expressions%20and%20variables.html">&#x4F7F;&#x7528;&#x8868;&#x8FBE;&#x5F0F;&#x548C;&#x53D8;&#x91CF;</a></li>																	
+								</ul>
+							</li>
+							<li>
+								<a href="../../../000_Using%20GameMaker/Rooms/index.html">&#x521B;&#x5EFA;&#x623F;&#x95F4;(Rooms)</a>
+								<ul>
+									<li><a href="../../../000_Using%20GameMaker/Rooms/Settings%20Tab.html">Settings &#x8BBE;&#x7F6E;</a></li>
+									<li><a href="../../../000_Using%20GameMaker/Rooms/Backgrounds%20Tab.html">Backgrounds &#x80CC;&#x666F;</a></li>
+									<li><a href="../../../000_Using%20GameMaker/Rooms/Objects%20Tab.html">Objects &#x5BF9;&#x8C61;</a></li>																
+								</ul>								
+							</li>
+							<li><a href="../../../000_Using%20GameMaker/Game%20Information.html">&#x6E38;&#x620F;&#x4FE1;&#x606F;&#x8BBE;&#x7F6E; </a></li>							
+							<li><a href="../../../000_Using%20GameMaker/009_Distributing%20your%20game.html">&#x53D1;&#x5E03;&#x4F60;&#x7684;&#x6E38;&#x620F;</a></li>						
+
+						</ul>
+					</li>
+					<li >
+						<a href="../../../001_Advanced%20Use/index.html">&#x9AD8;&#x7EA7;&#x5E94;&#x7528;</a>
+						<ul>
+							<li class="Label">&#x6E38;&#x620F;&#x539F;&#x751F;&#x8D44;&#x6E90;(Game Assets)</li>
+							<li>
+								<a href="../../../001_Advanced%20Use/More%20about%20sprites/index.html">&#x66F4;&#x591A;&#x7CBE;&#x7075;(Sprites)&#x7684;&#x5185;&#x5BB9;</a>
+								<ul>
+									<li><a href="../../../001_Advanced%20Use/More%20about%20sprites/Editing%20Sprites.html">&#x7F16;&#x8F91;&#x7CBE;&#x7075;&#xFF08;Sprites&#xFF09;</a></li>
+									<li><a href="../../../001_Advanced%20Use/More%20about%20sprites/Editing%20Subimages.html">&#x7F16;&#x8F91;&#x5B50;&#x56FE;&#xFF08;Subimages&#xFF09;</a></li>
+									<li><a href="../../../001_Advanced%20Use/More%20about%20sprites/Editing%20Collision%20Masks.html">&#x7F16;&#x8F91;&#x78B0;&#x649E;&#x906E;&#x7F69;&#xFF08;Collision Masks&#xFF09;</a></li>																
+								</ul>										
+							</li>
+							<li>
+								<a href="../../../001_Advanced%20Use/More%20about%20backgrounds/index.html">&#x66F4;&#x591A;&#x80CC;&#x666F;(background)&#x7684;&#x5185;&#x5BB9;</a>
+								<ul>
+									<li><a href="../../../001_Advanced%20Use/More%20about%20backgrounds/Designing%20Tiles.html">Designing Tiles &#x56FE;&#x5757;&#x8BBE;&#x8BA1;</a></li>
+									<li><a href="../../../001_Advanced%20Use/More%20about%20backgrounds/Texture%20Pages.html">Texture Pages &#x7EB9;&#x7406;&#x8D34;&#x56FE;&#x9875;</a></li>															
+								</ul>
+							</li>
+							<li>
+								<a href="../../../001_Advanced%20Use/More%20about%20Objects/index.html">&#x66F4;&#x591A;&#x5BF9;&#x8C61;(object)&#x7684;&#x5185;&#x5BB9;</a>
+								<ul>
+									<li><a href="../../../001_Advanced%20Use/More%20about%20Objects/Parents.html">Parents &#x7236;&#x5BF9;&#x8C61;</a></li>
+									<li><a href="../../../001_Advanced%20Use/More%20about%20Objects/Physics.html">Object Physics Properties &#x5BF9;&#x8C61;&#x7269;&#x7406;&#x5C5E;&#x6027;</a></li>															
+								</ul>	
+							</li>
+							<li>
+								<a href="../../../001_Advanced%20Use/More%20about%20rooms/index.html">&#x66F4;&#x591A;&#x623F;&#x95F4;(room)&#x7684;&#x5185;&#x5BB9;</a>
+								<ul>
+									<li><a href="../../../001_Advanced%20Use/More%20about%20rooms/Tiles.html">Tiles &#x56FE;&#x5757;</a></li>
+									<li><a href="../../../001_Advanced%20Use/More%20about%20rooms/Views.html">Viewss &#x89C6;&#x91CE;</a></li>
+									<li><a href="../../../001_Advanced%20Use/More%20about%20rooms/Physics.html">Physics &#x7269;&#x7406;&#x73AF;&#x5883;</a></li>															
+								</ul>
+							</li>
+							
+							<li>
+								<a href="../../../001_Advanced%20Use/More%20About%20Async%20Events/index.html">&#x66F4;&#x591A;&#x5F02;&#x6B65;&#x4E8B;&#x4EF6;(Async Events)&#x7684;&#x5185;&#x5BB9;</a>
+								<ul>
+									<li><a href="../../../001_Advanced%20Use/More%20About%20Async%20Events/Image%20Loaded%20and%20Sound%20Loaded%20Events.html">&#x56FE;&#x7247;&#x8F7D;&#x5165;&#x548C;&#x58F0;&#x97F3;&#x8F7D;&#x5165;&#x7684;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../../../001_Advanced%20Use/More%20About%20Async%20Events/HTTP.html">HTTP&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../../../001_Advanced%20Use/More%20About%20Async%20Events/Dialogs.html">Dialogs Event &#x5BF9;&#x8BDD;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../../../001_Advanced%20Use/More%20About%20Async%20Events/IAP.html">IAP(&#x5E94;&#x7528;&#x5185;&#x90E8;&#x4ED8;&#x8D39;&#x6A21;&#x5F0F;)&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../../../001_Advanced%20Use/More%20About%20Async%20Events/Cloud.html">Cloud Event &#x4E91;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../../../001_Advanced%20Use/More%20About%20Async%20Events/Networking.html">Networking Event &#x8054;&#x7F51;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../../../001_Advanced%20Use/More%20About%20Async%20Events/Steam.html">Steam&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../../../001_Advanced%20Use/More%20About%20Async%20Events/Social.html">Social Event &#x793E;&#x4F1A;&#x5316;&#x6A21;&#x5757;&#x4E8B;&#x4EF6;</a></li>															
+								</ul>
+							</li>
+							<li class="Label">Resource Editors &#x8D44;&#x6E90;&#x7F16;&#x8F91;&#x5668;</li>
+							<li><a href="../../../001_Advanced%20Use/003_Fonts.html">Fonts &#x5B57;&#x4F53;</a></li>
+							<li><a href="../../../001_Advanced%20Use/004_Paths.html">Paths &#x8DEF;&#x5F84;</a></li>
+							<li><a href="../../../001_Advanced%20Use/005_Time%20lines.html">Time Lines &#x65F6;&#x95F4;&#x8F74;</a></li>
+							<li><a href="../../../001_Advanced%20Use/006_Scripts.html">Scripts &#x811A;&#x672C;</a></li>
+							<li><a href="../../../001_Advanced%20Use/009_Shaders.html">Shaders &#x7740;&#x8272;&#x5668;</a></li>
+							<li><a href="../../../001_Advanced%20Use/010_Constants.html">Constants &#x5E38;&#x91CF;</a></li>
+							<li><a href="../../../001_Advanced%20Use/002_Including%20Files.html">Including Files &#x5305;&#x542B;&#x6587;&#x4EF6;</a></li>
+							<li><a href="../../../001_Advanced%20Use/008_Exporting%20and%20importing%20resources.html">Importing Resources &#x5BFC;&#x5165;&#x8D44;&#x6E90;</a></li>
+							<li class="Label">Game Settings &#x6E38;&#x620F;&#x8BBE;&#x7F6E;</li>
+							<li>
+								<a href="../../../001_Advanced%20Use/Extensions/index.html">&#x6269;&#x5C55;&#x5305;</a>
+								<ul>
+									<li><a href="../../../001_Advanced%20Use/Extensions/Using%20Extensions.html">&#x4F7F;&#x7528;&#x6269;&#x5C55;</a></li>
+									<li><a href="../../../001_Advanced%20Use/Extensions/Creating%20Extensions.html">&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6269;&#x5C55;</a></li>														
+								</ul>
+							</li>							
+							<li><a href="#">Configurations &#x914D;&#x7F6E;</a></li>
+							<li>
+								<a href="../../../001_Advanced%20Use/Source%20Control/index.html">&#x6E90;&#x4EE3;&#x7801;&#x63A7;&#x5236;</a>
+								<ul>
+									<li><a href="../../../001_Advanced%20Use/Source%20Control/Getting%20Started%20With%20Source%20Control.html">&#x6E90;&#x4EE3;&#x7801;&#x63A7;&#x5236;&#x5165;&#x95E8;&#x5F15;&#x5BFC;</a></li>
+									<li><a href="../../../001_Advanced%20Use/Source%20Control/Setting%20Up%20GM%20For%20Source%20Control.html">&#x8BBE;&#x7F6E;GMS&#x8FDB;&#x884C;&#x6E90;&#x4EE3;&#x7801;&#x63A7;&#x5236;</a></li>
+									<li><a href="../../../001_Advanced%20Use/Source%20Control/Using%20Source%20Control.html">GMS&#x6E90;&#x4EE3;&#x7801;&#x63A7;&#x5236;&#x7684;&#x4F7F;&#x7528;</a></li>														
+								</ul>
+							</li>							
+							<li>
+								<a href="../../../001_Advanced%20Use/Global%20game%20settings/index.html">&#x5168;&#x5C40;&#x6E38;&#x620F;&#x8BBE;&#x5B9A;</a>
+								<ul>
+									<li><a href="../../../001_Advanced%20Use/Global%20game%20settings/General%20Tab.html">General &#x5E38;&#x89C4;&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../../../001_Advanced%20Use/Global%20game%20settings/Texture%20Groups%20Tab.html">Texture Groups &#x7EB9;&#x7406;&#x7EC4;</a></li>
+									<li><a href="../../../001_Advanced%20Use/Global%20game%20settings/Project%20Info%20Tab.html">Project Info &#x9879;&#x76EE;&#x4FE1;&#x606F;</a></li>
+									<li><a href="../../../001_Advanced%20Use/Global%20game%20settings/Facebook%20Tab.html">Facebook &#x8138;&#x4E66;</a></li>
+									<li><a href="../../../001_Advanced%20Use/Global%20game%20settings/Source%20Control%20Tab.html">Source Control &#x4EE3;&#x7801;&#x63A7;&#x5236;</a></li>
+									<li><a href="../../../001_Advanced%20Use/Global%20game%20settings/Advertising%20Tab.html">Advertising &#x5E7F;&#x544A;</a></li>
+									<li><a href="../../../001_Advanced%20Use/Global%20game%20settings/Analytics%20Tab.html">Analytics &#x5E94;&#x7528;&#x6570;&#x636E;&#x5206;&#x6790;</a></li>
+									<li><a href="../../../001_Advanced%20Use/Global%20game%20settings/In%20App%20Purchases%20Tab.html">IAP&#x5E94;&#x7528;&#x5185;&#x90E8;&#x4ED8;&#x8D39;</a></li>
+									<li><a href="../../../001_Advanced%20Use/Global%20game%20settings/Licensing%20Tab.html">Licensing &#x8BB8;&#x53EF;&#x8BC1;</a></li>
+									<li><a href="../../../001_Advanced%20Use/Global%20game%20settings/Extras%20Tab.html">Extras Tab &#x989D;&#x5916;&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../../../001_Advanced%20Use/Global%20game%20settings/Windows%20Tab.html">Windows&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../../../001_Advanced%20Use/Global%20game%20settings/Mac%20OS%20Tab.html">Mac OS&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../../../001_Advanced%20Use/Global%20game%20settings/HTML5%20Tab.html">HTML5&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../../../001_Advanced%20Use/Global%20game%20settings/iOS%20Tab.html">iOS&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../../../001_Advanced%20Use/Global%20game%20settings/Android%20Tab.html">Android&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../../../001_Advanced%20Use/Global%20game%20settings/Win8%20Tab.html">Windows 8&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../../../001_Advanced%20Use/Global%20game%20settings/Win8%20Phone%20Tab.html">Windows 8 Phone&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../../../001_Advanced%20Use/Global%20game%20settings/Tizen%20Tab.html">Tizen&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../../../001_Advanced%20Use/Global%20game%20settings/Linux%20Tab.html">Ubuntu(Linux)&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../../../001_Advanced%20Use/Global%20game%20settings/Steam%20Tab.html">Steam&#x9009;&#x9879;&#x5361;</a></li>														
+								</ul>
+							</li>
+
+							<li>
+								<a href="../../../001_Advanced%20Use/Preferences/index.html">Preferences &#x9996;&#x9009;&#x9879;</a>
+								<ul>
+									<li><a href="../../../001_Advanced%20Use/Preferences/General%20Preferences.html">General &#x5E38;&#x89C4;</a></li>
+									<li><a href="../../../001_Advanced%20Use/Preferences/Form%20Preferences.html">Forms &#x7A97;&#x53E3;</a></li>
+									<li><a href="../../../001_Advanced%20Use/Preferences/Scripts%20Preferences.html">Scripts &#x811A;&#x672C;</a></li>
+									<li><a href="../../../001_Advanced%20Use/Preferences/Editor%20Preferences.html">Editors &#x7F16;&#x8F91;&#x5668;</a></li>
+									<li><a href="../../../001_Advanced%20Use/Preferences/Server%20Preferences.html">Web Server &#x670D;&#x52A1;&#x5668;</a></li>
+									<li><a href="../../../001_Advanced%20Use/Preferences/Android%20Preferences.html">Android</a></li>
+									<li><a href="../../../001_Advanced%20Use/Preferences/Windows8%20Preferences.html">Windows 8</a></li>
+									<li><a href="../../../001_Advanced%20Use/Preferences/Windows%20Phone%20Preferences.html">Windows Phone</a></li>
+									<li><a href="../../../001_Advanced%20Use/Preferences/Tizen%20Preferences.html">Tizen</a></li>
+									<li><a href="../../../001_Advanced%20Use/Preferences/Mac%20Preferences.html">Mac OS</a></li>
+									<li><a href="../../../001_Advanced%20Use/Preferences/Linux%20Preferences.html">Ubuntu (Linux)</a></li>
+									<li><a href="../../../001_Advanced%20Use/Preferences/Steam%20Preferences.html">Steam</a></li>	
+									<li><a href="../../../001_Advanced%20Use/Preferences/Source%20Control%20Preferences.html">Source Control &#x4EE3;&#x7801;&#x63A7;&#x5236;</a></li>														
+								</ul>
+							</li>
+							<li><a href="../../../001_Advanced%20Use/011_Debugging.html">Debugging &#x8C03;&#x8BD5;</a></li>
+						</ul>
+					</li>
+					<li >
+						<a href="../../index.html">GML&#x53C2;&#x8003;&#x624B;&#x518C;</a>
+						<ul>
+							<li>
+								<a href="../../001_GML%20Language%20Overview/index.html">GML&#x6982;&#x8FF0;</a>
+								<ul>
+									<li><a href="../../001_GML%20Language%20Overview/401_01_program.html">A Program &#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;</a></li>
+									<li><a href="../../001_GML%20Language%20Overview/Variables/index.html">&#x53D8;&#x91CF;&#x53CA;&#x53D8;&#x91CF;&#x57DF;</a></li>
+									<li><a href="../../001_GML%20Language%20Overview/401_05_addressing.html">&#x5728;&#x5176;&#x4ED6;&#x5B9E;&#x4F8B;&#x4E2D;&#x7684;&#x5BFB;&#x5740;&#x53D8;&#x91CF;</a></li>
+									<li><a href="../../001_GML%20Language%20Overview/401_06_arrays.html">Arrays &#x6570;&#x7EC4;</a></li>
+									<li><a href="../../001_GML%20Language%20Overview/401_16_functions.html">Functions &#x51FD;&#x6570;</a></li>
+									<li><a href="../../001_GML%20Language%20Overview/401_03_assignments.html">Assignments &#x8D4B;&#x503C;</a></li>
+									<li><a href="../../001_GML%20Language%20Overview/401_04_expressions.html">Expressions &#x8868;&#x8FBE;&#x5F0F;</a></li>
+									<li><a href="../../001_GML%20Language%20Overview/401_07_if.html">If&#x8BED;&#x53E5;</a></li>
+									<li><a href="../../001_GML%20Language%20Overview/401_08_repeat.html">Repeat&#x8BED;&#x53E5;</a></li>
+									<li><a href="../../001_GML%20Language%20Overview/401_09_while.html">While&#x8BED;&#x53E5;</a></li>
+									<li><a href="../../001_GML%20Language%20Overview/401_10_do.html">Do&#x8BED;&#x53E5;</a></li>
+									<li><a href="../../001_GML%20Language%20Overview/401_11_for.html">For&#x8BED;&#x53E5;</a></li>
+									<li><a href="../../001_GML%20Language%20Overview/401_12_switch.html">Switch&#x8BED;&#x53E5;</a></li>
+									<li><a href="../../001_GML%20Language%20Overview/401_13_break.html">Break&#x8BED;&#x53E5;</a></li>
+									<li><a href="../../001_GML%20Language%20Overview/401_14_continue.html">Continue&#x8BED;&#x53E5;</a></li>
+									<li><a href="../../001_GML%20Language%20Overview/401_15_exit.html">Exit&#x8BED;&#x53E5;</a></li>
+									<li><a href="../../001_GML%20Language%20Overview/401_18_with.html">With&#x7ED3;&#x6784;</a></li>
+									<li><a href="../../001_GML%20Language%20Overview/401_17_scripts.html">Scripts &#x811A;&#x672C;</a></li>
+									<li><a href="../../001_GML%20Language%20Overview/401_19_comment.html">&#x4EE3;&#x7801;&#x6CE8;&#x91CA;</a></li>
+									<li><a href="../../001_GML%20Language%20Overview/401_20_evaluation_order.html">Evaluation Order &#x8BA1;&#x7B97;&#x987A;&#x5E8F;</a></li>														
+								</ul>
+							</li>
+							<li class="Label">&#x5B9E;&#x6570;&#x4E0E;&#x5B57;&#x7B26;&#x4E32;</li>							
+							<li><a href="../../Date%20and%20Time/index.html">Date and Time &#x65E5;&#x671F;&#x4E0E;&#x65F6;&#x95F4;</a></li>
+							<li>
+								<a href="../../Maths/index.html">Maths &#x6570;&#x5B66;</a>
+								<ul>
+									<li><a href="../../Maths/Real%20valued%20functions/index.html">Real Number Functions &#x5B9E;&#x6570;&#x51FD;&#x6570;</a></li>
+									<li><a href="../../Maths/Vector%20Functions/index.html">Vector Functions &#x77E2;&#x91CF;&#x51FD;&#x6570;</a></li>														
+								</ul>
+							</li>
+							<li><a href="../../Strings/index.html">Strings &#x5B57;&#x7B26;&#x4E32;</a></li>
+							<li class="Label">Game Play &#x6E38;&#x620F;&#x8FD0;&#x884C;</li>							
+							<li>
+								<a href="../index.html">Game Assets&#x6E38;&#x620F;&#x539F;&#x751F;&#x8D44;&#x6E90;</a>
+								<ul>
+									<li><a href="../Sprites/index.html">Sprites &#x7CBE;&#x7075;</a></li>
+									<li><a href="../Backgrounds/index.html">Backgrounds &#x80CC;&#x666F;</a></li>
+									<li><a href="../Sounds/index.html">Sounds &#x58F0;&#x97F3;</a></li>
+									<li><a href="index.html">Fonts &#x5B57;&#x4F53;</a></li>
+									<li><a href="../../Paths/index.html">Paths &#x8DEF;&#x5F84;</a></li>
+									<li><a href="../../Timelines/index.html">Timelines &#x65F6;&#x95F4;&#x8F74;</a></li>
+									<li><a href="../../Rooms/index.html">Rooms &#x623F;&#x95F4;</a></li>															
+								</ul>
+							</li>
+							<li>
+								<a href="../../Mouse,%20Keyboard%20and%20Other%20Controls/index.html">&#x9F20;&#x6807;&#x3001;&#x952E;&#x76D8;&#x548C;&#x5176;&#x4ED6;&#x63A7;&#x5236;&#x8BBE;&#x5907;</a>
+								<ul>
+									<li><a href="../../Mouse,%20Keyboard%20and%20Other%20Controls/Virtual%20Keys/index.html">Virtual Keys &#x865A;&#x62DF;&#x952E;</a></li>
+									<li><a href="../../Mouse,%20Keyboard%20and%20Other%20Controls/Keyboard%20Input/index.html">Keyboard Input &#x952E;&#x76D8;&#x8F93;&#x5165;</a></li>
+									<li><a href="../../Mouse,%20Keyboard%20and%20Other%20Controls/Mouse%20Input/index.html">Mouse Input &#x9F20;&#x6807;&#x8F93;&#x5165;</a></li>
+									<li><a href="../../Mouse,%20Keyboard%20and%20Other%20Controls/Device%20Input/index.html">Device Input &#x8BBE;&#x5907;&#x8F93;&#x5165;</a></li>
+									<li><a href="../../Mouse,%20Keyboard%20and%20Other%20Controls/GamePad%20Input/index.html">GamePad Input &#x6E38;&#x620F;&#x624B;&#x67C4;&#x8F93;&#x5165;</a></li>
+									<li><a href="../../Mouse,%20Keyboard%20and%20Other%20Controls/Joystick%20Input/index.html">Joystick Input &#x6447;&#x6746;&#x8F93;&#x5165;</a></li>
+									<li><a href="../../Mouse,%20Keyboard%20and%20Other%20Controls/immersion%20Haptics/index.html">Immersion Haptics &#x89E6;&#x6478;&#x8F93;&#x5165;</a></li>																							
+								</ul>
+							</li>
+							<li>
+								<a href="../../Movement%20and%20Collisions/index.html">&#x79FB;&#x52A8;&#x4E0E;&#x78B0;&#x649E;</a>
+								<ul>
+									<li><a href="../../Movement%20and%20Collisions/Movement/index.html">Movement &#x79FB;&#x52A8;</a></li>
+									<li><a href="../../Movement%20and%20Collisions/Motion%20Planning/index.html">Motion Planning &#x8FD0;&#x52A8;&#x8BBE;&#x8BA1;</a></li>
+									<li><a href="../../Movement%20and%20Collisions/Collisions/index.html">Collisions &#x78B0;&#x649E;</a></li>														
+								</ul>
+							</li>
+							<li>
+								<a href="../../Objects%20and%20Instances/index.html">&#x5BF9;&#x8C61;&#x4E0E;&#x5B9E;&#x4F8B;</a>
+								<ul>
+									<li><a href="../../Objects%20and%20Instances/Objects/index.html">Objects &#x5BF9;&#x8C61;</a></li>
+									<li><a href="../../Objects%20and%20Instances/Instances/index.html">Instances &#x5B9E;&#x4F8B;</a></li>														
+								</ul>
+							</li>
+							<li class="Label">Drawing And Display &#x7ED8;&#x5236;&#x4E0E;&#x663E;&#x793A;</li>
+							<li>
+								<a href="../../Drawing/index.html">Drawing &#x7ED8;&#x5236;</a>
+								<ul>
+									<li><a href="../../Drawing/Color%20And%20Blending/index.html">Color And Blending &#x989C;&#x8272;&#x4E0E;&#x6DF7;&#x5408;</a></li>
+									<li><a href="../../Drawing/Drawing%20Basic%20Forms/index.html">Drawing Basic Forms &#x7ED8;&#x5236;&#x56FE;&#x5F62;</a></li>
+									<li><a href="../../Drawing/Drawing%20Sprites%20And%20Backgrounds/index.html">Drawing Sprites And Backgrounds &#x7ED8;&#x5236;&#x7CBE;&#x7075;&#x548C;&#x80CC;&#x666F;</a></li>
+									<li><a href="../../Drawing/Drawing%20Text/index.html">Drawing Text &#x7ED8;&#x5236;&#x6587;&#x672C;</a></li>
+									<li><a href="../../Drawing/Drawing%20Primitives/index.html">Drawing Primitives &#x7ED8;&#x5236;&#x56FE;&#x5143;</a></li>
+									<li><a href="../../Drawing/Drawing%203D/index.html">&#x7ED8;&#x5236;3D&#x56FE;&#x5F62;</a></li>
+									<li><a href="../../Drawing/Drawing%20Surfaces/index.html">Drawing Surfaces &#x7ED8;&#x5236;&#x8868;&#x9762;</a></li>															
+								</ul>
+							</li>
+							<li>
+								<a href="../../Shaders/index.html">Shaders &#x7740;&#x8272;&#x5668;</a>
+								<ul>
+									<li><a href="../../Shaders/Vertex%20Formats/index.html">Vertex Formats &#x9876;&#x70B9;&#x683C;&#x5F0F;</a></li>
+									<li><a href="../../Shaders/Primitive%20Building/index.html">Primitive Building &#x5EFA;&#x7ACB;&#x56FE;&#x5143;</a></li>
+									<li><a href="../../Shaders/Shader%20Constants/index.html">Shader Constants &#x7740;&#x8272;&#x5668;&#x5E38;&#x91CF; </a></li>														
+								</ul>
+							</li>
+							<li><a href="../../Surfaces/index.html">Surfaces &#x8868;&#x9762;</a></li>
+							<li>
+								<a href="../../Windows%20And%20Views/index.html">&#x7A97;&#x53E3;&#x4E0E;&#x89C6;&#x91CE;</a>
+								<ul>
+									<li><a href="../../Windows%20And%20Views/The%20Game%20Window/index.html">The Game Window &#x6E38;&#x620F;&#x7A97;&#x53E3;</a></li>
+									<li><a href="../../Windows%20And%20Views/Views/index.html">Views &#x89C6;&#x91CE;</a></li>														
+								</ul>
+							</li>
+							<li class="Label">Advanced Functions &#x9AD8;&#x7EA7;&#x51FD;&#x6570;</li>
+							<li>
+
+								<a href="../../Data%20Structures/index.html">&#x6570;&#x636E;&#x7ED3;&#x6784;</a>
+								<ul>
+									<li><a href="../../Data%20Structures/DS%20Stacks/index.html">Stacks &#x5806;&#x6808;</a></li>
+									<li><a href="../../Data%20Structures/DS%20Queues/index.html">Queues &#x961F;&#x5217;</a></li>
+									<li><a href="../../Data%20Structures/DS%20Lists/index.html">Lists &#x5217;&#x8868;</a></li>
+									<li><a href="../../Data%20Structures/DS%20Maps/index.html">Maps &#x5730;&#x56FE;</a></li>
+									<li><a href="../../Data%20Structures/DS%20Priority%20Queues/index.html">Priority Queues &#x4F18;&#x5148;&#x961F;&#x5217;</a></li>
+									<li><a href="../../Data%20Structures/DS%20Grids/index.html">Grids &#x7F51;&#x683C;</a></li>																								
+								</ul>
+							</li>
+							<li>
+								<a href="../../Particles/index.html">Particles &#x7C92;&#x5B50;</a>
+								<ul>
+									<li><a href="../../Particles/Simple%20Effects/index.html">Simple Effects &#x7B80;&#x5355;&#x7279;&#x6548;</a></li>
+									<li><a href="../../Particles/Particle%20Systems/index.html">Particle Systems &#x7C92;&#x5B50;&#x7CFB;&#x7EDF;</a></li>
+									<li><a href="../../Particles/Particle%20Types/index.html">Particle Types &#x7C92;&#x5B50;&#x7C7B;&#x578B;</a></li>
+									<li><a href="../../Particles/Particle%20Emitters/index.html">Particle Emitters &#x7C92;&#x5B50;&#x53D1;&#x5C04;&#x5668;</a></li>																																	
+								</ul>
+							</li>
+							<li>
+								<a href="../../Physics/index.html">Physics &#x7269;&#x7406;&#x51FD;&#x6570;</a>
+								<ul>
+									<li><a href="../../Physics/The%20Physics%20World/index.html">The Physics World &#x7269;&#x7406;&#x73AF;&#x5883;</a></li>
+									<li><a href="../../Physics/Forces/index.html">Forces &#x529B;</a></li>
+									<li><a href="../../Physics/Fixtures/index.html">Fixtures &#x56FA;&#x5B9A;&#x88C5;&#x7F6E;</a></li>
+									<li><a href="../../Physics/Joints/index.html">Joints &#x8054;&#x63A5;</a></li>
+									<li><a href="../../Physics/Physics%20Variables/index.html">Physics Variables &#x7269;&#x7406;&#x53D8;&#x91CF;</a></li>																																
+								</ul>
+							</li>
+							<li>
+								<a href="../../File%20Handling/index.html">&#x6587;&#x4EF6;&#x5904;&#x7406;(File Handling)</a>
+								<ul>
+									<li><a href="../../File%20Handling/File%20System%20Limits.html">File System Limits &#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x9650;&#x5236;</a></li>																																							
+								</ul>
+							</li>
+							<li><a href="../../Operating%20System/index.html">Operating System &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</a></li>
+							<li><a href="../../Buffers/index.html">Buffers &#x7F13;&#x5B58;&#x533A;</a></li>
+							<li><a href="../../Networking/index.html">Networking &#x8054;&#x7F51;</a></li>
+							<li class="Label">Platform Specific &#x5E73;&#x53F0;&#x7279;&#x6027;</li>
+							<li><a href="../../HTML5/index.html">HTML5</a></li>
+							<li>
+								<a href="../../Windows8/index.html">Windows 8</a>
+								<ul>
+									<li><a href="../../Windows8/Windows%208%20Phone/index.html">Windows 8 Phone</a></li>																																							
+								</ul>
+							</li>
+							<li><a href="../../Advertising%20and%20Analytics/index.html">&#x5E7F;&#x544A;&#x4E0E;&#x6570;&#x636E;&#x5206;&#x6790;</a></li>
+							<li>
+								<a href="../../Social%20Gaming/index.html">&#x6E38;&#x620F;&#x793E;&#x4EA4;&#x8BBE;&#x8BA1;</a>
+								<ul>
+									<li><a href="../../Social%20Gaming/Facebook/index.html">Facebook</a></li>
+									<li><a href="../../Social%20Gaming/Achievements%20and%20Leaderboards/index.html">Achievements and Leaderboards &#x6210;&#x5C31;&#x4E0E;&#x6392;&#x884C;&#x699C;</a></li>
+									<li><a href="../../Social%20Gaming/Achievements%20and%20Leaderboards/Local%20High%20Scores/index.html">Local High Scores &#x672C;&#x5730;&#x9AD8;&#x5206;&#x699C;</a></li>																																									
+								</ul>
+							</li>
+							<li>
+								<a href="../../In%20App%20Purchases/index.html">IAP&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5185;&#x8D2D;&#x4E70;</a>
+								<ul>
+									<li><a href="../../In%20App%20Purchases/IAP%20Example.html">IAP&#x793A;&#x4F8B;</a></li>
+									<li><a href="../../In%20App%20Purchases/IAP%20Testing.html">IAP&#x6D4B;&#x8BD5;</a></li>
+									<li><a href="../../In%20App%20Purchases/IAP%20Server%20Setup.html">IAP&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x8BBE;&#x7F6E;</a></li>																																									
+								</ul>
+							</li>
+							<li><a href="../../Asynchronous%20Functions/index.html">Asynchronous &#x5F02;&#x6B65;</a></li>
+							<li><a href="../../Cloud%20Services/index.html">Cloud Services &#x4E91;&#x670D;&#x52A1;</a></li>
+							<li><a href="../../Steam%20API/index.html">Steam API &#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x63A5;&#x53E3;</a></li>
+							<li class="Label">Extras &#x9644;&#x52A0;</li>
+							<li><a href="../../Debugging/index.html">Debugging &#x8C03;&#x8BD5;</a></li>
+							<li><a href="../../Miscellaneous/index.html">Miscellaneous &#x6742;&#x9879;</a></li>
+							<li><a href="../../017_Obsolete%20Functions/index.html">Obsolete Functions &#x6DD8;&#x6C70;&#x51FD;&#x6570;</a></li>
+						</ul>
+					</li>
+					<li ><a href="#">&#x5B9E;&#x4F8B;&#x6559;&#x7A0B;&#x53CA;&#x5FC3;&#x5F97;</a></li>
+					<li ><a href="#">&#x5B9E;&#x9A8C;&#x6027;&#x9879;&#x76EE;</a></li>
+					<li ><a href="#">&#x5E94;&#x7528;&#x8BBE;&#x7F6E;</a></li>
+					<li ><a href="../../../update_log.html">Update log</a></li>
+					<li ><a href="../../../index_searcher.html">&#x7D22;&#x5F15;&#x76EE;&#x5F55;</a></li>										
+				</ul>			
+			</nav>
+
+
+<!-- KEYWORDS
+menu_right
+-->
+
+<nav id="menu-right">
+  <ul>
+    <li> <span>GMS&#x4F7F;&#x7528;&#x95EE;&#x9898;&#x53EF;&#x4EE5;&#x8054;&#x7CFB;&#x6211;</span>
+        <ul>
+          <li class="Label">A</li>
+          <li class="img"> <a href="#"> <img src="#people/1/" /> Alexa<br />
+                <small>Johnson</small> </a> </li>
+        </ul>
+    </li>
+    <li> <span>&#x7F51;&#x7AD9;&#x95EE;&#x9898;&#x53EF;&#x4EE5;&#x8054;&#x7CFB;&#x6211;</span>
+        <ul>
+          <li class="Label">D</li>
+          <li class="img"> <a href="mailto:deciia@qq.com"> <img src="../../../Templates/deciia%40qq.com" /> Adam<br />
+                <small>Deciia</small> </a> </li>
+        </ul>
+    </li>
+  </ul>
+</nav>
+
+<!-- KEYWORDS
+pages
+--></div>
+</body>
+<!-- InstanceEnd --></html>
