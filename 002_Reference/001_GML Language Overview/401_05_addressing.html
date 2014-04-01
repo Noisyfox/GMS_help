@@ -1,0 +1,709 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><title>Addressing Variables in Other Instances</title>
+
+
+
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=9">
+	<link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8"><meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" /></head><body><!-- #BeginLibraryItem "/mmenu_head.lbi" --><!-- mmenu_head up 1 -->
+
+		<link type="text/css" rel="stylesheet" href="../../style.css" />
+		<link type="text/css" rel="stylesheet" href="../../src/css/jquery.mmenu.all.css" />
+		<script type="text/javascript" src="../../src/js/jquery.min.js"></script>
+		<script type="text/javascript" src="../../src/js/hammer.min.js"></script>
+		<script type="text/javascript" src="../../src/js/jquery.mmenu.min.all_old.js"></script>		
+		
+	<!-- scripts links    	
+   
+		<style type="text/css">
+		@media all and (min-width: 900px) {
+		html, body {
+		height: 100%
+		
+		}
+		#menu {
+		background: #eee
+		}
+		#page {
+		border-left: 1px solid #ccc
+		min-height: 100%
+		}
+		}
+		</style>
+   -->
+ 
+		<script type="text/javascript">
+
+			//	The menu on the right
+			$(function() {
+
+				var $menu = $('nav#menu-right');
+				$menu.mmenu({
+					position	: 'right',
+					classes		: 'mm-black',
+					dragOpen	: true,
+					counters	: true,
+					searchfield	: true,
+					labels		: {
+						fixed		: !$.mmenu.support.touch
+					}
+				});
+
+				//	Click a menu-item
+				var $confirm = $('#confirmation');
+				$menu.find( 'li a' ).not( '.mm-subopen' ).not( '.mm-subclose' ).bind(
+					'click.example',
+					function( e )
+					{
+						e.preventDefault();
+						$confirm.show().text( 'You clicked "' + $.trim( $(this).text() ) + '"' );
+						$('#menu-right').trigger( 'close' );
+					}
+				);
+			});
+			
+			//	The menu on the left
+			$(function() {
+
+				var $menu0 = $('nav#menu-left');
+
+				$menu0.mmenu({
+					position	: 'left',
+					classes		: 'mm-black',
+					dragOpen	: true,
+					counters	: true,
+					searchfield	: true,
+					labels		: {
+						fixed		: !$.mmenu.support.touch
+					}
+				});
+			});			
+
+			// for one page
+
+			$(function() {
+				var $menu = $('nav#menu-left'),
+					$html = $('html, body');
+		
+				$menu.mmenu();
+				$menu.find( 'li > a' ).on(
+					'click',
+					function()
+					{
+						var href = $(this).attr( 'href' );
+		
+						//	if the clicked link is linked to an anchor, scroll the page to that anchor 
+						if ( href.slice( 0, 1 ) == '#' )
+						{
+							$menu.one(
+								'closed.mm',
+								function()
+								{
+									setTimeout(
+										function()
+										{
+											$html.animate({
+												scrollTop: $( href ).offset().top
+											});	
+										}, 10
+									);	
+								}
+							);						
+						}
+					}
+				);
+			});
+
+			// for the tips
+			
+			$(function() {
+				var options = {
+					classes			: 'mm-light',
+					modal			: true
+				};
+				
+				options.position = 'left';
+				options.zposition = 'next';
+				$('#tooltip-1').mmenu( options );
+				
+				options.position = 'right';
+				options.zposition = 'next';
+				$('#tooltip-2').mmenu( options );
+				
+				options.position = 'bottom';
+				options.zposition = 'front';
+				$('#popup-1').mmenu( options );
+
+				options.position = 'top';
+				options.zposition = 'front';
+				$('#popup-2').mmenu( options );
+			});
+	
+		</script>
+		
+<!-- mmenu_head down 6 -->
+
+
+<!-- #EndLibraryItem --><!-- the page header part  -->
+<div id="page">
+			<div id="header" >
+				<a href="#menu-left"></a>
+				&#x70B9;&#x51FB;&#x5DE6;&#x8FB9;&#x6309;&#x952E;&#x6253;&#x5F00;&#x5BFC;&#x822A;&#x83DC;&#x5355;
+				<a href="#menu-right" class="friends right"></a>
+			</div>
+
+			<div id="content" >
+			
+<h1>Addressing Variables in Other Instances &#23547;&#22336;&#21464;&#37327;&#22312;&#20854;&#20182;&#23454;&#20363;&#20013;<br>
+</h1>
+
+<h2>&#22312;&#36825;&#37324;&#20320;&#21487;&#20197;&#25214;&#21040;&#21508;&#31181;&#26041;&#27861;&#26469;&#35299;&#20915;&#21464;&#37327;&#22312;&#20854;&#20182;&#23454;&#20363;&#12290;&#12290;</h2>
+
+<p>&#26412;&#31456;&#22522;&#20110; <a href="Variables/index.html">variables</a>
+&#65292;&#24744;&#21487;&#22312;&#37027;&#31456;&#20013;&#25214;&#21040;&#22914;&#20309;&#21019;&#36896;&#21644;&#20351;&#29992;&#21464;&#37327;&#22312;&#21333;&#29420;&#30340;&#23454;&#20363;&#20013;&#65292;&#25110;&#32773;&#20351;&#29992;&#20840;&#23616;&#21464;&#37327;&#65292;&#20294;&#26159;&#22914;&#26524;&#24744;&#24819;&#35753;&#19968;&#20010;&#23454;&#20363;&#20013;&#21464;&#37327;&#20256;&#21040;&#21478;&#22806;&#19968;&#20010;&#23454;&#20363;&#65292;&#23601;&#19981;&#21516;&#20102;&#65311;&#24456;&#22810;&#26102;&#20505;&#24744;&#20250;&#24819;&#36825;&#26679;
+&#20570;&#65292;&#20363;&#22914;&#23376;&#24377;&#30896;&#25758;&#65292;&#24744;&#20250;&#25214;&#20986;&#30896;&#25758;&#21040;&#21738;&#31181;&#23376;&#24377;&#30340;&#20260;&#23475;&#65292;&#25110;&#32773;&#24744;&#24819;&#20572;&#27490;&#31227;&#21160;&#25152;&#26377;&#30340;&#29699;&#26469;&#24605;&#32771;&#65292;&#25110;&#32773;&#24744;&#24819;&#31227;&#21160;&#20027;&#35282;&#21040;&#19968;&#20010;&#29305;&#23450;&#20301;&#32622;&#65292;&#25110;&#32773;&#20854;&#20182;&#24744;&#28216;&#25103;&#20013;&#30340;&#29305;&#23450;&#24773;&#20917;&#12290;&#24198;&#24184;
+&#30340;&#26159;GML&#24050;&#32463;&#20855;&#22791;&#36825;&#31181;&#26426;&#21046;&#26469;&#23454;&#29616;&#36825;&#31181;&#24773;&#20917;&#65306;<br>
+<br>
+
+</p><h3>Using a point "."</h3>
+<p>&#19968;&#31181;&#24120;&#35265;&#35775;&#38382;&#25110;&#25913;&#21464;&#30340;&#21464;&#37327;&#22312;&#21478;&#22806;&#19968;&#20010;&#23454;&#20363;&#20013;&#30340;&#29992;&#27861;&#26159;&#29992;&#23545;&#35937;&#21517;&#21518;&#21152;&#19978; "." &#12290;&#20363;&#23376;&#22914;&#19979;&#65306;<br>
+<br>
+</p><p class="code">
+obj_ball.speed = 0;<br>
+</p>
+
+<p>
+<br>&#22914;&#19978;&#20195;&#30721;&#24744;&#35774;&#23450;&#36895;&#24230;&#21040;&#20840;&#37096;"obj_ball"&#30340;&#23454;&#20363;&#65292;&#22240;&#27492;&#36825;&#31181;&#26041;&#27861;&#20351;&#20320;&#33021;&#25913;&#21464;&#29305;&#23450;&#23545;&#35937;&#30340;&#20840;&#37096;&#23454;&#20363;&#65292;&#20294;&#26159;&#24744;&#22914;&#26524;&#21482;&#24819;&#35774;&#23450;&#36895;&#24230;&#21040;&#19968;&#20010;&#21333;&#29420;&#30340;&#29699;&#65292;&#32780;&#19981;&#26159;&#25152;&#26377;&#29699;&#65311;&#36825;&#30475;&#36215;&#26469;&#20250;&#26356;&#26377;&#38590;&#24230;&#65292;&#20294;&#26159;&#35268;&#21017;&#36824;&#26159;&#19968;&#26679;&#65292;&#21482;&#26159;&#25226;&#23545;&#35937;&#21517;&#25442;&#25104;&#29305;&#23450;&#30340;&#23454;&#20363;&#21517;&#65292;&#25105;&#20204;&#23558;&#20351;&#29992;&#21040; 
+<b>instance id </b>&#22312;GMS&#20013;&#22788;&#29702;&#21333;&#29420;&#23454;&#20363;&#12290;<br>
+<br>&#27599;&#20010;&#23454;&#20363;&#22312;&#28216;&#25103;&#20013;&#34987;&#21019;&#36896;&#26102;&#37117;&#20250;&#33719;&#24471;&#19968;&#20010; <b>instance id</b> &#65292;&#24403;&#24744;&#25226;&#23454;&#20363;&#25918;&#20837;&#25151;&#38388;&#22312;&#25151;&#38388;&#32534;&#36753;&#22120;&#20013;&#65292;&#40736;&#26631;&#25351;&#21040;&#36825;&#20010;&#23454;&#20363;&#65292;&#23454;&#20363;&#30340;id&#20250;&#26174;&#31034;&#22312;&#31383;&#21475;&#19979;&#26041;&#65292;&#20294;&#26159;&#22914;&#26524;&#24744;&#36890;&#36807;&#20195;&#30721;&#21019;&#36896;&#30340;&#23454;&#20363;&#20063;&#20250;&#26377;&#19968;&#20010;&#29420;&#19968;&#26080;&#20108;&#30340;id&#12290;&#36825;&#20010;&#25968;&#20540;&#24635;&#26159;&#22823;&#20110;&#25110;&#31561;&#20110;100000&#65292;&#20687;&#36825;&#26679;&#30340;&#25968;&#20540;&#21487;&#20197;&#20351;&#29992;&#22312;&#28857;&#31526;&#21495;&#30340;&#24038;&#36793;&#12290; <i><b>Note :&#36825;&#20123;&#25968;&#20540;&#21518;&#38754;&#36319;&#28857;&#20250;&#34987;&#29702;&#35299;&#20026;&#23567;&#25968;&#28857;&#65292;&#35201;&#36991;&#20813;&#36825;&#31181;&#24773;&#20917;&#35831;&#20351;&#29992;&#25324;&#21495;&#65281; </b></i><br>
+<br>&#20363;&#23376;&#22914;&#19979;:
+<br>
+<br>
+
+</p>
+<p class="code">
+(100012).speed = 0;<br>
+</p>
+<p>
+<br>&#26368;&#21518;&#65292;&#24744;&#33021;&#20351;&#29992;&#29305;&#27530;&#30340;&#20851;&#38190;&#20540;&#25110;&#32773;&#20854;&#20182;&#23454;&#20363;&#20013;&#23427;&#20204;&#33258;&#24049;&#30340;id&#12290;&#22312;GMS&#20851;&#38190;&#20540;&#26159;&#19968;&#31181;&#29305;&#27530;&#31867;&#22411;&#30340;&#21464;&#37327;&#65292;&#35782;&#21035;&#21644;&#35299;&#37322;&#37117;&#26377;&#29305;&#21035;&#30340;&#26041;&#24335;&#12290;&#23384;&#22312;&#30340;&#20851;&#38190;&#20540;&#22914;&#19979;&#65306;
+
+</p><div class="compat">
+<table>
+	<tbody><tr><th>Keyword</th><th>Description</th></tr>
+
+	<tr><td>self</td>
+	<td>&#25191;&#34892;&#35813;&#20195;&#30721;&#30340;&#24403;&#21069;&#23454;&#20363;&#12290;</td><td><br>
+</td></tr>
+	
+	<tr class="alt"><td>other</td>
+	<td>&#20854;&#20182;&#23454;&#20363;&#21253;&#25324;&#22312;&#30896;&#25758;&#20107;&#20214; &#25110;&#36890;&#36807; <a href="401_18_with.html"><tt>with</tt></a> &#20989;&#25968;&#24471;&#21040;&#30340;&#20854;&#20182;&#23454;&#20363;&#12290;</td></tr>
+
+	<tr><td>all</td>
+	<td>&#25151;&#38388;&#20013;&#20840;&#37096;&#27963;&#21160;&#30340;&#23454;&#20363;&#12290;</td></tr>
+	
+	<tr class="alt"><td>noone</td>
+	<td>&#22312;&#20840;&#37096;&#20013;&#27809;&#26377;&#30340;&#23454;&#20363;&#65288;&#36825;&#24863;&#35273;&#24456;&#35809;&#24322;&#65292;&#20294;&#26159;&#20320;&#23558;&#22312;&#35828;&#26126;&#20070;&#20854;&#20182;&#37096;&#20998;&#30475;&#21040;&#23427;&#30340;&#29992;&#22788;&#65289;</td></tr>		
+</tbody></table>
+</div>
+
+<p>
+<br>&#20851;&#20110;&#20351;&#29992;&#21464;&#37327;&#65292;&#19968;&#20010;&#31616;&#31572;&#30340;&#24773;&#20917;&#26159;<b>instance id </b>&#22312;&#25191;&#34892;&#20195;&#30721;&#21069;&#20351;&#29992;&#65292;&#20363;&#23376;&#22914;&#19979;...<br>
+<br>&#20351;&#29992;&#20851;&#38190;&#20540;&#21435;&#35774;&#23450;&#20840;&#37096;&#23454;&#20363;:
+<br>
+<br>
+</p><p class="code">
+if instance_position(mouse_x, mouse_y, all) = noone<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;all.speed = 0;<br>
+&nbsp;&nbsp;&nbsp;}<br>
+</p>
+<p>
+<br>
+
+&#20351;&#29992;&#21464;&#37327;&#35774;&#23450;&#21333;&#29420;&#23454;&#20363; :
+<br>
+<br>
+</p><p class="code">
+var nnn;<br>
+nnn = instance_create(100, 100, obj_ball);<br>
+nnn.speed = 8;<br>
+nnn.direction = random(360);<br>
+</p>
+<p>
+<br>&#36825;&#20123;&#37117;&#26159;&#26377;&#25928;&#30340;&#35835;&#21462;&#65292;&#25913;&#21464;&#21644;&#35774;&#23450;&#20854;&#20182;&#23454;&#20363;&#20013;&#21464;&#37327;&#30340;&#26041;&#27861;&#65292;&#22240;&#20026;&#28857;&#20165;&#26159;&#19968;&#20010;&#25805;&#20316;&#31526;&#12290;
+&#23427;&#38656;&#35201;&#19968;&#20010;&#20540;&#20316;&#20026;&#24038;&#25805;&#20316;&#25968;&#21644;&#19968;&#20010;&#21464;&#37327;(&#22320;&#22336;)&#65292;&#21491;&#25805;&#20316;&#25968;&#21516;&#26679;&#65292;&#24182;&#36820;&#22238;&#22320;&#22336;&#30340;&#36825;&#20010;&#29305;&#23450;&#30340;&#21464;&#37327;&#25351;&#23450;&#30340;&#23545;&#35937;&#25110;&#23454;&#20363;&#12290;&#25152;&#26377;&#30340;&#23545;&#35937;&#21517;&#31216;,&#29305;&#27530;&#23545;&#35937;&#34920;&#31034;&#20197;&#19978;&#20165;&#20165;&#20195;&#34920;
+&#20540;,&#36825;&#20123;&#21487;&#20197;&#22788;&#29702;&#31867;&#20284;&#30340;&#20219;&#20309;&#20854;&#20182;&#20540;&#12290;&#23545;&#35937;&#21517;&#31216;,&#29305;&#27530;&#30340;&#20851;&#38190;&#23383;,&#21644;&#23454;&#20363;id&#20063;&#21487;&#20197;&#29992;&#20110;&#35768;&#22810;&#20854;&#20182;&#21151;&#33021;,&#22240;&#20026;&#23427;&#20204;&#23454;&#38469;&#19978;&#22312;&#31243;&#24207;&#32534;&#20889;&#26102;&#26159;&#35270;&#20026;&#24120;&#37327;&#12290;<br>
+<br>
+
+</p><h3>Using "other"</h3>
+<p><b>other </b>&#29305;&#27530;&#30340;&#20851;&#38190;&#23383;&#26377;&#20004;&#20010;&#19981;&#21516;&#30340;&#26041;&#27861;,&#23427;&#21487;&#20197;&#29992;&#26469;&#24341;&#29992;&#19968;&#20010;&#29305;&#23450;&#30340;&#23454;&#20363;: &#24403;&#20351;&#29992; <tt><b>with</b></tt> &#20989;&#25968; (&#35299;&#37322;&#35831;&#28857; <a href="401_18_with.html">here</a>) 
+&#25110;&#32773;&#20351;&#29992;&#22312; <a href="../../000_Using%20GameMaker/Events/Collision%20Event.html">collision event</a>, &#26412;&#31456;&#33410;&#23558;&#35299;&#37322;.
+<br>
+<br>&#19968;&#20010;&#30896;&#25758;&#20107;&#20214;&#21482;&#33021;&#21457;&#29983;&#22312;&#20004;&#20010;&#23454;&#20363;&#20013;&#12290;&#24403;&#28982;,&#20320;&#21487;&#20197;&#26377;&#22810;&#20010;&#23454;&#20363;&#20043;&#38388;&#30340;&#22810;&#20010;&#30896;&#25758;&#65292;&#20294;&#20182;&#20204;&#37117;&#26159;&#22522;&#20110;&#35299;&#20915;&#20004;&#20010;&#20043;&#38388;&#30340;&#22522;&#30784;&#19978;&#65292;&#23454;&#20363;&#30340;&#30896;&#25758;&#20107;&#20214;&#21644;&#8220;<b>other</b>&#8221;&#23454;&#20363;&#30456;&#20851;&#30340;&#12290;&#25152;&#20197;&#20551;&#35774;&#20320;&#26377;&#19968;&#20010;&#35282;&#33394;&#23545;&#35937;,&#25932;&#20154;&#23545;&#35937;&#21644;&#23376;&#24377;&#23545;&#35937;&#65292;&#25932;&#20154;&#21487;&#20197;&#23545;&#20320;&#24320;&#28779;&#12290;&#20320;&#21487;&#20197;&#25351;&#23450;&#27599;&#20010;&#25932;&#20154;&#19968;&#39063;&#23376;&#24377;&#65292;&#20294;&#24403;&#21019;&#24314;&#26102;&#19981;&#21516;&#30340;&#20260;&#23475;&#38543;&#26426;&#20998;&#37197;&#65292;&#20363;&#23376;&#22914;&#19979;&#65306;<br>
+<br>
+
+</p>
+<p class="code">
+var nnn;<br>
+nnn = instance_create(x, y, obj_Bullet);<br>
+nnn.damage = 5 + irandom(5);<br>
+nnn.speed = 8;<br>
+nnn.direction = point_direction(x, y, obj_Player.x, obj_Player.y);<br>
+</p>
+<p>
+<br>&#30475;&#21040;&#25105;&#20204;&#22914;&#20309;&#20351;&#29992;&#28857;&#31526;&#21495;&#35774;&#32622;&#23427;&#30340;&#21464;&#37327;&#26041;&#27861;&#20102;&#21527;&#65311;&#20294;&#26159;&#35282;&#33394;&#23545;&#35937;?&#23427;&#23558;&#22914;&#20309;&#26816;&#27979;&#21040;&#20260;&#23475;&#65311;&#26159;&#36890;&#36807;&#20351;&#29992; <b>other </b>&#22312;&#30896;&#25758;&#20107;&#20214;&#65292;&#36825;&#26159;&#24403;&#28982;!<br>
+<br>
+</p><p class="code">
+hp -= other.damage;<br>
+if hp &lt;= 0 instance_destroy();<br>
+</p>
+<p>
+<br>&#19978;&#38754;&#30340;&#20195;&#30721;&#23558;&#20250;&#25187;&#38500;&#23384;&#20648;&#30340;&#20540;&#65292;&#22312;&#20854;&#20182;&#23454;&#20363;&#8220;damage&#8221;&#21464;&#37327;&#20256;&#21040;&#29609;&#23478;&#8220;hp&#8221;&#21464;&#37327;&#65292;&#28982;&#21518;&#26816;&#26597;&#8220;hp&#8221;&#26159;&#21542;&#20302;&#20110;&#25110;&#31561;&#20110;0&#12290;&#22914;&#26524;&#23427;&#26159;&#37027;&#20040;&#30772;&#22351;&#35282;&#33394;&#23545;&#35937;&#12290;&#35831;&#27880;&#24847; <b>other </b>&#36825;&#31181;&#20351;&#29992;&#26041;&#24335;&#21482;&#33021;&#22312;&#30896;&#25758;&#20107;&#20214;&#21644;&#20854;&#20182;&#30340;&#23454;&#20363;&#21464;&#37327;&#24517;&#39035;&#33021;&#34987;&#26816;&#26597;&#65292;&#21542;&#21017;&#20250;&#25243;&#20986;&#19968;&#20010;&#38169;&#35823;&#12290;&#20294;&#26159;&#20320;&#21487;&#20197;&#20026;&#21464;&#37327;&#36171;&#20540;&#65292;&#29978;&#33267;&#21019;&#36896;&#20986;&#26032;&#30340;&#24819;&#27861;,&#20687;&#20351;&#29992; <b>other </b>&#30340;&#30896;&#25758;&#20107;&#20214;&#36825;&#26679;&#65306;
+<br>
+<br>
+</p><p class="code">
+other.mana += 10; //add ten to the other instance "mana" variable<br>
+other.hit = true; //set the other instance variable "hit" to true, ceating it if the variable doesn't already exist<br>
+</p>
+
+<p>
+- &#30887;&#32511;&#30340;&#28246; -<br>
+</p>
+<p>
+
+</p><div class="clear">
+	<div style="float: left;">
+		Back : <a href="index.html">GML Overview</a>
+	</div>
+	<div style="float: right;">
+		Next : <a href="401_06_arrays.html">Arrays</a>
+	</div>
+</div>
+
+
+<!-- KEYWORDS
+self
+other
+all
+noone
+instance id
+-->  </div>   <!-- #BeginLibraryItem "/mmenu_leftlist.lbi" -->
+			<nav id="menu-left">
+			<!-- mmenu_leftlist up -->
+				<ul>
+					<li ><a href="../../index.html">GMS&#x624B;&#x518C;&#x9996;&#x9875;</a></li>					
+					<li >
+						<a href="../../000_Using GameMaker/index.html">GMS&#x4F7F;&#x7528;</a>
+						<ul>
+							<li><a href="../../000_Using GameMaker/000_Introduction.html">Introduction &#x4ECB;&#x7ECD;</a></li>
+							<li><a href="../../000_Using GameMaker/001_Installation.html">Installation &#x5B89;&#x88C5;</a></li>
+							<li><a href="../../000_Using GameMaker/002_Activation.html">Activation &#x6FC0;&#x6D3B;</a></li>
+							<li><a href="../../000_Using GameMaker/003_GameMaker Studio Overview.html">GMS &#x6982;&#x8FF0;</a></li>
+							<li>
+								<a href="../../000_Using GameMaker/004_The Graphical User Interface.html">GMS&#x7528;&#x6237;&#x754C;&#x9762;&#x4ECB;&#x7ECD;</a>
+								<ul>
+									<li><a href="../../000_Using GameMaker/Drop Down Menus/The File Menu.html">The File Menu &#x201C;&#x6587;&#x4EF6;&#x201D;&#x83DC;&#x5355;</a></li>
+									<li><a href="../../000_Using GameMaker/Drop Down Menus/The Edit Menu.html">The Edit Menu &#x201C;&#x7F16;&#x8F91;&#x201D;&#x83DC;&#x5355;</a></li>
+									<li><a href="../../000_Using GameMaker/Drop Down Menus/The Resources Menu.html">The Resources Menu &#x201C;&#x8D44;&#x6E90;&#x201D;&#x83DC;&#x5355;</a></li>
+									<li><a href="../../000_Using GameMaker/Drop Down Menus/The Scripts Menu.html">The Scripts Menu &#x201C;&#x811A;&#x672C;&#x201D;&#x83DC;&#x5355;</a></li>
+									<li><a href="../../000_Using GameMaker/Drop Down Menus/The Run Menu.html">The Run Menu &#x201C;&#x8FD0;&#x884C;&#x201D;&#x83DC;&#x5355;</a></li>
+									<li><a href="../../000_Using GameMaker/Drop Down Menus/The Windows Menu.html">The Window Menu &#x201C;&#x7A97;&#x53E3;&#x83DC;&#x5355;&#x201D;</a></li>
+									<li><a href="../../000_Using GameMaker/Drop Down Menus/The Help Menu.html">The Help Menu &#x201C;&#x5E2E;&#x52A9;&#x201D;&#x83DC;&#x5355;</a></li>									
+								</ul>
+							</li>
+							<li><a href="../../000_Using GameMaker/005_Loading Sprites.html">Loading Sprites &#x8F7D;&#x5165;&#x7CBE;&#x7075;</a></li>
+							<li><a href="../../000_Using GameMaker/006_Sounds and music.html">Sounds And Music &#x58F0;&#x97F3;&#x4E0E;&#x97F3;&#x4E50;</a></li>
+							<li><a href="../../000_Using GameMaker/007_Backgrounds.html">Backgrounds &#x80CC;&#x666F;</a></li>
+							<li><a href="../../000_Using GameMaker/008_Defining objects.html">Defining Objects &#x5B9A;&#x4E49;&#x5BF9;&#x8C61;</a></li>
+							<li>
+								<a href="../../000_Using GameMaker/Events/index.html">Events &#x4E8B;&#x4EF6;</a>
+								<ul>
+									<li><a href="../../000_Using GameMaker/Events/Create Event.html">Create Event &#x521B;&#x5EFA;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../../000_Using GameMaker/Events/Destroy Event.html">Destroy Event &#x7834;&#x574F;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../../000_Using GameMaker/Events/Alarm Event.html">Alarm Events &#x8BA1;&#x65F6;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../../000_Using GameMaker/Events/Step Event.html">Step Events &#x6B65;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../../000_Using GameMaker/Events/Collision Event.html">Collision Event &#x78B0;&#x649E;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../../000_Using GameMaker/Events/Keyboard Event.html">Keyboard Events &#x952E;&#x76D8;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../../000_Using GameMaker/Events/Mouse Event.html">Mouse Event &#x9F20;&#x6807;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../../000_Using GameMaker/Events/Other Event.html">Other Events &#x5176;&#x5B83;&#x4E8B;&#x4EF6;</a></li>
+									<li>
+										<a href="../../000_Using GameMaker/Events/Draw Event.html">Draw Event &#x7ED8;&#x5236;&#x4E8B;&#x4EF6;</a>
+										<ul>
+											<li><a href="../../000_Using GameMaker/Events/Draw GUI Event.html">&#x7ED8;&#x5236;&#x56FE;&#x5F62;&#x754C;&#x9762;&#x4E8B;&#x4EF6;</a></li>
+											<li><a href="../../000_Using GameMaker/Events/Resize Event.html">&#x8C03;&#x6574;&#x5927;&#x5C0F;&#x4E8B;&#x4EF6;</a></li>
+										</ul>
+									</li>
+									<li><a href="../../000_Using GameMaker/Events/Async Event.html">Asynchronous Events &#x5F02;&#x6B65;&#x4E8B;&#x4EF6;</a></li>									
+								</ul>
+							</li>
+							<li>
+								<a href="../../000_Using GameMaker/Actions/index.html">Actions &#x52A8;&#x4F5C;</a>
+								<ul>
+									<li><a href="../../000_Using GameMaker/Actions/000_Move actions.html">Move Actions &#x79FB;&#x52A8;&#x7C7B;&#x52A8;&#x4F5C;</a></li>
+									<li><a href="../../000_Using GameMaker/Actions/001_Main actions set 1.html">Main Actions, Set 1 &#x4E3B;&#x52A8;&#x4F5C;&#x8BBE;&#x5B9A;1</a></li>
+									<li><a href="../../000_Using GameMaker/Actions/002_Main actions set 2.html">Main Actions, Set 2 &#x4E3B;&#x52A8;&#x4F5C;&#x8BBE;&#x5B9A;2</a></li>
+									<li><a href="../../000_Using GameMaker/Actions/003_Control actions.html">Control Actions &#x63A7;&#x5236;&#x7C7B;&#x52A8;&#x4F5C;</a></li>
+									<li><a href="../../000_Using GameMaker/Actions/004_Score actions.html">Score Actions &#x5206;&#x6570;&#x7C7B;&#x52A8;&#x4F5C;</a></li>
+									<li><a href="../../000_Using GameMaker/Actions/005_Extra actions.html">&#x8865;&#x5145;&#x7684;&#x76F8;&#x5173;&#x52A8;&#x4F5C; </a></li>
+									<li><a href="../../000_Using GameMaker/Actions/006_Draw actions.html">Draw Actions &#x7ED8;&#x5236;&#x7C7B;&#x52A8;&#x4F5C;</a></li>
+									<li><a href="../../000_Using GameMaker/Actions/007_Using expressions and variables.html">&#x4F7F;&#x7528;&#x8868;&#x8FBE;&#x5F0F;&#x548C;&#x53D8;&#x91CF;</a></li>																	
+								</ul>
+							</li>
+							<li>
+								<a href="../../000_Using GameMaker/Rooms/index.html">&#x521B;&#x5EFA;&#x623F;&#x95F4;(Rooms)</a>
+								<ul>
+									<li><a href="../../000_Using GameMaker/Rooms/Settings Tab.html">Settings &#x8BBE;&#x7F6E;</a></li>
+									<li><a href="../../000_Using GameMaker/Rooms/Backgrounds Tab.html">Backgrounds &#x80CC;&#x666F;</a></li>
+									<li><a href="../../000_Using GameMaker/Rooms/Objects Tab.html">Objects &#x5BF9;&#x8C61;</a></li>																
+								</ul>								
+							</li>
+							<li><a href="../../000_Using GameMaker/Game Information.html">&#x6E38;&#x620F;&#x4FE1;&#x606F;&#x8BBE;&#x7F6E; </a></li>							
+							<li><a href="../../000_Using GameMaker/009_Distributing your game.html">&#x53D1;&#x5E03;&#x4F60;&#x7684;&#x6E38;&#x620F;</a></li>						
+
+						</ul>
+					</li>
+					<li >
+						<a href="../../001_Advanced Use/index.html">&#x9AD8;&#x7EA7;&#x5E94;&#x7528;</a>
+						<ul>
+							<li class="Label">&#x6E38;&#x620F;&#x539F;&#x751F;&#x8D44;&#x6E90;(Game Assets)</li>
+							<li>
+								<a href="../../001_Advanced Use/More about sprites/index.html">&#x66F4;&#x591A;&#x7CBE;&#x7075;(Sprites)&#x7684;&#x5185;&#x5BB9;</a>
+								<ul>
+									<li><a href="../../001_Advanced Use/More about sprites/Editing Sprites.html">&#x7F16;&#x8F91;&#x7CBE;&#x7075;&#xFF08;Sprites&#xFF09;</a></li>
+									<li><a href="../../001_Advanced Use/More about sprites/Editing Subimages.html">&#x7F16;&#x8F91;&#x5B50;&#x56FE;&#xFF08;Subimages&#xFF09;</a></li>
+									<li><a href="../../001_Advanced Use/More about sprites/Editing Collision Masks.html">&#x7F16;&#x8F91;&#x78B0;&#x649E;&#x906E;&#x7F69;&#xFF08;Collision Masks&#xFF09;</a></li>																
+								</ul>										
+							</li>
+							<li>
+								<a href="../../001_Advanced Use/More about backgrounds/index.html">&#x66F4;&#x591A;&#x80CC;&#x666F;(background)&#x7684;&#x5185;&#x5BB9;</a>
+								<ul>
+									<li><a href="../../001_Advanced Use/More about backgrounds/Designing Tiles.html">Designing Tiles &#x56FE;&#x5757;&#x8BBE;&#x8BA1;</a></li>
+									<li><a href="../../001_Advanced Use/More about backgrounds/Texture Pages.html">Texture Pages &#x7EB9;&#x7406;&#x8D34;&#x56FE;&#x9875;</a></li>															
+								</ul>
+							</li>
+							<li>
+								<a href="../../001_Advanced Use/More about Objects/index.html">&#x66F4;&#x591A;&#x5BF9;&#x8C61;(object)&#x7684;&#x5185;&#x5BB9;</a>
+								<ul>
+									<li><a href="../../001_Advanced Use/More about Objects/Parents.html">Parents &#x7236;&#x5BF9;&#x8C61;</a></li>
+									<li><a href="../../001_Advanced Use/More about Objects/Physics.html">Object Physics Properties &#x5BF9;&#x8C61;&#x7269;&#x7406;&#x5C5E;&#x6027;</a></li>															
+								</ul>	
+							</li>
+							<li>
+								<a href="../../001_Advanced Use/More about rooms/index.html">&#x66F4;&#x591A;&#x623F;&#x95F4;(room)&#x7684;&#x5185;&#x5BB9;</a>
+								<ul>
+									<li><a href="../../001_Advanced Use/More about rooms/Tiles.html">Tiles &#x56FE;&#x5757;</a></li>
+									<li><a href="../../001_Advanced Use/More about rooms/Views.html">Viewss &#x89C6;&#x91CE;</a></li>
+									<li><a href="../../001_Advanced Use/More about rooms/Physics.html">Physics &#x7269;&#x7406;&#x73AF;&#x5883;</a></li>															
+								</ul>
+							</li>
+							
+							<li>
+								<a href="../../001_Advanced Use/More About Async Events/index.html">&#x66F4;&#x591A;&#x5F02;&#x6B65;&#x4E8B;&#x4EF6;(Async Events)&#x7684;&#x5185;&#x5BB9;</a>
+								<ul>
+									<li><a href="../../001_Advanced Use/More About Async Events/Image Loaded and Sound Loaded Events.html">&#x56FE;&#x7247;&#x8F7D;&#x5165;&#x548C;&#x58F0;&#x97F3;&#x8F7D;&#x5165;&#x7684;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../../001_Advanced Use/More About Async Events/HTTP.html">HTTP&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../../001_Advanced Use/More About Async Events/Dialogs.html">Dialogs Event &#x5BF9;&#x8BDD;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../../001_Advanced Use/More About Async Events/IAP.html">IAP(&#x5E94;&#x7528;&#x5185;&#x90E8;&#x4ED8;&#x8D39;&#x6A21;&#x5F0F;)&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../../001_Advanced Use/More About Async Events/Cloud.html">Cloud Event &#x4E91;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../../001_Advanced Use/More About Async Events/Networking.html">Networking Event &#x8054;&#x7F51;&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../../001_Advanced Use/More About Async Events/Steam.html">Steam&#x4E8B;&#x4EF6;</a></li>
+									<li><a href="../../001_Advanced Use/More About Async Events/Social.html">Social Event &#x793E;&#x4F1A;&#x5316;&#x6A21;&#x5757;&#x4E8B;&#x4EF6;</a></li>															
+								</ul>
+							</li>
+							<li class="Label">Resource Editors &#x8D44;&#x6E90;&#x7F16;&#x8F91;&#x5668;</li>
+							<li><a href="../../001_Advanced Use/003_Fonts.html">Fonts &#x5B57;&#x4F53;</a></li>
+							<li><a href="../../001_Advanced Use/004_Paths.html">Paths &#x8DEF;&#x5F84;</a></li>
+							<li><a href="../../001_Advanced Use/005_Time lines.html">Time Lines &#x65F6;&#x95F4;&#x8F74;</a></li>
+							<li><a href="../../001_Advanced Use/006_Scripts.html">Scripts &#x811A;&#x672C;</a></li>
+							<li><a href="../../001_Advanced Use/009_Shaders.html">Shaders &#x7740;&#x8272;&#x5668;</a></li>
+							<li><a href="../../001_Advanced Use/010_Constants.html">Constants &#x5E38;&#x91CF;</a></li>
+							<li><a href="../../001_Advanced Use/002_Including Files.html">Including Files &#x5305;&#x542B;&#x6587;&#x4EF6;</a></li>
+							<li><a href="../../001_Advanced Use/008_Exporting and importing resources.html">Importing Resources &#x5BFC;&#x5165;&#x8D44;&#x6E90;</a></li>
+							<li class="Label">Game Settings &#x6E38;&#x620F;&#x8BBE;&#x7F6E;</li>
+							<li>
+								<a href="../../001_Advanced Use/Extensions/index.html">&#x6269;&#x5C55;&#x5305;</a>
+								<ul>
+									<li><a href="../../001_Advanced Use/Extensions/Using Extensions.html">&#x4F7F;&#x7528;&#x6269;&#x5C55;</a></li>
+									<li><a href="../../001_Advanced Use/Extensions/Creating Extensions.html">&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6269;&#x5C55;</a></li>														
+								</ul>
+							</li>							
+							<li><a href="#">Configurations &#x914D;&#x7F6E;</a></li>
+							<li>
+								<a href="../../001_Advanced Use/Source Control/index.html">&#x6E90;&#x4EE3;&#x7801;&#x63A7;&#x5236;</a>
+								<ul>
+									<li><a href="../../001_Advanced Use/Source Control/Getting Started With Source Control.html">&#x6E90;&#x4EE3;&#x7801;&#x63A7;&#x5236;&#x5165;&#x95E8;&#x5F15;&#x5BFC;</a></li>
+									<li><a href="../../001_Advanced Use/Source Control/Setting Up GM For Source Control.html">&#x8BBE;&#x7F6E;GMS&#x8FDB;&#x884C;&#x6E90;&#x4EE3;&#x7801;&#x63A7;&#x5236;</a></li>
+									<li><a href="../../001_Advanced Use/Source Control/Using Source Control.html">GMS&#x6E90;&#x4EE3;&#x7801;&#x63A7;&#x5236;&#x7684;&#x4F7F;&#x7528;</a></li>														
+								</ul>
+							</li>							
+							<li>
+								<a href="../../001_Advanced Use/Global game settings/index.html">&#x5168;&#x5C40;&#x6E38;&#x620F;&#x8BBE;&#x5B9A;</a>
+								<ul>
+									<li><a href="../../001_Advanced Use/Global game settings/General Tab.html">General &#x5E38;&#x89C4;&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../../001_Advanced Use/Global game settings/Texture Groups Tab.html">Texture Groups &#x7EB9;&#x7406;&#x7EC4;</a></li>
+									<li><a href="../../001_Advanced Use/Global game settings/Project Info Tab.html">Project Info &#x9879;&#x76EE;&#x4FE1;&#x606F;</a></li>
+									<li><a href="../../001_Advanced Use/Global game settings/Facebook Tab.html">Facebook &#x8138;&#x4E66;</a></li>
+									<li><a href="../../001_Advanced Use/Global game settings/Source Control Tab.html">Source Control &#x4EE3;&#x7801;&#x63A7;&#x5236;</a></li>
+									<li><a href="../../001_Advanced Use/Global game settings/Advertising Tab.html">Advertising &#x5E7F;&#x544A;</a></li>
+									<li><a href="../../001_Advanced Use/Global game settings/Analytics Tab.html">Analytics &#x5E94;&#x7528;&#x6570;&#x636E;&#x5206;&#x6790;</a></li>
+									<li><a href="../../001_Advanced Use/Global game settings/In App Purchases Tab.html">IAP&#x5E94;&#x7528;&#x5185;&#x90E8;&#x4ED8;&#x8D39;</a></li>
+									<li><a href="../../001_Advanced Use/Global game settings/Licensing Tab.html">Licensing &#x8BB8;&#x53EF;&#x8BC1;</a></li>
+									<li><a href="../../001_Advanced Use/Global game settings/Extras Tab.html">Extras Tab &#x989D;&#x5916;&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../../001_Advanced Use/Global game settings/Windows Tab.html">Windows&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../../001_Advanced Use/Global game settings/Mac OS Tab.html">Mac OS&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../../001_Advanced Use/Global game settings/HTML5 Tab.html">HTML5&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../../001_Advanced Use/Global game settings/iOS Tab.html">iOS&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../../001_Advanced Use/Global game settings/Android Tab.html">Android&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../../001_Advanced Use/Global game settings/Win8 Tab.html">Windows 8&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../../001_Advanced Use/Global game settings/Win8 Phone Tab.html">Windows 8 Phone&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../../001_Advanced Use/Global game settings/Tizen Tab.html">Tizen&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../../001_Advanced Use/Global game settings/Linux Tab.html">Ubuntu(Linux)&#x9009;&#x9879;&#x5361;</a></li>
+									<li><a href="../../001_Advanced Use/Global game settings/Steam Tab.html">Steam&#x9009;&#x9879;&#x5361;</a></li>														
+								</ul>
+							</li>
+
+							<li>
+								<a href="../../001_Advanced Use/Preferences/index.html">Preferences &#x9996;&#x9009;&#x9879;</a>
+								<ul>
+									<li><a href="../../001_Advanced Use/Preferences/General Preferences.html">General &#x5E38;&#x89C4;</a></li>
+									<li><a href="../../001_Advanced Use/Preferences/Form Preferences.html">Forms &#x7A97;&#x53E3;</a></li>
+									<li><a href="../../001_Advanced Use/Preferences/Scripts Preferences.html">Scripts &#x811A;&#x672C;</a></li>
+									<li><a href="../../001_Advanced Use/Preferences/Editor Preferences.html">Editors &#x7F16;&#x8F91;&#x5668;</a></li>
+									<li><a href="../../001_Advanced Use/Preferences/Server Preferences.html">Web Server &#x670D;&#x52A1;&#x5668;</a></li>
+									<li><a href="../../001_Advanced Use/Preferences/Android Preferences.html">Android</a></li>
+									<li><a href="../../001_Advanced Use/Preferences/Windows8 Preferences.html">Windows 8</a></li>
+									<li><a href="../../001_Advanced Use/Preferences/Windows Phone Preferences.html">Windows Phone</a></li>
+									<li><a href="../../001_Advanced Use/Preferences/Tizen Preferences.html">Tizen</a></li>
+									<li><a href="../../001_Advanced Use/Preferences/Mac Preferences.html">Mac OS</a></li>
+									<li><a href="../../001_Advanced Use/Preferences/Linux Preferences.html">Ubuntu (Linux)</a></li>
+									<li><a href="../../001_Advanced Use/Preferences/Steam Preferences.html">Steam</a></li>	
+									<li><a href="../../001_Advanced Use/Preferences/Source Control Preferences.html">Source Control &#x4EE3;&#x7801;&#x63A7;&#x5236;</a></li>														
+								</ul>
+							</li>
+							<li><a href="../../001_Advanced Use/011_Debugging.html">Debugging &#x8C03;&#x8BD5;</a></li>
+						</ul>
+					</li>
+					<li >
+						<a href="../index.html">GML&#x53C2;&#x8003;&#x624B;&#x518C;</a>
+						<ul>
+							<li>
+								<a href="index.html">GML&#x6982;&#x8FF0;</a>
+								<ul>
+									<li><a href="401_01_program.html">A Program &#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;</a></li>
+									<li><a href="Variables/index.html">&#x53D8;&#x91CF;&#x53CA;&#x53D8;&#x91CF;&#x57DF;</a></li>
+									<li><a href="401_05_addressing.html">&#x5728;&#x5176;&#x4ED6;&#x5B9E;&#x4F8B;&#x4E2D;&#x7684;&#x5BFB;&#x5740;&#x53D8;&#x91CF;</a></li>
+									<li><a href="401_06_arrays.html">Arrays &#x6570;&#x7EC4;</a></li>
+									<li><a href="401_16_functions.html">Functions &#x51FD;&#x6570;</a></li>
+									<li><a href="401_03_assignments.html">Assignments &#x8D4B;&#x503C;</a></li>
+									<li><a href="401_04_expressions.html">Expressions &#x8868;&#x8FBE;&#x5F0F;</a></li>
+									<li><a href="401_07_if.html">If&#x8BED;&#x53E5;</a></li>
+									<li><a href="401_08_repeat.html">Repeat&#x8BED;&#x53E5;</a></li>
+									<li><a href="401_09_while.html">While&#x8BED;&#x53E5;</a></li>
+									<li><a href="401_10_do.html">Do&#x8BED;&#x53E5;</a></li>
+									<li><a href="401_11_for.html">For&#x8BED;&#x53E5;</a></li>
+									<li><a href="401_12_switch.html">Switch&#x8BED;&#x53E5;</a></li>
+									<li><a href="401_13_break.html">Break&#x8BED;&#x53E5;</a></li>
+									<li><a href="401_14_continue.html">Continue&#x8BED;&#x53E5;</a></li>
+									<li><a href="401_15_exit.html">Exit&#x8BED;&#x53E5;</a></li>
+									<li><a href="401_18_with.html">With&#x7ED3;&#x6784;</a></li>
+									<li><a href="401_17_scripts.html">Scripts &#x811A;&#x672C;</a></li>
+									<li><a href="401_19_comment.html">&#x4EE3;&#x7801;&#x6CE8;&#x91CA;</a></li>
+									<li><a href="401_20_evaluation_order.html">Evaluation Order &#x8BA1;&#x7B97;&#x987A;&#x5E8F;</a></li>														
+								</ul>
+							</li>
+							<li class="Label">&#x5B9E;&#x6570;&#x4E0E;&#x5B57;&#x7B26;&#x4E32;</li>							
+							<li><a href="../Date and Time/index.html">Date and Time &#x65E5;&#x671F;&#x4E0E;&#x65F6;&#x95F4;</a></li>
+							<li>
+								<a href="../Maths/index.html">Maths &#x6570;&#x5B66;</a>
+								<ul>
+									<li><a href="../Maths/Real valued functions/index.html">Real Number Functions &#x5B9E;&#x6570;&#x51FD;&#x6570;</a></li>
+									<li><a href="../Maths/Vector Functions/index.html">Vector Functions &#x77E2;&#x91CF;&#x51FD;&#x6570;</a></li>														
+								</ul>
+							</li>
+							<li><a href="../Strings/index.html">Strings &#x5B57;&#x7B26;&#x4E32;</a></li>
+							<li class="Label">Game Play &#x6E38;&#x620F;&#x8FD0;&#x884C;</li>							
+							<li>
+								<a href="../Game Assets/index.html">Game Assets&#x6E38;&#x620F;&#x539F;&#x751F;&#x8D44;&#x6E90;</a>
+								<ul>
+									<li><a href="../Game Assets/Sprites/index.html">Sprites &#x7CBE;&#x7075;</a></li>
+									<li><a href="../Game Assets/Backgrounds/index.html">Backgrounds &#x80CC;&#x666F;</a></li>
+									<li><a href="../Game Assets/Sounds/index.html">Sounds &#x58F0;&#x97F3;</a></li>
+									<li><a href="../Game Assets/Fonts/index.html">Fonts &#x5B57;&#x4F53;</a></li>
+									<li><a href="../Paths/index.html">Paths &#x8DEF;&#x5F84;</a></li>
+									<li><a href="../Timelines/index.html">Timelines &#x65F6;&#x95F4;&#x8F74;</a></li>
+									<li><a href="../Rooms/index.html">Rooms &#x623F;&#x95F4;</a></li>															
+								</ul>
+							</li>
+							<li>
+								<a href="../Mouse, Keyboard and Other Controls/index.html">&#x9F20;&#x6807;&#x3001;&#x952E;&#x76D8;&#x548C;&#x5176;&#x4ED6;&#x63A7;&#x5236;&#x8BBE;&#x5907;</a>
+								<ul>
+									<li><a href="../Mouse, Keyboard and Other Controls/Virtual Keys/index.html">Virtual Keys &#x865A;&#x62DF;&#x952E;</a></li>
+									<li><a href="../Mouse, Keyboard and Other Controls/Keyboard Input/index.html">Keyboard Input &#x952E;&#x76D8;&#x8F93;&#x5165;</a></li>
+									<li><a href="../Mouse, Keyboard and Other Controls/Mouse Input/index.html">Mouse Input &#x9F20;&#x6807;&#x8F93;&#x5165;</a></li>
+									<li><a href="../Mouse, Keyboard and Other Controls/Device Input/index.html">Device Input &#x8BBE;&#x5907;&#x8F93;&#x5165;</a></li>
+									<li><a href="../Mouse, Keyboard and Other Controls/GamePad Input/index.html">GamePad Input &#x6E38;&#x620F;&#x624B;&#x67C4;&#x8F93;&#x5165;</a></li>
+									<li><a href="../Mouse, Keyboard and Other Controls/Joystick Input/index.html">Joystick Input &#x6447;&#x6746;&#x8F93;&#x5165;</a></li>
+									<li><a href="../Mouse, Keyboard and Other Controls/immersion Haptics/index.html">Immersion Haptics &#x89E6;&#x6478;&#x8F93;&#x5165;</a></li>																							
+								</ul>
+							</li>
+							<li>
+								<a href="../Movement and Collisions/index.html">&#x79FB;&#x52A8;&#x4E0E;&#x78B0;&#x649E;</a>
+								<ul>
+									<li><a href="../Movement and Collisions/Movement/index.html">Movement &#x79FB;&#x52A8;</a></li>
+									<li><a href="../Movement and Collisions/Motion Planning/index.html">Motion Planning &#x8FD0;&#x52A8;&#x8BBE;&#x8BA1;</a></li>
+									<li><a href="../Movement and Collisions/Collisions/index.html">Collisions &#x78B0;&#x649E;</a></li>														
+								</ul>
+							</li>
+							<li>
+								<a href="../Objects and Instances/index.html">&#x5BF9;&#x8C61;&#x4E0E;&#x5B9E;&#x4F8B;</a>
+								<ul>
+									<li><a href="../Objects and Instances/Objects/index.html">Objects &#x5BF9;&#x8C61;</a></li>
+									<li><a href="../Objects and Instances/Instances/index.html">Instances &#x5B9E;&#x4F8B;</a></li>														
+								</ul>
+							</li>
+							<li class="Label">Drawing And Display &#x7ED8;&#x5236;&#x4E0E;&#x663E;&#x793A;</li>
+							<li>
+								<a href="../Drawing/index.html">Drawing &#x7ED8;&#x5236;</a>
+								<ul>
+									<li><a href="../Drawing/Color And Blending/index.html">Color And Blending &#x989C;&#x8272;&#x4E0E;&#x6DF7;&#x5408;</a></li>
+									<li><a href="../Drawing/Drawing Basic Forms/index.html">Drawing Basic Forms &#x7ED8;&#x5236;&#x56FE;&#x5F62;</a></li>
+									<li><a href="../Drawing/Drawing Sprites And Backgrounds/index.html">Drawing Sprites And Backgrounds &#x7ED8;&#x5236;&#x7CBE;&#x7075;&#x548C;&#x80CC;&#x666F;</a></li>
+									<li><a href="../Drawing/Drawing Text/index.html">Drawing Text &#x7ED8;&#x5236;&#x6587;&#x672C;</a></li>
+									<li><a href="../Drawing/Drawing Primitives/index.html">Drawing Primitives &#x7ED8;&#x5236;&#x56FE;&#x5143;</a></li>
+									<li><a href="../Drawing/Drawing 3D/index.html">&#x7ED8;&#x5236;3D&#x56FE;&#x5F62;</a></li>
+									<li><a href="../Drawing/Drawing Surfaces/index.html">Drawing Surfaces &#x7ED8;&#x5236;&#x8868;&#x9762;</a></li>															
+								</ul>
+							</li>
+							<li>
+								<a href="../Shaders/index.html">Shaders &#x7740;&#x8272;&#x5668;</a>
+								<ul>
+									<li><a href="../Shaders/Vertex Formats/index.html">Vertex Formats &#x9876;&#x70B9;&#x683C;&#x5F0F;</a></li>
+									<li><a href="../Shaders/Primitive Building/index.html">Primitive Building &#x5EFA;&#x7ACB;&#x56FE;&#x5143;</a></li>
+									<li><a href="../Shaders/Shader Constants/index.html">Shader Constants &#x7740;&#x8272;&#x5668;&#x5E38;&#x91CF; </a></li>														
+								</ul>
+							</li>
+							<li><a href="../Surfaces/index.html">Surfaces &#x8868;&#x9762;</a></li>
+							<li>
+								<a href="../Windows And Views/index.html">&#x7A97;&#x53E3;&#x4E0E;&#x89C6;&#x91CE;</a>
+								<ul>
+									<li><a href="../Windows And Views/The Game Window/index.html">The Game Window &#x6E38;&#x620F;&#x7A97;&#x53E3;</a></li>
+									<li><a href="../Windows And Views/Views/index.html">Views &#x89C6;&#x91CE;</a></li>														
+								</ul>
+							</li>
+							<li class="Label">Advanced Functions &#x9AD8;&#x7EA7;&#x51FD;&#x6570;</li>
+							<li>
+
+								<a href="../Data Structures/index.html">&#x6570;&#x636E;&#x7ED3;&#x6784;</a>
+								<ul>
+									<li><a href="../Data Structures/DS Stacks/index.html">Stacks &#x5806;&#x6808;</a></li>
+									<li><a href="../Data Structures/DS Queues/index.html">Queues &#x961F;&#x5217;</a></li>
+									<li><a href="../Data Structures/DS Lists/index.html">Lists &#x5217;&#x8868;</a></li>
+									<li><a href="../Data Structures/DS Maps/index.html">Maps &#x5730;&#x56FE;</a></li>
+									<li><a href="../Data Structures/DS Priority Queues/index.html">Priority Queues &#x4F18;&#x5148;&#x961F;&#x5217;</a></li>
+									<li><a href="../Data Structures/DS Grids/index.html">Grids &#x7F51;&#x683C;</a></li>																								
+								</ul>
+							</li>
+							<li>
+								<a href="../Particles/index.html">Particles &#x7C92;&#x5B50;</a>
+								<ul>
+									<li><a href="../Particles/Simple Effects/index.html">Simple Effects &#x7B80;&#x5355;&#x7279;&#x6548;</a></li>
+									<li><a href="../Particles/Particle Systems/index.html">Particle Systems &#x7C92;&#x5B50;&#x7CFB;&#x7EDF;</a></li>
+									<li><a href="../Particles/Particle Types/index.html">Particle Types &#x7C92;&#x5B50;&#x7C7B;&#x578B;</a></li>
+									<li><a href="../Particles/Particle Emitters/index.html">Particle Emitters &#x7C92;&#x5B50;&#x53D1;&#x5C04;&#x5668;</a></li>																																	
+								</ul>
+							</li>
+							<li>
+								<a href="../Physics/index.html">Physics &#x7269;&#x7406;&#x51FD;&#x6570;</a>
+								<ul>
+									<li><a href="../Physics/The Physics World/index.html">The Physics World &#x7269;&#x7406;&#x73AF;&#x5883;</a></li>
+									<li><a href="../Physics/Forces/index.html">Forces &#x529B;</a></li>
+									<li><a href="../Physics/Fixtures/index.html">Fixtures &#x56FA;&#x5B9A;&#x88C5;&#x7F6E;</a></li>
+									<li><a href="../Physics/Joints/index.html">Joints &#x8054;&#x63A5;</a></li>
+									<li><a href="../Physics/Physics Variables/index.html">Physics Variables &#x7269;&#x7406;&#x53D8;&#x91CF;</a></li>																																
+								</ul>
+							</li>
+							<li>
+								<a href="../File Handling/index.html">&#x6587;&#x4EF6;&#x5904;&#x7406;(File Handling)</a>
+								<ul>
+									<li><a href="../File Handling/File System Limits.html">File System Limits &#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x9650;&#x5236;</a></li>																																							
+								</ul>
+							</li>
+							<li><a href="../Operating System/index.html">Operating System &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</a></li>
+							<li><a href="../Buffers/index.html">Buffers &#x7F13;&#x5B58;&#x533A;</a></li>
+							<li><a href="../Networking/index.html">Networking &#x8054;&#x7F51;</a></li>
+							<li class="Label">Platform Specific &#x5E73;&#x53F0;&#x7279;&#x6027;</li>
+							<li><a href="../HTML5/index.html">HTML5</a></li>
+							<li>
+								<a href="../Windows8/index.html">Windows 8</a>
+								<ul>
+									<li><a href="../Windows8/Windows 8 Phone/index.html">Windows 8 Phone</a></li>																																							
+								</ul>
+							</li>
+							<li><a href="../Advertising and Analytics/index.html">&#x5E7F;&#x544A;&#x4E0E;&#x6570;&#x636E;&#x5206;&#x6790;</a></li>
+							<li>
+								<a href="../Social Gaming/index.html">&#x6E38;&#x620F;&#x793E;&#x4EA4;&#x8BBE;&#x8BA1;</a>
+								<ul>
+									<li><a href="../Social Gaming/Facebook/index.html">Facebook</a></li>
+									<li><a href="../Social Gaming/Achievements and Leaderboards/index.html">Achievements and Leaderboards &#x6210;&#x5C31;&#x4E0E;&#x6392;&#x884C;&#x699C;</a></li>
+									<li><a href="../Social Gaming/Achievements and Leaderboards/Local High Scores/index.html">Local High Scores &#x672C;&#x5730;&#x9AD8;&#x5206;&#x699C;</a></li>																																									
+								</ul>
+							</li>
+							<li>
+								<a href="../In App Purchases/index.html">IAP&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5185;&#x8D2D;&#x4E70;</a>
+								<ul>
+									<li><a href="../In App Purchases/IAP Example.html">IAP&#x793A;&#x4F8B;</a></li>
+									<li><a href="../In App Purchases/IAP Testing.html">IAP&#x6D4B;&#x8BD5;</a></li>
+									<li><a href="../In App Purchases/IAP Server Setup.html">IAP&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x8BBE;&#x7F6E;</a></li>																																									
+								</ul>
+							</li>
+							<li><a href="../Asynchronous Functions/index.html">Asynchronous &#x5F02;&#x6B65;</a></li>
+							<li><a href="../Cloud Services/index.html">Cloud Services &#x4E91;&#x670D;&#x52A1;</a></li>
+							<li><a href="../Steam API/index.html">Steam API &#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x63A5;&#x53E3;</a></li>
+							<li class="Label">Extras &#x9644;&#x52A0;</li>
+							<li><a href="../Debugging/index.html">Debugging &#x8C03;&#x8BD5;</a></li>
+							<li><a href="../Miscellaneous/index.html">Miscellaneous &#x6742;&#x9879;</a></li>
+							<li><a href="../017_Obsolete Functions/index.html">Obsolete Functions &#x6DD8;&#x6C70;&#x51FD;&#x6570;</a></li>
+						</ul>
+					</li>
+					<li ><a href="#">&#x5B9E;&#x4F8B;&#x6559;&#x7A0B;&#x53CA;&#x5FC3;&#x5F97;</a></li>
+					<li ><a href="#">&#x5B9E;&#x9A8C;&#x6027;&#x9879;&#x76EE;</a></li>
+					<li ><a href="#">&#x5E94;&#x7528;&#x8BBE;&#x7F6E;</a></li>
+					<li ><a href="../../update_log.html">Update log</a></li>
+					<li ><a href="../../index_searcher.html">&#x7D22;&#x5F15;&#x76EE;&#x5F55;</a></li>					
+				</ul>			
+			</nav>
+<!-- #EndLibraryItem -->..<!-- #BeginLibraryItem "/mmenu_rightlist.lbi" --><!-- mmenu_right up 1 -->
+			<nav id="menu-right">
+				<ul>
+					<li>
+						<span>GMS&#x4F7F;&#x7528;&#x95EE;&#x9898;&#x53EF;&#x4EE5;&#x8054;&#x7CFB;&#x6211;</span>
+						<ul>
+							<li class="Label">A</li>
+							<li class="img">
+								<a href="#">
+									<img src="#people/1/" />
+									Alexa<br />
+									<small>Johnson</small>
+								</a>
+							</li>
+						</ul>
+					</li>
+					
+					<li>
+						<span>&#x7F51;&#x7AD9;&#x95EE;&#x9898;&#x53EF;&#x4EE5;&#x8054;&#x7CFB;&#x6211;</span>
+						<ul>
+							<li class="Label">D</li>
+							<li class="img">
+								<a href="mailto:deciia@qq.com">
+									<img src="../../deciia@qq.com" />
+									Adam<br />
+									<small>Deciia</small>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+<!-- mmenu_right down 1 -->
+<!-- #EndLibraryItem --></div></body></html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="index.html" local="130397539270000000" remote="130397539270000000" testing="0" />
+<file name="vertex_argb.html" local="130397539270000000" remote="130397539270000000" testing="0" />
+<file name="vertex_begin.html" local="130397539270000000" remote="130397539270000000" testing="0" />
+<file name="vertex_colour.html" local="130397539270000000" remote="130397539270000000" testing="0" />
+<file name="vertex_create_buffer.html" local="130397539270000000" remote="130397539270000000" testing="0" />
+<file name="vertex_create_buffer_ext.html" local="130397539270000000" remote="130397539270000000" testing="0" />
+<file name="vertex_delete.html" local="130397539270000000" remote="130397539270000000" testing="0" />
+<file name="vertex_delete_buffer.html" local="130397539270000000" remote="130397539270000000" testing="0" />
+<file name="vertex_end.html" local="130397539270000000" remote="130397539270000000" testing="0" />
+<file name="vertex_float1.html" local="130397539270000000" remote="130397539270000000" testing="0" />
+<file name="vertex_float2.html" local="130397539270000000" remote="130397539270000000" testing="0" />
+<file name="vertex_float3.html" local="130397539270000000" remote="130397539270000000" testing="0" />
+<file name="vertex_float4.html" local="130397539270000000" remote="130397539270000000" testing="0" />
+<file name="vertex_freeze.html" local="130397539270000000" remote="130397539270000000" testing="0" />
+<file name="vertex_normal.html" local="130397539270000000" remote="130397539270000000" testing="0" />
+<file name="vertex_position.html" local="130397539270000000" remote="130397539270000000" testing="0" />
+<file name="vertex_position_3d.html" local="130397539270000000" remote="130397539270000000" testing="0" />
+<file name="vertex_rgba.html" local="130397539270000000" remote="130397539270000000" testing="0" />
+<file name="vertex_submit.html" local="130397539270000000" remote="130397539270000000" testing="0" />
+<file name="vertex_texcoord.html" local="130397539270000000" remote="130397539270000000" testing="0" />
+<file name="vertex_ubyte4.html" local="130397539270000000" remote="130397539270000000" testing="0" />
+</dwsync>
