@@ -1,38 +1,19 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-	<head>
-		<title>view_current</title>
-		<meta http-equiv="X-UA-Compatible" content="IE=9" />
-		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
-	<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" /></head>
-<body><!-- #BeginLibraryItem "/mmenu_head.lbi" --><!-- mmenu_head up 1 -->
-
-		<link type="text/css" rel="stylesheet" href="../../../style.css" />
-		<link type="text/css" rel="stylesheet" href="../../../src/css/jquery.mmenu.all.css" />
-		<script type="text/javascript" src="../../../src/js/jquery.min.js"></script>
-		<script type="text/javascript" src="../../../src/js/hammer.min.js"></script>
-		<script type="text/javascript" src="../../../src/js/jquery.mmenu.min.all_old.js"></script>		
-		
-	<!-- scripts links    	
-   
-		<style type="text/css">
-		@media all and (min-width: 900px) {
-		html, body {
-		height: 100%
-		
-		}
-		#menu {
-		background: #eee
-		}
-		#page {
-		border-left: 1px solid #ccc
-		min-height: 100%
-		}
-		}
-		</style>
-   -->
- 
-		<script type="text/javascript">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/GMS_helppage.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>view_current</title>
+<!-- InstanceEndEditable --><!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<link type="text/css" rel="stylesheet" href="../../../style.css" />
+<link type="text/css" rel="stylesheet" href="../../../src/css/jquery.mmenu.all.css" />
+<script type="text/javascript" src="../../../src/js/jquery.min.js"></script>
+<script type="text/javascript" src="../../../src/js/hammer.min.js"></script>
+<script type="text/javascript" src="../../../src/js/jquery.mmenu.min.all_old.js"></script>
+<script type="text/javascript">
 
 			//	The menu on the right
 			$(function() {
@@ -57,7 +38,7 @@
 					{
 						e.preventDefault();
 						$confirm.show().text( 'You clicked "' + $.trim( $(this).text() ) + '"' );
-						$('#menu-right').trigger( 'close' );
+						$('#menu-left').trigger( 'close' );
 					}
 				);
 			});
@@ -76,7 +57,8 @@
 					labels		: {
 						fixed		: !$.mmenu.support.touch
 					}
-				});
+				});		
+				
 			});			
 
 			// for one page
@@ -118,74 +100,74 @@
 			
 			$(function() {
 				var options = {
-					classes			: 'mm-light',
+					classes			: 'mm-black',
 					modal			: true
-				};
-				
-				options.position = 'left';
-				options.zposition = 'next';
-				$('#tooltip-1').mmenu( options );
-				
-				options.position = 'right';
-				options.zposition = 'next';
-				$('#tooltip-2').mmenu( options );
+				};				
+			
+				options.position = 'bottom';
+				options.zposition = 'front';
+				$('#english-1').mmenu( options );
 				
 				options.position = 'bottom';
 				options.zposition = 'front';
-				$('#popup-1').mmenu( options );
-
-				options.position = 'top';
+				$('#english-2').mmenu( options );
+				
+				options.position = 'bottom';
 				options.zposition = 'front';
-				$('#popup-2').mmenu( options );
+				$('#tips-1').mmenu( options );
+
 			});
 	
-		</script>
-		
-<!-- mmenu_head down 6 -->
-
-
-<!-- #EndLibraryItem --><!-- the page header part  -->
+</script>
+<!-- InstanceParam name="OptionalRegion_menuright" type="boolean" value="true" --><!-- InstanceParam name="OptionalRegion_menuleft" type="boolean" value="true" --><!-- InstanceParam name="OptionalRegion_onepage" type="boolean" value="false" --><!-- InstanceParam name="OptionalRegion_tips" type="boolean" value="false" --><!-- InstanceParam name="OptionalRegion_footer" type="boolean" value="false" -->
+<style type="text/css">
+<!--
+h2 {
+	font-size: 1em;
+}
+-->
+</style></head>
+<body bgcolor="#FFFFFF">
+<!-- the page header part  -->
 <div id="page">
 			<div id="header" >
 				<a href="#menu-left"></a>
-				&#x70B9;&#x51FB;&#x5DE6;&#x8FB9;&#x6309;&#x952E;&#x6253;&#x5F00;&#x5BFC;&#x822A;&#x83DC;&#x5355;
-				<a href="#menu-right" class="friends right"></a>
+				<!-- InstanceBeginEditable name="EditRegion_pagetitle" -->view_current<!-- InstanceEndEditable --><a href="#menu-right" class="friends right"></a>			
 			</div>
 
-			<div id="content" >
-			
+  <div id="content" >	
+					
+  <!-- InstanceBeginEditable name="EditRegion_content" -->
 <h1>view_current</h1>
 
-<h2>Returns the current view being rendered.</h2>
+<h2>返回当前渲染的视野。Returns the current view being rendered.</h2>
 
-<h3>Syntax:</h3>
+<h3>Syntax 用法:</h3>
 <p class="code">view_current</p>
 <p>
 <br>
 </p>
 
 <p>
-<b>Returns : </b>Real
+<b>Returns 返回: </b>Real 实数
 </p>
 
  <p>
-<br>
+<strong></strong><br>
 </p>
 
 <h3>Description</h3>
 <p>
-This <b>read only</b> variable is only valid in the <b>Draw Event</b> and returns the current view being rendered. The return value will change during the draw event when you have various views as 
-the draw event is called once for each view in succession. So when (for example) you are using view[0] and view[1] in your game room, the draw event for <i>ALL</i> instances will be run twice, once 
-for each view, and with this variable you can check to see what view is currently being drawn. In general, this is used to only render specific detials to a single view when multiple views are visible in the 
-room at the same time. See the example code below.
-<br>
-<br>
-
-<p>
-<br>
+这个<strong>只读</strong>变量只在<strong>Draw事件</strong>中有效并返回当前被渲染的视野。因为每个视野只能依次调用一次绘制事件，当你有许多视野时，“<span class="code">view_current</span>”这个变量在绘制事件执行时将会发生改变。所以当（举例）你正在游戏房间里使用 view[0] 和 view[1]，所有对象的绘制事件会运行两次，每个视野一次，而这个变量你可以检测查看哪一个视野是当前正在绘制的。通常，当房间里同时有多个视野可见时，只有当渲染单个视野的特别的细节时才会使用这个变量。请看下面的例子。
+<p>This <b>read only</b> variable is only valid in the <b>Draw Event</b> and returns the current view being rendered. The return value will change during the draw event when you have various views as 
+  the draw event is called once for each view in succession. So when (for example) you are using view[0] and view[1] in your game room, the draw event for <i>ALL</i> instances will be run twice, once 
+  for each view, and with this variable you can check to see what view is currently being drawn. In general, this is used to only render specific detials to a single view when multiple views are visible in the 
+  room at the same time. See the example code below.
+  <br>
+<p><br>
 </p>
 
-<h3>Example :</h3>
+<h3>Example 举例:</h3>
 <p class="code">
 if view_current = 0<br>
 &nbsp;&nbsp;&nbsp;{<br>
@@ -200,8 +182,7 @@ else<br>
 The above code checks to see which view is currently being drawn and then draws a different text to each view based on the return value.
 </p>
 
-<p>
-<br>
+<p>上述将检测哪一个是当前的视野，根据返回值的不同在每个视野绘制不同的文字。<br>
 </p>
 <p>
 
@@ -215,11 +196,32 @@ The above code checks to see which view is currently being drawn and then draws 
 </div>
 </p>
 
-<h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>  </div>   <!-- #BeginLibraryItem "/mmenu_leftlist.lbi" -->
+<h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
+  <!-- InstanceEndEditable -->
+
+<!-- for onepage -->
+
+<!-- KEYWORDS
+onepage
+-->
+
+<!-- for tips -->
+
+<!-- KEYWORDS
+contents
+-->
+</div>
+
+<!-- the footer  -->
+
+<!-- KEYWORDS
+menu_left
+-->
+
 			<nav id="menu-left">
 			<!-- mmenu_leftlist up -->
 				<ul>
-					<li ><a href="../../../index.html">GMS&#x624B;&#x518C;&#x9996;&#x9875;</a></li>					
+					<li ><a href="../../../index.html">GMS&#x624B;&#x518C;&#x9996;&#x9875;</a> </li>					
 					<li >
 						<a href="../../../000_Using GameMaker/index.html">GMS&#x4F7F;&#x7528;</a>
 						<ul>
@@ -597,45 +599,36 @@ The above code checks to see which view is currently being drawn and then draws 
 					<li ><a href="#">&#x5B9E;&#x9A8C;&#x6027;&#x9879;&#x76EE;</a></li>
 					<li ><a href="#">&#x5E94;&#x7528;&#x8BBE;&#x7F6E;</a></li>
 					<li ><a href="../../../update_log.html">Update log</a></li>
-					<li ><a href="../../../index_searcher.html">&#x7D22;&#x5F15;&#x76EE;&#x5F55;</a></li>					
+					<li ><a href="../../../index_searcher.html">&#x7D22;&#x5F15;&#x76EE;&#x5F55;</a></li>										
 				</ul>			
-			</nav><!-- #EndLibraryItem -->..<!-- #BeginLibraryItem "/mmenu_rightlist.lbi" --><!-- mmenu_right up 1 -->
-			<nav id="menu-right">
-				<ul>
-					<li>
-						<span>GMS&#x4F7F;&#x7528;&#x95EE;&#x9898;&#x53EF;&#x4EE5;&#x8054;&#x7CFB;&#x6211;</span>
-						<ul>
-							<li class="Label">A</li>
-							<li class="img">
-								<a href="#">
-									<img src="#people/1/" />
-									Alexa<br />
-									<small>Johnson</small>
-								</a>
-							</li>
-						</ul>
-					</li>
-					
-					<li>
-						<span>&#x7F51;&#x7AD9;&#x95EE;&#x9898;&#x53EF;&#x4EE5;&#x8054;&#x7CFB;&#x6211;</span>
-						<ul>
-							<li class="Label">D</li>
-							<li class="img">
-								<a href="mailto:deciia@qq.com">
-									<img src="../../../deciia@qq.com" />
-									Adam<br />
-									<small>Deciia</small>
-								</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
 			</nav>
 
-<!-- mmenu_right down 1 -->
-<!-- #EndLibraryItem --></div></body>
-</html>
 
 <!-- KEYWORDS
-view_current
+menu_right
 -->
+
+<nav id="menu-right">
+  <ul>
+    <li> <span>GMS&#x4F7F;&#x7528;&#x95EE;&#x9898;&#x53EF;&#x4EE5;&#x8054;&#x7CFB;&#x6211;</span>
+        <ul>
+          <li class="Label">A</li>
+          <li class="img"> <a href="#"> <img src="#people/1/" /> Alexa<br />
+                <small>Johnson</small> </a> </li>
+        </ul>
+    </li>
+    <li> <span>&#x7F51;&#x7AD9;&#x95EE;&#x9898;&#x53EF;&#x4EE5;&#x8054;&#x7CFB;&#x6211;</span>
+        <ul>
+          <li class="Label">D</li>
+          <li class="img"> <a href="mailto:deciia@qq.com"> <img src="deciia@qq.com" /> Adam<br />
+                <small>Deciia</small> </a> </li>
+        </ul>
+    </li>
+  </ul>
+</nav>
+
+<!-- KEYWORDS
+pages
+--></div>
+</body>
+<!-- InstanceEnd --></html>

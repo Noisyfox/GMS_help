@@ -36,6 +36,10 @@ p, ul, ol{
   background:#242424;
 }
 
+p strong,b{
+	color:#CAFF7A;
+	}
+
 center{
   background:#242424;
 }
