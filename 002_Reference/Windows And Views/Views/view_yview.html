@@ -157,7 +157,8 @@ h2 {
 </p>
 
 <h3>Description 描述</h3>
-<p>在房间里，这个变量用来获取或设置视野的Y轴位置。
+<p>这个变量用来获取或设置视野的Y轴位置。 通过改变这个值，可能将视野设置到一个新的位置，比如
+ (0,0) 是房间左上角的位置，或者你也可以参照这个变量以确保实例总是绘制在视野的一个相对的位置（后面的例子会说到）。这个值也可以是负的，然后它会在房间外面显示一块区域，这种情况下将使用到<b>窗体颜色</b>（使用<a href="../The%20Game%20Window/window_set_color.html"><tt>window_set_color</tt></a>设置）。
 <p>This variable can be used to get or to set the y axis position for the view in the room. By changing this value you can set the view to a new position, with (0,0) being the upper left corner of the room, or you can reference this variable to ensure that 
   an instance is always drawn at a relative position to the view (see example code below). This value can also be negative and so show an area that is outside of the room, in which case the <b>window color</b> will be used (this color can be set 
   with <a href="../The%20Game%20Window/window_set_color.html"><tt>window_set_color</tt></a>).
@@ -172,16 +173,15 @@ h2 {
 <br>
 </p>
 
-<h3>Example :</h3>
+<h3>Example 例子:</h3>
 <p class="code">
 draw_text(view_xview[0] + 32, view_yview[0] + 32, "Score : " + string(score));
 </p>
-<p>
-The above code will draw the score at a position relative to the x and y coordinates of view[0].
-</p>
+<p>上面的代码将在视野<span class="code">view[0]</span>的X坐标和Y坐标一个相对的位置绘制得分。</p>
+<p>The above code will draw the score at a position relative to the x and y coordinates of view[0]. </p>
 
 <p>
-<br>
+-断水-<br>
 </p>
 <p>
 
