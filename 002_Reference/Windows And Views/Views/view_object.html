@@ -1,38 +1,19 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-	<head>
-		<title>view_object</title>
-		<meta http-equiv="X-UA-Compatible" content="IE=9" />
-		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
-	<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" /></head>
-<body><!-- #BeginLibraryItem "/mmenu_head.lbi" --><!-- mmenu_head up 1 -->
-
-		<link type="text/css" rel="stylesheet" href="../../../style.css" />
-		<link type="text/css" rel="stylesheet" href="../../../src/css/jquery.mmenu.all.css" />
-		<script type="text/javascript" src="../../../src/js/jquery.min.js"></script>
-		<script type="text/javascript" src="../../../src/js/hammer.min.js"></script>
-		<script type="text/javascript" src="../../../src/js/jquery.mmenu.min.all_old.js"></script>		
-		
-	<!-- scripts links    	
-   
-		<style type="text/css">
-		@media all and (min-width: 900px) {
-		html, body {
-		height: 100%
-		
-		}
-		#menu {
-		background: #eee
-		}
-		#page {
-		border-left: 1px solid #ccc
-		min-height: 100%
-		}
-		}
-		</style>
-   -->
- 
-		<script type="text/javascript">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/GMS_helppage.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>view_object</title>
+<!-- InstanceEndEditable --><!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<link type="text/css" rel="stylesheet" href="../../../style.css" />
+<link type="text/css" rel="stylesheet" href="../../../src/css/jquery.mmenu.all.css" />
+<script type="text/javascript" src="../../../src/js/jquery.min.js"></script>
+<script type="text/javascript" src="../../../src/js/hammer.min.js"></script>
+<script type="text/javascript" src="../../../src/js/jquery.mmenu.min.all_old.js"></script>
+<script type="text/javascript">
 
 			//	The menu on the right
 			$(function() {
@@ -57,7 +38,7 @@
 					{
 						e.preventDefault();
 						$confirm.show().text( 'You clicked "' + $.trim( $(this).text() ) + '"' );
-						$('#menu-right').trigger( 'close' );
+						$('#menu-left').trigger( 'close' );
 					}
 				);
 			});
@@ -76,7 +57,8 @@
 					labels		: {
 						fixed		: !$.mmenu.support.touch
 					}
-				});
+				});		
+				
 			});			
 
 			// for one page
@@ -118,78 +100,77 @@
 			
 			$(function() {
 				var options = {
-					classes			: 'mm-light',
+					classes			: 'mm-black',
 					modal			: true
-				};
-				
-				options.position = 'left';
-				options.zposition = 'next';
-				$('#tooltip-1').mmenu( options );
-				
-				options.position = 'right';
-				options.zposition = 'next';
-				$('#tooltip-2').mmenu( options );
+				};				
+			
+				options.position = 'bottom';
+				options.zposition = 'front';
+				$('#english-1').mmenu( options );
 				
 				options.position = 'bottom';
 				options.zposition = 'front';
-				$('#popup-1').mmenu( options );
-
-				options.position = 'top';
+				$('#english-2').mmenu( options );
+				
+				options.position = 'bottom';
 				options.zposition = 'front';
-				$('#popup-2').mmenu( options );
+				$('#tips-1').mmenu( options );
+
 			});
 	
-		</script>
-		
-<!-- mmenu_head down 6 -->
-
-
-<!-- #EndLibraryItem --><!-- the page header part  -->
+</script>
+<!-- InstanceParam name="OptionalRegion_menuright" type="boolean" value="true" --><!-- InstanceParam name="OptionalRegion_menuleft" type="boolean" value="true" --><!-- InstanceParam name="OptionalRegion_onepage" type="boolean" value="false" --><!-- InstanceParam name="OptionalRegion_tips" type="boolean" value="false" --><!-- InstanceParam name="OptionalRegion_footer" type="boolean" value="false" -->
+<style type="text/css">
+<!--
+h2 {
+	font-size: 1em;
+}
+-->
+</style></head>
+<body bgcolor="#FFFFFF">
+<!-- the page header part  -->
 <div id="page">
 			<div id="header" >
 				<a href="#menu-left"></a>
-				&#x70B9;&#x51FB;&#x5DE6;&#x8FB9;&#x6309;&#x952E;&#x6253;&#x5F00;&#x5BFC;&#x822A;&#x83DC;&#x5355;
-				<a href="#menu-right" class="friends right"></a>
+				<!-- InstanceBeginEditable name="EditRegion_pagetitle" -->view_object<!-- InstanceEndEditable --><a href="#menu-right" class="friends right"></a>			
 			</div>
 
-			<div id="content" >
-			
+  <div id="content" >	
+					
+  <!-- InstanceBeginEditable name="EditRegion_content" -->
 <h1>view_object</h1>
 
-<h2>Object whose instance must remain visible in the view.</h2>
+<h2>对象的实例必须保持在视野里可见。Object whose instance must remain visible in the view.</h2>
 
-<h3>Syntax:</h3>
+<h3>Syntax 用法:</h3>
 <p class="code">view_object[0...7]</p>
 <p>
 <br>
 </p>
 
 <p>
-<b>Returns : </b>Real
+<b>Returns 返回: </b>Real 实数
 </p>
 
  <p>
 <br>
 </p>
 
-<h3>Description</h3>
-<p>
-With this variable you can get (or set) the object that has to be kept in the specified view (from 0 to 7) at all times. If there are multiple instances of this object, only <i>one</i> is followed (usually the 
-first one created, but this is not gauranteed). You can also assign a single instance id to this variable, in which case that particular instance is followed. To prevent any view following, you can set this 
-variable using the special <i>keyword</i> <b>noone</b>.
-<br>
-<br>
-
-<img class="center" src="View_hvbor.png"></img>
-<br>
-<br>
-
-<i><b>NOTE : </b>You can set the distance that an instance or object can move before the view starts following using the <a href="view_hborder.html"><tt>view_hborder</tt></a> and 
-<a href="view_vborder.html"><tt>view_vborder</tt></a> functions.</i>
-<br>
-<br>
-
-<p>
+<h3>Description 描述</h3>
+<p>有了这个变量，你能获得或设置对象让其一直保持在指定的视野（从0到7）中，如果对象有多个实例，只有一个会跟随视野（通常是第一个创建的，但不能完全保证）。你也可以为这个变量指定单个实例的id，这种情况下，这个特别的实例将会跟随。如需要阻止任何视野跟随，你可以设置变量为一个特殊的键<b>noone</b>。
+<p>With this variable you can get (or set) the object that has to be kept in the specified view (from 0 to 7) at all times. If there are multiple instances of this object, only <i>one</i> is followed (usually the 
+  first one created, but this is not gauranteed). You can also assign a single instance id to this variable, in which case that particular instance is followed. To prevent any view following, you can set this 
+  variable using the special <i>keyword</i> <b>noone</b>.
+  <br>
+  <br>
+  
+  <img class="center" src="View_hvbor.png"></img>
+  <br>
+  <br>
+  
+  <i><b>注意 : </b>在视野开始跟随之前，你可以使用<a href="view_hborder.html"><tt>view_hborder</tt></a> 和 <a href="view_vborder.html"><tt>view_vborder</tt></a> 函数设置实例或对象的移动距度。</i> <br>
+  
+<p><i><b>NOTE : </b>You can set the distance that an instance or object can move before the view starts following using the <a href="view_hborder.html"><tt>view_hborder</tt></a> and <a href="view_vborder.html"><tt>view_vborder</tt></a> functions.</i> <br />
 <br>
 </p>
 
@@ -197,16 +178,15 @@ variable using the special <i>keyword</i> <b>noone</b>.
 <p class="code">
 if instance_exists(obj_Player)<br>
 &nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;view_follow[0] = obj_player;<br>
+&nbsp;&nbsp;&nbsp;view_object[0] = obj_player;<br>
 &nbsp;&nbsp;&nbsp;}<br>
 </p>
 <p>
-The above code checks to see if an instance of the object "obj_Player" exists and if it does, it sets view[0] to follow that instance.
+<p>上述代码将检查是否存在对象&quot;obj_Player&quot;的实例，如果存在，则设置视野view[0]跟随这个实例。
+<p>The above code checks to see if an instance of the object "obj_Player" exists and if it does, it sets view[0] to follow that instance.
+<p><i><b>更正说明 : </b>官方文档中“<span class="code">view_follow[0] = obj_player;</span>”应该写错了，正确的函数是&quot;view_object&quot;，上述代码中已经作了更正。</i></p>
 <p>
-<br>
-</p>
-<p>
-
+<p>-断水-
 <div class="clear">
 	<div style="float:left">
 		Back : <a href="index.html">Views</a>
@@ -217,11 +197,32 @@ The above code checks to see if an instance of the object "obj_Player" exists an
 </div>
 </p>
 
-<h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>  </div>   <!-- #BeginLibraryItem "/mmenu_leftlist.lbi" -->
+<h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5> 
+  <!-- InstanceEndEditable -->
+
+<!-- for onepage -->
+
+<!-- KEYWORDS
+onepage
+-->
+
+<!-- for tips -->
+
+<!-- KEYWORDS
+contents
+-->
+</div>
+
+<!-- the footer  -->
+
+<!-- KEYWORDS
+menu_left
+-->
+
 			<nav id="menu-left">
 			<!-- mmenu_leftlist up -->
 				<ul>
-					<li ><a href="../../../index.html">GMS&#x624B;&#x518C;&#x9996;&#x9875;</a></li>					
+					<li ><a href="../../../index.html">GMS&#x624B;&#x518C;&#x9996;&#x9875;</a> </li>					
 					<li >
 						<a href="../../../000_Using GameMaker/index.html">GMS&#x4F7F;&#x7528;</a>
 						<ul>
@@ -599,45 +600,36 @@ The above code checks to see if an instance of the object "obj_Player" exists an
 					<li ><a href="#">&#x5B9E;&#x9A8C;&#x6027;&#x9879;&#x76EE;</a></li>
 					<li ><a href="#">&#x5E94;&#x7528;&#x8BBE;&#x7F6E;</a></li>
 					<li ><a href="../../../update_log.html">Update log</a></li>
-					<li ><a href="../../../index_searcher.html">&#x7D22;&#x5F15;&#x76EE;&#x5F55;</a></li>					
+					<li ><a href="../../../index_searcher.html">&#x7D22;&#x5F15;&#x76EE;&#x5F55;</a></li>										
 				</ul>			
-			</nav><!-- #EndLibraryItem -->..<!-- #BeginLibraryItem "/mmenu_rightlist.lbi" --><!-- mmenu_right up 1 -->
-			<nav id="menu-right">
-				<ul>
-					<li>
-						<span>GMS&#x4F7F;&#x7528;&#x95EE;&#x9898;&#x53EF;&#x4EE5;&#x8054;&#x7CFB;&#x6211;</span>
-						<ul>
-							<li class="Label">A</li>
-							<li class="img">
-								<a href="#">
-									<img src="#people/1/" />
-									Alexa<br />
-									<small>Johnson</small>
-								</a>
-							</li>
-						</ul>
-					</li>
-					
-					<li>
-						<span>&#x7F51;&#x7AD9;&#x95EE;&#x9898;&#x53EF;&#x4EE5;&#x8054;&#x7CFB;&#x6211;</span>
-						<ul>
-							<li class="Label">D</li>
-							<li class="img">
-								<a href="mailto:deciia@qq.com">
-									<img src="../../../deciia@qq.com" />
-									Adam<br />
-									<small>Deciia</small>
-								</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
 			</nav>
 
-<!-- mmenu_right down 1 -->
-<!-- #EndLibraryItem --></div></body>
-</html>
 
 <!-- KEYWORDS
-view_object
+menu_right
 -->
+
+<nav id="menu-right">
+  <ul>
+    <li> <span>GMS&#x4F7F;&#x7528;&#x95EE;&#x9898;&#x53EF;&#x4EE5;&#x8054;&#x7CFB;&#x6211;</span>
+        <ul>
+          <li class="Label">A</li>
+          <li class="img"> <a href="#"> <img src="#people/1/" /> Alexa<br />
+                <small>Johnson</small> </a> </li>
+        </ul>
+    </li>
+    <li> <span>&#x7F51;&#x7AD9;&#x95EE;&#x9898;&#x53EF;&#x4EE5;&#x8054;&#x7CFB;&#x6211;</span>
+        <ul>
+          <li class="Label">D</li>
+          <li class="img"> <a href="mailto:deciia@qq.com"> <img src="deciia@qq.com" /> Adam<br />
+                <small>Deciia</small> </a> </li>
+        </ul>
+    </li>
+  </ul>
+</nav>
+
+<!-- KEYWORDS
+pages
+--></div>
+</body>
+<!-- InstanceEnd --></html>
