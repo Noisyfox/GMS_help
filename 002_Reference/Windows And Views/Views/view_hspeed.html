@@ -1,38 +1,19 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-	<head>
-		<title>view_hspeed</title>
-		<meta http-equiv="X-UA-Compatible" content="IE=9" />
-		<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
-	<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" /></head>
-<body><!-- #BeginLibraryItem "/mmenu_head.lbi" --><!-- mmenu_head up 1 -->
-
-		<link type="text/css" rel="stylesheet" href="../../../style.css" />
-		<link type="text/css" rel="stylesheet" href="../../../src/css/jquery.mmenu.all.css" />
-		<script type="text/javascript" src="../../../src/js/jquery.min.js"></script>
-		<script type="text/javascript" src="../../../src/js/hammer.min.js"></script>
-		<script type="text/javascript" src="../../../src/js/jquery.mmenu.min.all_old.js"></script>		
-		
-	<!-- scripts links    	
-   
-		<style type="text/css">
-		@media all and (min-width: 900px) {
-		html, body {
-		height: 100%
-		
-		}
-		#menu {
-		background: #eee
-		}
-		#page {
-		border-left: 1px solid #ccc
-		min-height: 100%
-		}
-		}
-		</style>
-   -->
- 
-		<script type="text/javascript">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/GMS_helppage.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen" title="style" charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>view_hspeed</title>
+<!-- InstanceEndEditable --><!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<link type="text/css" rel="stylesheet" href="../../../style.css" />
+<link type="text/css" rel="stylesheet" href="../../../src/css/jquery.mmenu.all.css" />
+<script type="text/javascript" src="../../../src/js/jquery.min.js"></script>
+<script type="text/javascript" src="../../../src/js/hammer.min.js"></script>
+<script type="text/javascript" src="../../../src/js/jquery.mmenu.min.all_old.js"></script>
+<script type="text/javascript">
 
 			//	The menu on the right
 			$(function() {
@@ -57,7 +38,7 @@
 					{
 						e.preventDefault();
 						$confirm.show().text( 'You clicked "' + $.trim( $(this).text() ) + '"' );
-						$('#menu-right').trigger( 'close' );
+						$('#menu-left').trigger( 'close' );
 					}
 				);
 			});
@@ -76,7 +57,8 @@
 					labels		: {
 						fixed		: !$.mmenu.support.touch
 					}
-				});
+				});		
+				
 			});			
 
 			// for one page
@@ -118,68 +100,70 @@
 			
 			$(function() {
 				var options = {
-					classes			: 'mm-light',
+					classes			: 'mm-black',
 					modal			: true
-				};
-				
-				options.position = 'left';
-				options.zposition = 'next';
-				$('#tooltip-1').mmenu( options );
-				
-				options.position = 'right';
-				options.zposition = 'next';
-				$('#tooltip-2').mmenu( options );
+				};				
+			
+				options.position = 'bottom';
+				options.zposition = 'front';
+				$('#english-1').mmenu( options );
 				
 				options.position = 'bottom';
 				options.zposition = 'front';
-				$('#popup-1').mmenu( options );
-
-				options.position = 'top';
+				$('#english-2').mmenu( options );
+				
+				options.position = 'bottom';
 				options.zposition = 'front';
-				$('#popup-2').mmenu( options );
+				$('#tips-1').mmenu( options );
+
 			});
 	
-		</script>
-		
-<!-- mmenu_head down 6 -->
-
-
-<!-- #EndLibraryItem --><!-- the page header part  -->
+</script>
+<!-- InstanceParam name="OptionalRegion_menuright" type="boolean" value="true" --><!-- InstanceParam name="OptionalRegion_menuleft" type="boolean" value="true" --><!-- InstanceParam name="OptionalRegion_onepage" type="boolean" value="false" --><!-- InstanceParam name="OptionalRegion_tips" type="boolean" value="false" --><!-- InstanceParam name="OptionalRegion_footer" type="boolean" value="false" -->
+<style type="text/css">
+<!--
+h2 {
+	font-size: 1em;
+}
+-->
+</style></head>
+<body bgcolor="#FFFFFF">
+<!-- the page header part  -->
 <div id="page">
 			<div id="header" >
 				<a href="#menu-left"></a>
-				&#x70B9;&#x51FB;&#x5DE6;&#x8FB9;&#x6309;&#x952E;&#x6253;&#x5F00;&#x5BFC;&#x822A;&#x83DC;&#x5355;
-				<a href="#menu-right" class="friends right"></a>
+				<!-- InstanceBeginEditable name="EditRegion_pagetitle" -->view_hspeed<!-- InstanceEndEditable --><a href="#menu-right" class="friends right"></a>			
 			</div>
 
-			<div id="content" >
-			
+  <div id="content" >	
+					
+  <!-- InstanceBeginEditable name="EditRegion_content" -->
 <h1>view_hspeed</h1>
 
-<h2>Maximal horizontal speed of the view.</h2>
+<h2>视野最大的水平运动速度。Maximal horizontal speed of the view.</h2>
 
-<h3>Syntax:</h3>
+<h3>Syntax 用法:</h3>
 <p class="code">view_hspeed[0...7]</p>
 <p>
 <br>
 </p>
 
 <p>
-<b>Returns : </b>Real
+<b>Returns 返回: </b>Real 实数
 </p>
 
  <p>
 <br>
 </p>
 
-<h3>Description</h3>
-<p>
-This variable controls the horizontal movement speed of the view when it has an instance to follow (this can be set with the <a href="view_object.html"><tt>view_object</tt></a> variable or in the 
-<a href="../../../001_Advanced%20Use/More%20about%20rooms/Views.html">room editor</a>). Care should be taken when setting this value, as setting it too low can result in the instance moving faster than the view can and 
-so it may disappear out one side of the view until it stops and the view catches it again.
-<br>
-<br>
-
+<h3>Description 描述</h3>
+<p>当有一个跟随的实例时，这个变量控制视野的水平运动速度（实例可以用 <a href="view_object.html"><tt>view_object</tt></a> 变量或者在 <a href="../../../001_Advanced%20Use/More%20about%20rooms/Views.html">房间编辑器</a>里添加）。设置这个值时应当注意的是，不要设置得太低，当实例运动过快时这会导致消失在视野之外，直到停止，视野才会跟上。
+<p>This variable controls the horizontal movement speed of the view when it has an instance to follow (this can be set with the <a href="view_object.html"><tt>view_object</tt></a> variable or in the 
+  <a href="../../../001_Advanced%20Use/More%20about%20rooms/Views.html">room editor</a>). Care should be taken when setting this value, as setting it too low can result in the instance moving faster than the view can and 
+  so it may disappear out one side of the view until it stops and the view catches it again.
+  <br>
+  <br>
+  
 <p>
 <br>
 </p>
@@ -189,9 +173,9 @@ so it may disappear out one side of the view until it stops and the view catches
 view_hspeed[0] = view_object[0].hspeed;<br>
 view_vspeed[0] = view_object[0].vspeed;<br>
 </p>
-<p>
-The above code sets the speed of the view following to be the same as the currently selected follow object.
+<p>上述代码将设置视野的移动速度等于所选实例的运动速度。
 </p>
+<p>The above code sets the speed of the view following to be the same as the currently selected follow object. </p>
 
 <p>
 <br>
@@ -208,11 +192,32 @@ The above code sets the speed of the view following to be the same as the curren
 </div>
 </p>
 
-<h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>  </div>   <!-- #BeginLibraryItem "/mmenu_leftlist.lbi" -->
+<h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
+  <!-- InstanceEndEditable -->
+
+<!-- for onepage -->
+
+<!-- KEYWORDS
+onepage
+-->
+
+<!-- for tips -->
+
+<!-- KEYWORDS
+contents
+-->
+</div>
+
+<!-- the footer  -->
+
+<!-- KEYWORDS
+menu_left
+-->
+
 			<nav id="menu-left">
 			<!-- mmenu_leftlist up -->
 				<ul>
-					<li ><a href="../../../index.html">GMS&#x624B;&#x518C;&#x9996;&#x9875;</a></li>					
+					<li ><a href="../../../index.html">GMS&#x624B;&#x518C;&#x9996;&#x9875;</a> </li>					
 					<li >
 						<a href="../../../000_Using GameMaker/index.html">GMS&#x4F7F;&#x7528;</a>
 						<ul>
@@ -590,45 +595,36 @@ The above code sets the speed of the view following to be the same as the curren
 					<li ><a href="#">&#x5B9E;&#x9A8C;&#x6027;&#x9879;&#x76EE;</a></li>
 					<li ><a href="#">&#x5E94;&#x7528;&#x8BBE;&#x7F6E;</a></li>
 					<li ><a href="../../../update_log.html">Update log</a></li>
-					<li ><a href="../../../index_searcher.html">&#x7D22;&#x5F15;&#x76EE;&#x5F55;</a></li>					
+					<li ><a href="../../../index_searcher.html">&#x7D22;&#x5F15;&#x76EE;&#x5F55;</a></li>										
 				</ul>			
-			</nav><!-- #EndLibraryItem -->..<!-- #BeginLibraryItem "/mmenu_rightlist.lbi" --><!-- mmenu_right up 1 -->
-			<nav id="menu-right">
-				<ul>
-					<li>
-						<span>GMS&#x4F7F;&#x7528;&#x95EE;&#x9898;&#x53EF;&#x4EE5;&#x8054;&#x7CFB;&#x6211;</span>
-						<ul>
-							<li class="Label">A</li>
-							<li class="img">
-								<a href="#">
-									<img src="#people/1/" />
-									Alexa<br />
-									<small>Johnson</small>
-								</a>
-							</li>
-						</ul>
-					</li>
-					
-					<li>
-						<span>&#x7F51;&#x7AD9;&#x95EE;&#x9898;&#x53EF;&#x4EE5;&#x8054;&#x7CFB;&#x6211;</span>
-						<ul>
-							<li class="Label">D</li>
-							<li class="img">
-								<a href="mailto:deciia@qq.com">
-									<img src="../../../deciia@qq.com" />
-									Adam<br />
-									<small>Deciia</small>
-								</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
 			</nav>
 
-<!-- mmenu_right down 1 -->
-<!-- #EndLibraryItem --></div></body>
-</html>
 
 <!-- KEYWORDS
-view_hspeed
+menu_right
 -->
+
+<nav id="menu-right">
+  <ul>
+    <li> <span>GMS&#x4F7F;&#x7528;&#x95EE;&#x9898;&#x53EF;&#x4EE5;&#x8054;&#x7CFB;&#x6211;</span>
+        <ul>
+          <li class="Label">A</li>
+          <li class="img"> <a href="#"> <img src="#people/1/" /> Alexa<br />
+                <small>Johnson</small> </a> </li>
+        </ul>
+    </li>
+    <li> <span>&#x7F51;&#x7AD9;&#x95EE;&#x9898;&#x53EF;&#x4EE5;&#x8054;&#x7CFB;&#x6211;</span>
+        <ul>
+          <li class="Label">D</li>
+          <li class="img"> <a href="mailto:deciia@qq.com"> <img src="deciia@qq.com" /> Adam<br />
+                <small>Deciia</small> </a> </li>
+        </ul>
+    </li>
+  </ul>
+</nav>
+
+<!-- KEYWORDS
+pages
+--></div>
+</body>
+<!-- InstanceEnd --></html>

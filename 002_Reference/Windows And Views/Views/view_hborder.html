@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" />
 <!-- InstanceBeginEditable name="doctitle" -->
-<title>view_hbor</title>
+<title>view_hborder</title>
 <!-- InstanceEndEditable --><!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
 <link type="text/css" rel="stylesheet" href="../../../style.css" />
 <link type="text/css" rel="stylesheet" href="../../../src/css/jquery.mmenu.all.css" />
@@ -132,19 +132,19 @@ h2 {
 <div id="page">
 			<div id="header" >
 				<a href="#menu-left"></a>
-				<!-- InstanceBeginEditable name="EditRegion_pagetitle" -->view_hbor<!-- InstanceEndEditable --><a href="#menu-right" class="friends right"></a>			
+				<!-- InstanceBeginEditable name="EditRegion_pagetitle" -->view_hborder<!-- InstanceEndEditable --><a href="#menu-right" class="friends right"></a>			
 			</div>
 
   <div id="content" >	
 					
   <!-- InstanceBeginEditable name="EditRegion_content" -->
-<h1>view_hbor</h1>
+<h1>view_hborder</h1>
 
-<h2>Size of horizontal border for view following.</h2>
+<h2>用于视野跟随的水平方向的边界。Size of horizontal border for view following.</h2>
 
 <h3>Syntax 用法:</h3>
-<p class="code">view_hbor[0...7]</p>
-<p><b>更正说明 : </b>原函数名view_hborder，及用法view_hborder[0...7]可能是官方文档编辑人员的笔误，现更正为正确的函数表达。</p>
+<p class="code">view_hborder[0...7]</p>
+<p>&nbsp;</p>
 <p>
   <b>Returns 返回: </b>Real 实数
 </p>
@@ -154,38 +154,39 @@ h2 {
 </p>
 
 <h3>Description 描述</h3>
-<p>
-This variable sets the horizontal border width for view following. You can set the view to follow a specific instance using the <a href="view_object.html"><tt>view_object</tt></a> variable (or in the 
-<a href="../../../001_Advanced%20Use/More%20about%20rooms/Views.html">room editor</a>) and by setting this value you can control how near or far from the edge of the view the instance needs to be before the view will move. For example, 
-if you have a view width of 320 and set the horizontal view border to 160, the object that the view must follow will always be in the middle of the view. However, make the horizontal view border 0 and the instance must be right on the 
-edge of the view before it will move.
-<br>
-<br>
-
-<img class="center" src="View_hvbor.png"></img>
-<br>
-<br>
-
-<i><b>NOTE : </b>if you are not setting the x and y position of the view manually, the view never leaves the boundaries of the room. This means that when the view reaches the edge of a room, the horizontal and vertical borders are 
-ignored and the instance will move freely within the view.</i>
-<br>
-<br>
-
-<p>
+<p>这个变量设置视野跟随的水平方向的边界。你可以使用变量<a href="view_object.html"><tt>view_object</tt></a>设置（或者在<a href="../../../001_Advanced%20Use/More%20about%20rooms/Views.html">房间编辑器</a>里设置）视野跟随一个特别的实例， 通过设定这个值，你能控制实例需要移动到视野的边界的远近距离。比如，你有一个320宽度的视野并设置水平的视野边界为160，当在视野的中央时，对象的视野才会跟随。然而，将视野的边界设为0，实例必需移动到视野的右边界时，视野才会移动。
+<p>This variable sets the horizontal border width for view following. You can set the view to follow a specific instance using the <a href="view_object.html"><tt>view_object</tt></a> variable (or in the 
+  <a href="../../../001_Advanced%20Use/More%20about%20rooms/Views.html">room editor</a>) and by setting this value you can control how near or far from the edge of the view the instance needs to be before the view will move. For example, 
+  if you have a view width of 320 and set the horizontal view border to 160, the object that the view must follow will always be in the middle of the view. However, make the horizontal view border 0 and the instance must be right on the 
+  edge of the view before it will move.
+  <br>
+  <br>
+  
+  <img class="center" src="View_hvbor.png"></img>
+  <br>
+  <i><b>注意 : </b>如果你没有手动设置视野的X/Y位置，视野将不会离开房间的边界。这意味着当视野移动到房间的边界时，将忽略水平或垂直的边界，实例将在视野里自由移动。</i><br>
+  
+  <p><i><b>NOTE : </b>if you are not setting the x and y position of the view manually, the view never leaves the boundaries of the room. This means that when the view reaches the edge of a room, the horizontal and vertical borders are 
+    ignored and the instance will move freely within the view.</i>
+    <br>
+    <br>
+    
+  <p>
 <br>
 </p>
 
 <h3>Example 例子:</h3>
 <p class="code">
-view_hbor[0] = view_wview[0] / 2;<br>
-view_vbor[0] = view_hview[0] / 2;<br>
+view_hborder[0] = view_wview[0] / 2;<br>
+view_vborder[0] = view_hview[0] / 2;<br>
 </p>
-<p>
-The above code will set the view follow borders to half the width and height of the view, effectively forcing the view to always be centered on the follow object.
+<p>上述代码将设置视野跟随的边界为视野宽度的一半大小，有效的迫使跟随的对象总在视野的中央。
 </p>
+<p><b>更正说明 : </b>例子中原函数名view_hbor[0]、view_vbor[0]，可能是官方文档编辑人员的笔误，现更正为正确的函数表达。</p>
+<p>The above code will set the view follow borders to half the width and height of the view, effectively forcing the view to always be centered on the follow object. </p>
 
-<p>
-<br>
+
+<p>-断水-<br>
 </p>
 <p>
 

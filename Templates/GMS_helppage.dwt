@@ -132,7 +132,7 @@ h2 {
 <div id="page">
 			<div id="header" >
 				<a href="#menu-left"></a>
-				<!-- TemplateBeginEditable name="EditRegion_pagetitle" -->EditRegion_pagetitle<!-- TemplateEndEditable --><a href="#menu-right" class="friends right"></a>			
+				<!-- TemplateBeginEditable name="EditRegion_pagetitle" -->点击左边图标打开菜单<!-- TemplateEndEditable --><a href="#menu-right" class="friends right"></a>			
 			</div>
 
   <div id="content" >	
