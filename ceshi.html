@@ -1,144 +1,170 @@
-
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
-		<meta name="author" content="www.frebsite.nl" />
-		<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" />
 
-		<title>Awesome tooltip and popup alternative for mobile devices.</title>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+    <meta name="author" content="www.frebsite.nl" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" />
 
-		<link type="text/css" rel="stylesheet" href="src/css/jquery.mmenu.all.css" />
-		<link type="text/css" rel="stylesheet" href="layout.css" />
+    <title>Awesome tooltip and popup alternative for mobile devices.</title>
 
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-		<script type="text/javascript" src="src/js/jquery.mmenu.min.all_old.js"></script>
-		<script type="text/javascript">
-			$(function() {
-				var options = {
-					classes			: 'mm-light',
-					modal			: true
-				};
-				
-				options.position = 'left';
-				options.zposition = 'next';
-				$('#tooltip-1').mmenu( options );
-				
-				options.position = 'right';
-				options.zposition = 'next';
-				$('#tooltip-2').mmenu( options );
-				
-				options.position = 'bottom';
-				options.zposition = 'front';
-				$('#popup-1').mmenu( options );
+    <link type="text/css" rel="stylesheet" href="src/css/jquery.mmenu.all.css" />
+    <link type="text/css" rel="stylesheet" href="layout.css" />
 
-				options.position = 'top';
-				options.zposition = 'front';
-				$('#popup-2').mmenu( options );
-			});
-		</script>
-	</head>
-	<body>
-		<div id="page">
-			<div>
-				<h1>Tooltips</h1>
-				<p><em>&quot;Wait, what? Tooltips?<br />
-					I thought the <a href="#tooltip-1">jQuery.mmenu plugin</a> was about creating menus?&quot;</em></p>
-				<p>You're right, it is. But check out what wikipedia has to say about <a href="#tooltip-2">tooltips on mobile devices</a>. That can't be good... Right?<br />
-					That's why the jQuery.mmenu plugin offers a really good alternative to using tooltips (check it out by clicking the links on this page).</p>
-	
-				<br />
-	
-				<h2>Popups</h2>
-				<p>As a bonus, it also works really well as a replacement for <a href="#popup-1">popups</a>.<br />
-					And if you're up for it, you can even create your own <a href="#popup-2">notification center</a>!</p>
-			</div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script type="text/javascript" src="src/js/jquery.mmenu.min.all_old.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var options = {
+                classes: 'mm-light',
+                modal: true
+            };
 
-			<div id="tooltips">
-				<div id="tooltip-1" class="tip">
-					<div>
-						<div>
-							<a href="#page">x</a>
-							<h4>jQuery.mmenu plugin</h4>
-							<p><em>The jQuery.mmenu (Mobile Menu) plugin makes it really easy to create slick, app look-alike sliding menus for you mobile or responsive website.</em></p>
-							<p>Website:<br />
-								<a href="http://mmenu.frebsite.nl" target="_blank">http://mmenu.frebsite.nl</a></p>
-						</div>
-					</div>
-				</div>
+            options.position = 'left';
+            options.zposition = 'next';
+            $('#tooltip-1').mmenu(options);
 
-				<div id="tooltip-2" class="tip">
-					<div>
-						<div>
-							<a href="#page">x</a>
-							<h4>Tooltips on mobile devices</h4>
-							<p><em>The tooltip is a common graphical user interface element used in conjunction with a cursor. The user hovers the cursor over an item, without clicking it, and a tooltip may appear.<br />
-								<strong>Tooltips do not appear on mobile operating systems, since there is no cursor.</strong></em></p>
-							<p>Wikipedia<br />
-								http://en.wikipedia.org/wiki/Tooltip</p>
-						</div>
-					</div>
-				</div>
+            options.position = 'right';
+            options.zposition = 'next';
+            $('#tooltip-2').mmenu(options);
 
-				<div id="popup-1" class="tip">
-					<div>
-						<div>
-							<a href="#page">x</a>
-							<h4>Popups and modal windows</h4>
-							<p><em>In user interface design, a modal window is a child window that requires users to interact with it before they can return to operating the parent application, thus preventing the workflow on the application main window.</em></p>
-							<p>Wikipedia<br />
-								http://en.wikipedia.org/wiki/Modal_window</p>
-						</div>
-					</div>
-				</div>
+            options.position = 'bottom';
+            options.zposition = 'front';
+            $('#popup-1').mmenu(options);
 
-				<div id="popup-2" class="tip">
-					<div>
-						<div>
-							<a href="#page">x</a>
-							<h4>Notification center</h4>
-							<p><em>Notification Center is a feature in iOS and OS X that provides an overview of alerts from applications. It displays notifications until the user completes an associated action, rather than requiring instant resolution.</em></p>
-							<p>Wikipedia<br />
-								http://en.wikipedia.org/wiki/Notification_Center</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	<!-- #BeginLibraryItem "/Library/mmenu_rightlist.lbi" --><!-- mmenu_right up 1 -->
-			<nav id="menu-right">
-				<ul>
-					<li>
-						<span>GMS?????????</span>
-						<ul>
-							<li class="Label">A</li>
-							<li class="img">
-								<a href="#">
-									<img src="#people/1/" />
-									Alexa-1<br />
-									<small>Johnson-4</small>
-								</a>
-							</li>
-						</ul>
-					</li>
-					
-					<li>
-						<span>?????????</span>
-						<ul>
-							<li class="Label">D</li>
-							<li class="img">
-								<a href="mailto:deciia@qq.com">
-									<img src="Library/deciia@qq.com" />
-									Adam<br />
-									<small>Deciia</small>
-								</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</nav>
+            options.position = 'top';
+            options.zposition = 'front';
+            $('#popup-2').mmenu(options);
+        });
+    </script>
+</head>
 
-<!-- mmenu_right down 6 -->
+<body>
+    <div id="page">
+        <div>
+            <h1>Tooltips</h1>
+            <p>
+                <em>&quot;Wait, what? Tooltips?
+                    <br />I thought the
+                    <a href="#tooltip-1">jQuery.mmenu plugin</a>was about creating menus?&quot;</em>
+            </p>
+            <p>You're right, it is. But check out what wikipedia has to say about
+                <a href="#tooltip-2">tooltips on mobile devices</a>. That can't be good... Right?
+                <br />That's why the jQuery.mmenu plugin offers a really good alternative to using tooltips (check it out by clicking the links on this page).</p>
 
-<!-- #EndLibraryItem --></div></body>
+            <br />
+
+            <h2>Popups</h2>
+            <p>As a bonus, it also works really well as a replacement for
+                <a href="#popup-1">popups</a>.
+                <br />And if you're up for it, you can even create your own
+                <a href="#popup-2">notification center</a>!</p>
+        </div>
+
+        <div id="tooltips">
+            <div id="tooltip-1" class="tip">
+                <div>
+                    <div>
+                        <a href="#page">x</a>
+                        <h4>jQuery.mmenu plugin</h4>
+                        <p>
+                            <em>The jQuery.mmenu (Mobile Menu) plugin makes it really easy to create slick, app look-alike sliding menus for you mobile or responsive website.</em>
+                        </p>
+                        <p>Website:
+                            <br />
+                            <a href="http://mmenu.frebsite.nl" target="_blank">http://mmenu.frebsite.nl</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tooltip-2" class="tip">
+                <div>
+                    <div>
+                        <a href="#page">x</a>
+                        <h4>Tooltips on mobile devices</h4>
+                        <p>
+                            <em>The tooltip is a common graphical user interface element used in conjunction with a cursor. The user hovers the cursor over an item, without clicking it, and a tooltip may appear.
+                                <br />
+                                <strong>Tooltips do not appear on mobile operating systems, since there is no cursor.</strong>
+                            </em>
+                        </p>
+                        <p>Wikipedia
+                            <br />http://en.wikipedia.org/wiki/Tooltip
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="popup-1" class="tip">
+                <div>
+                    <div>
+                        <a href="#page">x</a>
+                        <h4>Popups and modal windows</h4>
+                        <p>
+                            <em>In user interface design, a modal window is a child window that requires users to interact with it before they can return to operating the parent application, thus preventing the workflow on the application main window.</em>
+                        </p>
+                        <p>Wikipedia
+                            <br />http://en.wikipedia.org/wiki/Modal_window
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="popup-2" class="tip">
+                <div>
+                    <div>
+                        <a href="#page">x</a>
+                        <h4>Notification center</h4>
+                        <p>
+                            <em>Notification Center is a feature in iOS and OS X that provides an overview of alerts from applications. It displays notifications until the user completes an associated action, rather than requiring instant resolution.</em>
+                        </p>
+                        <p>Wikipedia
+                            <br />http://en.wikipedia.org/wiki/Notification_Center
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #BeginLibraryItem "/Library/mmenu_rightlist.lbi" -->
+    <!-- mmenu_right up 1 -->
+    <nav id="menu-right">
+        <ul>
+            <li>
+                <span>GMS?????????</span>
+                <ul>
+                    <li class="Label">A</li>
+                    <li class="img">
+                        <a href="#">
+                            <img src="#people/1/" />Alexa-1
+                            <br />
+                            <small>Johnson-4</small>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <span>?????????</span>
+                <ul>
+                    <li class="Label">D</li>
+                    <li class="img">
+                        <a href="mailto:deciia@qq.com">
+                            <img src="Library/deciia@qq.com" />Adam
+                            <br />
+                            <small>Deciia</small>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- mmenu_right down 6 -->
+
+    <!-- #EndLibraryItem -->
+    </div>
+</body>
+
 </html>
