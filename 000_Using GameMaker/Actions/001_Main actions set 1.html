@@ -1,3 +1,594 @@
+<title></title>
+<meta content="IE=9" http-equiv="X-UA-Compatible" />
+<link charset="utf-8" href="../../style.css" media="screen" rel="stylesheet" title="style" type="text/css" />
+<meta content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" name="viewport" /><!-- #BeginLibraryItem "/mmenu_head.lbi" --><!-- mmenu_head up 1 -->
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+<link href="../../src/css/jquery.mmenu.all.css" rel="stylesheet" type="text/css" /><script type="text/javascript" src="../../src/js/jquery.min.js"></script><script type="text/javascript" src="../../src/js/hammer.min.js"></script><script type="text/javascript" src="../../src/js/jquery.mmenu.min.all_old.js"></script><!-- scripts links    	
+   
+		<style type="text/css">
+		@media all and (min-width: 900px) {
+		html, body {
+		height: 100%
+		
+		}
+		#menu {
+		background: #eee
+		}
+		#page {
+		border-left: 1px solid #ccc
+		min-height: 100%
+		}
+		}
+		</style>
+   --><script type="text/javascript">
+
+			//	The menu on the right
+			$(function() {
+
+				var $menu = $('nav#menu-right');
+				$menu.mmenu({
+					position	: 'right',
+					classes		: 'mm-black',
+					dragOpen	: true,
+					counters	: true,
+					searchfield	: true,
+					labels		: {
+						fixed		: !$.mmenu.support.touch
+					}
+				});
+
+				//	Click a menu-item
+				var $confirm = $('#confirmation');
+				$menu.find( 'li a' ).not( '.mm-subopen' ).not( '.mm-subclose' ).bind(
+					'click.example',
+					function( e )
+					{
+						e.preventDefault();
+						$confirm.show().text( 'You clicked "' + $.trim( $(this).text() ) + '"' );
+						$('#menu-right').trigger( 'close' );
+					}
+				);
+			});
+			
+			//	The menu on the left
+			$(function() {
+
+				var $menu0 = $('nav#menu-left');
+
+				$menu0.mmenu({
+					position	: 'left',
+					classes		: 'mm-black',
+					dragOpen	: true,
+					counters	: true,
+					searchfield	: true,
+					labels		: {
+						fixed		: !$.mmenu.support.touch
+					}
+				});
+			});			
+
+			// for one page
+
+			$(function() {
+				var $menu = $('nav#menu-left'),
+					$html = $('html, body');
+		
+				$menu.mmenu();
+				$menu.find( 'li > a' ).on(
+					'click',
+					function()
+					{
+						var href = $(this).attr( 'href' );
+		
+						//	if the clicked link is linked to an anchor, scroll the page to that anchor 
+						if ( href.slice( 0, 1 ) == '#' )
+						{
+							$menu.one(
+								'closed.mm',
+								function()
+								{
+									setTimeout(
+										function()
+										{
+											$html.animate({
+												scrollTop: $( href ).offset().top
+											});	
+										}, 10
+									);	
+								}
+							);						
+						}
+					}
+				);
+			});
+
+			// for the tips
+			
+			$(function() {
+				var options = {
+					classes			: 'mm-light',
+					modal			: true
+				};
+				
+				options.position = 'left';
+				options.zposition = 'next';
+				$('#tooltip-1').mmenu( options );
+				
+				options.position = 'right';
+				options.zposition = 'next';
+				$('#tooltip-2').mmenu( options );
+				
+				options.position = 'bottom';
+				options.zposition = 'front';
+				$('#popup-1').mmenu( options );
+
+				options.position = 'top';
+				options.zposition = 'front';
+				$('#popup-2').mmenu( options );
+			});
+	
+		</script><!-- mmenu_head down 6 --><!-- #EndLibraryItem --><!-- the page header part  -->
+<div id="page">
+<div id="header">点击左边按键打开导航菜单</div>
+
+<div id="content">
+<h1>Main Actions - Set 1</h1>
+
+<h2>This section deals with some of the main actions you will use when working with <i>GameMaker:Studio</i>.</h2>
+
+<p>The main action sets are full of the most important actions that you will need when working with <i>GameMaker:Studio</i>, and the first set, marked &quot;main1&quot; in the object properties tab, deals with instances, sprites, sounds and moving from room to room.<br />
+&nbsp;</p>
+
+<h3>Instances</h3>
+
+<p><img align="middle" src="../../images/createinstance.png" /><b>Create Instance</b><br />
+With this action you can create an instance of an object. You specify which object to create and the position for the new instance. If you check the <b>Relative</b> box, the position is relative to the position of the current instance. Creating instances during the game is extremely useful. A space ship can create bullets; a bomb can create an explosion, etc. In many games you will have some controller object that from time to time creates monsters or other objects. For the newly created instance the creation event is executed.<br />
+<br />
+<img align="middle" src="../../images/create_motion.png" /><b>Create Moving</b><br />
+This action works the same as the action above but with two additional fields. You can now also specify the speed and direction of the newly created instance. Note that if you check the <b>Relative</b> box, only the position is relative, not the speed and direction. For example, to make a bullet move in the direction of the person shooting you have to use a little trick. As position use 0,0 and check <b>Relative</b>. As direction we need the current direction of the instance. This can be obtained by typing in the word <tt>direction</tt>. (This actually is a variable that always indicates the current direction in which the instance is moving.)<br />
+<br />
+<img align="middle" src="../../images/create_multiple.png" /><b>Create Random</b><br />
+This action lets you create an instance of one out of four objects. You specify the four objects and the position. An instance of one of these four objects is created at the given position. If you check the <b>Relative</b> box, the position is relative to the position of the current instance. If you need a choice out of less than four objects you can use No Object for some of them. This is for example useful to generate a random enemy at a location.<br />
+<br />
+<img align="middle" src="../../images/change.png" /><b>Change Instance</b><br />
+With this action you can change the current instance into an instance of another object. So for example, you can change an instance of a bomb into an explosion. All settings, such as the motion and the value of variables, will stay the same. You can indicate whether or not to perform the destroy event for the current object and the creation event for the new object.<br />
+<br />
+<img align="middle" src="../../images/destroy.png" /><b>Destroy Instance</b><br />
+With this action you destroy the current instance. The destroy event for the instance is executed.<br />
+<br />
+<img align="middle" src="../../images/destroy_at.png" /><b>Destroy at Position</b><br />
+With this action you destroy all instances whose bounding box contains a given position. This is useful, for example, when you use an exploding bomb. When you check the <b>Relative</b> box the position is taken relative to the position of the current instance.<br />
+&nbsp;</p>
+
+<h3>Sprites</h3>
+
+<p><img align="middle" src="../../images/set_sprite.png" /><b>Change Sprite</b><br />
+Use this action to change the sprite for the instance. You indicate which new sprite. You can also indicate with subimage must be shown. Normally you would use 0 for this (the first subimage) unless you want to see a particular subimage. Use -1 if you do not want to change the current subimage shown. Finally you change the speed of the animation of the subimages. If you only want to see a particular subimage, set the speed to 0. If the speed is larger than one subimages will be skipped. If it is smaller than 1 subimages will be shown multiple times. Don&#39;t use a negative speed. Changing sprites is an important feature. For example, often you want to change the sprite of a character depending on the direction in which it walks. This can be achieved by making different sprites for each of the (four) directions. Within the keyboard events for the arrow keys you set the direction of motion and the sprite.<br />
+<br />
+<img align="middle" src="../../images/set_sprite_scale.png" /><b>Transform Sprite</b><br />
+Use this action to change the size and orientation of the sprite for the instance. Use the scale factors to make it larger or smaller. The angle gives the counter-clockwise orientation of the sprite. For example, to make the sprite oriented in the direction of motion use as a value <tt>direction</tt>. For example, this is useful for a car. You can also indicate whether the sprite should be mirrored horizontally and/or flipped vertically.<br />
+<br />
+<img align="middle" src="../../images/set_sprite_color.png" /><b>Color Sprite</b><br />
+Normally the sprite is drawn as it is defined. Using this action you can change the color of the sprite. This color is blended with the sprite, that is, it is combined with the colors of the sprite. If you want to draw a sprite in different colors you better define the sprite in black and white and use the blend color to set the actual color. You can also indicate an alpha transparency. With a value of 1 the sprite is opaque. With a value of 0 it is completely transparent. With a value in between you will partially see the background shine through it. This is great for making explosions.<br />
+&nbsp;</p>
+
+<h3>Sounds</h3>
+
+<p><img align="middle" src="../../images/sound_play.png" /><b>Play Sound</b><br />
+With this action you play one of the sound resources you added to your game. You can select the sound you want to play and choose whether it should play only once (the default) or loop continuously. Multiple wave sounds can play at once but only one midi sound can play at a time. So if you start a midi sound, the current midi sound is stopped.<br />
+<br />
+<img align="middle" src="../../images/sound_stop.png" /><b>Stop Sound</b><br />
+This action stops the indicated sound. If multiple instances of this sound are playing all are stopped.<br />
+<br />
+<img align="middle" src="../../images/if_sound.png" /><b>Check Sound</b><br />
+If the indicated sound is playing the next action is performed. Otherwise it is skipped. You can select <b>Not</b> to indicate that the next action should be performed if the indicated sound is not playing. For example, you can check whether some background music is playing and, if not, start some new background music. Note that this action returns true when the sound actually plays through the speakers. After you call the action to play a sound it does not immediately reach the speakers so the action might still return false for a while. Similar, when the sound is stopped you still hear it for a while (e.g. because of echo) and the action will still return true.<br />
+&nbsp;</p>
+
+<h3>Rooms</h3>
+
+<p><img align="middle" src="../../images/previous_room.png" /><b>Previous Room</b><br />
+Move to the previous room. You can indicate the type of transition effect between the rooms. You should experiment to see what works best for you. When the rooms do not have the same size you better do not use transitions. If you are in the first room you get an error.<br />
+<br />
+<img align="middle" src="../../images/next_room.png" /><b>Next Room</b><br />
+Move to the next room. You can indicate the transition.<br />
+<br />
+<img align="middle" src="../../images/current_room.png" /><b>Restart Room</b><br />
+The current room is restarted. You indicate the transition effect.<br />
+<br />
+<img align="middle" src="../../images/goto_room.png" /><b>Different Room</b><br />
+With this action you can go to a particular room. You indicate the room and the transition effect.<br />
+<br />
+<img align="middle" src="../../images/previous_room.png" /><b> Check Previous</b><br />
+This action tests whether the previous room exists. If so, the next action is executed. You normally need this test before moving to the previous room.<br />
+<br />
+<img align="middle" src="../../images/if_next_room.png" /><b>Check Next</b><br />
+This action tests whether the next room exists. If so, the next action is executed. You normally need this test before moving to the next room.<br />
+&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div class="clear">
+<div style="float:left">Back : <a href="index.html">Actions</a></div>
+
+<div style="float:right">Next : <a href="002_Main%20actions%20set%202.html">Main Actions - Set 2</a></div>
+</div>
+
+<p>&nbsp;</p>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
+</div>
+<!-- #BeginLibraryItem "/mmenu_leftlist.lbi" -->
+
+<nav id="menu-left"><!-- mmenu_leftlist up -->
+<ul>
+	<li><a href="../../index.html">GMS手册首页</a></li>
+	<li><a href="../index.html">GMS使用</a>
+	<ul>
+		<li><a href="../000_Introduction.html">Introduction 介绍</a></li>
+		<li><a href="../001_Installation.html">Installation 安装</a></li>
+		<li><a href="../002_Activation.html">Activation 激活</a></li>
+		<li><a href="../003_GameMaker Studio Overview.html">GMS 概述</a></li>
+		<li><a href="../004_The Graphical User Interface.html">GMS用户界面介绍</a>
+		<ul>
+			<li><a href="../Drop Down Menus/The File Menu.html">The File Menu &ldquo;文件&rdquo;菜单</a></li>
+			<li><a href="../Drop Down Menus/The Edit Menu.html">The Edit Menu &ldquo;编辑&rdquo;菜单</a></li>
+			<li><a href="../Drop Down Menus/The Resources Menu.html">The Resources Menu &ldquo;资源&rdquo;菜单</a></li>
+			<li><a href="../Drop Down Menus/The Scripts Menu.html">The Scripts Menu &ldquo;脚本&rdquo;菜单</a></li>
+			<li><a href="../Drop Down Menus/The Run Menu.html">The Run Menu &ldquo;运行&rdquo;菜单</a></li>
+			<li><a href="../Drop Down Menus/The Windows Menu.html">The Window Menu &ldquo;窗口菜单&rdquo;</a></li>
+			<li><a href="../Drop Down Menus/The Help Menu.html">The Help Menu &ldquo;帮助&rdquo;菜单</a></li>
+		</ul>
+		</li>
+		<li><a href="../005_Loading Sprites.html">Loading Sprites 载入精灵</a></li>
+		<li><a href="../006_Sounds and music.html">Sounds And Music 声音与音乐</a></li>
+		<li><a href="../007_Backgrounds.html">Backgrounds 背景</a></li>
+		<li><a href="../008_Defining objects.html">Defining Objects 定义对象</a></li>
+		<li><a href="../Events/index.html">Events 事件</a>
+		<ul>
+			<li><a href="../Events/Create Event.html">Create Event 创建事件</a></li>
+			<li><a href="../Events/Destroy Event.html">Destroy Event 破坏事件</a></li>
+			<li><a href="../Events/Alarm Event.html">Alarm Events 计时事件</a></li>
+			<li><a href="../Events/Step Event.html">Step Events 步事件</a></li>
+			<li><a href="../Events/Collision Event.html">Collision Event 碰撞事件</a></li>
+			<li><a href="../Events/Keyboard Event.html">Keyboard Events 键盘事件</a></li>
+			<li><a href="../Events/Mouse Event.html">Mouse Event 鼠标事件</a></li>
+			<li><a href="../Events/Other Event.html">Other Events 其它事件</a></li>
+			<li><a href="../Events/Draw Event.html">Draw Event 绘制事件</a>
+			<ul>
+				<li><a href="../Events/Draw GUI Event.html">绘制图形界面事件</a></li>
+				<li><a href="../Events/Resize Event.html">调整大小事件</a></li>
+			</ul>
+			</li>
+			<li><a href="../Events/Async Event.html">Asynchronous Events 异步事件</a></li>
+		</ul>
+		</li>
+		<li><a href="index.html">Actions 动作</a>
+		<ul>
+			<li><a href="000_Move actions.html">Move Actions 移动类动作</a></li>
+			<li><a href="001_Main actions set 1.html">Main Actions, Set 1 主动作设定1</a></li>
+			<li><a href="002_Main actions set 2.html">Main Actions, Set 2 主动作设定2</a></li>
+			<li><a href="003_Control actions.html">Control Actions 控制类动作</a></li>
+			<li><a href="004_Score actions.html">Score Actions 分数类动作</a></li>
+			<li><a href="005_Extra actions.html">补充的相关动作 </a></li>
+			<li><a href="006_Draw actions.html">Draw Actions 绘制类动作</a></li>
+			<li><a href="007_Using expressions and variables.html">使用表达式和变量</a></li>
+		</ul>
+		</li>
+		<li><a href="../Rooms/index.html">创建房间(Rooms)</a>
+		<ul>
+			<li><a href="../Rooms/Settings Tab.html">Settings 设置</a></li>
+			<li><a href="../Rooms/Backgrounds Tab.html">Backgrounds 背景</a></li>
+			<li><a href="../Rooms/Objects Tab.html">Objects 对象</a></li>
+		</ul>
+		</li>
+		<li><a href="../Game Information.html">游戏信息设置 </a></li>
+		<li><a href="../009_Distributing your game.html">发布你的游戏</a></li>
+	</ul>
+	</li>
+	<li><a href="../../001_Advanced Use/index.html">高级应用</a>
+	<ul>
+		<li class="Label">游戏原生资源(Game Assets)</li>
+		<li><a href="../../001_Advanced Use/More about sprites/index.html">更多精灵(Sprites)的内容</a>
+		<ul>
+			<li><a href="../../001_Advanced Use/More about sprites/Editing Sprites.html">编辑精灵（Sprites）</a></li>
+			<li><a href="../../001_Advanced Use/More about sprites/Editing Subimages.html">编辑子图（Subimages）</a></li>
+			<li><a href="../../001_Advanced Use/More about sprites/Editing Collision Masks.html">编辑碰撞遮罩（Collision Masks）</a></li>
+		</ul>
+		</li>
+		<li><a href="../../001_Advanced Use/More about backgrounds/index.html">更多背景(background)的内容</a>
+		<ul>
+			<li><a href="../../001_Advanced Use/More about backgrounds/Designing Tiles.html">Designing Tiles 图块设计</a></li>
+			<li><a href="../../001_Advanced Use/More about backgrounds/Texture Pages.html">Texture Pages 纹理贴图页</a></li>
+		</ul>
+		</li>
+		<li><a href="../../001_Advanced Use/More about Objects/index.html">更多对象(object)的内容</a>
+		<ul>
+			<li><a href="../../001_Advanced Use/More about Objects/Parents.html">Parents 父对象</a></li>
+			<li><a href="../../001_Advanced Use/More about Objects/Physics.html">Object Physics Properties 对象物理属性</a></li>
+		</ul>
+		</li>
+		<li><a href="../../001_Advanced Use/More about rooms/index.html">更多房间(room)的内容</a>
+		<ul>
+			<li><a href="../../001_Advanced Use/More about rooms/Tiles.html">Tiles 图块</a></li>
+			<li><a href="../../001_Advanced Use/More about rooms/Views.html">Viewss 视野</a></li>
+			<li><a href="../../001_Advanced Use/More about rooms/Physics.html">Physics 物理环境</a></li>
+		</ul>
+		</li>
+		<li><a href="../../001_Advanced Use/More About Async Events/index.html">更多异步事件(Async Events)的内容</a>
+		<ul>
+			<li><a href="../../001_Advanced Use/More About Async Events/Image Loaded and Sound Loaded Events.html">图片载入和声音载入的事件</a></li>
+			<li><a href="../../001_Advanced Use/More About Async Events/HTTP.html">HTTP事件</a></li>
+			<li><a href="../../001_Advanced Use/More About Async Events/Dialogs.html">Dialogs Event 对话事件</a></li>
+			<li><a href="../../001_Advanced Use/More About Async Events/IAP.html">IAP(应用内部付费模式)事件</a></li>
+			<li><a href="../../001_Advanced Use/More About Async Events/Cloud.html">Cloud Event 云事件</a></li>
+			<li><a href="../../001_Advanced Use/More About Async Events/Networking.html">Networking Event 联网事件</a></li>
+			<li><a href="../../001_Advanced Use/More About Async Events/Steam.html">Steam事件</a></li>
+			<li><a href="../../001_Advanced Use/More About Async Events/Social.html">Social Event 社会化模块事件</a></li>
+		</ul>
+		</li>
+		<li class="Label">Resource Editors 资源编辑器</li>
+		<li><a href="../../001_Advanced Use/003_Fonts.html">Fonts 字体</a></li>
+		<li><a href="../../001_Advanced Use/004_Paths.html">Paths 路径</a></li>
+		<li><a href="../../001_Advanced Use/005_Time lines.html">Time Lines 时间轴</a></li>
+		<li><a href="../../001_Advanced Use/006_Scripts.html">Scripts 脚本</a></li>
+		<li><a href="../../001_Advanced Use/009_Shaders.html">Shaders 着色器</a></li>
+		<li><a href="../../001_Advanced Use/010_Constants.html">Constants 常量</a></li>
+		<li><a href="../../001_Advanced Use/002_Including Files.html">Including Files 包含文件</a></li>
+		<li><a href="../../001_Advanced Use/008_Exporting and importing resources.html">Importing Resources 导入资源</a></li>
+		<li class="Label">Game Settings 游戏设置</li>
+		<li><a href="../../001_Advanced Use/Extensions/index.html">扩展包</a>
+		<ul>
+			<li><a href="../../001_Advanced Use/Extensions/Using Extensions.html">使用扩展</a></li>
+			<li><a href="../../001_Advanced Use/Extensions/Creating Extensions.html">创建一个扩展</a></li>
+		</ul>
+		</li>
+		<li><a href="#">Configurations 配置</a></li>
+		<li><a href="../../001_Advanced Use/Source Control/index.html">源代码控制</a>
+		<ul>
+			<li><a href="../../001_Advanced Use/Source Control/Getting Started With Source Control.html">源代码控制入门引导</a></li>
+			<li><a href="../../001_Advanced Use/Source Control/Setting Up GM For Source Control.html">设置GMS进行源代码控制</a></li>
+			<li><a href="../../001_Advanced Use/Source Control/Using Source Control.html">GMS源代码控制的使用</a></li>
+		</ul>
+		</li>
+		<li><a href="../../001_Advanced Use/Global game settings/index.html">全局游戏设定</a>
+		<ul>
+			<li><a href="../../001_Advanced Use/Global game settings/General Tab.html">General 常规选项卡</a></li>
+			<li><a href="../../001_Advanced Use/Global game settings/Texture Groups Tab.html">Texture Groups 纹理组</a></li>
+			<li><a href="../../001_Advanced Use/Global game settings/Project Info Tab.html">Project Info 项目信息</a></li>
+			<li><a href="../../001_Advanced Use/Global game settings/Facebook Tab.html">Facebook 脸书</a></li>
+			<li><a href="../../001_Advanced Use/Global game settings/Source Control Tab.html">Source Control 代码控制</a></li>
+			<li><a href="../../001_Advanced Use/Global game settings/Advertising Tab.html">Advertising 广告</a></li>
+			<li><a href="../../001_Advanced Use/Global game settings/Analytics Tab.html">Analytics 应用数据分析</a></li>
+			<li><a href="../../001_Advanced Use/Global game settings/In App Purchases Tab.html">IAP应用内部付费</a></li>
+			<li><a href="../../001_Advanced Use/Global game settings/Licensing Tab.html">Licensing 许可证</a></li>
+			<li><a href="../../001_Advanced Use/Global game settings/Extras Tab.html">Extras Tab 额外选项卡</a></li>
+			<li><a href="../../001_Advanced Use/Global game settings/Windows Tab.html">Windows选项卡</a></li>
+			<li><a href="../../001_Advanced Use/Global game settings/Mac OS Tab.html">Mac OS选项卡</a></li>
+			<li><a href="../../001_Advanced Use/Global game settings/HTML5 Tab.html">HTML5选项卡</a></li>
+			<li><a href="../../001_Advanced Use/Global game settings/iOS Tab.html">iOS选项卡</a></li>
+			<li><a href="../../001_Advanced Use/Global game settings/Android Tab.html">Android选项卡</a></li>
+			<li><a href="../../001_Advanced Use/Global game settings/Win8 Tab.html">Windows 8选项卡</a></li>
+			<li><a href="../../001_Advanced Use/Global game settings/Win8 Phone Tab.html">Windows 8 Phone选项卡</a></li>
+			<li><a href="../../001_Advanced Use/Global game settings/Tizen Tab.html">Tizen选项卡</a></li>
+			<li><a href="../../001_Advanced Use/Global game settings/Linux Tab.html">Ubuntu(Linux)选项卡</a></li>
+			<li><a href="../../001_Advanced Use/Global game settings/Steam Tab.html">Steam选项卡</a></li>
+		</ul>
+		</li>
+		<li><a href="../../001_Advanced Use/Preferences/index.html">Preferences 首选项</a>
+		<ul>
+			<li><a href="../../001_Advanced Use/Preferences/General Preferences.html">General 常规</a></li>
+			<li><a href="../../001_Advanced Use/Preferences/Form Preferences.html">Forms 窗口</a></li>
+			<li><a href="../../001_Advanced Use/Preferences/Scripts Preferences.html">Scripts 脚本</a></li>
+			<li><a href="../../001_Advanced Use/Preferences/Editor Preferences.html">Editors 编辑器</a></li>
+			<li><a href="../../001_Advanced Use/Preferences/Server Preferences.html">Web Server 服务器</a></li>
+			<li><a href="../../001_Advanced Use/Preferences/Android Preferences.html">Android</a></li>
+			<li><a href="../../001_Advanced Use/Preferences/Windows8 Preferences.html">Windows 8</a></li>
+			<li><a href="../../001_Advanced Use/Preferences/Windows Phone Preferences.html">Windows Phone</a></li>
+			<li><a href="../../001_Advanced Use/Preferences/Tizen Preferences.html">Tizen</a></li>
+			<li><a href="../../001_Advanced Use/Preferences/Mac Preferences.html">Mac OS</a></li>
+			<li><a href="../../001_Advanced Use/Preferences/Linux Preferences.html">Ubuntu (Linux)</a></li>
+			<li><a href="../../001_Advanced Use/Preferences/Steam Preferences.html">Steam</a></li>
+			<li><a href="../../001_Advanced Use/Preferences/Source Control Preferences.html">Source Control 代码控制</a></li>
+		</ul>
+		</li>
+		<li><a href="../../001_Advanced Use/011_Debugging.html">Debugging 调试</a></li>
+	</ul>
+	</li>
+	<li><a href="../../002_Reference/index.html">GML参考手册</a>
+	<ul>
+		<li><a href="../../002_Reference/001_GML Language Overview/index.html">GML概述</a>
+		<ul>
+			<li><a href="../../002_Reference/001_GML Language Overview/401_01_program.html">A Program 一个程序</a></li>
+			<li><a href="../../002_Reference/001_GML Language Overview/Variables/index.html">变量及变量域</a></li>
+			<li><a href="../../002_Reference/001_GML Language Overview/401_05_addressing.html">在其他实例中的寻址变量</a></li>
+			<li><a href="../../002_Reference/001_GML Language Overview/401_06_arrays.html">Arrays 数组</a></li>
+			<li><a href="../../002_Reference/001_GML Language Overview/401_16_functions.html">Functions 函数</a></li>
+			<li><a href="../../002_Reference/001_GML Language Overview/401_03_assignments.html">Assignments 赋值</a></li>
+			<li><a href="../../002_Reference/001_GML Language Overview/401_04_expressions.html">Expressions 表达式</a></li>
+			<li><a href="../../002_Reference/001_GML Language Overview/401_07_if.html">If语句</a></li>
+			<li><a href="../../002_Reference/001_GML Language Overview/401_08_repeat.html">Repeat语句</a></li>
+			<li><a href="../../002_Reference/001_GML Language Overview/401_09_while.html">While语句</a></li>
+			<li><a href="../../002_Reference/001_GML Language Overview/401_10_do.html">Do语句</a></li>
+			<li><a href="../../002_Reference/001_GML Language Overview/401_11_for.html">For语句</a></li>
+			<li><a href="../../002_Reference/001_GML Language Overview/401_12_switch.html">Switch语句</a></li>
+			<li><a href="../../002_Reference/001_GML Language Overview/401_13_break.html">Break语句</a></li>
+			<li><a href="../../002_Reference/001_GML Language Overview/401_14_continue.html">Continue语句</a></li>
+			<li><a href="../../002_Reference/001_GML Language Overview/401_15_exit.html">Exit语句</a></li>
+			<li><a href="../../002_Reference/001_GML Language Overview/401_18_with.html">With结构</a></li>
+			<li><a href="../../002_Reference/001_GML Language Overview/401_17_scripts.html">Scripts 脚本</a></li>
+			<li><a href="../../002_Reference/001_GML Language Overview/401_19_comment.html">代码注释</a></li>
+			<li><a href="../../002_Reference/001_GML Language Overview/401_20_evaluation_order.html">Evaluation Order 计算顺序</a></li>
+		</ul>
+		</li>
+		<li class="Label">实数与字符串</li>
+		<li><a href="../../002_Reference/Date and Time/index.html">Date and Time 日期与时间</a></li>
+		<li><a href="../../002_Reference/Maths/index.html">Maths 数学</a>
+		<ul>
+			<li><a href="../../002_Reference/Maths/Real valued functions/index.html">Real Number Functions 实数函数</a></li>
+			<li><a href="../../002_Reference/Maths/Vector Functions/index.html">Vector Functions 矢量函数</a></li>
+		</ul>
+		</li>
+		<li><a href="../../002_Reference/Strings/index.html">Strings 字符串</a></li>
+		<li class="Label">Game Play 游戏运行</li>
+		<li><a href="../../002_Reference/Game Assets/index.html">Game Assets游戏原生资源</a>
+		<ul>
+			<li><a href="../../002_Reference/Game Assets/Sprites/index.html">Sprites 精灵</a></li>
+			<li><a href="../../002_Reference/Game Assets/Backgrounds/index.html">Backgrounds 背景</a></li>
+			<li><a href="../../002_Reference/Game Assets/Sounds/index.html">Sounds 声音</a></li>
+			<li><a href="../../002_Reference/Game Assets/Fonts/index.html">Fonts 字体</a></li>
+			<li><a href="../../002_Reference/Paths/index.html">Paths 路径</a></li>
+			<li><a href="../../002_Reference/Timelines/index.html">Timelines 时间轴</a></li>
+			<li><a href="../../002_Reference/Rooms/index.html">Rooms 房间</a></li>
+		</ul>
+		</li>
+		<li><a href="../../002_Reference/Mouse, Keyboard and Other Controls/index.html">鼠标、键盘和其他控制设备</a>
+		<ul>
+			<li><a href="../../002_Reference/Mouse, Keyboard and Other Controls/Virtual Keys/index.html">Virtual Keys 虚拟键</a></li>
+			<li><a href="../../002_Reference/Mouse, Keyboard and Other Controls/Keyboard Input/index.html">Keyboard Input 键盘输入</a></li>
+			<li><a href="../../002_Reference/Mouse, Keyboard and Other Controls/Mouse Input/index.html">Mouse Input 鼠标输入</a></li>
+			<li><a href="../../002_Reference/Mouse, Keyboard and Other Controls/Device Input/index.html">Device Input 设备输入</a></li>
+			<li><a href="../../002_Reference/Mouse, Keyboard and Other Controls/GamePad Input/index.html">GamePad Input 游戏手柄输入</a></li>
+			<li><a href="../../002_Reference/Mouse, Keyboard and Other Controls/Joystick Input/index.html">Joystick Input 摇杆输入</a></li>
+			<li><a href="../../002_Reference/Mouse, Keyboard and Other Controls/immersion Haptics/index.html">Immersion Haptics 触摸输入</a></li>
+		</ul>
+		</li>
+		<li><a href="../../002_Reference/Movement and Collisions/index.html">移动与碰撞</a>
+		<ul>
+			<li><a href="../../002_Reference/Movement and Collisions/Movement/index.html">Movement 移动</a></li>
+			<li><a href="../../002_Reference/Movement and Collisions/Motion Planning/index.html">Motion Planning 运动设计</a></li>
+			<li><a href="../../002_Reference/Movement and Collisions/Collisions/index.html">Collisions 碰撞</a></li>
+		</ul>
+		</li>
+		<li><a href="../../002_Reference/Objects and Instances/index.html">对象与实例</a>
+		<ul>
+			<li><a href="../../002_Reference/Objects and Instances/Objects/index.html">Objects 对象</a></li>
+			<li><a href="../../002_Reference/Objects and Instances/Instances/index.html">Instances 实例</a></li>
+		</ul>
+		</li>
+		<li class="Label">Drawing And Display 绘制与显示</li>
+		<li><a href="../../002_Reference/Drawing/index.html">Drawing 绘制</a>
+		<ul>
+			<li><a href="../../002_Reference/Drawing/Color And Blending/index.html">Color And Blending 颜色与混合</a></li>
+			<li><a href="../../002_Reference/Drawing/Drawing Basic Forms/index.html">Drawing Basic Forms 绘制图形</a></li>
+			<li><a href="../../002_Reference/Drawing/Drawing Sprites And Backgrounds/index.html">Drawing Sprites And Backgrounds 绘制精灵和背景</a></li>
+			<li><a href="../../002_Reference/Drawing/Drawing Text/index.html">Drawing Text 绘制文本</a></li>
+			<li><a href="../../002_Reference/Drawing/Drawing Primitives/index.html">Drawing Primitives 绘制图元</a></li>
+			<li><a href="../../002_Reference/Drawing/Drawing 3D/index.html">绘制3D图形</a></li>
+			<li><a href="../../002_Reference/Drawing/Drawing Surfaces/index.html">Drawing Surfaces 绘制表面</a></li>
+		</ul>
+		</li>
+		<li><a href="../../002_Reference/Shaders/index.html">Shaders 着色器</a>
+		<ul>
+			<li><a href="../../002_Reference/Shaders/Vertex Formats/index.html">Vertex Formats 顶点格式</a></li>
+			<li><a href="../../002_Reference/Shaders/Primitive Building/index.html">Primitive Building 建立图元</a></li>
+			<li><a href="../../002_Reference/Shaders/Shader Constants/index.html">Shader Constants 着色器常量 </a></li>
+		</ul>
+		</li>
+		<li><a href="../../002_Reference/Surfaces/index.html">Surfaces 表面</a></li>
+		<li><a href="../../002_Reference/Windows And Views/index.html">窗口与视野</a>
+		<ul>
+			<li><a href="../../002_Reference/Windows And Views/The Game Window/index.html">The Game Window 游戏窗口</a></li>
+			<li><a href="../../002_Reference/Windows And Views/Views/index.html">Views 视野</a></li>
+		</ul>
+		</li>
+		<li class="Label">Advanced Functions 高级函数</li>
+		<li><a href="../../002_Reference/Data Structures/index.html">数据结构</a>
+		<ul>
+			<li><a href="../../002_Reference/Data Structures/DS Stacks/index.html">Stacks 堆栈</a></li>
+			<li><a href="../../002_Reference/Data Structures/DS Queues/index.html">Queues 队列</a></li>
+			<li><a href="../../002_Reference/Data Structures/DS Lists/index.html">Lists 列表</a></li>
+			<li><a href="../../002_Reference/Data Structures/DS Maps/index.html">Maps 地图</a></li>
+			<li><a href="../../002_Reference/Data Structures/DS Priority Queues/index.html">Priority Queues 优先队列</a></li>
+			<li><a href="../../002_Reference/Data Structures/DS Grids/index.html">Grids 网格</a></li>
+		</ul>
+		</li>
+		<li><a href="../../002_Reference/Particles/index.html">Particles 粒子</a>
+		<ul>
+			<li><a href="../../002_Reference/Particles/Simple Effects/index.html">Simple Effects 简单特效</a></li>
+			<li><a href="../../002_Reference/Particles/Particle Systems/index.html">Particle Systems 粒子系统</a></li>
+			<li><a href="../../002_Reference/Particles/Particle Types/index.html">Particle Types 粒子类型</a></li>
+			<li><a href="../../002_Reference/Particles/Particle Emitters/index.html">Particle Emitters 粒子发射器</a></li>
+		</ul>
+		</li>
+		<li><a href="../../002_Reference/Physics/index.html">Physics 物理函数</a>
+		<ul>
+			<li><a href="../../002_Reference/Physics/The Physics World/index.html">The Physics World 物理环境</a></li>
+			<li><a href="../../002_Reference/Physics/Forces/index.html">Forces 力</a></li>
+			<li><a href="../../002_Reference/Physics/Fixtures/index.html">Fixtures 固定装置</a></li>
+			<li><a href="../../002_Reference/Physics/Joints/index.html">Joints 联接</a></li>
+			<li><a href="../../002_Reference/Physics/Physics Variables/index.html">Physics Variables 物理变量</a></li>
+		</ul>
+		</li>
+		<li><a href="../../002_Reference/File Handling/index.html">文件处理(File Handling)</a>
+		<ul>
+			<li><a href="../../002_Reference/File Handling/File System Limits.html">File System Limits 文件系统限制</a></li>
+		</ul>
+		</li>
+		<li><a href="../../002_Reference/Operating System/index.html">Operating System 操作系统</a></li>
+		<li><a href="../../002_Reference/Buffers/index.html">Buffers 缓存区</a></li>
+		<li><a href="../../002_Reference/Networking/index.html">Networking 联网</a></li>
+		<li class="Label">Platform Specific 平台特性</li>
+		<li><a href="../../002_Reference/HTML5/index.html">HTML5</a></li>
+		<li><a href="../../002_Reference/Windows8/index.html">Windows 8</a>
+		<ul>
+			<li><a href="../../002_Reference/Windows8/Windows 8 Phone/index.html">Windows 8 Phone</a></li>
+		</ul>
+		</li>
+		<li><a href="../../002_Reference/Advertising and Analytics/index.html">广告与数据分析</a></li>
+		<li><a href="../../002_Reference/Social Gaming/index.html">游戏社交设计</a>
+		<ul>
+			<li><a href="../../002_Reference/Social Gaming/Facebook/index.html">Facebook</a></li>
+			<li><a href="../../002_Reference/Social Gaming/Achievements and Leaderboards/index.html">Achievements and Leaderboards 成就与排行榜</a></li>
+			<li><a href="../../002_Reference/Social Gaming/Achievements and Leaderboards/Local High Scores/index.html">Local High Scores 本地高分榜</a></li>
+		</ul>
+		</li>
+		<li><a href="../../002_Reference/In App Purchases/index.html">IAP应用程序内购买</a>
+		<ul>
+			<li><a href="../../002_Reference/In App Purchases/IAP Example.html">IAP示例</a></li>
+			<li><a href="../../002_Reference/In App Purchases/IAP Testing.html">IAP测试</a></li>
+			<li><a href="../../002_Reference/In App Purchases/IAP Server Setup.html">IAP服务器端设置</a></li>
+		</ul>
+		</li>
+		<li><a href="../../002_Reference/Asynchronous Functions/index.html">Asynchronous 异步</a></li>
+		<li><a href="../../002_Reference/Cloud Services/index.html">Cloud Services 云服务</a></li>
+		<li><a href="../../002_Reference/Steam API/index.html">Steam API 应用程序接口</a></li>
+		<li class="Label">Extras 附加</li>
+		<li><a href="../../002_Reference/Debugging/index.html">Debugging 调试</a></li>
+		<li><a href="../../002_Reference/Miscellaneous/index.html">Miscellaneous 杂项</a></li>
+		<li><a href="../../002_Reference/017_Obsolete Functions/index.html">Obsolete Functions 淘汰函数</a></li>
+	</ul>
+	</li>
+	<li><a href="#">实例教程及心得</a></li>
+	<li><a href="#">实验性项目</a></li>
+	<li><a href="#">应用设置</a></li>
+	<li><a href="../../update_log.html">Update log</a></li>
+	<li><a href="../../index_searcher.html">索引目录</a></li>
+</ul>
+</nav>
+<!-- #EndLibraryItem -->..<!-- #BeginLibraryItem "/mmenu_rightlist.lbi" --><!-- mmenu_right up 1 -->
+
+<nav id="menu-right">
+<ul>
+	<li><span>GMS使用问题可以联系我</span>
+
+	<ul>
+		<li class="Label">A</li>
+		<li class="img"><a href="#"><img src="#people/1/" /> Alexa<br />
+		<small>Johnson</small> </a></li>
+	</ul>
+	</li>
+	<li><span>网站问题可以联系我</span>
+	<ul>
+		<li class="Label">D</li>
+		<li class="img"><a href="mailto:deciia@qq.com"><img src="../../deciia@qq.com" /> Adam<br />
+		<small>Deciia</small> </a></li>
+	</ul>
+	</li>
+</ul>
+</nav>
+<!-- mmenu_right down 1 --> <!-- #EndLibraryItem --></div>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
@@ -796,7 +1387,1189 @@ action destroy at position
 action change sprite
 action transform sprite
 action color sprite
-action play sound
+                 <title></title>
+                 <meta content="IE=9" http-equiv="X-UA-Compatible" />
+                 <link charset="utf-8" href="../../style.css" media="screen" rel="stylesheet" title="style" type="text/css" />
+                 <meta content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" name="viewport" /><!-- #BeginLibraryItem "/mmenu_head.lbi" --><!-- mmenu_head up 1 -->
+                 <link href="../../style.css" rel="stylesheet" type="text/css" />
+                 <link href="../../src/css/jquery.mmenu.all.css" rel="stylesheet" type="text/css" /><script type="text/javascript" src="../../src/js/jquery.min.js"></script><script type="text/javascript" src="../../src/js/hammer.min.js"></script><script type="text/javascript" src="../../src/js/jquery.mmenu.min.all_old.js"></script><!-- scripts links    	
+                    
+                 		<style type="text/css">
+                 		@media all and (min-width: 900px) {
+                 		html, body {
+                 		height: 100%
+                 		
+                 		}
+                 		#menu {
+                 		background: #eee
+                 		}
+                 		#page {
+                 		border-left: 1px solid #ccc
+                 		min-height: 100%
+                 		}
+                 		}
+                 		</style>
+                    --><script type="text/javascript">
+                 
+                 			//	The menu on the right
+                 			$(function() {
+                 
+                 				var $menu = $('nav#menu-right');
+                 				$menu.mmenu({
+                 					position	: 'right',
+                 					classes		: 'mm-black',
+                 					dragOpen	: true,
+                 					counters	: true,
+                 					searchfield	: true,
+                 					labels		: {
+                 						fixed		: !$.mmenu.support.touch
+                 					}
+                 				});
+                 
+                 				//	Click a menu-item
+                 				var $confirm = $('#confirmation');
+                 				$menu.find( 'li a' ).not( '.mm-subopen' ).not( '.mm-subclose' ).bind(
+                 					'click.example',
+                 					function( e )
+                 					{
+                 						e.preventDefault();
+                 						$confirm.show().text( 'You clicked "' + $.trim( $(this).text() ) + '"' );
+                 						$('#menu-right').trigger( 'close' );
+                 					}
+                 				);
+                 			});
+                 			
+                 			//	The menu on the left
+                 			$(function() {
+                 
+                 				var $menu0 = $('nav#menu-left');
+                 
+                 				$menu0.mmenu({
+                 					position	: 'left',
+                 					classes		: 'mm-black',
+                 					dragOpen	: true,
+                 					counters	: true,
+                 					searchfield	: true,
+                 					labels		: {
+                 						fixed		: !$.mmenu.support.touch
+                 					}
+                 				});
+                 			});			
+                 
+                 			// for one page
+                 
+                 			$(function() {
+                 				var $menu = $('nav#menu-left'),
+                 					$html = $('html, body');
+                 		
+                 				$menu.mmenu();
+                 				$menu.find( 'li > a' ).on(
+                 					'click',
+                 					function()
+                 					{
+                 						var href = $(this).attr( 'href' );
+                 		
+                 						//	if the clicked link is linked to an anchor, scroll the page to that anchor 
+                 						if ( href.slice( 0, 1 ) == '#' )
+                 						{
+                 							$menu.one(
+                 								'closed.mm',
+                 								function()
+                 								{
+                 									setTimeout(
+                 										function()
+                 										{
+                 											$html.animate({
+                 												scrollTop: $( href ).offset().top
+                 											});	
+                 										}, 10
+                 									);	
+                 								}
+                 							);						
+                 						}
+                 					}
+                 				);
+                 			});
+                 
+                 			// for the tips
+                 			
+                 			$(function() {
+                 				var options = {
+                 					classes			: 'mm-light',
+                 					modal			: true
+                 				};
+                 				
+                 				options.position = 'left';
+                 				options.zposition = 'next';
+                 				$('#tooltip-1').mmenu( options );
+                 				
+                 				options.position = 'right';
+                 				options.zposition = 'next';
+                 				$('#tooltip-2').mmenu( options );
+                 				
+                 				options.position = 'bottom';
+                 				options.zposition = 'front';
+                 				$('#popup-1').mmenu( options );
+                 
+                 				options.position = 'top';
+                 				options.zposition = 'front';
+                 				$('#popup-2').mmenu( options );
+                 			});
+                 	
+                 		</script><!-- mmenu_head down 6 --><!-- #EndLibraryItem --><!-- the page header part  -->
+                 <div id="page">
+                 <div id="header">点击左边按键打开导航菜单</div>
+                 
+                 <div id="content">
+                 <h1>Main Actions - Set 12</h1>
+                 
+                 <h2>This section deals with some of the main actions you will use when working with <i>GameMaker:Studio</i>.</h2>
+                 
+                 <p>The main action sets are full of the most important actions that you will need when working with <i>GameMaker:Studio</i>, and the first set, marked &quot;main1&quot; in the object properties tab, deals with instances, sprites, sounds and moving from room to room.<br />
+                 &nbsp;</p>
+                 
+                 <h3>Instances</h3>
+                 
+                 <p><img align="middle" src="../../images/createinstance.png" /><b>Create Instance</b><br />
+                 With this action you can create an instance of an object. You specify which object to create and the position for the new instance. If you check the <b>Relative</b> box, the position is relative to the position of the current instance. Creating instances during the game is extremely useful. A space ship can create bullets; a bomb can create an explosion, etc. In many games you will have some controller object that from time to time creates monsters or other objects. For the newly created instance the creation event is executed.<br />
+                 <br />
+                 <img align="middle" src="../../images/create_motion.png" /><b>Create Moving</b><br />
+                 This action works the same as the action above but with two additional fields. You can now also specify the speed and direction of the newly created instance. Note that if you check the <b>Relative</b> box, only the position is relative, not the speed and direction. For example, to make a bullet move in the direction of the person shooting you have to use a little trick. As position use 0,0 and check <b>Relative</b>. As direction we need the current direction of the instance. This can be obtained by typing in the word <tt>direction</tt>. (This actually is a variable that always indicates the current direction in which the instance is moving.)<br />
+                 <br />
+                 <img align="middle" src="../../images/create_multiple.png" /><b>Create Random</b><br />
+                 This action lets you create an instance of one out of four objects. You specify the four objects and the position. An instance of one of these four objects is created at the given position. If you check the <b>Relative</b> box, the position is relative to the position of the current instance. If you need a choice out of less than four objects you can use No Object for some of them. This is for example useful to generate a random enemy at a location.<br />
+                 <br />
+                 <img align="middle" src="../../images/change.png" /><b>Change Instance</b><br />
+                 With this action you can change the current instance into an instance of another object. So for example, you can change an instance of a bomb into an explosion. All settings, such as the motion and the value of variables, will stay the same. You can indicate whether or not to perform the destroy event for the current object and the creation event for the new object.<br />
+                 <br />
+                 <img align="middle" src="../../images/destroy.png" /><b>Destroy Instance</b><br />
+                 With this action you destroy the current instance. The destroy event for the instance is executed.<br />
+                 <br />
+                 <img align="middle" src="../../images/destroy_at.png" /><b>Destroy at Position</b><br />
+                 With this action you destroy all instances whose bounding box contains a given position. This is useful, for example, when you use an exploding bomb. When you check the <b>Relative</b> box the position is taken relative to the position of the current instance.<br />
+                 &nbsp;</p>
+                 
+                 <h3>Sprites</h3>
+                 
+                 <p><img align="middle" src="../../images/set_sprite.png" /><b>Change Sprite</b><br />
+                 Use this action to change the sprite for the instance. You indicate which new sprite. You can also indicate with subimage must be shown. Normally you would use 0 for this (the first subimage) unless you want to see a particular subimage. Use -1 if you do not want to change the current subimage shown. Finally you change the speed of the animation of the subimages. If you only want to see a particular subimage, set the speed to 0. If the speed is larger than one subimages will be skipped. If it is smaller than 1 subimages will be shown multiple times. Don&#39;t use a negative speed. Changing sprites is an important feature. For example, often you want to change the sprite of a character depending on the direction in which it walks. This can be achieved by making different sprites for each of the (four) directions. Within the keyboard events for the arrow keys you set the direction of motion and the sprite.<br />
+                 <br />
+                 <img align="middle" src="../../images/set_sprite_scale.png" /><b>Transform Sprite</b><br />
+                 Use this action to change the size and orientation of the sprite for the instance. Use the scale factors to make it larger or smaller. The angle gives the counter-clockwise orientation of the sprite. For example, to make the sprite oriented in the direction of motion use as a value <tt>direction</tt>. For example, this is useful for a car. You can also indicate whether the sprite should be mirrored horizontally and/or flipped vertically.<br />
+                 <br />
+                 <img align="middle" src="../../images/set_sprite_color.png" /><b>Color Sprite</b><br />
+                 Normally the sprite is drawn as it is defined. Using this action you can change the color of the sprite. This color is blended with the sprite, that is, it is combined with the colors of the sprite. If you want to draw a sprite in different colors you better define the sprite in black and white and use the blend color to set the actual color. You can also indicate an alpha transparency. With a value of 1 the sprite is opaque. With a value of 0 it is completely transparent. With a value in between you will partially see the background shine through it. This is great for making explosions.<br />
+                 &nbsp;</p>
+                 
+                 <h3>Sounds</h3>
+                 
+                 <p><img align="middle" src="../../images/sound_play.png" /><b>Play Sound</b><br />
+                 With this action you play one of the sound resources you added to your game. You can select the sound you want to play and choose whether it should play only once (the default) or loop continuously. Multiple wave sounds can play at once but only one midi sound can play at a time. So if you start a midi sound, the current midi sound is stopped.<br />
+                 <br />
+                 <img align="middle" src="../../images/sound_stop.png" /><b>Stop Sound</b><br />
+                 This action stops the indicated sound. If multiple instances of this sound are playing all are stopped.<br />
+                 <br />
+                 <img align="middle" src="../../images/if_sound.png" /><b>Check Sound</b><br />
+                 If the indicated sound is playing the next action is performed. Otherwise it is skipped. You can select <b>Not</b> to indicate that the next action should be performed if the indicated sound is not playing. For example, you can check whether some background music is playing and, if not, start some new background music. Note that this action returns true when the sound actually plays through the speakers. After you call the action to play a sound it does not immediately reach the speakers so the action might still return false for a while. Similar, when the sound is stopped you still hear it for a while (e.g. because of echo) and the action will still return true.<br />
+                 &nbsp;</p>
+                 
+                 <h3>Rooms</h3>
+                 
+                 <p><img align="middle" src="../../images/previous_room.png" /><b>Previous Room</b><br />
+                 Move to the previous room. You can indicate the type of transition effect between the rooms. You should experiment to see what works best for you. When the rooms do not have the same size you better do not use transitions. If you are in the first room you get an error.<br />
+                 <br />
+                 <img align="middle" src="../../images/next_room.png" /><b>Next Room</b><br />
+                 Move to the next room. You can indicate the transition.<br />
+                 <br />
+                 <img align="middle" src="../../images/current_room.png" /><b>Restart Room</b><br />
+                 The current room is restarted. You indicate the transition effect.<br />
+                 <br />
+                 <img align="middle" src="../../images/goto_room.png" /><b>Different Room</b><br />
+                 With this action you can go to a particular room. You indicate the room and the transition effect.<br />
+                 <br />
+                 <img align="middle" src="../../images/previous_room.png" /><b> Check Previous</b><br />
+                 This action tests whether the previous room exists. If so, the next action is executed. You normally need this test before moving to the previous room.<br />
+                 <br />
+                 <img align="middle" src="../../images/if_next_room.png" /><b>Check Next</b><br />
+                 This action tests whether the next room exists. If so, the next action is executed. You normally need this test before moving to the next room.<br />
+                 &nbsp;</p>
+                 
+                 <p>&nbsp;</p>
+                 
+                 <p>&nbsp;</p>
+                 
+                 <div class="clear">
+                 <div style="float:left">Back : <a href="index.html">Actions</a></div>
+                 
+                 <div style="float:right">Next : <a href="002_Main%20actions%20set%202.html">Main Actions - Set 2</a></div>
+                 </div>
+                 
+                 <p>&nbsp;</p>
+                 
+                 <h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
+                 </div>
+                 <!-- #BeginLibraryItem "/mmenu_leftlist.lbi" -->
+                 
+                 <nav id="menu-left"><!-- mmenu_leftlist up -->
+                 <ul>
+                 	<li><a href="../../index.html">GMS手册首页</a></li>
+                 	<li><a href="../index.html">GMS使用</a>
+                 	<ul>
+                 		<li><a href="../000_Introduction.html">Introduction 介绍</a></li>
+                 		<li><a href="../001_Installation.html">Installation 安装</a></li>
+                 		<li><a href="../002_Activation.html">Activation 激活</a></li>
+                 		<li><a href="../003_GameMaker Studio Overview.html">GMS 概述</a></li>
+                 		<li><a href="../004_The Graphical User Interface.html">GMS用户界面介绍</a>
+                 		<ul>
+                 			<li><a href="../Drop Down Menus/The File Menu.html">The File Menu &ldquo;文件&rdquo;菜单</a></li>
+                 			<li><a href="../Drop Down Menus/The Edit Menu.html">The Edit Menu &ldquo;编辑&rdquo;菜单</a></li>
+                 			<li><a href="../Drop Down Menus/The Resources Menu.html">The Resources Menu &ldquo;资源&rdquo;菜单</a></li>
+                 			<li><a href="../Drop Down Menus/The Scripts Menu.html">The Scripts Menu &ldquo;脚本&rdquo;菜单</a></li>
+                 			<li><a href="../Drop Down Menus/The Run Menu.html">The Run Menu &ldquo;运行&rdquo;菜单</a></li>
+                 			<li><a href="../Drop Down Menus/The Windows Menu.html">The Window Menu &ldquo;窗口菜单&rdquo;</a></li>
+                 			<li><a href="../Drop Down Menus/The Help Menu.html">The Help Menu &ldquo;帮助&rdquo;菜单</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../005_Loading Sprites.html">Loading Sprites 载入精灵</a></li>
+                 		<li><a href="../006_Sounds and music.html">Sounds And Music 声音与音乐</a></li>
+                 		<li><a href="../007_Backgrounds.html">Backgrounds 背景</a></li>
+                 		<li><a href="../008_Defining objects.html">Defining Objects 定义对象</a></li>
+                 		<li><a href="../Events/index.html">Events 事件</a>
+                 		<ul>
+                 			<li><a href="../Events/Create Event.html">Create Event 创建事件</a></li>
+                 			<li><a href="../Events/Destroy Event.html">Destroy Event 破坏事件</a></li>
+                 			<li><a href="../Events/Alarm Event.html">Alarm Events 计时事件</a></li>
+                 			<li><a href="../Events/Step Event.html">Step Events 步事件</a></li>
+                 			<li><a href="../Events/Collision Event.html">Collision Event 碰撞事件</a></li>
+                 			<li><a href="../Events/Keyboard Event.html">Keyboard Events 键盘事件</a></li>
+                 			<li><a href="../Events/Mouse Event.html">Mouse Event 鼠标事件</a></li>
+                 			<li><a href="../Events/Other Event.html">Other Events 其它事件</a></li>
+                 			<li><a href="../Events/Draw Event.html">Draw Event 绘制事件</a>
+                 			<ul>
+                 				<li><a href="../Events/Draw GUI Event.html">绘制图形界面事件</a></li>
+                 				<li><a href="../Events/Resize Event.html">调整大小事件</a></li>
+                 			</ul>
+                 			</li>
+                 			<li><a href="../Events/Async Event.html">Asynchronous Events 异步事件</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="index.html">Actions 动作</a>
+                 		<ul>
+                 			<li><a href="000_Move actions.html">Move Actions 移动类动作</a></li>
+                 			<li><a href="001_Main actions set 1.html">Main Actions, Set 1 主动作设定1</a></li>
+                 			<li><a href="002_Main actions set 2.html">Main Actions, Set 2 主动作设定2</a></li>
+                 			<li><a href="003_Control actions.html">Control Actions 控制类动作</a></li>
+                 			<li><a href="004_Score actions.html">Score Actions 分数类动作</a></li>
+                 			<li><a href="005_Extra actions.html">补充的相关动作 </a></li>
+                 			<li><a href="006_Draw actions.html">Draw Actions 绘制类动作</a></li>
+                 			<li><a href="007_Using expressions and variables.html">使用表达式和变量</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../Rooms/index.html">创建房间(Rooms)</a>
+                 		<ul>
+                 			<li><a href="../Rooms/Settings Tab.html">Settings 设置</a></li>
+                 			<li><a href="../Rooms/Backgrounds Tab.html">Backgrounds 背景</a></li>
+                 			<li><a href="../Rooms/Objects Tab.html">Objects 对象</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../Game Information.html">游戏信息设置 </a></li>
+                 		<li><a href="../009_Distributing your game.html">发布你的游戏</a></li>
+                 	</ul>
+                 	</li>
+                 	<li><a href="../../001_Advanced Use/index.html">高级应用</a>
+                 	<ul>
+                 		<li class="Label">游戏原生资源(Game Assets)</li>
+                 		<li><a href="../../001_Advanced Use/More about sprites/index.html">更多精灵(Sprites)的内容</a>
+                 		<ul>
+                 			<li><a href="../../001_Advanced Use/More about sprites/Editing Sprites.html">编辑精灵（Sprites）</a></li>
+                 			<li><a href="../../001_Advanced Use/More about sprites/Editing Subimages.html">编辑子图（Subimages）</a></li>
+                 			<li><a href="../../001_Advanced Use/More about sprites/Editing Collision Masks.html">编辑碰撞遮罩（Collision Masks）</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../001_Advanced Use/More about backgrounds/index.html">更多背景(background)的内容</a>
+                 		<ul>
+                 			<li><a href="../../001_Advanced Use/More about backgrounds/Designing Tiles.html">Designing Tiles 图块设计</a></li>
+                 			<li><a href="../../001_Advanced Use/More about backgrounds/Texture Pages.html">Texture Pages 纹理贴图页</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../001_Advanced Use/More about Objects/index.html">更多对象(object)的内容</a>
+                 		<ul>
+                 			<li><a href="../../001_Advanced Use/More about Objects/Parents.html">Parents 父对象</a></li>
+                 			<li><a href="../../001_Advanced Use/More about Objects/Physics.html">Object Physics Properties 对象物理属性</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../001_Advanced Use/More about rooms/index.html">更多房间(room)的内容</a>
+                 		<ul>
+                 			<li><a href="../../001_Advanced Use/More about rooms/Tiles.html">Tiles 图块</a></li>
+                 			<li><a href="../../001_Advanced Use/More about rooms/Views.html">Viewss 视野</a></li>
+                 			<li><a href="../../001_Advanced Use/More about rooms/Physics.html">Physics 物理环境</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../001_Advanced Use/More About Async Events/index.html">更多异步事件(Async Events)的内容</a>
+                 		<ul>
+                 			<li><a href="../../001_Advanced Use/More About Async Events/Image Loaded and Sound Loaded Events.html">图片载入和声音载入的事件</a></li>
+                 			<li><a href="../../001_Advanced Use/More About Async Events/HTTP.html">HTTP事件</a></li>
+                 			<li><a href="../../001_Advanced Use/More About Async Events/Dialogs.html">Dialogs Event 对话事件</a></li>
+                 			<li><a href="../../001_Advanced Use/More About Async Events/IAP.html">IAP(应用内部付费模式)事件</a></li>
+                 			<li><a href="../../001_Advanced Use/More About Async Events/Cloud.html">Cloud Event 云事件</a></li>
+                 			<li><a href="../../001_Advanced Use/More About Async Events/Networking.html">Networking Event 联网事件</a></li>
+                 			<li><a href="../../001_Advanced Use/More About Async Events/Steam.html">Steam事件</a></li>
+                 			<li><a href="../../001_Advanced Use/More About Async Events/Social.html">Social Event 社会化模块事件</a></li>
+                 		</ul>
+                 		</li>
+                 		<li class="Label">Resource Editors 资源编辑器</li>
+                 		<li><a href="../../001_Advanced Use/003_Fonts.html">Fonts 字体</a></li>
+                 		<li><a href="../../001_Advanced Use/004_Paths.html">Paths 路径</a></li>
+                 		<li><a href="../../001_Advanced Use/005_Time lines.html">Time Lines 时间轴</a></li>
+                 		<li><a href="../../001_Advanced Use/006_Scripts.html">Scripts 脚本</a></li>
+                 		<li><a href="../../001_Advanced Use/009_Shaders.html">Shaders 着色器</a></li>
+                 		<li><a href="../../001_Advanced Use/010_Constants.html">Constants 常量</a></li>
+                 		<li><a href="../../001_Advanced Use/002_Including Files.html">Including Files 包含文件</a></li>
+                 		<li><a href="../../001_Advanced Use/008_Exporting and importing resources.html">Importing Resources 导入资源</a></li>
+                 		<li class="Label">Game Settings 游戏设置</li>
+                 		<li><a href="../../001_Advanced Use/Extensions/index.html">扩展包</a>
+                 		<ul>
+                 			<li><a href="../../001_Advanced Use/Extensions/Using Extensions.html">使用扩展</a></li>
+                 			<li><a href="../../001_Advanced Use/Extensions/Creating Extensions.html">创建一个扩展</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="#">Configurations 配置</a></li>
+                 		<li><a href="../../001_Advanced Use/Source Control/index.html">源代码控制</a>
+                 		<ul>
+                 			<li><a href="../../001_Advanced Use/Source Control/Getting Started With Source Control.html">源代码控制入门引导</a></li>
+                 			<li><a href="../../001_Advanced Use/Source Control/Setting Up GM For Source Control.html">设置GMS进行源代码控制</a></li>
+                 			<li><a href="../../001_Advanced Use/Source Control/Using Source Control.html">GMS源代码控制的使用</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../001_Advanced Use/Global game settings/index.html">全局游戏设定</a>
+                 		<ul>
+                 			<li><a href="../../001_Advanced Use/Global game settings/General Tab.html">General 常规选项卡</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Texture Groups Tab.html">Texture Groups 纹理组</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Project Info Tab.html">Project Info 项目信息</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Facebook Tab.html">Facebook 脸书</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Source Control Tab.html">Source Control 代码控制</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Advertising Tab.html">Advertising 广告</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Analytics Tab.html">Analytics 应用数据分析</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/In App Purchases Tab.html">IAP应用内部付费</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Licensing Tab.html">Licensing 许可证</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Extras Tab.html">Extras Tab 额外选项卡</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Windows Tab.html">Windows选项卡</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Mac OS Tab.html">Mac OS选项卡</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/HTML5 Tab.html">HTML5选项卡</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/iOS Tab.html">iOS选项卡</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Android Tab.html">Android选项卡</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Win8 Tab.html">Windows 8选项卡</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Win8 Phone Tab.html">Windows 8 Phone选项卡</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Tizen Tab.html">Tizen选项卡</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Linux Tab.html">Ubuntu(Linux)选项卡</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Steam Tab.html">Steam选项卡</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../001_Advanced Use/Preferences/index.html">Preferences 首选项</a>
+                 		<ul>
+                 			<li><a href="../../001_Advanced Use/Preferences/General Preferences.html">General 常规</a></li>
+                 			<li><a href="../../001_Advanced Use/Preferences/Form Preferences.html">Forms 窗口</a></li>
+                 			<li><a href="../../001_Advanced Use/Preferences/Scripts Preferences.html">Scripts 脚本</a></li>
+                 			<li><a href="../../001_Advanced Use/Preferences/Editor Preferences.html">Editors 编辑器</a></li>
+                 			<li><a href="../../001_Advanced Use/Preferences/Server Preferences.html">Web Server 服务器</a></li>
+                 			<li><a href="../../001_Advanced Use/Preferences/Android Preferences.html">Android</a></li>
+                 			<li><a href="../../001_Advanced Use/Preferences/Windows8 Preferences.html">Windows 8</a></li>
+                 			<li><a href="../../001_Advanced Use/Preferences/Windows Phone Preferences.html">Windows Phone</a></li>
+                 			<li><a href="../../001_Advanced Use/Preferences/Tizen Preferences.html">Tizen</a></li>
+                 			<li><a href="../../001_Advanced Use/Preferences/Mac Preferences.html">Mac OS</a></li>
+                 			<li><a href="../../001_Advanced Use/Preferences/Linux Preferences.html">Ubuntu (Linux)</a></li>
+                 			<li><a href="../../001_Advanced Use/Preferences/Steam Preferences.html">Steam</a></li>
+                 			<li><a href="../../001_Advanced Use/Preferences/Source Control Preferences.html">Source Control 代码控制</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../001_Advanced Use/011_Debugging.html">Debugging 调试</a></li>
+                 	</ul>
+                 	</li>
+                 	<li><a href="../../002_Reference/index.html">GML参考手册</a>
+                 	<ul>
+                 		<li><a href="../../002_Reference/001_GML Language Overview/index.html">GML概述</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_01_program.html">A Program 一个程序</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/Variables/index.html">变量及变量域</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_05_addressing.html">在其他实例中的寻址变量</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_06_arrays.html">Arrays 数组</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_16_functions.html">Functions 函数</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_03_assignments.html">Assignments 赋值</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_04_expressions.html">Expressions 表达式</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_07_if.html">If语句</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_08_repeat.html">Repeat语句</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_09_while.html">While语句</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_10_do.html">Do语句</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_11_for.html">For语句</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_12_switch.html">Switch语句</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_13_break.html">Break语句</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_14_continue.html">Continue语句</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_15_exit.html">Exit语句</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_18_with.html">With结构</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_17_scripts.html">Scripts 脚本</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_19_comment.html">代码注释</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_20_evaluation_order.html">Evaluation Order 计算顺序</a></li>
+                 		</ul>
+                 		</li>
+                 		<li class="Label">实数与字符串</li>
+                 		<li><a href="../../002_Reference/Date and Time/index.html">Date and Time 日期与时间</a></li>
+                 		<li><a href="../../002_Reference/Maths/index.html">Maths 数学</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/Maths/Real valued functions/index.html">Real Number Functions 实数函数</a></li>
+                 			<li><a href="../../002_Reference/Maths/Vector Functions/index.html">Vector Functions 矢量函数</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../002_Reference/Strings/index.html">Strings 字符串</a></li>
+                 		<li class="Label">Game Play 游戏运行</li>
+                 		<li><a href="../../002_Reference/Game Assets/index.html">Game Assets游戏原生资源</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/Game Assets/Sprites/index.html">Sprites 精灵</a></li>
+                 			<li><a href="../../002_Reference/Game Assets/Backgrounds/index.html">Backgrounds 背景</a></li>
+                 			<li><a href="../../002_Reference/Game Assets/Sounds/index.html">Sounds 声音</a></li>
+                 			<li><a href="../../002_Reference/Game Assets/Fonts/index.html">Fonts 字体</a></li>
+                 			<li><a href="../../002_Reference/Paths/index.html">Paths 路径</a></li>
+                 			<li><a href="../../002_Reference/Timelines/index.html">Timelines 时间轴</a></li>
+                 			<li><a href="../../002_Reference/Rooms/index.html">Rooms 房间</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../002_Reference/Mouse, Keyboard and Other Controls/index.html">鼠标、键盘和其他控制设备</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/Mouse, Keyboard and Other Controls/Virtual Keys/index.html">Virtual Keys 虚拟键</a></li>
+                 			<li><a href="../../002_Reference/Mouse, Keyboard and Other Controls/Keyboard Input/index.html">Keyboard Input 键盘输入</a></li>
+                 			<li><a href="../../002_Reference/Mouse, Keyboard and Other Controls/Mouse Input/index.html">Mouse Input 鼠标输入</a></li>
+                 			<li><a href="../../002_Reference/Mouse, Keyboard and Other Controls/Device Input/index.html">Device Input 设备输入</a></li>
+                 			<li><a href="../../002_Reference/Mouse, Keyboard and Other Controls/GamePad Input/index.html">GamePad Input 游戏手柄输入</a></li>
+                 			<li><a href="../../002_Reference/Mouse, Keyboard and Other Controls/Joystick Input/index.html">Joystick Input 摇杆输入</a></li>
+                 			<li><a href="../../002_Reference/Mouse, Keyboard and Other Controls/immersion Haptics/index.html">Immersion Haptics 触摸输入</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../002_Reference/Movement and Collisions/index.html">移动与碰撞</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/Movement and Collisions/Movement/index.html">Movement 移动</a></li>
+                 			<li><a href="../../002_Reference/Movement and Collisions/Motion Planning/index.html">Motion Planning 运动设计</a></li>
+                 			<li><a href="../../002_Reference/Movement and Collisions/Collisions/index.html">Collisions 碰撞</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../002_Reference/Objects and Instances/index.html">对象与实例</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/Objects and Instances/Objects/index.html">Objects 对象</a></li>
+                 			<li><a href="../../002_Reference/Objects and Instances/Instances/index.html">Instances 实例</a></li>
+                 		</ul>
+                 		</li>
+                 		<li class="Label">Drawing And Display 绘制与显示</li>
+                 		<li><a href="../../002_Reference/Drawing/index.html">Drawing 绘制</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/Drawing/Color And Blending/index.html">Color And Blending 颜色与混合</a></li>
+                 			<li><a href="../../002_Reference/Drawing/Drawing Basic Forms/index.html">Drawing Basic Forms 绘制图形</a></li>
+                 			<li><a href="../../002_Reference/Drawing/Drawing Sprites And Backgrounds/index.html">Drawing Sprites And Backgrounds 绘制精灵和背景</a></li>
+                 			<li><a href="../../002_Reference/Drawing/Drawing Text/index.html">Drawing Text 绘制文本</a></li>
+                 			<li><a href="../../002_Reference/Drawing/Drawing Primitives/index.html">Drawing Primitives 绘制图元</a></li>
+                 			<li><a href="../../002_Reference/Drawing/Drawing 3D/index.html">绘制3D图形</a></li>
+                 			<li><a href="../../002_Reference/Drawing/Drawing Surfaces/index.html">Drawing Surfaces 绘制表面</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../002_Reference/Shaders/index.html">Shaders 着色器</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/Shaders/Vertex Formats/index.html">Vertex Formats 顶点格式</a></li>
+                 			<li><a href="../../002_Reference/Shaders/Primitive Building/index.html">Primitive Building 建立图元</a></li>
+                 			<li><a href="../../002_Reference/Shaders/Shader Constants/index.html">Shader Constants 着色器常量 </a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../002_Reference/Surfaces/index.html">Surfaces 表面</a></li>
+                 		<li><a href="../../002_Reference/Windows And Views/index.html">窗口与视野</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/Windows And Views/The Game Window/index.html">The Game Window 游戏窗口</a></li>
+                 			<li><a href="../../002_Reference/Windows And Views/Views/index.html">Views 视野</a></li>
+                 		</ul>
+                 		</li>
+                 		<li class="Label">Advanced Functions 高级函数</li>
+                 		<li><a href="../../002_Reference/Data Structures/index.html">数据结构</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/Data Structures/DS Stacks/index.html">Stacks 堆栈</a></li>
+                 			<li><a href="../../002_Reference/Data Structures/DS Queues/index.html">Queues 队列</a></li>
+                 			<li><a href="../../002_Reference/Data Structures/DS Lists/index.html">Lists 列表</a></li>
+                 			<li><a href="../../002_Reference/Data Structures/DS Maps/index.html">Maps 地图</a></li>
+                 			<li><a href="../../002_Reference/Data Structures/DS Priority Queues/index.html">Priority Queues 优先队列</a></li>
+                 			<li><a href="../../002_Reference/Data Structures/DS Grids/index.html">Grids 网格</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../002_Reference/Particles/index.html">Particles 粒子</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/Particles/Simple Effects/index.html">Simple Effects 简单特效</a></li>
+                 			<li><a href="../../002_Reference/Particles/Particle Systems/index.html">Particle Systems 粒子系统</a></li>
+                 			<li><a href="../../002_Reference/Particles/Particle Types/index.html">Particle Types 粒子类型</a></li>
+                 			<li><a href="../../002_Reference/Particles/Particle Emitters/index.html">Particle Emitters 粒子发射器</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../002_Reference/Physics/index.html">Physics 物理函数</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/Physics/The Physics World/index.html">The Physics World 物理环境</a></li>
+                 			<li><a href="../../002_Reference/Physics/Forces/index.html">Forces 力</a></li>
+                 			<li><a href="../../002_Reference/Physics/Fixtures/index.html">Fixtures 固定装置</a></li>
+                 			<li><a href="../../002_Reference/Physics/Joints/index.html">Joints 联接</a></li>
+                 			<li><a href="../../002_Reference/Physics/Physics Variables/index.html">Physics Variables 物理变量</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../002_Reference/File Handling/index.html">文件处理(File Handling)</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/File Handling/File System Limits.html">File System Limits 文件系统限制</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../002_Reference/Operating System/index.html">Operating System 操作系统</a></li>
+                 		<li><a href="../../002_Reference/Buffers/index.html">Buffers 缓存区</a></li>
+                 		<li><a href="../../002_Reference/Networking/index.html">Networking 联网</a></li>
+                 		<li class="Label">Platform Specific 平台特性</li>
+                 		<li><a href="../../002_Reference/HTML5/index.html">HTML5</a></li>
+                 		<li><a href="../../002_Reference/Windows8/index.html">Windows 8</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/Windows8/Windows 8 Phone/index.html">Windows 8 Phone</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../002_Reference/Advertising and Analytics/index.html">广告与数据分析</a></li>
+                 		<li><a href="../../002_Reference/Social Gaming/index.html">游戏社交设计</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/Social Gaming/Facebook/index.html">Facebook</a></li>
+                 			<li><a href="../../002_Reference/Social Gaming/Achievements and Leaderboards/index.html">Achievements and Leaderboards 成就与排行榜</a></li>
+                 			<li><a href="../../002_Reference/Social Gaming/Achievements and Leaderboards/Local High Scores/index.html">Local High Scores 本地高分榜</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../002_Reference/In App Purchases/index.html">IAP应用程序内购买</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/In App Purchases/IAP Example.html">IAP示例</a></li>
+                 			<li><a href="../../002_Reference/In App Purchases/IAP Testing.html">IAP测试</a></li>
+                 			<li><a href="../../002_Reference/In App Purchases/IAP Server Setup.html">IAP服务器端设置</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../002_Reference/Asynchronous Functions/index.html">Asynchronous 异步</a></li>
+                 		<li><a href="../../002_Reference/Cloud Services/index.html">Cloud Services 云服务</a></li>
+                 		<li><a href="../../002_Reference/Steam API/index.html">Steam API 应用程序接口</a></li>
+                 		<li class="Label">Extras 附加</li>
+                 		<li><a href="../../002_Reference/Debugging/index.html">Debugging 调试</a></li>
+                 		<li><a href="../../002_Reference/Miscellaneous/index.html">Miscellaneous 杂项</a></li>
+                 		<li><a href="../../002_Reference/017_Obsolete Functions/index.html">Obsolete Functions 淘汰函数</a></li>
+                 	</ul>
+                 	</li>
+                 	<li><a href="#">实例教程及心得</a></li>
+                 	<li><a href="#">实验性项目</a></li>
+                 	<li><a href="#">应用设置</a></li>
+                 	<li><a href="../../update_log.html">Update log</a></li>
+                 	<li><a href="../../index_searcher.html">索引目录</a></li>
+                 </ul>
+                 </nav>
+                 <!-- #EndLibraryItem -->..<!-- #BeginLibraryItem "/mmenu_rightlist.lbi" --><!-- mmenu_right up 1 -->
+                 
+                 <nav id="menu-right">
+                 <ul>
+                 	<li><span>GMS使用问题可以联系我</span>
+                 
+                 	<ul>
+                 		<li class="Label">A</li>
+                 		<li class="img"><a href="#"><img src="#people/1/" /> Alexa<br />
+                 		<small>Johnson</small> </a></li>
+                 	</ul>
+                 	</li>
+                 	<li><span>网站问题可以联系我</span>
+                 	<ul>
+                 		<li class="Label">D</li>
+                 		<li class="img"><a href="mailto:deciia@qq.com"><img src="../../deciia@qq.com" /> Adam<br />
+                 		<small>Deciia</small> </a></li>
+                 	</ul>
+                 	</li>
+                 </ul>
+                 </nav>
+                 <!-- mmenu_right down 1 --> <!-- #EndLibraryItem --></div>
+                 <title></title>
+                 <meta content="IE=9" http-equiv="X-UA-Compatible" />
+                 <link charset="utf-8" href="../../style.css" media="screen" rel="stylesheet" title="style" type="text/css" />
+                 <meta content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" name="viewport" /><!-- #BeginLibraryItem "/mmenu_head.lbi" --><!-- mmenu_head up 1 -->
+                 <link href="../../style.css" rel="stylesheet" type="text/css" />
+                 <link href="../../src/css/jquery.mmenu.all.css" rel="stylesheet" type="text/css" /><script type="text/javascript" src="../../src/js/jquery.min.js"></script><script type="text/javascript" src="../../src/js/hammer.min.js"></script><script type="text/javascript" src="../../src/js/jquery.mmenu.min.all_old.js"></script><!-- scripts links    	
+                    
+                 		<style type="text/css">
+                 		@media all and (min-width: 900px) {
+                 		html, body {
+                 		height: 100%
+                 		
+                 		}
+                 		#menu {
+                 		background: #eee
+                 		}
+                 		#page {
+                 		border-left: 1px solid #ccc
+                 		min-height: 100%
+                 		}
+                 		}
+                 		</style>
+                    --><script type="text/javascript">
+                 
+                 			//	The menu on the right
+                 			$(function() {
+                 
+                 				var $menu = $('nav#menu-right');
+                 				$menu.mmenu({
+                 					position	: 'right',
+                 					classes		: 'mm-black',
+                 					dragOpen	: true,
+                 					counters	: true,
+                 					searchfield	: true,
+                 					labels		: {
+                 						fixed		: !$.mmenu.support.touch
+                 					}
+                 				});
+                 
+                 				//	Click a menu-item
+                 				var $confirm = $('#confirmation');
+                 				$menu.find( 'li a' ).not( '.mm-subopen' ).not( '.mm-subclose' ).bind(
+                 					'click.example',
+                 					function( e )
+                 					{
+                 						e.preventDefault();
+                 						$confirm.show().text( 'You clicked "' + $.trim( $(this).text() ) + '"' );
+                 						$('#menu-right').trigger( 'close' );
+                 					}
+                 				);
+                 			});
+                 			
+                 			//	The menu on the left
+                 			$(function() {
+                 
+                 				var $menu0 = $('nav#menu-left');
+                 
+                 				$menu0.mmenu({
+                 					position	: 'left',
+                 					classes		: 'mm-black',
+                 					dragOpen	: true,
+                 					counters	: true,
+                 					searchfield	: true,
+                 					labels		: {
+                 						fixed		: !$.mmenu.support.touch
+                 					}
+                 				});
+                 			});			
+                 
+                 			// for one page
+                 
+                 			$(function() {
+                 				var $menu = $('nav#menu-left'),
+                 					$html = $('html, body');
+                 		
+                 				$menu.mmenu();
+                 				$menu.find( 'li > a' ).on(
+                 					'click',
+                 					function()
+                 					{
+                 						var href = $(this).attr( 'href' );
+                 		
+                 						//	if the clicked link is linked to an anchor, scroll the page to that anchor 
+                 						if ( href.slice( 0, 1 ) == '#' )
+                 						{
+                 							$menu.one(
+                 								'closed.mm',
+                 								function()
+                 								{
+                 									setTimeout(
+                 										function()
+                 										{
+                 											$html.animate({
+                 												scrollTop: $( href ).offset().top
+                 											});	
+                 										}, 10
+                 									);	
+                 								}
+                 							);						
+                 						}
+                 					}
+                 				);
+                 			});
+                 
+                 			// for the tips
+                 			
+                 			$(function() {
+                 				var options = {
+                 					classes			: 'mm-light',
+                 					modal			: true
+                 				};
+                 				
+                 				options.position = 'left';
+                 				options.zposition = 'next';
+                 				$('#tooltip-1').mmenu( options );
+                 				
+                 				options.position = 'right';
+                 				options.zposition = 'next';
+                 				$('#tooltip-2').mmenu( options );
+                 				
+                 				options.position = 'bottom';
+                 				options.zposition = 'front';
+                 				$('#popup-1').mmenu( options );
+                 
+                 				options.position = 'top';
+                 				options.zposition = 'front';
+                 				$('#popup-2').mmenu( options );
+                 			});
+                 	
+                 		</script><!-- mmenu_head down 6 --><!-- #EndLibraryItem --><!-- the page header part  -->
+                 <div id="page">
+                 <div id="header">点击左边按键打开导航菜单</div>
+                 
+                 <div id="content">
+                 <h1>Main Actions - Set 1</h1>
+                 
+                 <h2>This section deals with some of the main actions you will use when working with <i>GameMaker:Studio</i>.</h2>
+                 
+                 <p>The main action sets are full of the most important actions that you will need when working with <i>GameMaker:Studio</i>, and the first set, marked &quot;main1&quot; in the object properties tab, deals with instances, sprites, sounds and moving from room to room.<br />
+                 &nbsp;</p>
+                 
+                 <h3>Instances</h3>
+                 
+                 <p><img align="middle" src="../../images/createinstance.png" /><b>Create Instance</b><br />
+                 With this action you can create an instance of an object. You specify which object to create and the position for the new instance. If you check the <b>Relative</b> box, the position is relative to the position of the current instance. Creating instances during the game is extremely useful. A space ship can create bullets; a bomb can create an explosion, etc. In many games you will have some controller object that from time to time creates monsters or other objects. For the newly created instance the creation event is executed.<br />
+                 <br />
+                 <img align="middle" src="../../images/create_motion.png" /><b>Create Moving</b><br />
+                 This action works the same as the action above but with two additional fields. You can now also specify the speed and direction of the newly created instance. Note that if you check the <b>Relative</b> box, only the position is relative, not the speed and direction. For example, to make a bullet move in the direction of the person shooting you have to use a little trick. As position use 0,0 and check <b>Relative</b>. As direction we need the current direction of the instance. This can be obtained by typing in the word <tt>direction</tt>. (This actually is a variable that always indicates the current direction in which the instance is moving.)<br />
+                 <br />
+                 <img align="middle" src="../../images/create_multiple.png" /><b>Create Random</b><br />
+                 This action lets you create an instance of one out of four objects. You specify the four objects and the position. An instance of one of these four objects is created at the given position. If you check the <b>Relative</b> box, the position is relative to the position of the current instance. If you need a choice out of less than four objects you can use No Object for some of them. This is for example useful to generate a random enemy at a location.<br />
+                 <br />
+                 <img align="middle" src="../../images/change.png" /><b>Change Instance</b><br />
+                 With this action you can change the current instance into an instance of another object. So for example, you can change an instance of a bomb into an explosion. All settings, such as the motion and the value of variables, will stay the same. You can indicate whether or not to perform the destroy event for the current object and the creation event for the new object.<br />
+                 <br />
+                 <img align="middle" src="../../images/destroy.png" /><b>Destroy Instance</b><br />
+                 With this action you destroy the current instance. The destroy event for the instance is executed.<br />
+                 <br />
+                 <img align="middle" src="../../images/destroy_at.png" /><b>Destroy at Position</b><br />
+                 With this action you destroy all instances whose bounding box contains a given position. This is useful, for example, when you use an exploding bomb. When you check the <b>Relative</b> box the position is taken relative to the position of the current instance.<br />
+                 &nbsp;</p>
+                 
+                 <h3>Sprites</h3>
+                 
+                 <p><img align="middle" src="../../images/set_sprite.png" /><b>Change Sprite</b><br />
+                 Use this action to change the sprite for the instance. You indicate which new sprite. You can also indicate with subimage must be shown. Normally you would use 0 for this (the first subimage) unless you want to see a particular subimage. Use -1 if you do not want to change the current subimage shown. Finally you change the speed of the animation of the subimages. If you only want to see a particular subimage, set the speed to 0. If the speed is larger than one subimages will be skipped. If it is smaller than 1 subimages will be shown multiple times. Don&#39;t use a negative speed. Changing sprites is an important feature. For example, often you want to change the sprite of a character depending on the direction in which it walks. This can be achieved by making different sprites for each of the (four) directions. Within the keyboard events for the arrow keys you set the direction of motion and the sprite.<br />
+                 <br />
+                 <img align="middle" src="../../images/set_sprite_scale.png" /><b>Transform Sprite</b><br />
+                 Use this action to change the size and orientation of the sprite for the instance. Use the scale factors to make it larger or smaller. The angle gives the counter-clockwise orientation of the sprite. For example, to make the sprite oriented in the direction of motion use as a value <tt>direction</tt>. For example, this is useful for a car. You can also indicate whether the sprite should be mirrored horizontally and/or flipped vertically.<br />
+                 <br />
+                 <img align="middle" src="../../images/set_sprite_color.png" /><b>Color Sprite</b><br />
+                 Normally the sprite is drawn as it is defined. Using this action you can change the color of the sprite. This color is blended with the sprite, that is, it is combined with the colors of the sprite. If you want to draw a sprite in different colors you better define the sprite in black and white and use the blend color to set the actual color. You can also indicate an alpha transparency. With a value of 1 the sprite is opaque. With a value of 0 it is completely transparent. With a value in between you will partially see the background shine through it. This is great for making explosions.<br />
+                 &nbsp;</p>
+                 
+                 <h3>Sounds</h3>
+                 
+                 <p><img align="middle" src="../../images/sound_play.png" /><b>Play Sound</b><br />
+                 With this action you play one of the sound resources you added to your game. You can select the sound you want to play and choose whether it should play only once (the default) or loop continuously. Multiple wave sounds can play at once but only one midi sound can play at a time. So if you start a midi sound, the current midi sound is stopped.<br />
+                 <br />
+                 <img align="middle" src="../../images/sound_stop.png" /><b>Stop Sound</b><br />
+                 This action stops the indicated sound. If multiple instances of this sound are playing all are stopped.<br />
+                 <br />
+                 <img align="middle" src="../../images/if_sound.png" /><b>Check Sound</b><br />
+                 If the indicated sound is playing the next action is performed. Otherwise it is skipped. You can select <b>Not</b> to indicate that the next action should be performed if the indicated sound is not playing. For example, you can check whether some background music is playing and, if not, start some new background music. Note that this action returns true when the sound actually plays through the speakers. After you call the action to play a sound it does not immediately reach the speakers so the action might still return false for a while. Similar, when the sound is stopped you still hear it for a while (e.g. because of echo) and the action will still return true.<br />
+                 &nbsp;</p>
+                 
+                 <h3>Rooms</h3>
+                 
+                 <p><img align="middle" src="../../images/previous_room.png" /><b>Previous Room</b><br />
+                 Move to the previous room. You can indicate the type of transition effect between the rooms. You should experiment to see what works best for you. When the rooms do not have the same size you better do not use transitions. If you are in the first room you get an error.<br />
+                 <br />
+                 <img align="middle" src="../../images/next_room.png" /><b>Next Room</b><br />
+                 Move to the next room. You can indicate the transition.<br />
+                 <br />
+                 <img align="middle" src="../../images/current_room.png" /><b>Restart Room</b><br />
+                 The current room is restarted. You indicate the transition effect.<br />
+                 <br />
+                 <img align="middle" src="../../images/goto_room.png" /><b>Different Room</b><br />
+                 With this action you can go to a particular room. You indicate the room and the transition effect.<br />
+                 <br />
+                 <img align="middle" src="../../images/previous_room.png" /><b> Check Previous</b><br />
+                 This action tests whether the previous room exists. If so, the next action is executed. You normally need this test before moving to the previous room.<br />
+                 <br />
+                 <img align="middle" src="../../images/if_next_room.png" /><b>Check Next</b><br />
+                 This action tests whether the next room exists. If so, the next action is executed. You normally need this test before moving to the next room.<br />
+                 &nbsp;</p>
+                 
+                 <p>&nbsp;</p>
+                 
+                 <p>&nbsp;</p>
+                 
+                 <div class="clear">
+                 <div style="float:left">Back : <a href="index.html">Actions</a></div>
+                 
+                 <div style="float:right">Next : <a href="002_Main%20actions%20set%202.html">Main Actions - Set 2</a></div>
+                 </div>
+                 
+                 <p>&nbsp;</p>
+                 
+                 <h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
+                 </div>
+                 <!-- #BeginLibraryItem "/mmenu_leftlist.lbi" -->
+                 
+                 <nav id="menu-left"><!-- mmenu_leftlist up -->
+                 <ul>
+                 	<li><a href="../../index.html">GMS手册首页</a></li>
+                 	<li><a href="../index.html">GMS使用</a>
+                 	<ul>
+                 		<li><a href="../000_Introduction.html">Introduction 介绍</a></li>
+                 		<li><a href="../001_Installation.html">Installation 安装</a></li>
+                 		<li><a href="../002_Activation.html">Activation 激活</a></li>
+                 		<li><a href="../003_GameMaker Studio Overview.html">GMS 概述</a></li>
+                 		<li><a href="../004_The Graphical User Interface.html">GMS用户界面介绍</a>
+                 		<ul>
+                 			<li><a href="../Drop Down Menus/The File Menu.html">The File Menu &ldquo;文件&rdquo;菜单</a></li>
+                 			<li><a href="../Drop Down Menus/The Edit Menu.html">The Edit Menu &ldquo;编辑&rdquo;菜单</a></li>
+                 			<li><a href="../Drop Down Menus/The Resources Menu.html">The Resources Menu &ldquo;资源&rdquo;菜单</a></li>
+                 			<li><a href="../Drop Down Menus/The Scripts Menu.html">The Scripts Menu &ldquo;脚本&rdquo;菜单</a></li>
+                 			<li><a href="../Drop Down Menus/The Run Menu.html">The Run Menu &ldquo;运行&rdquo;菜单</a></li>
+                 			<li><a href="../Drop Down Menus/The Windows Menu.html">The Window Menu &ldquo;窗口菜单&rdquo;</a></li>
+                 			<li><a href="../Drop Down Menus/The Help Menu.html">The Help Menu &ldquo;帮助&rdquo;菜单</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../005_Loading Sprites.html">Loading Sprites 载入精灵</a></li>
+                 		<li><a href="../006_Sounds and music.html">Sounds And Music 声音与音乐</a></li>
+                 		<li><a href="../007_Backgrounds.html">Backgrounds 背景</a></li>
+                 		<li><a href="../008_Defining objects.html">Defining Objects 定义对象</a></li>
+                 		<li><a href="../Events/index.html">Events 事件</a>
+                 		<ul>
+                 			<li><a href="../Events/Create Event.html">Create Event 创建事件</a></li>
+                 			<li><a href="../Events/Destroy Event.html">Destroy Event 破坏事件</a></li>
+                 			<li><a href="../Events/Alarm Event.html">Alarm Events 计时事件</a></li>
+                 			<li><a href="../Events/Step Event.html">Step Events 步事件</a></li>
+                 			<li><a href="../Events/Collision Event.html">Collision Event 碰撞事件</a></li>
+                 			<li><a href="../Events/Keyboard Event.html">Keyboard Events 键盘事件</a></li>
+                 			<li><a href="../Events/Mouse Event.html">Mouse Event 鼠标事件</a></li>
+                 			<li><a href="../Events/Other Event.html">Other Events 其它事件</a></li>
+                 			<li><a href="../Events/Draw Event.html">Draw Event 绘制事件</a>
+                 			<ul>
+                 				<li><a href="../Events/Draw GUI Event.html">绘制图形界面事件</a></li>
+                 				<li><a href="../Events/Resize Event.html">调整大小事件</a></li>
+                 			</ul>
+                 			</li>
+                 			<li><a href="../Events/Async Event.html">Asynchronous Events 异步事件</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="index.html">Actions 动作</a>
+                 		<ul>
+                 			<li><a href="000_Move actions.html">Move Actions 移动类动作</a></li>
+                 			<li><a href="001_Main actions set 1.html">Main Actions, Set 1 主动作设定1</a></li>
+                 			<li><a href="002_Main actions set 2.html">Main Actions, Set 2 主动作设定2</a></li>
+                 			<li><a href="003_Control actions.html">Control Actions 控制类动作</a></li>
+                 			<li><a href="004_Score actions.html">Score Actions 分数类动作</a></li>
+                 			<li><a href="005_Extra actions.html">补充的相关动作 </a></li>
+                 			<li><a href="006_Draw actions.html">Draw Actions 绘制类动作</a></li>
+                 			<li><a href="007_Using expressions and variables.html">使用表达式和变量</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../Rooms/index.html">创建房间(Rooms)</a>
+                 		<ul>
+                 			<li><a href="../Rooms/Settings Tab.html">Settings 设置</a></li>
+                 			<li><a href="../Rooms/Backgrounds Tab.html">Backgrounds 背景</a></li>
+                 			<li><a href="../Rooms/Objects Tab.html">Objects 对象</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../Game Information.html">游戏信息设置 </a></li>
+                 		<li><a href="../009_Distributing your game.html">发布你的游戏</a></li>
+                 	</ul>
+                 	</li>
+                 	<li><a href="../../001_Advanced Use/index.html">高级应用</a>
+                 	<ul>
+                 		<li class="Label">游戏原生资源(Game Assets)</li>
+                 		<li><a href="../../001_Advanced Use/More about sprites/index.html">更多精灵(Sprites)的内容</a>
+                 		<ul>
+                 			<li><a href="../../001_Advanced Use/More about sprites/Editing Sprites.html">编辑精灵（Sprites）</a></li>
+                 			<li><a href="../../001_Advanced Use/More about sprites/Editing Subimages.html">编辑子图（Subimages）</a></li>
+                 			<li><a href="../../001_Advanced Use/More about sprites/Editing Collision Masks.html">编辑碰撞遮罩（Collision Masks）</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../001_Advanced Use/More about backgrounds/index.html">更多背景(background)的内容</a>
+                 		<ul>
+                 			<li><a href="../../001_Advanced Use/More about backgrounds/Designing Tiles.html">Designing Tiles 图块设计</a></li>
+                 			<li><a href="../../001_Advanced Use/More about backgrounds/Texture Pages.html">Texture Pages 纹理贴图页</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../001_Advanced Use/More about Objects/index.html">更多对象(object)的内容</a>
+                 		<ul>
+                 			<li><a href="../../001_Advanced Use/More about Objects/Parents.html">Parents 父对象</a></li>
+                 			<li><a href="../../001_Advanced Use/More about Objects/Physics.html">Object Physics Properties 对象物理属性</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../001_Advanced Use/More about rooms/index.html">更多房间(room)的内容</a>
+                 		<ul>
+                 			<li><a href="../../001_Advanced Use/More about rooms/Tiles.html">Tiles 图块</a></li>
+                 			<li><a href="../../001_Advanced Use/More about rooms/Views.html">Viewss 视野</a></li>
+                 			<li><a href="../../001_Advanced Use/More about rooms/Physics.html">Physics 物理环境</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../001_Advanced Use/More About Async Events/index.html">更多异步事件(Async Events)的内容</a>
+                 		<ul>
+                 			<li><a href="../../001_Advanced Use/More About Async Events/Image Loaded and Sound Loaded Events.html">图片载入和声音载入的事件</a></li>
+                 			<li><a href="../../001_Advanced Use/More About Async Events/HTTP.html">HTTP事件</a></li>
+                 			<li><a href="../../001_Advanced Use/More About Async Events/Dialogs.html">Dialogs Event 对话事件</a></li>
+                 			<li><a href="../../001_Advanced Use/More About Async Events/IAP.html">IAP(应用内部付费模式)事件</a></li>
+                 			<li><a href="../../001_Advanced Use/More About Async Events/Cloud.html">Cloud Event 云事件</a></li>
+                 			<li><a href="../../001_Advanced Use/More About Async Events/Networking.html">Networking Event 联网事件</a></li>
+                 			<li><a href="../../001_Advanced Use/More About Async Events/Steam.html">Steam事件</a></li>
+                 			<li><a href="../../001_Advanced Use/More About Async Events/Social.html">Social Event 社会化模块事件</a></li>
+                 		</ul>
+                 		</li>
+                 		<li class="Label">Resource Editors 资源编辑器</li>
+                 		<li><a href="../../001_Advanced Use/003_Fonts.html">Fonts 字体</a></li>
+                 		<li><a href="../../001_Advanced Use/004_Paths.html">Paths 路径</a></li>
+                 		<li><a href="../../001_Advanced Use/005_Time lines.html">Time Lines 时间轴</a></li>
+                 		<li><a href="../../001_Advanced Use/006_Scripts.html">Scripts 脚本</a></li>
+                 		<li><a href="../../001_Advanced Use/009_Shaders.html">Shaders 着色器</a></li>
+                 		<li><a href="../../001_Advanced Use/010_Constants.html">Constants 常量</a></li>
+                 		<li><a href="../../001_Advanced Use/002_Including Files.html">Including Files 包含文件</a></li>
+                 		<li><a href="../../001_Advanced Use/008_Exporting and importing resources.html">Importing Resources 导入资源</a></li>
+                 		<li class="Label">Game Settings 游戏设置</li>
+                 		<li><a href="../../001_Advanced Use/Extensions/index.html">扩展包</a>
+                 		<ul>
+                 			<li><a href="../../001_Advanced Use/Extensions/Using Extensions.html">使用扩展</a></li>
+                 			<li><a href="../../001_Advanced Use/Extensions/Creating Extensions.html">创建一个扩展</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="#">Configurations 配置</a></li>
+                 		<li><a href="../../001_Advanced Use/Source Control/index.html">源代码控制</a>
+                 		<ul>
+                 			<li><a href="../../001_Advanced Use/Source Control/Getting Started With Source Control.html">源代码控制入门引导</a></li>
+                 			<li><a href="../../001_Advanced Use/Source Control/Setting Up GM For Source Control.html">设置GMS进行源代码控制</a></li>
+                 			<li><a href="../../001_Advanced Use/Source Control/Using Source Control.html">GMS源代码控制的使用</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../001_Advanced Use/Global game settings/index.html">全局游戏设定</a>
+                 		<ul>
+                 			<li><a href="../../001_Advanced Use/Global game settings/General Tab.html">General 常规选项卡</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Texture Groups Tab.html">Texture Groups 纹理组</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Project Info Tab.html">Project Info 项目信息</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Facebook Tab.html">Facebook 脸书</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Source Control Tab.html">Source Control 代码控制</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Advertising Tab.html">Advertising 广告</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Analytics Tab.html">Analytics 应用数据分析</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/In App Purchases Tab.html">IAP应用内部付费</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Licensing Tab.html">Licensing 许可证</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Extras Tab.html">Extras Tab 额外选项卡</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Windows Tab.html">Windows选项卡</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Mac OS Tab.html">Mac OS选项卡</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/HTML5 Tab.html">HTML5选项卡</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/iOS Tab.html">iOS选项卡</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Android Tab.html">Android选项卡</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Win8 Tab.html">Windows 8选项卡</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Win8 Phone Tab.html">Windows 8 Phone选项卡</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Tizen Tab.html">Tizen选项卡</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Linux Tab.html">Ubuntu(Linux)选项卡</a></li>
+                 			<li><a href="../../001_Advanced Use/Global game settings/Steam Tab.html">Steam选项卡</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../001_Advanced Use/Preferences/index.html">Preferences 首选项</a>
+                 		<ul>
+                 			<li><a href="../../001_Advanced Use/Preferences/General Preferences.html">General 常规</a></li>
+                 			<li><a href="../../001_Advanced Use/Preferences/Form Preferences.html">Forms 窗口</a></li>
+                 			<li><a href="../../001_Advanced Use/Preferences/Scripts Preferences.html">Scripts 脚本</a></li>
+                 			<li><a href="../../001_Advanced Use/Preferences/Editor Preferences.html">Editors 编辑器</a></li>
+                 			<li><a href="../../001_Advanced Use/Preferences/Server Preferences.html">Web Server 服务器</a></li>
+                 			<li><a href="../../001_Advanced Use/Preferences/Android Preferences.html">Android</a></li>
+                 			<li><a href="../../001_Advanced Use/Preferences/Windows8 Preferences.html">Windows 8</a></li>
+                 			<li><a href="../../001_Advanced Use/Preferences/Windows Phone Preferences.html">Windows Phone</a></li>
+                 			<li><a href="../../001_Advanced Use/Preferences/Tizen Preferences.html">Tizen</a></li>
+                 			<li><a href="../../001_Advanced Use/Preferences/Mac Preferences.html">Mac OS</a></li>
+                 			<li><a href="../../001_Advanced Use/Preferences/Linux Preferences.html">Ubuntu (Linux)</a></li>
+                 			<li><a href="../../001_Advanced Use/Preferences/Steam Preferences.html">Steam</a></li>
+                 			<li><a href="../../001_Advanced Use/Preferences/Source Control Preferences.html">Source Control 代码控制</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../001_Advanced Use/011_Debugging.html">Debugging 调试</a></li>
+                 	</ul>
+                 	</li>
+                 	<li><a href="../../002_Reference/index.html">GML参考手册</a>
+                 	<ul>
+                 		<li><a href="../../002_Reference/001_GML Language Overview/index.html">GML概述</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_01_program.html">A Program 一个程序</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/Variables/index.html">变量及变量域</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_05_addressing.html">在其他实例中的寻址变量</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_06_arrays.html">Arrays 数组</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_16_functions.html">Functions 函数</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_03_assignments.html">Assignments 赋值</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_04_expressions.html">Expressions 表达式</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_07_if.html">If语句</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_08_repeat.html">Repeat语句</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_09_while.html">While语句</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_10_do.html">Do语句</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_11_for.html">For语句</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_12_switch.html">Switch语句</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_13_break.html">Break语句</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_14_continue.html">Continue语句</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_15_exit.html">Exit语句</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_18_with.html">With结构</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_17_scripts.html">Scripts 脚本</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_19_comment.html">代码注释</a></li>
+                 			<li><a href="../../002_Reference/001_GML Language Overview/401_20_evaluation_order.html">Evaluation Order 计算顺序</a></li>
+                 		</ul>
+                 		</li>
+                 		<li class="Label">实数与字符串</li>
+                 		<li><a href="../../002_Reference/Date and Time/index.html">Date and Time 日期与时间</a></li>
+                 		<li><a href="../../002_Reference/Maths/index.html">Maths 数学</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/Maths/Real valued functions/index.html">Real Number Functions 实数函数</a></li>
+                 			<li><a href="../../002_Reference/Maths/Vector Functions/index.html">Vector Functions 矢量函数</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../002_Reference/Strings/index.html">Strings 字符串</a></li>
+                 		<li class="Label">Game Play 游戏运行</li>
+                 		<li><a href="../../002_Reference/Game Assets/index.html">Game Assets游戏原生资源</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/Game Assets/Sprites/index.html">Sprites 精灵</a></li>
+                 			<li><a href="../../002_Reference/Game Assets/Backgrounds/index.html">Backgrounds 背景</a></li>
+                 			<li><a href="../../002_Reference/Game Assets/Sounds/index.html">Sounds 声音</a></li>
+                 			<li><a href="../../002_Reference/Game Assets/Fonts/index.html">Fonts 字体</a></li>
+                 			<li><a href="../../002_Reference/Paths/index.html">Paths 路径</a></li>
+                 			<li><a href="../../002_Reference/Timelines/index.html">Timelines 时间轴</a></li>
+                 			<li><a href="../../002_Reference/Rooms/index.html">Rooms 房间</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../002_Reference/Mouse, Keyboard and Other Controls/index.html">鼠标、键盘和其他控制设备</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/Mouse, Keyboard and Other Controls/Virtual Keys/index.html">Virtual Keys 虚拟键</a></li>
+                 			<li><a href="../../002_Reference/Mouse, Keyboard and Other Controls/Keyboard Input/index.html">Keyboard Input 键盘输入</a></li>
+                 			<li><a href="../../002_Reference/Mouse, Keyboard and Other Controls/Mouse Input/index.html">Mouse Input 鼠标输入</a></li>
+                 			<li><a href="../../002_Reference/Mouse, Keyboard and Other Controls/Device Input/index.html">Device Input 设备输入</a></li>
+                 			<li><a href="../../002_Reference/Mouse, Keyboard and Other Controls/GamePad Input/index.html">GamePad Input 游戏手柄输入</a></li>
+                 			<li><a href="../../002_Reference/Mouse, Keyboard and Other Controls/Joystick Input/index.html">Joystick Input 摇杆输入</a></li>
+                 			<li><a href="../../002_Reference/Mouse, Keyboard and Other Controls/immersion Haptics/index.html">Immersion Haptics 触摸输入</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../002_Reference/Movement and Collisions/index.html">移动与碰撞</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/Movement and Collisions/Movement/index.html">Movement 移动</a></li>
+                 			<li><a href="../../002_Reference/Movement and Collisions/Motion Planning/index.html">Motion Planning 运动设计</a></li>
+                 			<li><a href="../../002_Reference/Movement and Collisions/Collisions/index.html">Collisions 碰撞</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../002_Reference/Objects and Instances/index.html">对象与实例</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/Objects and Instances/Objects/index.html">Objects 对象</a></li>
+                 			<li><a href="../../002_Reference/Objects and Instances/Instances/index.html">Instances 实例</a></li>
+                 		</ul>
+                 		</li>
+                 		<li class="Label">Drawing And Display 绘制与显示</li>
+                 		<li><a href="../../002_Reference/Drawing/index.html">Drawing 绘制</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/Drawing/Color And Blending/index.html">Color And Blending 颜色与混合</a></li>
+                 			<li><a href="../../002_Reference/Drawing/Drawing Basic Forms/index.html">Drawing Basic Forms 绘制图形</a></li>
+                 			<li><a href="../../002_Reference/Drawing/Drawing Sprites And Backgrounds/index.html">Drawing Sprites And Backgrounds 绘制精灵和背景</a></li>
+                 			<li><a href="../../002_Reference/Drawing/Drawing Text/index.html">Drawing Text 绘制文本</a></li>
+                 			<li><a href="../../002_Reference/Drawing/Drawing Primitives/index.html">Drawing Primitives 绘制图元</a></li>
+                 			<li><a href="../../002_Reference/Drawing/Drawing 3D/index.html">绘制3D图形</a></li>
+                 			<li><a href="../../002_Reference/Drawing/Drawing Surfaces/index.html">Drawing Surfaces 绘制表面</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../002_Reference/Shaders/index.html">Shaders 着色器</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/Shaders/Vertex Formats/index.html">Vertex Formats 顶点格式</a></li>
+                 			<li><a href="../../002_Reference/Shaders/Primitive Building/index.html">Primitive Building 建立图元</a></li>
+                 			<li><a href="../../002_Reference/Shaders/Shader Constants/index.html">Shader Constants 着色器常量 </a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../002_Reference/Surfaces/index.html">Surfaces 表面</a></li>
+                 		<li><a href="../../002_Reference/Windows And Views/index.html">窗口与视野</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/Windows And Views/The Game Window/index.html">The Game Window 游戏窗口</a></li>
+                 			<li><a href="../../002_Reference/Windows And Views/Views/index.html">Views 视野</a></li>
+                 		</ul>
+                 		</li>
+                 		<li class="Label">Advanced Functions 高级函数</li>
+                 		<li><a href="../../002_Reference/Data Structures/index.html">数据结构</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/Data Structures/DS Stacks/index.html">Stacks 堆栈</a></li>
+                 			<li><a href="../../002_Reference/Data Structures/DS Queues/index.html">Queues 队列</a></li>
+                 			<li><a href="../../002_Reference/Data Structures/DS Lists/index.html">Lists 列表</a></li>
+                 			<li><a href="../../002_Reference/Data Structures/DS Maps/index.html">Maps 地图</a></li>
+                 			<li><a href="../../002_Reference/Data Structures/DS Priority Queues/index.html">Priority Queues 优先队列</a></li>
+                 			<li><a href="../../002_Reference/Data Structures/DS Grids/index.html">Grids 网格</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../002_Reference/Particles/index.html">Particles 粒子</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/Particles/Simple Effects/index.html">Simple Effects 简单特效</a></li>
+                 			<li><a href="../../002_Reference/Particles/Particle Systems/index.html">Particle Systems 粒子系统</a></li>
+                 			<li><a href="../../002_Reference/Particles/Particle Types/index.html">Particle Types 粒子类型</a></li>
+                 			<li><a href="../../002_Reference/Particles/Particle Emitters/index.html">Particle Emitters 粒子发射器</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../002_Reference/Physics/index.html">Physics 物理函数</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/Physics/The Physics World/index.html">The Physics World 物理环境</a></li>
+                 			<li><a href="../../002_Reference/Physics/Forces/index.html">Forces 力</a></li>
+                 			<li><a href="../../002_Reference/Physics/Fixtures/index.html">Fixtures 固定装置</a></li>
+                 			<li><a href="../../002_Reference/Physics/Joints/index.html">Joints 联接</a></li>
+                 			<li><a href="../../002_Reference/Physics/Physics Variables/index.html">Physics Variables 物理变量</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../002_Reference/File Handling/index.html">文件处理(File Handling)</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/File Handling/File System Limits.html">File System Limits 文件系统限制</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../002_Reference/Operating System/index.html">Operating System 操作系统</a></li>
+                 		<li><a href="../../002_Reference/Buffers/index.html">Buffers 缓存区</a></li>
+                 		<li><a href="../../002_Reference/Networking/index.html">Networking 联网</a></li>
+                 		<li class="Label">Platform Specific 平台特性</li>
+                 		<li><a href="../../002_Reference/HTML5/index.html">HTML5</a></li>
+                 		<li><a href="../../002_Reference/Windows8/index.html">Windows 8</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/Windows8/Windows 8 Phone/index.html">Windows 8 Phone</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../002_Reference/Advertising and Analytics/index.html">广告与数据分析</a></li>
+                 		<li><a href="../../002_Reference/Social Gaming/index.html">游戏社交设计</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/Social Gaming/Facebook/index.html">Facebook</a></li>
+                 			<li><a href="../../002_Reference/Social Gaming/Achievements and Leaderboards/index.html">Achievements and Leaderboards 成就与排行榜</a></li>
+                 			<li><a href="../../002_Reference/Social Gaming/Achievements and Leaderboards/Local High Scores/index.html">Local High Scores 本地高分榜</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../002_Reference/In App Purchases/index.html">IAP应用程序内购买</a>
+                 		<ul>
+                 			<li><a href="../../002_Reference/In App Purchases/IAP Example.html">IAP示例</a></li>
+                 			<li><a href="../../002_Reference/In App Purchases/IAP Testing.html">IAP测试</a></li>
+                 			<li><a href="../../002_Reference/In App Purchases/IAP Server Setup.html">IAP服务器端设置</a></li>
+                 		</ul>
+                 		</li>
+                 		<li><a href="../../002_Reference/Asynchronous Functions/index.html">Asynchronous 异步</a></li>
+                 		<li><a href="../../002_Reference/Cloud Services/index.html">Cloud Services 云服务</a></li>
+                 		<li><a href="../../002_Reference/Steam API/index.html">Steam API 应用程序接口</a></li>
+                 		<li class="Label">Extras 附加</li>
+                 		<li><a href="../../002_Reference/Debugging/index.html">Debugging 调试</a></li>
+                 		<li><a href="../../002_Reference/Miscellaneous/index.html">Miscellaneous 杂项</a></li>
+                 		<li><a href="../../002_Reference/017_Obsolete Functions/index.html">Obsolete Functions 淘汰函数</a></li>
+                 	</ul>
+                 	</li>
+                 	<li><a href="#">实例教程及心得</a></li>
+                 	<li><a href="#">实验性项目</a></li>
+                 	<li><a href="#">应用设置</a></li>
+                 	<li><a href="../../update_log.html">Update log</a></li>
+                 	<li><a href="../../index_searcher.html">索引目录</a></li>
+                 </ul>
+                 </nav>
+                 <!-- #EndLibraryItem -->..<!-- #BeginLibraryItem "/mmenu_rightlist.lbi" --><!-- mmenu_right up 1 -->
+                 
+                 <nav id="menu-right">
+                 <ul>
+                 	<li><span>GMS使用问题可以联系我</span>
+                 
+                 	<ul>
+                 		<li class="Label">A</li>
+                 		<li class="img"><a href="#"><img src="#people/1/" /> Alexa<br />
+                 		<small>Johnson</small> </a></li>
+                 	</ul>
+                 	</li>
+                 	<li><span>网站问题可以联系我</span>
+                 	<ul>
+                 		<li class="Label">D</li>
+                 		<li class="img"><a href="mailto:deciia@qq.com"><img src="../../deciia@qq.com" /> Adam<br />
+                 		<small>Deciia</small> </a></li>
+                 	</ul>
+                 	</li>
+                 </ul>
+                 </nav>
+                 <!-- mmenu_right down 1 --> <!-- #EndLibraryItem --></div>
+                 
 action stop sound
 action check sound
 action previous room
