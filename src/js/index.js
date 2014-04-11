@@ -1,79 +1,3 @@
-//	The menu on the right
-$(function () {
-
-    var $menu = $('nav#menu-right');
-    $menu.mmenu({
-        position: 'right',
-        classes: 'mm-black',
-        dragOpen: true,
-        counters: true,
-        searchfield: true,
-        labels: {
-            fixed: !$.mmenu.support.touch
-        }
-    });
-
-    //	Click a menu-item
-    var $confirm = $('#confirmation');
-    $menu.find('li a').not('.mm-subopen').not('.mm-subclose').bind(
-        'click.example',
-        function (e) {
-            e.preventDefault();
-            $confirm.show().text('You clicked "' + $.trim($(this).text()) + '"');
-            $('#menu-left').trigger('close');
-        }
-    );
-});
-
-//	The menu on the left
-$(function () {
-
-    var $menu0 = $('nav#menu-left');
-
-    $menu0.mmenu({
-        position: 'left',
-        classes: 'mm-black',
-        dragOpen: true,
-        counters: true,
-        searchfield: true,
-        labels: {
-            fixed: !$.mmenu.support.touch
-        }
-    });
-
-});
-
-// for one page
-
-$(function () {
-    var $menu = $('nav#menu-left'),
-        $html = $('html, body');
-
-    $menu.mmenu();
-    $menu.find('li > a').on(
-        'click',
-        function () {
-            var href = $(this).attr('href');
-
-            //	if the clicked link is linked to an anchor, scroll the page to that anchor 
-            if (href.slice(0, 1) == '#') {
-                $menu.one(
-                    'closed.mm',
-                    function () {
-                        setTimeout(
-                            function () {
-                                $html.animate({
-                                    scrollTop: $(href).offset().top
-                                });
-                            }, 10
-                        );
-                    }
-                );
-            }
-        }
-    );
-});
-
 // for the tips
 
 $(function () {
@@ -108,13 +32,91 @@ $(function () {
 
 });
 
-//在content中载入index_x.html
-$(document).ready(function () {
 
-    $("#content").load("index_x.html");
-    $("#menu-left").load("mmenu_left.html");
-    $("#menu-right").load("mmenu_right.html");    
+//	The menu on the left
+$(function () {
+    //左菜单加载mmenu_left.html    
+    $('nav#menu-left').load("subpage/mmenu_left.html", function () {
+        //应用mmeunu
+        var $menu = $('nav#menu-left');
+        $menu.mmenu({
+            position: 'left',
+            classes: 'mm-black',
+            dragOpen: true,
+            counters: true,
+            searchfield: true,
+            labels: {
+                fixed: !$.mmenu.support.touch
+            }
+        });
 
-    //在页面装载时，在ID为#labels的DOM元素里插入labels.html的内容。
+        // for one page
+        var $html = $('html, body');
+        //$menu.mmenu();
+        $menu.find('li > a').on(
+            'click',
+            function () {
+                var href = $(this).attr('href');
+                //	if the clicked link is linked to an anchor, scroll the page to that anchor 
+                if (href.slice(0, 1) == '#') {
+                    $menu.one(
+                        'closed.mm',
+                        function () {
+                            setTimeout(
+                                function () {
+                                    $html.animate({
+                                        scrollTop: $(href).offset().top
+                                    });
+                                }, 10
+                            );
+                        }
+                    );
+                };
 
+                //load mmenuleft 链接content
+                $('div#content').load(href.slice(1) + " #content", function () {
+                    //alert("11112");
+
+                });
+                //
+            }
+        );
+
+    });
+
+});
+
+
+//	The menu on the right
+$(function () {
+    //右菜单加载mmenu_right.html
+    //"[href='#menu-right']"
+    //$(document).ready(function () {});
+
+    $('nav#menu-right').load("subpage/mmenu_right.html", function () {
+        //alert("11111");
+        var $menu = $('nav#menu-right');
+        $menu.mmenu({
+            position: 'right',
+            classes: 'mm-black',
+            dragOpen: true,
+            counters: true,
+            searchfield: true,
+            labels: {
+                fixed: !$.mmenu.support.touch
+            }
+        });
+    });
+
+
+    //	Click a menu-item
+    var $confirm = $('#confirmation');
+    $menu.find('li a').not('.mm-subopen').not('.mm-subclose').bind(
+        'click.example',
+        function (e) {
+            e.preventDefault();
+            $confirm.show().text('You clicked "' + $.trim($(this).text()) + '"');
+            $('#menu-left').trigger('close');
+        }
+    );
 });
