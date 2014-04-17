@@ -1,99 +1,43 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/GMS_helppage.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
-    <title>ads_event</title>
+    <!-- InstanceBeginEditable name="doctitle" -->
+<title>ads_event</title>
+<!-- InstanceEndEditable -->
     <meta http-equiv="X-UA-Compatible" content="IE=9">
-    <link rel="stylesheet" href="/style.css" type="text/css" media="screen" title="style" charset="utf-8">
+    <link rel="stylesheet" href="../../style.css" type="text/css" media="screen" title="style" charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" />
     <link type="text/css" rel="stylesheet" href="/src/css/jquery.mmenu.all.css" />
-    <script type="text/javascript" src="/src/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/src/js/hammer.min.js"></script>
-    <script type="text/javascript" src="/src/js/jquery.mmenu.min.all_old.js"></script>
-    <script type="text/javascript" src="/src/js/index.js"></script>
+    <script type="text/javascript" src="../../src/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../src/js/hammer.min.js"></script>
+    <script type="text/javascript" src="../../src/js/jquery.mmenu.min.all_old.js"></script>
+    <script type="text/javascript" src="../../src/js/index.js"></script>
+    <!-- InstanceParam name="OptionalRegion_footer" type="boolean" value="false" -->
 </head>
-<body>
-<div id="page">
-	<div id="header" >
-		<a href="#menu-left"></a>				&#x70B9;&#x51FB;&#x5DE6;&#x8FB9;&#x6309;&#x952E;&#x6253;&#x5F00;&#x5BFC;&#x822A;&#x83DC;&#x5355;
-		<a href="#menu-right" class="friends right"></a>
-	</div>
-	<div id="content" >
 
-<h1>ads_event</h1>
-  
-<h2>Trigger the PlayHaven content associated with the given placement name.</h2>
-
-<h3><b>Syntax :</b></h3> 
-<p class="code">ads_event(placement)</p>
-
-<p>
-<br>
-</p>
-
-<div class="param">
-<table>
-	<tr><th>Argument</th><th>Description</th></tr>
-
-	<tr><td>placement</td>
-	<td>The PlayHaven placement name (a string)</td></tr>
-
-</table>
-</div>
-<p>
-<br>
-</p>
-  
-<p>
-<b>Returns : </b>N/A
-</p>
-
- <p>
-<br>
-</p>
-
-<h3>Description</h3>
-<p>
-This function will send an ad request to PlayHaven. The argument that it takes is the <b>placement name</b> string that you wish to use. If that placement is associated with any content from the PlayHaven 
-network (which you must have set up previously from the PlayHaven dashboard - see <a href="http://help.yoyogames.com/entries/24654681" target="_blank">here</a>), an interstitial ad overlay will be 
-shown. Some of these ads generate a <i>callback</i>, which can be dealt with from a script as defined by the function <a href="ads_set_reward_callback.html"><code>ads_set_reward_callback</code></a>. 
-You <i>must</i> have ads enabled and PlayHaven set up correctly in the <a href="../../001_Advanced%20Use/Global%20game%20settings/Advertising%20Tab.html">Global Game Settings - Advertising Tab</a> 
-otherwise no ads will be shown.
-<br>
-<br>
-
-<p>
-<br>
-</p>
-   
-<h3>Example :</h3>
-<p class="code">
-ads_set_reward_callback(scr_AdsCallback);<br>
-ads_event("game_start");
-</p>
-<p>
-The above code will set the callback script and then request an ad from PlayHaven for the placement named "game_start".
-</p>
-
-<p>
-<br>
-</p>
-<p>
-
-<div class="clear">
-	<div style="float:left">
-		Back : <a href="index.html">Advertising and Analytics</a>
-	</div>
-	<div style="float:right">
-		Next : <a href="ads_event_preload.html">ads_event_preload</a>
-	</div>
-</div>
-</p>
-
-<h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
-<!-- KEYWORDS contents --></div></div></body>
-</html>
+<body bgcolor="#FFFFFF">
+    <div id="page">
+        <div id="header">
+            <a href="#menu-left"></a>
+            <!-- InstanceBeginEditable name="EditRegion_pagetitle" -->点击左边图标打开菜单
+            <!-- InstanceEndEditable -->
+            <a href="#menu-right" class="friends right"></a>
+        </div>
+        <div id="content">
+            <!-- InstanceBeginEditable name="EditRegion_content" -->
+            <p>
+                EditRegion_content
+            </p>
+            <!-- InstanceEndEditable -->
+        </div>
+        
+        <nav id="menu-left">
+        </nav>
+        <nav id="menu-right">
+        </nav>
+    </div>
+</body>
+<!-- InstanceEnd --></html>
 
 <!--KEYWORDS
 ads_event
