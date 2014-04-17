@@ -58,7 +58,7 @@ $(document).ready(function () {
 
     $(function () {
         //左菜单加载mmenu_left.html    
-        $('nav#menu-left').load("./subpage/mmenu_left.html", function () {
+        $('nav#menu-left').load("/subpage/mmenu_left.html", function () {
             //应用mmeunu
             var $menu = $('nav#menu-left');
             $menu.mmenu({
@@ -164,7 +164,7 @@ $(document).ready(function () {
         //"[href='#menu-right']"
         //$(document).ready(function () {});
 
-        $('nav#menu-right').load("./subpage/mmenu_right.html", function () {
+        $('nav#menu-right').load("/subpage/mmenu_right.html", function () {
             //alert("11111");
             var $menu = $('nav#menu-right');
             $menu.mmenu({
