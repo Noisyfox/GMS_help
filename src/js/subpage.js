@@ -1,0 +1,111 @@
+$(document).ready(function () {
+
+    //函数：将相对地址转换为绝对地址
+    function resolve(url, base_url) {
+        var doc = document,
+            old_base = doc.getElementsByTagName('base')[0],
+            old_href = old_base && old_base.href,
+            doc_head = doc.head || doc.getElementsByTagName('head')[0],
+            our_base = old_base || doc_head.appendChild(doc.createElement('base')),
+            resolver = doc.createElement('a'),
+            resolved_url;
+        our_base.href = base_url;
+        resolver.href = url;
+        resolved_url = resolver.href; // browser magic at work here
+
+        if (old_base) old_base.href = old_href;
+        else doc_head.removeChild(our_base);
+        return resolved_url;
+    }
+    
+    /*
+            //ajax load page
+            var hash = window.location.hash.substr(1);
+            var href = $('nav#menu-left').find('li a').each(function () {
+                var href = $(this).attr('href');
+                if (hash == href.substr(0, href.length - 5)) {
+                    var toLoad = '/' + escape(hash) + '.html #content';
+                    $("#content").load(toLoad, function () {
+
+                        // 内容部分网址相对地址转换为绝对地址  
+                        var href = $('#content').find('a').each(function () {
+                            var url = $(this).attr('href');
+                            var base_url = toLoad;
+                            $(this).attr('href', resolve(url, base_url));
+                        });
+                        //内容部分图片的相对地址切换为绝对地址
+                        var href = $('#content').find('img').each(function () {
+                            var url = $(this).attr('src');
+                            var base_url = toLoad;
+                            $(this).attr('src', resolve(url, base_url));
+                        });
+                        // 
+                    });
+
+                }
+            });            
+            
+            //点击menu_left部分在内容部分载入新的内容
+            $('nav#menu-left').find('li a').click(function () {
+
+                var toLoad = '/' + escape($(this).attr('href')) + ' #content';
+                $('#content').hide('fast', loadContent);
+                $('#load').remove();
+                $('#footer').append('<span id="load">LOADING...</span>');
+                $('#load').fadeIn('normal');
+                window.location.hash = $(this).attr('href').substr(0, $(this).attr('href').length - 5);
+
+                function loadContent() {
+                    $('#content').load(toLoad, '', showNewContent())
+                }
+
+                function showNewContent() {                    
+                    
+                    $('#content').show('normal', hideLoader());                    
+
+                }
+
+                function hideLoader() {
+                    $('#load').fadeOut('normal');                    
+                }
+                return false;
+
+            });
+            */
+
+
+    // for the tips
+
+    $(function () {
+        var options = {
+            classes: 'mm-black',
+            modal: true
+        };
+
+        options.position = 'left';
+        options.zposition = 'next';
+        $('#tooltip-1').mmenu(options);
+
+        options.position = 'right';
+        options.zposition = 'next';
+        $('#tooltip-2').mmenu(options);
+
+        options.position = 'top';
+        options.zposition = 'front';
+        $('#popup-1').mmenu(options);
+
+        options.position = 'bottom';
+        options.zposition = 'front';
+        $('#en-1').mmenu(options);
+
+        options.position = 'bottom';
+        options.zposition = 'front';
+        $('#en-2').mmenu(options);
+
+        options.position = 'bottom';
+        options.zposition = 'front';
+        $('#tips-1').mmenu(options);
+
+    });
+
+})

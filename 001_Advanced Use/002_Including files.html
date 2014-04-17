@@ -13,8 +13,77 @@
     <script type="text/javascript" src="../src/js/jquery.min.js"></script>
     <script type="text/javascript" src="../src/js/hammer.min.js"></script>
     <script type="text/javascript" src="../src/js/jquery.mmenu.min.all_old.js"></script>
-    <script type="text/javascript" src="../src/js/index.js"></script>
+    <script type="text/javascript" src="../src/js/subpage.js"></script>
     <!-- InstanceParam name="OptionalRegion_footer" type="boolean" value="false" -->
+    
+    <script >
+    $(document).ready(function () {
+	    //	The menu on the left
+
+    $(function () {
+        //左菜单加载mmenu_left.html    
+        $('nav#menu-left').load("../subpage/mmenu_left.html", function () {
+            //应用mmeunu
+            var $menu = $('nav#menu-left');
+            $menu.mmenu({
+                position: 'left',
+                classes: 'mm-black',
+                dragOpen: true,
+                counters: true,
+                searchfield: true,
+                labels: {
+                    fixed: !$.mmenu.support.touch
+                }
+            });  
+            
+            // for one page
+
+            var $html = $('html, body');
+            //$menu.mmenu();
+            $menu.find('li a').on(
+                'click',
+                function () {
+                    var href = $(this).attr('href');
+                    //	if the clicked link is linked to an anchor, scroll the page to that anchor 
+                    if (href.slice(0, 1) == '#') {
+                        $menu.one(
+                            'closed.mm',
+                            function () {
+                                setTimeout(
+                                    function () {
+                                        $html.animate({
+                                            scrollTop: $(href).offset().top
+                                        });
+                                    }, 10
+                                );
+                            });
+                    };
+                });
+        });
+
+    });
+
+    //	The menu on the right
+    $(function () {
+        //右菜单加载mmenu_right.html
+        $('nav#menu-right').load("../subpage/mmenu_right.html", function () {
+            //alert("11111");
+            var $menu = $('nav#menu-right');
+            $menu.mmenu({
+                position: 'right',
+                classes: 'mm-black',
+                dragOpen: true,
+                counters: true,
+                searchfield: true,
+                labels: {
+                    fixed: !$.mmenu.support.touch
+                }
+            });
+        });     
+    });
+	})
+    </script>
+    
 </head>
 
 <body bgcolor="#FFFFFF">
