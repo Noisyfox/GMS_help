@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link type="text/css" rel="stylesheet" href="shadow/style.css" />	
+  <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src="jquery.photoFrame.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $(".target1").photoFrame();
+      $(".target2").photoFrame({direction:'topLeft'});
+      $(".target3").photoFrame({direction:'topRight'});
+      $(".target4").photoFrame({direction:'bottomLeft'});
+      $(".target5").photoFrame({direction:'bottomRight'});
+    });
+  </script>
+</head>
+
+<body>
+  <div class="target1">
+  	<h3>photo frame</h3>
+  	<img src="images/1.jpg" />
+  </div>
+  <div class="target2">
+  	<h3>top left</h3>
+  	<img src="images/2.jpg" />
+  </div>
+  <div class="target3">
+  	<h3>top right</h3>
+  	<img src="images/3.jpg" />
+  </div>
+  <div class="target4">
+  	<h3>bottom left</h3>
+  	<img src="images/4.jpg" />
+  </div>
+  <div class="target5">
+  	<h3>bottom right</h3>
+  	<img src="images/5.jpg" />
+  </div>
+</body>
+</html>

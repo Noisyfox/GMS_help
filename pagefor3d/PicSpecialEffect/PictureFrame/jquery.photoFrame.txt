@@ -1,0 +1,29 @@
+使用：
+  <link type="text/css" rel="stylesheet" href="stamp/style.css" />	
+  <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src="jquery.photoFrame.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $(".target1").photoFrame();
+    });
+  </script>
+  <div class="target1">
+    <img src="images/1.jpg" />
+  </div>
+
+参数
+    direction : top, bottom, left, right, topLeft, topRight, bottomLeft, bottomRight
+
+
+目标：
+    /阴影效果
+    /顶部banner效果
+    /邮票效果
+    毛边相框效果
+    云朵包围效果
+
+问题：
+    上下左右四个图片拉伸效果如何实现？
+    image解决方案：内置image并设置其width和height
+    ie解决方案: filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/counter_bg.jpg', sizingMethod='scale'
+    css3解决方案: ？ 

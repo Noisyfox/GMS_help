@@ -1,0 +1,10 @@
+.ei-slider{
+	height: auto;
+}
+.ei-slider-thumbs{
+	display: none;
+}
+/* Download by http://www.codefang.com*/
+.ei-slider-large li{
+	position: relative;
+}

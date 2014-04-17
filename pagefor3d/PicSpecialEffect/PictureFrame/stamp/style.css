@@ -1,0 +1,9 @@
+.photoframe .tl {background:url(./tl.gif) no-repeat; width:63px; height:57px;}
+.photoframe .t  {background:url(./t.gif)  repeat-x;  height:57px;}
+.photoframe .tr {background:url(./tr.gif) no-repeat; width:68px; height:57px;}
+.photoframe .l  {background:url(./l.gif)  repeat-y;  width:63px;}
+.photoframe .r  {background:url(./r.gif)  repeat-y;  width:68px;}
+.photoframe .b  {background:url(./b.gif)  repeat-x;  height:64px;}
+.photoframe .bl {background:url(./bl.gif) no-repeat; width:63px; height:64px;}
+.photoframe .br {background:url(./br.gif) no-repeat; width:68px; height:64px;}
+.photoframe .m  {padding:10px;}
