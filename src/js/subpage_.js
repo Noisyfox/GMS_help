@@ -17,7 +17,7 @@ $(document).ready(function () {
         else doc_head.removeChild(our_base);
         return resolved_url;
     }
-    
+
     /*
             //ajax load page
             var hash = window.location.hash.substr(1);
@@ -77,7 +77,7 @@ $(document).ready(function () {
 
     $(function () {
         //左菜单加载mmenu_left.html    
-        $('nav#menu-left').load("/subpage/mmenu_left.html", function () {
+        $('nav#menu-left').load("/subpage/mmenu_left_.html", function () {
             //应用mmeunu
             var $menu = $('nav#menu-left');
             $menu.mmenu({
@@ -89,8 +89,8 @@ $(document).ready(function () {
                 labels: {
                     fixed: !$.mmenu.support.touch
                 }
-            });  
-            
+            });
+
             // for one page
 
             var $html = $('html, body');
@@ -134,10 +134,10 @@ $(document).ready(function () {
                     fixed: !$.mmenu.support.touch
                 }
             });
-        });     
+        });
     });
-	
-    // for the tips
+
+    // for the popups
 
     $(function () {
         var options = {
@@ -146,29 +146,90 @@ $(document).ready(function () {
         };
 
         options.position = 'left';
-        options.zposition = 'next';
-        $('#tooltip-1').mmenu(options);
+        options.zposition = 'front';
+        $('.popup-left').mmenu(options);
 
         options.position = 'right';
-        options.zposition = 'next';
-        $('#tooltip-2').mmenu(options);
+        options.zposition = 'front';
+        $('.popup-right').mmenu(options);
 
         options.position = 'top';
         options.zposition = 'front';
-        $('#popup-1').mmenu(options);
+        $('.popup-top').mmenu(options);
 
         options.position = 'bottom';
         options.zposition = 'front';
-        $('#en-1').mmenu(options);
-
-        options.position = 'bottom';
-        options.zposition = 'front';
-        $('#en-2').mmenu(options);
-
-        options.position = 'bottom';
-        options.zposition = 'front';
-        $('#tips-1').mmenu(options);
+        $('.popup-bottom').mmenu(options);
 
     });
+
+    //full screen
+    $(function () {
+        var options = {
+            classes: 'mm-fullscreen',
+            zposition: 'next',
+            moveBackground: false
+        };
+        $('.page-left').mmenu(options);
+        options.position = 'right',
+        $('.page-right').mmenu(options);
+        options.position = 'top',
+        $('.page-top').mmenu(options);
+        options.position = 'bottom',
+        $('.page-bottom').mmenu(options);
+        $('.page-left, .page-right,.page-top,.page-bottom')
+            .on(
+                'opening.mm',
+                function () {
+                    $('body').addClass(this.id);
+                }
+        ).on(
+            'closing.mm',
+            function () {
+                $('body').removeClass(this.id);
+            }
+        );
+
+        $('a.back')
+            .on(
+                'click',
+                function (e) {
+                    e.preventDefault();
+                    $('.page-left, .page-right,.page-top,.page-bottom').trigger('close.mm');
+                }
+        );
+    });
+
+
+    // show tooltips for any element that has a class named "tooltips"
+    // the content of the tooltip will be taken from the element's "title" attribute
+    new $.Zebra_Tooltips($('.tooltips'), {
+        'background_color': '#EBEDF3',
+        'color': '#000'
+    });
+
+    var zt = new $.Zebra_Tooltips($('.tipsshow'), {
+        'background_color': '#EBEDF3',
+        'color': '#000'
+    });
+    zt.show($('.tipsshow'), true); // destroy on close    
+
+
+    //显示英文翻译
+    //$('.entr_content').each(function () {this.hide();});    
+    $(".entr_click").click(function () {
+        var data_entr = $(this).attr("data_entr");
+         //alert(data_entr);
+        $('.entr_content').each(function () {
+            var data_id = $(this).attr("id");
+            //alert(data_id);
+            if (data_entr == data_id) {
+                $(this).slideToggle("slow", function () {
+                });
+            }
+        });
+    });
+
+    //end
 
 })
