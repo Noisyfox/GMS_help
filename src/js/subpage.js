@@ -137,7 +137,7 @@ $(document).ready(function () {
         });
     });
 
-    // for the popups
+   // for the popups
 
     $(function () {
         var options = {
@@ -146,11 +146,11 @@ $(document).ready(function () {
         };
 
         options.position = 'left';
-        options.zposition = 'next';
+        options.zposition = 'front';
         $('.popup-left').mmenu(options);
 
         options.position = 'right';
-        options.zposition = 'next';
+        options.zposition = 'front';
         $('.popup-right').mmenu(options);
 
         options.position = 'top';
@@ -199,6 +199,7 @@ $(document).ready(function () {
                 }
         );
     });
+    
 
     // show tooltips for any element that has a class named "tooltips"
     // the content of the tooltip will be taken from the element's "title" attribute
