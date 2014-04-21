@@ -92,7 +92,7 @@ $(document).ready(function () {
             });
 
             // for one page
-
+            /*
             var $html = $('html, body');
             //$menu.mmenu();
             $menu.find('li a').on(
@@ -114,6 +114,8 @@ $(document).ready(function () {
                             });
                     };
                 });
+                */
+            //
         });
 
     });
@@ -219,13 +221,12 @@ $(document).ready(function () {
     //$('.entr_content').each(function () {this.hide();});    
     $(".entr_click").click(function () {
         var data_entr = $(this).attr("data_entr");
-         //alert(data_entr);
+        //alert(data_entr);
         $('.entr_content').each(function () {
             var data_id = $(this).attr("id");
             //alert(data_id);
             if (data_entr == data_id) {
-                $(this).slideToggle("slow", function () {
-                });
+                $(this).slideToggle("slow", function () {});
             }
         });
     });

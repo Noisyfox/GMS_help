@@ -92,7 +92,7 @@ $(document).ready(function () {
             });
 
             // for one page
-
+/*
             var $html = $('html, body');
             //$menu.mmenu();
             $menu.find('li a').on(
@@ -114,6 +114,8 @@ $(document).ready(function () {
                             });
                     };
                 });
+                */
+//
         });
 
     });
