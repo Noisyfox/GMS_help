@@ -26,88 +26,190 @@
         </div>
         <div id="content">
             <!-- InstanceBeginEditable name="EditRegion_content" -->
-<h1>Scripts</h1>
+<h1>Scripts 脚本</h1>
 
+<h2><i>GameMaker:Studio</i>提供脚本功能来让你设计自己的函数。</h2>
 <h2>Scripts are the way in which <i>GameMaker:Studio</i> permits you to design your own functions.</h2>
 
+<p>在<i>GameMaker:Studio</i>里，无论是对象还是房间和实例，你可以在各种地方使用代码，同时软件提供的大量内建函数可以让你编写游戏更加方便有效，但是在有些时候，创建属于<i>你自己</i>的函数是非常有用的。无论是用来完成某些特殊的功能，或者只是用来让你的代码看起来更整洁更有条理，又或者你想要在游戏的多个地方执行相同的代码，脚本都是你的不二选择。这也是为什么<i>GameMaker:Studio</i>提供了创建<b>脚本</b>的功能。
+<p><i><b>注意 : </b>如果你在使用 GameMaker:Studio <b>免费版 </b>你</i><i>每个游戏只能最多创建10个脚本。更多细节参见 <a href="../000_Using%20GameMaker/Versions.html">这里</a>。</i>
+<p>You can use code in a number of places within <i>GameMaker:Studio</i>, from objects, to rooms and instances, and there are a number of built in functions that make your life easier when programming, 
+  however it is often necessary for you to create your <i>own</i> functions to do a specific task, or to condense a large section of code into a more manageable chunk, or even to be able to re-use a particular 
+  code block in many different places. That is why <i>GameMaker:Studio</i> gives you the ability to create <b>scripts</b>.
+  <br>
+  <br>
+  
+  <i><b>NOTE : </b>If you are using the <b>Free</b> version of <i>GameMaker:Studio</i> you are limited to a maximum of 10 scripts per game. For more details see 
+  <a href="../000_Using%20GameMaker/Versions.html">here</a>.</i>
+  <br>
+  <br>
+  
+<h3>What Is A Script? 脚本是什么？</h3>
+<p>脚本是由 <i>GameMaker:Studio</i> 所使用的一种内建编程语言<b>GML</b>（<b>G</b>ame <b>M</b>aker <b>L</b>anguage的缩写，更多内容参见 <a href="../002_Reference/index.html">Reference</a>）编写的。一旦你熟悉了 <i>GameMaker:Studio</i> 的使用，并且你想要发挥它最大的能力，那么强烈建议你去学习使用GML，它可以极大的扩展你创造游戏时的可能性。
+<p>一个脚本（和一个内建函数相似）可以接受不同类型的输入变量，具体来说它支持实数、字符串、布尔型以及一些特殊的变量类型（比如 <tt>all</tt> 和 <tt>no-one</tt>）。这些输入变量我们通常称作<b>自变量</b>或者<b>参数</b>。要在对象或者时间线中执行一个脚本，你可以使用<a href="../000_Using%20GameMaker/Actions/003_Control%20actions.html"> Execute 
+    Script </a>动作，不过你也可以在一个代码框里直接用脚本的名称来调用它，就和调用一个内建函数一样，再或者可以通过函数<a href="../002_Reference/Miscellaneous/script_execute.html">
+      script_execute </a>来调用。
+如果你是用的脚本动作，你可以指定你要调用的脚本名称，以及最多5个参数。但是如果你在代码中调用脚本，那么你最多可以使用16个参数。<p>Scripts are written using <b>GML</b> (the <b>G</b>ame <b>M</b>aker <b>L</b>anguage, covered in the <a href="../002_Reference/index.html">Reference</a> section), which is the built-in programming 
+  language that <i>GameMaker:Studio</i> uses. Once you become more familiar with <i>GameMaker:Studio</i> and want to use it to its fullest extent, it is advisable to start learning to use this language, as it 
+  greatly expands your possibilities when creating games.
+  <br>
+  <br>
+  
+  A script (like any built-in function) can take different input variables, with real, string, boolean and special values like <tt>all</tt> or <tt>no-one</tt> being accepted, and these input variables are generally  called 
+  <b>arguments</b>, although they are also referred to as <b>parameters</b>. To execute a script from an object or a time line you can use the <a href="../000_Using%20GameMaker/Actions/003_Control%20actions.html">Execute 
+    Script </a> action , but you can also call it in a code box using the actual script name as if it were a function or even by using the GML function <a href="../002_Reference/Miscellaneous/script_execute.html">
+      script_execute</a>. If you use the script action you can specify the script you want to execute, together with the up to five arguments, but if you are using the code editor to call a script, you can pass up to sixteen 
+  arguments.
+  <br>
+  <br>
+  
+<h3>Using Scripts 使用脚本</h3>
+<p>入上文提到的那样，你可以传递数个参数给脚本，脚本会利用这些参数执行你写下的功能。为了让你更好的理解，让我们拿对象的一个动作来举个例子：你把动作添加到事件中，同时指定好一些相应的参数，那么你的实例就会执行你设置的动作。脚本和这个是完全一样的，唯一的区别就是脚本的内容需要你自己写，而动作的内容系统已经帮你写好了!你不仅可以向脚本提供一些参数，你也可以让你的脚本<b>返回</b>一个值来（使用关键字 <tt>return</tt>），这样你就可以用脚本来进行一些计算并返回结果或者在执行完一系列复杂的碰撞判定后将实例的id返回。请注意，当你执行了 <tt>return</tt> 语句，这会直接结束脚本的运行，也就是说<i>任何在此之后的任何代码都不会被执行</i>，这意味着你在写脚本时需要好好的考虑代码结构的问题。
+<p>As mentioned above, you can pass a number of arguments to a script, and it will use these to perform the task you have written it for. To understand this better, take, for example, an action (or a code in GML) and think 
+  about how it works... you place it in an event and specify a number of parameters and it will make your instance do something. Scripts are exactly the same, with the only difference being that you write them! Not only 
+  can you pass arguments into a script, but you can also ask a script to <b>return</b> a value too (using the <tt>return</tt> keyword), so you can use them to build calculating methods (mathematical methods) or give 
+  back an instance id after a complex collision detection or any number of things. Please note, however, that using <tt>return</tt> effectively ends the script, and so <i>no code after it has been used will be executed</i>, 
+  and this means that a certain amount of thought has to go into how your scripts are structured.
+  <br>
+  <br>
+  
+<h3>Saving and Loading Scripts 保存和载入脚本</h3>
+<p><i>GameMaker:Studio</i> 可以把脚本保存到 <tt>*.txt</tt> 文件中，也可以从中载入脚本，这样你可以收集许多脚本以便在不同的项目中使用它们。要载入一个（或者多个）脚本到 <i>GameMaker:Studio</i> 中，只需要右键点击脚本资源文件夹（或者你创建的任何子文件夹）并且选择 <b>Add Existing Script</b> 即可。在接下来弹出的文件浏览对话框中选择一个 *.gmx 脚本文件<i>或者</i>一个 *.txt 文本文件即可。文件中的脚本就会被载入到 <i>GameMaker:Studio</i> 中。
+<p>保存脚本也是类似的步骤。你只需要右键点击一个脚本资源（或者一个脚本文件夹），然后选择 <b>Export Selected Script</b>。在接下来弹出的窗口中选择要导出的文件路径即可，脚本会保存在与其同名的 *.txt 文件中。如果你选择了多个脚本或文件夹，那么它们会被分别保存到相应的文件中去。
+<p>You can save and load scripts from <tt>*.txt</tt> files into <i>GameMaker:Studio</i> and in this way you can create collections of scripts and store them for use in multiple projects. To load a script (or 
+  a collection of scripts) into <i>GameMaker:Studio</i>, simply right-click on the scripts resource folder (or any sub-folder that you have created in that section) and select <b>Add Existing Script</b>. This 
+  will open the file browser and you can select either a script *.gmx, <i>or</i> a *.txt file. They will then be loaded in to <i>GameMaker:Studio</i>.
+  <br>
+  <br>
+  
+  For saving scripts it's a similar process, where you right-click on a script (or a script folder) and select <b>Export Selected Script</b>. This will open up a window asking you where to export to, and when you
+  click on "Okay", the script will be saved as a *.txt file, with the name of the file being the same as the name of the script. If you have selected multiple scripts in a folder, they will all be saved, each with the 
+  name of the script they correspond to.
+  <br>
+  <br>
+  
+<h3>Creating A Script 创建一个脚本</h3>
+<p>要在你的游戏中创建一个脚本，在 <b>Resources</b> 菜单中选择 <b>Create Script</b>，或者在资源树的脚本资源上右键点击并选择 <b>Create Script</b>，又或者直接点击上方工具栏里的创建脚本按钮。无论你使用哪种方式，接下来你都会看到这个窗口：
+<p>To create a script in your game, choose <b>Create Script</b> from the <b>Resources</b> menu, or right click on the scripts resource in the resource tree and select <b>Create Script</b>, or just click the create script 
+  button on the toolbar at the top of the main <i>GameMaker:Studio</i> screen. Whatever method you choose will open the following window :
+  
+  <img class="center"  src="../images/form_script.png">
+  <i><b>注意 : </b>脚本编辑器和对象的代码编辑器从功能上来说基本是一模一样。两者唯一的区别是脚本编辑器右上角有个 <b>名字框</b> 而代码编辑器的这里是选择执行代码的对象的（自己，对方或者指定的对象），就像直接用 DnD一样。</i>
+  <p><i><b>Note : </b>The script editor window and the code editor window for objects have exactly the same functionality. The only difference between them is that the script editor has a <b>name</b> box whereas the 
+    code editor has the choice of which instance is to run the code (self, other or object), just like the D'n'D actions.</i>
+  <br>
+  <br>
+  
+<h3>The Script Editor 脚本编辑器</h3>
 <p>
-You can use code in a number of places within <i>GameMaker:Studio</i>, from objects, to rooms and instances, and there are a number of built in functions that make your life easier when programming, 
-however it is often necessary for you to create your <i>own</i> functions to do a specific task, or to condense a large section of code into a more manageable chunk, or even to be able to re-use a particular 
-code block in many different places. That is why <i>GameMaker:Studio</i> gives you the ability to create <b>scripts</b>.
-<br>
-<br>
-
-<i><b>NOTE : </b>If you are using the <b>Free</b> version of <i>GameMaker:Studio</i> you are limited to a maximum of 10 scripts per game. For more details see 
-<a href="../000_Using%20GameMaker/Versions.html">here</a>.</i>
-<br>
-<br>
-
-<h3>What Is A Script?</h3>
-<p>
-Scripts are written using <b>GML</b> (the <b>G</b>ame <b>M</b>aker <b>L</b>anguage, covered in the <a href="../002_Reference/index.html">Reference</a> section), which is the built-in programming 
-language that <i>GameMaker:Studio</i> uses. Once you become more familiar with <i>GameMaker:Studio</i> and want to use it to its fullest extent, it is advisable to start learning to use this language, as it 
-greatly expands your possibilities when creating games.
-<br>
-<br>
-
-A script (like any built-in function) can take different input variables, with real, string, boolean and special values like <tt>all</tt> or <tt>no-one</tt> being accepted, and these input variables are generally  called 
-<b>arguments</b>, although they are also referred to as <b>parameters</b>. To execute a script from an object or a time line you can use the <a href="../000_Using%20GameMaker/Actions/003_Control%20actions.html">Execute 
-Script </a> action , but you can also call it in a code box using the actual script name as if it were a function or even by using the GML function <a href="../002_Reference/Miscellaneous/script_execute.html">
-script_execute</a>. If you use the script action you can specify the script you want to execute, together with the up to five arguments, but if you are using the code editor to call a script, you can pass up to sixteen 
-arguments.
-<br>
-<br>
-
-<h3>Using Scripts</h3>
-<p>
-As mentioned above, you can pass a number of arguments to a script, and it will use these to perform the task you have written it for. To understand this better, take, for example, an action (or a code in GML) and think 
-about how it works... you place it in an event and specify a number of parameters and it will make your instance do something. Scripts are exactly the same, with the only difference being that you write them! Not only 
-can you pass arguments into a script, but you can also ask a script to <b>return</b> a value too (using the <tt>return</tt> keyword), so you can use them to build calculating methods (mathematical methods) or give 
-back an instance id after a complex collision detection or any number of things. Please note, however, that using <tt>return</tt> effectively ends the script, and so <i>no code after it has been used will be executed</i>, 
-and this means that a certain amount of thought has to go into how your scripts are structured.
-<br>
-<br>
-
-<h3>Saving and Loading Scripts</h3>
-<p>
-You can save and load scripts from <tt>*.txt</tt> files into <i>GameMaker:Studio</i> and in this way you can create collections of scripts and store them for use in multiple projects. To load a script (or 
-a collection of scripts) into <i>GameMaker:Studio</i>, simply right-click on the scripts resource folder (or any sub-folder that you have created in that section) and select <b>Add Existing Script</b>. This 
-will open the file browser and you can select either a script *.gmx, <i>or</i> a *.txt file. They will then be loaded in to <i>GameMaker:Studio</i>.
-<br>
-<br>
-
-For saving scripts it's a similar process, where you right-click on a script (or a script folder) and select <b>Export Selected Script</b>. This will open up a window asking you where to export to, and when you
-click on "Okay", the script will be saved as a *.txt file, with the name of the file being the same as the name of the script. If you have selected multiple scripts in a folder, they will all be saved, each with the 
-name of the script they correspond to.
-<br>
-<br>
-
-<h3>Creating A Script</h3>
-<p>
-To create a script in your game, choose <b>Create Script</b> from the <b>Resources</b> menu, or right click on the scripts resource in the resource tree and select <b>Create Script</b>, or just click the create script 
-button on the toolbar at the top of the main <i>GameMaker:Studio</i> screen. Whatever method you choose will open the following window :
-
-<img class="center"  src="../images/form_script.png">
-
-<i><b>Note : </b>The script editor window and the code editor window for objects have exactly the same functionality. The only difference between them is that the script editor has a <b>name</b> box whereas the 
-code editor has the choice of which instance is to run the code (self, other or object), just like the D'n'D actions.</i>
-<br>
-<br>
-
-<h3>The Script Editor</h3>
-<p>
-<p>
-When you open the script editor, you should first give your new script a name. This should be something sensible and easy to remember and recognise, and must <i>not</i> start with a number or have any symbols (except 
-the under-bar "_" symbol). The name you give the script is the one you will use later as a function in code. It is also a good idea to write some comments at the start of the script (see the above image) to outline the script 
-arguments and how it should be used, especially if you are going to work as part of a team, or plan on using many scripts in your game.
-<br>
-<br>
-
-Once you have done that you can start to write your script using standard GML functions and variables, using the many options along the Toolbar at the top to help you in this process. Here is a brief explanation of what each of 
-the toolbar buttons does :
-
-<img class="center"  src="../images/Script_Toolbar.png">
-
+<p>当你打开脚本编辑器，首先你应该给你的脚本起一个名字。这个名字的字面意思应该复合你脚本的功能，同时也要简单易记，并且不应该以一个数字或符号（下划线 “_”除外）打头。这个名字会在之后的代码中用来调用你这个脚本。在脚本的起始写一些注释指明这个脚本使用的参数以及脚本的调用方式是一个很不错的习惯（见上图），尤其是当你作为一个成员参与一项团队工作，或者你游戏中使用了大量的脚本时。
+<p>当你给你的脚本起好名字并且写好注释后，你就要开始实际的编写这个脚本了。在编写的过程中，工具栏上的一些按钮可以帮助你更好的编写你的脚本。以下是这些按钮的大致介绍：
+<p>When you open the script editor, you should first give your new script a name. This should be something sensible and easy to remember and recognise, and must <i>not</i> start with a number or have any symbols (except 
+  the under-bar "_" symbol). The name you give the script is the one you will use later as a function in code. It is also a good idea to write some comments at the start of the script (see the above image) to outline the script 
+  arguments and how it should be used, especially if you are going to work as part of a team, or plan on using many scripts in your game.
+  <br>
+  <br>
+  
+  Once you have done that you can start to write your script using standard GML functions and variables, using the many options along the Toolbar at the top to help you in this process. Here is a brief explanation of what each of 
+  the toolbar buttons does :
+  
+  <img class="center"  src="../images/Script_Toolbar.png">
+ <blockquote>
+<div style="float:left">
+<img src="More%20about%20sprites/Confirm.png"></div><br>
+	<b>确认</b>
+	<br>
+	<br>
+	这会关闭脚本编辑器并且保存你的全部改动。注意这不会有任何是否保存的确认提示。
+	<br>
+	<br>
+<div style="float:left">
+<img src="More%20about%20sprites/Sprite_From_File.png"></div><br>
+	<b>从文件中载入一个脚本</b>
+	<br>
+	<br>
+	这会弹出一个文件选择框让你从一个文本文件中读取脚本。注意这会用文件中的代码<i>覆盖</i>你当前存在的任何内容！
+	<br>
+	<br>
+<div style="float:left">
+<img src="More%20about%20sprites/Save.png"></div><br>
+	<b>保存脚本</b>
+	<br>
+	<br>
+    这会将你当前的内容保存成一个 *.txt 文件以便你稍后载入。
+	<br>
+	<br>	
+<div style="float:left">
+<img src="../images/Print.png"></div><br>
+	<b>打印脚本</b>
+	<br>
+	<br>
+    这回弹出一个标准的打印窗口让你把当前的代码打印到纸上。
+	<br>
+	<br>
+<div style="float:left">	
+<img src="More%20about%20sprites/Undo.png"></div><br>
+	<b>撤销</b>
+	<br>
+	<br>
+    这会撤销上一次的改动，并且你可以连续的撤销之前的改动，最多达16次。
+	<br>
+	<br>
+<div style="float:left">
+<img src="More%20about%20sprites/Redo.png"></div><br>
+	<b>重做</b>
+	<br>
+	<br>
+    如果你使用了撤销功能，那么你可以用这个按钮来反悔。你之前连续撤销了多少次，你就可以重做多少次。
+	<br>
+	<br>
+<div style="float:left">
+<img src="More%20about%20sprites/Cut.png"></div><br>
+	<b>剪切</b>
+	<br>
+	<br>
+    用这个按钮来“剪下”一段代码并储存在剪贴板中。稍后你可以将代码粘贴到脚本的其它部分，或者别的脚本中，甚至粘贴到其它应用程序中。
+	<br>
+	<br>
+<div style="float:left">
+<img src="More%20about%20sprites/Copy.png"></div><br>
+	<b>复制</b>
+	<br>
+	<br>
+    这会将你当前选中的代码复制到剪贴板中供你稍后将它粘贴到脚本的其它部分，或者别的脚本中，甚至粘贴到其它应用程序中。
+	<br>
+	<br>
+<div style="float:left">
+<img src="More%20about%20sprites/Paste.png"></div><br>
+	<b>粘贴</b>
+	<br>
+	<br>
+    你可以用这个按钮来插入你剪贴板中的任何文本到你的代码中。
+	<br>
+	<br>
+<div style="float:left">
+<img src="../images/Search.png"></div><br>
+	<b>搜索</b>
+	<br>
+	<br>
+    点击这个按钮会打开查找/替换选项卡。更多细节参见下文。
+	<br>
+	<br>
+<div style="float:left">
+<img src="../images/Debug_Script.png"></div><br>
+	<b>语法检查</b>
+	<br>
+	<br>
+    点击这个按钮会打开或关闭语法检查功能。当你打开语法检查功能时，任何代码中被检测出的语法错误都会以红色（默认值）高亮显示，同时编辑器的底部会显示错误信息。注意不是所有的错误都能在此时被检测出来，但是大部分语法错误都可以被找到。
+	<br>
+	<br>
+<div style="float:left">
+<img src="../images/Autocomplete.png"></div><br>
+	<b>自动完成</b>
+	<br>
+	<br>
+    当你开启了这个功能，如果你在输入的过程中暂停下来，一个自动完成窗口会弹出，随后你可以使用方向键或者鼠标选择你所想要输入的函数。下图展示了自动完成功能的效果：
+</blockquote> 
 <blockquote>
 <div style="float:left">
 <img src="More%20about%20sprites/Confirm.png"></div><br>
@@ -184,7 +286,7 @@ the toolbar buttons does :
 	<br>
 <div style="float:left">
 <img src="../images/Search.png"></div><br>
-	<b>Check Syntax</b>
+	<b>Searh</b>
 	<br>
 	<br>
 	Clicking this button will open the search/find and replace tab in the script editor. See below for more details.
@@ -213,14 +315,49 @@ the toolbar buttons does :
 	<br>
 </blockquote>
 
-<h3>Keyboard Shortcuts</h3>
+<h3>Keyboard Shortcuts 快捷键</h3>
+<p>
+有很多的快捷键可以帮助你更好的编辑脚本：
+<blockquote>
+<ul>
+	<li>按下 <b>f2</b> 会弹出 <b>代码片段</b> 窗口以便你插入一个常用的代码结构或者片段。你可以自定义要显示的代码片段，这些片段都储存在 <i>GameMaker:Studio</i> 安装目录下的 <tt>snippets.txt</tt> 文件中。你可以用任何文本编辑器来编辑这个文件。一个代码片段占一整行（不能有多余的空行）。每一行以代码片段的名字打头（这个名字会显示在代码片段菜单中），接下来是一个冒号(:) ，之后是实际的代码内容。用 # 来完成换行，把那些需要被自动选中的代码用 | 符号包围起来。修改时请务必参考那些已经存在的片段，同时强烈建议你先备份一下这个文件再去修改它。</li><br>
+
+	<li>你可以使用 <b>f7</b> 和 <b>f8</b> 来改变编辑器的字体大小。</li><br>
+	
+	<li>如果你按下 <b>f10</b> 你可以开关代码着色。</li><br>
+	
+	<li>按下 <b>&lt;CTRL&gt; + F</b> 会弹出<b>查找和替换</b> 选项卡 (参见下文).</li><br>
+	
+	<li>如果你调用了别的脚本，那么你可以将鼠标移至任意脚本名称上同时 <b>f12</b> 来在一个新的脚本编辑器中打开对应的脚本。如果你的光标没有指向任何脚本名，那么就会打开帮助手册。</li><br>
+	
+	<li>你可以用 <b>&lt;Ctrl&gt; + Z</b> 来撤销，用 <b>&lt;Ctrl&gt;</b> + <b>&lt;Shift&gt; + Z</b> 来重做。</li><br>
+
+	<li>用 <b>方向键</b> 来在代码中移动光标，在按下 <b>&lt;Ctrl&gt;</b> 的同时按左右方向键来跳转到上一个或下一个单词。如果你按下 <b>&lt;Ctrl&gt;</b> 的同时按了上下方向键，你可以滚动整个文本。</li><br>
+	
+	<li>按住 <b>&lt;Shift&gt;</b> 的同时用方向键移动光标来选择文本。</li><br>
+	  
+	<li>按下 <b>&lt;Home&gt;</b> 键将光标移动至一行的起始位置，按下 <b>&lt;End&gt;</b> 键移动至行末。如果你同时也按下了 <b>&lt;Ctrl&gt;</b> 键，那么就会跳转到脚本的开头或结尾处。同时按 <b>&lt;Shift&gt;</b> 也可以选择文本。</li><br>
+		
+	<li>按下 <b>&lt;TAB&gt;</b> 增加<i>选中行</i>的缩进，按下 <b>&lt;Shift&gt; + &lt;TAB&gt;</b> 减少<i>选中行</i>的缩进。</li><br>
+	
+	<li>同时按下 <b>&lt;Ctrl&gt;</b> 和 <b>&lt;Backspace&gt;</b> 或者 <b>&lt;Delete&gt;</b> 来删除上一个或下一个单词。</li><br>
+		  
+	<li>如果你在 <a href="Preferences/Scripts%20Preferences.html">脚本设置</a> 中关闭了自动完成功能，你可以通过按 
+	<b>&lt;Ctrl&gt; + &lt;Space&gt;</b> 来强制弹出自动完成窗口，同时你可以随时按下 <b>&lt;ESC&gt;</b> 来关闭它。</li><br>
+	
+	<li>你可以用鼠标来拖拽选中的文本到新的位置上。(同时按下 <b>&lt;Ctrl&gt;</b> 来复制。) </li><br>
+			
+	<li>你可以用鼠标滚轮来上下滚动整个文本，如果你同时按下 <b>&lt;Ctrl&gt;</b> 光标也会随着文本一起滚动。和之前的快捷键一样，同时按住 <b>&lt;Shift&gt;</b> 来选择文本。</li>
+	
+</ul>
+</blockquote>
 <p>
 There are a number of keyboard shortcuts to help you navigate around the script editor, and each one is designed to help you get the most from this powerful tool :
 
 <blockquote>
 <ul>
 	<li>By pressing <b>f2</b> you get  the <b>code snippet</b> pop-up, which permits you to select one of the commonly used code methods. You can define your own code snippets if you want to, as the 
-	snippets are 	stored in the file <tt>snippets.txt</tt> in the folder in which GameMaker:Studio</i> is installed. You can edit this file with any text editor, and each snippet is on a separate line (there should 
+	snippets are 	stored in the file <tt>snippets.txt</tt> in the folder in which <i>GameMaker:Studio</i> is installed. You can edit this file with any text editor, and each snippet is on a separate line (there should 
 	be no blank lines). It starts 	with the name of the snippet (which is what is shown in the menu) followed by the colon (:) followed by the actual snippet of code. Use # for a newline and put the text that needs 
 	to be selected first between | symbols. 	See the examples that are already in the file, and it is strongly recommended that you make a backup of it before you start changing it.</li><br>
 
@@ -228,7 +365,7 @@ There are a number of keyboard shortcuts to help you navigate around the script 
 	
 	<li>If you press <b>f10</b> you can toggle on or off the color coding for your code.</li><br>
 	
-	<li>Press <b>&lt;CTRL&gt; + F</b> to call up the <b>search, find and replace</b> options (see below).
+	<li>Press <b>&lt;CTRL&gt; + F</b> to call up the <b>search, find and replace</b> options (see below).</li><br>
 	
 	<li>If you are using multiple scripts, then you can press <b>f12</b> when the mouse is over any of the other script names to have it opened in a new window, ready for editing. If no script is selected, then 
 	the manual will be opened.</li><br>
@@ -258,23 +395,33 @@ There are a number of keyboard shortcuts to help you navigate around the script 
 </ul>
 </blockquote>
 
-<h3>Adding Comments and Naming Code Blocks</h3>
+<h3>Adding Comments and Naming Code Blocks 添加注释和命名代码块</h3>
+<p>给你的代码添加注释对于保持你编码时的效率很重要。注释可以使你的代码更加清晰，并将你的代码划分成不同功能的片段让你对于代码的功能和为什么要写它一目了然。同时这意味着当你在一个团队中工作时你可以在注释中添加一些给其他成员看的提示，这样可以让别人准确的理解你代码的功能以及你完成了哪些功能。即便你是独立开发者，给自己的代码写注释也是很有必要的，尤其是在你中途放下这个项目并且过了很久才重新投入开发的时候。
+<p>给你的代码加上注释很简单，你只需要在一行文本的开头加上 "<tt>//</tt>" 或者用 "<tt>/* text here */</tt>" 把一段文本包围起来即可。下面的图片展示了这两种注释的效果：
+<p>Commenting your code is very important for maintaining productivity as it keeps things clear and separates sections of code in such a way that it is obvious what each part does and why it is there. It also means that if 
+  you are working in a team then you can leave notes for other members and that they will know exactly what you have done or what a specific section of code is for. Even if you are a solo developer, leaving comments 
+  for your code is important, especially if you have to leave the project and come back to it at a later date. <br>
+  <br>
+  
+  Commenting your code is simple, as you just have to use "<tt>//</tt>" before any line of text or you can comment out whole paragraphs by using "<tt>/* text here */</tt>". The following image illustrates a 
+  script using both these methods:
+  
+  <img class="center" src="../images/Form_CodeComments.png">
+  如果你在使用 <b>脚本编辑器</b>，你可以通过在开头加上如下形式的注释来给你的代码起个标题：
+  <br>
+  <br>
+<p class="code">
+	///在这里写上注释!
+	</p>
 <p>
-Commenting your code is very important for maintaining productivity as it keeps things clear and separates sections of code in such a way that it is obvious what each part does and why it is there. It also means that if 
-you are working in a team then you can leave notes for other members and that they will know exactly what you have done or what a specific section of code is for. Even if you are a solo developer, leaving comments 
-for your code is important, especially if you have to leave the project and come back to it at a later date.
-<br>
-<br>
-
-Commenting your code is simple, as you just have to use "<tt>//</tt>" before any line of text or you can comment out whole paragraphs by using "<tt>/* text here */</tt>". The following image illustrates a 
-script using both these methods:
-
-<img class="center" src="../images/Form_CodeComments.png">
-
-If you are in the <b>code</b> editor, then you can also give your code box a title by making a comment for the first line using the following format:
-<br>
-<br>
-	<p class="code">
+  <br>
+  这个注释就会被用作你这段代码的“名字”，就如下图所示：
+  <br>
+  <br>
+  If you are in the <b>code</b> editor, then you can also give your code box a title by making a comment for the first line using the following format:
+  <br>
+  <br>
+<p class="code">
 	///Your Comment Here!
 	</p>
 <p>
@@ -284,45 +431,47 @@ This comment will then be used for the "name" of that codebox (this works for co
 <img class="center" src="../images/Form_CodeboxName.png">
 
 	
-<h3>Color coding</h3>
-<p>
-As you might have noticed, parts of the script text are colored. The script editor "knows" about existing objects, built-in variables and functions, etc. and color codes them accordingly. Color-coding helps a lot in avoiding mistakes, 
-in particular, you see immediately if you have misspelled some name or use a keyword as a variable, or have a syntax error. However, if you don't like the color coding, in the <a href="../001_Advanced%20Use/Preferences/index.html">
-Preferences</a> you can switch it on and off (you can also use <b>F10</b>) as well as customise the colors that are used.
-<br>
-<br>
-
-<h3>Search, Find And Replace</h3>
-<p>
-When working with code, it is common that you will want to find some piece you have written in a large section and then replace it something different, or simply see at a glance where a line of code lies within the function. To this 
-end, the <i>GameMaker:Studio</i> script editor has a search, find and replace function that can be accessed by pressing the Search button in the toolbar. This will open up a panel on the right of the code window which looks as 
-follows :
-
-<img class="center" src="../images/form_script2.png">
-
-You can type the find string at the top (note that in the code all occurrences of the find string are immediately shown with a yellow background), and you can indicate whether the search must be case sensitive, which is normally 
-what you want as variable and function names in GML are also case sensitive, and whether you want to only search for whole words. Note that the editor remembers your most recent searches, and you can click on the drop down 
-button to call them up and re-select them. With the buttons underneath the search string input you can now move to the previous, next, first, and last occurrence of the find string, and this string will be selected in the text so that 
-you can edit it.
-<br>
-<br>
-
-You can also use this panel to replace  anything that you have previously searched for by simply typing in the new code that is to be used and pressing one of the buttons that are highlighted underneath. 
-x. Now you can use the buttons to replace the previously selected, the next one to be selected, the first, the last or all occurrences of the code searched for.
-<br>
-<br>
-
-<p>
+<h3>Color coding 代码着色</h3>
+<p>也许你已经注意到了，一部分代码是用彩色显示出来的。脚本编辑器“知道”你使用了哪些已经存在的对象、内建变量和函数并且用颜色把它们标记了出来。代码着色帮助你避免犯错，比如说当你拼错某些名称或者使用了关键字作为变量名时，你一眼就能看出来自己犯了错。当然如果你不喜欢代码着色功能，你也可以在 <a href="../001_Advanced%20Use/Preferences/index.html">
+    设置</a> 中把它关掉（或者直接按<b>F10</b>），或者你也可以自定义代码着色时使用的颜色。
+<p>As you might have noticed, parts of the script text are colored. The script editor "knows" about existing objects, built-in variables and functions, etc. and color codes them accordingly. Color-coding helps a lot in avoiding mistakes, 
+  in particular, you see immediately if you have misspelled some name or use a keyword as a variable, or have a syntax error. However, if you don't like the color coding, in the <a href="../001_Advanced%20Use/Preferences/index.html">
+    Preferences</a> you can switch it on and off (you can also use <b>F10</b>) as well as customise the colors that are used.
+  <br>
+  <br>
+  
+<h3>Search, Find And Replace 查找和替换</h3>
+<p>当你在写代码的时候，你经常需要在一大段代码中去查找一些特定的片段，有时候还需要把它替换成别的内容，或者只是想看看以前写的代码而已。为了完成这个操作，<i>GameMaker:Studio</i> 的脚本编辑器提供了一个查找和替换功能选项卡，只需要点击工具栏上的Search按钮，即可在代码窗口的右侧显示出如下所示的面板：
+<p>When working with code, it is common that you will want to find some piece you have written in a large section and then replace it something different, or simply see at a glance where a line of code lies within the function. To this 
+  end, the <i>GameMaker:Studio</i> script editor has a search, find and replace function that can be accessed by pressing the Search button in the toolbar. This will open up a panel on the right of the code window which looks as 
+  follows :
+  
+  <img class="center" src="../images/form_script2.png">
+  
+  你可以在上方输入你要查找的字符串（注意代码中任何匹配的字符串都会立刻用黄色背景高亮显示），同时你也可以指定查找的内容是否需要区分大小写，毕竟GML中的变量名和函数名都是大小写敏感的；另外也可以指定是否整字匹配。注意，编辑器会记录你最近几次搜索的设置，因此你可以点击下拉列表来重新载入以前的搜索。通过输入框下方的几个按钮，你可以跳转到上一个、下一个、第一个和最后一个匹配处，当前匹配的字符串会被自动选择以便你进行修改。
+<p>同时你也可以用这个面板来将搜索到的内容替换成另外的字符串。只需要简单的在下面的输入框中输入你想替换成的内容然后点击下方的按钮来完成替换。你可以替换上一个、下一个、第一个、最后一个或者全部匹配项。
+<p>You can type the find string at the top (note that in the code all occurrences of the find string are immediately shown with a yellow background), and you can indicate whether the search must be case sensitive, which is normally 
+    what you want as variable and function names in GML are also case sensitive, and whether you want to only search for whole words. Note that the editor remembers your most recent searches, and you can click on the drop down 
+    button to call them up and re-select them. With the buttons underneath the search string input you can now move to the previous, next, first, and last occurrence of the find string, and this string will be selected in the text so that 
+    you can edit it. <br>
+    <br>
+    
+    You can also use this panel to replace  anything that you have previously searched for by simply typing in the new code that is to be used and pressing one of the buttons that are highlighted underneath. 
+    x. Now you can use the buttons to replace the previously selected, the next one to be selected, the first, the last or all occurrences of the code searched for.
+    <br>
+    <br>
+  -noisyfox- 
+  <p>
 <br>
 </p>
 <p>
 
 <div class="clear">
 	<div style="float:left">
-		Back : <a href="index.html">Advanced Use Index</a>
+		Back 返回: <a href="index.html">Advanced Use Index 高级功能目录</a>
 	</div>
 	<div style="float:right">
-		Next : <a href="009_Shaders.html">Shaders</a>
+		Next 下一条: <a href="009_Shaders.html">Shaders 着色器</a>
 	</div>
 </div>
 </p>
