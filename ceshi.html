@@ -1,144 +1,529 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="undefined">
 
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
-		<meta name="author" content="www.frebsite.nl" />
-		<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" />
+<head>
+    <title>GameMaker:Studio 在线帮助</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" />
+    <link type="text/css" rel="stylesheet" href="src/css/jquery.mmenu.all.css" />
+    <script type="text/javascript" src="src/js/jquery.min.js"></script>
+    <script type="text/javascript" src="src/js/hammer.min.js"></script>
+    <script type="text/javascript" src="src/js/jquery.mmenu.min.all_old.js"></script>
+    <script type="text/javascript" src="src/js/index.js"></script>
 
-		<title>Awesome tooltip and popup alternative for mobile devices.</title>
+</head>
 
-		<link type="text/css" rel="stylesheet" href="src/css/jquery.mmenu.all.css" />
-		<link type="text/css" rel="stylesheet" href="layout.css" />
+<body bgcolor="#FFFFFF">
+    <div id="page">
+        <div id="header">
+            <a href="#menu-left"></a>&#x70B9;&#x51FB;&#x5DE6;&#x8FB9;&#x6309;&#x952E;&#x6253;&#x5F00;&#x5BFC;&#x822A;&#x83DC;&#x5355;
+            <a href="#menu-right" class="friends right"></a>
+        </div>
+        <div id="content">
+            <div id="intro">
 
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-		<script type="text/javascript" src="src/js/jquery.mmenu.min.all_old.js"></script>
-		<script type="text/javascript">
-			$(function() {
-				var options = {
-					classes			: 'mm-light',
-					modal			: true
-				};
-				
-				options.position = 'left';
-				options.zposition = 'next';
-				$('#tooltip-1').mmenu( options );
-				
-				options.position = 'right';
-				options.zposition = 'next';
-				$('#tooltip-2').mmenu( options );
-				
-				options.position = 'bottom';
-				options.zposition = 'front';
-				$('#popup-1').mmenu( options );
 
-				options.position = 'top';
-				options.zposition = 'front';
-				$('#popup-2').mmenu( options );
-			});
-		</script>
-	</head>
-	<body>
-		<div id="page">
-			<div>
-				<h1>Tooltips</h1>
-				<p><em>&quot;Wait, what? Tooltips?<br />
-					I thought the <a href="#tooltip-1">jQuery.mmenu plugin</a> was about creating menus?&quot;</em></p>
-				<p>You're right, it is. But check out what wikipedia has to say about <a href="#tooltip-2">tooltips on mobile devices</a>. That can't be good... Right?<br />
-					That's why the jQuery.mmenu plugin offers a really good alternative to using tooltips (check it out by clicking the links on this page).</p>
-	
-				<br />
-	
-				<h2>Popups</h2>
-				<p>As a bonus, it also works really well as a replacement for <a href="#popup-1">popups</a>.<br />
-					And if you're up for it, you can even create your own <a href="#popup-2">notification center</a>!</p>
-			</div>
+                <p>欢迎浏览
+                    <em>GameMaker:Studio</em>用户手册! 这个文档分为三个部分，主要讲解
+                    <em>GameMaker:Studio</em>界面和基础使用，更高级的用法和功能需要使用 GML (
+                    <strong>the GameMaker Language</strong>). 新用户必须从
+                    <strong>Using GameMaker:Studio</strong>部分开始，这部分包括所有快速入门知识, 曾经使用过 GameMaker 的用户可以跳过这部分，请查看
+                    <strong>Advanced Use</strong>部分关于新版本更新内容。不论您的技术水平如何，我们都希望这本说明能够帮助您有效的使用
+                    <em>GameMaker:Studio</em>并且实现您的梦！</p>
 
-			<div id="tooltips">
-				<div id="tooltip-1" class="tip">
-					<div>
-						<div>
-							<a href="#page">x</a>
-							<h4>jQuery.mmenu plugin</h4>
-							<p><em>The jQuery.mmenu (Mobile Menu) plugin makes it really easy to create slick, app look-alike sliding menus for you mobile or responsive website.</em></p>
-							<p>Website:<br />
-								<a href="http://mmenu.frebsite.nl" target="_blank">http://mmenu.frebsite.nl</a></p>
-						</div>
-					</div>
-				</div>
+                <p>&nbsp;</p>
 
-				<div id="tooltip-2" class="tip">
-					<div>
-						<div>
-							<a href="#page">x</a>
-							<h4>Tooltips on mobile devices</h4>
-							<p><em>The tooltip is a common graphical user interface element used in conjunction with a cursor. The user hovers the cursor over an item, without clicking it, and a tooltip may appear.<br />
-								<strong>Tooltips do not appear on mobile operating systems, since there is no cursor.</strong></em></p>
-							<p>Wikipedia<br />
-								http://en.wikipedia.org/wiki/Tooltip</p>
-						</div>
-					</div>
-				</div>
+                <p>
+                    <i>
+                        <b>
+                            <a href="#en-1">原文</a>
+                        </b>
+                    </i>
+                </p>
 
-				<div id="popup-1" class="tip">
-					<div>
-						<div>
-							<a href="#page">x</a>
-							<h4>Popups and modal windows</h4>
-							<p><em>In user interface design, a modal window is a child window that requires users to interact with it before they can return to operating the parent application, thus preventing the workflow on the application main window.</em></p>
-							<p>Wikipedia<br />
-								http://en.wikipedia.org/wiki/Modal_window</p>
-						</div>
-					</div>
-				</div>
+                <p>11111111
+                    <a class="button" href="#">下一步</a>
+                </p>
 
-				<div id="popup-2" class="tip">
-					<div>
-						<div>
-							<a href="#page">x</a>
-							<h4>Notification center</h4>
-							<p><em>Notification Center is a feature in iOS and OS X that provides an overview of alerts from applications. It displays notifications until the user completes an associated action, rather than requiring instant resolution.</em></p>
-							<p>Wikipedia<br />
-								http://en.wikipedia.org/wiki/Notification_Center</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	<!-- #BeginLibraryItem "/Library/mmenu_rightlist.lbi" --><!-- mmenu_right up 1 -->
-			<nav id="menu-right">
-				<ul>
-					<li>
-						<span>GMS?????????</span>
-						<ul>
-							<li class="Label">A</li>
-							<li class="img">
-								<a href="#">
-									<img src="#people/1/" />
-									Alexa<br />
-									<small>Johnson</small>
-								</a>
-							</li>
-						</ul>
-					</li>
-					
-					<li>
-						<span>?????????</span>
-						<ul>
-							<li class="Label">D</li>
-							<li class="img">
-								<a href="mailto:deciia@qq.com">
-									<img src="Library/deciia@qq.com" />
-									Adam<br />
-									<small>Deciia</small>
-								</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</nav>
 
-<!-- mmenu_right down 6 -->
+                <p>Welcome to the&nbsp;&nbsp;
+                    <em>GameMaker:Studio</em>&nbsp;user manual! This document is divided into three parts with the aim of getting you introduced to the interface and basic workings of&nbsp;&nbsp;
+                    <em>GameMaker:Studio</em>&nbsp;before going on to more advanced usage and the functions available through&nbsp;&nbsp;
+                    <strong>GML</strong>&nbsp;(the&nbsp;&nbsp;
+                    <em>GameMaker Language</em>). New users should definitely start at the beginning with the&nbsp;&nbsp;
+                    <strong>Using GameMaker:Studio</strong>&nbsp;section as it has all the information you need to get started as quickly as possible, however users of previous&nbsp;&nbsp;
+                    <em>GameMaker</em>&nbsp;versions can probably skip to the&nbsp;&nbsp;
+                    <strong>Advanced Use</strong>&nbsp;section to see what&#39;s new in this version. Whatever your skill level, we hope that this manual helps you to realise the true power within&nbsp;&nbsp;
+                    <em>GameMaker:Studio</em>&nbsp;and make your gaming dreams become reality!&nbsp;</p>
 
-<!-- #EndLibraryItem --></div></body>
+
+
+
+                <!-- notes tip up-->
+
+                <p>
+                    <i>
+                        <b>
+                            <a href="#tips-1">NOTE</a>:</b>由于 GameMaker:Studio 模块化性质，一些技巧是不包括在手册中，特别是特殊设定和连接不同的设备方面。对于最新的信息和故障排除提示和技巧，请参阅</i>
+                    <i>
+                        <a href="http://wiki.yoyogames.com/index.php/GameMaker:Studio#Getting_Started" target="_blank">YoYo Games Wiki</a>
+                    </i>.</p>
+
+                <p>
+                    <br />
+                    <em>
+                        <strong>NOTE :&nbsp;</strong>Due to the modular nature of&nbsp;
+                        <em>GameMaker:Studio</em>&nbsp;there are certain things that are not included in the manual, particularly those aspects of setting up and connecting the different devices that can be supported. For up-to-date information and troubleshooting hints and tips, please see the&nbsp;
+                        <a href="http://help.yoyogames.com/home" target="_blank">YoYo Games Knowledge Base</a>
+                    </em>.&nbsp;</p>
+
+
+                <!-- notes tip down-->
+
+                <p>
+                    <a href="#menu-left">打开菜单</a>
+                </p>
+            </div>
+
+
+            <div id="first">
+                <h3>
+                    <a href="000_Using%20GameMaker/index.html">GameMaker:Studio 使用</a>
+                </h3>
+
+                <p>本章节介绍
+                    <em>GameMaker:Studio</em>基础，介绍项目的开始和阐述如何添加 sprites, backgrounds 和 sounds。 也包括如何定义 objects 的 events 和 actions, 以及怎样把你设计的这些放入 rooms 。请注意某些工具的有效性和某些资源数量，这取决于你当前使用的
+                    <em>GameMaker:Studio</em>版本。（更多信息请点
+                    <a href="000_Using%20GameMaker/Versions.html">here</a>).</p>
+
+                <p>This section describes the basic use of&nbsp;
+                    <em>GameMaker:Studio</em>, explaining the idea behind the program and describing how to add sprites, backgrounds and sounds. It also covers how to define objects with events and actions, and how to add them into to the rooms that you design. Please note that the availability of certain tools and the number of certain resources that you can create may be restricted depending on the version of&nbsp;
+                    <em>GameMaker:Studio</em>&nbsp;that you use (more information can be found&nbsp;
+                    <a href="000_Using%20GameMaker/Versions.html">here</a>).&nbsp;
+                    <br />
+                    <br />以下章节帮助您入门:
+                </p>
+
+                <blockquote>
+                    <blockquote>
+                        <ol>
+                            <li>
+                                <a href="000_Using%20GameMaker/000_Introduction.html">Introduction 介绍</a>
+                            </li>
+                            <li>
+                                <a href="000_Using%20GameMaker/001_Installation.html">Installation 安装</a>
+                            </li>
+                            <li>
+                                <a href="000_Using%20GameMaker/002_Activation.html">Activation 激活</a>
+                            </li>
+                            <li>
+                                <a href="000_Using%20GameMaker/003_GameMaker%20Studio%20Overview.html">GameMaker:Studio Overview 概述</a>
+                            </li>
+                            <li>
+                                <a href="000_Using%20GameMaker/004_The%20Graphical%20User%20Interface.html">The Graphical User Interface 用户界面</a>
+                            </li>
+                            <li>
+                                <a href="000_Using%20GameMaker/005_Loading%20Sprites.html">Loading Sprites 载入精灵</a>
+                            </li>
+                            <li>
+                                <a href="000_Using%20GameMaker/006_Sounds%20and%20music.html">Sounds And Music 声音与音乐</a>
+                            </li>
+                            <li>
+                                <a href="000_Using%20GameMaker/007_Backgrounds.html">Backgrounds 背景</a>
+                            </li>
+                            <li>
+                                <a href="000_Using%20GameMaker/008_Defining%20objects.html">Defining Objects 定义对象</a>
+                            </li>
+                            <li>
+                                <a href="000_Using%20GameMaker/Events/index.html">Events 事件</a>
+                            </li>
+                            <li>
+                                <a href="000_Using%20GameMaker/Actions/index.html">Actions 动作</a>
+                            </li>
+                            <li>
+                                <a href="000_Using%20GameMaker/Rooms/index.html">Creating Rooms 创建房间</a>
+                            </li>
+                            <li>
+                                <a href="000_Using%20GameMaker/009_Distributing%20your%20game.html">Distributing Your Game 发布游戏</a>
+                            </li>
+                        </ol>
+                    </blockquote>
+                </blockquote>
+
+                <p>
+                    <a href="#menu-left">打开菜单</a>
+                </p>
+            </div>
+
+            <div id="second">
+                <h3>
+                    <a href="001_Advanced%20Use/index.html">Advanced Use 高级使用</a>
+                </h3>
+
+                <p>GameMaker:Studio IDE (集成开发环境) 有一些高级设置十分重要，能使您的作品更加高效。这些选项包括源代码管理，项目配置，高级调试和一些额外的改变、操作游戏资源工具(请注意一些高级工具的有效性必须适合您当前使用的&nbsp;
+                    <a href="000_Using%20GameMaker/Versions.html">version of
+                        <i>GameMaker:Studio</i>
+                    </a>). 本章节分为三个部分。每个部分都有自己独特的 IDE:&nbsp;</p>
+
+                <p>The&nbsp;
+                    <em>GameMaker:Studio</em>&nbsp;IDE (integrated development environment) has a number of advanced options that are of great importance if you wish to get the most out of the product. These options include source control integration, project configurations, advanced debugging and a number of extra tools for changing and manipulating the game assets (please note that the availability of some of these advanced tools will depend on the&nbsp;
+                    <a href="000_Using%20GameMaker/Versions.html">version of&nbsp;
+                        <em>GameMaker:Studio</em>
+                    </a>&nbsp;that you currently use). This section of the manual is split into the following three parts, each with it&#39;s own subsection dealing with one particular aspect of the IDE.</p>
+
+                <blockquote>
+                    <h4>Game Assets游戏原生资源</h4>
+
+                    <blockquote>
+                        <ol>
+                            <li>
+                                <a href="001_Advanced%20Use/More%20about%20sprites/index.html">More About Sprites 更多关于精灵</a>
+                            </li>
+                            <li>
+                                <a href="001_Advanced%20Use/More%20about%20backgrounds/index.html">More About Backgrounds 更多关于背景的内容</a>
+                            </li>
+                            <li>
+                                <a href="001_Advanced%20Use/More%20about%20Objects/index.html">More About Objects 更多关于对象</a>
+                            </li>
+                            <li>
+                                <a href="001_Advanced%20Use/More%20about%20rooms/index.html">More About Rooms 更多关于房间</a>
+                            </li>
+                            <li>
+                                <a href="001_Advanced%20Use/More%20About%20Async%20Events/index.html">More About Async Events 更多关于异步事件</a>
+                            </li>
+                        </ol>
+                    </blockquote>
+
+                    <h4>Resource Editors资源编辑器</h4>
+
+                    <blockquote>
+                        <ol>
+                            <li>
+                                <a href="001_Advanced%20Use/003_Fonts.html">Fonts 字体</a>
+                            </li>
+                            <li>
+                                <a href="001_Advanced%20Use/004_Paths.html">Paths 路径</a>
+                            </li>
+                            <li>
+                                <a href="001_Advanced%20Use/005_Time%20lines.html">Time Lines 时间轴</a>
+                            </li>
+                            <li>
+                                <a href="001_Advanced%20Use/006_Scripts.html">Scripts 脚本</a>
+                            </li>
+                            <li>
+                                <a href="001_Advanced%20Use/010_Constants.html">Constants 常量</a>
+                            </li>
+                            <li>
+                                <a href="001_Advanced%20Use/002_Including%20files.html">Including Files 包含文件</a>
+                            </li>
+                            <li>
+                                <a href="001_Advanced%20Use/008_Exporting%20and%20importing%20resources.html">Importing Resources 导入资源</a>
+                            </li>
+                        </ol>
+                    </blockquote>
+
+                    <h4>Game Settings游戏设置</h4>
+
+                    <blockquote>
+                        <ol>
+                            <li>
+                                <a href="001_Advanced%20Use/Extensions/index.html">Extension Packages 扩展包</a>
+                            </li>
+                            <li>
+                                <a href="001_Advanced%20Use/007_Configurations.html">Configurations 配置</a>
+                            </li>
+                            <li>
+                                <a href="001_Advanced%20Use/Source%20Control/index.html">Source Control 源代码控制</a>
+                            </li>
+                            <li>
+                                <a href="001_Advanced%20Use/Global%20game%20settings/index.html">Global Game Settings 全局游戏设定</a>
+                            </li>
+                            <li>
+                                <a href="001_Advanced%20Use/Preferences/index.html">
+                                    <i>GameMaker:Studio</i>Preferences 首选项</a>
+                            </li>
+                            <li>
+                                <a href="001_Advanced%20Use/011_Debugging.html">Debugging 调试</a>
+                            </li>
+                        </ol>
+                    </blockquote>
+                </blockquote>
+
+                <p>
+                    <a href="#menu-left">打开菜单</a>
+                </p>
+            </div>
+
+            <div id="third">
+                <h3>
+                    <a href="002_Reference/index.html">Reference 参考</a>
+                </h3>
+
+                <p>在这您可以找到更多关于 GameMaker:Studio 特征的参考，比如查看全部的功能函数，变量，常量这些内置的程序语言。 这种语言比使用标准化动作将赋予您更多设计弹性和更标准化控制您的游戏，我们将参考 GML (GameMaker 语言)。在 GML 里您将找到全部可使用的函数，并且您可以在代码中使用它们。我们已经包括了您在设计游戏过程中所需要的所有常量</p>
+
+                <p>这部分概述 GameMaker 语言， 包括结构规则与语法规则，如何使用的公式范例和不同表达。</p>
+
+                <p>Here you can find references for many of the&nbsp;
+                    <em>GameMaker:Studio</em>&nbsp;features, as well as a rundown of all of the functions, variables and constants that make up the built-in programming language. This language gives you much more flexibility and control over your games than the standard actions and we will refer to it as GML (the&nbsp;
+                    <em>GameMaker</em>&nbsp;Language). You can find descriptions of all the functions available in GML as well as an overview of how they can be used along with examples of code using them. We also cover the constants and variables that GML has available to control all aspects of your game.</p>
+
+                <p>This section contains an overview of the GameMaker Language, with the rules for structure and syntax, as well as examples of how to use expressions and different operations:</p>
+
+                <p>&nbsp;</p>
+
+                <blockquote>
+                    <ol>
+                        <li>
+                            <a href="002_Reference/001_GML%20Language%20Overview/index.html">GML Overview 概述</a>
+                        </li>
+                    </ol>
+                </blockquote>
+
+                <p>下面这个章节是所有可使用GML的不同函数的描述，根据关联性划分成不同组，按照需要查找函数和章节。&nbsp;</p>
+
+                <p>The following sections all detail the many different functions that are available to you when using GML. They have been split into different groups of associated functions and, where necessary, have been cross referenced with related functions and sections.</p>
+
+                <blockquote>
+                    <h4>Real Numbers And Strings 实数与字符串</h4>
+
+                    <blockquote>
+                        <ol>
+                            <li>
+                                <a href="002_Reference/Maths/index.html">Maths 数学</a>
+                            </li>
+                            <li>
+                                <a href="002_Reference/Date%20and%20Time/index.html">Date and Time 日期与时间</a>
+                            </li>
+                            <li>
+                                <a href="002_Reference/Strings/index.html">Strings 字符串</a>
+                            </li>
+                        </ol>
+                    </blockquote>
+
+                    <h4>Game Play 游戏运行</h4>
+
+                    <blockquote>
+                        <ol>
+                            <li>
+                                <a href="002_Reference/Game%20Assets/index.html">Game Assets 游戏原生资源</a>
+                            </li>
+                            <li>
+                                <a href="002_Reference/Objects%20and%20Instances/index.html">Objects and Instances 对象与实例</a>
+                            </li>
+                            <li>
+                                <a href="002_Reference/Movement%20and%20Collisions/index.html">Movement and Collisions 移动与碰撞</a>
+                            </li>
+                            <li>
+                                <a href="002_Reference/Mouse,%20Keyboard%20and%20Other%20Controls/index.html">Mouse, Keyboard and Other Controls 鼠标、键盘和其它设置设备</a>
+                            </li>
+                        </ol>
+                    </blockquote>
+
+                    <h4>Drawing And Display 绘制与显示</h4>
+
+                    <blockquote>
+                        <ol>
+                            <li>
+                                <a href="002_Reference/Drawing/index.html">Drawing 绘制</a>
+                            </li>
+                            <li>
+                                <a href="002_Reference/Shaders/index.html">Shaders 着色器</a>
+                            </li>
+                            <li>
+                                <a href="002_Reference/Surfaces/index.html">Surfaces 表面</a>
+                            </li>
+                            <li>
+                                <a href="002_Reference/Windows%20And%20Views/index.html">Windows And Views 窗口与视野</a>
+                            </li>
+                        </ol>
+                    </blockquote>
+
+                    <h4>Advanced Functions 高级函数</h4>
+
+                    <blockquote>
+                        <ol>
+                            <li>
+                                <a href="002_Reference/Data%20Structures/index.html">Data Structures 数据结构</a>
+                            </li>
+                            <li>
+                                <a href="002_Reference/Particles/index.html">Particles 粒子</a>
+                            </li>
+                            <li>
+                                <a href="002_Reference/Physics/index.html">Physics 物理</a>
+                            </li>
+                            <li>
+                                <a href="002_Reference/File%20Handling/index.html">File Handling 文件处理</a>
+                            </li>
+                            <li>
+                                <a href="002_Reference/Operating%20System/index.html">Operating System 操作系统</a>
+                            </li>
+                            <li>
+                                <a href="002_Reference/Buffers/index.html">Buffers 缓存区</a>
+                            </li>
+                            <li>
+                                <a href="002_Reference/Networking/index.html">Networking 联网</a>
+                            </li>
+                        </ol>
+                    </blockquote>
+
+                    <h4>Platform Specific 平台特性</h4>
+
+                    <blockquote>
+                        <ol>
+                            <li>
+                                <a href="002_Reference/HTML5/index.html">HTML5</a>
+                            </li>
+                            <li>
+                                <a href="002_Reference/Windows8/index.html">Windows 8</a>
+                            </li>
+                            <li>
+                                <a href="002_Reference/Advertising%20and%20Analytics/index.html">Advertising and Analytics 广告与数据分析</a>
+                            </li>
+                            <li>
+                                <a href="002_Reference/Social%20Gaming/index.html">Social Gaming 游戏的社交性</a>
+                            </li>
+                            <li>
+                                <a href="002_Reference/In%20App%20Purchases/index.html">In App Purchases 应用内购</a>
+                            </li>
+                            <li>
+                                <a href="002_Reference/Asynchronous%20Functions/index.html">Asynchronous 异步</a>
+                            </li>
+                            <li>
+                                <a href="002_Reference/Cloud%20Services/index.html">Cloud Services 云服务</a>
+                            </li>
+                            <li>
+                                <a href="002_Reference/Steam%20API/index.html">Steam API</a>
+                            </li>
+                        </ol>
+                    </blockquote>
+
+                    <h4>Extras 附加</h4>
+
+                    <blockquote>
+                        <ol>
+                            <li>
+                                <a href="002_Reference/Debugging/index.html">Debugging 调试</a>
+                            </li>
+                            <li>
+                                <a href="002_Reference/Miscellaneous/index.html">Miscellaneous 杂项</a>
+                            </li>
+                            <li>
+                                <a href="002_Reference/017_Obsolete%20Functions/index.html">Obsolete Functions 淘汰函数</a>
+                            </li>
+                        </ol>
+                    </blockquote>
+                </blockquote>
+
+                <p>
+                    <a href="#menu-left">打开菜单</a>
+                </p>
+            </div>
+
+            <div id="fourth">
+                <h3>-贡献者 Versions by-</h3>
+
+                <p>译者：碧绿的湖、断水、Noisyfox</p>
+
+                <p>网站维护：断水</p>
+
+                <p>如果你发现了网站BUG或翻译不正确的地方请
+                    <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=VjIzNT8-NxYnJ3g1OTs" style="text-decoration:none;" target="_blank">给我写信（QQ用户）</a>，或者调用本地客户端
+                    <a href="mailto:deciia@qq.com?subject=%E5%8F%8D%E9%A6%88GMS_help%E7%BD%91%E7%AB%99%E9%97%AE%E9%A2%98&amp;body=%E6%84%9F%E8%B0%A2%E4%BD%A0%E7%9A%84%E6%94%AF%E6%8C%81~~~">给我发邮件</a>。</p>
+
+
+                <p>目前已经制作了安卓版，预计每月会更新一个版本，请点击
+                    <a href="http://pan.baidu.com/s/1o6lYpqM" target="_blank">安卓版下载</a>。</p>
+
+
+                <p>项目保存在github上，请点击
+                    <a href="https://github.com/XuJing-project/GMS_help" target="_blank">github项目地址</a>，查看更多内容。</p>
+
+                <p>参与翻译推荐使用Brackets软件，查看
+                    <a href="http://xujing-project.github.io/blog/2014/04/08/share_exp/" target="_blank">github网站翻译教程</a>。</p>
+
+                <p>
+                    <a href="update_log.html">查看更新日志</a>
+                </p>
+
+                <p>
+                    <font size="3">
+                        <a href="http://tieba.baidu.com/f?kw=gmstudio">
+                            <i>百度贴吧 gmstudio</i>
+                        </a>
+                    </font>
+                    <br />
+                    <font size="3">
+                        <i>YoYo Games Ltd.(GMS1.2)</i>
+                    </font>
+                </p>
+
+                <p>
+                    <a href="#menu-right">打开菜单</a>
+                </p>
+
+                <h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
+            </div>
+            <!-- onepage update 7,8:8 -->
+            <!-- one page section down -->
+            <!-- for tips up-->
+
+            <div id="tooltips">
+                <div class="tip" id="tips-1">
+                    <div>
+                        <div>
+                            <a href="#page">x</a>
+
+                            <h4>NOTES</h4>
+
+                            <p>
+                                <i>由于 GameMaker:Studio 模块化性质，一些技巧是不包括在手册中，特别是特殊设定和连接不同的设备方面。对于最新的信息和故障排除提示和技巧，请参阅</i>
+                                <i>
+                                    <a href="http://wiki.yoyogames.com/index.php/GameMaker:Studio#Getting_Started" target="_blank">YoYo Games Wiki</a>
+                                </i>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tip" id="en-1">
+                    <div>
+                        <div>
+                            <a href="#page">x</a>
+
+                            <h4>Welcome to the
+                                <i>GameMaker:Studio</i>user manual!</h4>
+
+                            <p>Welcome to the
+                                <i>GameMaker:Studio</i>user manual! This document is divided into three parts with the aim of getting you introduced to the interface and basic workings of
+                                <i>GameMaker:Studio</i>before going on to more advanced usage and the functions available through
+                                <b>GML</b>(the
+                                <i>GameMaker Language</i>). New users should definitely start at the beginning with the
+                                <b>Using GameMaker:Studio</b>section as it has all the information you need to get started as quickly as possible, however users of previous
+                                <i>GameMaker</i>versions can probably skip to the
+                                <b>Advanced Use</b>section to see what&#39;s new in this version. Whatever your skill level, we hope that this manual helps you to realise the true power within
+                                <i>GameMaker:Studio</i>and make your gaming dreams become reality!
+                                <br />&nbsp;
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- tips update 9,10:10 -->
+            <!-- for tips down-->
+            <!-- KEYWORDS
+        contents
+        -->
+       
+        </div>
+        <div id="footer">
+            别担心，小猫会保护你的！！
+        </div>
+        <nav id="menu-left">
+        </nav>
+        <nav id="menu-right">
+        </nav>
+    </div>
+</body>
 </html>
+

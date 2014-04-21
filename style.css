@@ -339,3 +339,50 @@ color:#EEE;
 	top: 20px;
 	right: 20px;
 }
+
+/*button*/
+a.button,
+a.button:visited{
+    -moz-box-shadow:-4px 4px 0 #000;
+	-webkit-box-shadow:-4px 4px 0 #000;
+	box-shadow:-4px 4px 0 #000;
+	background-color:#DFDFDF;
+	border:1px solid #EEEEEE;
+	bottom:0;
+	color:#888888;
+	font-size:18px;
+	font-style:italic;
+	font-weight:bold;
+	padding:10px 20px;
+	/*position:absolute;*/
+	text-align:center;
+	text-shadow:1px 1px 0 #FFFFFF;
+	width:60px;
+	left:50%;
+	margin-left:-30px;
+}
+a.button:active{
+	
+	/* The pressed state of the button */
+    
+    bottom:-2px;
+	margin-left:-32px;
+	
+	-moz-box-shadow:-2px 2px 0 #000;
+	-webkit-box-shadow:-2px 2px 0 #000;
+	box-shadow:-2px 2px 0 #000;
+}
+a.button:hover{
+	background-color:#eee;
+}
+
+#load {
+	display: none;
+	position: absolute;
+	left: 50%;
+	top: 50px;
+	background: url(images/ajax-loader.gif);
+	width: 43px;
+	height: 11px;
+	text-indent: -9999em;
+}
