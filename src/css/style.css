@@ -230,8 +230,8 @@ pre
 }
 
 
-#header a.mmenu-left,
-.header a.mmenu-left
+#header .menu_left,
+.header .menu_left
 {
 	background: center center no-repeat transparent;
 	background-image: url( data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADhJREFUeNpi/P//PwOtARMDHQBdLGFBYtMq3BiHT3DRPU4YR4NrNAmPJuHRJDyahEeT8Ii3BCDAAF0WBj5Er5idAAAAAElFTkSuQmCC );
@@ -327,7 +327,9 @@ pre
 
 /*button*/
 
-.button{
+.button,
+a.button
+{
 font:normal 1em Helvetica;
 font-style:normal;
 color:#8f8d8f;
@@ -374,24 +376,25 @@ top:2px;
 #content,
 .content
 {
-	padding: 5px;	
+	padding: 5px;
+    margin-top: 2.7em;
 }
 
 
 /*page fullsceen*/
-body.page-left
+body.page_left_ceshi
 {
 	background-position: left top;
 }
-body.page-right
+body.page_right_ceshi
 {
 	background-position: right top;
 }
-body.page-top
+body.page_top_ceshi
 {
 	background-position:  top;
 }
-body.page-right
+body.page_right_ceshi
 {
 	background-position: right bottom;
 }
@@ -407,8 +410,7 @@ body.page-right
 
 
 .popup
-{
-    
+{ 
     
      width: 100%;
     min-height: 100%;
@@ -431,8 +433,7 @@ body.page-right
     -webkit-transition: -webkit-transform 0.2s linear;
     -moz-transition: -moz-transform 0.2s linear;
     -o-transition: -o-transform 0.2s linear;
-    transition: transform 0.2s linear;
-    
+    transition: transform 0.2s linear;  
     
 }
 

@@ -9,159 +9,81 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" />    
     <link rel="stylesheet" href="src/css/style.css" type="text/css" media="screen" title="style" charset="utf-8" />
-    <link type="text/css" rel="stylesheet" href="src/css/jquery.mmenu.all.css" />
-    <link rel="stylesheet" href="src/css/zebra_tooltips.css" type="text/css">
+    <link type="text/css" rel="stylesheet" href="src/css/jquery.mmenu.all.css" />    
     <link rel="icon" type="../image/png" href="favicon.png">
     
-    <!-- InstanceParam name="OptionalRegion_footer" type="boolean" value="true" -->
-    <!-- InstanceParam name="OptionalRegion_pagefull" type="boolean" value="true" -->
-    <!-- InstanceParam name="OptionalRegion_mmenutip" type="boolean" value="true" -->
+    <!-- InstanceParam name="OptionalRegion_footer" type="boolean" value="true" -->    
 </head>
 
 <body bgcolor="#FFFFFF">
     <div id="page">
-        <div id="header">
-           <a href="#menu-left" class="mmenu-left tooltips" title="点击此按钮打开左侧目录菜单，右边的按钮则打开右侧菜单。"></a>
+        <div id="header" class="mm-fixed-top">
+           <a href="#menu_left" class="menu_left" title="点击此按钮打开左侧目录菜单，右边的按钮则打开右侧菜单。"></a>
             <!-- InstanceBeginEditable name="EditRegion_pagetitle" -->点击左边图标打开菜单
             <!-- InstanceEndEditable -->
-            <a href="#menu-right" class="friends right"></a>
+            <a href="#menu_right" class="friends right"></a>
         </div>
         <div id="content">
-            <!-- InstanceBeginEditable name="EditRegion_content" -->
-            <div style="height: 99px; background-color: rgb(40, 40, 40);">
-                <img class="center" src="GM_Banner.png" />
-            </div>
-            <!-- one page section up -->
-
-            <h3>内容区域：</h3>
-
-            <p>欢迎浏览
-                <em>GameMaker:Studio</em>用户手册! 这个文档分为三个部分，主要讲解
-                <em>GameMaker:Studio</em>界面和基础使用，更高级的用法和功能需要使用 GML (
-                <strong>the GameMaker Language</strong>). 新用户必须从
-                <strong>Using GameMaker:Studio</strong>部分开始，这部分包括所有快速入门知识, 曾经使用过 GameMaker 的用户可以跳过这部分，请查看
-                <strong>Advanced Use</strong>部分关于新版本更新内容。不论您的技术水平如何，我们都希望这本说明能够帮助您有效的使用
-                <em>GameMaker:Studio</em>并且实现您的梦！</p>
-
-            <h3>mmenu功能测试</h3>
-
-            <p>&nbsp;</p>
-
-            <h3 style="color:#aaa;font-style:italic;">&nbsp;&lt;a href=&quot;#menu-left&quot;&gt;打开左边菜单&lt;/a&gt;&nbsp;&nbsp;</h3>
-
-            <p>
-                <a href="#menu-left">打开左边菜单</a>
-            </p>
-
-            <p>&lt;a href=&quot;#menu-right&quot;&gt;打开右边菜单&lt;/a&gt;</p>
-
-            <p>
-                <a href="#menu-right">打开右边菜单</a>
-            </p>
-
-            <p>&nbsp;</p>
-
-            <p>&lt;a href=&quot;#page-left-1&quot;&gt;从左边打开全屏面板&lt;/a&gt;</p>
-
-            <p>
-                <a href="#page-left-1">从左边打开全屏面板</a>
-            </p>
-
-            <p>&nbsp;</p>
-
-            <p>
-                <span style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; line-height: 14px; background-color: rgb(36, 36, 36);">&lt;a href=&quot;#page-right-1&quot;&gt;从右边打开全屏面板&lt;/a&gt;</span>
-            </p>
-
-            <p>
-                <a href="#page-right-1">从右边打开全屏面板</a>
-            </p>
-
-            <p>&nbsp;</p>
-
-            <p>
-                <span style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; line-height: 14px; background-color: rgb(36, 36, 36);">&nbsp;&lt;a href=&quot;#page-top-1&quot;&gt;从上边打开全屏面板&lt;/a&gt;</span>
-            </p>
-
-            <p>
-                <a href="#page-top-1">从上边打开全屏面板</a>
-            </p>
-
-            <p>&nbsp;</p>
-
-            <p>&lt;a href=&quot;#page-bottom-1&quot;&gt;从下边打开全屏面板&lt;/a&gt;</p>
-
-            <p>
-                <a href="#page-bottom-1">从下边打开全屏面板</a>
-            </p>
-
-            <p>&nbsp;</p>
-
-            <p>&lt;a href=&quot;#popup-left-1&quot;&gt;从左边打开消息面板&lt;/a&gt;</p>
-
-            <p>
-                <a href="#popup-left-1">从左边打开消息面板</a>
-            </p>
-
-            <p>&nbsp;</p>
-
-            <p>
-                <span style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; line-height: 14px; background-color: rgb(36, 36, 36);">&lt;a href=&quot;#popup-right-1&quot;&gt;从右边打开消息面板&lt;/a&gt;</span>
-            </p>
-
-            <p>
-                <a href="#popup-right-1">从右边打开消息面板</a>
-            </p>
-
-            <p>&nbsp;</p>
-
-            <p>
-                <span style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; line-height: 14px; background-color: rgb(36, 36, 36);">&nbsp;&lt;a href=&quot;#popup-top-1&quot;&gt;从上边打开消息面板&lt;/a&gt;</span>
-            </p>
-
-            <p>
-                <a href="#popup-top-1">从上边打开消息面板</a>
-            </p>
-
-            <p>&nbsp;</p>
-
-            <p>&lt;a href=&quot;#
-                <span style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; line-height: 14px; background-color: rgb(36, 36, 36);">popup</span>-bottom-1&quot;&gt;从下边打开
-                <span style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; line-height: 14px; background-color: rgb(36, 36, 36);">消息</span>面板&lt;/a&gt;</p>
-
-            <p>
-                <a href="#popup-bottom-1">从下边打开消息面板</a>
-            </p>
-
-
-
-            <p>Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et. Quis hendrerit neque congue pretium iaculis justo laoreet orci elit
-                <a href="#" class="tooltips" title="Zebra_Tooltips is a lightweight (around 5KB minified, 1.6KB 
-gzipped) tooltip jQuery plugin for creating simple, but smart and visually attractive 
-tooltips, featuring nice transitions and offering a wide range of configuration 
-options.">condimentum</a>. Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.</p>
-
-
-            <p class="tipsshow" title="Zebra_Tooltips is a lightweight (around 5KB minified, 1.6KB 
-gzipped) tooltip jQuery plugin for creating simple, but smart and visually attractive 
-tooltips, featuring nice transitions and offering a wide range of configuration 
-options.">11111111111111111111</p>
-
-            
-            <p >欢迎浏览 <em>GameMaker:Studio</em>用户手册! 这个文档分为三个部分，主要讲解 <em>GameMaker:Studio</em>界面和基础使用，更高级的用法和功能需要使用 GML ( <strong>the GameMaker Language</strong>). 新用户必须从 <strong>Using GameMaker:Studio</strong>部分开始，这部分包括所有快速入门知识, 曾经使用过 GameMaker 的用户可以跳过这部分，请查看 <strong>Advanced Use</strong>部分关于新版本更新内容。不论您的技术水平如何，我们都希望这本说明能够帮助您有效的使用 <em>GameMaker:Studio</em>并且实现您的梦！<button class="i2Style entr_click" data_entr="en-1">英文</button></p>
-            
-            
-            
+            <!-- InstanceBeginEditable name="EditRegion_content" -->          
         
-        <p class="entr_content" id="en-1">Welcome to the&nbsp;&nbsp; <em>GameMaker:Studio</em>&nbsp;user manual! This document is divided into three parts with the aim of getting you introduced to the interface and basic workings of&nbsp;&nbsp; <em>GameMaker:Studio</em>&nbsp;before going on to more advanced usage and the functions available through&nbsp;&nbsp; <strong>GML</strong>&nbsp;(the&nbsp;&nbsp; <em>GameMaker Language</em>). New users should definitely start at the beginning with the&nbsp;&nbsp; <strong>Using GameMaker:Studio</strong>&nbsp;section as it has all the information you need to get started as quickly as possible, however users of previous&nbsp;&nbsp; <em>GameMaker</em>&nbsp;versions can probably skip to the&nbsp;&nbsp; <strong>Advanced Use</strong>&nbsp;section to see what&#39;s new in this version. Whatever your skill level, we hope that this manual helps you to realise the true power within&nbsp;&nbsp; <em>GameMaker:Studio</em>&nbsp;and make your gaming dreams become reality!&nbsp;</p>
+
+
+            <p>
+                <a href="#" class="page_left" data_page_url="/002_Reference/HTML5/url_open.html" id="ceshipageleft1">测试左边弹出的全屏面板</a>
+            </p>
+            <p>
+                <a href="#" class="page_left" data_page_url="/002_Reference/HTML5/url_open.html" id="ceshipageleft2">测试左边弹出的全屏面板2</a>
+            </p>
+            <p>
+                <a href="#" class="page_left" data_page_url="/002_Reference/HTML5/url_open.html" id="ceshipageleft3">测试左边弹出的全屏面板3</a>
+            </p>
+
+            <p>
+                <a href="#" class="page_right" data_page_url="/002_Reference/HTML5/url_open.html" id="ceshipageright1">测试右边弹出的全屏面板</a>
+            </p>
+            <p>
+                <a href="#" class="page_right" data_page_url="/002_Reference/HTML5/url_open.html" id="ceshipageright2">测试右边弹出的全屏面板2</a>
+            </p>
+            <p>
+                <a href="#" class="page_right" data_page_url="/002_Reference/HTML5/url_open.html" id="ceshipageright3">测试右边弹出的全屏面板3</a>
+            </p>
+            <p>
+                <a href="#" class="page_top" data_page_url="/002_Reference/HTML5/url_open.html" id="ceshipagetop">测试上边弹出的全屏面板3</a>
+            </p>
+            <p>
+                <a href="#" class="page_bottom" data_page_url="/002_Reference/HTML5/url_open.html" id="ceshipagebottom">测试下边弹出的全屏面板3</a>
+            </p>
+
+            <p>
+                <a href="#" class="popup_left" data_page_url="/002_Reference/HTML5/url_open.html" id="ceshipopupleft1">测试左边弹出的消息面板</a>
+            </p>
+            <p>
+                <a href="#" class="popup_left" data_page_url="/002_Reference/HTML5/url_open.html" id="ceshipopupleft2">测试左边弹出的消息面板2</a>
+            </p>
+            <p>
+                <a href="#" class="popup_left" data_page_url="/002_Reference/HTML5/url_open.html" id="ceshipopupleft3">测试左边弹出的消息面板3</a>
+            </p>
+
+            <p>
+                <a href="#" class="popup_right" data_page_url="/002_Reference/HTML5/url_open.html" id="ceshipopupright1">测试右边弹出的消息面板</a>
+            </p>
+            <p>
+                <a href="#" class="popup_right" data_page_url="/002_Reference/HTML5/url_open.html" id="ceshipopupright2">测试右边弹出的消息面板2</a>
+            </p>
+            <p>
+                <a href="#" class="popup_right" data_page_url="/002_Reference/HTML5/url_open.html" id="ceshipopupright3">测试右边弹出的消息面板3</a>
+            </p>
+            <p>
+                <a href="#" class="popup_top" data_page_url="/002_Reference/HTML5/url_open.html" id="ceshipopuptop1">测试上边弹出的消息面板</a>
+            </p>
+            <p>
+                <a href="#" class="popup_top" data_page_url="/002_Reference/HTML5/url_open.html" id="ceshipopuptop2">测试上边弹出的消息面板2</a>
+            </p>
+            <p>
+                <a href="#" class="popup_top" data_page_url="/002_Reference/HTML5/url_open.html" id="ceshipopuptop3">测试上边弹出的消息面板3</a>
+            </p>  
             
-            
-            <p><i><b>NOTE:</b>由于 GameMaker:Studio 模块化性质，一些技巧是不包括在手册中，特别是特殊设定和连接不同的设备方面。对于最新的信息和故障排除提示和技巧，请参阅</i> <i> <a href="http://wiki.yoyogames.com/index.php/GameMaker:Studio#Getting_Started" target="_blank">YoYo Games Wiki</a> </i>.<button class="i2Style  entr_click" data_entr="en-2">英文</button></p>
-        
-        <p class="entr_content" id="en-2"><br />
-        <em><strong>NOTE :&nbsp;</strong>Due to the modular nature of&nbsp; <em>GameMaker:Studio</em>&nbsp;there are certain things that are not included in the manual, particularly those aspects of setting up and connecting the different devices that can be supported. For up-to-date information and troubleshooting hints and tips, please see the&nbsp; <a href="http://help.yoyogames.com/home" target="_blank">YoYo Games Knowledge Base</a> </em>.&nbsp;</p>
-            
-            
+
 
 
 
@@ -176,37 +98,42 @@ options.">11111111111111111111</p>
             <!-- InstanceBeginEditable name="EditRegion_footer" -->editRegion_footer
             <!-- InstanceEndEditable -->
         </div>
-        
-        <nav id="menu-left" >
-        </nav>
-        <nav id="menu-right" >
-        </nav>
-        
-        <!--page fullscreen 使用方法：<a href="#page-left">what?</a> -->
-        <div id="page_fullscreen">
-            <div class="panel page-left" id="page-left-1">
+                
+        <div id="page_popup">
+            <div class="popup " >
                 <div>
+                    <a href="#page" class="close">x</a>
                     <div>
-                        <a href="#page">x</a>
-                        <h4></h4>
-                        <p>Welcome~</p>
+                    	<h4>喵~</h4>
+                        <p>欢迎，这里是404号猫国皇室会所~~</p>
+                        <p>因为找不到其它的地方，你来到了这里。</p>
                     </div>
+
                 </div>
+
             </div>
         </div>
-        
-        
-        <!-- for tips 使用方法： <a href="#popup_left">NOTE</a> -->
-        <div id="page_popup">
-            <div class="popup popup-left" id="popup-left-1">
+        <div id="page_fullscreen">
+
+            <div class="panel ">
                 <div>
+                    <a href="#page" class="close">x</a>
                     <div>
-                        <a href="#page">x</a>
-                        <h4></h4>
-                        <p>Welcome~</p>
+                        <h4>喵~</h4>
+                        <p>欢迎，这里是404号猫国皇室会所~~</p>
+                        <p>因为找不到其它的地方，你来到了这里。</p>
                     </div>
+
                 </div>
+
             </div>
+        </div>
+
+        <div id="page_mmenu">
+            <nav id="menu_left">
+            </nav>
+            <nav id="menu_right">
+            </nav>
         </div>
         
         <!-- KEYWORDS
@@ -215,8 +142,6 @@ options.">11111111111111111111</p>
     </div>
     
     <script type="text/javascript" src="src/js/jquery.min.js"></script>
-    <script type="text/javascript" src="src/js/zebra_tooltips.js"></script>
-    <script type="text/javascript" src="src/js/hammer.min.js"></script>
     <script type="text/javascript" src="src/js/jquery.mmenu.min.all_old.js"></script>
     <script type="text/javascript" src="src/js/subpage.js"></script>
     

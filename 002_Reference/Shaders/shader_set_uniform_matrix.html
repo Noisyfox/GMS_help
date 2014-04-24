@@ -8,21 +8,18 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" />    
     <link rel="stylesheet" href="../../src/css/style.css" type="text/css" media="screen" title="style" charset="utf-8" />
-    <link type="text/css" rel="stylesheet" href="../../src/css/jquery.mmenu.all.css" />
-    <link rel="stylesheet" href="../../src/css/zebra_tooltips.css" type="text/css">
+    <link type="text/css" rel="stylesheet" href="../../src/css/jquery.mmenu.all.css" />    
     <link rel="icon" type="../image/png" href="favicon.png">
     
-    <!-- InstanceParam name="OptionalRegion_footer" type="boolean" value="false" -->
-    <!-- InstanceParam name="OptionalRegion_pagefull" type="boolean" value="false" -->
-    <!-- InstanceParam name="OptionalRegion_mmenutip" type="boolean" value="false" -->
+    <!-- InstanceParam name="OptionalRegion_footer" type="boolean" value="false" -->    
 </head>
 
 <body bgcolor="#FFFFFF">
     <div id="page">
-        <div id="header">
-           <a href="#menu-left" class="mmenu-left tooltips" title="点击此按钮打开左侧目录菜单，右边的按钮则打开右侧菜单。"></a>
+        <div id="header" class="mm-fixed-top">
+           <a href="#menu_left" class="menu_left" title="点击此按钮打开左侧目录菜单，右边的按钮则打开右侧菜单。"></a>
             <!-- InstanceBeginEditable name="EditRegion_pagetitle" -->点击左边图标打开菜单<!-- InstanceEndEditable -->
-            <a href="#menu-right" class="friends right"></a>
+            <a href="#menu_right" class="friends right"></a>
         </div>
         <div id="content">
             <!-- InstanceBeginEditable name="EditRegion_content" -->
@@ -98,12 +95,43 @@ The above code will get the handle of the shader constant "u_vMatrix" then set t
 <h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
   <!-- InstanceEndEditable -->
         </div>
-        
-        <nav id="menu-left" >
-        </nav>
-        <nav id="menu-right" >
-        </nav>
-        
+                
+        <div id="page_popup">
+            <div class="popup " >
+                <div>
+                    <a href="#page" class="close">x</a>
+                    <div>
+                    	<h4>喵~</h4>
+                        <p>欢迎，这里是404号猫国皇室会所~~</p>
+                        <p>因为找不到其它的地方，你来到了这里。</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div id="page_fullscreen">
+
+            <div class="panel ">
+                <div>
+                    <a href="#page" class="close">x</a>
+                    <div>
+                        <h4>喵~</h4>
+                        <p>欢迎，这里是404号猫国皇室会所~~</p>
+                        <p>因为找不到其它的地方，你来到了这里。</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div id="page_mmenu">
+            <nav id="menu_left">
+            </nav>
+            <nav id="menu_right">
+            </nav>
+        </div>
         
         <!-- KEYWORDS
         pages
@@ -111,8 +139,6 @@ The above code will get the handle of the shader constant "u_vMatrix" then set t
     </div>
     
     <script type="text/javascript" src="../../src/js/jquery.min.js"></script>
-    <script type="text/javascript" src="../../src/js/zebra_tooltips.js"></script>
-    <script type="text/javascript" src="../../src/js/hammer.min.js"></script>
     <script type="text/javascript" src="../../src/js/jquery.mmenu.min.all_old.js"></script>
     <script type="text/javascript" src="../../src/js/subpage.js"></script>
     

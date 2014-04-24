@@ -9,22 +9,19 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" />    
     <link rel="stylesheet" href="src/css/style.css" type="text/css" media="screen" title="style" charset="utf-8" />
-    <link type="text/css" rel="stylesheet" href="src/css/jquery.mmenu.all.css" />
-    <link rel="stylesheet" href="src/css/zebra_tooltips.css" type="text/css">
+    <link type="text/css" rel="stylesheet" href="src/css/jquery.mmenu.all.css" />    
     <link rel="icon" type="../image/png" href="favicon.png">
     
-    <!-- InstanceParam name="OptionalRegion_footer" type="boolean" value="true" -->
-    <!-- InstanceParam name="OptionalRegion_pagefull" type="boolean" value="true" -->
-    <!-- InstanceParam name="OptionalRegion_mmenutip" type="boolean" value="true" -->
+    <!-- InstanceParam name="OptionalRegion_footer" type="boolean" value="true" -->    
 </head>
 
 <body bgcolor="#FFFFFF">
     <div id="page">
-        <div id="header">
-           <a href="#menu-left" class="mmenu-left tooltips" title="点击此按钮打开左侧目录菜单，右边的按钮则打开右侧菜单。"></a>
+        <div id="header" class="mm-fixed-top">
+           <a href="#menu_left" class="menu_left" title="点击此按钮打开左侧目录菜单，右边的按钮则打开右侧菜单。"></a>
             <!-- InstanceBeginEditable name="EditRegion_pagetitle" -->点击左边图标打开菜单
             <!-- InstanceEndEditable -->
-            <a href="#menu-right" class="friends right"></a>
+            <a href="#menu_right" class="friends right"></a>
         </div>
         <div id="content">
             <!-- InstanceBeginEditable name="EditRegion_content" -->
@@ -73,10 +70,10 @@
                 <!-- notes tip down-->
 
                 <p>
-                    <a href="#menu-left" class="button tooltips" title="点击此按钮打开左侧目录菜单。">
+                    <a href="#menu_left" class="button tooltips" title="点击此按钮打开左侧目录菜单。">
                         打开菜单
-                    </a>                    
-                    
+                    </a>
+
                 </p>
             </div>
 
@@ -146,15 +143,16 @@
                         </ol>
                     </blockquote>
                 </blockquote>
+
+
                 <p>
-                    <a href="#popup-left-1">
-                        <button type="button" class="button tooltips" title="点击此按钮查看本节相关教程。目前暂未添加教程。">查看教程</button>
-                    </a>
+                    <a href="#" class="button popup_left" data_page_url="/002_Reference/HTML5/url_open.html" id="ceshipopupleft1">查看教程</a>
                 </p>
+
                 <p>
-                    <a href="#menu-left" class="button">
+                    <a href="#menu_left" class="button">
                         打开菜单
-                    </a>  
+                    </a>
                 </p>
 
 
@@ -217,9 +215,9 @@
                             <li>
                                 <a href="001_Advanced%20Use/006_Scripts.html">Scripts 脚本</a>
                             </li>
-      											<li>
-      													<a href="001_Advanced%20Use/009_Shaders.html">Shaders 着色器 </a>
-      											</li>
+                            <li>
+                                <a href="001_Advanced%20Use/009_Shaders.html">Shaders 着色器</a>
+                            </li>
                             <li>
                                 <a href="001_Advanced%20Use/010_Constants.html">Constants 常量</a>
                             </li>
@@ -260,7 +258,7 @@
                 </blockquote>
 
                 <p>
-                    <a href="#menu-left" class="button">
+                    <a href="#menu_left" class="button">
                         打开菜单
                     </a>
                 </p>
@@ -276,7 +274,7 @@
                 <p>这部分概述 GameMaker 语言， 包括结构规则与语法规则，如何使用的公式范例和不同表达。
                     <button class="button  entr_click " data_entr="en-5">英文</button>
                 </p>
-                
+
                 <div class="entr_content" id="en-5">
                     <p>Here you can find references for many of the&nbsp;
                         <em>GameMaker:Studio</em>&nbsp;features, as well as a rundown of all of the functions, variables and constants that make up the built-in programming language. This language gives you much more flexibility and control over your games than the standard actions and we will refer to it as GML (the&nbsp;
@@ -295,7 +293,9 @@
                     </ol>
                 </blockquote>
 
-                <p>下面这个章节是所有可使用GML的不同函数的描述，根据关联性划分成不同组，按照需要查找函数和章节。&nbsp;<button class="button  entr_click " data_entr="en-6">英文</button></p>
+                <p>下面这个章节是所有可使用GML的不同函数的描述，根据关联性划分成不同组，按照需要查找函数和章节。&nbsp;
+                    <button class="button  entr_click " data_entr="en-6">英文</button>
+                </p>
 
                 <p class="entr_content" id="en-6">The following sections all detail the many different functions that are available to you when using GML. They have been split into different groups of associated functions and, where necessary, have been cross referenced with related functions and sections.</p>
 
@@ -431,7 +431,7 @@
                 </blockquote>
 
                 <p>
-                    <a href="#menu-left" class="button ">
+                    <a href="#menu_left" class="button ">
                         打开菜单
                     </a>
                 </p>
@@ -474,7 +474,7 @@
                 </p>
 
                 <p>
-                    <a href="#menu-right" class="button tooltips" title="打开右侧贡献者名单。">
+                    <a href="#menu_right" class="button tooltips" title="打开右侧贡献者名单。">
                         贡献者名单
                     </a>
                 </p>
@@ -491,37 +491,42 @@
             <!-- InstanceBeginEditable name="EditRegion_footer" -->editRegion_footer
             <!-- InstanceEndEditable -->
         </div>
-        
-        <nav id="menu-left" >
-        </nav>
-        <nav id="menu-right" >
-        </nav>
-        
-        <!--page fullscreen 使用方法：<a href="#page-left">what?</a> -->
-        <div id="page_fullscreen">
-            <div class="panel page-left" id="page-left-1">
+                
+        <div id="page_popup">
+            <div class="popup " >
                 <div>
+                    <a href="#page" class="close">x</a>
                     <div>
-                        <a href="#page">x</a>
-                        <h4></h4>
-                        <p>Welcome~</p>
+                    	<h4>喵~</h4>
+                        <p>欢迎，这里是404号猫国皇室会所~~</p>
+                        <p>因为找不到其它的地方，你来到了这里。</p>
                     </div>
+
                 </div>
+
             </div>
         </div>
-        
-        
-        <!-- for tips 使用方法： <a href="#popup_left">NOTE</a> -->
-        <div id="page_popup">
-            <div class="popup popup-left" id="popup-left-1">
+        <div id="page_fullscreen">
+
+            <div class="panel ">
                 <div>
+                    <a href="#page" class="close">x</a>
                     <div>
-                        <a href="#page">x</a>
-                        <h4></h4>
-                        <p>Welcome~</p>
+                        <h4>喵~</h4>
+                        <p>欢迎，这里是404号猫国皇室会所~~</p>
+                        <p>因为找不到其它的地方，你来到了这里。</p>
                     </div>
+
                 </div>
+
             </div>
+        </div>
+
+        <div id="page_mmenu">
+            <nav id="menu_left">
+            </nav>
+            <nav id="menu_right">
+            </nav>
         </div>
         
         <!-- KEYWORDS
@@ -530,8 +535,6 @@
     </div>
     
     <script type="text/javascript" src="src/js/jquery.min.js"></script>
-    <script type="text/javascript" src="src/js/zebra_tooltips.js"></script>
-    <script type="text/javascript" src="src/js/hammer.min.js"></script>
     <script type="text/javascript" src="src/js/jquery.mmenu.min.all_old.js"></script>
     <script type="text/javascript" src="src/js/subpage.js"></script>
     
