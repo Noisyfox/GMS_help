@@ -59,6 +59,10 @@ $(document).ready(function () {
                 //将载入菜单目录里的链接进行一个git or obslute url的判断。
                 $(this).attr("href", git_or_obs(menu_inner_url));
             });
+            $('#index_searcher').on('click',function(){
+            
+            });
+            
         });
     });
 
@@ -102,7 +106,7 @@ $(document).ready(function () {
                 $(this).attr("href", '#' + data_page_id); //a的瞄指向"a的id加"-1"的id位置
                 temp.attr("id", data_page_id); //将temp的id修改为a的瞄对应的值
                 temp.removeClass("popup_left_ceshi popup_right_ceshi popup_top_ceshi popup_bottom_ceshi"); //移除可能会重复添加的其它的类
-                temp.addClass(popclass); //添加classtype对应的类
+                temp.addClass(popclass); //添加classtype对应的类            
                 $("#" + data_page_id + " div div").load(data_page_url + " #content", function () {
 
                     $(this).find('a').each(function () {
@@ -281,6 +285,8 @@ $(document).ready(function () {
             }
         });
     });
+    
+    
 
     //end
 
