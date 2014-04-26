@@ -180,9 +180,9 @@ $(document).ready(function () {
         function cre_fullpages(classtype) {
             var fullpageclass = classtype + "_ceshi";
             $('a.' + classtype).each(function () { //classtype是消息面板的类别，通过a元素打开
-                //给id为page_popup的div容量里面添加其中最后一个.popup的克隆副本
+                //给id为page_fullscreen的div容量里面添加其中最后一个.panel的克隆副本
                 $('#page_fullscreen').append($('.panel').last().clone(true));
-                var temp = $('.panel').last(); //找到刚克隆的.popup元素
+                var temp = $('.panel').last(); //找到刚克隆的.panel元素
                 var data_page_url = git_or_obs($(this).attr("href"));
                 var data_page_id = $(this).attr("id") + "-1";
                 $(this).attr("href", '#' + data_page_id); //a的瞄指向"a的id加"-1"的id位置
@@ -193,18 +193,13 @@ $(document).ready(function () {
 
                     $(this).find('a').each(function () {
                         var menu_inner_url = $(this).attr("href");
-
                         if (menu_inner_url.slice(0, 1) == "/") { //判断是否为绝对址
                             //alert(menu_inner_url.slice(0, 1));
                             $(this).attr("href", git_or_obs(menu_inner_url));
-
                         } else if (menu_inner_url.slice(0, 4) == "http") {
-
                             $(this).attr("href", menu_inner_url);
                             $(this).attr("target", "_blank");
-
                         } else if (menu_inner_url.slice(0, 3) == "www") {
-
                             menu_inner_url = "http://" + menu_inner_url;
                             $(this).attr("href", menu_inner_url);
                             $(this).attr("target", "_blank");
@@ -217,9 +212,7 @@ $(document).ready(function () {
                             //如果是站点的相对地址则转换成相对于正在打开页面的绝对地址
                             $(this).attr("href", rel_to_obs(menu_inner_url, data_page_url));
                         }
-
                     });
-
                 }); //在相应的id容量里载入dataurl对应的文件的content部分
             });
         }
