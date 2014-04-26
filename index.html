@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/GMS_helppage.dwt" codeOutsideHTMLIsLocked="false" -->
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/GMS_helppage.dwt" codeOutsideHTMLIsLocked="false" -->
 
 <head>
     <!-- InstanceBeginEditable name="doctitle" -->
@@ -9,7 +9,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" />    
     <link rel="stylesheet" href="src/css/style.css" type="text/css" media="screen" title="style" charset="utf-8" />
-    <link type="text/css" rel="stylesheet" href="src/css/jquery.mmenu.all.css" />    
+    <link type="text/css" rel="stylesheet" href="src/css/jquery.mmenu.all.css" /> 
+     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->   
     <link rel="icon" type="../image/png" href="favicon.png">    
     <!-- InstanceParam name="OptionalRegion_footer" type="boolean" value="true" -->    
 </head>
@@ -37,10 +43,10 @@
                     <strong>Using GameMaker:Studio</strong>部分开始，这部分包括所有快速入门知识, 曾经使用过 GameMaker 的用户可以跳过这部分，请查看
                     <strong>Advanced Use</strong>部分关于新版本更新内容。不论您的技术水平如何，我们都希望这本说明能够帮助您有效的使用
                     <em>GameMaker:Studio</em>并且实现您的梦！
-                    <button class="button entr_click tooltips" data_entr="en-1" title="点击此按钮显示或隐藏英文。">英文</button>
+                    <button class="button entr_click" data_entr="en-1" title="点击此按钮显示或隐藏英文。">英文</button>
                 </p>
 
-                <p class="entr_content" id="en-1">Welcome to the&nbsp;&nbsp;
+                <p id="en-1">Welcome to the&nbsp;&nbsp;
                     <em>GameMaker:Studio</em>&nbsp;user manual! This document is divided into three parts with the aim of getting you introduced to the interface and basic workings of&nbsp;&nbsp;
                     <em>GameMaker:Studio</em>&nbsp;before going on to more advanced usage and the functions available through&nbsp;&nbsp;
                     <strong>GML</strong>&nbsp;(the&nbsp;&nbsp;
@@ -59,7 +65,7 @@
                     <button class="button  entr_click " data_entr="en-2">英文</button>
                 </p>
 
-                <p class="entr_content" id="en-2">
+                <p id="en-2">
                     <br />
                     <em>
                         <strong>NOTE :&nbsp;</strong>Due to the modular nature of&nbsp;
@@ -69,7 +75,7 @@
                 <!-- notes tip down-->
 
                 <p>
-                    <a href="#menu_left" class="button tooltips" title="点击此按钮打开左侧目录菜单。">
+                    <a href="#menu_left" class="button" title="点击此按钮打开左侧目录菜单。">
                         打开菜单
                     </a>
 
@@ -88,7 +94,7 @@
                     <button class="button  entr_click " data_entr="en-3">英文</button>
                 </p>
 
-                <p class="entr_content" id="en-3">This section describes the basic use of&nbsp;
+                <p  id="en-3">This section describes the basic use of&nbsp;
                     <em>GameMaker:Studio</em>, explaining the idea behind the program and describing how to add sprites, backgrounds and sounds. It also covers how to define objects with events and actions, and how to add them into to the rooms that you design. Please note that the availability of certain tools and the number of certain resources that you can create may be restricted depending on the version of&nbsp;
                     <em>GameMaker:Studio</em>&nbsp;that you use (more information can be found&nbsp;
                     <a href="000_Using%20GameMaker/Versions.html">here</a>).&nbsp;
@@ -145,7 +151,7 @@
 
 
                 <p>
-                    <a href="#" class="button popup_left" data_page_url="/002_Reference/HTML5/url_open.html" id="ceshipopupleft1">查看教程</a>
+                    <a href="/002_Reference/HTML5/url_open.html" class="button popup_left"  id="ceshipopupleft1">查看教程</a>
                 </p>
 
                 <p>
@@ -169,7 +175,7 @@
                     <button class="button  entr_click " data_entr="en-4">英文</button>
                 </p>
 
-                <p class="entr_content" id="en-4">The&nbsp;
+                <p id="en-4">The&nbsp;
                     <em>GameMaker:Studio</em>&nbsp;IDE (integrated development environment) has a number of advanced options that are of great importance if you wish to get the most out of the product. These options include source control integration, project configurations, advanced debugging and a number of extra tools for changing and manipulating the game assets (please note that the availability of some of these advanced tools will depend on the&nbsp;
                     <a href="000_Using%20GameMaker/Versions.html">version of&nbsp;
                         <em>GameMaker:Studio</em>
@@ -274,7 +280,7 @@
                     <button class="button  entr_click " data_entr="en-5">英文</button>
                 </p>
 
-                <div class="entr_content" id="en-5">
+                <div id="en-5">
                     <p>Here you can find references for many of the&nbsp;
                         <em>GameMaker:Studio</em>&nbsp;features, as well as a rundown of all of the functions, variables and constants that make up the built-in programming language. This language gives you much more flexibility and control over your games than the standard actions and we will refer to it as GML (the&nbsp;
                         <em>GameMaker</em>&nbsp;Language). You can find descriptions of all the functions available in GML as well as an overview of how they can be used along with examples of code using them. We also cover the constants and variables that GML has available to control all aspects of your game.</p>
@@ -296,7 +302,7 @@
                     <button class="button  entr_click " data_entr="en-6">英文</button>
                 </p>
 
-                <p class="entr_content" id="en-6">The following sections all detail the many different functions that are available to you when using GML. They have been split into different groups of associated functions and, where necessary, have been cross referenced with related functions and sections.</p>
+                <p id="en-6">The following sections all detail the many different functions that are available to you when using GML. They have been split into different groups of associated functions and, where necessary, have been cross referenced with related functions and sections.</p>
 
                 <blockquote>
                     <h4>Real Numbers And Strings 实数与字符串</h4>
@@ -473,7 +479,7 @@
                 </p>
 
                 <p>
-                    <a href="#menu_right" class="button tooltips" title="打开右侧贡献者名单。">
+                    <a href="#menu_right" class="button" title="打开右侧贡献者名单。">
                         贡献者名单
                     </a>
                 </p>
