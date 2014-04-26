@@ -361,11 +361,11 @@
 							</li>							
 							<li><a href="#">Configurations 配置</a></li>
 							<li>
-								<a href="../../001_Advanced Use/Source Control/index.html">源代码控制</a>
+								<a href="../../001_Advanced Use/Source Control/index.html">源代码管理</a>
 								<ul>
-									<li><a href="../../001_Advanced Use/Source Control/Getting Started With Source Control.html">源代码控制入门引导</a></li>
-									<li><a href="../../001_Advanced Use/Source Control/Setting Up GM For Source Control.html">设置GMS进行源代码控制</a></li>
-									<li><a href="../../001_Advanced Use/Source Control/Using Source Control.html">GMS源代码控制的使用</a></li>														
+									<li><a href="../../001_Advanced Use/Source Control/Getting Started With Source Control.html">源代码管理入门引导</a></li>
+									<li><a href="../../001_Advanced Use/Source Control/Setting Up GM For Source Control.html">设置GMS进行源代码管理</a></li>
+									<li><a href="../../001_Advanced Use/Source Control/Using Source Control.html">GMS源代码管理的使用</a></li>														
 								</ul>
 							</li>							
 							<li>
@@ -375,7 +375,7 @@
 									<li><a href="../../001_Advanced Use/Global game settings/Texture Groups Tab.html">Texture Groups 纹理组</a></li>
 									<li><a href="../../001_Advanced Use/Global game settings/Project Info Tab.html">Project Info 项目信息</a></li>
 									<li><a href="../../001_Advanced Use/Global game settings/Facebook Tab.html">Facebook 脸书</a></li>
-									<li><a href="../../001_Advanced Use/Global game settings/Source Control Tab.html">Source Control 代码控制</a></li>
+									<li><a href="../../001_Advanced Use/Global game settings/Source Control Tab.html">Source Control 源代码管理</a></li>
 									<li><a href="../../001_Advanced Use/Global game settings/Advertising Tab.html">Advertising 广告</a></li>
 									<li><a href="../../001_Advanced Use/Global game settings/Analytics Tab.html">Analytics 应用数据分析</a></li>
 									<li><a href="../../001_Advanced Use/Global game settings/In App Purchases Tab.html">IAP应用内部付费</a></li>
@@ -409,7 +409,7 @@
 									<li><a href="../../001_Advanced Use/Preferences/Mac Preferences.html">Mac OS</a></li>
 									<li><a href="../../001_Advanced Use/Preferences/Linux Preferences.html">Ubuntu (Linux)</a></li>
 									<li><a href="../../001_Advanced Use/Preferences/Steam Preferences.html">Steam</a></li>	
-									<li><a href="../../001_Advanced Use/Preferences/Source Control Preferences.html">Source Control 代码控制</a></li>														
+									<li><a href="../../001_Advanced Use/Preferences/Source Control Preferences.html">Source Control 源代码管理</a></li>														
 								</ul>
 							</li>
 							<li><a href="../../001_Advanced Use/011_Debugging.html">Debugging 调试</a></li>
