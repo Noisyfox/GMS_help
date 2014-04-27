@@ -100,18 +100,16 @@
             <h3>Description 描述</h3>
 
             <p>这个函数简单的从一个表面获取图像，复制到另外一个表面的特定位置（&nbsp;如(0,0)，是目标表面图层的左上角）。你可以选定源表面的一个特定坐标和大小的区域进行复制。请注意，坐标是基于表面的起始点，而不是表面所在的房间（查看
-                <a href="index.html">Surfaces</a>主页获得更多的信息）。如果目标表面已经有内容了，将会被拷贝版本重写，而这个函数不会通过任何方式改变源表面的内容。</p>
-
-            <p>
+                <a href="index.html">Surfaces</a>主页获得更多的信息）。如果目标表面已经有内容了，将会被拷贝版本重写，而这个函数不会通过任何方式改变源表面的内容。</br></br>
                 <i>
                     <b>注意 :</b>当表面工作的时候，因为储存在显存里，可能会随时停止工作并退出。在直接引用之前，你应该一直使用
                     <tt>
                         <a href="surface_exists.html">surface_exists</a>
                     </tt>&nbsp; 检测这个表面是否会退出，更多信息请查阅
                     <a href="index.html">Surfaces</a>。&nbsp;</i>
-            </p>
+            <button class="button  entr_click " data_entr="en-1">英文</button></p>
 
-            <p>This function simply takes the image from one surface and copies it onto another one at the specified local position within that surface (where the (0,0) position is the top left corner of the destination surface). You can specify a local x and y position to copy from as well as the width and height of the section. Please note that these are coordinartes based on the
+            <p id="en-1">This function simply takes the image from one surface and copies it onto another one at the specified local position within that surface (where the (0,0) position is the top left corner of the destination surface). You can specify a local x and y position to copy from as well as the width and height of the section. Please note that these are coordinartes based on the
                 <i>surface size</i>and not on the position at which the surface is being drawn in the room (see the main page on
                 <a href="index.html">Surfaces</a>for further information). If the destination surface already has information this will be over-written by the copy, and the function does
                 <i>not</i>change the source surface in any way.
@@ -141,9 +139,9 @@
                 <br />&nbsp;&nbsp;&nbsp;}
             </p>
 
-            <p>上述代码将检测当前被绘制的视野是否为view[0]，如果是，则复制变量为&quot;temp_surf&quot;的表面到变量为&nbsp;&quot;surf&quot;的表面。被复制的区域相当于一个矩形，截取自表面内相对鼠标的位置，它将在view[1]里绘制。如果检测的不是&nbsp;view[0]，将直接在屏幕上绘制&nbsp;&quot;surf&quot;表面。</p>
+            <p>上述代码将检测当前被绘制的视野是否为view[0]，如果是，则复制变量为&quot;temp_surf&quot;的表面到变量为&nbsp;&quot;surf&quot;的表面。被复制的区域相当于一个矩形，截取自表面内相对鼠标的位置，它将在view[1]里绘制。如果检测的不是&nbsp;view[0]，将直接在屏幕上绘制&nbsp;&quot;surf&quot;表面。<button class="button  entr_click " data_entr="en-2">英文</button></p>
 
-            <p>The above code will check the current view being drawn and if it is view[0] it copies the surface indexed in the variable &quot;temp_surf&quot; onto the surface indexed in the variable &quot;surf&quot;. the area copied corresponds to a rectangle formed by the relative position of the mouse within the surface as it would be drawn in view[1]. If the current view is anything other than view[0] the surface &quot;surf&quot; is drawn to the screen.</p>
+            <p id="en-2">The above code will check the current view being drawn and if it is view[0] it copies the surface indexed in the variable &quot;temp_surf&quot; onto the surface indexed in the variable &quot;surf&quot;. the area copied corresponds to a rectangle formed by the relative position of the mouse within the surface as it would be drawn in view[1]. If the current view is anything other than view[0] the surface &quot;surf&quot; is drawn to the screen.</p>
 
             <p>
                 <strong>注：</strong>这个例子用了view_copy的函数，并没有用到surface_copy_part，所以会不会执行成功呢。</p>
@@ -158,7 +156,7 @@
                 <div class="clear">
                     <div style="float:left">
                         Back :
-                        <a href="index.html">Surfaces</a>
+                        <a href="index.html">Surfaces 表面图层</a>
                     </div>
                     <div style="float:right">
                         Next :

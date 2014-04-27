@@ -1,74 +1,66 @@
 <!doctype html>
-<html><!-- InstanceBegin template="/Templates/GMS_helppage.dwt" codeOutsideHTMLIsLocked="false" -->
+<html>
+<!-- InstanceBegin template="/Templates/GMS_helppage.dwt" codeOutsideHTMLIsLocked="false" -->
 
 <head>
     <!-- InstanceBeginEditable name="doctitle" -->
-    
+
     <title>Surfaces 表面</title>
     <!-- InstanceEndEditable -->
     <meta http-equiv="X-UA-Compatible" content="IE=9" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" />    
+    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" />
     <link rel="stylesheet" href="../../src/css/style.css" type="text/css" media="screen" title="style" charset="utf-8" />
-    <link type="text/css" rel="stylesheet" href="../../src/css/jquery.mmenu.all.css" /> 
-     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <link type="text/css" rel="stylesheet" href="../../src/css/jquery.mmenu.all.css" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->   
-    <link rel="icon" type="../image/png" href="favicon.png">    
-    <!-- InstanceParam name="OptionalRegion_footer" type="boolean" value="false" -->    
+    <![endif]-->
+    <link rel="icon" type="../image/png" href="favicon.png">
+    <!-- InstanceParam name="OptionalRegion_footer" type="boolean" value="false" -->
 </head>
 
 <body bgcolor="#FFFFFF">
     <div id="page">
         <div id="header" class="mm-fixed-top">
-           <a href="#menu_left" class="menu_left" title="点击此按钮打开左侧目录菜单，右边的按钮则打开右侧菜单。"></a>
+            <a href="#menu_left" class="menu_left" title="点击此按钮打开左侧目录菜单，右边的按钮则打开右侧菜单。"></a>
             <!-- InstanceBeginEditable name="EditRegion_pagetitle" -->点击左边图标打开菜单
             <!-- InstanceEndEditable -->
             <a href="#menu_right" class="friends right"></a>
         </div>
         <div id="content">
             <!-- InstanceBeginEditable name="EditRegion_content" -->
-            <h1>Surfaces &#34920;&#38754;
-                <br>
-            </h1>
+            <h1>Surfaces &#34920;&#38754;</h1>
 
             <h2>本章节讨论关于创建和操作表面的函数。This section deals with the functions related to creating and manipulating surfaces.</h2>
 
             <p>在某些情况下，您可能不希望直接绘制到屏幕上，而是要先在&ldquo;画布&rdquo;上绘制，之后有需要的时候再调整并绘制到屏幕上。这样的画布称为表面，在使用
-                <em>GameMaker:Studio</em>制作游戏时，表面可以是一个非常强大的图形工具。例如，您可以使用表面来“捕捉”实例，然后摧毁它，并以这种方式，在表面(surfaces)上，实例的精灵显示的位置，创建一个贴花效果，就好像它仍然存在一样，以此来制作一些图像效果，如碎片，血液等.. 这上面没有任何真实的处理进程。另外就是使用表面作为需要操作的纹理贴图，或者创建“在飞”的精灵，或者创建复杂的叠加。事实上，表面的用途是无穷的！</p>
-            <p>In certain situations you might not want to directly draw to the screen but rather to a &quot;canvas&quot; that can then later be manipulated and drawn to the screen when needed. Such a canvas is called a surface, and surfaces can be a very powerful graphic tool when making games using
+                <em>GameMaker:Studio</em>制作游戏时，表面可以是一个非常强大的图形工具。例如，您可以使用表面来“捕捉”实例，然后摧毁它，并以这种方式，在表面(surfaces)上，实例的精灵显示的位置，创建一个贴花效果，就好像它仍然存在一样，以此来制作一些图像效果，如碎片，血液等.. 这上面没有任何真实的处理进程。另外就是使用表面作为需要操作的纹理贴图，或者创建“在飞”的精灵，或者创建复杂的叠加。事实上，表面的用途是无穷的！
+                </br>
+                </br>
+                表面使用很简单，但在使用的时候，也有几个应遵循的基本规则。 
+
+                <button class="button  entr_click " data_entr="en-1">en</button>
+            </p>
+            <p id="en-1">In certain situations you might not want to directly draw to the screen but rather to a &quot;canvas&quot; that can then later be manipulated and drawn to the screen when needed. Such a canvas is called a surface, and surfaces can be a very powerful graphic tool when making games using
                 <em>GameMaker:Studio</em>. For example, you can use surfaces to &quot;catch&quot; instances, which can then be destroyed, and in this way you can create a decal effect where the sprite for the instance is displayed on the surface as if it still existed, permitting graphical effects like debris, blood, etc... without any real processing overhead. Another thing you can do with surfaces is use them as textures to be manipulated, or to create sprites &quot;on the fly&quot;, or to create complex overlays. in fact, the uses for surfaces are endless!
                 <br />
-                <br />Surfaces are quite easy to use, but there are a few basic rules to be followed when you use them。
-                <br>
-                <br>表面是很容易使用，但在使用的时候，也有几个应遵循的基本规则： </p>
+                <br />Surfaces are quite easy to use, but there are a few basic rules to be followed when you use them。</p>
+            <p></p>
             <blockquote>
                 <ul>
                     <li>首先，你应该明白，表面上是“不稳定的”。这意味着，如果设备或窗口失去焦点或最小化（很好的例子是，当屏Windows弹出屏幕保护程序或Android 设备来电话时应用程序失去焦点的情况），表面可能会被破坏。这是因为它是存储在显存里，目标平台可能需要其往显存里写入其它内容，这意味着，你应该始终在恰当的位置放置某种类型的故障安全码，通常是使用
                         <a href="surface_exists.html">
                             <tt>surface_exists</tt>
                         </a>这个函数。
-                        <br>
-                        <br>
+                        <button class="button  entr_click " data_entr="en-2">en</button>
+                        </br>
+                        </br>
 
                     </li>
-                    <li>其次，你应该注意，使用表面需要大量的显存，所以你应该尽可能的让它们更小，通常不要超过视野或者显示窗口的大小。
-                        <br>
-                        <br>
-
-                    </li>
-                    <li>第三，你应该尽可能的在绘制事件中向表面绘制内容。并不强求如此，但根据
-                        <em>GameMaker:Studio</em>在屏幕上绘制的优化方式，建议你保持在绘制事件中使用绘制函数。
-                        <br>
-                        <br>
-
-                    </li>
-                    <li>第四，当手动绘制表面时，表面总是在房间内的（0,0）位置。这意味着你可能需要为表面转换坐标，从绝对坐标转换到局部坐标系。例如，如果你有一个视野尺寸大小的表面，并希望在当前视野上往表面里绘制一些东西，你应该从实际的X/Y坐标减去视角的X/Y坐标，得到表面（ 0,0）的相对位置。因此，代码可以这样写。</li>
-                    <br />
-                    <li>First, you should realise that surfaces are &quot;volatile&quot;. This means that if the device or window loses focus or is minimised (good examples are when a screensaver comes up in Windows, or on an Android device when the app loses focus due to a call) then the surface may be destroyed. This is because it is stored in the vRam and may be overwritten when the target platform needs that memory for something else which means that you should
+                    <li id="en-2">First, you should realise that surfaces are &quot;volatile&quot;. This means that if the device or window loses focus or is minimised (good examples are when a screensaver comes up in Windows, or on an Android device when the app loses focus due to a call) then the surface may be destroyed. This is because it is stored in the vRam and may be overwritten when the target platform needs that memory for something else which means that you should
                         <em>
                             <strong>always</strong>
                         </em> have some type of fail-safe code in place, usually with the
@@ -76,46 +68,65 @@
                         <br />
                         <br />
                     </li>
-                    <li>Second, you should note that surfaces require large quantities of vRam to be used, and so you should attempt to keep them as small as possible. Normally you would try and keep them no larger than the size of the view or display window.
+                    <li>其次，你应该注意，使用表面需要大量的显存，所以你应该尽可能的让它们更小，通常不要超过视野或者显示窗口的大小。
+                        <button class="button  entr_click " data_entr="en-3">en</button>
+                        </br>
+                        </br>
+
+                    </li>
+                    <li id="en-3">Second, you should note that surfaces require large quantities of vRam to be used, and so you should attempt to keep them as small as possible. Normally you would try and keep them no larger than the size of the view or display window.
                         <br />
                         <br />
                     </li>
-                    <li>Third, you should try to draw to surfaces in the draw event. This is not always possible, but due to the optimised way in which
+                    <li>第三，你应该尽可能的在绘制事件中向表面绘制内容。并不强求如此，但根据
+                        <em>GameMaker:Studio</em>在屏幕上绘制的优化方式，建议你保持在绘制事件中使用绘制函数。
+                        <button class="button  entr_click " data_entr="en-4">en</button>
+                        <br>
+                        <br>
+
+                    </li>
+                    <li id="en-4">Third, you should try to draw to surfaces in the draw event. This is not always possible, but due to the optimised way in which
                         <em>GameMaker:Studio</em> draws to the screen, it is recommended that you keep all draw functions
                         <em>within the draw event</em>.
                         <br />
                         <br />
                     </li>
-                    <li>Fourth, when drawing to a surface manually, the surface is
+                    <li>第四，当手动绘制表面时，表面总是在房间内的（0,0）位置。这意味着你可能需要为表面转换坐标，从绝对坐标转换到局部坐标系。例如，如果你有一个视野尺寸大小的表面，并希望在当前视野上往表面里绘制一些东西，你应该从实际的X/Y坐标减去视角的X/Y坐标，得到表面（ 0,0）的相对位置。因此，代码可以这样写。
+                        <button class="button  entr_click " data_entr="en-5">en</button>
+
+
+                    </li>
+                    <br />
+                    <li id="en-5">Fourth, when drawing to a surface manually, the surface is
                         <em>always</em> at the position of (0,0) within the room. This means that you may need to convert absolute coordinates into local coordinates for the surface. For example, if you have a view-sized surface and wish to draw something that is currently in view to that surface, you should subtract the view x and y coordinates from the actual x and y coordinates to get a relative position to the surface (0,0) position. So, the code would look something like this:
                         <br>
                         <br>
-                        <p class="code">
-                            if view_current = 0
-                            <br>&nbsp;&nbsp;&nbsp;{
-                            <br>&nbsp;&nbsp;&nbsp;surface_set_target(surf);
-                            <br>&nbsp;&nbsp;&nbsp;with (obj_Effect)
-                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
-                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;draw_sprite(sprite_index, image_index, x - view_xview[1], y - view_yview[1]);
-                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-                            <br>&nbsp;&nbsp;&nbsp;surface_reset_target();
-                            <br>&nbsp;&nbsp;&nbsp;}
-                            <br>else
-                            <br>&nbsp;&nbsp;&nbsp;{
-                            <br>&nbsp;&nbsp;&nbsp;draw_surface(surf, 0, 0);
-                            <br>&nbsp;&nbsp;&nbsp;}
-                            <br>
-                        </p>
+
                     </li>
+                    <p class="code">
+                        if view_current = 0
+                        <br>&nbsp;&nbsp;&nbsp;{
+                        <br>&nbsp;&nbsp;&nbsp;surface_set_target(surf);
+                        <br>&nbsp;&nbsp;&nbsp;with (obj_Effect)
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;draw_sprite(sprite_index, image_index, x - view_xview[1], y - view_yview[1]);
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                        <br>&nbsp;&nbsp;&nbsp;surface_reset_target();
+                        <br>&nbsp;&nbsp;&nbsp;}
+                        <br>else
+                        <br>&nbsp;&nbsp;&nbsp;{
+                        <br>&nbsp;&nbsp;&nbsp;draw_surface(surf, 0, 0);
+                        <br>&nbsp;&nbsp;&nbsp;}
+                        <br>
+                    </p>
                 </ul>
             </blockquote>
 
             <p>表面的基本用法如下-首先创建一个表面，给它的索引分配给一个变量。然后你可以设置绘图目标到表面上，而不是显示器，往里面绘制内容并进行一些调整。一旦完成，重置绘制目标，再让进一步的绘制发生在屏幕上。一点要注意的是，如果你要求向表面绘制整个显示内容（包括图块、背景等等……），你应该使用变量
-                <a href="../Windows%20And%20Views/Views/view_surface_id.html">view_surface_id[0..7]</a>，将表面指定给一个视野。以这种方式，视野中可见的内容将被绘制到相应的表面。 </p>
-            <p>The basic use of a surface would be as follows - You first create a surface and assign it's index to a variable. You would then set the drawing target to the surface rather than the display and draw the things you wish as well as perform any other manipulations. Once you are done you reset the drawing target so that all further drawing happens on the screen again. One thing to note is that should you require drawing the whole display to a surface (including tiles, backgrounds etc...) you should assign a surface to a view using the variable
-                <a href="../Windows%20And%20Views/Views/view_surface_id.html">view_surface_id[0..7]</a>. In this way, all that is visible in that view will be drawn to the corresponding surface.
-                <br>
-                <br>存在以下函数用来处理表面的问题：
+                <a href="../Windows%20And%20Views/Views/view_surface_id.html">view_surface_id[0..7]</a>，将表面指定给一个视野。以这种方式，视野中可见的内容将被绘制到相应的表面。<button class="button  entr_click " data_entr="en-6">en</button> </p>
+            <p id="en-6">The basic use of a surface would be as follows - You first create a surface and assign it's index to a variable. You would then set the drawing target to the surface rather than the display and draw the things you wish as well as perform any other manipulations. Once you are done you reset the drawing target so that all further drawing happens on the screen again. One thing to note is that should you require drawing the whole display to a surface (including tiles, backgrounds etc...) you should assign a surface to a view using the variable
+                <a href="../Windows%20And%20Views/Views/view_surface_id.html">view_surface_id[0..7]</a>. In this way, all that is visible in that view will be drawn to the corresponding surface.</p>
+                <p><br>存在以下函数用来处理表面的问题：
                 <br />
             </p>
             <blockquote>
@@ -176,8 +187,8 @@
             </blockquote>
 
             <p>这些函数是专门用于创建和调整表面，但要真正绘制到屏幕上，你应该使用特定的绘制函数，可以在
-                <a href="../Drawing/Drawing%20Surfaces/index.html">Drawing Surfaces</a>这一节找到相关内容&#12290;</p>
-            <p>These functions are specific for creating and manipulating surfaces, but to actually draw them to the screen you should be using the specific draw functions that can be found in the section on
+                <a href="../Drawing/Drawing%20Surfaces/index.html">Drawing Surfaces</a>这一节找到相关内容&#12290;<button class="button  entr_click " data_entr="en-7">en</button></p>
+            <p id="en-7">These functions are specific for creating and manipulating surfaces, but to actually draw them to the screen you should be using the specific draw functions that can be found in the section on
                 <a href="../Drawing/Drawing%20Surfaces/index.html">Drawing Surfaces</a>.
                 <br>
                 <br>
@@ -201,13 +212,13 @@
 
             <!-- InstanceEndEditable -->
         </div>
-                
+
         <div id="page_popup">
-            <div class="popup " >
+            <div class="popup ">
                 <div>
                     <a href="#page" class="close">x</a>
                     <div>
-                    	<h4>喵~</h4>
+                        <h4>喵~</h4>
                         <p>欢迎，这里是404号猫国皇室会所~~</p>
                         <p>因为找不到其它的地方，你来到了这里。</p>
                     </div>
@@ -238,7 +249,7 @@
             <nav id="menu_right">
             </nav>
         </div>
-        
+
         <!-- KEYWORDS
         pages
         -->
@@ -247,7 +258,9 @@
     <script type="text/javascript" src="../../src/js/jquery.min.js"></script>
     <script type="text/javascript" src="../../src/js/jquery.mmenu.min.all_old.js"></script>
     <script type="text/javascript" src="../../src/js/subpage.js"></script>
-    
+
 </body>
 
-<!-- InstanceEnd --></html>
+<!-- InstanceEnd -->
+
+</html>

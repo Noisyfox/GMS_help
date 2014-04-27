@@ -65,6 +65,13 @@ p strong,b{
 	color:#C2C2C2;
 	}
 
+br {
+
+  margin:0;
+  padding:0.5em 1em;
+  background:#242424;
+}
+
 center{
   background:#242424;
 }
@@ -179,7 +186,15 @@ ol.ext{
 border-bottom:1em solid #1C1C1C;
 }*/
 
-.code{ font-family:monospace; background:#333; color:#FFF; }
+.code
+{ 
+    font-family:monospace; 
+    background:#333; color:#FFF;
+    
+
+
+}
+
 .label{ font-family:Verdana, Helvetica, Arial, sans-serif; }
 
 /* Links */
@@ -551,13 +566,13 @@ background:#242424;
 border:1px solid #bbb;
 text-shadow:0px 1px 0px #fff;
 box-shadow:0px 4px 1px #000000;
--moz-box-shadow:0px 4px 1px #000000;
--webkit-box-shadow:0px 4px 1px #000000;
+-moz-box-shadow:0px 2px 1px #000000;
+-webkit-box-shadow:0px 2px 1px #000000;
 border-radius:3px 3px 3px 3px;
 -moz-border-radius:3px 3px 3px 3px;
 -webkit-border-radius:3px 3px 3px 3px;
 width:auto;
-padding:0.1em 0.5em;
+padding:0.05em 0.2em;
 cursor:pointer;
 margin:0 auto;
 }
