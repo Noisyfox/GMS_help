@@ -27,88 +27,72 @@
             <!-- InstanceBeginEditable name="EditRegion_pagetitle" -->点击左边图标打开菜单<!-- InstanceEndEditable -->
             <a href="#menu_right" class="friends right"></a>
         </div>
-        <div id="content">
-            <!-- InstanceBeginEditable name="EditRegion_content" -->
-<h1>surface_free</h1>
+        <div id="content"><!-- InstanceBeginEditable name="EditRegion_content" -->
+        <h1>surface_free</h1>
 
-<h2>Destroys the surface, freeing it from memory.</h2>
+        <h2>破坏表面图层，并从内存中释放。Destroys the surface, freeing it from memory.</h2>
 
-<h3>Syntax :</h3>
-<p class="code">surface_free(index);</p>
+        <h3>Syntax :</h3>
 
-<p>
-<br>
-</p>
+        <p class="code">surface_free(index);</p>
 
-<div class="param">
-<table>
-	<tr><th>Argument</th><th>Description</th></tr>
-	
-	<tr><td>index</td>
-	<td>The index of the surface to be freed.</td></tr>
+        <p>&nbsp;</p>
 
-</table>
-</div>
-
-<p>
-<br>
-</p>
-  
-<p>
-<b>Returns : </b>N/A
-</p>
-
- <p>
-<br>
-</p>
-
-<h3>Description</h3>
-<p>
-When you are working with surfaces, you should always use this function whenever you are finished using them. Surfaces take up space in memory and so need to be removed, normally at the end 
-of a room, but it can be done at any time depending on the use you put them to. Failure to do so can cause memory leaks which will eventually slow down and crash 
-your game.
-<br>
-<br>
-
-<i><b>NOTE : </b>When working with surfaces there is the possibility that they can cease to exist at any time due to them being stored in vRam. You should <b>ALWAYS</b> check that a surface 
-exists using <a href="surface_exists.html"><tt>surface_exists</tt></a> before referencing them directly. For futher information see <a href="index.html">Surfaces</a>.</i>
-<br>
-<br>
-
-<p>
-<br>
-</p>
-
-<h3>Example :</h3>
-<p class="code">
-if keyboard_check_pressed(vk_escape)<br>
-&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;surface_free(surf);<br>
-&nbsp;&nbsp;&nbsp;room_goto(rm_Menu);<br>
-&nbsp;&nbsp;&nbsp;}<br>
-</p>
-<p>
-
-The above code checks for a key press and if it detects one it frees the memory reserved for the surface indexed in the variable "surf" and then changes room.</p>
-
-<p>
-<br>
-</p>
-<p>
-
-<div class="clear">
-	<div style="float:left">
-		Back : <a href="index.html">Surfaces</a>
-	</div>
-	<div style="float:right">
-		Next : <a href="surface_save.html">surface_save</a>
-	</div>
-</div>
-</p>
-
-<h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
-  <!-- InstanceEndEditable -->
+        <div class="param">
+        <table>
+        	<tbody>
+        		<tr>
+        			<th>Argument</th>
+        			<th>Description</th>
+        		</tr>
+        		<tr>
+        			<td>index</td>
+        			<td>The index of the surface to be freed.</td>
+        		</tr>
+        	</tbody>
+        </table>
         </div>
+
+        <p>&nbsp;</p>
+
+        <p><b>Returns : </b>N/A</p>
+
+        <p>&nbsp;</p>
+
+        <h3>Description</h3>
+
+        <p>When you are working with surfaces, you should always use this function whenever you are finished using them. Surfaces take up space in memory and so need to be removed, normally at the end of a room, but it can be done at any time depending on the use you put them to. Failure to do so can cause memory leaks which will eventually slow down and crash your game.<br />
+        <br />
+        <i><b>NOTE : </b>When working with surfaces there is the possibility that they can cease to exist at any time due to them being stored in vRam. You should <b>ALWAYS</b> check that a surface exists using <a href="surface_exists.html"><tt>surface_exists</tt></a> before referencing them directly. For futher information see <a href="index.html">Surfaces</a>.</i><br />
+        &nbsp;</p>
+
+        <p>&nbsp;</p>
+
+        <h3>Example :</h3>
+
+        <p class="code">if keyboard_check_pressed(vk_escape)<br />
+        &nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;surface_free(surf);<br />
+        &nbsp;&nbsp;&nbsp;room_goto(rm_Menu);<br />
+        &nbsp;&nbsp;&nbsp;}</p>
+
+        <p>The above code checks for a key press and if it detects one it frees the memory reserved for the surface indexed in the variable &quot;surf&quot; and then changes room.</p>
+
+        <p>&nbsp;</p>
+
+        <p>&nbsp;</p>
+
+        <div class="clear">
+        <div style="float:left">Back : <a href="index.html">Surfaces</a></div>
+
+        <div style="float:right">Next : <a href="surface_save.html">surface_save</a></div>
+        </div>
+
+        <p>&nbsp;</p>
+
+        <h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
+        <!-- InstanceEndEditable --></div>
+
                 
         <div id="page_popup">
             <div class="popup " >

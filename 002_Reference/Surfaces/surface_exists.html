@@ -29,91 +29,80 @@
             <!-- InstanceEndEditable -->
             <a href="#menu_right" class="friends right"></a>
         </div>
-        <div id="content">
-            <!-- InstanceBeginEditable name="EditRegion_content" -->
-            <h1>surface_exists</h1>
+        <div id="content"><!-- InstanceBeginEditable name="EditRegion_content" -->
+        <h1>surface_exists</h1>
 
-            <h2>查询给定的表面是否存在。 Finds whether a given surface exists or not.</h2>
+        <h2>查询给定的表面是否存在。 Finds whether a given surface exists or not.</h2>
 
-            <h3>Syntax 用法:</h3>
+        <h3>Syntax 用法:</h3>
 
-            <p class="code">surface_exists(index);</p>
+        <p class="code">surface_exists(index);</p>
 
-            <p>&nbsp;</p>
+        <p>&nbsp;</p>
 
-            <div class="param">
-                <table>
-                    <tbody>
-                        <tr>
-                            <th>Argument</th>
-                            <th>Description</th>
-                        </tr>
-                        <tr>
-                            <td>index</td>
-                            <td>需要检测的表面的索引文件。The index of the surface to check.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <p>&nbsp;</p>
-
-            <p>
-                <b>Returns 返回:</b>Boolean 布尔值</p>
-
-            <p>&nbsp;</p>
-
-            <h3>Description 描述</h3>
-
-            <p>由于表面图层的不稳定性，在使用到表面时，这个函数还是有必要的。表面一直保存在显存里，这意味着从这一刻到另一刻（比如，电脑启动屏幕时，或者安卓设备最小化时），它可能会被破坏，所以在做与表面图层相关的操作之前，你一直都需要检测是否存在一个表面（包括向屏幕绘制表面）。下面是这个命令在实例绘制事件中检测表面图层的典型使用，如果发现被破坏了就会重新创建（注意，表面将在创建事件中提前创建好）。</p>
-
-            <p>This function is essential when working with surfaces due to their volatile nature. Surfaces are always held in vRam which means that they can be destroyed from one moment to the next (for example, when a screensaver starts on windows, or when minimised on an Android device), so you should always check that a surface exists before doing anything with it (this includes drawing it to the screen). The example code below shows a typical use of this command in the draw event of an instance to check for a surface and re-create it if it has been removed (note that the surface will have been originally created in the create event of the object).
-                <br />&nbsp;
-            </p>
-
-
-
-            <p>&nbsp;</p>
-
-            <h3>Example 例子:</h3>
-
-            <p class="code">if !surface_exists(surf)
-                <br />&nbsp;&nbsp;&nbsp;{
-                <br />&nbsp;&nbsp;&nbsp;surf = surface_create(1024, 1024);
-                <br />&nbsp;&nbsp;&nbsp;}
-                <br />else
-                <br />&nbsp;&nbsp;&nbsp;{
-                <br />&nbsp;&nbsp;&nbsp;if view_current = 1
-                <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
-                <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;draw_surface(surf,0,0);
-                <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-                <br />&nbsp;&nbsp;&nbsp;}
-            </p>
-
-            <p>上面的例子中将检测变量为&nbsp;&quot;surf&quot;的表面图层是否存在，如果不存在，将重新创建一个。如果存在，然后会检测当前视野是哪一个，是&nbsp;view[1]的话就绘制表面。</p>
-
-            <p>The above code will check to see if a surface indexed in the variable &quot;surf&quot; exists, and if it does not, it will re-create it. If it does exist, it then checks to see which view is currently being drawn and if it is view[1] it draws the surface.</p>
-
-
-            <p>&nbsp;</p>
-
-            <p>&nbsp;</p>
-
-            <div class="clear">
-                <div style="float:left">Back :
-                    <a href="index.html">Surfaces</a>
-                </div>
-
-                <div style="float:right">Next :
-                    <a href="surface_create.html">surface_create</a>
-                </div>
-            </div>
-
-            <p>&nbsp;</p>
-
-            <h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
-            <!-- InstanceEndEditable -->
+        <div class="param">
+        <table>
+        	<tbody>
+        		<tr>
+        			<th>Argument</th>
+        			<th>Description</th>
+        		</tr>
+        		<tr>
+        			<td>index</td>
+        			<td>需要检测的表面的索引文件。The index of the surface to check.</td>
+        		</tr>
+        	</tbody>
+        </table>
         </div>
+
+        <p>&nbsp;</p>
+
+        <p><b>Returns 返回:</b>Boolean 布尔值</p>
+
+        <p>&nbsp;</p>
+
+        <h3>Description 描述</h3>
+
+        <p>由于表面图层的不稳定性，在使用到表面时，这个函数还是有必要的。表面一直保存在显存里，这意味着从这一刻到另一刻（比如，电脑启动屏幕时，或者安卓设备最小化时），它可能会被破坏，所以在做与表面图层相关的操作之前，你一直都需要检测是否存在一个表面（包括向屏幕绘制表面）。下面是这个命令在实例绘制事件中检测表面图层的典型使用，如果发现被破坏了就会重新创建（注意，表面将在创建事件中提前创建好）。</p>
+
+        <p>This function is essential when working with surfaces due to their volatile nature. Surfaces are always held in vRam which means that they can be destroyed from one moment to the next (for example, when a screensaver starts on windows, or when minimised on an Android device), so you should always check that a surface exists before doing anything with it (this includes drawing it to the screen). The example code below shows a typical use of this command in the draw event of an instance to check for a surface and re-create it if it has been removed (note that the surface will have been originally created in the create event of the object).<br />
+        &nbsp;</p>
+
+        <p>&nbsp;</p>
+
+        <h3>Example 例子:</h3>
+
+        <p class="code">if !surface_exists(surf)<br />
+        &nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;surf = surface_create(1024, 1024);<br />
+        &nbsp;&nbsp;&nbsp;}<br />
+        else<br />
+        &nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;if view_current = 1<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;draw_surface(surf,0,0);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;}</p>
+
+        <p>上面的例子中将检测变量为&nbsp;&quot;surf&quot;的表面图层是否存在，如果不存在，将重新创建一个。如果存在，然后会检测当前视野是哪一个，是&nbsp;view[1]的话就绘制表面。</p>
+
+        <p>The above code will check to see if a surface indexed in the variable &quot;surf&quot; exists, and if it does not, it will re-create it. If it does exist, it then checks to see which view is currently being drawn and if it is view[1] it draws the surface.</p>
+
+        <p>&nbsp;</p>
+
+        <p>-断水-</p>
+
+        <div class="clear">
+        <div style="float:left">Back : <a href="index.html">Surfaces</a></div>
+
+        <div style="float:right">Next : <a href="surface_create.html">surface_create</a></div>
+        </div>
+
+        <p>&nbsp;</p>
+
+        <h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
+        <!-- InstanceEndEditable --></div>
+
                 
         <div id="page_popup">
             <div class="popup " >
