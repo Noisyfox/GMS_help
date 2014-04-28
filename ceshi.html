@@ -24,9 +24,7 @@
 <body bgcolor="#FFFFFF">
     <div id="page">
         <div id="header" class="mm-fixed-top">
-            <a href="#menu_left" class="menu_left" title="点击此按钮打开左侧目录菜单，右边的按钮则打开右侧菜单。"></a>
-            <!-- InstanceBeginEditable name="EditRegion_pagetitle" -->点击左边图标打开菜单
-            <!-- InstanceEndEditable -->
+            <a href="#menu_left" class="menu_left" title="点击此按钮打开左侧目录菜单，右边的按钮则打开右侧菜单。"></a>GameMaker:Studio帮助手册
             <a href="#menu_right" class="friends right"></a>
         </div>
         <div id="content">
@@ -37,7 +35,13 @@
                 <audio src="生活在地下.ogg" controls="controls">
                     Your browser does not support the audio tag.
                 </audio>
+                <br>
+                <br>
+                <canvas id="myCanvas" width="200" height="100"></canvas>
+
             </p>
+
+            
 
             <p>
                 <a href="/002_Reference/HTML5/url_open.html" class="page_left" id="ceshipageleft1">测试左边弹出的全屏面板</a>
@@ -150,6 +154,12 @@
         pages
         -->
     </div>
+    <script type="text/javascript">
+        var c = document.getElementById("myCanvas");
+        var cxt = c.getContext("2d");
+        cxt.fillStyle = "#FF0000";
+        cxt.fillRect(0, 0, 150, 75);
+    </script>
     <script type="text/javascript" src="src/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="src/js/jquery.min.js"></script>
     <script type="text/javascript" src="src/js/jquery.mmenu.min.all_old.js"></script>

@@ -7,109 +7,99 @@
 <!-- InstanceEndEditable -->
     <meta http-equiv="X-UA-Compatible" content="IE=9" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" />    
+    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" />
     <link rel="stylesheet" href="../../src/css/style.css" type="text/css" media="screen" title="style" charset="utf-8" />
-    <link type="text/css" rel="stylesheet" href="../../src/css/jquery.mmenu.all.css" /> 
-     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <link type="text/css" rel="stylesheet" href="../../src/css/jquery.mmenu.all.css" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->   
-    <link rel="icon" type="../image/png" href="favicon.png">    
-    <!-- InstanceParam name="OptionalRegion_footer" type="boolean" value="false" -->    
+    <![endif]-->
+    <link rel="icon" type="../image/png" href="favicon.png">
+    <!-- InstanceParam name="OptionalRegion_footer" type="boolean" value="false" -->
 </head>
 
 <body bgcolor="#FFFFFF">
     <div id="page">
         <div id="header" class="mm-fixed-top">
-           <a href="#menu_left" class="menu_left" title="点击此按钮打开左侧目录菜单，右边的按钮则打开右侧菜单。"></a>
-            <!-- InstanceBeginEditable name="EditRegion_pagetitle" -->点击左边图标打开菜单<!-- InstanceEndEditable -->
+            <a href="#menu_left" class="menu_left" title="点击此按钮打开左侧目录菜单，右边的按钮则打开右侧菜单。"></a>GameMaker:Studio帮助手册
             <a href="#menu_right" class="friends right"></a>
         </div>
-        <div id="content">
-            <!-- InstanceBeginEditable name="EditRegion_content" -->
- <h1>surface_get_height</h1>
-
-<h2>Finds the pixel height of a surface.</h2>
-
-<h3>Syntax :</h3>
-<p class="code">surface_get_height(index);</p>
-
-<p>
-<br>
-</p>
-
-<div class="param">
-<table>
-	<tr><th>Argument</th><th>Description</th></tr>
-	
-	<tr><td>index</td>
-	<td>The index of the surface to get the height of.</td></tr>
-
-</table>
-</div>
-
-<p>
-<br>
-</p>
-  
-<p>
-<b>Returns : </b>Real
-</p>
-
- <p>
-<br>
-</p>
-
-<h3>Description</h3>
-<p>
-This function simply returns the height, in pixels, of the indexed surface.
-<br>
-<br>
-
-<i><b>NOTE : </b>When working with surfaces there is the possibility that they can cease to exist at any time due to them being stored in vRam. You should <b>ALWAYS</b> check that a surface 
-exists using <a href="surface_exists.html"><tt>surface_exists</tt></a> before referencing them directly. For futher information see <a href="index.html">Surfaces</a>.</i>
-<br>
-<br>
-
-<p>
-<br>
-</p>
-
-<h3>Example :</h3>
-<p class="code">
-sh = surface_get_height(surf);
-</p>
-<p>
-The above code will store the height of the surface indexed in the variable "surf" in the variable "sh".
-</p>
-
-<p>
-<br>
-</p>
-<p>
-
-<div class="clear">
-	<div style="float:left">
-		Back : <a href="index.html">Surfaces</a>
-	</div>
-	<div style="float:right">
-		Next : <a href="surface_get_width.html">surface_get_width</a>
-	</div>
-</div>
-</p>
-
-<h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
-  <!-- InstanceEndEditable -->
+        <div id="content"><!-- InstanceBeginEditable name="EditRegion_content" -->
+        <h1>surface_get_height</h1>
+        
+        <h2>查询表面图层的像素高度。Finds the pixel height of a surface.</h2>
+        
+        <h3>Syntax 用法:</h3>
+        
+        <p class="code">surface_get_height(index);</p>
+        
+        <p>&nbsp;</p>
+        
+        <div class="param">
+        <table>
+        	<tbody>
+        		<tr>
+        			<th>Argument 参数</th>
+        			<th>Description 描述</th>
+        		</tr>
+        		<tr>
+        			<td>index</td>
+        			<td>表面的索引。The index of the surface to get the height of.</td>
+        		</tr>
+        	</tbody>
+        </table>
         </div>
-                
+        
+        <p>&nbsp;</p>
+        
+        <p><b>Returns 返回: </b>Real 实数</p>
+        
+        <p>&nbsp;</p>
+        
+        <h3>Description 描述</h3>
+        
+        <p>这个函数简单的返回索引的表面的像素高度。<br><br><i><b>注意 :&nbsp;</b>用到表面图层的时候，由于它存储在显存里，有可能会终止存在。在直接引用他们之前，你应该使用<a href="surface_exists.html"><tt>surface_exists</tt></a>这个函数保持检测是否存在一个表面。更多信息请查阅<a href="index.html">Surfaces</a>。</i><button class="button  entr_click " data_entr="en-1">en</button></p>
+        
+        <p id="en-1">This function simply returns the height, in pixels, of the indexed surface.<br />
+        <br />
+        <i><b>NOTE : </b>When working with surfaces there is the possibility that they can cease to exist at any time due to them being stored in vRam. You should <b>ALWAYS</b> check that a surface exists using <a href="surface_exists.html"><tt>surface_exists</tt></a> before referencing them directly. For futher information see <a href="index.html">Surfaces</a>.</i><br />
+        &nbsp;</p>
+        
+        <p>&nbsp;</p>
+        
+        <h3>Example 例子:</h3>
+        
+        <p class="code">sh = surface_get_height(surf);</p>
+        
+        <p>上述代码将在变量sh中储存索引变量为surf的表面图层的高度。<button class="button  entr_click " data_entr="en-2">en</button></p>
+        
+        <p id="en-2">The above code will store the height of the surface indexed in the variable &quot;surf&quot; in the variable &quot;sh&quot;.</p>
+        
+        <p>-断水-</p>
+        
+        <p>&nbsp;</p>
+        
+        
+        <div class="clear">
+        <div style="float:left">Back : <a href="index.html">Surfaces 表面图层</a></div>
+        
+        <div style="float:right">Next : <a href="surface_get_width.html">surface_get_width</a></div>
+        </div>
+        
+        <p>&nbsp;</p>
+        
+        <h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
+        <!-- InstanceEndEditable --></div>
+        
+        
         <div id="page_popup">
-            <div class="popup " >
+            <div class="popup ">
                 <div>
                     <a href="#page" class="close">x</a>
                     <div>
-                    	<h4>喵~</h4>
+                        <h4>喵~</h4>
                         <p>欢迎，这里是404号猫国皇室会所~~</p>
                         <p>因为找不到其它的地方，你来到了这里。</p>
                     </div>
@@ -140,7 +130,7 @@ The above code will store the height of the surface indexed in the variable "sur
             <nav id="menu_right">
             </nav>
         </div>
-        
+
         <!-- KEYWORDS
         pages
         -->
@@ -149,7 +139,7 @@ The above code will store the height of the surface indexed in the variable "sur
     <script type="text/javascript" src="../../src/js/jquery.min.js"></script>
     <script type="text/javascript" src="../../src/js/jquery.mmenu.min.all_old.js"></script>
     <script type="text/javascript" src="../../src/js/subpage.js"></script>
-    
+
 </body>
 
 <!-- InstanceEnd --></html>
