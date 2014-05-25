@@ -35,7 +35,7 @@
 <p>在前几个版本的 <i>GameMaker</i> 里从一个项目中导入和导出资源到另一个项目中是一件很复杂的事情，并且如果你一有不小心，那么等待你的可能就是一个损坏的项目或者是数据丢失。
 好消息是，在 <i>GameMaker:Studio</i> 中一切都不再是问题了，新引入的 <tt>*.gmx</tt> 文件让你在项目间共享资源成了一件轻松的差事。
 <p>当你保存你的项目时， <i>GameMaker:Studio</i> 会在项目文件夹（这个文件夹可以很容易的在 <a href="../000_Using%20GameMaker/Drop%20Down%20Menus/The%20Help%20Menu.html">Help Menu</a> 下拉菜单中找到）中创建多个以资源类型和 <tt>*.gmx</tt> 为后缀的特殊文件（比如一个房间资源可能命名为 <tt>game_room.room.gmx</tt>）。这些 <tt>*.gmx</tt> 文件包含了 <i>GameMaker:Studio</i> 用来定义一个对象、声音或者任何其它类型资源所需的一切信息。你只需要在另一个项目的资源树上右击并选择 <b>Add Existing Resource</b>，然后在弹出的文件选择对话框中选择你想要导入的资源文件即可把这个资源添加到其它的项目中。
-<p>你可以一次性选择多个文件同时导入到 <i>GameMaker:Studio</i> 中，但是前提是这些资源必须拥有相同的类型后缀（举例来说你可以一次性导入10个 <tt>*.object.gmx</tt> 文件，但是不能将一个 <tt>*.sound.gmx</tt> 和一些 <tt>*.sprite.gmx</tt> 一起导入）。同时需要注意的问题是，如果你试图导入一个对象资源到你的游戏里，那么这个对象对应的精灵<i>不会被自动导入进来</i>。你必须要自己确保对象所使用的各种精灵都被添加进游戏里了。同时你在导入一个房间资源的时候也要注意不要忘记把房间里用到的对象也一起导入进来。因此通常比较好的做法是先导入精灵、声音、字体和其它一些资源，<i>然后再</i>导入对象资源，<i>最后再</i>导入房间资源。
+<p>你可以一次性选择多个文件同时导入到 <i>GameMaker:Studio</i> 中，但是前提是这些资源必须拥有相同的类型后缀（举例来说你可以一次性导入10个 <tt>*.object.gmx</tt> 文件，但是不能将一个 <tt>*.sound.gmx</tt> 和一些 <tt>*.sprite.gmx</tt> 混在一起导入）。同时需要注意的问题是，如果你试图导入一个对象资源到你的游戏里，那么这个对象对应的精灵<i>不会被自动导入进来</i>。你必须要自己确保对象所使用的各种精灵都被添加进游戏里了。同时你在导入一个房间资源的时候也要注意不要忘记把房间里用到的对象也一起导入进来。因此通常比较好的做法是先导入精灵、声音、字体和其它一些资源，<i>然后再</i>导入对象资源，<i>最后再</i>导入房间资源。
 <p>In previous versions of <i>GameMaker</i> it was a complicated business to import and export files from one project to another, and if you weren't careful you could end up with a corrupt game or loss of 
   data. Thankfully, that has all changed with <i>GameMaker:Studio</i> as the <tt>*.gmx</tt> format makes sharing resources between projects a simple and painless procedure.
   <br>
