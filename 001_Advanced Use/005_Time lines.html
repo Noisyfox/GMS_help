@@ -36,8 +36,8 @@
 <p>在一个时间线中你可以指定在某个游戏中的时间点执行某些特定的动作。你可以像在对象的事件中一样去调用各种动作。当你创建了一个时间线以后，你可以让一个对象绑定上它，然后这个对象的实例就会在你指定的特定时间点上执行这些动作。让我们举个例子来说明如何使用时间线：
 <p>假设你想做一个守卫，这个守卫需要向左走20时间步（step），然后向上走10步，然后再向右走20步，最后向下走10步回到原点结束。要做到这个，你可以通过创建一个时间线，在起始时间设置向左运动。然后在第20步处设置向上运动，接着在30步处设置向右运动，然后再第50步处设置向下运动，最后在第60步时停止运动。完成后，你就可以把这个时间线绑定在你的守卫上，然后这个守卫就会完全按照你计划中的那样行动了。你甚至可以在时间线中操作一个定时事件，这样这个事件就会每隔一定时间执行一次。这样你的守卫就可以在一个区域里巡逻了！
 <p>你也可以更加全局化的用时间线来控制你的游戏。创建一个看不到的控制器对象，绑定一个在特定时间点创建敌人的时间线。当你尝试过时间线以后，你一定会发现它是一个多么有力的工具！
-<p><i><b>注意 : </b>如果你在使用 GameMaker:Studio <b>免费版 </b>你</i><i>每个游戏只能最多创建5个时间线。更多细节参见 <a href="../000_Using%20GameMaker/Versions.html">这里</a>。</i>
-<p>In most games you will want certain things to happen at certain moments in time. Now, you can try to achieve this by using the alarm events but when things get too complicated this won't work any more, 
+<p><i><b>注意 : </b>如果你在使用 GameMaker:Studio <b>免费版 </b>你</i><i>每个游戏只能最多创建5个时间线。更多细节参见 <a href="../000_Using%20GameMaker/Versions.html">这里</a>。</i><button class="button  entr_click " data_entr="en-1">en</button></p>
+<p id="en-1">In most games you will want certain things to happen at certain moments in time. Now, you can try to achieve this by using the alarm events but when things get too complicated this won't work any more, 
   especially as you are limited to only twelve alarms. That's why we have the <b>time line</b> resource.
   <br>
   <br>
@@ -60,30 +60,27 @@
     <br>
     
     <i><b>NOTE : </b>If you are using the <b>Free</b> version of <i>GameMaker:Studio</i> you are limited to a maximum of 5 timelines per game. For more details see 
-      <a href="../000_Using%20GameMaker/Versions.html">here</a>.</i>
-    <br>
-    <br>
-    <br>
+      <a href="../000_Using%20GameMaker/Versions.html">here</a>.</i></p>
+    <p>
     <br>
     
   <h3>Creating A Timeline 创建一个时间线</h3>
 <p>要创建一个时间线，在 <b>Resources</b> 菜单中选择
-  <b>Create Time Line</b>，或者右击资源树里的时间线资源然后选择 <b>Create Time Line</b>，又或者直接点击窗口顶部的资源工具栏中的创建时间线按钮即可。无论你用那种方法，都会看到接下来的这个窗口：
-  <p>To create a time line, choose <b>Create Time Line</b> from the <b>Resources</b> menu, or right click on the time line resource in the resource tree and select <b>Create Time Line</b> or you can just click on 
-  the create a time line icon found on the resource toolbar at the top of the main screen. Whatever method you choose will open the following window :
+  <b>Create Time Line</b>，或者右击资源树里的时间线资源然后选择 <b>Create Time Line</b>，又或者直接点击窗口顶部的资源工具栏中的创建时间线按钮即可。无论你用那种方法，都会看到接下来的这个窗口：<button class="button  entr_click " data_entr="en-2">en</button></p>
+  <p id="en-2">To create a time line, choose <b>Create Time Line</b> from the <b>Resources</b> menu, or right click on the time line resource in the resource tree and select <b>Create Time Line</b> or you can just click on 
+  the create a time line icon found on the resource toolbar at the top of the main screen. Whatever method you choose will open the following window :</p>
   
 <p>
 <img class="center" src="../images/form_timeline.png">
 
 <p>这个窗口和对象的属性窗口很类似，你可以在这里给时间线起一个名字（像其它资源一样，必须是个独一无二的名字），同时在右侧有一个动作列表以及一系列可用动作。甚至还有一个 <b>Show Information</b>
-按钮来显示时间线的动作信息。不过在左边不再是时间列表，取而代之的是一个被称作<b>时刻</b>的列表。在时间线中，一个时刻等同于一步，因此时间线里的10个时刻等同于游戏中的10步，并且你在任何一个时刻都可以执行任意多的动作，然后被绑定上这个时间线的对象就会在特定的时间点里执行这些动作。注意，时间线可以在游戏中的任意时刻被启动，因此时间线中的时刻0代表的是时间线启动的那个时刻，而不是游戏或者房间开始的时刻。
-<p>It's very similar to the object properties window as you can specify a name for your time line (like all resources, this should be specific and unique), and with an action list and actions on the right, and there is even 
+按钮来显示时间线的动作信息。不过在左边不再是时间列表，取而代之的是一个被称作<b>时刻</b>的列表。在时间线中，一个时刻等同于一步，因此时间线里的10个时刻等同于游戏中的10步，并且你在任何一个时刻都可以执行任意多的动作，然后被绑定上这个时间线的对象就会在特定的时间点里执行这些动作。注意，时间线可以在游戏中的任意时刻被启动，因此时间线中的时刻0代表的是时间线启动的那个时刻，而不是游戏或者房间开始的时刻。<button class="button  entr_click " data_entr="en-3">en</button></p>
+<p id="en-3">It's very similar to the object properties window as you can specify a name for your time line (like all resources, this should be specific and unique), and with an action list and actions on the right, and there is even 
   a <b>Show Information</b> button that can be used to get an overview of all actions within the time line. However, on the left, instead of an event list we have a <b>moment</b> list. In a time line a moment is 
   the same as a step, so ten moments on your time line are the same as ten steps in your game, and you can insert any number of actions and/or code into one moment and the object that has the time line assigned 
   to it will carry out these actions at the required time. Note that the time line can be started at any time in-game, so moment 0 is just the moment in which the time line starts and <i>not</i> the moment the game 
-  or room starts.
-  <br>
-  <br>
+  or room starts.</p>
+  <p>
   
   在窗口中还有几个按钮让你来添加、删除和更改时间线中的时刻：
   <blockquote>
@@ -108,8 +105,9 @@
 </ul>
 </blockquote>
 <p>
-请注意，虽然我们可以创建一个<i>负数</i>的时刻，不过这是完全没有意义的，因为它永远不会被执行！
+请注意，虽然我们可以创建一个<i>负数</i>的时刻，不过这是完全没有意义的，因为它永远不会被执行！<button class="button  entr_click " data_entr="en-4">en</button></p>
 
+<div id="en-4">
 <p>The following buttons are available in this window to enable you to add, remove and change moments within the time line resource that you have created :
     
   <blockquote>
@@ -138,8 +136,8 @@
 </blockquote>
 
 <p>
-Please note, that although it is possible to create <i>negative</i> time moments, it is pointless to do so as they will never be executed!
-  <br><br>
+Please note, that although it is possible to create <i>negative</i> time moments, it is pointless to do so as they will never be executed!</div>
+  <p><br>
   -noisyfox- 
 <p>
 <br>
