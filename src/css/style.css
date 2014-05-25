@@ -65,6 +65,13 @@ p strong,b{
 	color:#C2C2C2;
 	}
 
+br {
+
+  margin:0;
+  padding:0.5em 1em;
+  background:#242424;
+}
+
 center{
   background:#242424;
 }
@@ -72,7 +79,7 @@ center{
 blockquote{
   background:#242424;
   margin:0;
-  padding:1em 3em;
+  padding:1em 1.5em;
 }
 
 table{
@@ -93,7 +100,6 @@ table.compat{
 	table-layout: fixed;
 	text-align:center;
 	background:#353535;
-
 }
 
 th{
@@ -180,7 +186,15 @@ ol.ext{
 border-bottom:1em solid #1C1C1C;
 }*/
 
-.code{ font-family:monospace; background:#333; color:#FFF; }
+.code
+{ 
+    font-family:monospace; 
+    background:#333; color:#FFF;
+    
+
+
+}
+
 .label{ font-family:Verdana, Helvetica, Arial, sans-serif; }
 
 /* Links */
@@ -200,7 +214,6 @@ pre
 {
 	display: none;	
 }
-
 
 
 #footer
@@ -290,7 +303,6 @@ pre
 }
 
 /* for the one page */
-
 #intro
 	{
 		padding-top: 0em;
@@ -305,7 +317,6 @@ pre
 	}			
 
 /* for the mmenu */
-
 .mm-menu
 {
 	background: #FFF;
@@ -355,40 +366,6 @@ pre
 }
 
 
-
-/*button*/
-
-.button,
-a.button
-{
-font:normal 1em Helvetica;
-font-style:normal;
-color:#8f8d8f;
-background:#242424;
-border:1px solid #bbb;
-text-shadow:0px 1px 0px #fff;
-box-shadow:0px 4px 1px #000000;
--moz-box-shadow:0px 4px 1px #000000;
--webkit-box-shadow:0px 4px 1px #000000;
-border-radius:3px 3px 3px 3px;
--moz-border-radius:3px 3px 3px 3px;
--webkit-border-radius:3px 3px 3px 3px;
-width:auto;
-padding:0.1em 0.5em;
-cursor:pointer;
-margin:0 auto;
-}
-.button:active{
-cursor:pointer;
-position:relative;
-top:2px;
-}
-
-.button:hover{
-	background-color:#ccc;
-}
-
-
 /* load animation*/
 #load {
 	display: none;
@@ -403,7 +380,6 @@ top:2px;
 
 
 /* for  the contents */
-
 #content,
 .content
 {
@@ -578,4 +554,35 @@ color:#EEE;
 
 }
 
+
+/*button*/
+.button,
+a.button
+{
+font:normal 1em Helvetica;
+font-style:normal;
+color:#8f8d8f;
+background:#242424;
+border:1px solid #bbb;
+text-shadow:0px 1px 0px #fff;
+box-shadow:0px 4px 1px #000000;
+-moz-box-shadow:0px 2px 1px #000000;
+-webkit-box-shadow:0px 2px 1px #000000;
+border-radius:3px 3px 3px 3px;
+-moz-border-radius:3px 3px 3px 3px;
+-webkit-border-radius:3px 3px 3px 3px;
+width:auto;
+padding:0.05em 0.2em;
+cursor:pointer;
+margin:0 auto;
+}
+.button:active{
+cursor:pointer;
+position:relative;
+top:2px;
+}
+
+.button:hover{
+	background-color:#ccc;
+}
 

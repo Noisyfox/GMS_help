@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/GMS_helppage.dwt" codeOutsideHTMLIsLocked="false" -->
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/GMS_helppage.dwt" codeOutsideHTMLIsLocked="false" -->
 
 <head>
     <!-- InstanceBeginEditable name="doctitle" -->
@@ -8,169 +8,137 @@
     <!-- InstanceEndEditable -->
     <meta http-equiv="X-UA-Compatible" content="IE=9" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" />    
+    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" />
     <link rel="stylesheet" href="../../src/css/style.css" type="text/css" media="screen" title="style" charset="utf-8" />
-    <link type="text/css" rel="stylesheet" href="../../src/css/jquery.mmenu.all.css" />    
-    <link rel="icon" type="../image/png" href="favicon.png">    
-    <!-- InstanceParam name="OptionalRegion_footer" type="boolean" value="false" -->    
+    <link type="text/css" rel="stylesheet" href="../../src/css/jquery.mmenu.all.css" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="icon" type="../image/png" href="favicon.png">
+    <!-- InstanceParam name="OptionalRegion_footer" type="boolean" value="false" -->
 </head>
 
 <body bgcolor="#FFFFFF">
     <div id="page">
         <div id="header" class="mm-fixed-top">
-           <a href="#menu_left" class="menu_left" title="点击此按钮打开左侧目录菜单，右边的按钮则打开右侧菜单。"></a>
-            <!-- InstanceBeginEditable name="EditRegion_pagetitle" -->点击左边图标打开菜单
-            <!-- InstanceEndEditable -->
+            <a href="#menu_left" class="menu_left" title="点击此按钮打开左侧目录菜单，右边的按钮则打开右侧菜单。"></a>GameMaker:Studio帮助手册
             <a href="#menu_right" class="friends right"></a>
         </div>
-        <div id="content">
-            <!-- InstanceBeginEditable name="EditRegion_content" -->
-            <h1>surface_copy_part</h1>
-
-            <h2>复制源表面图层的一部分到目标表面图层。Copies part of a source surface into a destination surface. (Without any form of blending.)</h2>
-
-            <h3>Syntax &nbsp;用法:</h3>
-
-            <p class="code">surface_copy_part(destination, x, y, source, xs, ys, ws, hs);</p>
-
-
-            <p>
-                <br>
-            </p>
-
-            <div class="param">
-                <table>
-                    <tbody>
-                        <tr>
-                            <th>Argument</th>
-                            <th>Description</th>
-                        </tr>
-                        <tr>
-                            <td>destination</td>
-                            <td>目标表面的索引。The index of the surface to copy the other surface to.</td>
-                        </tr>
-                        <tr>
-                            <td>x</td>
-                            <td>复制到的x坐标。The x position to copy to.</td>
-                        </tr>
-                        <tr>
-                            <td>y</td>
-                            <td>复制到的y坐标。The y position to copy to.</td>
-                        </tr>
-                        <tr>
-                            <td>source</td>
-                            <td>源表面索引。The surface to be copied.</td>
-                        </tr>
-                        <tr>
-                            <td>xs</td>
-                            <td>源表面被复制的部分的x坐标。The x position in the source surface to copy from.</td>
-                        </tr>
-                        <tr>
-                            <td>ys</td>
-                            <td>源表面被复制的部分的y坐标。The y position in the source surface to copy from.</td>
-                        </tr>
-                        <tr>
-                            <td>ws</td>
-                            <td>源表面被复制的部分的宽度。The width of the area in the source surface to copy from.</td>
-                        </tr>
-                        <tr>
-                            <td>hs</td>
-                            <td>源表面被复制的部分的高度。The height of the area in the source surface to copy from.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-
-            <p>
-                <br>
-            </p>
-
-            <p>
-                <b>Returns 返回:</b>N/A</p>
-
-            <p>&nbsp;</p>
-
-            <h3>Description 描述</h3>
-
-            <p>这个函数简单的从一个表面获取图像，复制到另外一个表面的特定位置（&nbsp;如(0,0)，是目标表面图层的左上角）。你可以选定源表面的一个特定坐标和大小的区域进行复制。请注意，坐标是基于表面的起始点，而不是表面所在的房间（查看
-                <a href="index.html">Surfaces</a>主页获得更多的信息）。如果目标表面已经有内容了，将会被拷贝版本重写，而这个函数不会通过任何方式改变源表面的内容。</p>
-
-            <p>
-                <i>
-                    <b>注意 :</b>当表面工作的时候，因为储存在显存里，可能会随时停止工作并退出。在直接引用之前，你应该一直使用
-                    <tt>
-                        <a href="surface_exists.html">surface_exists</a>
-                    </tt>&nbsp; 检测这个表面是否会退出，更多信息请查阅
-                    <a href="index.html">Surfaces</a>。&nbsp;</i>
-            </p>
-
-            <p>This function simply takes the image from one surface and copies it onto another one at the specified local position within that surface (where the (0,0) position is the top left corner of the destination surface). You can specify a local x and y position to copy from as well as the width and height of the section. Please note that these are coordinartes based on the
-                <i>surface size</i>and not on the position at which the surface is being drawn in the room (see the main page on
-                <a href="index.html">Surfaces</a>for further information). If the destination surface already has information this will be over-written by the copy, and the function does
-                <i>not</i>change the source surface in any way.
-                <br />
-                <br />
-                <i>
-                    <b>NOTE :</b>When working with surfaces there is the possibility that they can cease to exist at any time due to them being stored in vRam. You should
-                    <b>ALWAYS</b>check that a surface exists using
-                    <a href="surface_exists.html">
-                        <tt>surface_exists</tt>
-                    </a>before referencing them directly. For futher information see
-                    <a href="index.html">Surfaces</a>.</i>
-                <br />&nbsp;
-            </p>
-
-            <p>&nbsp;</p>
-
-            <h3>Example 例子:</h3>
-
-            <p class="code">if view_current = 0
-                <br />&nbsp;&nbsp;&nbsp;{
-                <br />&nbsp;&nbsp;&nbsp;view_copy(surf, 0, 0, 0, 0, view_xview[1] - mouse_x, view_yview[1] - mouse-y, temp_surf);
-                <br />&nbsp;&nbsp;&nbsp;}
-                <br />else
-                <br />&nbsp;&nbsp;&nbsp;{
-                <br />&nbsp;&nbsp;&nbsp;draw_surface(surf, 0, 0);
-                <br />&nbsp;&nbsp;&nbsp;}
-            </p>
-
-            <p>上述代码将检测当前被绘制的视野是否为view[0]，如果是，则复制变量为&quot;temp_surf&quot;的表面到变量为&nbsp;&quot;surf&quot;的表面。被复制的区域相当于一个矩形，截取自表面内相对鼠标的位置，它将在view[1]里绘制。如果检测的不是&nbsp;view[0]，将直接在屏幕上绘制&nbsp;&quot;surf&quot;表面。</p>
-
-            <p>The above code will check the current view being drawn and if it is view[0] it copies the surface indexed in the variable &quot;temp_surf&quot; onto the surface indexed in the variable &quot;surf&quot;. the area copied corresponds to a rectangle formed by the relative position of the mouse within the surface as it would be drawn in view[1]. If the current view is anything other than view[0] the surface &quot;surf&quot; is drawn to the screen.</p>
-
-            <p>
-                <strong>注：</strong>这个例子用了view_copy的函数，并没有用到surface_copy_part，所以会不会执行成功呢。</p>
-
-
-
-            <p>
-                <br>
-            </p>
-            <p>
-
-                <div class="clear">
-                    <div style="float:left">
-                        Back :
-                        <a href="index.html">Surfaces</a>
-                    </div>
-                    <div style="float:right">
-                        Next :
-                        <a href="surface_get_height.html">surface_get_height</a>
-                    </div>
-                </div>
-            </p>
-
-            <h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
-            <!-- InstanceEndEditable -->
+        <div id="content"><!-- InstanceBeginEditable name="EditRegion_content" -->
+        <h1>surface_copy_part</h1>
+        
+        <h2>复制源表面图层的一部分到目标表面图层。Copies part of a source surface into a destination surface. (Without any form of blending.)</h2>
+        
+        <h3>Syntax &nbsp;用法:</h3>
+        
+        <p class="code">surface_copy_part(destination, x, y, source, xs, ys, ws, hs);</p>
+        
+        <p>&nbsp;</p>
+        
+        <div class="param">
+        <table>
+        	<tbody>
+        		<tr>
+        			<th>Argument</th>
+        			<th>Description</th>
+        		</tr>
+        		<tr>
+        			<td>destination</td>
+        			<td>目标表面的索引。The index of the surface to copy the other surface to.</td>
+        		</tr>
+        		<tr>
+        			<td>x</td>
+        			<td>复制到的x坐标。The x position to copy to.</td>
+        		</tr>
+        		<tr>
+        			<td>y</td>
+        			<td>复制到的y坐标。The y position to copy to.</td>
+        		</tr>
+        		<tr>
+        			<td>source</td>
+        			<td>源表面索引。The surface to be copied.</td>
+        		</tr>
+        		<tr>
+        			<td>xs</td>
+        			<td>源表面被复制的部分的x坐标。The x position in the source surface to copy from.</td>
+        		</tr>
+        		<tr>
+        			<td>ys</td>
+        			<td>源表面被复制的部分的y坐标。The y position in the source surface to copy from.</td>
+        		</tr>
+        		<tr>
+        			<td>ws</td>
+        			<td>源表面被复制的部分的宽度。The width of the area in the source surface to copy from.</td>
+        		</tr>
+        		<tr>
+        			<td>hs</td>
+        			<td>源表面被复制的部分的高度。The height of the area in the source surface to copy from.</td>
+        		</tr>
+        	</tbody>
+        </table>
         </div>
-                
+        
+        <p>&nbsp;</p>
+        
+        <p><b>Returns 返回:</b>N/A</p>
+        
+        <p>&nbsp;</p>
+        
+        <h3>Description 描述</h3>
+        
+        <p>这个函数简单的从一个表面获取图像，复制到另外一个表面的特定位置（&nbsp;如(0,0)，是目标表面图层的左上角）。你可以选定源表面的一个特定坐标和大小的区域进行复制。请注意，坐标是基于表面的起始点，而不是表面所在的房间（查看 <a href="index.html">Surfaces</a>主页获得更多的信息）。如果目标表面已经有内容了，将会被拷贝版本重写，而这个函数不会通过任何方式改变源表面的内容。<br />
+        <br />
+        <i><b>注意 :</b>当表面工作的时候，因为储存在显存里，可能会随时停止存在。在直接引用之前，你应该一直使用 <tt> <a href="surface_exists.html">surface_exists</a> </tt>&nbsp; 检测这个表面是否会退出，更多信息请查阅 <a href="index.html">Surfaces</a>。&nbsp;</i><button class="button  entr_click " data_entr="en-1">英文</button></p>
+        
+        <p id="en-1">This function simply takes the image from one surface and copies it onto another one at the specified local position within that surface (where the (0,0) position is the top left corner of the destination surface). You can specify a local x and y position to copy from as well as the width and height of the section. Please note that these are coordinartes based on the <i>surface size</i>and not on the position at which the surface is being drawn in the room (see the main page on <a href="index.html">Surfaces</a>for further information). If the destination surface already has information this will be over-written by the copy, and the function does <i>not</i>change the source surface in any way.<br />
+        <br />
+        <i><b>NOTE :</b>When working with surfaces there is the possibility that they can cease to exist at any time due to them being stored in vRam. You should <b>ALWAYS</b>check that a surface exists using <a href="surface_exists.html"> <tt>surface_exists</tt> </a>before referencing them directly. For futher information see <a href="index.html">Surfaces</a>.</i><br />
+        &nbsp;</p>
+        
+        <p>&nbsp;</p>
+        
+        <h3>Example 例子:</h3>
+        
+        <p class="code">if view_current = 0<br />
+        &nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;view_copy(surf, 0, 0, 0, 0, view_xview[1] - mouse_x, view_yview[1] - mouse-y, temp_surf);<br />
+        &nbsp;&nbsp;&nbsp;}<br />
+        else<br />
+        &nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;draw_surface(surf, 0, 0);<br />
+        &nbsp;&nbsp;&nbsp;}</p>
+        
+        <p>上述代码将检测当前被绘制的视野是否为view[0]，如果是，则复制变量为&quot;temp_surf&quot;的表面到变量为&nbsp;&quot;surf&quot;的表面。被复制的区域相当于一个矩形，截取自表面内相对鼠标的位置，它将在view[1]里绘制。如果检测的不是&nbsp;view[0]，将直接在屏幕上绘制&nbsp;&quot;surf&quot;表面。<button class="button  entr_click " data_entr="en-2">英文</button></p>
+        
+        <p id="en-2">The above code will check the current view being drawn and if it is view[0] it copies the surface indexed in the variable &quot;temp_surf&quot; onto the surface indexed in the variable &quot;surf&quot;. the area copied corresponds to a rectangle formed by the relative position of the mouse within the surface as it would be drawn in view[1]. If the current view is anything other than view[0] the surface &quot;surf&quot; is drawn to the screen.</p>
+        
+        <p><strong>注：</strong>这个例子用了view_copy的函数，并没有用到surface_copy_part，所以会不会执行成功呢。</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>&nbsp;</p>
+        
+        <div class="clear">
+        <div style="float:left">Back : <a href="index.html">Surfaces 表面图层</a></div>
+        
+        <div style="float:right">Next : <a href="surface_get_height.html">surface_get_height</a></div>
+        </div>
+        
+        <p>&nbsp;</p>
+        
+        <h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
+        <!-- InstanceEndEditable --></div>
+        
+        
         <div id="page_popup">
-            <div class="popup " >
+            <div class="popup ">
                 <div>
                     <a href="#page" class="close">x</a>
                     <div>
-                    	<h4>喵~</h4>
+                        <h4>喵~</h4>
                         <p>欢迎，这里是404号猫国皇室会所~~</p>
                         <p>因为找不到其它的地方，你来到了这里。</p>
                     </div>
@@ -201,7 +169,7 @@
             <nav id="menu_right">
             </nav>
         </div>
-        
+
         <!-- KEYWORDS
         pages
         -->
@@ -210,7 +178,7 @@
     <script type="text/javascript" src="../../src/js/jquery.min.js"></script>
     <script type="text/javascript" src="../../src/js/jquery.mmenu.min.all_old.js"></script>
     <script type="text/javascript" src="../../src/js/subpage.js"></script>
-    
+
 </body>
 
 <!-- InstanceEnd --></html>

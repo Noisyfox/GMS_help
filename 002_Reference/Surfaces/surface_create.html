@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/GMS_helppage.dwt" codeOutsideHTMLIsLocked="false" -->
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/GMS_helppage.dwt" codeOutsideHTMLIsLocked="false" -->
 
 <head>
     <!-- InstanceBeginEditable name="doctitle" -->
@@ -8,112 +8,111 @@
     <!-- InstanceEndEditable -->
     <meta http-equiv="X-UA-Compatible" content="IE=9" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" />    
+    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" />
     <link rel="stylesheet" href="../../src/css/style.css" type="text/css" media="screen" title="style" charset="utf-8" />
-    <link type="text/css" rel="stylesheet" href="../../src/css/jquery.mmenu.all.css" />    
-    <link rel="icon" type="../image/png" href="favicon.png">    
-    <!-- InstanceParam name="OptionalRegion_footer" type="boolean" value="false" -->    
+    <link type="text/css" rel="stylesheet" href="../../src/css/jquery.mmenu.all.css" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="icon" type="../image/png" href="favicon.png">
+    <!-- InstanceParam name="OptionalRegion_footer" type="boolean" value="false" -->
 </head>
 
 <body bgcolor="#FFFFFF">
     <div id="page">
         <div id="header" class="mm-fixed-top">
-           <a href="#menu_left" class="menu_left" title="点击此按钮打开左侧目录菜单，右边的按钮则打开右侧菜单。"></a>
-            <!-- InstanceBeginEditable name="EditRegion_pagetitle" -->点击左边图标打开菜单
-            <!-- InstanceEndEditable -->
+            <a href="#menu_left" class="menu_left" title="点击此按钮打开左侧目录菜单，右边的按钮则打开右侧菜单。"></a>GameMaker:Studio帮助手册
             <a href="#menu_right" class="friends right"></a>
         </div>
         <div id="content">
             <!-- InstanceBeginEditable name="EditRegion_content" -->
-            <h1>surface_create</h1>
-
-            <h2>创建一个表面。Creates a surface.</h2>
-
-            <h3>Syntax 用法:</h3>
-
-            <p class="code">surface_create(w, h);</p>
-
-            <p>&nbsp;</p>
-
-            <div class="param">
-                <table>
-                    <tbody>
-                        <tr>
-                            <th>Argument</th>
-                            <th>Description</th>
-                        </tr>
-                        <tr>
-                            <td>w</td>
-                            <td>被创建的表面的宽度。The width of the surface to be created.</td>
-                        </tr>
-                        <tr class="alt">
-                            <td>h</td>
-                            <td>被创建的表面的高度。The height of the surface to be created.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <p>&nbsp;</p>
-
-            <p>
-                <b>Returns 返回:</b>Real 实数</p>
-
-            <p>&nbsp;</p>
-
-            <h3>Description 描述</h3>
-
-            <p>This function is used to create a surface and will return the index of the surface which should be stored in a variable for future function calls. When the surface is first created, it may contain &quot;noise&quot; as basically it is just an area of memory that is put aside for the purppose (and that memory may still contain information), so you may want to clear the surface before use with a function like
-                <a href="../Drawing/Color%20And%20Blending/draw_clear_alpha.html">
-                    <tt>draw_clear_alpha</tt>
-                </a>.
-                <br />
-                <br />It is highly recommended that all surfaces be created with a size that is a power of 2, ie: 16, 128, 512 or 1024 pixels in size, for example. This is not exactly necessary on certain platforms (like Windows and MacOS) but it will certainly increase compatability on those targets, while for HTML5 and devices it is essential and very it&#39;s important that you remember this or you may run into problems later.
-                <br />&nbsp;
-            </p>
-
-            <p>&nbsp;</p>
-
-            <h3>Example :</h3>
-
-            <p class="code">if !surface_exists(surf)
-                <br />&nbsp;&nbsp;&nbsp;{
-                <br />&nbsp;&nbsp;&nbsp;surf = surface_create(1024, 1024);
-                <br />&nbsp;&nbsp;&nbsp;surface_set_target(surf);
-                <br />&nbsp;&nbsp;&nbsp;draw_clear_alpha(c_black, 0);
-                <br />&nbsp;&nbsp;&nbsp;surface_reset_target();
-                <br />&nbsp;&nbsp;&nbsp;view_surface_id[0] = surf;
-                <br />&nbsp;&nbsp;&nbsp;}
-            </p>
-
-            <p>The above code checks to see if a surface exists and if it does not it will create a surface that is 1024 pixels wide and 1024 pixels high, assigning the index to the variable &quot;surf&quot;. The drawing target is then set to the new surface, which is cleared and made transparent before having the drawing target reset to the display. Finally the surface is assigned to a view.</p>
-
-            <p>&nbsp;</p>
-
-            <p>&nbsp;</p>
-
-            <div class="clear">
-                <div style="float:left">Back :
-                    <a href="index.html">Surfaces</a>
-                </div>
-
-                <div style="float:right">Next :
-                    <a href="surface_create_ext.html">surface_create_ext</a>
-                </div>
-            </div>
-
-            <p>&nbsp;</p>
-
-            <h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
-            <!-- InstanceEndEditable -->
+        <h1>surface_create</h1>
+        
+        <h2>创建一个表面。Creates a surface.</h2>
+        
+        <h3>Syntax 用法:</h3>
+        
+        <p class="code">surface_create(w, h);</p>
+        
+        <p>&nbsp;</p>
+        
+        <div class="param">
+        <table>
+        	<tbody>
+        		<tr>
+        			<th>Argument</th>
+        			<th>Description</th>
+        		</tr>
+        		<tr>
+        			<td>w</td>
+        			<td>被创建的表面的宽度。The width of the surface to be created.</td>
+        		</tr>
+        		<tr class="alt">
+        			<td>h</td>
+        			<td>被创建的表面的高度。The height of the surface to be created.</td>
+        		</tr>
+        	</tbody>
+        </table>
         </div>
-                
+        
+        <p>&nbsp;</p>
+        
+        <p><b>Returns 返回:</b>Real 实数</p>
+        
+        <p>&nbsp;</p>
+        
+        <h3>Description 描述</h3>
+        
+        <p>这个函数被用来创建一个表面图层，而且将会返回这个表面的索引地址，这个索引应该储存在一个变量上，将来可以调用它。第一次创建的表面图层可能会包含一些&ldquo;噪音&rdquo;，基本上是因为它只是为了特别目的而放置一边的内存区域（并且那个内存可能仍然包含信息），所以你可能会需要在使用之前用<tt><a href="../Drawing/Color%20And%20Blending/draw_clear_alpha.html">draw_clear_alpha</a>&nbsp;</tt>这样的函数清理这个表面图层。<button class="button  entr_click " data_entr="en-1">en</button></p>
+        
+        <p id="en-1">This function is used to create a surface and will return the index of the surface which should be stored in a variable for future function calls. When the surface is first created, it may contain &quot;noise&quot; as basically it is just an area of memory that is put aside for the purppose (and that memory may still contain information), so you may want to clear the surface before use with a function like <a href="../Drawing/Color%20And%20Blending/draw_clear_alpha.html"> <tt>draw_clear_alpha</tt> </a>.</p>
+        
+        <p>强烈建议所有创建的表面图层大小设置为2的N次方，比如16、128、512、1024像素。不是所有的平台都有必要这样做（比如Windows和MacOS），但是这样做肯定也会增加那些平台的兼容性。然而，对于HTML5和其它设备，记住这非常重要，或许你以后就会出现问题。<button class="button  entr_click " data_entr="en-2">en</button></p>
+
+        <p id="en-2">It is highly recommended that all surfaces be created with a size that is a power of 2, ie: 16, 128, 512 or 1024 pixels in size, for example. This is not exactly necessary on certain platforms (like Windows and MacOS) but it will certainly increase compatability on those targets, while for HTML5 and devices it is essential and very it&#39;s important that you remember this or you may run into problems later.</p>
+        
+        <p>&nbsp;</p>
+        
+        <h3>Example 例子:</h3>
+        
+        <p class="code">if !surface_exists(surf)<br />
+        &nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;surf = surface_create(1024, 1024);<br />
+        &nbsp;&nbsp;&nbsp;surface_set_target(surf);<br />
+        &nbsp;&nbsp;&nbsp;draw_clear_alpha(c_black, 0);<br />
+        &nbsp;&nbsp;&nbsp;surface_reset_target();<br />
+        &nbsp;&nbsp;&nbsp;view_surface_id[0] = surf;<br />
+        &nbsp;&nbsp;&nbsp;}</p>
+        
+        <p>上述代码将检测是否存在一个表面图层，如果没有则创建一个1024&times;1024px大小的表面图层，并指定给索引为变量&ldquo;surf&rdquo;。然后绘制目标设置给这个新的表面图层，接下来是清除表面，设置为透明，再是将绘制目标设置给显示器。最后，给这个表面图层指定给一个视野。<button class="button  entr_click " data_entr="en-3">en</button></p>
+        
+        <p id="en-3">The above code checks to see if a surface exists and if it does not it will create a surface that is 1024 pixels wide and 1024 pixels high, assigning the index to the variable &quot;surf&quot;. The drawing target is then set to the new surface, which is cleared and made transparent before having the drawing target reset to the display. Finally the surface is assigned to a view.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>-断水-</p>
+        
+        <div class="clear">
+        <div style="float:left">Back : <a href="index.html">Surfaces</a>&nbsp;</div>
+        
+        <div style="float:right">Next : <a href="surface_create_ext.html">surface_create_ext</a></div>
+        </div>
+        
+        <p>&nbsp;</p>
+        
+        <h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
+        <!-- InstanceEndEditable -->
+        </div>
+        
         <div id="page_popup">
-            <div class="popup " >
+            <div class="popup ">
                 <div>
                     <a href="#page" class="close">x</a>
                     <div>
-                    	<h4>喵~</h4>
+                        <h4>喵~</h4>
                         <p>欢迎，这里是404号猫国皇室会所~~</p>
                         <p>因为找不到其它的地方，你来到了这里。</p>
                     </div>
@@ -144,7 +143,7 @@
             <nav id="menu_right">
             </nav>
         </div>
-        
+
         <!-- KEYWORDS
         pages
         -->
@@ -153,7 +152,7 @@
     <script type="text/javascript" src="../../src/js/jquery.min.js"></script>
     <script type="text/javascript" src="../../src/js/jquery.mmenu.min.all_old.js"></script>
     <script type="text/javascript" src="../../src/js/subpage.js"></script>
-    
+
 </body>
 
 <!-- InstanceEnd --></html>

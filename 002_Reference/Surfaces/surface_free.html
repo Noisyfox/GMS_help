@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/GMS_helppage.dwt" codeOutsideHTMLIsLocked="false" -->
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/GMS_helppage.dwt" codeOutsideHTMLIsLocked="false" -->
 
 <head>
     <!-- InstanceBeginEditable name="doctitle" -->
@@ -7,109 +7,101 @@
 <!-- InstanceEndEditable -->
     <meta http-equiv="X-UA-Compatible" content="IE=9" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" />    
+    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=2.0 user-scalable=yes" />
     <link rel="stylesheet" href="../../src/css/style.css" type="text/css" media="screen" title="style" charset="utf-8" />
-    <link type="text/css" rel="stylesheet" href="../../src/css/jquery.mmenu.all.css" />    
-    <link rel="icon" type="../image/png" href="favicon.png">    
-    <!-- InstanceParam name="OptionalRegion_footer" type="boolean" value="false" -->    
+    <link type="text/css" rel="stylesheet" href="../../src/css/jquery.mmenu.all.css" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="icon" type="../image/png" href="favicon.png">
+    <!-- InstanceParam name="OptionalRegion_footer" type="boolean" value="false" -->
 </head>
 
 <body bgcolor="#FFFFFF">
     <div id="page">
         <div id="header" class="mm-fixed-top">
-           <a href="#menu_left" class="menu_left" title="点击此按钮打开左侧目录菜单，右边的按钮则打开右侧菜单。"></a>
-            <!-- InstanceBeginEditable name="EditRegion_pagetitle" -->点击左边图标打开菜单<!-- InstanceEndEditable -->
+            <a href="#menu_left" class="menu_left" title="点击此按钮打开左侧目录菜单，右边的按钮则打开右侧菜单。"></a>GameMaker:Studio帮助手册
             <a href="#menu_right" class="friends right"></a>
         </div>
-        <div id="content">
-            <!-- InstanceBeginEditable name="EditRegion_content" -->
-<h1>surface_free</h1>
-
-<h2>Destroys the surface, freeing it from memory.</h2>
-
-<h3>Syntax :</h3>
-<p class="code">surface_free(index);</p>
-
-<p>
-<br>
-</p>
-
-<div class="param">
-<table>
-	<tr><th>Argument</th><th>Description</th></tr>
-	
-	<tr><td>index</td>
-	<td>The index of the surface to be freed.</td></tr>
-
-</table>
-</div>
-
-<p>
-<br>
-</p>
-  
-<p>
-<b>Returns : </b>N/A
-</p>
-
- <p>
-<br>
-</p>
-
-<h3>Description</h3>
-<p>
-When you are working with surfaces, you should always use this function whenever you are finished using them. Surfaces take up space in memory and so need to be removed, normally at the end 
-of a room, but it can be done at any time depending on the use you put them to. Failure to do so can cause memory leaks which will eventually slow down and crash 
-your game.
-<br>
-<br>
-
-<i><b>NOTE : </b>When working with surfaces there is the possibility that they can cease to exist at any time due to them being stored in vRam. You should <b>ALWAYS</b> check that a surface 
-exists using <a href="surface_exists.html"><tt>surface_exists</tt></a> before referencing them directly. For futher information see <a href="index.html">Surfaces</a>.</i>
-<br>
-<br>
-
-<p>
-<br>
-</p>
-
-<h3>Example :</h3>
-<p class="code">
-if keyboard_check_pressed(vk_escape)<br>
-&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;surface_free(surf);<br>
-&nbsp;&nbsp;&nbsp;room_goto(rm_Menu);<br>
-&nbsp;&nbsp;&nbsp;}<br>
-</p>
-<p>
-
-The above code checks for a key press and if it detects one it frees the memory reserved for the surface indexed in the variable "surf" and then changes room.</p>
-
-<p>
-<br>
-</p>
-<p>
-
-<div class="clear">
-	<div style="float:left">
-		Back : <a href="index.html">Surfaces</a>
-	</div>
-	<div style="float:right">
-		Next : <a href="surface_save.html">surface_save</a>
-	</div>
-</div>
-</p>
-
-<h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
-  <!-- InstanceEndEditable -->
+        <div id="content"><!-- InstanceBeginEditable name="EditRegion_content" -->
+        <h1>surface_free</h1>
+        
+        <h2>破坏表面图层，并从内存中释放。Destroys the surface, freeing it from memory.</h2>
+        
+        <h3>Syntax 用法:</h3>
+        
+        <p class="code">surface_free(index);</p>
+        
+        <p>&nbsp;</p>
+        
+        <div class="param">
+        <table>
+        	<tbody>
+        		<tr>
+        			<th>Argument 参数</th>
+        			<th>Description 描述</th>
+        		</tr>
+        		<tr>
+        			<td>index</td>
+        			<td>被释放的表面图层的索引。The index of the surface to be freed.</td>
+        		</tr>
+        	</tbody>
+        </table>
         </div>
-                
+        
+        <p>&nbsp;</p>
+        
+        <p><b>Returns 返回: </b>N/A</p>
+        
+        <p>&nbsp;</p>
+        
+        <h3>Description 描述</h3>
+        
+        <p>当你用到表面图层时，不论是否结束使用，你应该一直使用这个函数。表面图层会占据内存空间，通常需要在房间（room）结束工作时清除它们，可以在任何时间执行这个过程，取决于你使用的方式。如果不这样做，可能会导致内存泄漏，最终放慢游戏甚至游戏崩溃。<br><br><i><b>注意 : </b>当正在使用表面图层时，由于存储在显存里，它可能会随时停止工作。在直接引用它们之前，你应该使用&nbsp;<a href="surface_exists.html"><tt>surface_exists</tt></a>&nbsp;这个函数保持检测是否表面图层还继续存在。更多信息请查看<a href="index.html">Surfaces</a>这篇的介绍。</i><button class="button  entr_click " data_entr="en-1">en</button></p>
+        
+        <p id="en-1">When you are working with surfaces, you should always use this function whenever you are finished using them. Surfaces take up space in memory and so need to be removed, normally at the end of a room, but it can be done at any time depending on the use you put them to. Failure to do so can cause memory leaks which will eventually slow down and crash your game.<br />
+        <br />
+        <i><b>NOTE : </b>When working with surfaces there is the possibility that they can cease to exist at any time due to them being stored in vRam. You should <b>ALWAYS</b> check that a surface exists using <a href="surface_exists.html"><tt>surface_exists</tt></a> before referencing them directly. For futher information see <a href="index.html">Surfaces</a>.</i><br />
+        &nbsp;</p>
+        
+        <h3>Example 例子:</h3>
+        
+        <p class="code">if keyboard_check_pressed(vk_escape)<br />
+        &nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;surface_free(surf);<br />
+        &nbsp;&nbsp;&nbsp;room_goto(rm_Menu);<br />
+        &nbsp;&nbsp;&nbsp;}</p>
+        
+        <p>上述代码将检测一个键是否按下，如果检测到了，则对索引为变量surf的表面图层所预留的那部分内存进行释放，然后切换一个房间。<button class="button  entr_click " data_entr="en-2">en</button></p>
+        
+        <p id="en-2">The above code checks for a key press and if it detects one it frees the memory reserved for the surface indexed in the variable &quot;surf&quot; and then changes room.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>&nbsp;</p>
+        
+        <div class="clear">
+        <div style="float:left">Back : <a href="index.html">Surfaces 表面图层</a></div>
+        
+        <div style="float:right">Next : <a href="surface_save.html">surface_save</a></div>
+        </div>
+        
+        <p>&nbsp;</p>
+        
+        <h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
+        <!-- InstanceEndEditable --></div>
+        
+        
+        
         <div id="page_popup">
-            <div class="popup " >
+            <div class="popup ">
                 <div>
                     <a href="#page" class="close">x</a>
                     <div>
-                    	<h4>喵~</h4>
+                        <h4>喵~</h4>
                         <p>欢迎，这里是404号猫国皇室会所~~</p>
                         <p>因为找不到其它的地方，你来到了这里。</p>
                     </div>
@@ -140,7 +132,7 @@ The above code checks for a key press and if it detects one it frees the memory 
             <nav id="menu_right">
             </nav>
         </div>
-        
+
         <!-- KEYWORDS
         pages
         -->
@@ -149,7 +141,7 @@ The above code checks for a key press and if it detects one it frees the memory 
     <script type="text/javascript" src="../../src/js/jquery.min.js"></script>
     <script type="text/javascript" src="../../src/js/jquery.mmenu.min.all_old.js"></script>
     <script type="text/javascript" src="../../src/js/subpage.js"></script>
-    
+
 </body>
 
 <!-- InstanceEnd --></html>
