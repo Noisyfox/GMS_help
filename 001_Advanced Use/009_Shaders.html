@@ -32,27 +32,30 @@
 <h2>一个着色器是两个一组的小脚本，它可以让你直接操作图形流水线并且改变图像绘制的方式。</h2>
 <h2>A shader is a set of two short scripts that permit you to tap directly into the graphics pipeline and change how things are drawn.</h2>
 
-<p>
-Shaders are a very powerful tool that can be used to manipulate the graphics that your game renders to the screen, permitting incredibly fast effects that can range 
-from, for example, adding a subtle colour hue to a sprite, right up to full screen distortion effects.
-<br>
-<br>
-
-<h3>What Is A Shader?</h3>
-<p>
-A shader is basically a two-part program that runs directly on the graphics card itself, making it very fast since the GPU is doing all the work and freeing up CPU cycles 
-for your game code.
-<br>
-<br>
-
-The full shader is comprised of a <b>vertex shader</b> program, and a <b>fragment shader</b> program (also known as a <b>pixel shader</b>). Both of 
-these tiny programs work together in order to manipulate what the graphics card renders to the screen. This then permits you to manipulate in real time, the position, 
-colour and alpha values that are actually rendered into the display buffer.
-<br>
-<br>
-
-A complete overview of how shaders really work and what place they have in the graphics pipeline is outside the scope of this manual, but <i>YoYo Games</i> 
-have produced a number of <b>Tech Blog</b> articles which give an excellent base to start from:
+<p>着色器是非常强大的工具。你可以用它控制你游戏绘制图像的方式，并且成效很快，比如你可以调整精灵的色调或者产生一个全屏的扭曲特效。
+  <button class="button  entr_click " data_entr="en-1">en</button></p>
+<p id="en-1">Shaders are a very powerful tool that can be used to manipulate the graphics that your game renders to the screen, permitting incredibly fast effects that can range 
+  from, for example, adding a subtle colour hue to a sprite, right up to full screen distortion effects. </p>
+  <p>
+  <br>
+  
+<h3>What Is A Shader? 什么是着色器？</h3>
+<p>着色器大提上来说是两个一组直接在显卡上运行的代码片段，由于完全靠GPU来执行，因此代码执行的非常快并且不会消耗任何CPU处理周期。<br><br>
+一个完整的着色器由两部分组成：一个<b>顶点着色器</b>和一个<b>帧着色器</b>（又被称作<b>像素着色器</b>）。这两段程序协同工作来控制显卡的渲染过程。这样你就可以实时的控制渲染时每一个像素缓冲的位置、颜色和透明度。<br><br>
+关于着色器的工作方式以及在渲染管线中所在的位置的完整概述已经超出了本手册的范围，但是 <i>YoYo Games</i> 推出了一系列 <b>技术博客</b> 供你深入了解着色器：<button class="button  entr_click " data_entr="en-2">en</button></p>
+<p id="en-2">A shader is basically a two-part program that runs directly on the graphics card itself, making it very fast since the GPU is doing all the work and freeing up CPU cycles 
+  for your game code. <br>
+  <br>
+  
+  The full shader is comprised of a <b>vertex shader</b> program, and a <b>fragment shader</b> program (also known as a <b>pixel shader</b>). Both of 
+  these tiny programs work together in order to manipulate what the graphics card renders to the screen. This then permits you to manipulate in real time, the position, 
+  colour and alpha values that are actually rendered into the display buffer.
+  <br>
+  <br>
+  
+  A complete overview of how shaders really work and what place they have in the graphics pipeline is outside the scope of this manual, but <i>YoYo Games</i> 
+  have produced a number of <b>Tech Blog</b> articles which give an excellent base to start from:
+  </p>
 <blockquote>
 	<ol>
 		<li><a href="http://www.yoyogames.com/tech_blog/20" target="_blank"><b>Shaders Part 1</b></a><br>
@@ -62,26 +65,28 @@ have produced a number of <b>Tech Blog</b> articles which give an excellent base
 	</ol>
 </blockquote>
 
-<h3>The Shader Editor</h3>
-<p>
-The shader editor has the exact same functionality as the <a href="006_Scripts.html">Script Editor</a>, with auto-complete, search, print, etc... as well as all the same 
-keyboard shortcuts. However, please note that there is no syntax checking, due to the code being written using the specific shader language and <i>not</i> GML.
+<h3>The Shader Editor 着色器编辑器</h3>
+<p>着色器编辑器几乎和<a href="006_Scripts.html">脚本编辑器</a>功能一模一样，也有自动完成、查找和替换、打印等，连快捷键都是一模一样的。但是请注意它没有提供语法检查，因为着色器使用的是特殊的着色器语言，<i>而不是</i>GML。<button class="button  entr_click " data_entr="en-3">en</button></p>
+<p id="en-3">The shader editor has the exact same functionality as the <a href="006_Scripts.html">Script Editor</a>, with auto-complete, search, print, etc... as well as all the same 
+  keyboard shortcuts. However, please note that there is no syntax checking, due to the code being written using the specific shader language and <i>not</i> GML.</p>
+  
+  <p><img class="center"  src="../images/form_shaders.png">
+  
+  <p>由于着色器是由两部分组成的，因此代码编辑器本身被分割成了两个部分，可以用上方的标签来切换。  即使你只想使用像素着色器，你也必须创建一个“保持原样”的顶点着色器（当你新建一个着色器的时候会自动创建好一个“保持原样”的像素着色器和顶点着色器）。<br><br>
+  着色器程序本身在默认情况下是使用一种跨平台的<i>着色器语言</i> <b>GLSL ES</b> 编写的。使用这种语言可以保证你的着色器在大部分的平台上都能够正确运行。但是如果你只想在某种特殊平台运行，你也可以选择另外三种不同的语言。下表列出了所有支持的着色器语言以及对应的目标平台：<button class="button  entr_click " data_entr="en-4">en</button></p>
+  <p id="en-4">The code editor itself is split into two sections, with each one being available from tabs at the top. This is because you <i>cannot</i> create a shader without both 
+    parts. Even if you wish to only use the fragment shader you will have to have created a "pass through" vertex shader (by default any new shader being created will 
+    have a vertex and fragment pass through shader already coded for you).
+    <br>
+    <br>
+    
+    The shader program itself is written in a <i>shader language</i> with the default, cross platform choice being <b>GLSL ES</b>. Using this language guarantees 
+    that your game will work correctly on all platforms that shaders are available on, but you can also choose to use one of three other languages if you are only 
+    targeting a specific platform. The available languages and their respective targets are shown in the table below:</p>
 
-<img class="center"  src="../images/form_shaders.png">
-
-The code editor itself is split into two sections, with each one being available from tabs at the top. This is because you <i>cannot</i> create a shader without both 
-parts. Even if you wish to only use the fragment shader you will have to have created a "pass through" vertex shader (by default any new shader being created will 
-have a vertex and fragment pass through shader already coded for you).
-<br>
-<br>
-
-The shader program itself is written in a <i>shader language</i> with the default, cross platform choice being <b>GLSL ES</b>. Using this language guarantees 
-that your game will work correctly on all platforms that shaders are available on, but you can also choose to use one of three other languages if you are only 
-targeting a specific platform. The available languages and their respective targets are shown in the table below:
-
-<div class="compat">
+  <div class="compat">
 	<table>
-		<tr><th>Shader Language</th><th>Target Platform</th></tr>
+		<tr><th>Shader Language 着色器语言</th><th>Target Platform 目标平台</th></tr>
 		<tr><td>GLSL ES</td><td>All target platforms except Windows 8 (JS)</td></tr>
 		<tr><td>HLSL9</td><td>Windows 32 only</td></tr>
 		<tr><td>HLSL11</td><td>Windows 8 (Native only) and Windows Phone</td></tr>
@@ -89,26 +94,30 @@ targeting a specific platform. The available languages and their respective targ
 	</table>
 </div>
 <p>
-<br>
-
-It is worth noting that you can use GLSL ES shaders on the <b>HTML5</b> target platform but you <i>must</i> have enabled <b>WebGL</b> in the 
-<a href="Global%20game%20settings/HTML5%20Tab.html">HTML5 Global Game Settings</a> otherwise it will not work.
-<br>
-<br>
-
-For further details on the shader functions and how they can be used in <i>GameMaker:Studio</i> please see the section 
-<a href="../002_Reference/Shaders/index.html">Reference: Shaders</a>.
-<br>
-<br>
-
-<i><b>NOTE:</b> This manual will <b>not</b> cover any of the Open GL shader functions and variables, unless they are special ones that exist <b>ONLY</b> in 
-<i>GameMaker:Studio</i> (which can be found <a href="../002_Reference/Shaders/Shader%20Constants/index.html">here</a>. For a complete overview of the 
-available GLSL ES functions and variables please see the 
-<a href="http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf" target="_blank">OpenGL ES Shading Language (GLSL ES) Reference 
-Pages</a>.</i>
-<br>
-<br>
--noisyfox-
+值得注意的是在使用 <b>HTML5</b> 平台的时候你可以使用 GLSL ES 着色器语言，但是你必须在 <a href="Global%20game%20settings/HTML5%20Tab.html">HTML5 全局游戏设定</a> 中启用 <b>WebGL</b>。<br><br>
+关于着色器函数以及如何在 <i>GameMaker:Studio</i> 中使用着色器的更多细节请参见 <a href="../002_Reference/Shaders/index.html">参考: 着色器</a> 章节。<br><br>
+<i><b>注意:</b> 这份手册<b>不会</b>包括任何有关 Open GL 着色器函数和变量的内容，除非是<b>只有</b> <i>GameMaker:Studio</i> 才能支持的特殊功能（你可以在 <a href="../002_Reference/Shaders/Shader%20Constants/index.html">这里</a> 找到详细的说明）。关于 GLSL ES 函数和变量的内容说明请参见 <a href="http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf" target="_blank">OpenGL ES Shading Language (GLSL ES) Reference 
+    Pages</a>.</i>
+<button class="button  entr_click " data_entr="en-5">en</button></p>
+    
+<p id="en-5">It is worth noting that you can use GLSL ES shaders on the <b>HTML5</b> target platform but you <i>must</i> have enabled <b>WebGL</b> in the 
+  <a href="Global%20game%20settings/HTML5%20Tab.html">HTML5 Global Game Settings</a> otherwise it will not work.
+  <br>
+  <br>
+  
+  For further details on the shader functions and how they can be used in <i>GameMaker:Studio</i> please see the section 
+  <a href="../002_Reference/Shaders/index.html">Reference: Shaders</a>.
+  <br>
+  <br>
+  
+  <i><b>NOTE:</b> This manual will <b>not</b> cover any of the Open GL shader functions and variables, unless they are special ones that exist <b>ONLY</b> in 
+  <i>GameMaker:Studio</i> (which can be found <a href="../002_Reference/Shaders/Shader%20Constants/index.html">here</a>). For a complete overview of the 
+    available GLSL ES functions and variables please see the 
+  <a href="http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf" target="_blank">OpenGL ES Shading Language (GLSL ES) Reference 
+    Pages</a>.</i></p>
+  <p>
+  <br>
+  -noisyfox-
 <p>
 <br>
 </p>
@@ -116,10 +125,10 @@ Pages</a>.</i>
 
 <div class="clear">
 	<div style="float:left">
-		Back : <a href="index.html">Advanced Use Index</a>
+		Back 返回: <a href="index.html">Advanced Use Index 高级功能目录</a>
 	</div>
 	<div style="float:right">
-		Next : <a href="010_Constants.html">Constants</a>
+		Next 下一条: <a href="010_Constants.html">Constants 常量</a>
 	</div>
 </div>
 </p>
