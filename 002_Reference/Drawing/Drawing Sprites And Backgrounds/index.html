@@ -26,74 +26,66 @@
             <a href="#menu_left" class="menu_left" title="点击此按钮打开左侧目录菜单，右边的按钮则打开右侧菜单。"></a>GameMaker:Studio帮助手册
             <a href="#menu_right" class="friends right"></a>
         </div>
-        <div id="content">
-            <!-- InstanceBeginEditable name="EditRegion_content" -->
-<h1>Drawing Sprites And Backgrounds &#32472;&#21046;&#31934;&#28789;&#19982;&#32972;&#26223;</h1>
+        <div id="content"><!-- InstanceBeginEditable name="EditRegion_content" -->
+            <h1>Drawing Sprites And Backgrounds 绘制精灵与背景</h1>
 
-<h2>.&#26412;&#31456;&#33410;&#21253;&#21547;&#20102;&#25152;&#26377;&#21487;&#29992;&#20110;&#32472;&#21046;&#30340;&#22270;&#24418;&#36164;&#20135;&#30340;&#20989;&#25968;&#12290;</h2>
+            <h2>本章节包含了所有可用于绘制图形类原生资资源的函数。</h2>
 
-<p>
-E&#21363;&#20351;&#20320;&#21487;&#20197;&#35774;&#32622;&#32972;&#26223;&#22312;&#25151;&#38388;&#32534;&#36753;&#22120;&#20013;&#65292;&#20320;&#21487;&#20197;&#25351;&#23450;&#31934;&#28789;&#21040;&#23454;&#20363;&#65292;&#36890;&#24120;&#36825;&#22312;&#28216;&#25103;&#20013;&#19981;&#22815;&#28789;&#27963;&#12290;&#20363;&#22914;&#65292;&#22914;&#26524;&#20320;&#26377;&#19968;&#20010;&#23454;&#20363;&#65292;&#30011;&#19968;&#20010;&#33756;&#21333;&#65292;&#20320;&#21487;&#20197;&#22312;&#21516;&#19968;&#26102;&#38388;&#35201;&#26174;&#31034;&#30340;&#21508;
-&#31181;&#25353;&#38190;&#31934;&#28789;&#65292;&#25110;&#32773;&#22914;&#26524;&#20320;&#26377;&#19968;&#20010;&#28378;&#21160;&#35270;&#24046;&#32972;&#26223;&#30340;&#28216;&#25103;&#65292;&#20320;&#23558;&#38656;&#35201;&#33021;&#22815;&#36890;&#36807;&#20195;&#30721;&#35774;&#32622;&#26576;&#20123;&#31867;&#22411;&#30340;&#25511;&#21046;&#22120;&#23454;&#20363;&#12290;&#22312;&#36825;&#31181;&#24773;&#20917;&#19979;&#65292;&#20320;&#24212;&#35813;&#20351;&#29992;&#19979;&#38754;&#30340;&#20989;&#25968;&#65292;&#21487;&#20197;&#32472;&#21046;&#31934;&#28789;&#21644;
-&#32972;&#26223;&#30340;&#36164;&#20135;&#22312;&#25151;&#38388;&#20013;&#30340;&#20219;&#20309;&#20301;&#32622;&#30340;&#20989;&#25968;&#65292;&#20063;&#20801;&#35768;&#20320;&#25805;&#25511;&#30340;&#31934;&#28789;&#30340;&#24418;&#29366;&#65292;&#22823;&#23567;&#65292;&#39068;&#33394;&#21644;&#36879;&#26126;&#24230;&#36798;&#21040;&#29305;&#27530;&#30340;&#25928;&#26524;&#12290;<br>
-<br>
+            <p>即使你可以设置背景在房间编辑器中，你可以指定精灵到实例，通常这在游戏中不够灵活。例如，如果你有一个实例，画一个菜单，你可以在同一时间要显示的各 种按键精灵，或者如果你有一个滚动视差背景的游戏，你将需要能够通过代码设置某些类型的控制器实例。在这种情况下，你应该使用下面的函数，可以在房间中的任何位置绘制精灵和背景的原生资源的函数，也允许你操纵精灵的形状，大小，颜色和透明度达到特殊的效果。</p>
 
-</p><h3>&#31934;&#28789;</h3>
-<p>&#24744;&#21487;&#20197;&#25351;&#23450;&#19968;&#20010;&#31934;&#28789;&#21040;&#19968;&#20010;&#23454;&#20363;&#65292;&#40664;&#35748;&#24773;&#20917;&#19979;&#65292; <i>GameMaker:Studio</i> &#32472;&#21046;&#23427;&#30340;&#21508;&#31181;&#23646;&#24615;&#36890;&#36807;&#31934;&#28789;&#21464;&#37327; <a href="../../Objects%20and%20Instances/Instances/Instance%20Properties/index.html">sprite variables</a>, &#20294;&#26159;&#65292;&#22914;&#26524;&#20320;&#28155;&#21152;&#20219;&#20309;&#20107;&#24773;&#21040;&#32472;&#21046;&#20107;&#20214;&#65292;&#20320;&#26159;&#8220;&#25511;&#21046;&#8221;&#65292;&#24517;&#39035;&#20934;&#30830;&#22320;&#21578;&#35785;<i>GameMaker:Studio</i>&#35201;&#30011;&#20160;&#20040;&#12290;&#36825;&#24847;&#21619;&#30528;&#65292;&#22914;&#26524;&#20320;&#24517;&#39035;&#20351;&#29992;&#19979;&#38754;&#30340;&#20989;&#25968;&#26469;&#23450;&#20041;&#23427;&#21040;&#24213;&#26159;&#20160;&#20040;&#30340;&#23454;&#20363;&#32472;&#21046;&#21644;&#25151;&#38388;&#37324;&#23427;&#32472;&#21046;&#30340;&#20301;&#32622;&#65306;
-</p><blockquote>
-	<ol>
-		<li><a href="draw_self.html">draw_self</a><br>
-		</li><li><a href="draw_sprite.html">draw_sprite</a><br>
-		</li><li><a href="draw_sprite_ext.html">draw_sprite_ext</a><br>
-		</li><li><a href="draw_sprite_general.html">draw_sprite_general</a><br>
-		</li><li><a href="draw_sprite_part.html">draw_sprite_part</a><br>
-		</li><li><a href="draw_sprite_part_ext.html">draw_sprite_part_ext</a><br>
-		</li><li><a href="draw_sprite_stretched.html">draw_sprite_stretched</a><br>
-		</li><li><a href="draw_sprite_stretched_ext.html">draw_sprite_stretched_ext</a><br>
-		</li><li><a href="draw_sprite_pos.html">draw_sprite_pos</a><br>
-		</li><li><a href="draw_sprite_tiled.html">draw_sprite_tiled</a><br>
-		</li><li><a href="draw_sprite_tiled_ext.html">draw_sprite_tiled_ext</a><br>
-	</li></ol>
-</blockquote>			
-			
-<h3>&#32972;&#26223;</h3>
-<p>&#34429;&#28982;&#25151;&#38388;&#32534;&#36753;&#22120;&#32972;&#26223;&#36873;&#39033;&#21345; <a href="../../../000_Using%20GameMaker/Rooms/Backgrounds%20Tab.html">Room Editor Backgrounds Tab</a> &#20013;&#26377;&#35768;&#22810;&#30340;&#36873;&#39033;&#35774;&#32622;&#32972;&#26223;&#65292;&#36890;&#24120;&#20351;&#29992;&#30340;&#20195;&#30721;&#32472;&#21046;&#20250;&#26356;&#26377;&#29992;&#12290;&#20026;&#27492;&#65292;<i>GameMaker:Studio</i> &#20855;&#26377;&#20197;&#19979;&#30340;&#20989;&#25968;&#65292;&#20801;&#35768;&#24744;&#32472;&#21046;&#32972;&#26223;&#30340;&#36164;&#20135;&#20197;&#35768;&#22810;&#19981;&#21516;&#30340;&#26041;&#27861;&#65306; <br>
-<br>
+            <h3>精灵</h3>
 
-<i><b>NOTE : </b></i>&#19981;&#35201;&#24536;&#20102;&#19968;&#20010;&#23454;&#20363;&#30340;&#32472;&#21046;&#20107;&#20214;&#28155;&#21152;&#20219;&#20309;&#20195;&#30721;&#65292;&#23558;&#20851;&#38381;&#35813;&#23454;&#20363;&#31934;&#28789;&#33258;&#21160;&#32472;&#21046;&#65292;&#25152;&#20197;&#22914;&#26524;&#20320;&#38656;&#35201;&#32472;&#21046;&#30340;&#31934;&#28789;&#21644;&#32972;&#26223;&#65292;&#20320;&#24212;&#35813;&#20351;&#29992;&#19978;&#36848;&#20989;&#25968;&#19982;&#19979;&#38754;&#30340;&#32452;&#21512;&#12290;
-</p><blockquote>
-	<ol>
-		<li><a href="draw_background.html">draw_background</a><br>
-		</li><li><a href="draw_background_ext.html">draw_background_ext</a><br>
-		</li><li><a href="draw_background_part.html">draw_background_part</a><br>
-		</li><li><a href="draw_background_part_ext.html">draw_background_part_ext</a><br>
-		</li><li><a href="draw_background_stretched.html">draw_background_stretched</a><br>
-		</li><li><a href="draw_background_stretched_ext.html">draw_background_stretched_ext</a><br>
-		</li><li><a href="draw_background_tiled.html">draw_background_tiled</a><br>
-		</li><li><a href="draw_background_tiled_ext.html">draw_background_tiled_ext</a><br>
-		</li><li><a href="draw_background_general.html">draw_background_general</a><br>
-	</li></ol>
-</blockquote>
+            <p>您可以指定一个精灵到一个实例，默认情况下， <i>GameMaker:Studio</i> 通过精灵变量&nbsp;<a href="../../Objects%20and%20Instances/Instances/Instance%20Properties/index.html">sprite variables</a>&nbsp;绘制它的各种属性, 但是，如果你添加一些什么到绘制事件，你是&ldquo;获取控制&rdquo;，必须准确地告诉<i>GameMaker:Studio</i>要画什么。意味着必须使用下面的函数来定义绘制什么实例，以及房间里绘制的位置：</p>
 
-<p>
-- &#30887;&#32511;&#30340;&#28246; -<br>
-</p>
-<p>
+            <blockquote>
+                <ol>
+                    <li><a href="draw_self.html">draw_self</a></li>
+                    <li><a href="draw_sprite.html">draw_sprite</a></li>
+                    <li><a href="draw_sprite_ext.html">draw_sprite_ext</a></li>
+                    <li><a href="draw_sprite_general.html">draw_sprite_general</a></li>
+                    <li><a href="draw_sprite_part.html">draw_sprite_part</a></li>
+                    <li><a href="draw_sprite_part_ext.html">draw_sprite_part_ext</a></li>
+                    <li><a href="draw_sprite_stretched.html">draw_sprite_stretched</a></li>
+                    <li><a href="draw_sprite_stretched_ext.html">draw_sprite_stretched_ext</a></li>
+                    <li><a href="draw_sprite_pos.html">draw_sprite_pos</a></li>
+                    <li><a href="draw_sprite_tiled.html">draw_sprite_tiled</a></li>
+                    <li><a href="draw_sprite_tiled_ext.html">draw_sprite_tiled_ext</a></li>
+                </ol>
+            </blockquote>
 
-</p><div class="clear">
-	<div style="float: left;">
-		Back : <a href="../index.html">Drawing</a>
-	</div>
-	<!--<div style="float:right">
-		Next : <a href="../Joystick Input/index.html">Joystick Input</a>
-	</div>-->
-</div>
+            <h3>背景</h3>
+
+            <p>虽然房间编辑器背景选项卡 <a href="../../../000_Using%20GameMaker/Rooms/Backgrounds%20Tab.html">Room Editor Backgrounds Tab</a> 中有许多的选项设置背景，通常使用的代码绘制会更有用。为此，<i>GameMaker:Studio</i> 具有以下的函数，允许您以许多不同的方法绘制背景一类的原生资源：<br />
+                <br />
+                <i><b>NOTE : </b></i>不要忘了一个实例的绘制事件添加任何代码，将关闭该实例精灵自动绘制，所以如果你需要绘制精灵和背景，你应该结合上述函数和下面的函数进行绘制。</p>
+
+            <blockquote>
+                <ol>
+                    <li><a href="draw_background.html">draw_background</a></li>
+                    <li><a href="draw_background_ext.html">draw_background_ext</a></li>
+                    <li><a href="draw_background_part.html">draw_background_part</a></li>
+                    <li><a href="draw_background_part_ext.html">draw_background_part_ext</a></li>
+                    <li><a href="draw_background_stretched.html">draw_background_stretched</a></li>
+                    <li><a href="draw_background_stretched_ext.html">draw_background_stretched_ext</a></li>
+                    <li><a href="draw_background_tiled.html">draw_background_tiled</a></li>
+                    <li><a href="draw_background_tiled_ext.html">draw_background_tiled_ext</a></li>
+                    <li><a href="draw_background_general.html">draw_background_general</a></li>
+                </ol>
+            </blockquote>
+
+            <p>- 碧绿的湖 -</p>
+
+            <p>&nbsp;</p>
+
+            <div class="clear">
+                <div style="float: left;">Back : <a href="../index.html">Drawing</a></div>
+                <!--<div style="float:right">
+Next : <a href="../Joystick Input/index.html">Joystick Input</a>
+</div>--></div>
+            <!-- KEYWORDS
+--><!-- InstanceEndEditable --></div>
 
 
-<!-- KEYWORDS
--->  <!-- InstanceEndEditable -->
-        </div>
-        
         <div id="page_popup">
             <div class="popup ">
                 <div>
