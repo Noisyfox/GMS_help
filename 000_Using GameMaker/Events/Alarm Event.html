@@ -2,7 +2,7 @@
 
 <head>
     <!-- InstanceBeginEditable name="doctitle" -->
-<title>The Alarm Events</title>
+<title>The Alarm Events计时事件</title>
 <!-- InstanceEndEditable -->
     <meta http-equiv="X-UA-Compatible" content="IE=9" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -27,22 +27,27 @@
         </div>
         <div id="content">
             <!-- InstanceBeginEditable name="EditRegion_content" -->
-<h1>The Alarm Events</h1>
+<h1>The Alarm Events计时事件</h1>
 
 <h2>The alarm events are one of the many events that can be triggered in an instance and may contain code or actions.</h2>
+<h2>计时事件是实例可以使用的众多事件中的一个，您可以往里面添加动作（Action）或者代码</h2>
 
 <p>
-<b><img src="../../images/Event_Timer.png" align="middle" align="left">The Alarm Events</b>
+<b><img src="../../images/Event_Timer.png" align="middle" align="left">The Alarm Events </b>
+<b><img src="../../images/Event_Timer.png" align="middle" align="left">计时事件 </b>
 <br>
 
 The alarm event is split into 12 <i>sub</i> events, one for each of the possible alarms that can be set in an instance. So, when you click on the add alarm button you are presented with this window :
-
+<p>
+计时事件由12个<i>子</i>事件组成，其中每一个子事件都是一个可设置的计时器。所以当您想要添加计时事件的时候您将看到以下菜单：
 <img class="center" src="Alarm_Menu.png">
 <br>
 <br>
 Here you select the alarm that you wish to create and, once that is done, you will see that it has been added to the event window allowing you to add actions to it as normal. But what is an alarm? Well, it is a special 
 event that does nothing unless the alarm has been previously set, and then it will wait until that alarm has counted down to 0 before running the actions or code that you have added into it. So, say you set alarm[0] 
 in the create event of the object to 30, this means that <i>GameMaker:Studio</i> will count down 30 game cycles (<b>steps</b>) before it runs the actions or code that are placed in the alarm[0] event.
+<p>
+在这里您可以选中您想要创建的计时事件。创建成功之后，您会看见它出现在事件窗口里，这时候您可以像往常一样往里面添加动作。不过既然是个计时器，在您尚未设置它之时它是不会被触发的。如果您已经设置了一个计时器，那么它会一直倒数直到为零，然后执行您设置的动作或者脚本。举个例子，如果您在创建事件里将alarm[0]设置为30，那么<i>Gamemaker:Studio</i>将倒数30个游戏主循环（<b>步</b>），然后运行您给alarm[0]设置的动作或者脚本。
 <br>
 <br>
 
@@ -50,10 +55,16 @@ This can be very useful as it allows you to set things in motion at precise mome
 and you want it to turn right every three seconds... well, you would set an alarm in its create event to the room speed*3 (if the room speed is 30, that's 30 steps per second, so multiply that by 3 and you get 3 seconds!) 
 and then in the alarm event you would have the code or action to set its direction, <i>as well as</i> the action (or code) to set its alarm to room speed*30 again. In this way, you can set up simple game loops where things 
 only happen at specific intervals.
+<p>
+这是一个十分有用的事件。您可以用它来实现在某个确切的时间点执行某个确切的任务，同时您也可以将它循环使用（在计时事件中设置计时器，自己设置自己）。比如如果您想要制作一只来回踱步的怪物，就可以这样做：在怪物的创建事件中设置一个计时器为room speed*3（如果room speed为30，则代表现实中的1秒是游戏中的30步，所以room speed*3表示现实中的3秒），然后在相应的计时事件里您需要设置另这个怪物转向的动作或者脚本，<b>并且同时一定要</b>再将这个计时器设置为room speed*3，这样一来，一个简单的带有特定间隔时间的游戏循环就完成了。
+<br>
+
 <br>
 <br>
 
 <i><b>NOTE:</b> An alarm with no actions in it will not run. However, even with just a comment and no code, the alarm will count down.</i>
+<p>
+<i><b>注意：</b> 一个空的计时事件是不会被触发的，但是只要有内容哪怕是一行注释都能激活该计时事件，让它倒计时。</i>
 <br>
 <br>
 
@@ -64,10 +75,10 @@ only happen at specific intervals.
 
 <div class="clear">
 	<div style="float:left">
-		Back : <a href="index.html">Events</a>
+		返回： <a href="index.html">Events 事件</a>
 	</div>
 	<div style="float:right">
-		Next : <a href="Step%20Event.html">The Step Event</a>
+		下一章 ：<a href="Step%20Event.html">The Step Event 步事件</a>
 	</div>
 </div>
 </p>
@@ -103,7 +114,7 @@ only happen at specific intervals.
 
                 </div>
 
-            </div>
+            </div><form action="" method="get"></form><form action="" method="get"></form>
         </div>
 
         <div id="page_mmenu">
