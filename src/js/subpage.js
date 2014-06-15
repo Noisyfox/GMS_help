@@ -29,7 +29,6 @@ function git_or_obs(url) {
         //obsurl ="/"+ url; //如果是git域名,则前面加上项目名称
         obsurl = rel_to_obs(url,location.pathname);
         
-        
     } else {
         obsurl = url;
     }
@@ -46,7 +45,7 @@ $(document).ready(function () {
         url_prefix = mmenu_left_fullurl.slice(0,-23);
         
         mmenu_left_fullurl = git_or_obs(mmenu_left_fullurl);
-        alert(mmenu_left_fullurl);       
+        //alert(mmenu_left_fullurl);       
         
         $('nav#menu_left').load( mmenu_left_fullurl, function () {
             //应用mmeunu
