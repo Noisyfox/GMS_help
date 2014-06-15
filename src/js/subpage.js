@@ -25,7 +25,9 @@ function git_or_obs(url) {
     var obsurl;
     //alert(url.slice(0, 1));
     if (location.hostname == "xujing-project.github.io") {
-        obsurl ="/GMS_help/"+ url; //如果是git域名,则前面加上项目名称
+        obsurl ="/"+ url; //如果是git域名,则前面加上项目名称
+        obsurl = "/GMS_help" + obsurl ;
+        
     } else {
         obsurl = url;
     }
@@ -40,11 +42,8 @@ $(document).ready(function () {
         //显示或关闭左菜单
         var mmenu_left_fullurl = $('#forload_menuleft').attr("href");//git_or_obs($('#forload_menuleft').attr("href"));
         url_prefix = mmenu_left_fullurl.slice(0,-23);
-        //mmenu_left_fullurl = git_or_obs(mmenu_left_fullurl);
+        mmenu_left_fullurl = git_or_obs(mmenu_left_fullurl);
         //alert(location.hostname);
-        if (location.hostname == "xujing-project.github.io") {
-                mmenu_left_fullurl ="GMS_help"+ mmenu_left_fullurl; //如果是git域名,则前面加上项目名称
-            }         
         
         $('nav#menu_left').load( mmenu_left_fullurl, function () {
             //应用mmeunu
