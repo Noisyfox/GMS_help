@@ -24,7 +24,7 @@ function git_or_obs(url) {
     //var gms_help = "/GMS_help";
     var obsurl;
     //alert(url.slice(0, 1));
-    if (location.hostname == "xujing-project.github.io") {        
+    if (location.hostname == "xujing-project.github.io") {
         
         //obsurl ="/"+ url; //如果是git域名,则前面加上项目名称
         obsurl = rel_to_obs(url,location.pathname);
