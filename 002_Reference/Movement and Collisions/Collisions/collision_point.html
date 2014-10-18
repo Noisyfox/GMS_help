@@ -28,107 +28,100 @@
             <a href="../../../subpage/mmenu_left.html" id="forload_menuleft"></a>
             <a href="../../../subpage/mmenu_right.html" id="forload_menuright"></a>
         </div>
-        <div id="content">
-            <!-- InstanceBeginEditable name="EditRegion_content" -->
-<h1>collision_point</h1>
-  
-<h2>Checks a specific, user defined point for a collision with the an instance of the chosen object.</h2>
-  
-<h3>Syntax :</h3>
-<p class="code">collision_point( x, y, obj, prec, notme );</p>
+        <div id="content"><!-- InstanceBeginEditable name="EditRegion_content" -->
+            <h1>collision_point 点碰撞</h1>
 
-<p>
-<br>
-</p>
+            <h2>检查与选定对象在用户定义的特殊点的碰撞。&nbsp;Checks a specific, user defined point for a collision with the an instance of the chosen object.</h2>
 
-<div class="param">
-<table>
-	<tr><th>Argument</th><th>Description</th></tr>
+            <h3>Syntax 用法:</h3>
 
-	<tr><td>x</td>
-	<td>The x coordinate of the point to check.</td></tr>
-	
-	<tr class="alt"><td>y</td>
-	<td>The y coordinate of the point to check.</td></tr>
-	
-	<tr><td>obj</td>
-	<td>The object to check for instance collisions.</td></tr>
-	
-	<tr class="alt"><td>prec</td>
-	<td>Whether the check is based on pixel-perfect collisions (true = slow) or its bounding box in general (false = fast).</td></tr>
-	
-	<tr><td>notme</td>
-	<td>Whether the calling instance, if relevant, should be excluded (true) or not (false).</td></tr>
+            <p class="code">collision_point( x, y, obj, prec, notme );</p>
 
-</table>
-</div>
+            <p>&nbsp;</p>
 
-<p>
-<br>
-</p>
+            <div class="param">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Argument</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>x</td>
+                            <td>检测点的x坐标。The x coordinate of the point to check.</td>
+                        </tr>
+                        <tr class="alt">
+                            <td>y</td>
+                            <td>检测点的y坐标。The y coordinate of the point to check.</td>
+                        </tr>
+                        <tr>
+                            <td>obj</td>
+                            <td>与实例发生碰撞的目标对象。The object to check for instance collisions.</td>
+                        </tr>
+                        <tr class="alt">
+                            <td>prec</td>
+                            <td>是否基于完美的像素碰撞进行检测（为真时会降低速度）或者是普通的碰撞盒（速度会更快）。Whether the check is based on pixel-perfect collisions (true = slow) or its bounding box in general (false = fast).</td>
+                        </tr>
+                        <tr>
+                            <td>notme</td>
+                            <td>调用的实例如果是相关则排除，否则不排除。Whether the calling instance, if relevant, should be excluded (true) or not (false).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-<p>
-<b>Returns :</b> Instance id or <b>noone</b>
-</p>
-  
- <p>
-<br>
-</p>
+            <p>&nbsp;</p>
 
-<h3>Description</h3>
-<p>
-Collision point checks the point specified by the arguments x1,y1 for a collision with <b>any</b> instance of the object specified by the argument "obj". this check can be either precise or not, but for precise 
-collisions to be enabled, the object or instance that you are checking for <i>must</i> also have precise collisions enabled for their sprite. If not, the default check is based on bounding boxes. The following image 
-illustrates how this works:
-<br>
-<br>
+            <p><b>Returns 返回:</b>&nbsp;实例的 id 或者<b>noone</b>。Instance id or <b>noone</b></p>
 
-<img class="center" src="collision_point_illustration.png"></img>
+            <p>&nbsp;</p>
 
-<p>
-Remember, for precise collisions to be considered <i>both</i> the object sprite and the collision function must have precise marked as on. It should also be noted that the return value of the function can be the 
-id of <i>any one</i> of the instances considered to be in collision, so if three instance overlap at that point, any one of their ids could be the return value of the function.
-<br>
-<br>
+            <h3>Description</h3>
 
-<p>
-<br>
-</p>
+            <p>点碰撞检测x1,y1所在的精确点与obj对应的实例的碰撞。可以是精确的检测，也可以不是，但如果设定了精确的检测，物体或者实例对应的精灵也必须开启精确的碰撞。如果不这样，默认的检测将基于碰撞盒。下面的图将说明它的原理。</p>
 
-<h3>Example :</h3>
-<p class="code">
-if collision_point(x, y, obj_Cursor, false, true)<br>
-&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;Score += 10S;<br>
-&nbsp;&nbsp;&nbsp;}<br>
-</p>
-<p>
-Here we are checking the point at the position of the object that has the code for the object "obj_Cursor". If there is one, then we add 10 onto the score variable.
-</p>
-  
-<p>
-<br>
-</p>
-<p>
+            <p>Collision point checks the point specified by the arguments x1,y1 for a collision with <b>any</b> instance of the object specified by the argument &quot;obj&quot;. this check can be either precise or not, but for precise collisions to be enabled, the object or instance that you are checking for <i>must</i> also have precise collisions enabled for their sprite. If not, the default check is based on bounding boxes. The following image illustrates how this works:<br />
+                <br />
+                <img class="center" src="collision_point_illustration.png" /></p>
 
-<div class="clear">
-	<div style="float:left">
-		Back : <a href="index.html">Collision Checking</a>
-	</div>
-	<div style="float:right">
-		Next : <a href="collision_rectangle.html">collision_rectangle</a>
-	</div>
-</div>
-</p>
+            <p>请记住，考虑精确碰撞时，物体的精灵和碰撞函数都必须设置为精确碰撞，应该注意的是，函数的返回值可能是任何一个与obj碰撞的实例，所以如果碰撞点有三个实例重叠时，返回值可能是它们中的任何一个id。</p>
 
-<!-- KEYWORDS
+            <p>Remember, for precise collisions to be considered <i>both</i> the object sprite and the collision function must have precise marked as on. It should also be noted that the return value of the function can be the id of <i>any one</i> of the instances considered to be in collision, so if three instance overlap at that point, any one of their ids could be the return value of the function.<br />
+                &nbsp;</p>
+
+            <p>&nbsp;</p>
+
+            <h3>Example :</h3>
+
+            <p class="code">if collision_point(x, y, obj_Cursor, false, true)<br />
+                &nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;Score += 10S;<br />
+                &nbsp;&nbsp;&nbsp;}</p>
+
+            <p>检测obj_Cursor所有的位置是否有碰撞，如果有，则分数加10。</p>
+
+            <p>Here we are checking the point at the position of the object that has the code for the object &quot;obj_Cursor&quot;. If there is one, then we add 10 onto the score variable.</p>
+
+            <p>&nbsp;</p>
+
+            <p>&nbsp;</p>
+
+            <div class="clear">
+                <div style="float:left">Back : <a href="index.html">Collision Checking</a></div>
+
+                <div style="float:right">Next : <a href="collision_rectangle.html">collision_rectangle</a></div>
+            </div>
+
+            <p>&nbsp;</p>
+            <!-- KEYWORDS
 collision_point
 -->
 
-<h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
-            <!-- InstanceEndEditable -->
-        </div>
-        
+            <h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
+            <!-- InstanceEndEditable --></div>
+
+
+
         <div id="page_popup">
             <div class="popup ">
                 <div>
