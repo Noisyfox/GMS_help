@@ -27,67 +27,118 @@
         </div>
         <div id="content">
             <!-- InstanceBeginEditable name="EditRegion_content" -->
-<h1>Debugging</h1>
+<h1>Debugging 调试</h1>
 
+<h2>这一节讲述了调试工具的用法以及如何发现和纠正游戏中的错误。</h2>
 <h2>This section outlines the debug tool and how to correct and detect errors in your game.</h2>
 
-<p>
-<i>GameMaker:Studio</i> has a built-in programming language called GML, and once you become more familiar with how <i>GameMaker</i> works, you will want to use it to its fullest extent, 
-meaning that you will need to program aspects of your game in this language.
-<br>
-<br>
+<p><i>GameMaker:Studio</i> 内建了一种叫做 GML 的编程语言，并且一旦当你熟悉了用 <i>GameMaker</i> 开发游戏的方法，你就会想要用 GML 来大幅扩展你游戏的方方面面，也就意味着你需要使用这种语言来给你的游戏编写代码。<br/><br/>
+但是只要你一开始写起代码来，你就一定会出错——写错了变量名，传入错误的参数，或者用错了函数——有些错误光靠脚本编辑器的语法检查还发现不了（更多关于代码编辑器的信息请参见 <a href="../001_Advanced%20Use/006_Scripts.html">Scripts</a>）。这也就意味着这些错误只有你在运行游戏的时候才会显现出来，即便如此有时候还是很难确定到底是哪里出了问题！从另一个方面来说，有时候知道你的代码在特定的设备上具体是如何执行的也是很有必要的，包括你的房间里究竟有哪些实例，你创建了哪些全局变量，或者其它各种细节问题。<br/><br/>
+  现在你可以通过在游戏中添加各种“调试代码”来检查各种你想知道的事情。有些代码可以在屏幕上实时的显示你想知道的信息，有些可以让你在出现错误的时候显示相关信息。但是通常你需要花费很大的功夫来显示各种信息来定位错误出现的位置。为了更好的调试代码， <i>GameMaker:Studio</i> 提供了一种特殊的游戏运行模式称为 <b>调试模式</b>。在这种模式下会有一个全面的错误报告系统来实时的显示各种信息帮助你追踪游戏中出现的任何错误。<button class="button  entr_click " data_entr="en-1">en</button></p>
 
-However, when programming code it can be very easy to make mistakes - using the wrong variables, passing the wrong arguments, or using the wrong functions - which are not always detected by 
-the syntax checker that is included with the script editor (for more information on the script editor see <a href="../001_Advanced%20Use/006_Scripts.html">Scripts</a>). This means that these mistakes 
-will only become apparent when you actually run your game, and even then it can sometimes be difficult to know exactly what is going wrong! it can also be of vital importance to know how your game 
-is performing on the chosen device, as well as see what instances are in the room, what global variables have been created and a whole host of other details.
-<br>
-<br>
-
-Now, you can check a lot of these things yourself by adding in "debug code" to your games that displays on-screen the information you require, or that exists when there is an error, but this is often a 
-lot of work and if you aren't sure where the problem is then it can be a time consuming case of trial and error to track down your bug. For that, <i>GameMaker:Studio</i> has a special run mode called 
-<b>Debug Mode</b> as well as a comprehensive error reporting system which displays messages at run time to help you track down any problems with your game.
-<br>
-<br>
-
-<h3>Error Reporting</h3>
-<p>
-When an error occurs during the execution of a script this is reported with an onscreen message, much like the one shown below :
-
-<img class="center" src="../images/ErrorReport.png">
-
-Most error messages follow the same outline, with a message stating the type of error, the instance and event in which the error was encountered, then a series of compiler details that explain the error 
-in a lot more depth and, finally, a list of all the declared global, instance and local variables in your game at that point. At the very bottom is the <b>Abort</b> button which will abort the game, as 
-well as the <b>Copy</b> button (which copies the error into the clipboard) and the <b>Clear</b> button which clears the error messages from the window. The information provided by the error reporting 
-is very important as it detects and reports the large, syntax related bugs that are going to cause your finished game to crash, but it won't report more subtle bugs, nor does it give feedback on performance... 
-for that you need to use the <b>Debug Mode</b>.
-<br>
-<br>
-
-<h3>Debug Mode</h3>
-<p>
-If you need to check things more carefully, you can run the game in debug mode. When you do, a window will open along with your game in which you can monitor how everything is working, from the global 
-performance, right down to the values of individual variables in individual instances. The actual debug window looks like this :
-
-<img class="center" src="../images/Form_debug.png">
-
-At the top you have three drop down menus :
-<blockquote>
+<p id="en-1"><i>GameMaker:Studio</i> has a built-in programming language called GML, and once you become more familiar with how <i>GameMaker</i> works, you will want to use it to its fullest extent, 
+  meaning that you will need to program aspects of your game in this language.
+  <br>
+  <br>
+  
+  However, when programming code it can be very easy to make mistakes - using the wrong variables, passing the wrong arguments, or using the wrong functions - which are not always detected by 
+  the syntax checker that is included with the script editor (for more information on the script editor see <a href="../001_Advanced%20Use/006_Scripts.html">Scripts</a>). This means that these mistakes 
+  will only become apparent when you actually run your game, and even then it can sometimes be difficult to know exactly what is going wrong! It can also be of vital importance to know how your game 
+  is performing on the chosen device, as well as see what instances are in the room, what global variables have been created and a whole host of other details.
+  <br>
+  <br>
+  
+  Now, you can check a lot of these things yourself by adding in "debug code" to your games that displays on-screen the information you require, or that exists when there is an error, but this is often a 
+  lot of work and if you aren't sure where the problem is then it can be a time consuming case of trial and error to track down your bug. For that, <i>GameMaker:Studio</i> has a special run mode called 
+  <b>Debug Mode</b> as well as a comprehensive error reporting system which displays messages at run time to help you track down any problems with your game.
+  <br>
+  <br>
+  
+<h3>Error Reporting 错误报告</h3>
+<p>当游戏脚本执行的过程中出现了错误会出现如下图所示的错误报告对话框：<button class="button  entr_click " data_entr="en-2">en</button></p>
+<p id="en-2">When an error occurs during the execution of a script this is reported with an onscreen message, much like the one shown below : </p>
+  
+  <p><img class="center" src="../images/ErrorReport.png">
+  
+  <p>大多数的消息的格式都是相同的。首先是错误类型，错误发生所在的实例和事件，然后是一系列的编译器信息解释了更多关于错误的具体细节，最后是一个当前存在的全部的全局变量、实例和局部变量的列表。在对话框的最下面有几个按钮。<b>Abort</b> 按钮会终止游戏的执行，<b>Copy</b> 按钮可以把错误信息复制到剪贴板中，<b>Clear</b> 按钮可以清除对话框中的错误信息。错误报告提供的信息是非常有用的，因为它提供了导致你游戏崩溃的直接原因，但是它不会报告那些不易察觉的bug，同时也不会提供任何关于你游戏执行效率的信息。如果你需要这些信息，你就需要使用 <b>调试模式</b>。<button class="button  entr_click " data_entr="en-3">en</button></p>
+  <p id="en-3">Most error messages follow the same outline, with a message stating the type of error, the instance and event in which the error was encountered, then a series of compiler details that explain the error 
+    in a lot more depth and, finally, a list of all the declared global, instance and local variables in your game at that point. At the very bottom is the <b>Abort</b> button which will abort the game, as 
+    well as the <b>Copy</b> button (which copies the error into the clipboard) and the <b>Clear</b> button which clears the error messages from the window. The information provided by the error reporting 
+    is very important as it detects and reports the large, syntax related bugs that are going to cause your finished game to crash, but it won't report more subtle bugs, nor does it give feedback on performance... 
+    for that you need to use the <b>Debug Mode</b>.
+    <br>
+    <br>
+    
+  <h3>Debug Mode 调试模式</h3>
+<p>如果你想要更仔细的检查你的游戏，你可以用调试模式来运行它。当你进入调试模式的时候，会弹出这样的一个对话框，在这个对话框里你可以查看从全局动作到单个实例中的单个变量的值在内的全部东西。这个对话框看起来会是下面这样：
+  <button class="button  entr_click " data_entr="en-4">en</button></p>
+<p id="en-4">If you need to check things more carefully, you can run the game in debug mode. When you do, a window will open along with your game in which you can monitor how everything is working, from the global 
+  performance, right down to the values of individual variables in individual instances. The actual debug window looks like this : </p>
+  <p><img class="center" src="../images/Form_debug.png">
+  
+  <p>在对话框的顶端有以下几个下拉菜单：<button class="button  entr_click " data_entr="en-5">en</button></p>
+  <p id="en-5">At the top you have three drop down menus :
+  
+<blockquote >
 <ul>
+	<li><b>Run : </b>在这个菜单里你可以暂停和继续、单步执行、停止或重启你的游戏。</li><br>
+	
+	<li><b>Watch : </b>这个菜单可以让你添加、修改、删除或清空变量监控。要获得在表达式中使用的实例id，你只需要把鼠标移到对象的上面，它的id就会在下方的 <b>Mouse id</b> 处显示出来。</li><br>
+
+	<li><b>Tools : </b>在这个菜单里你可以查看游戏中的所有实例、所有全局变量、某个实例的全部变量、编译器输出的信息以及你使用 <a href="../002_Reference/Debugging/show_debug_message.html"><tt>show_debug_message()</tt></a> 函数输出的任何信息。</li><button class="button  entr_click " data_entr="en-6">en</button>
+</ul>
+
+<ul id="en-6">
 	<li><b>Run : </b>Here you will find options to pause and restart the game, run through it step by step, stop it or restart it.</li><br>
 	
 	<li><b>Watch : </b>This menu contains options to add, change, delete, and clear expressions. You can find the instance id for an expression by placing the mouse over an instance in the current game room 
 	and the 	number that comes up in the debug mode main window beside <b>Mouse id</b> is the identifier for that instance.</li><br>
 
-	<li><b>Tools : </b> From here you can call up a list of all instances in the game to watch, you can watch all global variables, all instance variables of a specific instance and you can also view information 
+	<li><b>Tools : </b>From here you can call up a list of all instances in the game to watch, you can watch all global variables, all instance variables of a specific instance and you can also view information 
 	from the compiler and any messages that you have sent with the function <a href="../002_Reference/Debugging/show_debug_message.html"><tt>show_debug_message()</tt></a>. </li>
 </ul>
 </blockquote>
 
 <p>
+在调试界面最上方还有几个按钮让你更方便的使用某些调试功能：<button class="button  entr_click " data_entr="en-7">en</button>
+<p id="en-7">
 Some of these functions are also available as buttons at the top of the main debug screen to make access to the commands easier :
-
 <blockquote>
+<div style="float:left">
+<img src="../images/Debug_Play.png"></div><br>
+	<b>Play : </b>当你暂停游戏时，点击这个按钮会让游戏恢复运行。<br><br><br>
+	
+<div style="float:left">
+<img src="../images/Debug_Pause.png"></div><br>
+	<b>Pause : </b>暂停游戏。<br><br><br>
+	
+<div style="float:left">
+<img src="../images/Debug_Step.png"></div><br>
+	<b>Step : </b>在游戏暂停状态下，点击这个按钮会让你的游戏执行一个 step。<br><br><br>
+	
+<div style="float:left">
+<img src="../images/Debug_restart.png"></div><br>
+	<b>Restart : </b>重启游戏。<br><br><br>
+	
+<div style="float:left">
+<img src="../images/Debug_Stop.png"></div><br>
+	<b>Stop : </b>停止游戏并退出调试。<br><br><br>
+	
+<div style="float:left">
+<img src="../images/Debug_Add.png"></div><br>
+	<b>Add : </b>增加一个表达式到监控列表中。<br><br><br>
+	
+<div style="float:left">
+<img src="../images/Debug_Change.png"></div><br>
+	<b>Change : </b>修改一个监控表达式。<br><br><br>
+	
+<div style="float:left">
+<img src="../images/Debug_Clear.png"></div><br>
+	<b>Clear : </b>清空监控列表。<br><br>
+<button class="button  entr_click " data_entr="en-8">en</button><br>
+</blockquote>
+
+<blockquote id="en-8">
 <div style="float:left">
 <img src="../images/Debug_Play.png"></div><br>
 	<b>Play : </b>This starts the game again after it has been paused.<br><br><br>
