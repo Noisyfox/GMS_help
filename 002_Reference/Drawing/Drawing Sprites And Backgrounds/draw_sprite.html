@@ -24,96 +24,85 @@
         <div id="header" class="mm-fixed-top">
             <a href="#menu_left" class="menu_left" title="点击此按钮打开左侧目录菜单，右边的按钮则打开右侧菜单。"></a>GameMaker:Studio帮助手册
             <a href="#menu_right" class="friends right"></a>
+            <a href="../../../subpage/mmenu_left.html" id="forload_menuleft"></a>
+            <a href="../../../subpage/mmenu_right.html" id="forload_menuright"></a>
         </div>
-        <div id="content">
-            <!-- InstanceBeginEditable name="EditRegion_content" -->
-<h1>draw_sprite</h1>
+        <div id="content"><!-- InstanceBeginEditable name="EditRegion_content" -->
+            <h1>draw_sprite</h1>
 
-<h2>Draws a sprite at a given position.</h2>
+            <h2>在给定的位置绘制一个精灵。Draws a sprite at a given position.</h2>
 
-<h3>Syntax :</h3>
-<p class="code">draw_sprite(sprite, subimg, x, y);</p>
+            <h3>Syntax :</h3>
 
-<p>
-<br>
-</p>
+            <p class="code">draw_sprite(sprite, subimg, x, y);</p>
 
-<div class="param">
-<table>
-	<tr><th>Argument</th><th>Description</th></tr>
-	
-	<tr><td>sprite</td>
-	<td>The index of the sprite to draw.</td></tr>
+            <p>&nbsp;</p>
 
-	<tr><td>subimg</td>
-	<td>The sub-image (frame) of the sprite to draw (image_index or -1 correlate to the current frame of animation in the object).</td></tr>
-	
-	<tr><td>x</td>
-	<td>The x coordinate of where to draw the sprite.</td></tr>
-	
-	<tr><td>y</td>
-	<td>The y coordinate of where to draw the sprite.</td></tr>
-	
-</table>
-</div>
-<p>
-<br>
-</p>
-  
-<p>
-<b>Returns : </b>N/A
-</p>
+            <div class="param">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Argument</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>sprite</td>
+                            <td>The index of the sprite to draw.</td>
+                        </tr>
+                        <tr>
+                            <td>subimg</td>
+                            <td>被绘制的精灵的子图（帧），比如imgae_index或者 -1， 关联到物体动画的当前帧。The sub-image (frame) of the sprite to draw (image_index or -1 correlate to the current frame of animation in the object).</td>
+                        </tr>
+                        <tr>
+                            <td>x</td>
+                            <td>The x coordinate of where to draw the sprite.</td>
+                        </tr>
+                        <tr>
+                            <td>y</td>
+                            <td>The y coordinate of where to draw the sprite.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
- <p>
-<br>
-</p>
+            <p>&nbsp;</p>
 
-<h3>Description</h3>
-<p>
-This function draws the given sprite and sub-image at a position within the game room. For the sprite you can use the instance variable 
-<a href="../../Objects%20and%20Instances/Instances/Instance%20Properties/sprite_index.html"><tt>sprite_index</tt></a> to get the current sprite that is assigned to the instance running 
-the code, or you can use any other sprite asset. The same goes for the sub-image, as this can also be set to the instance variable 
-<a href="../../Objects%20and%20Instances/Instances/Instance%20Properties/image_index.html"><tt>image_index</tt></a> which will set the sub-image to that selected for the current instance 
-sprite (note, that you can draw a different sprite and still use the sub-image value for the current instance),  or you can use any other value for this to draw a specific sub-image of the chosen sprite. 
-If the value is larger than the number of sub-images, then <i>GameMaker:studio</i> will automatically loop the number to select the corresponding image (for example, if the sprite being drawn has 
-5 sub-images numbered 0 to 4 and we set the index value to 7, then the function will draw sub-image 3, numbered 0). Finally, the x and y position is the position within the room that the sprite will 
-be drawn, and it is centered on the sprite <a href="../../Objects%20and%20Instances/Instances/Instance%20Properties/sprite_xoffset.html">x offset</a> and 
-<a href="../../Objects%20and%20Instances/Instances/Instance%20Properties/sprite_yoffset.html">y offset</a>.
-<br>
-<br>
+            <p><b>Returns : </b>N/A</p>
 
-<p>
-<br>
-</p>
+            <p>&nbsp;</p>
 
-<h3>Example :</h3>
-<p class="code">
-draw_sprite(sprite_index, image_index, x, y);<br>
-draw_sprite(spr_Halo, 0, x, y-32);
-</p>
-<p>This will draw the instances assigned sprite (sprite_index) with the current sub-image at the x and y position of the instance within the room. It will then draw the first frame of the sprite indexed 
-by "spr_Halo" at the same x and y position but 32 pixels 'above'.
-</p>
+            <h3>Description</h3>
 
-<p>
-<br>
-</p>
-<p>
+            <p>这个函数会在游戏房间指定位置绘制给定的精灵或者精灵的子图。对于精灵，可以使用&nbsp;<a href="../../Objects%20and%20Instances/Instances/Instance%20Properties/sprite_index.html"><tt>sprite_index</tt></a>&nbsp;变量来获得当前实例对应的精灵，或者也可以使用其它的精灵资源。子图也是一样可以设置为实例的一个变量<a href="../../Objects%20and%20Instances/Instances/Instance%20Properties/image_index.html"><tt>image_index</tt></a>，这将会设置子图为已选择的当前实例的精灵（注意，也可以绘制不同的精灵且仍然使用当前实例的子图），或者可以使用其它的值来绘制选择的精灵的特定子图。如果设置的值大于子图的实际的数目，GMS将自动循环，返回第一个子图选择对应的图像（比如一个精灵有5个子图从0到4，sub-image设置为7，译者测试结果，5对应0，6对应1，7对应2，这个函数将绘制子图2对应的图像）。x和y的位置是房间内精灵绘制的位置，这点在精灵内的位置可以通过<a href="../../Objects%20and%20Instances/Instances/Instance%20Properties/sprite_xoffset.html">x offset</a>&nbsp;和&nbsp;<a href="../../Objects%20and%20Instances/Instances/Instance%20Properties/sprite_yoffset.html">y offset</a>（x偏移量和y偏移量）。</p>
 
-<div class="clear">
-	<div style="float:left">
-		Back : <a href="index.html">Drawing Sprites And Backgrounds</a>
-	</div>
-	<div style="float:right">
-		Next : <a href="draw_sprite_ext.html">draw_sprite_ext</a>
-	</div>
-</div>
-</p>
+            <p>This function draws the given sprite and sub-image at a position within the game room. For the sprite you can use the instance variable <a href="../../Objects%20and%20Instances/Instances/Instance%20Properties/sprite_index.html"><tt>sprite_index</tt></a> to get the current sprite that is assigned to the instance running the code, or you can use any other sprite asset. The same goes for the sub-image, as this can also be set to the instance variable <a href="../../Objects%20and%20Instances/Instances/Instance%20Properties/image_index.html"><tt>image_index</tt></a> which will set the sub-image to that selected for the current instance sprite (note, that you can draw a different sprite and still use the sub-image value for the current instance), or you can use any other value for this to draw a specific sub-image of the chosen sprite. If the value is larger than the number of sub-images, then <i>GameMaker:studio</i> will automatically loop the number to select the corresponding image (for example, if the sprite being drawn has 5 sub-images numbered 0 to 4 and we set the index value to 7, then the function will draw sub-image 3, numbered 0). Finally, the x and y position is the position within the room that the sprite will be drawn, and it is centered on the sprite <a href="../../Objects%20and%20Instances/Instances/Instance%20Properties/sprite_xoffset.html">x offset</a> and <a href="../../Objects%20and%20Instances/Instances/Instance%20Properties/sprite_yoffset.html">y offset</a>.<br />
+                &nbsp;</p>
 
-<h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
-  <!-- InstanceEndEditable -->
-        </div>
-        
+            <p>&nbsp;</p>
+
+            <h3>Example :</h3>
+
+            <p class="code">draw_sprite(sprite_index, image_index, x, y);<br />
+                draw_sprite(spr_Halo, 0, x, y-32);</p>
+
+            <p>This will draw the instances assigned sprite (sprite_index) with the current sub-image at the x and y position of the instance within the room. It will then draw the first frame of the sprite indexed by &quot;spr_Halo&quot; at the same x and y position but 32 pixels &#39;above&#39;.</p>
+
+            <p>&nbsp;</p>
+
+            <p>&nbsp;</p>
+
+            <div class="clear">
+                <div style="float:left">Back : <a href="index.html">Drawing Sprites And Backgrounds</a></div>
+
+                <div style="float:right">Next : <a href="draw_sprite_ext.html">draw_sprite_ext</a></div>
+            </div>
+
+            <p>&nbsp;</p>
+
+            <h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
+            <!-- InstanceEndEditable --></div>
+
+
         <div id="page_popup">
             <div class="popup ">
                 <div>

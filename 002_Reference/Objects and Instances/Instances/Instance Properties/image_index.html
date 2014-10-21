@@ -24,73 +24,58 @@
         <div id="header" class="mm-fixed-top">
             <a href="#menu_left" class="menu_left" title="点击此按钮打开左侧目录菜单，右边的按钮则打开右侧菜单。"></a>GameMaker:Studio帮助手册
             <a href="#menu_right" class="friends right"></a>
+            <a href="../../../../subpage/mmenu_left.html" id="forload_menuleft"></a>
+            <a href="../../../../subpage/mmenu_right.html" id="forload_menuright"></a>
         </div>
-        <div id="content">
-            <!-- InstanceBeginEditable name="EditRegion_content" -->
-<h1>image_index</h1>
+        <div id="content"><!-- InstanceBeginEditable name="EditRegion_content" -->
+            <h1>image_index</h1>
 
-<h2>The current sub-image being shown for the instance sprite.</h2>
+            <h2>实例的精灵当前显示的子图。The current sub-image being shown for the instance sprite.</h2>
 
-<h3>Syntax:</h3>
-<p class="code">image_index</p>
+            <h3>Syntax:</h3>
 
-<p>
-<br>
-</p>
-  
-<p>
-<b>Returns : </b>Real
-</p>
+            <p class="code">image_index</p>
 
- <p>
-<br>
-</p>
+            <p>&nbsp;</p>
 
-<h3>Description</h3>
-<p>
-A sprite is made up of one or more <i>sub-images</i> which can make the sprite appear animated as they switch from one to the other, or can they can be switched between in code to give different "states", 
-much like a button has in windows. If the sprite is animated, then you can get the current frame of the animation by checking the <tt>image_index</tt> variable, or if you want to change the 
-state of a static sprite, you can select a new sub-image by setting this variable to the desired sub-image for the sprite. Please note that for changes in this variable to be visible, the instance 
-should have either <i>no</i> draw event (and so <i>GameMaker:Studio</i> will default draw the sprite) or be drawn using one of the extended drawing functions like 
-<a href="../../../Drawing/Drawing%20Sprites%20And%20Backgrounds/draw_self.html"><tt>draw_self()</tt></a> or <a href="../../../Drawing/Drawing%20Sprites%20And%20Backgrounds/draw_sprite_ext.html">
-<tt>draw_sprite_ext()</tt></a>.
-<br>
-<br>
+            <p><b>Returns : </b>Real</p>
 
-<p>
-<br>
-</p>
+            <p>&nbsp;</p>
 
-<h3>Example :</h3>
-<p class="code">
-if image_speed &gt; 0<br>
-&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;if image_index &gt; image_number - 1 instance_destroy();<br>
-&nbsp;&nbsp;&nbsp;}<br>
-</p>
-<p>
-The above code checks to see if the sprite is animating, and if it is it then checks to see if the current image_index is greater than the number of sub-images and if it is it destroys the instance.
-</p>
+            <h3>Description</h3>
 
-<p>
-<br>
-</p>
-<p>
+            <p>精灵可能由一个或多个子图构成，子图从一个切换到另一个，连续播放产生动画效果，这种切换可以用代表不同&ldquo;状态&rdquo;的代码控制，和电脑里的按钮一样的道理。如果精灵是动画的形式正在播放，你可以通过检测&nbsp;<tt>image_index</tt>&nbsp;的值得到动画的当前帧，或者你想改变静态精灵的状态，你可以通过设置这个变量选择一个新的子图，作为你需要的子图。还是要注意一下，这个变量的改变是可见的，实例没有绘制事件（GMS将默认绘制这个精灵），也不会使用扩展的绘制函数，比如<a href="../../../Drawing/Drawing%20Sprites%20And%20Backgrounds/draw_self.html"><tt>draw_self()</tt></a>&nbsp;或者&nbsp;<a href="../../../Drawing/Drawing%20Sprites%20And%20Backgrounds/draw_sprite_ext.html"><tt>draw_sprite_ext()</tt></a>。</p>
 
-<div class="clear">
-	<div style="float:left">
-		Back : <a href="index.html">Instance Properties</a>
-	</div>
-	<div style="float:right">
-		Next : <a href="image_number.html">image_number</a>
-	</div>
-</div>
-</p>
+            <p>A sprite is made up of one or more <i>sub-images</i> which can make the sprite appear animated as they switch from one to the other, or can they can be switched between in code to give different &quot;states&quot;, much like a button has in windows. If the sprite is animated, then you can get the current frame of the animation by checking the <tt>image_index</tt> variable, or if you want to change the state of a static sprite, you can select a new sub-image by setting this variable to the desired sub-image for the sprite. Please note that for changes in this variable to be visible, the instance should have either <i>no</i> draw event (and so <i>GameMaker:Studio</i> will default draw the sprite) or be drawn using one of the extended drawing functions like <a href="../../../Drawing/Drawing%20Sprites%20And%20Backgrounds/draw_self.html"><tt>draw_self()</tt></a> or <a href="../../../Drawing/Drawing%20Sprites%20And%20Backgrounds/draw_sprite_ext.html"> <tt>draw_sprite_ext()</tt></a>.<br />
+                &nbsp;</p>
 
-<h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
-  <!-- InstanceEndEditable -->
-        </div>
-        
+            <p>&nbsp;</p>
+
+            <h3>Example :</h3>
+
+            <p class="code">if image_speed &gt; 0<br />
+                &nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;if image_index &gt; image_number - 1 instance_destroy();<br />
+                &nbsp;&nbsp;&nbsp;}</p>
+
+            <p>The above code checks to see if the sprite is animating, and if it is it then checks to see if the current image_index is greater than the number of sub-images and if it is it destroys the instance.</p>
+
+            <p>&nbsp;</p>
+
+            <p>&nbsp;</p>
+
+            <div class="clear">
+                <div style="float:left">Back : <a href="index.html">Instance Properties</a></div>
+
+                <div style="float:right">Next : <a href="image_number.html">image_number</a></div>
+            </div>
+
+            <p>&nbsp;</p>
+
+            <h5>&copy; Copyright YoYo Games Ltd. 2013 All Rights Reserved</h5>
+            <!-- InstanceEndEditable --></div>
+
+
         <div id="page_popup">
             <div class="popup ">
                 <div>

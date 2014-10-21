@@ -21,11 +21,14 @@ function rel_to_obs(url, base_url) {
 
 //函数：git域名则加上GMS_help，否则使用绝对地址
 function git_or_obs(url) {
-    var gms_help = "/GMS_help";
+    //var gms_help = "/GMS_help";
     var obsurl;
     //alert(url.slice(0, 1));
     if (location.hostname == "xujing-project.github.io") {
-        obsurl = gms_help + url; //如果是git域名,则前面加上项目名称
+        
+        //obsurl ="/"+ url; //如果是git域名,则前面加上项目名称
+        obsurl = rel_to_obs(url,location.pathname);
+        
     } else {
         obsurl = url;
     }
@@ -33,14 +36,18 @@ function git_or_obs(url) {
 }
 
 
-
 $(document).ready(function () {
     //	The menu on the left
     $(function () {
         //左菜单加载mmenu_left.html
         //显示或关闭左菜单
-        var mmenu_left_fullurl = git_or_obs("/subpage/mmenu_left.html");
-        $('nav#menu_left').load(mmenu_left_fullurl, function () {
+        var mmenu_left_fullurl = $('#forload_menuleft').attr("href");//git_or_obs($('#forload_menuleft').attr("href"));
+        url_prefix = mmenu_left_fullurl.slice(0,-23);
+        
+        mmenu_left_fullurl = git_or_obs(mmenu_left_fullurl);
+        //alert(mmenu_left_fullurl);       
+        
+        $('nav#menu_left').load( mmenu_left_fullurl, function () {
             //应用mmeunu
             var $menu = $('nav#menu_left');
             $menu.mmenu({
@@ -55,7 +62,7 @@ $(document).ready(function () {
             });
             // 
             $(this).find('a').each(function () {
-                var menu_inner_url = $(this).attr("href");
+                var menu_inner_url = url_prefix + $(this).attr("href");
                 //将载入菜单目录里的链接进行一个git or obslute url的判断。
                 $(this).attr("href", git_or_obs(menu_inner_url));
             });
@@ -70,7 +77,10 @@ $(document).ready(function () {
     $(function () {
         //右菜单加载mmenu_right.html
         //alert(mmenu_right_fullurl);
-        $('nav#menu_right').load(git_or_obs("/subpage/mmenu_right.html"), function () {
+        var mmenu_right_fullurl = $('#forload_menuright').attr("href");
+        url_prefix = mmenu_right_fullurl.slice(0,-24);
+        mmenu_right_fullurl = git_or_obs(mmenu_right_fullurl);
+        $('nav#menu_right').load(mmenu_right_fullurl, function () {
             //alert("11111");
             var $menu = $('nav#menu_right');
             $menu.mmenu({
@@ -84,7 +94,7 @@ $(document).ready(function () {
                 }
             });
             $(this).find('a').each(function () {
-                var menu_inner_url = $(this).attr("href");
+                var menu_inner_url = url_prefix + $(this).attr("href");
                 //将载入菜单目录里的链接进行一个git or obslute url的判断。
                 $(this).attr("href", git_or_obs(menu_inner_url));
             });
